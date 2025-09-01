@@ -460,7 +460,7 @@ nav {
 }
 
 .values-list {
-    margin-top: 2rem;
+    margin: 2rem 0;
     padding-left: 0;
 }
 
@@ -475,6 +475,10 @@ nav {
     border-radius: 8px;
     border-left: 3px solid var(--accent);
     min-height: 60px;
+}
+
+.values-list li:last-child {
+    margin-bottom: 0;
 }
 
 .values-list li i {
@@ -520,6 +524,10 @@ nav {
     min-height: 60px;
     display: flex;
     align-items: center;
+}
+
+#mission .values-list li:last-child {
+    margin-bottom: 0;
 }
 
 /* Call to action card */
@@ -800,6 +808,11 @@ nav {
     margin: 0;
 }
 
+/* Equalize heights for problem items on larger screens */
+.problem-list li {
+    min-height: 100px;
+}
+
 /* Footer */
 footer {
     background: rgba(6,16,33,0.9);
@@ -861,7 +874,7 @@ footer a {
     
     /* List containers mobile optimization */
     .values-list {
-        margin-top: 1.5rem;
+        margin: 1.5rem 0;
     }
     
     .values-list li {
@@ -898,6 +911,10 @@ footer a {
         font-size: 1rem;
         margin-bottom: 0.75rem;
         padding: 0.75rem;
+    }
+
+    #mission .values-list li:last-child {
+        margin-bottom: 0;
     }
     
     /* CTA section */
