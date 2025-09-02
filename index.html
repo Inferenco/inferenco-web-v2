@@ -8,12 +8,37 @@
     <!-- Redirect to SPA -->
     <title>Inferenco – Redirecting...</title>
     
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
     <script>
         // Fallback JavaScript redirect in case meta refresh doesn't work
         window.location.replace('app.html');
     </script>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="nav-logo">
+                <img src="assets/logos/flame.png" alt="Inferenco logo">
+                <span>Inferenco</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://t.me/inferenco" class="social-link" aria-label="Join Inferenco Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://x.com/inferenco" class="social-link" aria-label="Follow Inferenco on X">
+                    <span style="font-weight: bold; font-size: 1.1rem;">𝕏</span>
+                </a>
+                <a href="index.html">Home</a>
+                <a href="nova.html">Nova</a>
+            </div>
+        </div>
+    </nav>
+
     <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
         <h1>Redirecting to Inferenco...</h1>
         <p>If you're not automatically redirected, <a href="app.html">click here</a>.</p>
