@@ -8,7 +8,13 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://inferenco.com/nova.html</loc>
+        <loc>https://inferenco.com/app.html</loc>
+        <lastmod>2025-01-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://inferenco.com/app.html#nova</loc>
         <lastmod>2025-01-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
