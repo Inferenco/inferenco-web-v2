@@ -110,6 +110,279 @@
         .nav-links a.active::after {
             width: 100%;
         }
+        
+        /* Documentation Page Specific Styles */
+        .docs-container {
+            display: flex;
+            min-height: calc(100vh - 80px);
+            margin-top: 80px;
+            background: var(--dark);
+        }
+
+        .docs-sidebar {
+            width: 280px;
+            background: rgba(6, 16, 33, 0.95);
+            border-right: 1px solid rgba(0, 178, 255, 0.2);
+            padding: 2rem 0;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        .docs-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .docs-sidebar::-webkit-scrollbar-track {
+            background: rgba(0, 178, 255, 0.1);
+        }
+
+        .docs-sidebar::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            padding: 0 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(0, 178, 255, 0.1);
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .sidebar-item.active {
+            background: rgba(0, 178, 255, 0.15);
+            color: var(--accent);
+            border-left-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .docs-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 3rem 4rem;
+            max-width: 900px;
+        }
+
+        .docs-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .docs-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .docs-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .docs-section h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            border-bottom: 2px solid rgba(0, 178, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .docs-section h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .docs-section h4 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--light);
+        }
+
+        .code-block {
+            background: rgba(0, 178, 255, 0.1);
+            border: 1px solid rgba(0, 178, 255, 0.3);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .code-block code {
+            color: var(--accent);
+        }
+
+        .endpoint-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+
+        .badge-get { background: #10b981; color: white; }
+        .badge-post { background: #3b82f6; color: white; }
+        .badge-delete { background: #ef4444; color: white; }
+
+        .endpoint-item {
+            background: rgba(0, 178, 255, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: var(--radius);
+        }
+
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .endpoint-path {
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 1.125rem;
+        }
+
+        .params-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .params-table th,
+        .params-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 178, 255, 0.2);
+        }
+
+        .params-table th {
+            background: rgba(0, 178, 255, 0.1);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .params-table td {
+            color: var(--light);
+        }
+
+        .required {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .optional {
+            color: var(--muted);
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin: 1.5rem 0;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary);
+            color: var(--dark);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 178, 255, 0.1);
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+        }
+
+        .telegram-link:hover {
+            background: rgba(0, 178, 255, 0.2);
+            color: var(--accent);
+        }
+
+        .use-case-card {
+            background: rgba(0, 178, 255, 0.05);
+            border: 1px solid rgba(0, 178, 255, 0.2);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .use-case-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .docs-sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 178, 255, 0.2);
+            }
+
+            .docs-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -123,6 +396,7 @@
             <div class="nav-links">
                 <a href="#home" class="nav-link active" data-page="home">Home</a>
                 <a href="#nova" class="nav-link" data-page="nova">Nova</a>
+                <a href="#docs" class="nav-link" data-page="docs">API Docs</a>
             </div>
         </div>
     </nav>
@@ -139,6 +413,7 @@
                     <h1>Developing blockchain&nbsp;& AI applications for Web3 leaders & Crypto Communities.</h1>
                     <p>Transparent, pay‑per‑use AI tools built on existing blockchains with seamless Web3 integrations.</p>
                     <a href="#nova" class="cta-button nav-link" data-page="nova" aria-label="Discover Nova">Discover Nova</a>
+                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="API Docs">API Docs</a>
                 </div>
             </section>
 
@@ -183,6 +458,7 @@
                     <h2>Experience the Future of Blockchain &amp; AI with Inferenco</h2>
                     <p>Discover how transparent, pay‑per‑use AI built on blockchain can revolutionise your web3 business, crypto community or DeFi project.</p>
                     <a href="#nova" class="cta-button nav-link" data-page="nova" aria-label="Discover Nova">Discover Nova</a>
+                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="API Docs">API Docs</a>
                 </div>
             </section>
         </main>
@@ -309,6 +585,39 @@
             </div>
         </section>
 
+        <!-- Integration Section -->
+        <section id="integration" class="section">
+            <div class="container">
+                <h2 class="section-title">Integrate Nova in Your Applications</h2>
+                <p>Nova's powerful AI and blockchain capabilities can be seamlessly integrated into your applications through our comprehensive API. Whether you're building web applications, mobile apps, trading platforms, or workflow automation tools, Nova provides the infrastructure you need.</p>
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <span class="emoji">🔌</span>
+                        <h4>RESTful API</h4>
+                        <p>Simple, well-documented REST API endpoints for easy integration into any stack.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🔑</span>
+                        <h4>API Key Management</h4>
+                        <p>Generate and manage multiple API keys with granular permissions and tool access.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">⚡</span>
+                        <h4>Real-time Capabilities</h4>
+                        <p>Access live market data, token prices, and blockchain information in real-time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🛠️</span>
+                        <h4>Tool Integration</h4>
+                        <p>Select specific tools and features your application needs for flexible integration.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="View API Documentation">View API Documentation</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Pricing Section -->
         <section id="pricing" class="section">
             <div class="container">
@@ -363,6 +672,377 @@
         </main>
     </div>
 
+    <!-- DOCS PAGE SECTION -->
+    <div id="docs-page" class="page-section">
+        <!-- Documentation Container -->
+        <div class="docs-container">
+            <!-- Sidebar -->
+            <aside class="docs-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Nova Integration</div>
+                    <a href="#introduction" class="sidebar-item active" data-section="introduction">
+                        <i class="fas fa-book"></i> Introduction
+                    </a>
+                    <a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key">
+                        <i class="fas fa-key"></i> Generate API Key
+                    </a>
+                    <a href="#api-docs" class="sidebar-item" data-section="api-docs">
+                        <i class="fas fa-code"></i> API Docs
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="docs-content">
+                <!-- Introduction Section -->
+                <section id="introduction" class="docs-section active">
+                    <h1>Introduction</h1>
+                    
+                    <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Aptos. Nova provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
+
+                    <p>Developers can integrate Nova's AI and blockchain capabilities into their applications through API key generation, enabling seamless access to its powerful features in third-party projects.</p>
+
+                    <h2>What is Nova?</h2>
+                    <p>Nova combines cutting-edge AI technology with blockchain transparency to deliver:</p>
+                    <ul>
+                        <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5, GPT-5-mini) with tool-calling capabilities</li>
+                        <li><strong>Blockchain Integration:</strong> Native Aptos blockchain support for transparent payments and transactions</li>
+                        <li><strong>Multi-Token Support:</strong> Work with APT, USDC, USDT, GUI, and other Aptos tokens</li>
+                        <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX data, and more</li>
+                        <li><strong>Image Generation:</strong> AI-powered image creation capabilities</li>
+                        <li><strong>Conversation Management:</strong> Automatic summarization for long conversations</li>
+                    </ul>
+
+                    <h2>Use Cases for Integration</h2>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-robot"></i> AI-Powered Applications</h4>
+                        <p>Integrate Nova's AI capabilities into web applications, mobile apps, or backend services. Use it for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-chart-line"></i> Trading & DeFi Platforms</h4>
+                        <p>Access real-time cryptocurrency market data, token prices, DEX pool information, and trending tokens. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-wallet"></i> Payment & Wallet Services</h4>
+                        <p>Leverage Nova's blockchain integration to query token balances, get token information, and access payment-related data on the Aptos network for wallet applications and payment processors.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-users"></i> Community Management Tools</h4>
+                        <p>Build community management dashboards that integrate with Nova's moderation features, user management, and group administration capabilities.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-image"></i> Content Creation Platforms</h4>
+                        <p>Use Nova's image generation and AI content creation features in content management systems, social media tools, or creative applications.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <h4><i class="fas fa-cog"></i> Automation & Workflow Tools</h4>
+                        <p>Create automated workflows that combine AI analysis with blockchain data, perfect for analytics platforms, reporting tools, or business intelligence applications.</p>
+                    </div>
+
+                    <h2>Getting Started</h2>
+                    <p>To start integrating Nova into your application:</p>
+                    <ol>
+                        <li>Create an account in the Nova Telegram bot</li>
+                        <li>Fund your account with supported tokens</li>
+                        <li>Generate an API key through the bot interface</li>
+                        <li>Use the API key to authenticate your requests</li>
+                        <li>Start making API calls to access Nova's features</li>
+                    </ol>
+
+                    <p>Continue to the <a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key" style="color: var(--primary); text-decoration: underline;">Generate API Key</a> section for detailed instructions.</p>
+                </section>
+
+                <!-- Generate API Key Section -->
+                <section id="generate-api-key" class="docs-section">
+                    <h1>Generate API Key</h1>
+                    
+                    <p>To use Nova's API in your applications, you need to generate an API key through the Nova Telegram bot. Follow these steps:</p>
+
+                    <h2>Prerequisites</h2>
+                    <ul>
+                        <li>A Telegram account</li>
+                        <li>Access to the Nova Telegram bot: <a href="https://t.me/NovaInferencoBot" target="_blank" class="telegram-link"><i class="fab fa-telegram"></i> @NovaInferencoBot</a></li>
+                    </ul>
+
+                    <h2>Step-by-Step Guide</h2>
+
+                    <ol class="step-list">
+                        <li>
+                            <strong>Start the Nova Bot</strong>
+                            <p>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank" class="telegram-link"><i class="fab fa-telegram"></i> @NovaInferencoBot</a>, then click "Start" to begin.</p>
+                        </li>
+
+                        <li>
+                            <strong>Login to Your Account</strong>
+                            <p>Send the command <code>/loginuser</code> in the bot chat. This will initiate the authentication process.</p>
+                            <div class="code-block">
+                                <code>/loginuser</code>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Get Your Wallet Address</strong>
+                            <p>Send the command <code>/walletaddress</code> to retrieve your Nova wallet address. You'll need this to fund your account.</p>
+                            <div class="code-block">
+                                <code>/walletaddress</code>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Fund Your Account</strong>
+                            <p>Send funds to your Nova wallet address using one of the supported tokens on Aptos:</p>
+                            <ul>
+                                <li><strong>APT</strong> - Aptos native token</li>
+                                <li><strong>USDC</strong> - USD Coin</li>
+                                <li><strong>USDT</strong> - Tether USD</li>
+                                <li><strong>GUI</strong> - GUI token</li>
+                            </ul>
+                            <p>You can send tokens using any Aptos-compatible wallet or exchange. The funds will be available in your Nova account for API usage.</p>
+                        </li>
+
+                        <li>
+                            <strong>Access API Key Settings</strong>
+                            <p>Send the command <code>/usersettings</code> to open the user settings menu.</p>
+                            <div class="code-block">
+                                <code>/usersettings</code>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Select API Key Option</strong>
+                            <p>In the settings menu, click on <strong>"🔑 API Key"</strong> to start the API key creation process.</p>
+                        </li>
+
+                        <li>
+                            <strong>Follow the Creation Wizard</strong>
+                            <p>The bot will guide you through a 6-step process:</p>
+                            <ol>
+                                <li><strong>App Type:</strong> Choose between Frontend (Web App) or Backend (Server)</li>
+                                <li><strong>Domain (Frontend only):</strong> Enter your application's domain (e.g., inferenco.com)</li>
+                                <li><strong>Prompt:</strong> Define your application's general prompt and rules</li>
+                                <li><strong>Tools:</strong> Select which tools your API key will have access to</li>
+                                <li><strong>Token Limit:</strong> Set the token limit for conversation summarization (default: 20,000)</li>
+                                <li><strong>Currency:</strong> Choose the payment currency (APT, USDC, USDT, or GUI)</li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <strong>Save Your API Key</strong>
+                            <p>Once the wizard completes, you'll receive your API key. <strong>Important:</strong> Save this key securely as it won't be shown again. You can view and manage your API keys anytime through the settings menu.</p>
+                        </li>
+                    </ol>
+
+                    <h2>Managing API Keys</h2>
+                    <p>You can create multiple API keys for different applications or environments. Each API key can have different:</p>
+                    <ul>
+                        <li>Application prompts</li>
+                        <li>Tool permissions</li>
+                        <li>Token limits</li>
+                        <li>Payment currencies</li>
+                    </ul>
+
+                    <p>To manage your API keys:</p>
+                    <ol>
+                        <li>Go to <code>/usersettings</code></li>
+                        <li>Click "🔑 API Key"</li>
+                        <li>View all your keys, create new ones, or delete existing ones</li>
+                    </ol>
+
+                    <h2>Security Best Practices</h2>
+                    <ul>
+                        <li><strong>Never share your API key</strong> publicly or commit it to version control</li>
+                        <li><strong>Store keys securely</strong> using environment variables or secure vaults</li>
+                        <li><strong>Use different keys</strong> for development and production environments</li>
+                        <li><strong>Revoke keys immediately</strong> if they're compromised or no longer needed</li>
+                        <li><strong>Monitor usage</strong> to detect any unauthorized access</li>
+                    </ul>
+
+                    <h2>Next Steps</h2>
+                    <p>Once you have your API key, proceed to the <a href="#api-docs" class="sidebar-item" data-section="api-docs" style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how to make API requests.</p>
+                </section>
+
+                <!-- API Documentation Section -->
+                <section id="api-docs" class="docs-section">
+                    <h1>API Documentation</h1>
+                    
+                    <p>All API requests should be made to the Nova Gateway endpoint. Include your API key in the <code>Authorization</code> header as a Bearer token.</p>
+
+                    <div class="code-block">
+                        <code>Authorization: Bearer YOUR_API_KEY</code>
+                    </div>
+
+                    <h2>Base URL</h2>
+                    <p>The base URL for all API requests will be provided when you receive your API key. Contact support for the gateway endpoint URL.</p>
+
+                    <h2>Authentication</h2>
+                    <p>Most endpoints require authentication using your API key. Include it in the request header:</p>
+                    <div class="code-block">
+                        <code>Authorization: Bearer nova_your_api_key_here</code>
+                    </div>
+
+                    <h2>AI Endpoints</h2>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-post">POST</span>
+                            <span class="endpoint-path">/ai</span>
+                        </div>
+                        <p><strong>Send AI request</strong> - Submit a request to Nova's AI with optional tool calling and image inputs.</p>
+                        
+                        <h4>Headers</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Header</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authorization</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Bearer token with your API key</td>
+                            </tr>
+                            <tr>
+                                <td>Content-Type</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>application/json</td>
+                            </tr>
+                        </table>
+
+                        <h4>Request Body</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>ref_id</td>
+                                <td>string</td>
+                                <td class="optional">No</td>
+                                <td>Optional reference ID for conversation tracking</td>
+                            </tr>
+                            <tr>
+                                <td>input</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>The user's message or prompt</td>
+                            </tr>
+                            <tr>
+                                <td>model</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>AI model to use (e.g., "gpt-5", "gpt-5-mini")</td>
+                            </tr>
+                            <tr>
+                                <td>verbosity</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Response verbosity level ("Low", "Medium", "High")</td>
+                            </tr>
+                            <tr>
+                                <td>max_tokens</td>
+                                <td>integer</td>
+                                <td class="required">Yes</td>
+                                <td>Maximum tokens in the response</td>
+                            </tr>
+                            <tr>
+                                <td>reasoning</td>
+                                <td>boolean</td>
+                                <td class="required">Yes</td>
+                                <td>Enable reasoning mode</td>
+                            </tr>
+                            <tr>
+                                <td>reasoning_params</td>
+                                <td>object</td>
+                                <td class="optional">No</td>
+                                <td>Reasoning parameters if reasoning is enabled</td>
+                            </tr>
+                            <tr>
+                                <td>image_urls</td>
+                                <td>array[string]</td>
+                                <td class="optional">No</td>
+                                <td>Array of image URLs to include in the request</td>
+                            </tr>
+                        </table>
+
+                        <h4>Response</h4>
+                        <div class="code-block">
+                            <code>{
+  "text": "AI response text",
+  "model": "gpt-5",
+  "image_data": null,
+  "tool_calls": [],
+  "total_tokens": 150,
+  "web_search": 0,
+  "file_search": 0,
+  "image_generation": 0,
+  "code_interpreter": 0
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-delete">DELETE</span>
+                            <span class="endpoint-path">/ai</span>
+                        </div>
+                        <p><strong>Clear conversation history</strong> - Remove conversation context for a specific reference ID.</p>
+                        
+                        <h4>Query Parameters</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>ref_id</td>
+                                <td>string</td>
+                                <td class="optional">No</td>
+                                <td>Reference ID to clear. If omitted, clears default conversation.</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h2>Error Responses</h2>
+                    <p>All endpoints may return standard HTTP error codes:</p>
+                    <ul>
+                        <li><strong>400 Bad Request</strong> - Invalid request parameters</li>
+                        <li><strong>401 Unauthorized</strong> - Missing or invalid API key</li>
+                        <li><strong>403 Forbidden</strong> - Insufficient permissions</li>
+                        <li><strong>404 Not Found</strong> - Resource not found</li>
+                        <li><strong>500 Internal Server Error</strong> - Server error</li>
+                    </ul>
+
+                    <p>Error responses follow this format:</p>
+                    <div class="code-block">
+                        <code>{
+  "message": "Error description",
+  "status": 401
+}</code>
+                    </div>
+
+                    <h2>Rate Limiting</h2>
+                    <p>API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a <code>429 Too Many Requests</code> response.</p>
+
+                    <h2>Support</h2>
+                    <p>For API support, questions, or issues, contact the Nova team through our <a href="https://t.me/inferenco" target="_blank" class="telegram-link"><i class="fab fa-telegram"></i>Telegram group</a>  or visit the Nova documentation.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
@@ -383,9 +1063,17 @@
                 // Handle navigation clicks
                 document.addEventListener('click', (e) => {
                     if (e.target.classList.contains('nav-link')) {
-                        e.preventDefault();
                         const targetPage = e.target.dataset.page;
-                        if (targetPage && targetPage !== this.currentPage) {
+                        const href = e.target.getAttribute('href');
+                        
+                        // Check if it's an external link (starts with http or is a file path)
+                        if (href && (href.startsWith('http') || href.includes('.html'))) {
+                            // Allow normal navigation for external pages (docs.html, nova.html, etc.)
+                            // Don't prevent default - let browser handle it
+                            return;
+                        } else if (targetPage && targetPage !== this.currentPage) {
+                            // Internal SPA navigation (hash links)
+                            e.preventDefault();
                             this.navigateTo(targetPage);
                         }
                     }
@@ -404,7 +1092,9 @@
 
             getPageFromHash() {
                 const hash = window.location.hash.slice(1); // Remove #
-                return hash === 'nova' ? 'nova' : 'home';
+                if (hash === 'nova') return 'nova';
+                if (hash === 'docs') return 'docs';
+                return 'home';
             }
 
             navigateTo(page, updateHistory = true) {
@@ -448,6 +1138,11 @@
                     document.querySelector('meta[name="description"]').content = 'Nova by Inferenco: Transparent AI and blockchain tools in Telegram with pay‑per‑use billing. Includes GPT‑5, image generation, payments, Sentinel protection, DAO voting and more.';
                     document.querySelector('meta[property="og:title"]').content = 'Nova - Your smart community manager and your personal assistant on Telegram';
                     document.querySelector('meta[property="og:description"]').content = 'Transparent AI and blockchain tools in Telegram with pay‑per‑use billing. Includes GPT‑5, image generation, payments, Sentinel protection, DAO voting and more.';
+                } else if (page === 'docs') {
+                    document.title = 'Nova API Documentation – Integrate Nova AI & Blockchain Tools';
+                    document.querySelector('meta[name="description"]').content = 'Complete API documentation for integrating Nova\'s AI and blockchain capabilities into your applications. Generate API keys, access AI tools, and manage blockchain operations.';
+                    document.querySelector('meta[property="og:title"]').content = 'Nova API Documentation';
+                    document.querySelector('meta[property="og:description"]').content = 'Complete API documentation for integrating Nova\'s AI and blockchain capabilities.';
                 } else {
                     document.title = 'Inferenco – Transparent Blockchain & AI Applications Platform';
                     document.querySelector('meta[name="description"]').content = 'Inferenco develops transparent blockchain and AI applications with pay‑per‑use pricing. Build on existing blockchains, enjoy complete cost transparency and seamless Web3 integrations.';
@@ -472,6 +1167,35 @@
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
+        });
+
+        // Documentation Navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const docsSections = document.querySelectorAll('.docs-section');
+
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    docsSections.forEach(s => s.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    item.classList.add('active');
+
+                    // Show corresponding section
+                    const sectionId = item.dataset.section;
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
         });
     </script>
 </body>
