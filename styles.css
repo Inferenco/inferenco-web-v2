@@ -199,6 +199,34 @@ nav {
     color: var(--light);
 }
 
+/* Social link styling */
+.nav-social {
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--accent);
+    color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 178, 255, 0.3);
+}
+
 /* Hero section */
 .hero {
     min-height: 90vh;
@@ -844,6 +872,12 @@ footer a {
     }
     
     .nav-logo span {
+        font-size: 1.1rem;
+    }
+    
+    .social-link {
+        width: 36px;
+        height: 36px;
         font-size: 1.1rem;
     }
     
