@@ -686,6 +686,9 @@
                     <a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key">
                         <i class="fas fa-key"></i> Generate API Key
                     </a>
+                    <a href="#add-knowledge" class="sidebar-item" data-section="add-knowledge">
+                        <i class="fas fa-book-open"></i> Add Knowledge
+                    </a>
                     <a href="#api-docs" class="sidebar-item" data-section="api-docs">
                         <i class="fas fa-code"></i> API Docs
                     </a>
@@ -864,7 +867,273 @@
                     </ul>
 
                     <h2>Next Steps</h2>
-                    <p>Once you have your API key, proceed to the <a href="#api-docs" class="sidebar-item" data-section="api-docs" style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how to make API requests.</p>
+                    <p>Once you have your API key, you can add knowledge to it by uploading documents. Continue to the <a href="#add-knowledge" class="sidebar-item" data-section="add-knowledge" style="color: var(--primary); text-decoration: underline;">Add Knowledge</a> section to learn how to upload files, or proceed to the <a href="#api-docs" class="sidebar-item" data-section="api-docs" style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how to make API requests.</p>
+                </section>
+
+                <!-- Add Knowledge Section -->
+                <section id="add-knowledge" class="docs-section">
+                    <h1>Add Knowledge to Your API Key</h1>
+                    
+                    <p>Nova supports Retrieval-Augmented Generation (RAG) by allowing you to upload documents to your API key's vector store. These documents are automatically indexed and used to provide context-aware responses when making AI requests through your API key.</p>
+
+                    <h2>What is Knowledge Base?</h2>
+                    <p>Each API key has its own document library (vector store) where you can upload files that contain information relevant to your application. When you make AI requests using that API key, Nova will:</p>
+                    <ul>
+                        <li>Search through your uploaded documents for relevant information</li>
+                        <li>Use that information to provide more accurate and context-aware responses</li>
+                        <li>Combine your knowledge base with the AI's general knowledge</li>
+                    </ul>
+
+                    <p>This is perfect for applications that need to answer questions about specific topics, company documentation, product information, or any domain-specific knowledge.</p>
+
+                    <h2>Uploading Files via Telegram Bot</h2>
+                    <p>The easiest way to manage your API key's knowledge base is through the Nova Telegram bot interface:</p>
+
+                    <ol class="step-list">
+                        <li>
+                            <strong>Access API Key Settings</strong>
+                            <p>Open the Nova bot and send <code>/usersettings</code> to access your settings menu.</p>
+                            <div class="code-block">
+                                <code>/usersettings</code>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Open API Key Management</strong>
+                            <p>Click on <strong>"🔑 API Key"</strong> in the settings menu to view your API keys.</p>
+                        </li>
+
+                        <li>
+                            <strong>Select Document Library</strong>
+                            <p>For each API key, you'll see a <strong>"📁 Document Library"</strong> button. Click it to open the document library for that specific API key.</p>
+                        </li>
+
+                        <li>
+                            <strong>Upload Files</strong>
+                            <p>Click the <strong>"📎 Upload Files"</strong> button, then attach one or more documents in your next message. Supported file types include:</p>
+                            <ul>
+                                <li>Text files: <code>.txt</code>, <code>.md</code></li>
+                                <li>Code files: <code>.py</code>, <code>.js</code>, <code>.ts</code>, <code>.rs</code>, etc.</li>
+                                <li>Documents: <code>.pdf</code>, <code>.docx</code></li>
+                                <li>And many other document formats</li>
+                            </ul>
+                            <p>You can upload multiple files in a single message. After upload, the document library will automatically refresh to show all your files.</p>
+                        </li>
+
+                        <li>
+                            <strong>Manage Your Files</strong>
+                            <p>In the document library, you can:</p>
+                            <ul>
+                                <li>View all uploaded files</li>
+                                <li>Delete individual files by clicking the delete button next to each file</li>
+                                <li>Clear all files at once using the "🗑️ Clear All Files" button</li>
+                                <li>Upload more files anytime</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h2>Uploading Files via API</h2>
+                    <p>You can also manage your knowledge base programmatically using the Nova Gateway API endpoints:</p>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-post">POST</span>
+                            <span class="endpoint-path">/vector-store/files</span>
+                        </div>
+                        <p><strong>Upload files to your API key's vector store</strong> - Add documents to your knowledge base.</p>
+                        
+                        <h4>Headers</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Header</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authorization</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Bearer token with your API key</td>
+                            </tr>
+                            <tr>
+                                <td>Content-Type</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>application/json</td>
+                            </tr>
+                        </table>
+
+                        <h4>Request Body</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>file_contents</td>
+                                <td>array[object]</td>
+                                <td class="required">Yes</td>
+                                <td>Array of file objects with base64-encoded content</td>
+                            </tr>
+                            <tr>
+                                <td>file_contents[].filename</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Name of the file (e.g., "document.pdf")</td>
+                            </tr>
+                            <tr>
+                                <td>file_contents[].content</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Base64-encoded file content</td>
+                            </tr>
+                        </table>
+
+                        <h4>Example Request</h4>
+                        <div class="code-block">
+                            <code>{
+  "file_contents": [
+    {
+      "filename": "documentation.txt",
+      "content": "SGVsbG8gV29ybGQ="
+    }
+  ]
+}</code>
+                        </div>
+
+                        <h4>Response</h4>
+                        <div class="code-block">
+                            <code>{
+  "vector_store_id": "vs_abc123...",
+  "message": "Files uploaded successfully to vector store vs_abc123..."
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-get">GET</span>
+                            <span class="endpoint-path">/vector-store/files</span>
+                        </div>
+                        <p><strong>List all files in your API key's vector store</strong> - View all documents in your knowledge base.</p>
+                        
+                        <h4>Headers</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Header</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authorization</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Bearer token with your API key</td>
+                            </tr>
+                        </table>
+
+                        <h4>Response</h4>
+                        <div class="code-block">
+                            <code>{
+  "files": [
+    {
+      "id": "file_abc123...",
+      "name": "documentation.txt",
+      "status": "completed"
+    }
+  ]
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-delete">DELETE</span>
+                            <span class="endpoint-path">/vector-store/files</span>
+                        </div>
+                        <p><strong>Delete a specific file from your vector store</strong> - Remove a document from your knowledge base.</p>
+                        
+                        <h4>Query Parameters</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>file_id</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>ID of the file to delete (obtained from list files endpoint)</td>
+                            </tr>
+                        </table>
+
+                        <h4>Response</h4>
+                        <div class="code-block">
+                            <code>{
+  "message": "File deleted successfully"
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="endpoint-badge badge-delete">DELETE</span>
+                            <span class="endpoint-path">/vector-store</span>
+                        </div>
+                        <p><strong>Delete entire vector store</strong> - Remove all files from your API key's knowledge base.</p>
+                        
+                        <h4>Headers</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Header</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authorization</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Bearer token with your API key</td>
+                            </tr>
+                        </table>
+
+                        <h4>Response</h4>
+                        <div class="code-block">
+                            <code>{
+  "message": "Vector store deleted successfully"
+}</code>
+                        </div>
+                    </div>
+
+                    <h2>How Knowledge Base Works</h2>
+                    <p>When you make an AI request using your API key, Nova automatically:</p>
+                    <ol>
+                        <li>Searches through your uploaded documents for relevant information</li>
+                        <li>Retrieves the most relevant sections based on your query</li>
+                        <li>Includes that information as context in the AI request</li>
+                        <li>Returns responses that combine your knowledge base with the AI's general knowledge</li>
+                    </ol>
+
+                    <p>This enables your application to provide accurate, context-aware answers about your specific domain, products, services, or documentation without needing to include all that information in every request.</p>
+
+                    <h2>Best Practices</h2>
+                    <ul>
+                        <li><strong>Organize your documents:</strong> Upload well-structured documents with clear headings and sections for better retrieval</li>
+                        <li><strong>Keep files updated:</strong> Regularly update your knowledge base as your information changes</li>
+                        <li><strong>Use appropriate file formats:</strong> Text-based formats (TXT, MD) are often more reliable than complex formats (PDF, DOCX)</li>
+                        <li><strong>Test your knowledge base:</strong> After uploading, test with sample queries to ensure the AI can find and use your information</li>
+                        <li><strong>Monitor file count:</strong> While there's no strict limit, very large knowledge bases may take longer to search</li>
+                    </ul>
+
+                    <h2>Next Steps</h2>
+                    <p>Now that you know how to add knowledge to your API key, proceed to the <a href="#api-docs" class="sidebar-item" data-section="api-docs" style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how to make AI requests that will use your knowledge base.</p>
                 </section>
 
                 <!-- API Documentation Section -->
