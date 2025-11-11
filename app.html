@@ -689,6 +689,9 @@
                     <a href="#add-knowledge" class="sidebar-item" data-section="add-knowledge">
                         <i class="fas fa-book-open"></i> Add Knowledge
                     </a>
+                    <a href="#templates" class="sidebar-item" data-section="templates">
+                        <i class="fas fa-puzzle-piece"></i> Templates
+                    </a>
                     <a href="#api-docs" class="sidebar-item" data-section="api-docs">
                         <i class="fas fa-code"></i> API Docs
                     </a>
@@ -1137,6 +1140,25 @@
 
                     <h2>Next Steps</h2>
                     <p>Now that you know how to add knowledge to your API key, proceed to the <a href="#api-docs" class="sidebar-item" data-section="api-docs" style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how to make AI requests that will use your knowledge base.</p>
+                </section>
+
+                <!-- Templates Section -->
+                <section id="templates" class="docs-section">
+                    <h1>API Templates</h1>
+
+                    <p>Jump-start your integration with prebuilt examples tailored for Nova Gateway. Templates include environment samples, deployment guides, and best practices so you can ship faster.</p>
+
+                    <div class="docs-card">
+                        <h3>Nova Gateway Telegram Bot</h3>
+                        <p>A Teloxide-based Rust bot that relays Telegram chats to the Nova Gateway <code>/ai</code> endpoint and streams responses back to the user.</p>
+                        <ul>
+                            <li>Clone the repository and copy <code>.env.sample</code> to <code>.env</code>.</li>
+                            <li>Populate <code>TELEGRAM_BOT_TOKEN</code> and <code>NOVA_API_KEY</code> with your credentials (<a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key">Generate API Key</a>).</li>
+                            <li>Run <code>cargo run</code>, or use the provided Dockerfile / Cloud Run instructions for deployment.</li>
+                            <li>Use the <code>/reset</code> command in Telegram to clear the conversation history when needed.</li>
+                        </ul>
+                        <p><a href="https://github.com/Inferenco/nova-gateway-telegram-bot" target="_blank" rel="noopener">View template on GitHub</a></p>
+                    </div>
                 </section>
 
                 <!-- API Documentation Section -->
