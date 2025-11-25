@@ -1497,70 +1497,60 @@
             <section id="nova-api-introduction" class="docs-section">
                 <h1>Nova API - Introduction</h1>
 
-                <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on
-                    Aptos. Nova provides advanced group management, AI-driven conversations with tool-calling
-                    capabilities, automated payment systems, content moderation, and decentralized governance
-                    features.</p>
-
                 <p>Developers can integrate Nova's AI and blockchain capabilities into their applications through
                     API key generation, enabling seamless access to its powerful features in third-party projects.
                 </p>
 
                 <h2>What is Nova API?</h2>
-                <p>Nova API combines cutting-edge AI technology with blockchain transparency to deliver:</p>
+                <p>Nova API is a RESTful API that provides programmatic access to Nova's AI and blockchain capabilities. The API offers:</p>
                 <ul>
-                    <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5,
-                        GPT-5-mini) with tool-calling capabilities</li>
-                    <li><strong>Blockchain Integration:</strong> Native Aptos blockchain support for transparent
-                        payments and transactions</li>
-                    <li><strong>Multi-Token Support:</strong> Work with APT, USDC, USDT, GUI, and other Aptos tokens
-                    </li>
-                    <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX
-                        data, and more</li>
-                    <li><strong>Image Generation:</strong> AI-powered image creation capabilities</li>
-                    <li><strong>Conversation Management:</strong> Automatic summarization for long conversations
-                    </li>
+                    <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
+                    <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
+                    <li><strong>AI Model Access:</strong> Programmatic access to advanced language models (GPT-5, GPT-5-mini) with configurable parameters (verbosity, reasoning mode, token limits)</li>
+                    <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, image generation, web search, and more</li>
+                    <li><strong>Knowledge Base Integration (RAG):</strong> Upload documents to your API key's vector store for context-aware responses. The API automatically searches your knowledge base when relevant</li>
+                    <li><strong>Streaming Responses:</strong> Support for Server-Sent Events (SSE) for real-time streaming of AI responses</li>
+                    <li><strong>Custom Configuration:</strong> Configure custom prompts, tool permissions, token limits, and payment currencies per API key</li>
+                    <li><strong>Conversation Management:</strong> Maintain conversation context with reference IDs and automatic summarization for long conversations</li>
+                    <li><strong>Pay-Per-Use Billing:</strong> Transparent, on-chain billing in APT, USDC, USDT, or GUI tokens. Pay only for what you use</li>
+                    <li><strong>Multi-Environment Support:</strong> Create separate API keys for development and production with different settings</li>
                 </ul>
 
                 <h2>Use Cases for Integration</h2>
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-robot"></i> AI-Powered Applications</h4>
-                    <p>Integrate Nova's AI capabilities into web applications, mobile apps, or backend services. Use
-                        it for customer support chatbots, content generation, data analysis, or any application that
-                        needs intelligent conversational AI.</p>
+                    <p>Integrate Nova's AI capabilities into web applications, mobile apps, or backend services via REST API calls. Use the <code>/ai</code> endpoint for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI with automatic tool calling.</p>
                 </div>
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-chart-line"></i> Trading & DeFi Platforms</h4>
-                    <p>Access real-time cryptocurrency market data, token prices, DEX pool information, and trending
-                        tokens. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics
-                        tools.</p>
+                    <p>Access real-time cryptocurrency market data through AI prompts that automatically call tools like trending pools, DEX pool search, token prices, price predictions, Fear & Greed Index, and historical price data. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools that need intelligent market analysis.</p>
                 </div>
 
                 <div class="use-case-card">
-                    <h4><i class="fas fa-wallet"></i> Payment & Wallet Services</h4>
-                    <p>Leverage Nova's blockchain integration to query token balances, get token information, and
-                        access payment-related data on the Aptos network for wallet applications and payment
-                        processors.</p>
-                </div>
-
-                <div class="use-case-card">
-                    <h4><i class="fas fa-users"></i> Community Management Tools</h4>
-                    <p>Build community management dashboards that integrate with Nova's moderation features, user
-                        management, and group administration capabilities.</p>
+                    <h4><i class="fas fa-arrow-trend-up"></i> Price Prediction Services</h4>
+                    <p>Integrate AI-powered price forecasting into your applications. The API can automatically use the price prediction tool to provide short-term forecasts (15 minutes to 4 hours) or long-term forecasts (1 day to 4 years) for any cryptocurrency. Ideal for trading bots, portfolio management tools, or market analysis platforms.</p>
                 </div>
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-image"></i> Content Creation Platforms</h4>
-                    <p>Use Nova's image generation and AI content creation features in content management systems,
-                        social media tools, or creative applications.</p>
+                    <p>Use Nova's image generation capabilities via API calls. The AI automatically calls the image generation tool when needed, allowing you to integrate AI-powered image creation into content management systems, social media tools, or creative applications without managing image generation infrastructure.</p>
+                </div>
+
+                <div class="use-case-card">
+                    <h4><i class="fas fa-book"></i> Knowledge-Based Applications</h4>
+                    <p>Build applications with custom knowledge bases using Nova's RAG (Retrieval-Augmented Generation) capabilities. Upload documents to your API key's vector store, and the AI will automatically search and use your knowledge base when answering questions. Perfect for documentation assistants, FAQ systems, or domain-specific AI applications.</p>
                 </div>
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-cog"></i> Automation & Workflow Tools</h4>
-                    <p>Create automated workflows that combine AI analysis with blockchain data, perfect for
-                        analytics platforms, reporting tools, or business intelligence applications.</p>
+                    <p>Create automated workflows that combine AI analysis with real-time data. Use the API to build scheduled jobs, reporting tools, or business intelligence applications that leverage AI reasoning, web search, market data, and calculations. The API supports streaming responses for real-time updates.</p>
+                </div>
+
+                <div class="use-case-card">
+                    <h4><i class="fas fa-code"></i> Developer Tools & SDKs</h4>
+                    <p>Build SDKs, libraries, or developer tools that wrap Nova's API. Create language-specific clients, CLI tools, or integrations for popular frameworks. The RESTful API design makes it easy to create wrappers in any programming language.</p>
                 </div>
 
                 <h2>Getting Started</h2>
