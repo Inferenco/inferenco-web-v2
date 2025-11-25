@@ -147,7 +147,7 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "API Docs",
+                        "name": "Docs",
                         "item": "https://inferenco.com/#api-docs"
                     }
                 ]
@@ -572,7 +572,7 @@
                 </a>
                 <a href="#home" class="nav-link active" data-page="home">Home</a>
                 <a href="#nova" class="nav-link" data-page="nova">Nova</a>
-                <a href="#docs" class="nav-link" data-page="docs">API Docs</a>
+                <a href="#docs" class="nav-link" data-page="docs">Docs</a>
             </div>
             <button class="nav-toggle" id="globalNavToggle" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
@@ -585,7 +585,7 @@
     <div class="mobile-menu" id="globalMobileMenu">
         <a href="#home" class="nav-link" data-page="home">Home</a>
         <a href="#nova" class="nav-link" data-page="nova">Nova</a>
-        <a href="#docs" class="nav-link" data-page="docs">API Docs</a>
+        <a href="#docs" class="nav-link" data-page="docs">Docs</a>
 
         <div class="social-links-mobile">
             <a href="https://t.me/inferenco" class="social-link" aria-label="Join Inferenco Telegram" target="_blank"
@@ -630,7 +630,7 @@
                     </p>
                     <a href="#nova" class="cta-button nav-link" data-page="nova" aria-label="Discover Nova">Discover
                         Nova</a>
-                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="API Docs">API Docs</a>
+                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="Docs">Docs</a>
                 </div>
             </section>
 
@@ -683,7 +683,7 @@
                         business, crypto community or DeFi project.</p>
                     <a href="#nova" class="cta-button nav-link" data-page="nova" aria-label="Discover Nova">Discover
                         Nova</a>
-                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="API Docs">API Docs</a>
+                    <a href="#docs" class="cta-button nav-link" data-page="docs" aria-label="Docs">Docs</a>
                 </div>
             </section>
         </main>
@@ -770,6 +770,11 @@
                 <div class="container">
                     <h2 class="section-title">Features</h2>
                     <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="emoji">📈</span>
+                            <h4>Price predictions</h4>
+                            <p>Get AI-powered cryptocurrency price forecasts and market insights.</p>
+                        </div>
                         <div class="feature-card">
                             <span class="emoji">🗳️</span>
                             <h4>DAO vote proposals</h4>
@@ -902,7 +907,7 @@
             </section>
         </main>
     </div>
-    <!-- API Docs Page -->
+    <!-- Docs Page -->
     <div id="docs-page" class="page-section docs-container">
         <!-- Sidebar -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
@@ -915,8 +920,23 @@
         <!-- Sidebar Navigation -->
         <aside class="docs-sidebar" id="docsSidebar">
             <div class="sidebar-section">
-                <div class="sidebar-title">Nova Integration</div>
-                <a href="#introduction" class="sidebar-item active" data-section="introduction">
+                <div class="sidebar-title">Nova Bot</div>
+                <a href="#nova-bot-introduction" class="sidebar-item active" data-section="nova-bot-introduction">
+                    <i class="fas fa-book"></i> Introduction
+                </a>
+                <a href="#nova-bot-commands" class="sidebar-item" data-section="nova-bot-commands">
+                    <i class="fas fa-terminal"></i> Commands
+                </a>
+                <a href="#nova-bot-settings" class="sidebar-item" data-section="nova-bot-settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <a href="#nova-bot-prompts" class="sidebar-item" data-section="nova-bot-prompts">
+                    <i class="fas fa-comments"></i> Prompts
+                </a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Nova API</div>
+                <a href="#nova-api-introduction" class="sidebar-item" data-section="nova-api-introduction">
                     <i class="fas fa-book"></i> Introduction
                 </a>
                 <a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key">
@@ -939,9 +959,9 @@
 
         <!-- Content -->
         <main class="docs-content">
-            <!-- Introduction Section -->
-            <section id="introduction" class="docs-section active">
-                <h1>Introduction</h1>
+            <!-- Nova Bot Introduction Section -->
+            <section id="nova-bot-introduction" class="docs-section active">
+                <h1>Nova Bot - Introduction</h1>
 
                 <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on
                     Aptos. Nova provides advanced group management, AI-driven conversations with tool-calling
@@ -949,12 +969,545 @@
                     features. It's designed for Telegram users and groups that need intelligent automation,
                     financial operations, and comprehensive administrative controls.</p>
 
+                <h2>What is Nova Bot?</h2>
+                <p>Nova Bot combines cutting-edge AI technology with blockchain transparency to deliver:</p>
+                <ul>
+                    <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5,
+                        GPT-5-mini) with tool-calling capabilities</li>
+                    <li><strong>Blockchain Integration:</strong> Native Aptos blockchain support for transparent
+                        payments and transactions</li>
+                    <li><strong>Multi-Token Support:</strong> Work with APT, USDC, USDT, GUI, and other Aptos tokens
+                    </li>
+                    <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX
+                        data, price predictions, and more</li>
+                    <li><strong>Image Generation:</strong> AI-powered image creation capabilities</li>
+                    <li><strong>Conversation Management:</strong> Automatic summarization for long conversations
+                    </li>
+                    <li><strong>DAO Vote Proposals:</strong> Guide community direction through on-chain proposals and voting</li>
+                    <li><strong>Sentinel Protection:</strong> Guard your group from bad actors with automated moderation</li>
+                    <li><strong>User Payments:</strong> Send tokens seamlessly between group members in chat</li>
+                    <li><strong>Real-time Info:</strong> Get live updates such as price feeds right inside the conversation</li>
+                    <li><strong>Scheduled AI Prompts:</strong> Automatically deliver insights or reminders (e.g., price updates)</li>
+                    <li><strong>Scheduled Payments:</strong> Automate moderator or community manager remuneration</li>
+                    <li><strong>Automatic Bot Answers:</strong> Engage members with instant responses and helpful prompts</li>
+                    <li><strong>Sponsorships:</strong> Let members sponsor access so others can use AI tools</li>
+                </ul>
+
+                <h2>Getting Started with Nova Bot</h2>
+                <p>To start using Nova Bot:</p>
+                <ol>
+                    <li>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank"
+                            class="telegram-link"><i class="fab fa-telegram"></i> @NovaInferencoBot</a></li>
+                    <li>Click "Start" to begin</li>
+                    <li>Send <code>/loginuser</code> to authenticate</li>
+                    <li>Get your wallet address with <code>/walletaddress</code></li>
+                    <li>Fund your account with APT, USDC, USDT, or GUI tokens</li>
+                    <li>Start using commands like <code>/c</code> for personal AI chat or <code>/g</code> for group AI chat</li>
+                </ol>
+
+                <p>Continue to the <a href="#nova-bot-commands" class="sidebar-item" data-section="nova-bot-commands"
+                        style="color: var(--primary); text-decoration: underline;">Commands</a> section to learn about all available commands.</p>
+            </section>
+
+            <!-- Nova Bot Commands Section -->
+            <section id="nova-bot-commands" class="docs-section">
+                <h1>Nova Bot - Commands</h1>
+
+                <p>Nova Bot provides a comprehensive set of commands for both personal and group use. Here are all available commands:</p>
+
+                <h2>Basic Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/start</code></h4>
+                    <p>Start interacting with the bot. Use this command to begin your Nova Bot experience.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/help</code></h4>
+                    <p>Display help text with information about available commands.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/aptosconnect</code></h4>
+                    <p>Open the Aptos Connect app for wallet connection.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/tutorial</code></h4>
+                    <p>Watch the quick start tutorial video to learn how to use Nova Bot.</p>
+                </div>
+
+                <h2>Authentication Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/loginuser</code></h4>
+                    <p>Log in as a user. This command can only be used in direct messages (DM). Required before using most features.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/logingroup</code></h4>
+                    <p>Group login (under development).</p>
+                </div>
+
+                <h2>AI Chat Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/c</code></h4>
+                    <p>Prompt to chat with AI in a private conversation. Use this command followed by your question or request. The AI can use various tools to help you.</p>
+                    <p><strong>Example:</strong> <code>/c What's the price of Bitcoin?</code></p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/g</code></h4>
+                    <p>Prompt to chat with AI in a group. Only group admins can use this command. The AI will respond in the group chat.</p>
+                    <p><strong>Example:</strong> <code>/g Show trending pools on Aptos</code></p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/newchat</code></h4>
+                    <p>Start a new conversation thread. This clears the conversation history and starts fresh.</p>
+                </div>
+
+                <h2>Wallet & Balance Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/walletaddress</code></h4>
+                    <p>Get your Nova wallet address. Use this address to fund your account with tokens.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/balance</code> [symbol]</h4>
+                    <p>Get your balance of a token. If no symbol is provided, shows your full portfolio snapshot.</p>
+                    <p><strong>Example:</strong> <code>/balance APT</code> or <code>/balance</code> for full portfolio</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/groupwalletaddress</code></h4>
+                    <p>Get the group's wallet address. Use this to fund the group's account.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/groupbalance</code> [symbol]</h4>
+                    <p>Get the group's balance of a token. If no symbol is provided, shows the group's full portfolio snapshot.</p>
+                </div>
+
+                <h2>Settings Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/usersettings</code></h4>
+                    <p>Open user settings menu. This command can only be used in direct messages (DM). Access model selection, payment settings, API keys, document library, and more.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/groupsettings</code></h4>
+                    <p>Open group settings menu. Only group administrators can use this command. Configure payment tokens, DAO preferences, moderation, sponsor settings, welcome protection, command settings, filters, and summarization settings.</p>
+                </div>
+
+                <h2>Scheduling Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/scheduleprompt</code></h4>
+                    <p>Schedule a recurring or one-shot group prompt. Only admins can use this command. Useful for automated announcements or regular updates.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/listscheduled</code></h4>
+                    <p>List active scheduled prompts. Only admins can use this command.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/schedulepayment</code></h4>
+                    <p>Schedule a token payment to a user. Only admins can use this command. Useful for automating moderator or community manager payments.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/listscheduledpayments</code></h4>
+                    <p>List scheduled token payments. Only admins can use this command.</p>
+                </div>
+
+                <h2>Group Management Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/report</code></h4>
+                    <p>Moderate content by replying to a message. Sends a report to the admin if content is found to be inappropriate, muting the user in this case.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/rules</code></h4>
+                    <p>Show core and custom rules for this group.</p>
+                </div>
+
+                <h2>Information Commands</h2>
+                <div class="endpoint-item">
+                    <h4><code>/prices</code></h4>
+                    <p>Display model pricing information for AI services.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/globalannouncement</code></h4>
+                    <p>Send a global announcement. Only authorized users can use this command.</p>
+                </div>
+            </section>
+
+            <!-- Nova Bot Settings Section -->
+            <section id="nova-bot-settings" class="docs-section">
+                <h1>Nova Bot - Settings</h1>
+
+                <p>Nova Bot provides comprehensive settings for both individual users and groups. Configure your preferences to customize your Nova experience.</p>
+
+                <h2>User Settings (<code>/usersettings</code>)</h2>
+                <p>User settings can only be accessed in direct messages (DM). Send <code>/usersettings</code> to open the settings menu.</p>
+
+                <h3>Available User Settings</h3>
+
+                <div class="endpoint-item">
+                    <h4>🧠 Select Model</h4>
+                    <p>Choose which AI model to use for your conversations. Available models include:</p>
+                    <ul>
+                        <li><strong>GPT-5:</strong> Most advanced model for complex tasks ($0.00410 per 1k tokens)</li>
+                        <li><strong>GPT-5-mini:</strong> Faster, more cost-effective option ($0.00082 per 1k tokens)</li>
+                        <li><strong>Sentinel (GPT-5-nano):</strong> Lightweight model for moderation ($0.00016 per 1k tokens)</li>
+                    </ul>
+                    <p>You can also configure reasoning mode and other model preferences.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💳 Payment Settings</h4>
+                    <p>Configure your preferred payment token and currency. Choose from:</p>
+                    <ul>
+                        <li><strong>APT</strong> - Aptos native token</li>
+                        <li><strong>USDC</strong> - USD Coin</li>
+                        <li><strong>USDT</strong> - Tether USD</li>
+                        <li><strong>GUI</strong> - GUI token</li>
+                    </ul>
+                    <p>This setting determines which token will be used for billing your AI requests.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🔑 API Key</h4>
+                    <p>Generate and manage API keys for integrating Nova's capabilities into your applications. Each API key can have:</p>
+                    <ul>
+                        <li>Different application prompts</li>
+                        <li>Specific tool permissions</li>
+                        <li>Custom token limits</li>
+                        <li>Different payment currencies</li>
+                    </ul>
+                    <p>See the <a href="#generate-api-key" class="sidebar-item" data-section="generate-api-key"
+                            style="color: var(--primary); text-decoration: underline;">Nova API > Generate API Key</a> section for detailed instructions.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📁 Document Library</h4>
+                    <p>Upload and manage documents for your personal knowledge base. These documents are used by the AI when you make requests using <code>/c</code>.</p>
+                    <p>Supported file types include: <code>.txt</code>, <code>.md</code>, <code>.pdf</code>, <code>.docx</code>, and various code files.</p>
+                    <p>Upload files through the Document Library interface, and the AI will automatically search through them when answering your questions.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📋 View My Settings</h4>
+                    <p>View your current settings summary, including model preferences, payment settings, and other configurations.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🧾 Summarization Settings</h4>
+                    <p>Configure conversation summarization preferences:</p>
+                    <ul>
+                        <li><strong>Enable/Disable:</strong> Turn summarization on or off</li>
+                        <li><strong>Token Limit:</strong> Set the token threshold before summarization triggers (default: 20,000 tokens)</li>
+                    </ul>
+                    <p>When enabled, long conversations are automatically summarized to maintain context while reducing token usage.</p>
+                </div>
+
+                <h2>Group Settings (<code>/groupsettings</code>)</h2>
+                <p>Group settings can only be accessed by group administrators. Send <code>/groupsettings</code> in a group chat to open the settings menu.</p>
+
+                <h3>Available Group Settings</h3>
+
+                <div class="endpoint-item">
+                    <h4>💳 Payment Settings</h4>
+                    <p>Configure the group's preferred payment token and currency. Same options as user settings (APT, USDC, USDT, GUI).</p>
+                    <p>This determines which token will be used for billing group AI requests made with <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🏛️ DAO Preferences</h4>
+                    <p>Configure decentralized autonomous organization (DAO) settings:</p>
+                    <ul>
+                        <li><strong>DAO Token:</strong> Set the default token for DAO proposals</li>
+                        <li><strong>Vote Duration:</strong> Configure default duration for voting periods</li>
+                        <li><strong>Notifications:</strong> Enable/disable DAO proposal notifications</li>
+                    </ul>
+                    <p>These settings are used when creating DAO proposals with the <code>create_proposal</code> tool.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🛡️ Moderation</h4>
+                    <p>Configure content moderation settings:</p>
+                    <ul>
+                        <li><strong>Moderation Mode:</strong> Enable/disable automated content moderation</li>
+                        <li><strong>Moderation Overrides:</strong> Configure custom moderation rules</li>
+                        <li><strong>Sentinel Protection:</strong> Enable automated protection against bad actors</li>
+                    </ul>
+                    <p>Moderation helps keep your group safe from spam and inappropriate content.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🎯 Sponsor Settings</h4>
+                    <p>Configure sponsorship features:</p>
+                    <ul>
+                        <li><strong>Enable Sponsorships:</strong> Allow members to sponsor AI access for others</li>
+                        <li><strong>Request Limits:</strong> Set limits on sponsored requests</li>
+                    </ul>
+                    <p>Sponsorships allow community members to help others access AI features even when they've reached their usage limits.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>👋 Welcome Settings</h4>
+                    <p>Configure welcome messages and new member protection:</p>
+                    <ul>
+                        <li><strong>Welcome Message:</strong> Customize the message sent to new members</li>
+                        <li><strong>Protection Period:</strong> Set a time period where new members have restricted access</li>
+                    </ul>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🔍 Filters</h4>
+                    <p>Configure message filters for automated actions:</p>
+                    <ul>
+                        <li><strong>Keyword Filters:</strong> Set up automatic responses or actions for specific keywords</li>
+                        <li><strong>Pattern Matching:</strong> Create custom filter patterns</li>
+                    </ul>
+                    <p>Filters allow you to automate responses or actions based on message content.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📁 Group Document Library</h4>
+                    <p>Upload and manage documents for the group's knowledge base. These documents are used by the AI when group members make requests using <code>/g</code>.</p>
+                    <p>Group documents are separate from user documents and are only accessible in group contexts.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>⚙️ Command Settings</h4>
+                    <p>Configure command behavior and permissions:</p>
+                    <ul>
+                        <li><strong>Command Permissions:</strong> Set who can use specific commands</li>
+                        <li><strong>Command Behavior:</strong> Customize how commands work in your group</li>
+                    </ul>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📋 Summarization Settings</h4>
+                    <p>Configure conversation summarization for group chats:</p>
+                    <ul>
+                        <li><strong>Enable/Disable:</strong> Turn summarization on or off for group conversations</li>
+                        <li><strong>Token Limit:</strong> Set the token threshold before summarization triggers</li>
+                    </ul>
+                    <p>Group summarization helps manage long conversations in group chats.</p>
+                </div>
+            </section>
+
+            <!-- Nova Bot Prompts Section -->
+            <section id="nova-bot-prompts" class="docs-section">
+                <h1>Nova Bot - Prompts</h1>
+
+                <p>Nova Bot provides powerful AI capabilities through prompts. You can use <code>/c</code> for personal conversations and <code>/g</code> for group conversations. The AI can automatically call various tools to help answer your questions.</p>
+
+                <h2>Available Tools</h2>
+                <p>Nova Bot has access to a wide range of tools that the AI can use automatically based on your prompts. These tools are categorized into built-in tools and MCP (Model Context Protocol) tools.</p>
+
+                <h3>Built-in Tools</h3>
+                <p>These tools are always available and work with both <code>/c</code> and <code>/g</code> commands:</p>
+
+                <div class="endpoint-item">
+                    <h4>🖼️ Image Generation</h4>
+                    <p>Create images from text descriptions using AI. The AI will automatically use this tool when you ask for image generation.</p>
+                    <p><strong>Cost:</strong> $0.16 per image</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🌐 Web Search Preview</h4>
+                    <p>Search the web for real-time information. The AI uses this tool to find current information not in its training data.</p>
+                    <p><strong>Cost:</strong> $0.016 per call</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📂 File Search (RAG)</h4>
+                    <p>Search your uploaded documents for context-aware answers. The AI automatically searches your document library (user library for <code>/c</code>, group library for <code>/g</code>) when relevant.</p>
+                    <p><strong>Cost:</strong> $0.004 per call</p>
+                </div>
+
+                <h3>MCP Tools (Blockchain & Data)</h3>
+                <p>These tools are available through the MCP server and provide blockchain and market data capabilities:</p>
+
+                <div class="endpoint-item">
+                    <h4>📈 Get Trending Pools</h4>
+                    <p>Fetch top trending DEX pools on networks like Aptos, Solana, Ethereum, BSC, Polygon, Avalanche, Fantom, Cronos, Arbitrum, Base, etc.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🔍 Search Pools</h4>
+                    <p>Find specific DEX pools by token symbol, contract address, or pool address. Always specify the network to avoid confusion.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🆕 Get New Pools</h4>
+                    <p>Discover the latest pool creations on supported networks.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💰 Get Token Price</h4>
+                    <p>Retrieve focused token price data from BitcoinTry exchange. Use when tokens are unavailable on DEX pools or when you need BitcoinTry-specific data.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📊 Get Fear & Greed Index</h4>
+                    <p>Check current crypto market sentiment. Returns an index from 0-100 indicating market fear or greed.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🧮 Calculator</h4>
+                    <p>Evaluate mathematical expressions and financial formulas. Supports arithmetic, percentages, and finance functions (NPV, IRR, PV, FV, PMT, NPER).</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🕒 Get Current Time</h4>
+                    <p>Get precise time for any timezone. Essential for time-sensitive operations like creating DAO proposals.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📜 Coindesk History</h4>
+                    <p>Retrieve historical crypto price data (OHLC) for specified date ranges.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>📉 Dexscreener API</h4>
+                    <p>Access comprehensive DEX data via Dexscreener. Get current prices, token profiles, boosts, orders, and pair metadata.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🔮 Price Predictions</h4>
+                    <p>Get AI-powered cryptocurrency price forecasts. Supports both short-term forecasts (15 minutes, 1 hour, 4 hours) using hybrid ensemble models and long-term forecasts (1 day to 4 years) using Monte Carlo simulations.</p>
+                    <p><strong>Forecast Types:</strong></p>
+                    <ul>
+                        <li><strong>Short-term:</strong> 15 minutes, 1 hour, 4 hours</li>
+                        <li><strong>Long-term:</strong> 1 day, 3 days, 1 week, 1 month, 3 months, 6 months, 1 year, 4 years</li>
+                    </ul>
+                    <p>Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</p>
+                </div>
+
+                <h3>Bot-Specific Tools</h3>
+                <p>These tools are specific to Nova Bot functionality:</p>
+
+                <div class="endpoint-item">
+                    <h4>💰 Get Balance</h4>
+                    <p>Get the current account balance for a user or group. Available for both <code>/c</code> and <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🔑 Get Wallet Address</h4>
+                    <p>Get the wallet address for a user or group. Available for both <code>/c</code> and <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💸 Fund Account</h4>
+                    <p>Fund the resource account with tokens from the main wallet. Available for both <code>/c</code> and <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💸 Withdraw Funds</h4>
+                    <p>Withdraw funds from the account. Available for both <code>/c</code> and <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💱 Pay Users</h4>
+                    <p>Send tokens to multiple Telegram users by username. Available for both <code>/c</code> and <code>/g</code>.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>🗳️ Create Proposal</h4>
+                    <p>Create a new DAO voting proposal. Only available for <code>/g</code> (group commands). Requires group DAO settings to be configured.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4>💬 Get Recent Messages</h4>
+                    <p>Retrieve the most recent messages (up to 30) from the Telegram group chat. Only available for <code>/g</code> (group commands).</p>
+                </div>
+
+                <h2>Tools Available for <code>/c</code> (User Prompts)</h2>
+                <p>When using <code>/c</code> or <code>/prompt</code> in a private chat, the AI can use:</p>
+                <ul>
+                    <li>All built-in tools (Image Generation, Web Search, File Search)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions)</li>
+                    <li>User-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users)</li>
+                    <li>Your personal document library (uploaded via User Settings > Document Library)</li>
+                </ul>
+
+                <h2>Tools Available for <code>/g</code> (Group Prompts)</h2>
+                <p>When using <code>/g</code> in a group chat (admin only), the AI can use:</p>
+                <ul>
+                    <li>All built-in tools (Image Generation, Web Search, File Search)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions)</li>
+                    <li>Group-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users, Create Proposal, Get Recent Messages)</li>
+                    <li>Group document library (uploaded via Group Settings > Group Document Library)</li>
+                </ul>
+
+                <h2>Example Prompts</h2>
+                <p>Here are some example prompts you can use with Nova Bot:</p>
+
+                <h3>Wallet & Balance Examples</h3>
+                <div class="code-block"><code>/c What's my wallet address?</code></div>
+                <div class="code-block"><code>/c Show my balance</code></div>
+                <div class="code-block"><code>/c Check my APT balance</code></div>
+                <div class="code-block"><code>/c How much do I have in USDC?</code></div>
+
+                <h3>Transaction Examples</h3>
+                <div class="code-block"><code>/c Send 10 APT to @username</code></div>
+                <div class="code-block"><code>/c Withdraw 5 USDC</code></div>
+                <div class="code-block"><code>/c Fund my account with 100 APT</code></div>
+
+                <h3>Market Data Examples</h3>
+                <div class="code-block"><code>/c What's the current price of Bitcoin?</code></div>
+                <div class="code-block"><code>/c Show me trending pools on Aptos</code></div>
+                <div class="code-block"><code>/c Find pools for APT/USDC on Aptos</code></div>
+                <div class="code-block"><code>/c What's the Fear & Greed Index?</code></div>
+                <div class="code-block"><code>/c Get historical price data for Ethereum for the last 7 days</code></div>
+
+                <h3>Price Prediction Examples</h3>
+                <div class="code-block"><code>/c Predict Bitcoin price in 1 hour</code></div>
+                <div class="code-block"><code>/c What will Ethereum price be in 1 week?</code></div>
+                <div class="code-block"><code>/c Forecast APT price for 1 month</code></div>
+                <div class="code-block"><code>/c Get a 4-hour price forecast for Solana</code></div>
+                <div class="code-block"><code>/c Show me a 1-year price prediction for Bitcoin with chart data</code></div>
+
+                <h3>DAO & Group Examples (for <code>/g</code>)</h3>
+                <div class="code-block"><code>/g Create a DAO proposal to vote on adding a new moderator</code></div>
+                <div class="code-block"><code>/g What have we discussed recently in this group?</code></div>
+                <div class="code-block"><code>/g Send 50 APT to @user1, @user2, and @user3</code></div>
+
+                <h3>Image Generation Examples</h3>
+                <div class="code-block"><code>/c Generate an image of a futuristic city with flying cars</code></div>
+                <div class="code-block"><code>/c Create a logo for a crypto project called "Nova"</code></div>
+
+                <h3>Document Search Examples</h3>
+                <div class="code-block"><code>/c What does my documentation say about API integration?</code></div>
+                <div class="code-block"><code>/c Search my documents for information about pricing</code></div>
+
+                <h3>General AI Examples</h3>
+                <div class="code-block"><code>/c What can you help me with?</code></div>
+                <div class="code-block"><code>/c Explain how this bot works</code></div>
+                <div class="code-block"><code>/c Calculate the ROI if I invest $1000 at 8% annual return for 5 years</code></div>
+
+                <p><strong>Tip:</strong> You can use <code>/p</code> as a shortcut for <code>/prompt</code> or <code>/c</code>!</p>
+            </section>
+
+            <!-- Nova API Introduction Section -->
+            <section id="nova-api-introduction" class="docs-section">
+                <h1>Nova API - Introduction</h1>
+
+                <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on
+                    Aptos. Nova provides advanced group management, AI-driven conversations with tool-calling
+                    capabilities, automated payment systems, content moderation, and decentralized governance
+                    features.</p>
+
                 <p>Developers can integrate Nova's AI and blockchain capabilities into their applications through
                     API key generation, enabling seamless access to its powerful features in third-party projects.
                 </p>
 
-                <h2>What is Nova?</h2>
-                <p>Nova combines cutting-edge AI technology with blockchain transparency to deliver:</p>
+                <h2>What is Nova API?</h2>
+                <p>Nova API combines cutting-edge AI technology with blockchain transparency to deliver:</p>
                 <ul>
                     <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5,
                         GPT-5-mini) with tool-calling capabilities</li>
@@ -968,8 +1521,6 @@
                     <li><strong>Conversation Management:</strong> Automatic summarization for long conversations
                     </li>
                 </ul>
-
-
 
                 <h2>Use Cases for Integration</h2>
 
@@ -1182,7 +1733,151 @@
                         time-sensitive operations).</li>
                     <li><strong>📜 Coindesk History</strong>: Retrieve historical crypto price data.</li>
                     <li><strong>📉 Dexscreener API</strong>: Access comprehensive DEX data via Dexscreener.</li>
+                    <li><strong>🔮 Price Predictions</strong>: Get AI-powered cryptocurrency price forecasts. Supports both short-term forecasts (15 minutes, 1 hour, 4 hours) using hybrid ensemble models and long-term forecasts (1 day to 4 years) using Monte Carlo simulations. Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</li>
                 </ul>
+
+                <h2>Example Prompts Using Tools</h2>
+                <p>Here are example prompts you can use with the Nova API to trigger different tools:</p>
+
+                <h3>Price Prediction Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "Predict Bitcoin price in 1 hour",
+  "model": "gpt-5",
+  "verbosity": "Medium",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "What will Ethereum price be in 1 week? Show me a forecast with chart data",
+  "model": "gpt-5",
+  "verbosity": "High",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Get a 4-hour price forecast for Solana",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 1500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Forecast APT price for 1 month with confidence intervals",
+  "model": "gpt-5",
+  "verbosity": "High",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Market Data Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "Show me trending pools on Aptos",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 1500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Find pools for APT/USDC on Aptos network",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 1000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "What's the current Fear & Greed Index?",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Get historical price data for Ethereum for the last 7 days",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 1500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Image Generation Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "Generate an image of a futuristic city with flying cars",
+  "model": "gpt-5",
+  "verbosity": "Medium",
+  "max_tokens": 1000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Document Search Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "What does my documentation say about API integration?",
+  "model": "gpt-5",
+  "verbosity": "High",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Web Search Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "Search for the latest news about Aptos blockchain",
+  "model": "gpt-5",
+  "verbosity": "Medium",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Calculator Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "Calculate the ROI if I invest $1000 at 8% annual return for 5 years",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <p><strong>Note:</strong> The AI will automatically select and use the appropriate tools based on your input. You don't need to specify which tools to use - just describe what you want, and the AI will handle the rest!</p>
             </section>
 
             <!-- Add Knowledge Section -->
@@ -1486,7 +2181,7 @@
                 <h2>Next Steps</h2>
                 <p>Now that you know how to add knowledge to your API key, proceed to the <a href="#api-docs"
                         class="sidebar-item" data-section="api-docs"
-                        style="color: var(--primary); text-decoration: underline;">API Docs</a> section to learn how
+                        style="color: var(--primary); text-decoration: underline;">Docs</a> section to learn how
                     to make AI requests that will use your knowledge base.</p>
             </section>
 
