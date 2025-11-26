@@ -1388,6 +1388,22 @@
                     <p>Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</p>
                 </div>
 
+                <div class="endpoint-item">
+                    <h4>📱 Elfa Social Intelligence</h4>
+                    <p>Query Elfa AI for crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics specifically for cryptocurrency discussions. Use this for:</p>
+                    <ul>
+                        <li><strong>Trending Tokens:</strong> Get tokens trending on social media with mention counts and sentiment</li>
+                        <li><strong>Top Mentions:</strong> Find the most significant mentions for any ticker symbol</li>
+                        <li><strong>Smart Account Stats:</strong> Analyze Twitter account engagement and smart following metrics</li>
+                        <li><strong>Mentions Search:</strong> Search mentions by keywords or account name</li>
+                        <li><strong>Event Summary:</strong> Get AI-generated summaries of events from keyword mentions (5 credits)</li>
+                        <li><strong>Trending Narratives:</strong> Discover trending crypto narratives on Twitter/X (5 credits)</li>
+                        <li><strong>Token News:</strong> Find news mentions related to specific tokens</li>
+                        <li><strong>Trending Contracts:</strong> Track contract addresses trending on Twitter/X or Telegram</li>
+                    </ul>
+                    <p><strong>Note:</strong> This tool is specifically for social media analytics, not price data or DEX pools. Use GeckoTerminal/DexScreener tools for market data.</p>
+                </div>
+
                 <h3>Bot-Specific Tools</h3>
                 <p>These tools are specific to Nova Bot functionality:</p>
 
@@ -1430,7 +1446,7 @@
                 <p>When using <code>/c</code> or <code>/prompt</code> in a private chat, the AI can use:</p>
                 <ul>
                     <li>All built-in tools (Image Generation, Web Search, File Search)</li>
-                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Elfa Social Intelligence)</li>
                     <li>User-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users)</li>
                     <li>Your personal document library (uploaded via User Settings > Document Library)</li>
                 </ul>
@@ -1439,7 +1455,7 @@
                 <p>When using <code>/g</code> in a group chat (admin only), the AI can use:</p>
                 <ul>
                     <li>All built-in tools (Image Generation, Web Search, File Search)</li>
-                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Elfa Social Intelligence)</li>
                     <li>Group-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users, Create Proposal, Get Recent Messages)</li>
                     <li>Group document library (uploaded via Group Settings > Group Document Library)</li>
                 </ul>
@@ -1472,6 +1488,15 @@
                 <div class="code-block"><code>/c Get a 4-hour price forecast for Solana</code></div>
                 <div class="code-block"><code>/c Show me a 1-year price prediction for Bitcoin with chart data</code></div>
 
+                <h3>Social Intelligence Examples</h3>
+                <div class="code-block"><code>/c What tokens are trending on Twitter right now?</code></div>
+                <div class="code-block"><code>/c Show me the top mentions of Bitcoin on X in the last 24 hours</code></div>
+                <div class="code-block"><code>/c Get smart stats for the Twitter account @elonmusk</code></div>
+                <div class="code-block"><code>/c Search for mentions of "Aptos" on Twitter</code></div>
+                <div class="code-block"><code>/c What are the trending narratives in crypto right now?</code></div>
+                <div class="code-block"><code>/c Find trending contract addresses on Telegram</code></div>
+                <div class="code-block"><code>/c Get an event summary about "Bitcoin halving" from social media</code></div>
+
                 <h3>DAO & Group Examples (for <code>/g</code>)</h3>
                 <div class="code-block"><code>/g Create a DAO proposal to vote on adding a new moderator</code></div>
                 <div class="code-block"><code>/g What have we discussed recently in this group?</code></div>
@@ -1490,7 +1515,7 @@
                 <div class="code-block"><code>/c Explain how this bot works</code></div>
                 <div class="code-block"><code>/c Calculate the ROI if I invest $1000 at 8% annual return for 5 years</code></div>
 
-                <p><strong>Tip:</strong> You can use <code>/p</code> as a shortcut for <code>/prompt</code> or <code>/c</code>!</p>
+                <p><strong>Tip:</strong> Use <code>/c</code> for personal chat and <code>/g</code> for group chat (admin only)!</p>
             </section>
 
             <!-- Nova API Introduction Section -->
@@ -1507,7 +1532,7 @@
                     <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
                     <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
                     <li><strong>AI Model Access:</strong> Programmatic access to advanced language models (GPT-5, GPT-5-mini) with configurable parameters (verbosity, reasoning mode, token limits)</li>
-                    <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, image generation, web search, and more</li>
+                    <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, social intelligence, image generation, web search, and more</li>
                     <li><strong>Knowledge Base Integration (RAG):</strong> Upload documents to your API key's vector store for context-aware responses. The API automatically searches your knowledge base when relevant</li>
                     <li><strong>Streaming Responses:</strong> Support for Server-Sent Events (SSE) for real-time streaming of AI responses</li>
                     <li><strong>Custom Configuration:</strong> Configure custom prompts, tool permissions, token limits, and payment currencies per API key</li>
@@ -1525,12 +1550,17 @@
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-chart-line"></i> Trading & DeFi Platforms</h4>
-                    <p>Access real-time cryptocurrency market data through AI prompts that automatically call tools like trending pools, DEX pool search, token prices, price predictions, Fear & Greed Index, and historical price data. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools that need intelligent market analysis.</p>
+                    <p>Access real-time cryptocurrency market data through AI prompts that automatically call tools like trending pools, DEX pool search, token prices, price predictions, Fear & Greed Index, social intelligence, and historical price data. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools that need intelligent market analysis combined with social sentiment.</p>
                 </div>
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-arrow-trend-up"></i> Price Prediction Services</h4>
                     <p>Integrate AI-powered price forecasting into your applications. The API can automatically use the price prediction tool to provide short-term forecasts (15 minutes to 4 hours) or long-term forecasts (1 day to 4 years) for any cryptocurrency. Ideal for trading bots, portfolio management tools, or market analysis platforms.</p>
+                </div>
+
+                <div class="use-case-card">
+                    <h4><i class="fas fa-comments"></i> Social Intelligence & Sentiment Analysis</h4>
+                    <p>Integrate crypto social media intelligence into your applications using Elfa AI. Track trending tokens on Twitter/X and Telegram, analyze top mentions for any ticker, get smart account statistics, search mentions by keywords, discover trending narratives, and monitor contract addresses trending on social media. Perfect for sentiment analysis platforms, social trading tools, influencer tracking, or market research applications that need to understand crypto community discussions and trends.</p>
                 </div>
 
                 <div class="use-case-card">
@@ -1724,6 +1754,7 @@
                     <li><strong>📜 Coindesk History</strong>: Retrieve historical crypto price data.</li>
                     <li><strong>📉 Dexscreener API</strong>: Access comprehensive DEX data via Dexscreener.</li>
                     <li><strong>🔮 Price Predictions</strong>: Get AI-powered cryptocurrency price forecasts. Supports both short-term forecasts (15 minutes, 1 hour, 4 hours) using hybrid ensemble models and long-term forecasts (1 day to 4 years) using Monte Carlo simulations. Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</li>
+                    <li><strong>📱 Elfa Social Intelligence</strong>: Query Elfa AI for crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics including trending tokens, top mentions, smart account stats, mentions search, event summaries, trending narratives, token news, and trending contract addresses. Perfect for social sentiment analysis and tracking crypto discussions on social media.</li>
                 </ul>
 
                 <h2>Example Prompts Using Tools</h2>
@@ -1863,6 +1894,62 @@
   "model": "gpt-5-mini",
   "verbosity": "Low",
   "max_tokens": 500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <h3>Social Intelligence Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "What tokens are trending on Twitter right now?",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 1500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Show me the top mentions of Bitcoin on X in the last 24 hours",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 1500,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Get smart stats for the Twitter account @elonmusk",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 1000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "What are the trending narratives in crypto right now?",
+  "model": "gpt-5",
+  "verbosity": "High",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Search for mentions of Aptos on Twitter and summarize the sentiment",
+  "model": "gpt-5",
+  "verbosity": "Medium",
+  "max_tokens": 2000,
   "reasoning": false
 }</code>
                 </div>
