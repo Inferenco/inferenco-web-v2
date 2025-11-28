@@ -894,10 +894,15 @@
                             <h4>Web Search Preview</h4>
                             <p>$0.016 per call</p>
                         </div>
+                        <div class="pricing-item">
+                            <h4>MCP Tools</h4>
+                            <p>$0.00082 per 1k tokens (output)</p>
+                            <p style="font-size:0.75rem; color: var(--muted); margin-top:0.25rem;">Minimum charge per request</p>
+                        </div>
                     </div>
                     <p style="font-size:0.875rem; color: var(--muted); margin-top:1rem;">Note: final costs depend on
                         model choice and tool complexity; Nova charges according to metered LLM token usage in real time
-                        from your account.</p>
+                        from your account. MCP tools (market data, price predictions, social insights, etc.) are priced based on output tokens at the same rate as GPT-5-mini ($0.00082 per 1k tokens), with a minimum charge per request.</p>
                 </div>
             </section>
 
@@ -1336,6 +1341,7 @@
 
                 <h3>MCP Tools (Blockchain & Data)</h3>
                 <p>These tools are available through the MCP server and provide blockchain and market data capabilities:</p>
+                <p><strong>Cost:</strong> $0.00082 per 1k tokens (output) — same rate as GPT-5-mini. Pricing is based on output tokens with a minimum charge per request.</p>
 
                 <div class="endpoint-item">
                     <h4>📈 Get Trending Pools</h4>
@@ -1406,7 +1412,7 @@
                         <li><strong>Token News:</strong> Find news mentions related to specific tokens</li>
                         <li><strong>Trending Contracts:</strong> Track contract addresses trending on Twitter/X or Telegram</li>
                     </ul>
-                    <p><strong>Note:</strong> This tool is specifically for social media analytics, not price data or DEX pools. Use GeckoTerminal/DexScreener tools for market data.</p>
+                    <p><strong>Note:</strong> This tool is specifically for social media analytics, not price data or DEX pools. Use GeckoTerminal/DexScreener tools for market data. User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags to avoid confusion in other apps.</p>
                 </div>
 
                 <h3>Bot-Specific Tools</h3>
@@ -1565,7 +1571,7 @@
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-comments"></i> Social Intelligence & Sentiment Analysis</h4>
-                    <p>Integrate crypto social media intelligence into your applications. Track trending tokens on Twitter/X and Telegram, analyze top mentions for any ticker, get smart account statistics, search mentions by keywords, discover trending narratives, and monitor contract addresses trending on social media. Perfect for sentiment analysis platforms, social trading tools, influencer tracking, or market research applications that need to understand crypto community discussions and trends.</p>
+                    <p>Integrate crypto social media intelligence into your applications. Track trending tokens on Twitter/X and Telegram, analyze top mentions for any ticker, get smart account statistics, search mentions by keywords, discover trending narratives, and monitor contract addresses trending on social media. Perfect for sentiment analysis platforms, social trading tools, influencer tracking, or market research applications that need to understand crypto community discussions and trends. User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags.</p>
                 </div>
 
                 <div class="use-case-card">
@@ -1759,8 +1765,9 @@
                     <li><strong>📜 Coindesk History</strong>: Retrieve historical crypto price data.</li>
                     <li><strong>📉 Dexscreener API</strong>: Access comprehensive DEX data via Dexscreener.</li>
                     <li><strong>🔮 Price Predictions</strong>: Get AI-powered cryptocurrency price forecasts. Supports both short-term forecasts (15 minutes, 1 hour, 4 hours) using hybrid ensemble models and long-term forecasts (1 day to 4 years) using Monte Carlo simulations. Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</li>
-                    <li><strong>📱 Social Insights</strong>: Get crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics including trending tokens, top mentions, smart account stats, mentions search, event summaries, trending narratives, token news, and trending contract addresses. Perfect for social sentiment analysis and tracking crypto discussions on social media.</li>
+                    <li><strong>📱 Social Insights</strong>: Get crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics including trending tokens, top mentions, smart account stats, mentions search, event summaries, trending narratives, token news, and trending contract addresses. Perfect for social sentiment analysis and tracking crypto discussions on social media. User profiles are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags.</li>
                 </ul>
+                <p><strong>MCP Tools Pricing:</strong> $0.00082 per 1k tokens (output) — same rate as GPT-5-mini. Pricing is based on output tokens with a minimum charge per request.</p>
 
                 <h2>Example Prompts Using Tools</h2>
                 <p>Here are example prompts you can use with the Nova API to trigger different tools:</p>
@@ -2505,6 +2512,345 @@
                             </tr>
                         </table>
                     </div>
+                </div>
+
+                <div class="endpoint-item">
+                    <div class="endpoint-header">
+                        <span class="endpoint-badge badge-post">POST</span>
+                        <span class="endpoint-path">/mcp-tools</span>
+                    </div>
+                    <p><strong>Call MCP tools directly</strong> - Execute MCP (Model Context Protocol) tools directly without AI. This endpoint allows you to call specific tools by name with custom arguments, bypassing the AI's automatic tool selection. Useful for direct tool execution when you know exactly which tools to call.</p>
+
+                    <h4>Headers</h4>
+                    <div class="table-responsive">
+                        <table class="params-table">
+                            <tr>
+                                <th>Header</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Authorization</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Bearer token with your API key</td>
+                            </tr>
+                            <tr>
+                                <td>Content-Type</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>application/json</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h4>Request Body</h4>
+                    <div class="table-responsive">
+                        <table class="params-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>tools</td>
+                                <td>array[object]</td>
+                                <td class="required">Yes</td>
+                                <td>Array of tool objects to execute. Each tool object must have <code>name</code> (string) and <code>arguments</code> (object) fields.</td>
+                            </tr>
+                            <tr>
+                                <td>tools[].name</td>
+                                <td>string</td>
+                                <td class="required">Yes</td>
+                                <td>Name of the MCP tool to call (e.g., "get_trending_pools", "get_token_price", "get_forecast", "social_intelligence")</td>
+                            </tr>
+                            <tr>
+                                <td>tools[].arguments</td>
+                                <td>object</td>
+                                <td class="required">Yes</td>
+                                <td>JSON object containing the arguments for the tool. Structure depends on the specific tool being called.</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h4>Example Request</h4>
+                    <p>Call a single tool:</p>
+                    <div class="code-block">
+                        <code>
+curl -X POST https://gateway.inferenco.com/mcp-tools \
+  -H "Authorization: Bearer nova_your_api_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tools": [
+      {
+        "name": "get_token_price",
+        "arguments": {
+          "symbol": "BTC",
+          "network": "aptos"
+        }
+      }
+    ]
+  }'
+                        </code>
+                    </div>
+
+                    <p>Call multiple tools:</p>
+                    <div class="code-block">
+                        <code>
+curl -X POST https://gateway.inferenco.com/mcp-tools \
+  -H "Authorization: Bearer nova_your_api_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tools": [
+      {
+        "name": "get_trending_pools",
+        "arguments": {
+          "network": "aptos",
+          "limit": 10
+        }
+      },
+      {
+        "name": "get_token_price",
+        "arguments": {
+          "symbol": "APT",
+          "network": "aptos"
+        }
+      }
+    ]
+  }'
+                        </code>
+                    </div>
+
+                    <p>Example with forecast tool:</p>
+                    <div class="code-block">
+                        <code>
+curl -X POST https://gateway.inferenco.com/mcp-tools \
+  -H "Authorization: Bearer nova_your_api_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tools": [
+      {
+        "name": "get_forecast",
+        "arguments": {
+          "asset_id": "bitcoin",
+          "forecast_type": "short",
+          "duration": "one_hour",
+          "vs_currency": "usd",
+          "include_chart": false
+        }
+      }
+    ]
+  }'
+                        </code>
+                    </div>
+
+                    <p><strong>Note:</strong> For <code>get_forecast</code>, use <code>asset_id</code> (CoinGecko format like "bitcoin", "ethereum", "stohn-coin") not ticker symbols. <code>forecast_type</code> should be "short" or "long". <code>duration</code> for short-term: "fifteen_minutes", "one_hour", "four_hours". For long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
+
+                    <h4>Response</h4>
+                    <p>Returns an array of tool execution results. Each result contains the tool's response content.</p>
+                    <div class="code-block">
+                        <code>
+[
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "Tool execution result here..."
+      }
+    ],
+    "isError": false
+  }
+]
+                        </code>
+                    </div>
+
+                    <h4>Available MCP Tools</h4>
+                    <p>The following MCP tools are available (same tools that can be called automatically via the <code>/ai</code> endpoint):</p>
+                    
+                    <h5>Market Data Tools</h5>
+                    <ul>
+                        <li><strong>get_trending_pools</strong> - Get trending DEX pools on various networks</li>
+                        <li><strong>search_pools</strong> - Search for specific DEX pools</li>
+                        <li><strong>get_new_pools</strong> - Get newly created pools</li>
+                        <li><strong>get_token_price</strong> - Get token price from BitcoinTry exchange</li>
+                        <li><strong>get_fear_and_greed_index</strong> - Get crypto market sentiment index</li>
+                        <li><strong>get_coindesk_history</strong> - Get historical crypto price data</li>
+                        <li><strong>dexscreener_api</strong> - Access Dexscreener DEX data</li>
+                    </ul>
+
+                    <h5>AI & Prediction Tools</h5>
+                    <ul>
+                        <li><strong>get_forecast</strong> - Get AI-powered price predictions</li>
+                        <li><strong>social_intelligence</strong> - Get social media insights and sentiment analysis</li>
+                    </ul>
+
+                    <h5>Utility Tools</h5>
+                    <ul>
+                        <li><strong>calculate_expression</strong> - Evaluate mathematical expressions</li>
+                        <li><strong>get_current_time</strong> - Get current time for any timezone</li>
+                    </ul>
+
+                    <h4>Tool Examples</h4>
+                    
+                    <h5>get_trending_pools</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_trending_pools",
+    "arguments": {
+      "network": "aptos",
+      "limit": 10,
+      "page": 1,
+      "duration": "24h"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>search_pools</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "search_pools",
+    "arguments": {
+      "network": "aptos",
+      "token_symbol": "APT",
+      "limit": 5
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>get_token_price</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_token_price",
+    "arguments": {
+      "symbol": "BTC"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>get_forecast</h5>
+                    <p><strong>Important:</strong> Use CoinGecko asset IDs (e.g., "bitcoin", "ethereum") not ticker symbols. Duration values: short-term: "fifteen_minutes", "one_hour", "four_hours"; long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_forecast",
+    "arguments": {
+      "asset_id": "bitcoin",
+      "forecast_type": "short",
+      "duration": "one_hour",
+      "vs_currency": "usd",
+      "include_chart": false
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>social_intelligence</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "social_intelligence",
+    "arguments": {
+      "operation": "trending_tokens",
+      "time_period": 24,
+      "limit": 10,
+      "min_mentions": 5
+    }
+  }]
+}
+                        </code>
+                    </div>
+                    <p>Other operations: "smart_stats" (requires account), "top_mentions" (requires ticker), "mentions_search" (requires keywords), "event_summary", "trending_narratives", "token_news", "trending_contracts_twitter", "trending_contracts_telegram".</p>
+                    <p><strong>Note:</strong> User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags to avoid confusion in other apps.</p>
+
+                    <h5>get_fear_and_greed_index</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_fear_and_greed_index",
+    "arguments": {}
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>calculate_expression</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "calculate_expression",
+    "arguments": {
+      "expression": "1000 * (1 + 0.08) ^ 5"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>get_current_time</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_current_time",
+    "arguments": {
+      "timezone": "UTC"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>get_coindesk_history</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "get_coindesk_history",
+    "arguments": {
+      "symbol": "BTC",
+      "start_date": "2024-01-01",
+      "end_date": "2024-01-31"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>dexscreener_api</h5>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "dexscreener_api",
+    "arguments": {
+      "operation": "search",
+      "query": "APT/USDC"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <p><strong>Usage:</strong> Use this endpoint when you need to call specific tools directly without AI interpretation. The AI endpoint (<code>/ai</code>) automatically selects and calls appropriate tools based on your prompt, while this endpoint gives you direct control over tool execution.</p>
                 </div>
 
                 <h2>Error Responses</h2>
