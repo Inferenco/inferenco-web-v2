@@ -776,6 +776,16 @@
                             <p>Get AI-powered cryptocurrency price forecasts and market insights.</p>
                         </div>
                         <div class="feature-card">
+                            <span class="emoji">🌐</span>
+                            <h4>Multi chain wallet</h4>
+                            <p>Manage wallets across multiple blockchains including Aptos, Solana, and 20+ EVM chains. Send tokens across networks seamlessly.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="emoji">📱</span>
+                            <h4>Social insights</h4>
+                            <p>Track trending tokens, mentions, and narratives on Twitter/X and Telegram.</p>
+                        </div>
+                        <div class="feature-card">
                             <span class="emoji">🗳️</span>
                             <h4>DAO vote proposals</h4>
                             <p>Guide community direction through on‑chain proposals and voting.</p>
@@ -814,11 +824,6 @@
                             <span class="emoji">🎁</span>
                             <h4>Sponsorships</h4>
                             <p>Let members sponsor access so others can use AI tools.</p>
-                        </div>
-                        <div class="feature-card">
-                            <span class="emoji">📱</span>
-                            <h4>Social insights</h4>
-                            <p>Track trending tokens, mentions, and narratives on Twitter/X and Telegram.</p>
                         </div>
                     </div>
                 </div>
@@ -984,9 +989,8 @@
                 <ul>
                     <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5,
                         GPT-5-mini) with tool-calling capabilities</li>
-                    <li><strong>Blockchain Integration:</strong> Native Aptos blockchain support for transparent
-                        payments and transactions</li>
-                    <li><strong>Multi-Token Support:</strong> Work with APT, USDC, USDT, GUI, and other Aptos tokens
+                    <li><strong>Blockchain Integration:</strong> Multi-chain support across Aptos, Solana, and 20+ EVM-compatible blockchains for transparent payments and transactions</li>
+                    <li><strong>Multi-Token Support:</strong> Work with native tokens and ERC-20 tokens across all supported chains (APT, USDC, USDT, GUI, ETH, and more)
                     </li>
                     <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX
                         data, price predictions, and more</li>
@@ -1001,6 +1005,7 @@
                     <li><strong>Scheduled Payments:</strong> Automate moderator or community manager remuneration</li>
                     <li><strong>Automatic Bot Answers:</strong> Engage members with instant responses and helpful prompts</li>
                     <li><strong>Sponsorships:</strong> Let members sponsor access so others can use AI tools</li>
+                    <li><strong>Multi-Chain Wallet Support:</strong> Manage wallets across Aptos, Solana, and 20+ EVM-compatible blockchains. Send tokens seamlessly across different networks with automatic gas handling</li>
                 </ul>
 
                 <h2>Getting Started with Nova Bot</h2>
@@ -1095,6 +1100,11 @@
                 <div class="endpoint-item">
                     <h4><code>/groupbalance</code> [symbol]</h4>
                     <p>Get the group's balance of a token. If no symbol is provided, shows the group's full portfolio snapshot.</p>
+                </div>
+
+                <div class="endpoint-item">
+                    <h4><code>/supportedchains</code></h4>
+                    <p>List all supported EVM blockchain mainnets. Use this command to see which chains you can deposit tokens to.</p>
                 </div>
 
                 <h2>Settings Commands</h2>
@@ -1439,6 +1449,13 @@
                 </div>
 
                 <div class="endpoint-item">
+                    <h4>🌐 Multi-Chain Wallet</h4>
+                    <p>Nova supports wallets across multiple blockchains including Aptos, Solana, and 20+ EVM-compatible chains (Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, and more). You can send tokens to users on different blockchains.</p>
+                    <p><strong>Supported Chains:</strong> Use <code>/supportedchains</code> to see all supported EVM blockchain mainnets.</p>
+                    <p><strong>Important:</strong> To send tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you must have native tokens (e.g., ETH for Ethereum, SOL for Solana) in your wallet to pay for gas fees. Aptos is the exception—you can send tokens on Aptos without needing APT for gas. Make sure to deposit native tokens before attempting to send tokens on EVM chains or Solana.</p>
+                </div>
+
+                <div class="endpoint-item">
                     <h4>💱 Pay Users</h4>
                     <p>Send tokens to multiple Telegram users by username. Available for both <code>/c</code> and <code>/g</code>.</p>
                 </div>
@@ -1479,11 +1496,18 @@
                 <div class="code-block"><code>/c Show my balance</code></div>
                 <div class="code-block"><code>/c Check my APT balance</code></div>
                 <div class="code-block"><code>/c How much do I have in USDC?</code></div>
+                <div class="code-block"><code>/c Show my balance on Ethereum</code></div>
+                <div class="code-block"><code>/c What's my wallet address on Arbitrum?</code></div>
+                <div class="code-block"><code>/c Check my USDC balance on Base</code></div>
 
                 <h3>Transaction Examples</h3>
                 <div class="code-block"><code>/c Send 10 APT to @username</code></div>
+                <div class="code-block"><code>/c Send 0.1 ETH to @username on Ethereum</code></div>
+                <div class="code-block"><code>/c Send 50 USDC to @user1 on Arbitrum</code></div>
+                <div class="code-block"><code>/c Send 100 USDT to @user2 on Base network</code></div>
                 <div class="code-block"><code>/c Withdraw 5 USDC</code></div>
                 <div class="code-block"><code>/c Fund my account with 100 APT</code></div>
+                <p><strong>Note:</strong> When sending tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you need native tokens (ETH, SOL, etc.) in your wallet to pay for gas fees. Aptos is the exception—you can send tokens on Aptos without needing APT for gas. The AI will automatically use the correct chain based on your request.</p>
 
                 <h3>Market Data Examples</h3>
                 <div class="code-block"><code>/c What's the current price of Bitcoin?</code></div>
@@ -1512,6 +1536,9 @@
                 <div class="code-block"><code>/g Create a DAO proposal to vote on adding a new moderator</code></div>
                 <div class="code-block"><code>/g What have we discussed recently in this group?</code></div>
                 <div class="code-block"><code>/g Send 50 APT to @user1, @user2, and @user3</code></div>
+                <div class="code-block"><code>/g Send 0.05 ETH to @moderator1 on Ethereum</code></div>
+                <div class="code-block"><code>/g Send 100 USDC to @member1, @member2 on Arbitrum</code></div>
+                <p><strong>Note for Group Admins:</strong> When sending tokens to group members on EVM chains or Solana, ensure the group wallet has native tokens (ETH, SOL, etc.) to cover gas fees. Aptos is the exception—you can send tokens on Aptos without needing APT for gas. The AI will automatically handle multi-chain transactions.</p>
 
                 <h3>Image Generation Examples</h3>
                 <div class="code-block"><code>/c Generate an image of a futuristic city with flying cars</code></div>
