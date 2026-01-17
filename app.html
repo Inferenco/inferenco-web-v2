@@ -549,13 +549,13 @@
                     target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-telegram"></i>
                 </a>
-                <a href="https://bsky.app/profile/inferenco.bsky.social" class="social-link"
-                    aria-label="Follow Inferenco on Bluesky" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-bluesky"></i>
-                </a>
                 <a href="https://mastodon.social/@inferenco" class="social-link"
-                    aria-label="Follow Inferenco on Mastodon" target="_blank" rel="noopener noreferrer">
+                    aria-label="Follow Inferenco on Mastodon" target="_blank" rel="me noopener noreferrer">
                     <i class="fab fa-mastodon"></i>
+                </a>
+                <a href="https://fountain.ink/u/inferenco" class="social-link"
+                    aria-label="Follow Inferenco on Fountain Ink" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/logos/fountain.svg" alt="Fountain" style="width: 1.5em; height: 1.5em; vertical-align: middle;">
                 </a>
                 <a href="https://farcaster.xyz/inferenco" class="social-link"
                     aria-label="Follow Inferenco on Farcaster" target="_blank" rel="noopener noreferrer">
@@ -569,9 +569,9 @@
                     aria-label="Follow Inferenco on Hey" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/hey.png" alt="Hey" style="width: 1em; height: 1em; vertical-align: middle;">
                 </a>
-                <a href="https://fountain.ink/u/inferenco" class="social-link"
-                    aria-label="Follow Inferenco on Fountain Ink" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/fountain.svg" alt="Fountain" style="width: 1.5em; height: 1.5em; vertical-align: middle;">
+                <a href="https://bsky.app/profile/inferenco.bsky.social" class="social-link"
+                    aria-label="Follow Inferenco on Bluesky" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-bluesky"></i>
                 </a>
                 <a href="https://www.lensforum.xyz/communities/0xF9Ae41ad49a5F240B8849Cd5f7c9BdeE6EB4b60a"
                     class="social-link" aria-label="Get support in Nova community in Lensforum" target="_blank"
@@ -600,13 +600,13 @@
                 rel="noopener noreferrer">
                 <i class="fab fa-telegram"></i>
             </a>
-            <a href="https://bsky.app/profile/inferenco.bsky.social" class="social-link"
-                aria-label="Follow Inferenco on Bluesky" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-bluesky"></i>
-            </a>
             <a href="https://mastodon.social/@inferenco" class="social-link"
-                aria-label="Follow Inferenco on Mastodon" target="_blank" rel="noopener noreferrer">
+                aria-label="Follow Inferenco on Mastodon" target="_blank" rel="me noopener noreferrer">
                 <i class="fab fa-mastodon"></i>
+            </a>
+            <a href="https://fountain.ink/u/inferenco" class="social-link" aria-label="Follow Inferenco on Fountain Ink"
+                target="_blank" rel="noopener noreferrer">
+                <img src="assets/logos/fountain.svg" alt="Fountain" style="width: 1.5em; height: 1.5em; vertical-align: middle;">
             </a>
             <a href="https://farcaster.xyz/inferenco" class="social-link"
                 aria-label="Follow Inferenco on Farcaster" target="_blank" rel="noopener noreferrer">
@@ -620,9 +620,9 @@
                 aria-label="Follow Inferenco on Hey" target="_blank" rel="noopener noreferrer">
                 <img src="assets/logos/hey.png" alt="Hey" style="width: 1em; height: 1em; vertical-align: middle;">
             </a>
-            <a href="https://fountain.ink/u/inferenco" class="social-link" aria-label="Follow Inferenco on Fountain Ink"
-                target="_blank" rel="noopener noreferrer">
-                <img src="assets/logos/fountain.svg" alt="Fountain" style="width: 1.5em; height: 1.5em; vertical-align: middle;">
+            <a href="https://bsky.app/profile/inferenco.bsky.social" class="social-link"
+                aria-label="Follow Inferenco on Bluesky" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-bluesky"></i>
             </a>
             <a href="https://www.lensforum.xyz/communities/0xF9Ae41ad49a5F240B8849Cd5f7c9BdeE6EB4b60a"
                 class="social-link" aria-label="Get support in Nova community in Lensforum" target="_blank"
@@ -1010,6 +1010,7 @@
                     </li>
                     <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX
                         data, price predictions, and more</li>
+                    <li><strong>Automated Reports:</strong> Generate automated crypto intelligence reports powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Pond3r</a> to track market trends, analyze token opportunities, and discover yield farming opportunities</li>
                     <li><strong>Image Generation:</strong> AI-powered image creation capabilities</li>
                     <li><strong>Conversation Management:</strong> Automatic summarization for long conversations
                     </li>
@@ -1441,6 +1442,11 @@
                     <p><strong>Note:</strong> This tool is specifically for social media analytics, not price data or DEX pools. Use GeckoTerminal/DexScreener tools for market data. User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags to avoid confusion in other apps.</p>
                 </div>
 
+                <div class="endpoint-item">
+                    <h4>📊 Automated Reports</h4>
+                    <p>Generate automated, intelligent crypto intelligence reports. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities. Reports are available in both Markdown (human-readable) and JSON (machine-readable) formats. Supports creating reports, listing executions, getting report content, and managing report lifecycle. Use natural language prompts to describe what you want tracked (e.g., "I want to create report of daily yield farming across Aave, Compound, and Convex protocols").</p>
+                </div>
+
                 <h3>Bot-Specific Tools</h3>
                 <p>These tools are specific to Nova Bot functionality:</p>
 
@@ -1490,7 +1496,7 @@
                 <p>When using <code>/c</code> or <code>/prompt</code> in a private chat, the AI can use:</p>
                 <ul>
                     <li>All built-in tools (Image Generation, Web Search, File Search)</li>
-                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Social Insights)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Social Insights, Automated Reports)</li>
                     <li>User-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users)</li>
                     <li>Your personal document library (uploaded via User Settings > Document Library)</li>
                 </ul>
@@ -1499,7 +1505,7 @@
                 <p>When using <code>/g</code> in a group chat (admin only), the AI can use:</p>
                 <ul>
                     <li>All built-in tools (Image Generation, Web Search, File Search)</li>
-                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Social Insights)</li>
+                    <li>All MCP tools (Trending Pools, Search Pools, Token Price, Fear & Greed Index, Calculator, Current Time, Coindesk History, Dexscreener API, Price Predictions, Social Insights, Automated Reports)</li>
                     <li>Group-specific bot tools (Get Balance, Get Wallet Address, Fund Account, Withdraw Funds, Pay Users, Create Proposal, Get Recent Messages)</li>
                     <li>Group document library (uploaded via Group Settings > Group Document Library)</li>
                 </ul>
@@ -1548,6 +1554,16 @@
                 <div class="code-block"><code>/c Find trending contract addresses on Telegram</code></div>
                 <div class="code-block"><code>/c Get an event summary about "Bitcoin halving" from social media</code></div>
 
+                <h3>Automated Reports Examples</h3>
+                <div class="code-block"><code>/c I want to create report of daily yield farming across Aave, Compound, and Convex protocols</code></div>
+                <div class="code-block"><code>/c List all my reports</code></div>
+                <div class="code-block"><code>/c What's the status of report 77d51445-4146-4ab4-bf5b-5e69bffe462c?</code></div>
+                <div class="code-block"><code>/c Get the latest content for report 77d51445-4146-4ab4-bf5b-5e69bffe462c</code></div>
+                <div class="code-block"><code>/c Show me all executions for report 77d51445-4146-4ab4-bf5b-5e69bffe462c</code></div>
+                <div class="code-block"><code>/c Analyze the evolution of report 77d51445-4146-4ab4-bf5b-5e69bffe462c</code></div>
+                <div class="code-block"><code>/c Show me available datasets for creating reports</code></div>
+                <div class="code-block"><code>/c Discover public reports about DeFi yield farming</code></div>
+
                 <h3>DAO & Group Examples (for <code>/g</code>)</h3>
                 <div class="code-block"><code>/g Create a DAO proposal to vote on adding a new moderator</code></div>
                 <div class="code-block"><code>/g What have we discussed recently in this group?</code></div>
@@ -1586,7 +1602,7 @@
                     <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
                     <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
                     <li><strong>AI Model Access:</strong> Programmatic access to advanced language models (GPT-5, GPT-5-mini) with configurable parameters (verbosity, reasoning mode, token limits)</li>
-                    <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, social intelligence, image generation, web search, and more</li>
+                    <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, social intelligence, automated reports, image generation, web search, and more</li>
                     <li><strong>Knowledge Base Integration (RAG):</strong> Upload documents to your API key's vector store for context-aware responses. The API automatically searches your knowledge base when relevant</li>
                     <li><strong>Streaming Responses:</strong> Support for Server-Sent Events (SSE) for real-time streaming of AI responses</li>
                     <li><strong>Custom Configuration:</strong> Configure custom prompts, tool permissions, token limits, and payment currencies per API key</li>
@@ -1604,7 +1620,12 @@
 
                 <div class="use-case-card">
                     <h4><i class="fas fa-chart-line"></i> Trading & DeFi Platforms</h4>
-                    <p>Access real-time cryptocurrency market data through AI prompts that automatically call tools like trending pools, DEX pool search, token prices, price predictions, Fear & Greed Index, social intelligence, and historical price data. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools that need intelligent market analysis combined with social sentiment.</p>
+                    <p>Access real-time cryptocurrency market data through AI prompts that automatically call tools like trending pools, DEX pool search, token prices, price predictions, Fear & Greed Index, social intelligence, automated reports, and historical price data. Perfect for building trading dashboards, portfolio trackers, or DeFi analytics tools that need intelligent market analysis combined with social sentiment.</p>
+                </div>
+
+                <div class="use-case-card">
+                    <h4><i class="fas fa-file-alt"></i> Automated Crypto Intelligence Reports</h4>
+                    <p>Integrate automated crypto intelligence reports into your applications using Nova's reports tool powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Pond3r</a>. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities. Reports are available in both Markdown (human-readable) and JSON (machine-readable) formats, perfect for dashboards, analytics platforms, or automated monitoring systems. Ideal for DeFi analytics, protocol monitoring, yield optimization, and market intelligence applications.</p>
                 </div>
 
                 <div class="use-case-card">
@@ -1809,6 +1830,7 @@
                     <li><strong>📉 Dexscreener API</strong>: Access comprehensive DEX data via Dexscreener.</li>
                     <li><strong>🔮 Price Predictions</strong>: Get AI-powered cryptocurrency price forecasts. Supports both short-term forecasts (15 minutes, 1 hour, 4 hours) using hybrid ensemble models and long-term forecasts (1 day to 4 years) using Monte Carlo simulations. Returns expected price, confidence level, and optionally historical OHLC chart data for visualization.</li>
                     <li><strong>📱 Social Insights</strong>: Get crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics including trending tokens, top mentions, smart account stats, mentions search, event summaries, trending narratives, token news, and trending contract addresses. Perfect for social sentiment analysis and tracking crypto discussions on social media. User profiles are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags.</li>
+                    <li><strong>📊 Automated Reports</strong>: Generate automated, intelligent crypto intelligence reports. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities. Reports are available in both Markdown (human-readable) and JSON (machine-readable) formats. Supports creating reports, listing executions, getting report content, and managing report lifecycle. Use natural language prompts to describe what you want tracked (e.g., "I want to create report of daily yield farming across Aave, Compound, and Convex protocols").</li>
                 </ul>
                 <p><strong>MCP Tools Pricing:</strong> $0.00082 per 1k tokens (output) — same rate as GPT-5-mini. Pricing is based on output tokens with a minimum charge per request.</p>
 
@@ -2009,7 +2031,53 @@
 }</code>
                 </div>
 
+                <h3>Automated Reports Examples</h3>
+                <div class="code-block">
+                    <code>
+{
+  "input": "I want to create report of daily yield farming across Aave, Compound, and Convex protocols",
+  "model": "gpt-5",
+  "verbosity": "Medium",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "List all my reports",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 1000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Get the latest content for report 77d51445-4146-4ab4-bf5b-5e69bffe462c",
+  "model": "gpt-5-mini",
+  "verbosity": "Medium",
+  "max_tokens": 2000,
+  "reasoning": false
+}</code>
+                </div>
+
+                <div class="code-block">
+                    <code>
+{
+  "input": "Show me available datasets for creating reports",
+  "model": "gpt-5-mini",
+  "verbosity": "Low",
+  "max_tokens": 1000,
+  "reasoning": false
+}</code>
+                </div>
+
                 <p><strong>Note:</strong> The AI will automatically select and use the appropriate tools based on your input. You don't need to specify which tools to use - just describe what you want, and the AI will handle the rest!</p>
+                <p><strong>Reports Tool:</strong> You can create reports, list executions, get report content, and manage reports through natural language prompts. Reports can be scheduled to run daily, weekly, monthly, or on-demand, and are available in both Markdown and JSON formats.</p>
             </section>
 
             <!-- Add Knowledge Section -->
@@ -2727,6 +2795,7 @@ curl -X POST https://gateway.inferenco.com/mcp-tools \
                     <ul>
                         <li><strong>get_forecast</strong> - Get AI-powered price predictions</li>
                         <li><strong>social_intelligence</strong> - Get social media insights and sentiment analysis</li>
+                        <li><strong>manage_reports</strong> - Generate automated crypto intelligence reports. Create, list, and manage scheduled reports that analyze blockchain data</li>
                     </ul>
 
                     <h5>Utility Tools</h5>
@@ -2887,6 +2956,57 @@ curl -X POST https://gateway.inferenco.com/mcp-tools \
     "arguments": {
       "operation": "search",
       "query": "APT/USDC"
+    }
+  }]
+}
+                        </code>
+                    </div>
+
+                    <h5>manage_reports</h5>
+                    <p><strong>Note:</strong> Available actions: "create", "list", "list_by_ref", "status", "datasets", "discover", "list_executions", "get_content", "get_latest_content", "get_all_executions_content", "delete".</p>
+                    <p>Create a report:</p>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "manage_reports",
+    "arguments": {
+      "action": "create",
+      "prompt": "I want to create report of daily yield farming across Aave, Compound, and Convex protocols",
+      "dataset_id": "d2b06dec-fdea-44dc-8e1a-09168a24c496",
+      "schedule_frequency": "daily",
+      "delivery_api_retention": true
+    }
+  }]
+}
+                        </code>
+                    </div>
+                    <p>Get latest report content:</p>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "manage_reports",
+    "arguments": {
+      "action": "get_latest_content",
+      "report_id": "77d51445-4146-4ab4-bf5b-5e69bffe462c",
+      "format": "markdown"
+    }
+  }]
+}
+                        </code>
+                    </div>
+                    <p>List all executions with content:</p>
+                    <div class="code-block">
+                        <code>
+{
+  "tools": [{
+    "name": "manage_reports",
+    "arguments": {
+      "action": "get_all_executions_content",
+      "report_id": "77d51445-4146-4ab4-bf5b-5e69bffe462c",
+      "format": "markdown",
+      "limit": 10
     }
   }]
 }
