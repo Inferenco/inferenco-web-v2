@@ -175,4 +175,4 @@ For detailed design specifications, component documentation, and design decision
 
 ## 📄 License
 
-© 2025 Inferenco. All rights reserved.
+© 2026 Inferenco. All rights reserved.
