@@ -26,6 +26,12 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Configure git
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: pnpm run deploy
