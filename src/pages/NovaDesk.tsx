@@ -35,7 +35,11 @@ const getDownloadUrl = (os: OS): string => {
 export default function NovaDesk() {
   const detectedOS = detectOS();
   const downloadUrl = getDownloadUrl(detectedOS);
-  const showAllButtons = detectedOS === "unknown" || detectedOS === "mac";
+  const isUnknownOS = detectedOS === "unknown";
+  const isMacOS = detectedOS === "mac";
+  const showAllButtons = isUnknownOS || isMacOS;
+  
+  const shouldShow = (os: OS): boolean => detectedOS === os || showAllButtons;
 
   return (
     <div id="nova-desk-page" className="page-section">
@@ -59,9 +63,9 @@ export default function NovaDesk() {
             connect to dApps, and securely store your crypto with advanced security features.
           </p>
           <div className="download-buttons">
-            {(showAllButtons || detectedOS === "windows") && (
+            {shouldShow("windows") && (
               <a
-                href={detectedOS === "windows" ? downloadUrl : "https://github.com/Inferenco/nova-desk-releases/releases/download/v0.1.1/NovaDesk-Windows-x64.exe"}
+                href={downloadUrl}
                 className="cta-button"
                 aria-label="Download for Windows"
                 target="_blank"
@@ -70,7 +74,7 @@ export default function NovaDesk() {
                 <i className="fab fa-windows"></i> Windows
               </a>
             )}
-            {(showAllButtons || detectedOS === "mac") && (
+            {shouldShow("mac") && (
               <span
                 className="cta-button disabled"
                 aria-label="macOS coming soon"
@@ -79,9 +83,9 @@ export default function NovaDesk() {
                 <i className="fab fa-apple"></i> macOS (Coming Soon)
               </span>
             )}
-            {(showAllButtons || detectedOS === "linux") && (
+            {shouldShow("linux") && (
               <a
-                href={detectedOS === "linux" ? downloadUrl : "https://github.com/Inferenco/nova-desk-releases/releases/download/v0.1.1/NovaDesk-x86_64.AppImage"}
+                href={downloadUrl}
                 className="cta-button"
                 aria-label="Download for Linux x64"
                 target="_blank"
@@ -90,9 +94,9 @@ export default function NovaDesk() {
                 <i className="fab fa-linux"></i> Linux x64
               </a>
             )}
-            {(showAllButtons || detectedOS === "linux-arm64") && (
+            {shouldShow("linux-arm64") && (
               <a
-                href={detectedOS === "linux-arm64" ? downloadUrl : "https://github.com/Inferenco/nova-desk-releases/releases/download/v0.1.1/NovaDesk-aarch64.AppImage"}
+                href={downloadUrl}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
                 target="_blank"
