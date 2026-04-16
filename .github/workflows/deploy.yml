@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v4
 
@@ -26,14 +30,9 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Configure git
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Deploy
         if: github.ref == 'refs/heads/main'
-        run: pnpm run deploy
-        env:
-          GH_TOKEN: ${{ secrets.WEB_UPDATE_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.WEB_UPDATE_TOKEN }}
+          publish_dir: ./dist
