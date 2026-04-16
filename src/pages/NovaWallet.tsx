@@ -8,10 +8,10 @@ export default function NovaWallet() {
               src="assets/images/nova-wallet.png"
               alt="Nova Wallet logo"
               style={{
-                width: "200px",
+                width: "140px",
                 maxWidth: "100%",
-                borderRadius: "30px",
-                boxShadow: "0 4px 12px rgba(0, 178, 255, 0.3)",
+                borderRadius: "40px",
+                boxShadow: "0 8px 24px rgba(0, 178, 255, 0.35)",
               }}
             />
           </div>

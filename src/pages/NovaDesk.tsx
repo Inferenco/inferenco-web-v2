@@ -47,13 +47,13 @@ export default function NovaDesk() {
         <div className="hero-content">
           <div className="nova-logo-container" style={{ marginBottom: "2rem" }}>
             <img
-              src="assets/images/nova-desk.png"
+              src="assets/logos/nova.png"
               alt="Nova Desk logo"
               style={{
-                width: "200px",
+                width: "180px",
                 maxWidth: "100%",
-                borderRadius: "30px",
-                boxShadow: "0 4px 12px rgba(0, 178, 255, 0.3)",
+                borderRadius: "16px",
+                boxShadow: "0 4px 20px rgba(0, 178, 255, 0.4)",
               }}
             />
           </div>
