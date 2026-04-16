@@ -36,3 +36,4 @@ jobs:
         with:
           personal_token: ${{ secrets.WEB_UPDATE_TOKEN }}
           publish_dir: ./dist
+          cname: inferenco.com
