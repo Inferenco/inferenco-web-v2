@@ -34,12 +34,17 @@ const getDownloadUrl = (os: OS): string => {
 
 export default function NovaDesk() {
   const detectedOS = detectOS();
-  const downloadUrl = getDownloadUrl(detectedOS);
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac";
   const showAllButtons = isUnknownOS || isMacOS;
   
-  const shouldShow = (os: OS): boolean => detectedOS === os || showAllButtons;
+  // On Linux, always show both x64 and ARM64 buttons since we can't reliably
+  // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
+  // even when running on ARM64 hardware)
+  const shouldShow = (os: OS): boolean => {
+    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64")) return true;
+    return detectedOS === os || showAllButtons;
+  };
 
   return (
     <div id="nova-desk-page" className="page-section">
@@ -65,7 +70,7 @@ export default function NovaDesk() {
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a
-                href={downloadUrl}
+                href={getDownloadUrl("windows")}
                 className="cta-button"
                 aria-label="Download for Windows"
                 target="_blank"
@@ -85,7 +90,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux") && (
               <a
-                href={downloadUrl}
+                href={getDownloadUrl("linux")}
                 className="cta-button"
                 aria-label="Download for Linux x64"
                 target="_blank"
@@ -96,7 +101,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux-arm64") && (
               <a
-                href={downloadUrl}
+                href={getDownloadUrl("linux-arm64")}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
                 target="_blank"
