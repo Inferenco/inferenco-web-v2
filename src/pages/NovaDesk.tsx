@@ -1,4 +1,5 @@
-type OS = "windows" | "mac" | "linux" | "linux-arm64" | "unknown";
+import { useEffect, useState } from "react";
+import { getDownloadUrl, getLatestReleaseVersion, type OS } from "../services/github";
 
 const detectOS = (): OS => {
   if (typeof navigator === "undefined") return "unknown";
@@ -16,28 +17,17 @@ const detectOS = (): OS => {
   return "unknown";
 };
 
-const getDownloadUrl = (os: OS): string => {
-  const base = "https://github.com/Inferenco/nova-desk-releases/releases/download/v0.1.1";
-  switch (os) {
-    case "windows":
-      return `${base}/NovaDesk-Windows-x64.exe`;
-    case "linux":
-      return `${base}/NovaDesk-x86_64.AppImage`;
-    case "linux-arm64":
-      return `${base}/NovaDesk-aarch64.AppImage`;
-    case "mac":
-    case "unknown":
-    default:
-      return "https://github.com/Inferenco/nova-desk-releases/releases/latest";
-  }
-};
-
 export default function NovaDesk() {
+  const [version, setVersion] = useState<string>("v0.1.1");
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac";
   const showAllButtons = isUnknownOS || isMacOS;
-  
+
+  useEffect(() => {
+    getLatestReleaseVersion().then(setVersion);
+  }, []);
+
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
   // even when running on ARM64 hardware)
@@ -70,7 +60,7 @@ export default function NovaDesk() {
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a
-                href={getDownloadUrl("windows")}
+                href={getDownloadUrl("windows", version)}
                 className="cta-button"
                 aria-label="Download for Windows"
                 target="_blank"
@@ -90,7 +80,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux") && (
               <a
-                href={getDownloadUrl("linux")}
+                href={getDownloadUrl("linux", version)}
                 className="cta-button"
                 aria-label="Download for Linux x64"
                 target="_blank"
@@ -101,7 +91,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux-arm64") && (
               <a
-                href={getDownloadUrl("linux-arm64")}
+                href={getDownloadUrl("linux-arm64", version)}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
                 target="_blank"
@@ -135,14 +125,6 @@ export default function NovaDesk() {
               </p>
             </div>
             <div className="feature-card">
-              <span className="emoji">🌐</span>
-              <h4>dApp Browser</h4>
-              <p>
-                Built-in DApp browser with WalletConnect support. Connect to the
-                decentralized web directly from the desktop app.
-              </p>
-            </div>
-            <div className="feature-card">
               <span className="emoji">🔄</span>
               <h4>Auto Updates</h4>
               <p>
@@ -164,6 +146,38 @@ export default function NovaDesk() {
               <p>
                 Comprehensive security logging for all operations. Track all wallet
                 activity for security monitoring.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔗</span>
+              <h4>Nova Connect Integration</h4>
+              <p>
+                Use your favorite browser or the internal browser with Nova Connect.
+                Seamlessly connect external browsers to Nova Desk for dApp access.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💾</span>
+              <h4>External Device Storage</h4>
+              <p>
+                Store encryption keys on external devices (hard disks, micro SD, USB)
+                without requiring expensive hardware wallets.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🎨</span>
+              <h4>Dark &amp; Light Themes</h4>
+              <p>
+                Choose between dark and light themes for comfortable usage
+                in any lighting condition.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📤</span>
+              <h4>System Tray Integration</h4>
+              <p>
+                Access your wallet quickly from the system tray. Nova Desk
+                stays available while you work.
               </p>
             </div>
           </div>
@@ -202,6 +216,27 @@ export default function NovaDesk() {
                 Separate encrypted storage per account for enhanced privacy.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="nova-desk-developers" className="section">
+        <div className="container">
+          <h2 className="section-title">For Developers</h2>
+          <div className="developer-content">
+            <p>
+              Want to integrate Nova Desk with your dApp? Check out our{" "}
+              <a href="/docs#nova-connect-introduction">
+                Nova Connect documentation
+              </a>{" "}
+              for browser integration and API details.
+            </p>
+            <a
+              href="/docs#nova-connect-introduction"
+              className="cta-button secondary"
+            >
+              View Documentation
+            </a>
           </div>
         </div>
       </section>
