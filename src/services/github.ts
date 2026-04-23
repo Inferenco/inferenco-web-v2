@@ -12,7 +12,7 @@ export const getLatestReleaseVersion = async (): Promise<string> => {
     return data.tag_name as string;
   } catch (error) {
     console.error("Failed to fetch latest version:", error);
-    return "v0.1.1"; // Fallback
+    return "v0.2.0"; // Fallback
   }
 };
 
