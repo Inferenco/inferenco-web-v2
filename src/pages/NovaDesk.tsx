@@ -18,7 +18,7 @@ const detectOS = (): OS => {
 };
 
 export default function NovaDesk() {
-  const [version, setVersion] = useState<string>("v0.1.1");
+  const [version, setVersion] = useState<string>("v0.2.0");
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac";
