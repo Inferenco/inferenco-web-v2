@@ -4,14 +4,14 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
       <div id="nova-bot-introduction" className={`docs-section ${hash === "nova-bot-introduction" ? "active" : ""}`}>
         <h1>Nova Bot - Introduction</h1>
 
-        <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Aptos. Nova provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
+        <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Cedra Network. Nova provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
 
         <h2>What is Nova Bot?</h2>
         <p>Nova Bot combines cutting-edge AI technology with blockchain transparency to deliver:</p>
         <ul>
           <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5, GPT-5-mini) with tool-calling capabilities</li>
-          <li><strong>Blockchain Integration:</strong> Multi-chain support across Aptos, Solana, and 20+ EVM-compatible blockchains for transparent payments and transactions</li>
-          <li><strong>Multi-Token Support:</strong> Work with native tokens and ERC-20 tokens across all supported chains (APT, USDC, USDT, GUI, ETH, and more)</li>
+          <li><strong>Blockchain Integration:</strong> Multi-chain support across Cedra Network, Aptos, Solana, and 20+ EVM-compatible blockchains for transparent payments and transactions</li>
+          <li><strong>Multi-Token Support:</strong> Work with native tokens and ERC-20 tokens across all supported chains (CEDRA, USDC, USDT, ETH, and more)</li>
           <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX data, price predictions, and more</li>
           <li><strong>Automated Reports:</strong> Generate automated crypto intelligence reports powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)" }}>Pond3r</a> to track market trends, analyze token opportunities, and discover yield farming opportunities</li>
           <li><strong>Image Generation:</strong> AI-powered image creation capabilities</li>
@@ -24,7 +24,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
           <li><strong>Scheduled Payments:</strong> Automate moderator or community manager remuneration</li>
           <li><strong>Automatic Bot Answers:</strong> Engage members with instant responses and helpful prompts</li>
           <li><strong>Sponsorships:</strong> Let members sponsor access so others can use AI tools</li>
-          <li><strong>Multi-Chain Wallet Support:</strong> Manage wallets across Aptos, Solana, and 20+ EVM-compatible blockchains. Send tokens seamlessly across different networks with automatic gas handling</li>
+          <li><strong>Multi-Chain Wallet Support:</strong> Manage wallets across Cedra Network, Aptos, Solana, and 20+ EVM-compatible blockchains. Send tokens seamlessly across different networks with automatic gas handling</li>
         </ul>
 
         <h2>Getting Started with Nova Bot</h2>
@@ -34,7 +34,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
           <li>Click "Start" to begin</li>
           <li>Send <code>/loginuser</code> to authenticate</li>
           <li>Get your wallet address with <code>/walletaddress</code></li>
-          <li>Fund your account with APT, USDC, USDT, or GUI tokens</li>
+          <li>Fund your account with CEDRA</li>
           <li>Start using commands like <code>/c</code> for personal AI chat or <code>/g</code> for group AI chat</li>
         </ol>
 
@@ -58,8 +58,8 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </div>
 
         <div className="endpoint-item">
-          <h4><code>/aptosconnect</code></h4>
-          <p>Open the Aptos Connect app for wallet connection.</p>
+          <h4><code>/novaconnect</code></h4>
+          <p>Import the Nova Desk public key</p>
         </div>
 
         <div className="endpoint-item">
@@ -88,7 +88,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <div className="endpoint-item">
           <h4><code>/g</code></h4>
           <p>Prompt to chat with AI in a group. Only group admins can use this command. The AI will respond in the group chat.</p>
-          <p><strong>Example:</strong> <code>/g Show trending pools on Aptos</code></p>
+          <p><strong>Example:</strong> <code>/g Show trending pools on Cedra Network</code></p>
         </div>
 
         <div className="endpoint-item">
@@ -105,7 +105,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <div className="endpoint-item">
           <h4><code>/balance</code> [symbol]</h4>
           <p>Get your balance of a token. If no symbol is provided, shows your full portfolio snapshot.</p>
-          <p><strong>Example:</strong> <code>/balance APT</code> or <code>/balance</code> for full portfolio</p>
+          <p><strong>Example:</strong> <code>/balance CEDRA</code> or <code>/balance</code> for full portfolio</p>
         </div>
 
         <div className="endpoint-item">
@@ -201,7 +201,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Payment Settings</h4>
-          <p>Configure your preferred payment token and currency. Choose from: APT, USDC, USDT, or GUI.</p>
+          <p>Configure your preferred payment token and currency. Choose from: CEDRA or EURC.</p>
         </div>
 
         <div className="endpoint-item">
@@ -226,7 +226,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Payment Settings</h4>
-          <p>Configure the group's preferred payment token and currency. Same options as user settings (APT, USDC, USDT, GUI).</p>
+          <p>Configure the group's preferred payment token and currency. Same options as user settings (CEDRA or EURC).</p>
         </div>
 
         <div className="endpoint-item">
@@ -300,7 +300,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Get Trending Pools</h4>
-          <p>Fetch top trending DEX pools on networks like Aptos, Solana, Ethereum, BSC, Polygon, Avalanche, Fantom, Cronos, Arbitrum, Base, etc.</p>
+          <p>Fetch top trending DEX pools on networks like Cedra Network, Aptos, Solana, Ethereum, BSC, Polygon, Avalanche, Fantom, Cronos, Arbitrum, Base, etc.</p>
         </div>
 
         <div className="endpoint-item">
@@ -400,9 +400,9 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Multi-Chain Wallet</h4>
-          <p>Nova supports wallets across multiple blockchains including Aptos, Solana, and 20+ EVM-compatible chains (Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, and more). You can send tokens to users on different blockchains.</p>
+          <p>Nova supports wallets across multiple blockchains including Cedra Network, Aptos, Solana, and 20+ EVM-compatible chains (Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, and more). You can send tokens to users on different blockchains.</p>
           <p><strong>Supported Chains:</strong> Use <code>/supportedchains</code> to see all supported EVM blockchain mainnets.</p>
-          <p><strong>Important:</strong> To send tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you must have native tokens (e.g., ETH for Ethereum, SOL for Solana) in your wallet to pay for gas fees. Aptos is the exception—you can send tokens on Aptos without needing APT for gas.</p>
+          <p><strong>Important:</strong> To send tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you must have native tokens (e.g., ETH for Ethereum, SOL for Solana) in your wallet to pay for gas fees. Cedra Network is the exception—you can send tokens on Cedra Network without needing CEDRA for gas.</p>
         </div>
 
         <div className="endpoint-item">
@@ -444,32 +444,32 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <h3>Wallet & Balance Examples</h3>
         <div className="code-block"><code>/c What's my wallet address?</code></div>
         <div className="code-block"><code>/c Show my balance</code></div>
-        <div className="code-block"><code>/c Check my APT balance</code></div>
+        <div className="code-block"><code>/c Check my CEDRA balance</code></div>
         <div className="code-block"><code>/c How much do I have in USDC?</code></div>
         <div className="code-block"><code>/c Show my balance on Ethereum</code></div>
         <div className="code-block"><code>/c What's my wallet address on Arbitrum?</code></div>
         <div className="code-block"><code>/c Check my USDC balance on Base</code></div>
 
         <h3>Transaction Examples</h3>
-        <div className="code-block"><code>/c Send 10 APT to @username</code></div>
+        <div className="code-block"><code>/c Send 10 CEDRA to @username</code></div>
         <div className="code-block"><code>/c Send 0.1 ETH to @username on Ethereum</code></div>
         <div className="code-block"><code>/c Send 50 USDC to @user1 on Arbitrum</code></div>
         <div className="code-block"><code>/c Send 100 USDT to @user2 on Base network</code></div>
         <div className="code-block"><code>/c Withdraw 5 USDC</code></div>
-        <div className="code-block"><code>/c Fund my account with 100 APT</code></div>
-        <p><strong>Note:</strong> When sending tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you need native tokens (ETH, SOL, etc.) in your wallet to pay for gas fees. Aptos is the exception—you can send tokens on Aptos without needing APT for gas.</p>
+        <div className="code-block"><code>/c Fund my account with 100 CEDRA</code></div>
+        <p><strong>Note:</strong> When sending tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you need native tokens (ETH, SOL, etc.) in your wallet to pay for gas fees. Cedra Network is the exception—you can send tokens on Cedra Network without needing CEDRA for gas.</p>
 
         <h3>Market Data Examples</h3>
         <div className="code-block"><code>/c What's the current price of Bitcoin?</code></div>
-        <div className="code-block"><code>/c Show me trending pools on Aptos</code></div>
-        <div className="code-block"><code>/c Find pools for APT/USDC on Aptos</code></div>
+        <div className="code-block"><code>/c Show me trending pools on Cedra Network</code></div>
+        <div className="code-block"><code>/c Find pools for CEDRA/EURC on Cedra Network</code></div>
         <div className="code-block"><code>/c What's the Fear & Greed Index?</code></div>
         <div className="code-block"><code>/c Get historical price data for Ethereum for the last 7 days</code></div>
 
         <h3>Price Prediction Examples</h3>
         <div className="code-block"><code>/c Predict Bitcoin price in 1 hour</code></div>
         <div className="code-block"><code>/c What will Ethereum price be in 1 week?</code></div>
-        <div className="code-block"><code>/c Forecast APT price for 1 month</code></div>
+        <div className="code-block"><code>/c Forecast CEDRA price for 1 month</code></div>
         <div className="code-block"><code>/c Get a 4-hour price forecast for Solana</code></div>
         <div className="code-block"><code>/c Show me a 1-year price prediction for Bitcoin with chart data</code></div>
 
@@ -477,7 +477,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <div className="code-block"><code>/c What tokens are trending on Twitter right now?</code></div>
         <div className="code-block"><code>/c Show me the top mentions of Bitcoin on X in the last 24 hours</code></div>
         <div className="code-block"><code>/c Get smart stats for the Twitter account @elonmusk</code></div>
-        <div className="code-block"><code>/c Search for mentions of "Aptos" on Twitter</code></div>
+        <div className="code-block"><code>/c Search for mentions of "Cedra Network" on Twitter</code></div>
         <div className="code-block"><code>/c What are the trending narratives in crypto right now?</code></div>
         <div className="code-block"><code>/c Find trending contract addresses on Telegram</code></div>
         <div className="code-block"><code>/c Get an event summary about "Bitcoin halving" from social media</code></div>
@@ -495,10 +495,10 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <h3>DAO & Group Examples (for <code>/g</code>)</h3>
         <div className="code-block"><code>/g Create a DAO proposal to vote on adding a new moderator</code></div>
         <div className="code-block"><code>/g What have we discussed recently in this group?</code></div>
-        <div className="code-block"><code>/g Send 50 APT to @user1, @user2, and @user3</code></div>
+        <div className="code-block"><code>/g Send 50 CEDRA to @user1, @user2, and @user3</code></div>
         <div className="code-block"><code>/g Send 0.05 ETH to @moderator1 on Ethereum</code></div>
         <div className="code-block"><code>/g Send 100 USDC to @member1, @member2 on Arbitrum</code></div>
-        <p><strong>Note for Group Admins:</strong> When sending tokens to group members on EVM chains or Solana, ensure the group wallet has native tokens (ETH, SOL, etc.) to cover gas fees. Aptos is the exception.</p>
+        <p><strong>Note for Group Admins:</strong> When sending tokens to group members on EVM chains or Solana, ensure the group wallet has native tokens (ETH, SOL, etc.) to cover gas fees. Cedra Network is the exception.</p>
 
         <h3>Image Generation Examples</h3>
         <div className="code-block"><code>/c Generate an image of a futuristic city with flying cars</code></div>

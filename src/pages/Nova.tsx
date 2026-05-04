@@ -78,7 +78,7 @@ export default function Nova() {
               <div className="step-content">
                 <h4>Connect with Nova</h4>
                 <p>
-                  Start a conversation in Telegram and fund your account with Aptos tokens.
+                  Start a conversation in Telegram and fund your account with Cedra Network tokens.
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function Nova() {
               <span className="emoji">🌐</span>
               <h4>Multi chain wallet</h4>
               <p>
-                Manage wallets across multiple blockchains including Aptos, Solana, and 20+ EVM chains.
+                Manage wallets across multiple blockchains including Cedra Network, Aptos, Solana, and 20+ EVM chains.
                 Send tokens across networks seamlessly.
               </p>
             </div>
@@ -258,8 +258,8 @@ export default function Nova() {
           <h2 className="section-title">Pricing</h2>
           <p>
             <strong>Usage Pricing (Nova)</strong><br />Prices
-            shown in USD equivalent — billed in APT, USDC, or
-            USDT at current market rate.
+            shown in USD equivalent — billed in CEDRA or EURC
+            at current market rate.
           </p>
           <div className="pricing-table">
             <div className="pricing-item">

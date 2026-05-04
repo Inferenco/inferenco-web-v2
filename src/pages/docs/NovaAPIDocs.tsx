@@ -17,7 +17,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <li><strong>Streaming Responses:</strong> Support for Server-Sent Events (SSE) for real-time streaming of AI responses</li>
           <li><strong>Custom Configuration:</strong> Configure custom prompts, tool permissions, token limits, and payment currencies per API key</li>
           <li><strong>Conversation Management:</strong> Maintain conversation context with reference IDs and automatic summarization for long conversations</li>
-          <li><strong>Pay-Per-Use Billing:</strong> Transparent, on-chain billing in APT, USDC, USDT, or GUI tokens. Pay only for what you use</li>
+          <li><strong>Pay-Per-Use Billing:</strong> Transparent, on-chain billing in CEDRA or EURC. Pay only for what you use</li>
           <li><strong>Multi-Environment Support:</strong> Create separate API keys for development and production with different settings</li>
         </ul>
 
@@ -105,7 +105,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <li>
             <strong>Fund Your Account</strong>
-            <p>Send funds to your Nova wallet address using one of the supported tokens on Aptos: APT, USDC, USDT, or GUI.</p>
+            <p>Send funds to your Nova wallet address using one of the supported tokens: CEDRA or EURC.</p>
           </li>
 
           <li>
@@ -127,7 +127,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
               <li><strong>Prompt:</strong> Define your application's general prompt and rules</li>
               <li><strong>Tools:</strong> Select which tools your API key will have access to</li>
               <li><strong>Token Limit:</strong> Set the token limit for conversation summarization (default: 20,000)</li>
-              <li><strong>Currency:</strong> Choose the payment currency (APT, USDC, USDT, or GUI)</li>
+              <li><strong>Currency:</strong> Choose the payment currency (CEDRA or EURC)</li>
             </ol>
           </li>
 
@@ -163,7 +163,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <h2>MCP Tools (Blockchain & Data)</h2>
         <ul>
-          <li><strong>Get Trending Pools:</strong> Fetch top trending DEX pools on networks like Aptos, Solana, Ethereum, BSC, etc.</li>
+          <li><strong>Get Trending Pools:</strong> Fetch top trending DEX pools on networks like Cedra Network, Solana, Ethereum, BSC, Aptos, etc.</li>
           <li><strong>Search Pools:</strong> Find specific DEX pools by token symbol, contract, or pool address.</li>
           <li><strong>Get New Pools:</strong> Discover the latest pool creations on supported networks.</li>
           <li><strong>Get Token Price:</strong> Retrieve focused token price data from BitcoinTry exchange.</li>
@@ -214,7 +214,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="code-block">
           <code>{`{
-  "input": "Forecast APT price for 1 month with confidence intervals",
+  "input": "Forecast CEDRA price for 1 month with confidence intervals",
   "model": "gpt-5",
   "verbosity": "High",
   "max_tokens": 2000,
@@ -225,7 +225,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <h3>Market Data Examples</h3>
         <div className="code-block">
           <code>{`{
-  "input": "Show me trending pools on Aptos",
+  "input": "Show me trending pools on Cedra Network",
   "model": "gpt-5-mini",
   "verbosity": "Medium",
   "max_tokens": 1500,
@@ -235,7 +235,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="code-block">
           <code>{`{
-  "input": "Find pools for APT/USDC on Aptos network",
+  "input": "Find pools for CEDRA/EURC on Cedra Network",
   "model": "gpt-5-mini",
   "verbosity": "Low",
   "max_tokens": 1000,
@@ -288,7 +288,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <h3>Web Search Examples</h3>
         <div className="code-block">
           <code>{`{
-  "input": "Search for the latest news about Aptos blockchain",
+  "input": "Search for the latest news about Cedra Network blockchain",
   "model": "gpt-5",
   "verbosity": "Medium",
   "max_tokens": 2000,
@@ -350,7 +350,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="code-block">
           <code>{`{
-  "input": "Search for mentions of Aptos on Twitter and summarize the sentiment",
+  "input": "Search for mentions of Cedra Network on Twitter and summarize the sentiment",
   "model": "gpt-5",
   "verbosity": "Medium",
   "max_tokens": 2000,
@@ -797,8 +797,8 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       {
         "name": "get_token_price",
         "arguments": {
-          "symbol": "APT",
-          "network": "aptos"
+          "symbol": "CEDRA",
+          "network": "cedra"
         }
       }
     ]
@@ -894,8 +894,8 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
   "tools": [{
     "name": "search_pools",
     "arguments": {
-      "network": "aptos",
-      "token_symbol": "APT",
+      "network": "cedra",
+      "token_symbol": "CEDRA",
       "limit": 5
     }
   }]
@@ -1003,7 +1003,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
     "name": "dexscreener_api",
     "arguments": {
       "operation": "search",
-      "query": "APT/USDC"
+      "query": "CEDRA/EURC"
     }
   }]
 }`}</code>
