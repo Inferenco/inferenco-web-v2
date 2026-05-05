@@ -363,21 +363,239 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 }`})}),(0,j.jsxs)(`p`,{children:[(0,j.jsx)(`strong`,{children:`Usage:`}),` Use this endpoint when you need to call specific tools directly without AI interpretation. The AI endpoint (`,(0,j.jsx)(`code`,{children:`/ai`}),`) automatically selects and calls appropriate tools based on your prompt, while this endpoint gives you direct control over tool execution.`]})]}),(0,j.jsx)(`h2`,{children:`Error Responses`}),(0,j.jsx)(`p`,{children:`All endpoints may return standard HTTP error codes:`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`400 Bad Request`}),` - Invalid request parameters`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`401 Unauthorized`}),` - Missing or invalid API key`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`403 Forbidden`}),` - Insufficient permissions`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`404 Not Found`}),` - Resource not found`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`500 Internal Server Error`}),` - Server error`]})]}),(0,j.jsx)(`p`,{children:`Error responses follow this format:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`{
   "message": "Error description",
   "status": 401
-}`})}),(0,j.jsx)(`h2`,{children:`Rate Limiting`}),(0,j.jsxs)(`p`,{children:[`API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a `,(0,j.jsx)(`code`,{children:`429 Too Many Requests`}),` response.`]}),(0,j.jsx)(`h2`,{children:`Support`}),(0,j.jsxs)(`p`,{children:[`For API support, questions, or issues, contact the Nova team through our `,(0,j.jsxs)(`a`,{href:`https://t.me/inferenco`,target:`_blank`,className:`telegram-link`,children:[(0,j.jsx)(`i`,{className:`fab fa-telegram`}),`Telegram group`]}),` or visit the Nova documentation.`]})]})]})}function dr({hash:e}){return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsxs)(`div`,{id:`nova-connect-introduction`,className:`docs-section ${e===`nova-connect-introduction`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Introduction`}),(0,j.jsx)(`p`,{children:`Nova Connect is a React library for building Web3 applications that interact with Nova services. It provides a simple interface for wallet connections, AI inference, and blockchain interactions.`}),(0,j.jsx)(`h2`,{children:`Features`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsx)(`li`,{children:`Easy wallet connection (Nova Wallet, MetaMask, etc.)`}),(0,j.jsx)(`li`,{children:`Seamless AI inference integration`}),(0,j.jsx)(`li`,{children:`TypeScript support out of the box`}),(0,j.jsx)(`li`,{children:`Modular and tree-shakeable`})]}),(0,j.jsx)(`h3`,{children:`Packages`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`@inferenco/nova-connect`}),` - Main package`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`@inferenco/nova-wallet-adapter`}),` - Nova Wallet integration`]})]})]}),(0,j.jsxs)(`div`,{id:`nova-connect-installation`,className:`docs-section ${e===`nova-connect-installation`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Installation`}),(0,j.jsx)(`p`,{children:`Install Nova Connect in your project:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`npm install @inferenco/nova-connect
-# or
-pnpm add @inferenco/nova-connect`})}),(0,j.jsx)(`h3`,{children:`Peer Dependencies`}),(0,j.jsx)(`p`,{children:`Make sure you have React 18+ installed:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`npm install react react-dom`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-quickstart`,className:`docs-section ${e===`nova-connect-quickstart`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Quick Start`}),(0,j.jsx)(`p`,{children:`Get started with Nova Connect in minutes:`}),(0,j.jsxs)(`ol`,{className:`step-list`,children:[(0,j.jsx)(`li`,{children:`Install the package`}),(0,j.jsx)(`li`,{children:`Wrap your app with NovaProvider`}),(0,j.jsx)(`li`,{children:`Use the connect button component`})]}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaProvider, NovaConnectButton } from '@inferenco/nova-connect';
+}`})}),(0,j.jsx)(`h2`,{children:`Rate Limiting`}),(0,j.jsxs)(`p`,{children:[`API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a `,(0,j.jsx)(`code`,{children:`429 Too Many Requests`}),` response.`]}),(0,j.jsx)(`h2`,{children:`Support`}),(0,j.jsxs)(`p`,{children:[`For API support, questions, or issues, contact the Nova team through our `,(0,j.jsxs)(`a`,{href:`https://t.me/inferenco`,target:`_blank`,className:`telegram-link`,children:[(0,j.jsx)(`i`,{className:`fab fa-telegram`}),`Telegram group`]}),` or visit the Nova documentation.`]})]})]})}function dr({hash:e}){return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsxs)(`div`,{id:`nova-connect-introduction`,className:`docs-section ${e===`nova-connect-introduction`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Introduction`}),(0,j.jsxs)(`p`,{children:[`Nova Connect is the wallet adapter that enables Cedra dApps to connect with`,(0,j.jsx)(`strong`,{children:` Nova Desk`}),` (desktop) and `,(0,j.jsx)(`strong`,{children:`Nova Wallet`}),` (mobile). It provides deep integration with the Cedra Network blockchain through a simple, developer-friendly API.`]}),(0,j.jsx)(`h2`,{children:`Features`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[`Connect to Nova Desk via local bridge (`,(0,j.jsx)(`code`,{children:`http://127.0.0.1:21984`}),`)`]}),(0,j.jsx)(`li`,{children:`Connect to Nova Wallet via secure mobile relay`}),(0,j.jsx)(`li`,{children:`Support for Cedra Network (primary) and Aptos (legacy)`}),(0,j.jsx)(`li`,{children:`AIP-62 Wallet-Standard compatibility`}),(0,j.jsx)(`li`,{children:`End-to-end encrypted mobile communication (X25519 + XChaCha20-Poly1305)`}),(0,j.jsx)(`li`,{children:`Session persistence across page reloads`}),(0,j.jsx)(`li`,{children:`TypeScript support with full type definitions`}),(0,j.jsx)(`li`,{children:`Zero external dependencies for core functionality`})]}),(0,j.jsx)(`h3`,{children:`Packages`}),(0,j.jsx)(`ul`,{children:(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`@inferenco/nova-wallet-adapter`}),` - Main wallet adapter package (v0.1.0)`]})}),(0,j.jsxs)(`p`,{children:[(0,j.jsx)(`strong`,{children:`Note:`}),` There is no `,(0,j.jsx)(`code`,{children:`@inferenco/nova-connect`}),` package. The correct package name is `,(0,j.jsx)(`code`,{children:`@inferenco/nova-wallet-adapter`}),`.`]})]}),(0,j.jsxs)(`div`,{id:`nova-connect-installation`,className:`docs-section ${e===`nova-connect-installation`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Installation`}),(0,j.jsx)(`p`,{children:`Install the Nova wallet adapter in your project:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`npm install @inferenco/nova-wallet-adapter`})}),(0,j.jsx)(`p`,{children:`or with yarn:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`yarn add @inferenco/nova-wallet-adapter`})}),(0,j.jsx)(`p`,{children:`or with pnpm:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`pnpm add @inferenco/nova-wallet-adapter`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-quickstart`,className:`docs-section ${e===`nova-connect-quickstart`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Quick Start`}),(0,j.jsx)(`p`,{children:`Get started with Nova Connect in minutes. Choose from three integration methods:`}),(0,j.jsx)(`h2`,{children:`Method 1: AIP-62 Wallet-Standard (Recommended)`}),(0,j.jsx)(`p`,{children:`The simplest integration. Auto-registers Nova Connect as a standard Cedra wallet.`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import "@inferenco/nova-wallet-adapter/auto-register";
+import { getCedraWallets, connect } from "@cedra-labs/wallet-standard";
 
-function App() {
-  return (
-    <NovaProvider apiKey="your_api_key">
-      <NovaConnectButton />
-    </NovaProvider>
-  );
-}`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-api-reference`,className:`docs-section ${e===`nova-connect-api-reference`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - API Reference`}),(0,j.jsx)(`h2`,{children:`Components`}),(0,j.jsx)(`h3`,{children:`NovaProvider`}),(0,j.jsx)(`p`,{children:`Root provider component that sets up the Nova context.`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Prop`}),(0,j.jsx)(`th`,{children:`Type`}),(0,j.jsx)(`th`,{children:`Required`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`apiKey`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:`Yes`}),(0,j.jsx)(`td`,{children:`Your Nova API key`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`children`})}),(0,j.jsx)(`td`,{children:`ReactNode`}),(0,j.jsx)(`td`,{children:`Yes`}),(0,j.jsx)(`td`,{children:`Child components`})]})]})]})}),(0,j.jsx)(`h3`,{children:`NovaConnectButton`}),(0,j.jsx)(`p`,{children:`Button component for wallet connection.`})]}),(0,j.jsxs)(`div`,{id:`nova-connect-mobile-relay`,className:`docs-section ${e===`nova-connect-mobile-relay`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Mobile Relay`}),(0,j.jsx)(`p`,{children:`Nova Connect supports mobile wallet connections through the Nova Wallet mobile app using a relay server for secure communication.`}),(0,j.jsx)(`h3`,{children:`How It Works`}),(0,j.jsxs)(`ol`,{className:`step-list`,children:[(0,j.jsx)(`li`,{children:`User scans QR code with Nova Wallet`}),(0,j.jsx)(`li`,{children:`Connection is established via secure relay`}),(0,j.jsx)(`li`,{children:`Transactions are signed on mobile device`}),(0,j.jsx)(`li`,{children:`Results returned to web application`})]}),(0,j.jsx)(`h3`,{children:`Configuration`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`const config = {
-  relayServer: 'wss://relay.novawallet.inferenco.com',
-  mobileWallet: {
-    name: 'Nova Wallet',
-    icon: '...',
-    getUniversalLink: (uri) => \`novawallet://connect?uri=\${uri}\`,
-  },
-};`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-configuration`,className:`docs-section ${e===`nova-connect-configuration`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Configuration`}),(0,j.jsx)(`p`,{children:`Configure Nova Connect for your application:`}),(0,j.jsx)(`h3`,{children:`Configuration Options`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Option`}),(0,j.jsx)(`th`,{children:`Type`}),(0,j.jsx)(`th`,{children:`Default`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`apiKey`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:`-`}),(0,j.jsx)(`td`,{children:`Your Nova API key (required)`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`chainId`})}),(0,j.jsx)(`td`,{children:`number`}),(0,j.jsx)(`td`,{children:`1`}),(0,j.jsx)(`td`,{children:`Blockchain network ID`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`relayServer`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:`wss://relay...`}),(0,j.jsx)(`td`,{children:`Mobile relay server URL`})]})]})]})})]})]})}var fr=[{title:`Nova Bot`,items:[{id:`nova-bot-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-bot-commands`,label:`Commands`,icon:`fas fa-terminal`},{id:`nova-bot-settings`,label:`Settings`,icon:`fas fa-cog`},{id:`nova-bot-prompts`,label:`Prompts`,icon:`fas fa-comments`}]},{title:`Nova API`,items:[{id:`nova-api-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`generate-api-key`,label:`Generate API Key`,icon:`fas fa-key`},{id:`tools`,label:`Tools`,icon:`fas fa-toolbox`},{id:`add-knowledge`,label:`Add Knowledge`,icon:`fas fa-book-open`},{id:`templates`,label:`Templates`,icon:`fas fa-puzzle-piece`},{id:`api-docs`,label:`API Docs`,icon:`fas fa-code`}]},{title:`Nova Connect`,items:[{id:`nova-connect-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-connect-installation`,label:`Installation`,icon:`fas fa-download`},{id:`nova-connect-quickstart`,label:`Quick Start`,icon:`fas fa-rocket`},{id:`nova-connect-api-reference`,label:`API Reference`,icon:`fas fa-code`},{id:`nova-connect-mobile-relay`,label:`Mobile Relay`,icon:`fas fa-mobile-alt`},{id:`nova-connect-configuration`,label:`Configuration`,icon:`fas fa-cog`}]}];function pr(){let e=ut().hash.slice(1)||`nova-bot-introduction`,[t,n]=(0,_.useState)(!1);return(0,j.jsxs)(`div`,{id:`docs-page`,className:`page-section docs-container docs-page`,children:[(0,j.jsx)(`button`,{className:`mobile-menu-toggle`,id:`mobileMenuToggle`,"aria-label":`Toggle Menu`,onClick:()=>n(!t),children:(0,j.jsx)(`i`,{className:`fas fa-bars`})}),(0,j.jsx)(`div`,{className:`sidebar-overlay ${t?`active`:``}`,id:`sidebarOverlay`,onClick:()=>n(!1)}),(0,j.jsx)(`aside`,{className:`docs-sidebar ${t?`active`:``}`,id:`docsSidebar`,children:fr.map(t=>(0,j.jsxs)(`div`,{className:`sidebar-section`,children:[(0,j.jsx)(`div`,{className:`sidebar-title`,children:t.title}),t.items.map(t=>(0,j.jsxs)(Mn,{to:`/docs#${t.id}`,className:`sidebar-item ${e===t.id?`active`:``}`,onClick:()=>n(!1),children:[(0,j.jsx)(`i`,{className:t.icon}),` `,t.label]},t.id))]},t.title))}),(0,j.jsxs)(`main`,{className:`docs-content`,children:[(0,j.jsx)(lr,{hash:e}),(0,j.jsx)(ur,{hash:e}),(0,j.jsx)(dr,{hash:e})]})]})}function mr(){return(0,j.jsx)(Vt,{children:(0,j.jsx)(A,{path:`/*`,element:(0,j.jsx)(pr,{})})})}function hr(){return(0,j.jsx)(kn,{children:(0,j.jsx)(Vt,{children:(0,j.jsxs)(A,{path:`/`,element:(0,j.jsx)($n,{}),children:[(0,j.jsx)(A,{index:!0,element:(0,j.jsx)(er,{})}),(0,j.jsx)(A,{path:`nova`,element:(0,j.jsx)(tr,{})}),(0,j.jsx)(A,{path:`nova-wallet`,element:(0,j.jsx)(nr,{})}),(0,j.jsx)(A,{path:`nova-desk`,element:(0,j.jsx)(cr,{})}),(0,j.jsx)(A,{path:`docs/*`,element:(0,j.jsx)(mr,{})})]})})})}(0,v.createRoot)(document.getElementById(`root`)).render((0,j.jsx)(_.StrictMode,{children:(0,j.jsx)(hr,{})}));
+const wallets = getCedraWallets();
+await connect("Nova Connect");
+const account = await wallets.find(w => w.name === "Nova Connect")?.account();`})}),(0,j.jsx)(`h2`,{children:`Method 2: Plugin-Style Adapter`}),(0,j.jsx)(`p`,{children:`For dApps using plugin-style wallet consumers. Provides direct control over the adapter.`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet();
+await wallet.connect();
+const account = await wallet.account();
+
+// Sign a message
+await wallet.signMessage({ message: "Hello", nonce: "123" });
+
+// Sign and submit transaction
+await wallet.signAndSubmitTransaction({
+  data: { function: "0x1::coin::transfer", typeArguments: ["0x1::cedra_coin::CedraCoin"], functionArguments: ["0xrecipient", 100] }
+});
+
+// Disconnect
+await wallet.disconnect();`})}),(0,j.jsx)(`h2`,{children:`Method 3: Direct NovaClient`}),(0,j.jsx)(`p`,{children:`For advanced control over the connection lifecycle.`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaClient } from "@inferenco/nova-wallet-adapter";
+
+const client = new NovaClient({ networkOverride: "devnet" });
+const { account, network } = await client.connect();
+const signed = await client.signMessage({ message: "...", nonce: "..." });
+await client.disconnect();`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-react-integration`,className:`docs-section ${e===`nova-connect-react-integration`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - React Integration`}),(0,j.jsx)(`p`,{children:`For React applications, use the Plugin-Style Adapter with React hooks:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useState, useEffect } from 'react';
+import { NovaWallet, NovaAdapterError, NovaErrorCode } from "@inferenco/nova-wallet-adapter";
+
+// Create a single wallet instance
+const wallet = new NovaWallet();
+
+export function useNovaWallet() {
+  const [account, setAccount] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Check existing connection on mount
+  useEffect(() => {
+    wallet.account().then(acc => acc && setAccount(acc)).catch(() => {});
+  }, []);
+
+  const connect = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const acc = await wallet.connect();
+      setAccount(acc);
+    } catch (err) {
+      if (err instanceof NovaAdapterError) {
+        switch (err.code) {
+          case NovaErrorCode.NotInstalled:
+            setError("Please install Nova Desk or Nova Wallet");
+            break;
+          case NovaErrorCode.UserRejected:
+            setError("Connection rejected");
+            break;
+          case NovaErrorCode.ConnectionTimeout:
+            setError("Connection timed out");
+            break;
+        }
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { account, loading, error, connect };
+}`})}),(0,j.jsx)(`p`,{children:`Usage in a component:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useNovaWallet } from './useNovaWallet';
+
+function ConnectButton() {
+  const { account, loading, error, connect } = useNovaWallet();
+  
+  if (account) {
+    return "Connected: " + account.address?.toString().slice(0, 6) + "..." + account.address?.toString().slice(-4);
+  }
+  
+  return loading ? "Connecting..." : error || "Connect Nova";
+}`})}),(0,j.jsx)(`p`,{children:`For TypeScript/JSX usage in React components:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useState } from 'react';
+import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet();
+
+export function ConnectButton() {
+  const [account, setAccount] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleConnect = async () => {
+    setLoading(true);
+    try {
+      const acc = await wallet.connect();
+      setAccount(acc);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (account) {
+    return <div>Connected: {String(account.address).slice(0, 6)}...{String(account.address).slice(-4)}</div>;
+  }
+
+  return <button onClick={handleConnect} disabled={loading}>
+    {loading ? 'Connecting...' : 'Connect Nova'}
+  </button>;
+}`})}),(0,j.jsx)(`p`,{children:`For transaction signing:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useState } from 'react';
+import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet();
+
+export function SendCedraButton({ recipient, amount }) {
+  const [hash, setHash] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSend = async () => {
+    setLoading(true);
+    try {
+      const result = await wallet.signAndSubmitTransaction({
+        data: {
+          function: "0x1::coin::transfer",
+          typeArguments: ["0x1::cedra_coin::CedraCoin"],
+          functionArguments: [recipient, amount],
+        },
+      });
+      setHash(result.hash);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return <button onClick={handleSend} disabled={loading || !recipient}>
+    {loading ? 'Sending...' : 'Send CEDRA'}
+    {hash && <div>TX: {hash}</div>}
+  </button>;
+}`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-api-reference`,className:`docs-section ${e===`nova-connect-api-reference`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - API Reference`}),(0,j.jsx)(`h2`,{children:`NovaWallet Class`}),(0,j.jsx)(`p`,{children:`Main class for plugin-style integration.`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet({ 
+  bridgeBaseUrl: "http://127.0.0.1:21984",
+  relayBaseUrl: "https://nova-service-160604102004.europe-west1.run.app",
+});
+
+// Methods
+await wallet.connect();
+await wallet.account();
+await wallet.disconnect();
+await wallet.signMessage({ message: "...", nonce: "..." });
+await wallet.signAndSubmitTransaction({ data: { /* payload */ } });
+
+// Events
+await wallet.onAccountChange(acc => console.log(acc));
+await wallet.onNetworkChange(net => console.log(net));
+
+// Properties
+console.log(wallet.name);        // "Nova Connect"
+console.log(wallet.readyState);  // "Installed" | "NotDetected" | "Loadable" | "Unsupported"
+console.log(wallet.connected);   // boolean`})}),(0,j.jsx)(`h2`,{children:`NovaClient Class`}),(0,j.jsx)(`p`,{children:`Advanced class for direct control.`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaClient } from "@inferenco/nova-wallet-adapter";
+
+const client = new NovaClient();
+await client.connect();
+const account = await client.getAccount();
+const network = await client.getNetwork();
+await client.signMessage({ message: "...", nonce: "..." });
+await client.signAndSubmitTransaction({ data: { /* payload */ } });
+console.log(client.hasProvider());     // boolean
+console.log(client.hasExternalSession()); // boolean`})}),(0,j.jsx)(`h2`,{children:`AIP-62 Functions`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { registerNovaWallet } from "@inferenco/nova-wallet-adapter/aip62";
+
+// Manual registration
+registerNovaWallet({ forceRegistration: true });
+
+// Or use auto-register (side-effect import)
+import "@inferenco/nova-wallet-adapter/auto-register";`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-configuration`,className:`docs-section ${e===`nova-connect-configuration`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Configuration`}),(0,j.jsx)(`p`,{children:`All options are optional with sensible defaults:`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Option`}),(0,j.jsx)(`th`,{children:`Type`}),(0,j.jsx)(`th`,{children:`Default`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`deeplinkBaseUrl`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`"inferenco://connect?callback="`})}),(0,j.jsx)(`td`,{children:`Mobile deeplink base URL`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`deeplinkScheme`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`"inferenco"`})}),(0,j.jsx)(`td`,{children:`Mobile deeplink scheme`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`websiteUrl`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`"https://inferenco.com"`})}),(0,j.jsx)(`td`,{children:`Your application URL`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`networkOverride`})}),(0,j.jsx)(`td`,{children:`Network`}),(0,j.jsx)(`td`,{children:`-`}),(0,j.jsx)(`td`,{children:`Force specific network`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`bridgeBaseUrl`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`"http://127.0.0.1:21984"`})}),(0,j.jsx)(`td`,{children:`Nova Desk bridge URL`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`relayBaseUrl`})}),(0,j.jsx)(`td`,{children:`string`}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`"https://nova-service-160604102004.europe-west1.run.app"`})}),(0,j.jsx)(`td`,{children:`Nova Wallet relay URL`})]})]})]})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-mobile-relay`,className:`docs-section ${e===`nova-connect-mobile-relay`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Mobile Relay`}),(0,j.jsx)(`p`,{children:`Mobile connections use end-to-end encryption with:`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Key Exchange:`}),` X25519 ECDH`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Key Derivation:`}),` HKDF-SHA256`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Encryption:`}),` XChaCha20-Poly1305`]})]}),(0,j.jsx)(`h2`,{children:`Default Endpoints`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`// Desktop Bridge
+http://127.0.0.1:21984
+
+// Mobile Relay HTTP
+https://nova-service-160604102004.europe-west1.run.app
+
+// Mobile Relay WebSocket
+wss://nova-service-160604102004.europe-west1.run.app/v1/ws`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-error-handling`,className:`docs-section ${e===`nova-connect-error-handling`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Error Handling`}),(0,j.jsxs)(`p`,{children:[`All errors extend `,(0,j.jsx)(`code`,{children:`NovaAdapterError`}),` with typed codes:`]}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Code`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`USER_REJECTED`})}),(0,j.jsx)(`td`,{children:`User rejected the request`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`UNAUTHORIZED`})}),(0,j.jsx)(`td`,{children:`Session expired or invalid`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`NOT_INSTALLED`})}),(0,j.jsx)(`td`,{children:`Nova not installed`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`CONNECTION_TIMEOUT`})}),(0,j.jsx)(`td`,{children:`Connection timed out`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`INVALID_PARAMS`})}),(0,j.jsx)(`td`,{children:`Invalid parameters`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`INVALID_NETWORK`})}),(0,j.jsx)(`td`,{children:`Network mismatch`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`INTERNAL_ERROR`})}),(0,j.jsx)(`td`,{children:`Internal error`})]})]})]})}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaWallet, NovaAdapterError, NovaErrorCode } from "@inferenco/nova-wallet-adapter";
+
+try {
+  await wallet.connect();
+} catch (error) {
+  if (error instanceof NovaAdapterError) {
+    switch (error.code) {
+      case NovaErrorCode.NotInstalled:
+        console.log("Please install Nova Desk or Nova Wallet");
+        break;
+      case NovaErrorCode.UserRejected:
+        console.log("User rejected");
+        break;
+      case NovaErrorCode.ConnectionTimeout:
+        console.log("Connection timed out");
+        break;
+    }
+  }
+}`})})]}),(0,j.jsxs)(`div`,{id:`nova-connect-provider-detection`,className:`docs-section ${e===`nova-connect-provider-detection`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Provider Detection`}),(0,j.jsx)(`p`,{children:`Detect if Nova is available in the browser:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaWallet, detectProvider } from "@inferenco/nova-wallet-adapter";
+
+// Method 1: Using NovaWallet readyState
+const wallet = new NovaWallet();
+const isAvailable = wallet.readyState !== "NotDetected" && wallet.readyState !== "Unsupported";
+
+// Method 2: Direct detection
+const provider = detectProvider();
+if (provider) {
+  console.log("Nova provider detected");
+}
+
+// Check specific namespaces
+const hasInferenco = typeof window !== 'undefined' && !!window.inferenco;
+const hasNova = typeof window !== 'undefined' && !!window.nova;`})}),(0,j.jsx)(`p`,{children:`Ready states:`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`"Installed"`}),` - Provider detected or session exists`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`"NotDetected"`}),` - No provider, no session`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`"Loadable"`}),` - Can be loaded`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`code`,{children:`"Unsupported"`}),` - Not in browser environment`]})]})]}),(0,j.jsxs)(`div`,{id:`nova-connect-session-management`,className:`docs-section ${e===`nova-connect-session-management`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Session Management`}),(0,j.jsx)(`p`,{children:`Sessions persist across page reloads using localStorage:`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`// Session storage keys
+"inferenco:nova-session"           // External session data
+"inferenco:nova-protocol-key"     // Protocol public key
+"inferenco:nova-pending-mobile-pairing" // Pending mobile pairing
+
+// Clear session manually
+await wallet.disconnect();
+
+// Or clear all storage
+localStorage.removeItem("inferenco:nova-session");
+localStorage.removeItem("inferenco:nova-protocol-key");
+localStorage.removeItem("inferenco:nova-pending-mobile-pairing");
+
+// Resume from existing session
+try {
+  const account = await wallet.account();
+  console.log("Resumed session:", account.address);
+} catch {
+  // No active session
+}`})}),(0,j.jsx)(`p`,{children:`Cross-tab synchronization is supported automatically.`})]}),(0,j.jsxs)(`div`,{id:`nova-connect-mobile-relay`,className:`docs-section ${e===`nova-connect-mobile-relay`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Nova Connect - Mobile Relay`}),(0,j.jsx)(`p`,{children:`Mobile connections use end-to-end encryption with:`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Key Exchange:`}),` X25519 ECDH`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Key Derivation:`}),` HKDF-SHA256 with info="nova-connect-relay"`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Encryption:`}),` XChaCha20-Poly1305 (AEAD)`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Nonce:`}),` 24 random bytes per message`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Encoding:`}),` Base64url (RFC 4648)`]})]}),(0,j.jsx)(`h2`,{children:`Security Properties`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Forward Secrecy:`}),` Ephemeral keys per pairing`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Confidentiality:`}),` All payloads encrypted`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Integrity:`}),` Poly1305 authentication`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Replay Protection:`}),` Unique nonces per message`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Server Untrusted:`}),` Relay cannot decrypt payloads`]})]}),(0,j.jsx)(`h2`,{children:`Default Relay Endpoints`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`// Desktop Bridge (Nova Desk)
+http://127.0.0.1:21984
+
+// Mobile Relay (Nova Wallet)
+HTTP:  https://nova-service-160604102004.europe-west1.run.app
+WebSocket: wss://nova-service-160604102004.europe-west1.run.app/v1/ws
+
+// Mobile deeplink format
+inferenco://connect?callback=<encoded-url>
+myapp://connect?callback=<encoded-url> // with custom scheme`})})]})]})}var fr=[{title:`Nova Bot`,items:[{id:`nova-bot-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-bot-commands`,label:`Commands`,icon:`fas fa-terminal`},{id:`nova-bot-settings`,label:`Settings`,icon:`fas fa-cog`},{id:`nova-bot-prompts`,label:`Prompts`,icon:`fas fa-comments`}]},{title:`Nova API`,items:[{id:`nova-api-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`generate-api-key`,label:`Generate API Key`,icon:`fas fa-key`},{id:`tools`,label:`Tools`,icon:`fas fa-toolbox`},{id:`add-knowledge`,label:`Add Knowledge`,icon:`fas fa-book-open`},{id:`templates`,label:`Templates`,icon:`fas fa-puzzle-piece`},{id:`api-docs`,label:`API Docs`,icon:`fas fa-code`}]},{title:`Nova Connect`,items:[{id:`nova-connect-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-connect-installation`,label:`Installation`,icon:`fas fa-download`},{id:`nova-connect-quickstart`,label:`Quick Start`,icon:`fas fa-rocket`},{id:`nova-connect-api-reference`,label:`API Reference`,icon:`fas fa-code`},{id:`nova-connect-mobile-relay`,label:`Mobile Relay`,icon:`fas fa-mobile-alt`},{id:`nova-connect-configuration`,label:`Configuration`,icon:`fas fa-cog`}]}];function pr(){let e=ut().hash.slice(1)||`nova-bot-introduction`,[t,n]=(0,_.useState)(!1);return(0,j.jsxs)(`div`,{id:`docs-page`,className:`page-section docs-container docs-page`,children:[(0,j.jsx)(`button`,{className:`mobile-menu-toggle`,id:`mobileMenuToggle`,"aria-label":`Toggle Menu`,onClick:()=>n(!t),children:(0,j.jsx)(`i`,{className:`fas fa-bars`})}),(0,j.jsx)(`div`,{className:`sidebar-overlay ${t?`active`:``}`,id:`sidebarOverlay`,onClick:()=>n(!1)}),(0,j.jsx)(`aside`,{className:`docs-sidebar ${t?`active`:``}`,id:`docsSidebar`,children:fr.map(t=>(0,j.jsxs)(`div`,{className:`sidebar-section`,children:[(0,j.jsx)(`div`,{className:`sidebar-title`,children:t.title}),t.items.map(t=>(0,j.jsxs)(Mn,{to:`/docs#${t.id}`,className:`sidebar-item ${e===t.id?`active`:``}`,onClick:()=>n(!1),children:[(0,j.jsx)(`i`,{className:t.icon}),` `,t.label]},t.id))]},t.title))}),(0,j.jsxs)(`main`,{className:`docs-content`,children:[(0,j.jsx)(lr,{hash:e}),(0,j.jsx)(ur,{hash:e}),(0,j.jsx)(dr,{hash:e})]})]})}function mr(){return(0,j.jsx)(Vt,{children:(0,j.jsx)(A,{path:`/*`,element:(0,j.jsx)(pr,{})})})}function hr(){return(0,j.jsx)(kn,{children:(0,j.jsx)(Vt,{children:(0,j.jsxs)(A,{path:`/`,element:(0,j.jsx)($n,{}),children:[(0,j.jsx)(A,{index:!0,element:(0,j.jsx)(er,{})}),(0,j.jsx)(A,{path:`nova`,element:(0,j.jsx)(tr,{})}),(0,j.jsx)(A,{path:`nova-wallet`,element:(0,j.jsx)(nr,{})}),(0,j.jsx)(A,{path:`nova-desk`,element:(0,j.jsx)(cr,{})}),(0,j.jsx)(A,{path:`docs/*`,element:(0,j.jsx)(mr,{})})]})})})}(0,v.createRoot)(document.getElementById(`root`)).render((0,j.jsx)(_.StrictMode,{children:(0,j.jsx)(hr,{})}));
