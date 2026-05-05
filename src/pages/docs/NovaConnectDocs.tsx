@@ -32,15 +32,15 @@ export default function NovaConnectDocs({ hash }: { hash: string }) {
       <div id="nova-connect-installation" className={`docs-section ${hash === "nova-connect-installation" ? "active" : ""}`}>
         <h1>Nova Connect - Installation</h1>
         <p>Install the Nova wallet adapter in your project:</p>
-        <div className="code-block">
+        <div className="code-block language-bash">
           <code>{`npm install @inferenco/nova-wallet-adapter`}</code>
         </div>
         <p>or with yarn:</p>
-        <div className="code-block">
+        <div className="code-block language-bash">
           <code>{`yarn add @inferenco/nova-wallet-adapter`}</code>
         </div>
         <p>or with pnpm:</p>
-        <div className="code-block">
+        <div className="code-block language-bash">
           <code>{`pnpm add @inferenco/nova-wallet-adapter`}</code>
         </div>
         <h2>Entry Points</h2>
@@ -76,7 +76,7 @@ export default function NovaConnectDocs({ hash }: { hash: string }) {
 
         <h2>Method 1: AIP-62 Wallet-Standard</h2>
         <p>Use auto-registration when your dApp discovers wallets through <code>@cedra-labs/wallet-standard</code>.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import "@inferenco/nova-wallet-adapter/auto-register";
 import { getCedraWallets } from "@cedra-labs/wallet-standard";
 
@@ -91,7 +91,7 @@ const response = await wallet.features["cedra:connect"].connect();
 const account = response.args;`}</code>
         </div>
         <p>Register manually when you need explicit options:</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { registerNovaWallet } from "@inferenco/nova-wallet-adapter/aip62";
 
 registerNovaWallet({
@@ -102,7 +102,7 @@ registerNovaWallet({
 
         <h2>Method 2: Plugin-Style Adapter</h2>
         <p>Use <code>NovaWallet</code> when your dApp expects a plugin-style adapter instance.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
 
 const wallet = new NovaWallet();
@@ -127,7 +127,7 @@ await wallet.disconnect();`}</code>
 
         <h2>Method 3: Direct NovaClient</h2>
         <p>Use <code>NovaClient</code> when you need direct control over connection, signing, and sessions.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { Network } from "@cedra-labs/ts-sdk";
 import { NovaClient } from "@inferenco/nova-wallet-adapter";
 
@@ -149,7 +149,7 @@ await client.disconnect();`}</code>
       <div id="nova-connect-react-integration" className={`docs-section ${hash === "nova-connect-react-integration" ? "active" : ""}`}>
         <h1>Nova Connect - React Integration</h1>
         <p>Keep one adapter instance for the app lifecycle and expose connect state through a hook.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { useEffect, useState } from "react";
 import {
   NovaAdapterError,
@@ -202,7 +202,7 @@ export function useNovaWallet() {
 }`}</code>
         </div>
         <p>Use the hook from a component:</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { useNovaWallet } from "./useNovaWallet";
 
 export function ConnectButton() {
@@ -227,7 +227,7 @@ export function ConnectButton() {
 
         <h2>NovaWallet Class</h2>
         <p><code>NovaWallet</code> is the plugin-style adapter wrapper around <code>NovaClient</code>.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
 
 const wallet = new NovaWallet(options);
@@ -255,7 +255,7 @@ console.log(wallet.deeplinkProvider());`}</code>
 
         <h2>NovaClient Class</h2>
         <p><code>NovaClient</code> owns provider detection, session reuse, bridge requests, relay requests, and signing.</p>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { NovaClient } from "@inferenco/nova-wallet-adapter";
 
 const client = new NovaClient(options);
@@ -279,7 +279,7 @@ console.log(client.hasExternalSession()); // boolean`}</code>
         </div>
 
         <h2>AIP-62 Functions</h2>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import {
   createNovaAIP62Wallet,
   registerNovaWallet,
@@ -437,7 +437,7 @@ registerNovaWallet({ forceRegistration: true });`}</code>
         </div>
 
         <h2>Examples</h2>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { Network } from "@cedra-labs/ts-sdk";
 import { NovaWallet } from "@inferenco/nova-wallet-adapter";
 
@@ -447,7 +447,7 @@ const wallet = new NovaWallet({
   fullnodeUrl: "https://fullnode.testnet.cedralabs.com/v1",
 });`}</code>
         </div>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`const wallet = new NovaWallet({
   relayBaseUrl: "https://relay.your-domain.com",
   websocketBaseUrl: "wss://relay.your-domain.com/v1/ws",
@@ -479,7 +479,7 @@ const wallet = new NovaWallet({
           <li>The adapter derives the shared secret, decrypts the result, and stores the session for future requests.</li>
         </ol>
         <h2>Default Endpoints</h2>
-        <div className="code-block">
+        <div className="code-block language-text">
           <code>{`// Desktop Bridge (Nova Desk)
 http://127.0.0.1:21984
 
@@ -530,7 +530,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
             </tbody>
           </table>
         </div>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import {
   NovaAdapterError,
   NovaErrorCode,
@@ -573,7 +573,7 @@ try {
           <li><code>window.cedra</code>, only when <code>isNovaWallet === true</code> and <code>detectAliases</code> is enabled</li>
           <li><code>window.aptos</code>, only when <code>isNovaWallet === true</code> and <code>detectAliases</code> is enabled</li>
         </ol>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import { NovaWallet, detectProvider } from "@inferenco/nova-wallet-adapter";
 
 const provider = detectProvider({ detectAliases: true });
@@ -630,7 +630,7 @@ console.log(Boolean(provider), available);`}</code>
             </tbody>
           </table>
         </div>
-        <div className="code-block">
+        <div className="code-block language-tsx">
           <code>{`import {
   clearExternalSession,
   clearPendingMobilePairing,
