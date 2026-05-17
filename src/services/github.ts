@@ -1,4 +1,4 @@
-export type OS = "windows" | "mac" | "linux" | "linux-arm64" | "unknown";
+export type OS = "windows" | "mac" | "linux" | "linux-arm64" | "freebsd" | "unknown";
 
 const REPO_OWNER = "Inferenco";
 const REPO_NAME = "nova-desk-releases";
@@ -25,6 +25,8 @@ export const getDownloadUrl = (os: OS, version: string): string => {
       return `${base}/NovaDesk-x86_64.AppImage`;
     case "linux-arm64":
       return `${base}/NovaDesk-aarch64.AppImage`;
+    case "freebsd":
+      return `${base}/NovaDesk-FreeBSD-x86_64`;
     case "mac":
     case "unknown":
     default:
