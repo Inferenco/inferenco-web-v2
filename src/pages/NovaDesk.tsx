@@ -5,10 +5,11 @@ const detectOS = (): OS => {
   if (typeof navigator === "undefined") return "unknown";
   const ua = navigator.userAgent.toLowerCase();
   const platform = navigator.platform.toLowerCase();
+  const oscpu = navigator.oscpu?.toLowerCase() || "";
 
   if (ua.includes("win") || platform.includes("win")) return "windows";
   if (ua.includes("mac") || platform.includes("mac")) return "mac";
-  if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
+  if (ua.includes("freebsd") || platform.includes("freebsd") || oscpu.includes("freebsd")) return "freebsd";
   if (ua.includes("linux")) {
     if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64")) {
       return "linux-arm64";
