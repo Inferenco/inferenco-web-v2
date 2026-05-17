@@ -8,6 +8,7 @@ const detectOS = (): OS => {
 
   if (ua.includes("win") || platform.includes("win")) return "windows";
   if (ua.includes("mac") || platform.includes("mac")) return "mac";
+  if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
   if (ua.includes("linux")) {
     if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64")) {
       return "linux-arm64";
@@ -33,6 +34,7 @@ export default function NovaDesk() {
   // even when running on ARM64 hardware)
   const shouldShow = (os: OS): boolean => {
     if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64")) return true;
+    if (detectedOS === "freebsd" && os === "freebsd") return true;
     return detectedOS === os || showAllButtons;
   };
 
@@ -98,6 +100,17 @@ export default function NovaDesk() {
                 rel="noopener noreferrer"
               >
                 <i className="fab fa-linux"></i> Linux ARM64
+              </a>
+            )}
+            {shouldShow("freebsd") && (
+              <a
+                href={getDownloadUrl("freebsd", version)}
+                className="cta-button"
+                aria-label="Download for FreeBSD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-freebsd"></i> FreeBSD
               </a>
             )}
           </div>
