@@ -5,11 +5,10 @@ const detectOS = (): OS => {
   if (typeof navigator === "undefined") return "unknown";
   const ua = navigator.userAgent.toLowerCase();
   const platform = navigator.platform.toLowerCase();
-  const oscpu = navigator.oscpu?.toLowerCase() || "";
 
   if (ua.includes("win") || platform.includes("win")) return "windows";
   if (ua.includes("mac") || platform.includes("mac")) return "mac";
-  if (ua.includes("freebsd") || platform.includes("freebsd") || oscpu.includes("freebsd")) return "freebsd";
+  if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
   if (ua.includes("linux")) {
     if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64")) {
       return "linux-arm64";
@@ -32,9 +31,10 @@ export default function NovaDesk() {
 
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
-  // even when running on ARM64 hardware)
+  // even when running on ARM64 hardware). Also show FreeBSD since Firefox on
+  // FreeBSD reports as Linux.
   const shouldShow = (os: OS): boolean => {
-    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64")) return true;
+    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64" || os === "freebsd")) return true;
     if (detectedOS === "freebsd" && os === "freebsd") return true;
     return detectedOS === os || showAllButtons;
   };
