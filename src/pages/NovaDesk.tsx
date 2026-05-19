@@ -43,10 +43,10 @@ export default function NovaDesk() {
 
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
-  // even when running on ARM64 hardware)
-  // On macOS, show both Intel and Apple Silicon buttons
+  // even when running on ARM64 hardware). Also show FreeBSD since Firefox on
+  // FreeBSD reports as Linux.
   const shouldShow = (os: OS): boolean => {
-    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64")) return true;
+    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64" || os === "freebsd")) return true;
     if (detectedOS === "freebsd" && os === "freebsd") return true;
     if (detectedOS === "mac-intel" && (os === "mac-intel" || os === "mac-arm64")) return true;
     if (detectedOS === "mac-arm64" && (os === "mac-intel" || os === "mac-arm64")) return true;
