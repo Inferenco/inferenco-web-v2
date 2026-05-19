@@ -5,15 +5,27 @@ const detectOS = (): OS => {
   if (typeof navigator === "undefined") return "unknown";
   const ua = navigator.userAgent.toLowerCase();
   const platform = navigator.platform.toLowerCase();
+  
+  // Check if we can access navigator.oscpu for more precise detection (Firefox)
+  const oscpu = (navigator as any).oscpu?.toLowerCase() || "";
 
   if (ua.includes("win") || platform.includes("win")) return "windows";
-  if (ua.includes("mac") || platform.includes("mac")) return "mac";
   if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
   if (ua.includes("linux")) {
-    if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64")) {
+    if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64") || oscpu.includes("aarch64") || oscpu.includes("arm64")) {
       return "linux-arm64";
     }
     return "linux";
+  }
+  if (ua.includes("mac") || platform.includes("mac")) {
+    // Detect Apple Silicon (M1/M2) vs Intel
+    // userAgent contains "Apple" + platform contains "Mac" + check for ARM
+    if (platform.includes("arm64") || ua.includes("arm64") || ua.includes("aarch64") || 
+        oscpu.includes("arm64") || oscpu.includes("aarch64") ||
+        navigator.maxTouchPoints > 0) { // M1/M2 Macs have touch capability
+      return "mac-arm64";
+    }
+    return "mac-intel";
   }
   return "unknown";
 };
@@ -22,7 +34,7 @@ export default function NovaDesk() {
   const [version, setVersion] = useState<string>("v0.2.0");
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
-  const isMacOS = detectedOS === "mac";
+  const isMacOS = detectedOS === "mac" || detectedOS === "mac-intel" || detectedOS === "mac-arm64";
   const showAllButtons = isUnknownOS || isMacOS;
 
   useEffect(() => {
@@ -32,9 +44,12 @@ export default function NovaDesk() {
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
   // even when running on ARM64 hardware)
+  // On macOS, show both Intel and Apple Silicon buttons
   const shouldShow = (os: OS): boolean => {
     if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64")) return true;
     if (detectedOS === "freebsd" && os === "freebsd") return true;
+    if (detectedOS === "mac-intel" && (os === "mac-intel" || os === "mac-arm64")) return true;
+    if (detectedOS === "mac-arm64" && (os === "mac-intel" || os === "mac-arm64")) return true;
     return detectedOS === os || showAllButtons;
   };
 
@@ -71,14 +86,27 @@ export default function NovaDesk() {
                 <i className="fab fa-windows"></i> Windows
               </a>
             )}
-            {shouldShow("mac") && (
-              <span
-                className="cta-button disabled"
-                aria-label="macOS coming soon"
-                style={{ opacity: 0.6, cursor: "not-allowed" }}
+            {shouldShow("mac-intel") && (
+              <a
+                href={getDownloadUrl("mac-intel", version)}
+                className="cta-button"
+                aria-label="Download for macOS Intel"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i className="fab fa-apple"></i> macOS (Coming Soon)
-              </span>
+                <i className="fab fa-apple"></i> macOS Intel
+              </a>
+            )}
+            {shouldShow("mac-arm64") && (
+              <a
+                href={getDownloadUrl("mac-arm64", version)}
+                className="cta-button"
+                aria-label="Download for macOS Apple Silicon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-apple"></i> macOS Apple Silicon
+              </a>
             )}
             {shouldShow("linux") && (
               <a
