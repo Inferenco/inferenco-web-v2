@@ -1,5 +1,18 @@
 import { useEffect, useState } from "react";
 import { getDownloadUrl, getLatestReleaseVersion, type OS } from "../services/github";
+import LightboxGallery from "../components/LightboxGallery";
+
+const deskImages = [
+  { id: '1', src: '/img/nova-ecosystem/nova-desk/vault-selection.png', alt: 'Vault Selection Screen' },
+  { id: '2', src: '/img/nova-ecosystem/nova-desk/light-theme.png', alt: 'Dashboard - Light Theme' },
+  { id: '3', src: '/img/nova-ecosystem/nova-desk/dark-theme.png', alt: 'Dashboard - Dark Theme' },
+  { id: '4', src: '/img/nova-ecosystem/nova-desk/browser.png', alt: 'Integrated DApp Browser' },
+  { id: '5', src: '/img/nova-ecosystem/nova-desk/send.png', alt: 'Send Tokens' },
+  { id: '6', src: '/img/nova-ecosystem/nova-desk/receive.png', alt: 'Receive Tokens' },
+  { id: '7', src: '/img/nova-ecosystem/nova-desk/swap.png', alt: 'Swap via Avera DEX' },
+  { id: '8', src: '/img/nova-ecosystem/nova-desk/nfts.png', alt: 'NFT Gallery' },
+  { id: '9', src: '/img/nova-ecosystem/nova-desk/transactions.png', alt: 'Transaction History' },
+];
 
 const detectOS = (): OS => {
   if (typeof navigator === "undefined") return "unknown";
@@ -145,10 +158,24 @@ export default function NovaDesk() {
         </div>
       </section>
 
+      <section id="nova-desk-gallery" className="section">
+        <div className="container">
+          <LightboxGallery images={deskImages} thumbnailWidth="760px" />
+        </div>
+      </section>
+
       <section id="nova-desk-features" className="section">
         <div className="container">
           <h2 className="section-title">Features</h2>
           <div className="features-grid">
+            <div className="feature-card">
+              <span className="emoji">👤</span>
+              <h4>Account Management</h4>
+              <p>
+                Create, import, and export accounts. Full control over your wallet
+                identities with support for multiple accounts.
+              </p>
+            </div>
             <div className="feature-card">
               <span className="emoji">🔐</span>
               <h4>Security First</h4>
@@ -167,10 +194,34 @@ export default function NovaDesk() {
             </div>
             <div className="feature-card">
               <span className="emoji">🔄</span>
-              <h4>Auto Updates</h4>
+              <h4>Online Update System</h4>
               <p>
                 Automatic update checks on startup. Download and install updates
                 directly from GitHub releases.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🌐</span>
+              <h4>Full DApp Browser</h4>
+              <p>
+                Built-in browser for seamless dApp interaction with Nova Connect
+                support and deep link handling.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📊</span>
+              <h4>Activity History</h4>
+              <p>
+                View all your transactions and wallet events in one place.
+                Track your activity across the Cedra Network.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💱</span>
+              <h4>Avera Swap Integration</h4>
+              <p>
+                Swap tokens directly within Nova Desk using Avera DEX.
+                Get the best rates with multi-pool routing.
               </p>
             </div>
             <div className="feature-card">
@@ -219,6 +270,14 @@ export default function NovaDesk() {
               <p>
                 Access your wallet quickly from the system tray. Nova Desk
                 stays available while you work.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔗</span>
+              <h4>Deep Link Support</h4>
+              <p>
+                Secure URI handling for blockchain actions. Open links directly
+                in Nova Desk for seamless Web3 workflows.
               </p>
             </div>
           </div>
@@ -281,6 +340,7 @@ export default function NovaDesk() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
