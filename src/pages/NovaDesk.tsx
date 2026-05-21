@@ -87,6 +87,16 @@ export default function NovaDesk() {
             A production-ready desktop wallet for the Cedra Network. Manage assets,
             connect to dApps, and securely store your crypto with advanced security features.
           </p>
+          <p style={{ marginBottom: '1.5rem' }}>
+            <a
+              href="https://youtu.be/plNLLY66klU"
+              className="demo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎥 Watch Demo Video
+            </a>
+          </p>
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a

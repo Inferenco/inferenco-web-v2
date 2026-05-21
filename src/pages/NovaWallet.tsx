@@ -36,6 +36,16 @@ export default function NovaWallet() {
             A non-custodial mobile wallet for the Cedra Network. Manage assets,
             connect to dApps, and securely store your crypto.
           </p>
+          <p style={{ marginBottom: '1.5rem' }}>
+            <a
+              href="https://www.youtube.com/shorts/BNZETysCRmk"
+              className="demo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎥 Watch Demo Video
+            </a>
+          </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.inferenco.novawallet"
             className="cta-button"
