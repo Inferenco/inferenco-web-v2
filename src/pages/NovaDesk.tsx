@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { getDownloadUrl, getLatestReleaseVersion, type OS } from "../services/github";
+import { getDownloadUrl, type OS } from "../services/github";
 import LightboxGallery from "../components/LightboxGallery";
 
 const deskImages = [
@@ -20,7 +19,8 @@ const detectOS = (): OS => {
   const platform = navigator.platform.toLowerCase();
   
   // Check if we can access navigator.oscpu for more precise detection (Firefox)
-  const oscpu = (navigator as any).oscpu?.toLowerCase() || "";
+  const oscpu =
+    (navigator as Navigator & { oscpu?: string }).oscpu?.toLowerCase() || "";
 
   if (ua.includes("win") || platform.includes("win")) return "windows";
   if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
@@ -44,15 +44,10 @@ const detectOS = (): OS => {
 };
 
 export default function NovaDesk() {
-  const [version, setVersion] = useState<string>("v0.2.0");
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac" || detectedOS === "mac-intel" || detectedOS === "mac-arm64";
   const showAllButtons = isUnknownOS || isMacOS;
-
-  useEffect(() => {
-    getLatestReleaseVersion().then(setVersion);
-  }, []);
 
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
@@ -100,7 +95,7 @@ export default function NovaDesk() {
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a
-                href={getDownloadUrl("windows", version)}
+                href={getDownloadUrl("windows")}
                 className="cta-button"
                 aria-label="Download for Windows"
                 target="_blank"
@@ -111,7 +106,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-intel") && (
               <a
-                href={getDownloadUrl("mac-intel", version)}
+                href={getDownloadUrl("mac-intel")}
                 className="cta-button"
                 aria-label="Download for macOS Intel"
                 target="_blank"
@@ -122,7 +117,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-arm64") && (
               <a
-                href={getDownloadUrl("mac-arm64", version)}
+                href={getDownloadUrl("mac-arm64")}
                 className="cta-button"
                 aria-label="Download for macOS Apple Silicon"
                 target="_blank"
@@ -133,7 +128,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux") && (
               <a
-                href={getDownloadUrl("linux", version)}
+                href={getDownloadUrl("linux")}
                 className="cta-button"
                 aria-label="Download for Linux x64"
                 target="_blank"
@@ -144,7 +139,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux-arm64") && (
               <a
-                href={getDownloadUrl("linux-arm64", version)}
+                href={getDownloadUrl("linux-arm64")}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
                 target="_blank"
@@ -155,7 +150,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("freebsd") && (
               <a
-                href={getDownloadUrl("freebsd", version)}
+                href={getDownloadUrl("freebsd")}
                 className="cta-button"
                 aria-label="Download for FreeBSD"
                 target="_blank"
