@@ -16,16 +16,16 @@ export const getLatestReleaseVersion = async (): Promise<string> => {
   }
 };
 
-export const getDownloadUrl = (os: OS, version: string): string => {
-  const base = `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/download/${version}`;
+export const getDownloadUrl = (os: OS): string => {
+  const base = `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/latest/download`;
   switch (os) {
     case "windows":
       return `${base}/NovaDesk-Windows-x64.exe`;
     case "mac":
     case "mac-intel":
-      return `${base}/NovaDesk-macOS-x86_64.dmg`;
+      return `${base}/NovaDesk-macOS-x86_64.zip`;
     case "mac-arm64":
-      return `${base}/NovaDesk-macOS-aarch64.dmg`;
+      return `${base}/NovaDesk-macOS-aarch64.zip`;
     case "linux":
       return `${base}/NovaDesk-x86_64.AppImage`;
     case "linux-arm64":
