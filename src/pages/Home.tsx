@@ -154,11 +154,12 @@ export default function Home() {
               />
               <h4>Nova Desk</h4>
               <p>
-                Desktop application for blockchain interactions and workflow management.
+                Desktop application for Cedra blockchain interactions and workflow management.
                 Cross-platform, secure, and built for professional users and enterprises.
               </p>
               <div className="portfolio-tags">
                 <span className="tag">Desktop App</span>
+                <span className="tag">Cedra</span>
                 <span className="tag">Cross-Platform</span>
                 <span className="tag">Enterprise</span>
               </div>
