@@ -131,13 +131,13 @@ export default function Home() {
               />
               <h4>Nova Wallet</h4>
               <p>
-                Multi-chain cryptocurrency wallet for mobile devices. Secure asset
-                management with cross-chain swaps, DeFi integrations, and enterprise-grade
-                security.
+                Cryptocurrency wallet for mobile devices built on the Cedra blockchain.
+                Secure asset management with built-in swaps, DeFi integrations, and
+                enterprise-grade security.
               </p>
               <div className="portfolio-tags">
                 <span className="tag">Mobile App</span>
-                <span className="tag">Multi-Chain</span>
+                <span className="tag">Cedra</span>
                 <span className="tag">DeFi</span>
               </div>
               <Link to="/nova-wallet" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
