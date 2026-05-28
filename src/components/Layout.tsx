@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import type { PageType } from "../types";
 
@@ -23,6 +23,31 @@ const socialLinks = [
 export default function Layout() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Read theme synchronously on first render to prevent blink
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+      if (savedTheme) return savedTheme;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    return "dark";
+  });
+
+  useEffect(() => {
+    // Apply theme class to html element - toggle both classes
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.classList.toggle("light", theme === "light");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const isActive = (path: string) => {
     if (path === "/") return location.pathname === "/";
@@ -118,6 +143,14 @@ export default function Layout() {
           </div>
 
           <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          >
+            <i className={theme === "light" ? "fas fa-moon" : "fas fa-sun"} />
+          </button>
+          <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
@@ -127,18 +160,30 @@ export default function Layout() {
         </div>
       </nav>
 
-      <main className="main-content"><Outlet /></main>
+      <main className="main-content">
+        <div className="content-animation" aria-hidden="true">
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
+          <div className="orb orb-3"></div>
+          <div className="orb orb-4"></div>
+          <div className="orb orb-5"></div>
+          <div className="orb orb-6"></div>
+          <div className="orb orb-7"></div>
+          <div className="orb orb-8"></div>
+        </div>
+        <Outlet />
+      </main>
 
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
               <img src="assets/logos/flame.png" alt="Inferenco" />
-              <p>Building blockchain & AI applications for Web3 leaders.</p>
+              <p>Enterprise Software Development & IT Solutions</p>
             </div>
             <div className="footer-links">
               <h4>Products</h4>
-              <Link to="/nova">Nova</Link>
+              <Link to="/nova">Nova Bot</Link>
               <Link to="/nova-wallet">Nova Wallet</Link>
               <Link to="/nova-desk">Nova Desk</Link>
               <Link to="/docs">Documentation</Link>
@@ -149,9 +194,19 @@ export default function Layout() {
               <a href="https://mastodon.social/@inferenco" target="_blank" rel="noopener noreferrer">Mastodon</a>
               <a href="https://bsky.app/profile/inferenco.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
             </div>
+            <div className="footer-links">
+              <h4>Contact</h4>
+              <a href="mailto:spielcrypto@inferenco.com">spielcrypto@inferenco.com</a>
+              <a href="mailto:singularityshift@inferenco.com">singularityshift@inferenco.com</a>
+            </div>
+            <div className="footer-links">
+              <h4>Our Companies</h4>
+              <a href="https://spielcrypto.com/" target="_blank" rel="noopener noreferrer">Spielcrypto Ltd</a>
+              <a href="https://sshift.xyz/" target="_blank" rel="noopener noreferrer">Singularity Shift Ltd</a>
+            </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 Inferenco. All rights reserved.</p>
+            <p>&copy; 2025 Inferenco. All rights reserved.</p>
           </div>
         </div>
       </footer>
