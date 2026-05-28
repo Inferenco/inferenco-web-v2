@@ -52,10 +52,10 @@ function DocsContent() {
       <button
         className="mobile-menu-toggle"
         id="mobileMenuToggle"
-        aria-label="Toggle Menu"
+        aria-label="Toggle Sidebar"
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        <i className="fas fa-bars"></i>
+        <i className="fas fa-list"></i>
       </button>
 
       <div
