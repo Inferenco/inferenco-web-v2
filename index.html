@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -7,8 +7,17 @@
     <title>Inferenco</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <script defer src="https://cdn.overtracking.com/t/tGODY1hGiKs7DffdP/"></script>
-    <script type="module" crossorigin src="/assets/index-DGMy5CjQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D1RTwqw7.css">
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || (saved === null && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-B21bt6tg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CwOlAHUC.css">
   </head>
   <body>
     <div id="root"></div>
