@@ -81,11 +81,13 @@ export default function Layout() {
           <button
             className="mobile-dropdown-toggle"
             onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+            aria-expanded={productsDropdownOpen}
+            aria-controls="mobile-products-dropdown"
           >
-            Products <i className={`fas ${productsDropdownOpen ? "fa-chevron-up" : "fa-chevron-down"}`} />
+            Products <i className="fas fa-chevron-down" />
           </button>
           {productsDropdownOpen && (
-            <div className="mobile-dropdown-content">
+            <div className="mobile-dropdown-content" id="mobile-products-dropdown">
               {productsDropdown.map((product) => (
                 <Link
                   key={product.path}
