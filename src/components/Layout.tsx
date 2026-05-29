@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
-import type { PageType } from "../types";
+import type { PageType, ProductDropdownItem } from "../types";
 
 const navLinks: { label: string; path: string; page: PageType }[] = [
   { label: "Home", path: "/", page: "home" },
   { label: "Docs", path: "/docs", page: "docs" },
 ];
 
-const productsDropdown = [
+const productsDropdown: ProductDropdownItem[] = [
   { label: "Nova Bot", path: "/nova", page: "nova" },
   { label: "Nova Wallet", path: "/nova-wallet", page: "nova-wallet" },
   { label: "Nova Desk", path: "/nova-desk", page: "nova-desk" },
+  { label: "Nova Ecosystem", path: "https://app.inferenco.com", external: true },
 ];
 
 const socialLinks = [
@@ -89,17 +90,33 @@ export default function Layout() {
           {productsDropdownOpen && (
             <div className="mobile-dropdown-content" id="mobile-products-dropdown">
               {productsDropdown.map((product) => (
-                <Link
-                  key={product.path}
-                  to={product.path}
-                  className={`nav-link ${isActive(product.path) ? "active" : ""}`}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    setProductsDropdownOpen(false);
-                  }}
-                >
-                  {product.label}
-                </Link>
+                product.external ? (
+                  <a
+                    key={product.path}
+                    href={product.path}
+                    className="nav-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setProductsDropdownOpen(false);
+                    }}
+                  >
+                    {product.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={product.path}
+                    to={product.path}
+                    className={`nav-link ${isActive(product.path) ? "active" : ""}`}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setProductsDropdownOpen(false);
+                    }}
+                  >
+                    {product.label}
+                  </Link>
+                )
               ))}
             </div>
           )}
@@ -153,13 +170,25 @@ export default function Layout() {
               </button>
               <div className="dropdown-content">
                 {productsDropdown.map((product) => (
-                  <Link
-                    key={product.path}
-                    to={product.path}
-                    className={`nav-link ${isActive(product.path) ? "active" : ""}`}
-                  >
-                    {product.label}
-                  </Link>
+                  product.external ? (
+                    <a
+                      key={product.path}
+                      href={product.path}
+                      className="nav-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {product.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={product.path}
+                      to={product.path}
+                      className={`nav-link ${isActive(product.path) ? "active" : ""}`}
+                    >
+                      {product.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -233,6 +262,7 @@ export default function Layout() {
               <Link to="/nova">Nova Bot</Link>
               <Link to="/nova-wallet">Nova Wallet</Link>
               <Link to="/nova-desk">Nova Desk</Link>
+              <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">Nova Ecosystem</a>
             </div>
             <div className="footer-links">
               <h4>Resources</h4>

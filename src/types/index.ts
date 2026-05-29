@@ -1,6 +1,14 @@
 // Page types
 export type PageType = 'home' | 'nova' | 'nova-wallet' | 'nova-desk' | 'docs';
 
+// Product dropdown item type
+export interface ProductDropdownItem {
+  label: string;
+  path: string;
+  page?: PageType;
+  external?: boolean;
+}
+
 // Navigation link type
 export interface NavLink {
   label: string;
