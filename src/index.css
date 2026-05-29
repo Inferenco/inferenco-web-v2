@@ -616,15 +616,21 @@ html.light .navbar {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
-.nav-links .nav-link {
+.nav-links .nav-link,
+.dropdown-toggle {
     font-size: 1rem;
     font-weight: 500;
+    line-height: 1.5;
     color: var(--text-secondary);
     position: relative;
     padding: 0.5rem 0;
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-links .nav-link::after {
@@ -651,21 +657,16 @@ html.light .navbar {
 /* Dropdown menu for Products */
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-toggle {
     background: none;
     border: none;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 500;
+    font: inherit;
     cursor: pointer;
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0;
-    position: relative;
 }
 
 .dropdown-toggle::after {
@@ -1822,6 +1823,25 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     margin-top: 1rem;
 }
 
+.lightbox-carousel-button {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(45, 108, 255, 0.28) !important;
+    color: #081421 !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.28) !important;
+}
+
+.lightbox-carousel-button:hover,
+.lightbox-carousel-button:focus-visible {
+    background: #ffffff !important;
+    border-color: var(--brand-accent) !important;
+    color: var(--brand-primary) !important;
+    outline: none;
+}
+
+.lightbox-carousel-button i {
+    pointer-events: none;
+}
+
 /* Responsive Design - Mobile and Medium (Tablet) devices */
 @media (max-width: 1024px) {
     h1 {
@@ -1864,6 +1884,58 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .desktop-screenshot-gallery {
+        margin-inline: calc(50% - 50vw) !important;
+        padding-inline: 1.25rem;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel {
+        gap: 0 !important;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .desktop-screenshot-gallery .lightbox-slide {
+        flex: 0 0 100% !important;
+        display: flex;
+        justify-content: center;
+        scroll-snap-align: center;
+    }
+
+    .desktop-screenshot-gallery .lightbox-thumbnail {
+        width: min(100%, calc(100vw - 2.5rem)) !important;
+        min-width: 0 !important;
+        max-width: 760px;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button {
+        top: auto !important;
+        bottom: -3.25rem;
+        transform: none !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        font-size: 1rem !important;
+        z-index: 2;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button-prev {
+        left: calc(50% - 3.5rem) !important;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button-next {
+        right: calc(50% - 3.5rem) !important;
+    }
+
+    #nova-desk-gallery {
+        padding-bottom: 5rem;
     }
 
     .pricing-table {
