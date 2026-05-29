@@ -167,6 +167,37 @@ export default function Home() {
                 Learn More
               </Link>
             </div>
+
+            {/* Nova Ecosystem Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="assets/logos/nova.png"
+                alt="Nova Ecosystem logo"
+                className="portfolio-logo"
+              />
+              <h4>Nova Ecosystem</h4>
+              <p>
+                Browser-based dApp for the Cedra Network featuring events management,
+                gaming hub with poker and casino, and community tools. Built with React
+                and Move smart contracts for a seamless Web3 experience.
+              </p>
+              <div className="portfolio-tags">
+                <span className="tag">dApp</span>
+                <span className="tag">Cedra</span>
+                <span className="tag">Gaming</span>
+                <span className="tag">Events</span>
+                <span className="tag">Web3</span>
+              </div>
+              <a
+                href="https://app.inferenco.com"
+                className="cta-button"
+                style={{ marginTop: "1rem" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit dApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
