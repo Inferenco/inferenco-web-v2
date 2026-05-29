@@ -4,10 +4,13 @@ import type { PageType } from "../types";
 
 const navLinks: { label: string; path: string; page: PageType }[] = [
   { label: "Home", path: "/", page: "home" },
-  { label: "Nova", path: "/nova", page: "nova" },
+  { label: "Docs", path: "/docs", page: "docs" },
+];
+
+const productsDropdown = [
+  { label: "Nova Bot", path: "/nova", page: "nova" },
   { label: "Nova Wallet", path: "/nova-wallet", page: "nova-wallet" },
   { label: "Nova Desk", path: "/nova-desk", page: "nova-desk" },
-  { label: "Docs", path: "/docs", page: "docs" },
 ];
 
 const socialLinks = [
@@ -23,6 +26,7 @@ const socialLinks = [
 export default function Layout() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   // Read theme synchronously on first render to prevent blink
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window !== "undefined") {
@@ -73,6 +77,31 @@ export default function Layout() {
             {link.label}
           </Link>
         ))}
+        <div className="mobile-dropdown">
+          <button
+            className="mobile-dropdown-toggle"
+            onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+          >
+            Products <i className={`fas ${productsDropdownOpen ? "fa-chevron-up" : "fa-chevron-down"}`} />
+          </button>
+          {productsDropdownOpen && (
+            <div className="mobile-dropdown-content">
+              {productsDropdown.map((product) => (
+                <Link
+                  key={product.path}
+                  to={product.path}
+                  className={`nav-link ${isActive(product.path) ? "active" : ""}`}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setProductsDropdownOpen(false);
+                  }}
+                >
+                  {product.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="social-links-mobile">
           {socialLinks.map((link) => (
             <a
@@ -116,6 +145,22 @@ export default function Layout() {
                 {link.label}
               </Link>
             ))}
+            <div className="dropdown">
+              <button className="dropdown-toggle">
+                Products <i className="fas fa-chevron-down" />
+              </button>
+              <div className="dropdown-content">
+                {productsDropdown.map((product) => (
+                  <Link
+                    key={product.path}
+                    to={product.path}
+                    className={`nav-link ${isActive(product.path) ? "active" : ""}`}
+                  >
+                    {product.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="nav-social">
@@ -186,6 +231,9 @@ export default function Layout() {
               <Link to="/nova">Nova Bot</Link>
               <Link to="/nova-wallet">Nova Wallet</Link>
               <Link to="/nova-desk">Nova Desk</Link>
+            </div>
+            <div className="footer-links">
+              <h4>Resources</h4>
               <Link to="/docs">Documentation</Link>
             </div>
             <div className="footer-links">
