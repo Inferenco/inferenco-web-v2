@@ -10,9 +10,10 @@ interface LightboxGalleryProps {
   images: LightboxImage[];
   thumbnailWidth?: string;
   thumbnailHeight?: string;
+  className?: string;
 }
 
-export default function LightboxGallery({ images, thumbnailWidth = '800px', thumbnailHeight }: LightboxGalleryProps) {
+export default function LightboxGallery({ images, thumbnailWidth = '800px', thumbnailHeight, className = '' }: LightboxGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -150,8 +151,9 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
 
   return (
     <>
-      <div style={{ position: 'relative', margin: '24px 0' }}>
+      <div className={`lightbox-gallery ${className}`} style={{ position: 'relative', margin: '24px 0' }}>
         <div
+          className="lightbox-carousel"
           ref={carouselRef}
           onMouseDown={startDrag}
           style={{
@@ -177,11 +179,13 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
               onAuxClick={(e) => {
                 e.preventDefault();
               }}
+              className="lightbox-slide"
               style={{ flexShrink: 0 }}
             >
               <img
                 src={img.src}
                 alt={img.alt}
+                className="lightbox-thumbnail"
                 style={{
                   borderRadius: '8px',
                   border: '1px solid #e0e0e0',
@@ -198,6 +202,7 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
         </div>
 
         <button
+          className="lightbox-carousel-button lightbox-carousel-button-prev"
           onClick={() => scrollCarousel('prev')}
           style={{
             position: 'absolute',
@@ -218,9 +223,10 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
           }}
           aria-label="Previous"
         >
-          &lt;
+          <i className="fas fa-chevron-left" aria-hidden="true" />
         </button>
         <button
+          className="lightbox-carousel-button lightbox-carousel-button-next"
           onClick={() => scrollCarousel('next')}
           style={{
             position: 'absolute',
@@ -241,7 +247,7 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
           }}
           aria-label="Next"
         >
-          &gt;
+          <i className="fas fa-chevron-right" aria-hidden="true" />
         </button>
       </div>
 

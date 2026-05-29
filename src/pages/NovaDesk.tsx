@@ -165,7 +165,7 @@ export default function NovaDesk() {
 
       <section id="nova-desk-gallery" className="section">
         <div className="container">
-          <LightboxGallery images={deskImages} thumbnailWidth="760px" />
+          <LightboxGallery images={deskImages} thumbnailWidth="760px" className="desktop-screenshot-gallery" />
         </div>
       </section>
 

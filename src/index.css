@@ -616,15 +616,21 @@ html.light .navbar {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
-.nav-links .nav-link {
+.nav-links .nav-link,
+.dropdown-toggle {
     font-size: 1rem;
     font-weight: 500;
+    line-height: 1.5;
     color: var(--text-secondary);
     position: relative;
     padding: 0.5rem 0;
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-links .nav-link::after {
@@ -646,6 +652,146 @@ html.light .navbar {
 .nav-links .nav-link:hover,
 .nav-links .nav-link.active {
     color: var(--text-primary);
+}
+
+/* Dropdown menu for Products */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+
+.dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-primary);
+    transition: width var(--transition-speed) ease;
+}
+
+.dropdown-toggle:hover::after {
+    width: 100%;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    color: var(--text-primary);
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(8px);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--brand-primary);
+    border-radius: var(--radius);
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content .nav-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-secondary);
+    border-bottom: none;
+    white-space: nowrap;
+}
+
+.dropdown-content .nav-link:hover,
+.dropdown-content .nav-link.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+html.light .dropdown-content {
+    background: var(--surface-elevated);
+    border-color: rgba(45, 108, 255, 0.12);
+    box-shadow: 0 8px 16px rgba(45, 108, 255, 0.1);
+}
+
+html.light .dropdown-content .nav-link:hover,
+html.light .dropdown-content .nav-link.active {
+    background: rgba(45, 108, 255, 0.08);
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.mobile-dropdown-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--brand-primary);
+    text-align: left;
+    transition: color var(--transition-speed) ease;
+}
+
+html.light .mobile-dropdown-toggle {
+    border-bottom-color: rgba(45, 108, 255, 0.12);
+}
+
+.mobile-dropdown-toggle:hover {
+    color: var(--brand-accent);
+}
+
+.mobile-dropdown-toggle i {
+    transition: transform var(--transition-speed) ease;
+}
+
+.mobile-dropdown-toggle[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-content {
+    display: none;
+    padding-left: 1rem;
+    border-left: 1px solid var(--brand-primary);
+    margin-top: 0.5rem;
+}
+
+html.light .mobile-dropdown-content {
+    border-left-color: rgba(45, 108, 255, 0.12);
+}
+
+.mobile-dropdown-content.active,
+.mobile-dropdown .mobile-dropdown-content {
+    display: block;
+}
+
+.mobile-dropdown-content .nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    border-bottom: none;
 }
 
 /* Social link styling */
@@ -1677,6 +1823,25 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     margin-top: 1rem;
 }
 
+.lightbox-carousel-button {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(45, 108, 255, 0.28) !important;
+    color: #081421 !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.28) !important;
+}
+
+.lightbox-carousel-button:hover,
+.lightbox-carousel-button:focus-visible {
+    background: #ffffff !important;
+    border-color: var(--brand-accent) !important;
+    color: var(--brand-primary) !important;
+    outline: none;
+}
+
+.lightbox-carousel-button i {
+    pointer-events: none;
+}
+
 /* Responsive Design - Mobile and Medium (Tablet) devices */
 @media (max-width: 1024px) {
     h1 {
@@ -1719,6 +1884,58 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .desktop-screenshot-gallery {
+        margin-inline: calc(50% - 50vw) !important;
+        padding-inline: 1.25rem;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel {
+        gap: 0 !important;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .desktop-screenshot-gallery .lightbox-slide {
+        flex: 0 0 100% !important;
+        display: flex;
+        justify-content: center;
+        scroll-snap-align: center;
+    }
+
+    .desktop-screenshot-gallery .lightbox-thumbnail {
+        width: min(100%, calc(100vw - 2.5rem)) !important;
+        min-width: 0 !important;
+        max-width: 760px;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button {
+        top: auto !important;
+        bottom: -3.25rem;
+        transform: none !important;
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        font-size: 1rem !important;
+        z-index: 2;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button-prev {
+        left: calc(50% - 3.5rem) !important;
+    }
+
+    .desktop-screenshot-gallery .lightbox-carousel-button-next {
+        right: calc(50% - 3.5rem) !important;
+    }
+
+    #nova-desk-gallery {
+        padding-bottom: 5rem;
     }
 
     .pricing-table {
