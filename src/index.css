@@ -2326,6 +2326,122 @@ html.light .step-content p {
     }
 }
 
+/* Hero Navigation Index */
+.hero-navigation {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.nav-intro {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+html.light .nav-intro {
+    color: var(--text-muted);
+}
+
+.hero-nav-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.nav-pill:hover {
+    background: rgba(45, 108, 255, 0.15);
+    border-color: var(--brand-primary);
+    color: var(--brand-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 178, 255, 0.15);
+}
+
+.nav-pill i {
+    font-size: 0.9rem;
+    color: var(--brand-accent);
+}
+
+.nav-pill:hover i {
+    color: var(--light);
+}
+
+.contact-pill {
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    border: none;
+    color: var(--dark);
+}
+
+.contact-pill:hover {
+    background: var(--brand-accent);
+    color: var(--dark);
+    border-color: var(--brand-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 230, 255, 0.3);
+}
+
+.contact-pill i {
+    color: var(--dark);
+}
+
+.contact-pill:hover i {
+    color: var(--dark);
+}
+
+/* Light theme navigation pills */
+html.light .nav-pill {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: var(--text-primary);
+}
+
+html.light .nav-pill:hover {
+    background: rgba(45, 108, 255, 0.1);
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+html.light .nav-pill i {
+    color: var(--brand-primary);
+}
+
+html.light .nav-pill:hover i {
+    color: var(--text-primary);
+}
+
+html.light .contact-pill {
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    color: var(--bg-primary);
+}
+
+html.light .contact-pill:hover {
+    background: var(--brand-accent);
+    color: var(--bg-primary);
+}
+
+html.light .contact-pill i {
+    color: var(--bg-primary);
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     display: flex;

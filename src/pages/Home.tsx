@@ -24,16 +24,39 @@ export default function Home() {
             to blockchain platforms, AI systems to mobile apps&mdash;we deliver
             quality at scale.
           </p>
-          <a href="#portfolio" className="cta-button" aria-label="View Our Portfolio">
-            View Our Portfolio
-          </a>
-          <button
-            onClick={() => setShowContactModal(true)}
-            className="cta-button secondary"
-            aria-label="Contact Us"
-          >
-            Contact Us
-          </button>
+          <div className="hero-navigation">
+            <p className="nav-intro">Jump to section:</p>
+            <nav className="hero-nav-index" aria-label="Home page sections">
+              <a href="#about" className="nav-pill">
+                <i className="fas fa-info-circle"></i>
+                <span>About</span>
+              </a>
+              <a href="#portfolio" className="nav-pill">
+                <i className="fas fa-briefcase"></i>
+                <span>Portfolio</span>
+              </a>
+              <a href="#services" className="nav-pill">
+                <i className="fas fa-cogs"></i>
+                <span>Services</span>
+              </a>
+              <a href="#methodology" className="nav-pill">
+                <i className="fas fa-project-diagram"></i>
+                <span>Methodology</span>
+              </a>
+              <a href="#approach" className="nav-pill">
+                <i className="fas fa-lightbulb"></i>
+                <span>Approach</span>
+              </a>
+              <button
+                onClick={() => setShowContactModal(true)}
+                className="nav-pill contact-pill"
+                aria-label="Contact Us"
+              >
+                <i className="fas fa-envelope"></i>
+                <span>Contact</span>
+              </button>
+            </nav>
+          </div>
         </div>
       </section>
 
