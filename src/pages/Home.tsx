@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div id="home-page" className="page-section active">
+    <div id="home-page" className={`page-section active ${showSideNav ? "side-nav-visible" : ""}`}>
       {/* Floating Side Navigation */}
       <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label="Quick navigation">
         <div className="side-nav-items">
