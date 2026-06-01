@@ -2324,6 +2324,116 @@ html.light .step-content p {
         top: -6px;
         right: -6px;
     }
+    
+    /* Side navigation on mobile */
+    .side-nav {
+        left: 10px;
+    }
+    
+    .side-nav-items {
+        padding: 0.5rem;
+    }
+    
+    .side-nav-item {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Hide side nav on very small screens */
+@media (max-width: 480px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+/* Floating Side Navigation */
+.side-nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.side-nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.side-nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(13, 13, 20, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(45, 108, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+html.light .side-nav-items {
+    background: rgba(244, 247, 251, 0.95);
+    border-color: rgba(45, 108, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(45, 108, 255, 0.1);
+}
+
+.side-nav-item {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html.light .side-nav-item {
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-muted);
+}
+
+.side-nav-item:hover {
+    background: rgba(45, 108, 255, 0.15);
+    border-color: var(--brand-primary);
+    color: var(--brand-accent);
+    transform: scale(1.1);
+}
+
+html.light .side-nav-item:hover {
+    background: rgba(45, 108, 255, 0.1);
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+.side-nav-item.contact-item {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    border: none;
+    color: var(--dark);
+}
+
+.side-nav-item.contact-item:hover {
+    background: var(--brand-accent);
+    color: var(--dark);
+    transform: scale(1.1);
+}
+
+html.light .side-nav-item.contact-item {
+    color: var(--bg-primary);
+}
+
+html.light .side-nav-item.contact-item:hover {
+    color: var(--bg-primary);
 }
 
 /* Hero Navigation Index */

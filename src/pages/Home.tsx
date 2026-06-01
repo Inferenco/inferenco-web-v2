@@ -1,13 +1,88 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showSideNav, setShowSideNav] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setShowSideNav(heroBottom < 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div id="home-page" className="page-section active">
+      {/* Floating Side Navigation */}
+      <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label="Quick navigation">
+        <div className="side-nav-items">
+          <button 
+            onClick={() => scrollToSection("about")} 
+            className="side-nav-item" 
+            aria-label="Go to About section"
+            title="About"
+          >
+            <i className="fas fa-info-circle"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("portfolio")} 
+            className="side-nav-item" 
+            aria-label="Go to Portfolio section"
+            title="Portfolio"
+          >
+            <i className="fas fa-briefcase"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("services")} 
+            className="side-nav-item" 
+            aria-label="Go to Services section"
+            title="Services"
+          >
+            <i className="fas fa-cogs"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("methodology")} 
+            className="side-nav-item" 
+            aria-label="Go to Methodology section"
+            title="Methodology"
+          >
+            <i className="fas fa-project-diagram"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("approach")} 
+            className="side-nav-item" 
+            aria-label="Go to Approach section"
+            title="Approach"
+          >
+            <i className="fas fa-lightbulb"></i>
+          </button>
+          <button 
+            onClick={() => setShowContactModal(true)} 
+            className="side-nav-item contact-item" 
+            aria-label="Contact Us"
+            title="Contact"
+          >
+            <i className="fas fa-envelope"></i>
+          </button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="hero" role="banner">
+      <section className="hero" role="banner" ref={heroRef}>
         <div className="hero-content">
           <div className="hero-logo">
             <img
