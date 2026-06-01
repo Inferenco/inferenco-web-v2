@@ -2210,6 +2210,98 @@ html.light .portfolio-card p {
     display: block;
 }
 
+/* Methodology Section */
+.methodology-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.methodology-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-speed) ease;
+    text-align: left;
+}
+
+.methodology-step:hover {
+    transform: translateX(4px);
+    border-color: var(--brand-accent);
+    box-shadow: 0 4px 12px rgba(0, 178, 255, 0.1);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--dark);
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-number {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--brand-accent);
+    margin-bottom: 0.5rem;
+}
+
+.step-content h4 {
+    margin-bottom: 0.5rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+html.light .methodology-step {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+html.light .step-content h4 {
+    color: var(--text-primary);
+}
+
+html.light .step-content p {
+    color: var(--text-secondary);
+}
+
+/* Responsive methodology steps */
+@media (max-width: 768px) {
+    .methodology-step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .step-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     display: flex;
