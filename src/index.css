@@ -558,7 +558,7 @@ html.light .app {
 
 /* Home page content padding for side navigation - always reserve space */
 #home-page {
-    padding-left: 60px;
+    padding-left: 0;
 }
 
 /* Global container to constrain width */
@@ -2335,10 +2335,6 @@ html.light .step-content p {
         left: 4px;
     }
     
-    #home-page {
-        padding-left: 48px;
-    }
-    
     .side-nav-items {
         padding: 0.4rem;
     }
@@ -2354,10 +2350,6 @@ html.light .step-content p {
 @media (max-width: 480px) {
     .side-nav {
         display: none;
-    }
-    
-    #home-page {
-        padding-left: 0;
     }
 }
 
