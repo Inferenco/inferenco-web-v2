@@ -556,12 +556,8 @@ html.light .app {
     margin-top: 80px;
 }
 
-/* Home page content padding for side navigation */
+/* Home page content padding for side navigation - always reserve space */
 #home-page {
-    padding-left: 0;
-}
-
-#home-page.side-nav-visible {
     padding-left: 60px;
 }
 
@@ -2339,7 +2335,7 @@ html.light .step-content p {
         left: 4px;
     }
     
-    #home-page.side-nav-visible {
+    #home-page {
         padding-left: 48px;
     }
     
@@ -2358,6 +2354,10 @@ html.light .step-content p {
 @media (max-width: 480px) {
     .side-nav {
         display: none;
+    }
+    
+    #home-page {
+        padding-left: 0;
     }
 }
 
