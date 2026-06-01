@@ -292,50 +292,50 @@ export default function Home() {
           <div className="methodology-steps">
             <div className="methodology-step">
               <div className="step-icon">
+                <span className="step-number">01</span>
                 <i className="fas fa-envelope"></i>
               </div>
               <div className="step-content">
-                <span className="step-number">01</span>
                 <h4>You Contact Us</h4>
                 <p>Reach out via email to start the conversation about your project needs</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
+                <span className="step-number">02</span>
                 <i className="fas fa-calendar-alt"></i>
               </div>
               <div className="step-content">
-                <span className="step-number">02</span>
                 <h4>We Schedule an Interview</h4>
                 <p>We meet to understand exactly what you need and your business objectives</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
+                <span className="step-number">03</span>
                 <i className="fas fa-file-invoice-dollar"></i>
               </div>
               <div className="step-content">
-                <span className="step-number">03</span>
                 <h4>You Receive a Detailed Proposal</h4>
                 <p>We provide costs, timeline, and specify what we need from you (server access, accounts, etc.)</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
+                <span className="step-number">04</span>
                 <i className="fas fa-handshake"></i>
               </div>
               <div className="step-content">
-                <span className="step-number">04</span>
                 <h4>We Sign the Contract</h4>
                 <p>Once you agree, both parties sign and we officially begin your project</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
+                <span className="step-number">05</span>
                 <i className="fas fa-file-invoice"></i>
               </div>
               <div className="step-content">
-                <span className="step-number">05</span>
                 <h4>You Get Your Invoice</h4>
                 <p>One of our companies (your choice) sends the invoice and we start working</p>
               </div>

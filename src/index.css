@@ -2248,18 +2248,34 @@ html.light .portfolio-card p {
     font-size: 1.5rem;
     color: var(--dark);
     flex-shrink: 0;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+    background: var(--dark);
+    color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--brand-primary);
+}
+
+html.light .step-number {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: var(--brand-primary);
 }
 
 .step-content {
     flex: 1;
-}
-
-.step-number {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--brand-accent);
-    margin-bottom: 0.5rem;
 }
 
 .step-content h4 {
@@ -2299,6 +2315,14 @@ html.light .step-content p {
         width: 50px;
         height: 50px;
         font-size: 1.25rem;
+    }
+    
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
+        top: -6px;
+        right: -6px;
     }
 }
 
