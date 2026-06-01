@@ -1,13 +1,88 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showSideNav, setShowSideNav] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setShowSideNav(heroBottom < 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div id="home-page" className="page-section active">
+      {/* Floating Side Navigation */}
+      <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label="Quick navigation">
+        <div className="side-nav-items">
+          <button 
+            onClick={() => scrollToSection("about")} 
+            className="side-nav-item" 
+            aria-label="Go to About section"
+            title="About"
+          >
+            <i className="fas fa-info-circle"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("portfolio")} 
+            className="side-nav-item" 
+            aria-label="Go to Portfolio section"
+            title="Portfolio"
+          >
+            <i className="fas fa-briefcase"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("services")} 
+            className="side-nav-item" 
+            aria-label="Go to Services section"
+            title="Services"
+          >
+            <i className="fas fa-cogs"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("methodology")} 
+            className="side-nav-item" 
+            aria-label="Go to Methodology section"
+            title="Methodology"
+          >
+            <i className="fas fa-project-diagram"></i>
+          </button>
+          <button 
+            onClick={() => scrollToSection("approach")} 
+            className="side-nav-item" 
+            aria-label="Go to Approach section"
+            title="Approach"
+          >
+            <i className="fas fa-lightbulb"></i>
+          </button>
+          <button 
+            onClick={() => setShowContactModal(true)} 
+            className="side-nav-item contact-item" 
+            aria-label="Contact Us"
+            title="Contact"
+          >
+            <i className="fas fa-envelope"></i>
+          </button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="hero" role="banner">
+      <section className="hero" role="banner" ref={heroRef}>
         <div className="hero-content">
           <div className="hero-logo">
             <img
@@ -24,16 +99,39 @@ export default function Home() {
             to blockchain platforms, AI systems to mobile apps&mdash;we deliver
             quality at scale.
           </p>
-          <a href="#portfolio" className="cta-button" aria-label="View Our Portfolio">
-            View Our Portfolio
-          </a>
-          <button
-            onClick={() => setShowContactModal(true)}
-            className="cta-button secondary"
-            aria-label="Contact Us"
-          >
-            Contact Us
-          </button>
+          <div className="hero-navigation">
+            <p className="nav-intro">Jump to section:</p>
+            <nav className="hero-nav-index" aria-label="Home page sections">
+              <a href="#about" className="nav-pill">
+                <i className="fas fa-info-circle"></i>
+                <span>About</span>
+              </a>
+              <a href="#portfolio" className="nav-pill">
+                <i className="fas fa-briefcase"></i>
+                <span>Portfolio</span>
+              </a>
+              <a href="#services" className="nav-pill">
+                <i className="fas fa-cogs"></i>
+                <span>Services</span>
+              </a>
+              <a href="#methodology" className="nav-pill">
+                <i className="fas fa-project-diagram"></i>
+                <span>Methodology</span>
+              </a>
+              <a href="#approach" className="nav-pill">
+                <i className="fas fa-lightbulb"></i>
+                <span>Approach</span>
+              </a>
+              <button
+                onClick={() => setShowContactModal(true)}
+                className="nav-pill contact-pill"
+                aria-label="Contact Us"
+              >
+                <i className="fas fa-envelope"></i>
+                <span>Contact</span>
+              </button>
+            </nav>
+          </div>
         </div>
       </section>
 
@@ -275,6 +373,70 @@ export default function Home() {
                 Upgrade and modernize outdated systems to improve performance, security,
                 and maintainability.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology Section */}
+      <section id="methodology" className="section">
+        <div className="container">
+          <h2 className="section-title">
+            Our <span>Methodology</span> &ndash; How We Work With You
+          </h2>
+          <p className="section-subtitle">
+            A clear, transparent process from first contact to project delivery
+          </p>
+          <div className="methodology-steps">
+            <div className="methodology-step">
+              <div className="step-icon">
+                <span className="step-number">01</span>
+                <i className="fas fa-envelope"></i>
+              </div>
+              <div className="step-content">
+                <h4>You Contact Us</h4>
+                <p>Reach out via email to start the conversation about your project needs</p>
+              </div>
+            </div>
+            <div className="methodology-step">
+              <div className="step-icon">
+                <span className="step-number">02</span>
+                <i className="fas fa-calendar-alt"></i>
+              </div>
+              <div className="step-content">
+                <h4>We Schedule an Interview</h4>
+                <p>We meet to understand exactly what you need and your business objectives</p>
+              </div>
+            </div>
+            <div className="methodology-step">
+              <div className="step-icon">
+                <span className="step-number">03</span>
+                <i className="fas fa-file-invoice-dollar"></i>
+              </div>
+              <div className="step-content">
+                <h4>You Receive a Detailed Proposal</h4>
+                <p>We provide costs, timeline, and specify what we need from you (server access, accounts, etc.)</p>
+              </div>
+            </div>
+            <div className="methodology-step">
+              <div className="step-icon">
+                <span className="step-number">04</span>
+                <i className="fas fa-handshake"></i>
+              </div>
+              <div className="step-content">
+                <h4>We Sign the Contract</h4>
+                <p>Once you agree, both parties sign and we officially begin your project</p>
+              </div>
+            </div>
+            <div className="methodology-step">
+              <div className="step-icon">
+                <span className="step-number">05</span>
+                <i className="fas fa-file-invoice"></i>
+              </div>
+              <div className="step-content">
+                <h4>You Get Your Invoice</h4>
+                <p>One of our companies (your choice) sends the invoice and we start working</p>
+              </div>
             </div>
           </div>
         </div>
