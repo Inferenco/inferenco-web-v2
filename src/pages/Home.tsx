@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [showContactModal, setShowContactModal] = useState(false);
   const [showSideNav, setShowSideNav] = useState(false);
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +18,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
