@@ -23,12 +23,30 @@ export default function Nova() {
           <p>
             Transparent platform with pay‑per‑use pricing and reliable service.
           </p>
+          <p style={{ marginBottom: '1.5rem' }}>
+            <a
+              href="https://youtu.be/2ETNllY2yq8?si=_QYcjC8DGyQ1vAnt"
+              className="demo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎥 Watch Demo Video
+            </a>
+          </p>
+          <div className="maintenance-notice" style={{ background: "var(--background-secondary)", padding: "1rem", borderRadius: "0.5rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
+            <p style={{ margin: 0, color: "var(--text-secondary)" }}>
+              <strong>⚠️ Nova Bot is currently unavailable</strong><br />
+              We are working on a significant update. The bot will be back soon with improved features and a new AI model.
+            </p>
+          </div>
           <a
             href="https://t.me/NovaInferencoBot"
             className="cta-button"
             aria-label="Start with Nova Bot"
+            style={{ opacity: 0.6, cursor: "not-allowed" }}
+            onClick={(e) => { e.preventDefault(); }}
           >
-            Start with Nova Bot
+            Start with Nova Bot (Temporarily Unavailable)
           </a>
         </div>
       </section>
@@ -257,22 +275,16 @@ export default function Nova() {
         <div className="container">
           <h2 className="section-title">Pricing</h2>
           <p>
-            <strong>Usage Pricing (Nova)</strong><br />Prices
-            shown in USD equivalent — billed in CEDRA or EURC
-            at current market rate.
+            <strong>Usage Pricing (Nova)</strong><br />
+            Prices shown in USD equivalent — billed in CEDRA or EURC at current market rate.
+          </p>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "2rem" }}>
+            <em>Pricing information will be updated when the new AI model is deployed.</em>
           </p>
           <div className="pricing-table">
             <div className="pricing-item">
-              <h4>GPT‑5</h4>
-              <p>$0.00410 per 1k tokens</p>
-            </div>
-            <div className="pricing-item">
-              <h4>GPT‑5‑mini</h4>
-              <p>$0.00082 per 1k tokens</p>
-            </div>
-            <div className="pricing-item">
-              <h4>Sentinel (GPT‑5‑nano)</h4>
-              <p>$0.00016 per 1k tokens</p>
+              <h4>Advanced AI Model</h4>
+              <p>Pricing coming soon</p>
             </div>
             <div className="pricing-item">
               <h4>Image Generation</h4>
@@ -288,21 +300,12 @@ export default function Nova() {
             </div>
             <div className="pricing-item">
               <h4>MCP Tools</h4>
-              <p>$0.00082 per 1k tokens (output)</p>
+              <p>Pricing coming soon</p>
               <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginTop: "0.25rem" }}>
                 Minimum charge per request
               </p>
             </div>
           </div>
-          <p style={{ fontSize: "0.875rem", color: "var(--muted)", marginTop: "1rem" }}>
-            Note: final costs depend on model choice and tool
-            complexity; Nova charges according to metered LLM
-            token usage in real time from your account. MCP
-            tools (market data, price predictions, social
-            insights, etc.) are priced based on output tokens at
-            the same rate as GPT-5-mini ($0.00082 per 1k
-            tokens), with a minimum charge per request.
-          </p>
         </div>
       </section>
 
@@ -320,8 +323,10 @@ export default function Nova() {
             href="https://t.me/NovaInferencoBot"
             className="cta-button"
             aria-label="Start with Nova Bot"
+            style={{ opacity: 0.6, cursor: "not-allowed" }}
+            onClick={(e) => { e.preventDefault(); }}
           >
-            Start with Nova Bot
+            Start with Nova Bot (Temporarily Unavailable)
           </a>
         </div>
       </section>
