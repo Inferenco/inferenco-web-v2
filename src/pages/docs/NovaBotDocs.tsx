@@ -4,12 +4,19 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
       <div id="nova-bot-introduction" className={`docs-section ${hash === "nova-bot-introduction" ? "active" : ""}`}>
         <h1>Nova Bot - Introduction</h1>
 
+        <div className="maintenance-notice" style={{ background: "var(--background-secondary)", padding: "1rem", borderRadius: "0.5rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
+          <p style={{ margin: 0, color: "var(--text-secondary)" }}>
+            <strong>⚠️ Nova Bot is currently unavailable</strong><br />
+            We are working on a significant update. The bot will be back soon with improved features and a new AI model.
+          </p>
+        </div>
+
         <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Cedra Network. Nova provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
 
         <h2>What is Nova Bot?</h2>
         <p>Nova Bot combines cutting-edge AI technology with blockchain transparency to deliver:</p>
         <ul>
-          <li><strong>AI-Powered Conversations:</strong> Access to advanced language models (GPT-5, GPT-5-mini) with tool-calling capabilities</li>
+          <li><strong>AI-Powered Conversations:</strong> Access to advanced language models with tool-calling capabilities</li>
           <li><strong>Blockchain Integration:</strong> Multi-chain support across Cedra Network, Aptos, Solana, and 20+ EVM-compatible blockchains for transparent payments and transactions</li>
           <li><strong>Multi-Token Support:</strong> Work with native tokens and ERC-20 tokens across all supported chains (CEDRA, USDC, USDT, ETH, and more)</li>
           <li><strong>Market Data Tools:</strong> Real-time cryptocurrency prices, trending pools, DEX data, price predictions, and more</li>
@@ -29,6 +36,9 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <h2>Getting Started with Nova Bot</h2>
         <p>To start using Nova Bot:</p>
+        <p style={{ color: "var(--text-secondary)" }}>
+          <em>Nova Bot is currently unavailable during our significant update. Please check back soon!</em>
+        </p>
         <ol>
           <li>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a></li>
           <li>Click "Start" to begin</li>
@@ -190,12 +200,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Select Model</h4>
-          <p>Choose which AI model to use for your conversations. Available models include:</p>
-          <ul>
-            <li><strong>GPT-5:</strong> Most advanced model for complex tasks ($0.00410 per 1k tokens)</li>
-            <li><strong>GPT-5-mini:</strong> Faster, more cost-effective option ($0.00082 per 1k tokens)</li>
-            <li><strong>Sentinel (GPT-5-nano):</strong> Lightweight model for moderation ($0.00016 per 1k tokens)</li>
-          </ul>
+          <p>Choose which AI model to use for your conversations. Model options will be updated when the new AI model is deployed.</p>
           <p>You can also configure reasoning mode and other model preferences.</p>
         </div>
 
@@ -296,7 +301,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <h3>MCP Tools (Blockchain & Data)</h3>
         <p>These tools are available through the MCP server and provide blockchain and market data capabilities:</p>
-        <p><strong>Cost:</strong> $0.00082 per 1k tokens (output) — same rate as GPT-5-mini. Pricing is based on output tokens with a minimum charge per request.</p>
+        <p><strong>Cost:</strong> Pricing will be updated when the new AI model is deployed. Pricing is based on output tokens with a minimum charge per request.</p>
 
         <div className="endpoint-item">
           <h4>Get Trending Pools</h4>

@@ -11,7 +11,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <ul>
           <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
           <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
-          <li><strong>AI Model Access:</strong> Programmatic access to advanced language models (GPT-5, GPT-5-mini) with configurable parameters (verbosity, reasoning mode, token limits)</li>
+          <li><strong>AI Model Access:</strong> Programmatic access to advanced language models with configurable parameters (verbosity, reasoning mode, token limits)</li>
           <li><strong>Automatic Tool Calling:</strong> AI automatically selects and calls appropriate tools based on your prompts, including market data, price predictions, social intelligence, automated reports, image generation, web search, and more</li>
           <li><strong>Knowledge Base Integration (RAG):</strong> Upload documents to your API key's vector store for context-aware responses. The API automatically searches your knowledge base when relevant</li>
           <li><strong>Streaming Responses:</strong> Support for Server-Sent Events (SSE) for real-time streaming of AI responses</li>
@@ -176,7 +176,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <li><strong>Social Insights:</strong> Get crypto social media intelligence and sentiment analysis. Provides Twitter/X and Telegram social analytics including trending tokens, top mentions, smart account stats, mentions search, event summaries, trending narratives, token news, and trending contract addresses. User profiles are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags.</li>
           <li><strong>Automated Reports:</strong> Generate automated, intelligent crypto intelligence reports. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities. Reports are available in both Markdown (human-readable) and JSON (machine-readable) formats. Supports creating reports, listing executions, getting report content, and managing report lifecycle.</li>
         </ul>
-        <p><strong>MCP Tools Pricing:</strong> $0.00082 per 1k tokens (output) — same rate as GPT-5-mini. Pricing is based on output tokens with a minimum charge per request.</p>
+        <p><strong>MCP Tools Pricing:</strong> Pricing will be updated when the new AI model is deployed. Pricing is based on output tokens with a minimum charge per request.</p>
 
         <h2>Example Prompts Using Tools</h2>
         <p>Here are example prompts you can use with the Nova API to trigger different tools:</p>
@@ -185,7 +185,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Predict Bitcoin price in 1 hour",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
@@ -195,7 +195,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "What will Ethereum price be in 1 week? Show me a forecast with chart data",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
@@ -205,7 +205,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Get a 4-hour price forecast for Solana",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
@@ -215,7 +215,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Forecast CEDRA price for 1 month with confidence intervals",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
@@ -226,7 +226,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Show me trending pools on Cedra Network",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
@@ -236,7 +236,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Find pools for CEDRA/EURC on Cedra Network",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
@@ -246,7 +246,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "What's the current Fear & Greed Index?",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
@@ -256,7 +256,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Get historical price data for Ethereum for the last 7 days",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
@@ -267,7 +267,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Generate an image of a futuristic city with flying cars",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 1000,
   "reasoning": false
@@ -278,7 +278,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "What does my documentation say about API integration?",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
@@ -289,7 +289,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Search for the latest news about Cedra Network blockchain",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
@@ -300,7 +300,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Calculate the ROI if I invest $1000 at 8% annual return for 5 years",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
@@ -311,7 +311,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "What tokens are trending on Twitter right now?",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
@@ -321,7 +321,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Show me the top mentions of Bitcoin on X in the last 24 hours",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
@@ -331,7 +331,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Get smart stats for the Twitter account @elonmusk",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
@@ -341,7 +341,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "What are the trending narratives in crypto right now?",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
@@ -351,7 +351,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Search for mentions of Cedra Network on Twitter and summarize the sentiment",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
@@ -362,7 +362,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "I want to create report of daily yield farming across Aave, Compound, and Convex protocols",
-  "model": "gpt-5",
+  "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
@@ -372,7 +372,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "List all my reports",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
@@ -382,7 +382,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Get the latest content for report 77d51445-4146-4ab4-bf5b-5e69bffe462c",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
@@ -392,7 +392,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <div className="code-block">
           <code>{`{
   "input": "Show me available datasets for creating reports",
-  "model": "gpt-5-mini",
+  "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
@@ -554,7 +554,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
                   <td>model</td>
                   <td>string</td>
                   <td className="required">Yes</td>
-                  <td>AI model to use (e.g., "gpt-5", "gpt-5-mini")</td>
+                  <td>AI model to use (model options will be updated with the new deployment)</td>
                 </tr>
                 <tr>
                   <td>verbosity</td>
@@ -600,7 +600,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <div className="code-block">
             <code>{`{
   "text": "AI response text",
-  "model": "gpt-5",
+  "model": "advanced",
   "image_data": null,
   "tool_calls": [],
   "total_tokens": 150,
@@ -623,7 +623,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'gpt-5',
+        model: 'advanced',
         input: prompt,
         max_tokens: 2000,
         verbosity: 'Medium',

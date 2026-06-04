@@ -210,6 +210,9 @@ export default function Home() {
                 Features transparent pay-per-use pricing, blockchain integration,
                 and 24/7 automated community support.
               </p>
+              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "0.5rem 0" }}>
+                <em>⚠️ Currently unavailable - significant update in progress</em>
+              </p>
               <div className="portfolio-tags">
                 <span className="tag">AI Assistant</span>
                 <span className="tag">Telegram Bot</span>
