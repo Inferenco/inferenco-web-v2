@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import NovaBotDocs from "./docs/NovaBotDocs";
 import NovaAPIDocs from "./docs/NovaAPIDocs";
 import NovaConnectDocs from "./docs/NovaConnectDocs";
+import WalletProfileDocs from "./docs/WalletProfileDocs";
 
 const docsSections = [
   {
@@ -38,6 +39,19 @@ const docsSections = [
       { id: "nova-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
       { id: "nova-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
       { id: "nova-connect-session-management", label: "Session Management", icon: "fas fa-database" },
+    ],
+  },
+  {
+    title: "Wallet Profile",
+    items: [
+      { id: "wallet-profile-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "wallet-profile-contract-functions", label: "Contract Functions", icon: "fas fa-code" },
+      { id: "wallet-profile-data-model", label: "Data Model", icon: "fas fa-database" },
+      { id: "wallet-profile-cedra-ts-sdk", label: "Cedra TS SDK", icon: "fas fa-plug" },
+      { id: "wallet-profile-nova-connect", label: "Nova Connect", icon: "fas fa-link" },
+      { id: "wallet-profile-react-example", label: "React Example", icon: "fab fa-react" },
+      { id: "wallet-profile-best-practices", label: "Best Practices", icon: "fas fa-lightbulb" },
+      { id: "wallet-profile-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
     ],
   },
 ];
@@ -89,6 +103,7 @@ function DocsContent() {
         <NovaBotDocs hash={hash} />
         <NovaAPIDocs hash={hash} />
         <NovaConnectDocs hash={hash} />
+        <WalletProfileDocs hash={hash} />
       </main>
     </div>
   );
