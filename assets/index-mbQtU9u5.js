@@ -594,4 +594,267 @@ const validated = await readValidatedExternalSession();
 
 await wallet.disconnect(); // revokes active session and clears stored state
 clearExternalSession();
-clearPendingMobilePairing();`})}),(0,j.jsxs)(`p`,{children:[`Nova Desk sessions are validated against the local bridge before reuse. Nova Wallet sessions store encrypted relay credentials and are reused by the relay transport. Cross-window updates are coordinated with storage events, window messaging, and `,(0,j.jsx)(`code`,{children:`BroadcastChannel`}),` when available.`]})]})]})}var mr=[{title:`Nova Bot`,items:[{id:`nova-bot-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-bot-commands`,label:`Commands`,icon:`fas fa-terminal`},{id:`nova-bot-settings`,label:`Settings`,icon:`fas fa-cog`},{id:`nova-bot-prompts`,label:`Prompts`,icon:`fas fa-comments`}]},{title:`Nova API`,items:[{id:`nova-api-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`generate-api-key`,label:`Generate API Key`,icon:`fas fa-key`},{id:`tools`,label:`Tools`,icon:`fas fa-toolbox`},{id:`add-knowledge`,label:`Add Knowledge`,icon:`fas fa-book-open`},{id:`templates`,label:`Templates`,icon:`fas fa-puzzle-piece`},{id:`api-docs`,label:`API Docs`,icon:`fas fa-code`}]},{title:`Nova Connect`,items:[{id:`nova-connect-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-connect-installation`,label:`Installation`,icon:`fas fa-download`},{id:`nova-connect-quickstart`,label:`Quick Start`,icon:`fas fa-rocket`},{id:`nova-connect-react-integration`,label:`React Integration`,icon:`fab fa-react`},{id:`nova-connect-api-reference`,label:`API Reference`,icon:`fas fa-code`},{id:`nova-connect-configuration`,label:`Configuration`,icon:`fas fa-cog`},{id:`nova-connect-mobile-relay`,label:`Mobile Relay`,icon:`fas fa-mobile-alt`},{id:`nova-connect-error-handling`,label:`Error Handling`,icon:`fas fa-exclamation-triangle`},{id:`nova-connect-provider-detection`,label:`Provider Detection`,icon:`fas fa-search`},{id:`nova-connect-session-management`,label:`Session Management`,icon:`fas fa-database`}]}];function hr(){let e=ut().hash.slice(1)||`nova-bot-introduction`,[t,n]=(0,_.useState)(!1);return(0,j.jsxs)(`div`,{id:`docs-page`,className:`page-section docs-container docs-page`,children:[(0,j.jsx)(`button`,{className:`mobile-menu-toggle`,id:`mobileMenuToggle`,"aria-label":`Toggle Sidebar`,onClick:()=>n(!t),children:(0,j.jsx)(`i`,{className:`fas fa-list`})}),(0,j.jsx)(`div`,{className:`sidebar-overlay ${t?`active`:``}`,id:`sidebarOverlay`,onClick:()=>n(!1)}),(0,j.jsx)(`aside`,{className:`docs-sidebar ${t?`active`:``}`,id:`docsSidebar`,children:mr.map(t=>(0,j.jsxs)(`div`,{className:`sidebar-section`,children:[(0,j.jsx)(`div`,{className:`sidebar-title`,children:t.title}),t.items.map(t=>(0,j.jsxs)(Mn,{to:`/docs#${t.id}`,className:`sidebar-item ${e===t.id?`active`:``}`,onClick:()=>n(!1),children:[(0,j.jsx)(`i`,{className:t.icon}),` `,t.label]},t.id))]},t.title))}),(0,j.jsxs)(`main`,{className:`docs-content`,children:[(0,j.jsx)(dr,{hash:e}),(0,j.jsx)(fr,{hash:e}),(0,j.jsx)(pr,{hash:e})]})]})}function gr(){return(0,j.jsx)(Vt,{children:(0,j.jsx)(A,{path:`/*`,element:(0,j.jsx)(hr,{})})})}function _r(){return(0,j.jsx)(kn,{children:(0,j.jsx)(Vt,{children:(0,j.jsxs)(A,{path:`/`,element:(0,j.jsx)(er,{}),children:[(0,j.jsx)(A,{index:!0,element:(0,j.jsx)(tr,{})}),(0,j.jsx)(A,{path:`nova`,element:(0,j.jsx)(nr,{})}),(0,j.jsx)(A,{path:`nova-wallet`,element:(0,j.jsx)(ir,{})}),(0,j.jsx)(A,{path:`nova-desk`,element:(0,j.jsx)(ur,{})}),(0,j.jsx)(A,{path:`docs/*`,element:(0,j.jsx)(gr,{})})]})})})}(0,v.createRoot)(document.getElementById(`root`)).render((0,j.jsx)(_.StrictMode,{children:(0,j.jsx)(_r,{})}));
+clearPendingMobilePairing();`})}),(0,j.jsxs)(`p`,{children:[`Nova Desk sessions are validated against the local bridge before reuse. Nova Wallet sessions store encrypted relay credentials and are reused by the relay transport. Cross-window updates are coordinated with storage events, window messaging, and `,(0,j.jsx)(`code`,{children:`BroadcastChannel`}),` when available.`]})]})]})}function mr({hash:e}){let t=`0xbdf9c94e797716648980ed99a0c6e2b3d6452ce5c1d28dbad3517a9be682b724`;return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsxs)(`div`,{id:`wallet-profile-introduction`,className:`docs-section ${e===`wallet-profile-introduction`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Introduction`}),(0,j.jsxs)(`p`,{children:[`The `,(0,j.jsx)(`code`,{children:`wallet::user_profiles`}),` module gives every Cedra account a shared on-chain profile: a `,(0,j.jsx)(`strong`,{children:`nickname`}),` and an optional `,(0,j.jsx)(`strong`,{children:`avatar URL`}),`. Any app vertical (games, social, events, marketplaces) can read or write the same profile so the user has one identity across the Nova ecosystem.`]}),(0,j.jsx)(`h2`,{children:`Deployment`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Module:`}),` `,(0,j.jsx)(`code`,{children:`wallet::user_profiles`})]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Contract address (testnet):`}),` `,(0,j.jsx)(`code`,{children:t})]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Network:`}),` Cedra testnet`]}),(0,j.jsxs)(`li`,{children:[(0,j.jsx)(`strong`,{children:`Testnet fullnode:`}),` `,(0,j.jsx)(`code`,{children:`https://fullnode.testnet.cedralabs.com/v1`})]})]}),(0,j.jsx)(`h2`,{children:`Features`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[`One `,(0,j.jsx)(`code`,{children:`UserProfile`}),` resource per account, stored under the user's address`]}),(0,j.jsxs)(`li`,{children:[`Create or update in a single entry call (`,(0,j.jsx)(`code`,{children:`set_profile`}),`)`]}),(0,j.jsxs)(`li`,{children:[`Read-only `,(0,j.jsx)(`code`,{children:`#[view]`}),` functions for nicknames and avatars that never abort on missing profiles`]}),(0,j.jsxs)(`li`,{children:[`Delete and reclaim storage with `,(0,j.jsx)(`code`,{children:`clear_profile`})]}),(0,j.jsx)(`li`,{children:`Length-bounded inputs: nickname up to 20 chars, avatar URL up to 256 chars`}),(0,j.jsxs)(`li`,{children:[`Built-in `,(0,j.jsx)(`code`,{children:`updated_at`}),` timestamp for client-side cache invalidation`]})]}),(0,j.jsx)(`h2`,{children:`Use Cases`}),(0,j.jsxs)(`div`,{className:`use-case-card`,children:[(0,j.jsx)(`h4`,{children:`Games`}),(0,j.jsx)(`p`,{children:`Render a consistent player handle and avatar across poker, leaderboards, and matchmaking without running your own user database.`})]}),(0,j.jsxs)(`div`,{className:`use-case-card`,children:[(0,j.jsx)(`h4`,{children:`Social & Messaging`}),(0,j.jsx)(`p`,{children:`Display the same nickname the user set in Nova Wallet inside group chats, comments, and notifications.`})]}),(0,j.jsxs)(`div`,{className:`use-case-card`,children:[(0,j.jsx)(`h4`,{children:`Marketplaces & Ticketing`}),(0,j.jsx)(`p`,{children:`Show a seller or attendee name next to a wallet address on listings, receipts, and tickets.`})]}),(0,j.jsxs)(`div`,{className:`use-case-card`,children:[(0,j.jsx)(`h4`,{children:`DAO & Governance`}),(0,j.jsxs)(`p`,{children:[`Map proposals and votes to a human-readable identity instead of raw `,(0,j.jsx)(`code`,{children:`0x...`}),` addresses.`]})]})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-contract-functions`,className:`docs-section ${e===`wallet-profile-contract-functions`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Contract Functions`}),(0,j.jsxs)(`p`,{children:[`All entry functions must be signed by the user whose profile is being modified. View functions are `,(0,j.jsx)(`code`,{children:`#[view]`}),` and can be called without a signature through any Cedra fullnode or indexer.`]}),(0,j.jsx)(`h2`,{children:`Entry Functions (write)`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Function`}),(0,j.jsx)(`th`,{children:`Signature`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`set_profile`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(account: &signer, nickname: String, avatar_url: String)`})}),(0,j.jsxs)(`td`,{children:[`Create the profile if it does not exist, or update the nickname, avatar URL, and `,(0,j.jsx)(`code`,{children:`updated_at`}),` if it does. Aborts on empty nickname, nickname > 20 chars, or avatar URL > 256 chars.`]})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`clear_profile`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(account: &signer)`})}),(0,j.jsxs)(`td`,{children:[`Delete the profile resource and reclaim storage. Aborts with`,` `,(0,j.jsx)(`code`,{children:`E_PROFILE_NOT_FOUND`}),` if no profile exists.`]})]})]})]})}),(0,j.jsx)(`h2`,{children:`View Functions (read)`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Function`}),(0,j.jsx)(`th`,{children:`Signature`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`has_profile`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(addr: address): bool`})}),(0,j.jsxs)(`td`,{children:[`Returns `,(0,j.jsx)(`code`,{children:`true`}),` when the address holds a`,` `,(0,j.jsx)(`code`,{children:`UserProfile`}),` resource.`]})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`get_profile`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(addr: address): (String, String, u64)`})}),(0,j.jsxs)(`td`,{children:[`Returns `,(0,j.jsx)(`code`,{children:`(nickname, avatar_url, updated_at)`}),`. Aborts with `,(0,j.jsx)(`code`,{children:`E_PROFILE_NOT_FOUND`}),` when no profile exists.`]})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`get_nickname`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(addr: address): String`})}),(0,j.jsx)(`td`,{children:`Returns the nickname, or an empty string when no profile exists. Safe to call without an existence check.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`get_avatar_url`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`(addr: address): String`})}),(0,j.jsx)(`td`,{children:`Returns the avatar URL, or an empty string when no profile exists. Safe to call without an existence check.`})]})]})]})}),(0,j.jsx)(`h2`,{children:`Calling Pattern`}),(0,j.jsxs)(`p`,{children:[`Address the module with `,(0,j.jsxs)(`code`,{children:[t,`::user_profiles::<function>`]}),`.`]}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`// Read nickname on testnet
+{function:"${t}::user_profiles::get_nickname",functionArguments:["0xabc..."]}
+
+// Write nickname + avatar
+{function:"${t}::user_profiles::set_profile",functionArguments:["alice","https://cdn.example.com/avatars/alice.png"]}`})})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-data-model`,className:`docs-section ${e===`wallet-profile-data-model`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Data Model`}),(0,j.jsxs)(`p`,{children:[`One `,(0,j.jsx)(`code`,{children:`UserProfile`}),` resource is stored directly under the user's account address. There is no table, no registry, and no admin key — the user is the sole owner.`]}),(0,j.jsx)(`h2`,{children:`Struct`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`struct UserProfile has key, store, drop {
+    nickname: String,
+    avatar_url: String,
+    updated_at: u64,
+}`})}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Field`}),(0,j.jsx)(`th`,{children:`Type`}),(0,j.jsx)(`th`,{children:`Notes`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`nickname`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`String`})}),(0,j.jsx)(`td`,{children:`1–20 chars. Empty strings abort.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`avatar_url`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`String`})}),(0,j.jsx)(`td`,{children:`Up to 256 chars. Empty string is allowed.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`updated_at`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`u64`})}),(0,j.jsx)(`td`,{children:`Unix timestamp in seconds, set automatically on every write.`})]})]})]})}),(0,j.jsx)(`h2`,{children:`Constants`}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Constant`}),(0,j.jsx)(`th`,{children:`Value`}),(0,j.jsx)(`th`,{children:`Description`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`MAX_NICKNAME_LENGTH`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`20`})}),(0,j.jsx)(`td`,{children:`Maximum number of UTF-8 bytes in a nickname.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`MAX_AVATAR_URL_LENGTH`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`256`})}),(0,j.jsx)(`td`,{children:`Maximum number of UTF-8 bytes in an avatar URL.`})]})]})]})}),(0,j.jsx)(`h2`,{children:`Storage Notes`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsx)(`li`,{children:`Resources live under the user's account, so storage costs are paid by the user on each write.`}),(0,j.jsxs)(`li`,{children:[`Because the resource is owned by the user, no other module can move or modify it. Only `,(0,j.jsx)(`code`,{children:`set_profile`}),` and`,` `,(0,j.jsx)(`code`,{children:`clear_profile`}),` mutate state.`]}),(0,j.jsx)(`li`,{children:`Because there is no global registry, you do not need to iterate accounts to look up a profile. Always look up by address.`}),(0,j.jsx)(`li`,{children:`The same address can hold other resources (NFTs, coins, app state) without conflict — the profile is keyed on its own struct type.`})]})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-cedra-ts-sdk`,className:`docs-section ${e===`wallet-profile-cedra-ts-sdk`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Cedra TS SDK`}),(0,j.jsxs)(`p`,{children:[`Use `,(0,j.jsx)(`code`,{children:`@cedra-labs/ts-sdk`}),` directly when your dApp manages signing itself or when you only need to read profiles from a backend or script.`]}),(0,j.jsx)(`h2`,{children:`Read a Nickname`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+
+const address = "0xabc123...";
+const [nickname] = await cedra.view({
+  payload: {
+    function: "${t}::user_profiles::get_nickname",
+    functionArguments: [address],
+  },
+});
+
+console.log("nickname:", nickname); // "" when no profile exists`})}),(0,j.jsx)(`h2`,{children:`Read the Full Profile`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+
+const [nickname, avatarUrl, updatedAt] = await cedra.view({
+  payload: {
+    function: "${t}::user_profiles::get_profile",
+    functionArguments: ["0xabc123..."],
+  },
+});
+
+console.log(nickname, avatarUrl, updatedAt);`})}),(0,j.jsx)(`h2`,{children:`Check Existence First`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+
+const [hasProfile] = await cedra.view({
+  payload: {
+    function: "${t}::user_profiles::has_profile",
+    functionArguments: ["0xabc123..."],
+  },
+});
+
+if (hasProfile) {
+  // safe to call get_profile
+}`})}),(0,j.jsx)(`h2`,{children:`Write a Profile`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import {
+  Account,
+  Cedra,
+  Network,
+  Ed25519PrivateKey,
+} from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+const account = Account.fromPrivateKey(new Ed25519PrivateKey("0x..."));
+
+const transaction = await cedra.transaction.build.simple({
+  sender: account.accountAddress,
+  data: {
+    function: "${t}::user_profiles::set_profile",
+    functionArguments: [
+      "alice",
+      "https://cdn.example.com/avatars/alice.png",
+    ],
+  },
+});
+
+const pending = await cedra.signAndSubmitTransaction({
+  signer: account,
+  transaction,
+});
+
+await cedra.waitForTransaction({ transactionHash: pending.hash });
+console.log("profile updated:", pending.hash);`})}),(0,j.jsx)(`h2`,{children:`Delete a Profile`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`const transaction = await cedra.transaction.build.simple({
+  sender: account.accountAddress,
+  data: {
+    function: "${t}::user_profiles::clear_profile",
+    functionArguments: [],
+  },
+});
+
+const pending = await cedra.signAndSubmitTransaction({
+  signer: account,
+  transaction,
+});
+
+await cedra.waitForTransaction({ transactionHash: pending.hash });`})})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-nova-connect`,className:`docs-section ${e===`wallet-profile-nova-connect`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Nova Connect`}),(0,j.jsxs)(`p`,{children:[`When your dApp already uses`,` `,(0,j.jsx)(`a`,{href:`#nova-connect-introduction`,style:{color:`var(--primary)`},children:`Nova Connect`}),` `,`to connect Nova Desk or Nova Wallet, route writes through the connected adapter. Reads can still use the SDK's `,(0,j.jsx)(`code`,{children:`view`}),` `,`calls — signing is not required.`]}),(0,j.jsx)(`h2`,{children:`Read with the SDK`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+
+async function fetchNickname(address) {
+  const [nickname] = await cedra.view({
+    payload: {
+      function: "${t}::user_profiles::get_nickname",
+      functionArguments: [address],
+    },
+  });
+  return nickname;
+}`})}),(0,j.jsx)(`h2`,{children:`Write Through NovaWallet`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet();
+const { account } = await wallet.connect();
+
+await wallet.signAndSubmitTransaction({
+  data: {
+    function: "${t}::user_profiles::set_profile",
+    functionArguments: [
+      "alice",
+      "https://cdn.example.com/avatars/alice.png",
+    ],
+  },
+});`})}),(0,j.jsx)(`h2`,{children:`Write Through AIP-62`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import "@inferenco/nova-wallet-adapter/auto-register";
+import { getCedraWallets } from "@cedra-labs/wallet-standard";
+
+const { cedraWallets } = getCedraWallets();
+const wallet = cedraWallets.find((w) => w.name === "Nova Connect");
+const account = (await wallet.features["cedra:connect"].connect()).args;
+
+await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction({
+  account,
+  input: {
+    function: "${t}::user_profiles::set_profile",
+    functionArguments: [
+      "alice",
+      "https://cdn.example.com/avatars/alice.png",
+    ],
+  },
+});`})}),(0,j.jsx)(`h2`,{children:`Clear Through NovaWallet`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`await wallet.signAndSubmitTransaction({
+  data: {
+    function: "${t}::user_profiles::clear_profile",
+    functionArguments: [],
+  },
+});`})})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-react-example`,className:`docs-section ${e===`wallet-profile-react-example`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - React Example`}),(0,j.jsxs)(`p`,{children:[`Drop-in `,(0,j.jsx)(`code`,{children:`useWalletProfile`}),` hook that reads on mount and exposes a `,(0,j.jsx)(`code`,{children:`save`}),` function that validates inputs and writes through Nova Connect.`]}),(0,j.jsx)(`h2`,{children:`The Hook`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useCallback, useEffect, useState } from "react";
+import { Cedra, Network } from "@cedra-labs/ts-sdk";
+
+const cedra = new Cedra({ network: Network.TESTNET });
+const PROFILE_MODULE = "${t}::user_profiles";
+
+export function useWalletProfile(address) {
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const refresh = useCallback(async () => {
+    if (!address) {
+      setProfile(null);
+      return;
+    }
+    setLoading(true);
+    try {
+      const [nickname, avatarUrl, updatedAt] = await cedra.view({
+        payload: {
+          function: \`\${PROFILE_MODULE}::get_profile\`,
+          functionArguments: [address],
+        },
+      });
+      setProfile({ nickname, avatarUrl, updatedAt });
+      setError(null);
+    } catch (err) {
+      // E_PROFILE_NOT_FOUND (3) is expected for new accounts
+      if (String(err).includes("E_PROFILE_NOT_FOUND")) {
+        setProfile(null);
+      } else {
+        setError(err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [address]);
+
+  useEffect(() => {
+    refresh();
+  }, [refresh]);
+
+  return { profile, loading, error, refresh };
+}`})}),(0,j.jsx)(`h2`,{children:`Editor Component`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`import { useState } from "react";
+import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+import { useWalletProfile } from "./useWalletProfile";
+
+const wallet = new NovaWallet();
+const PROFILE_MODULE = "${t}::user_profiles";
+
+export function ProfileEditor({ account }) {
+  const { profile, refresh } = useWalletProfile(account?.address?.toString());
+  const [nickname, setNickname] = useState("");
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  const save = async () => {
+    if (!account) return;
+    if (!nickname || nickname.length > 20) {
+      alert("Nickname must be 1–20 characters");
+      return;
+    }
+    if (avatarUrl.length > 256) {
+      alert("Avatar URL must be at most 256 characters");
+      return;
+    }
+
+    setSaving(true);
+    try {
+      await wallet.signAndSubmitTransaction({
+        data: {
+          function: \`\${PROFILE_MODULE}::set_profile\`,
+          functionArguments: [nickname, avatarUrl],
+        },
+      });
+      await refresh();
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (!profile) {
+    return (
+      <p>No profile yet. Set a nickname to get started.</p>
+    );
+  }
+
+  return (
+    <div>
+      <img src={profile.avatarUrl} alt={profile.nickname} />
+      <h3>{profile.nickname}</h3>
+      <input value={nickname} onChange={(e) => setNickname(e.target.value)} />
+      <input value={avatarUrl} onChange={(e) => setAvatarUrl(e.target.value)} />
+      <button onClick={save} disabled={saving}>
+        {saving ? "Saving..." : "Save profile"}
+      </button>
+    </div>
+  );
+}`})}),(0,j.jsxs)(`p`,{children:[`Pair the editor with a Nova Connect connection button and a state hook for `,(0,j.jsx)(`code`,{children:`account`}),` to drive the full profile flow.`]})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-best-practices`,className:`docs-section ${e===`wallet-profile-best-practices`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Best Practices`}),(0,j.jsx)(`h2`,{children:`Validate Before Submitting`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsx)(`li`,{children:`Reject empty nicknames client-side to avoid a useless abort.`}),(0,j.jsx)(`li`,{children:`Cap nickname input at 20 characters and avatar input at 256 to match on-chain limits.`}),(0,j.jsx)(`li`,{children:`Trim leading and trailing whitespace before sending.`})]}),(0,j.jsx)(`h2`,{children:`Pick the Right Read Function`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[`Use `,(0,j.jsx)(`code`,{children:`get_nickname`}),` or `,(0,j.jsx)(`code`,{children:`get_avatar_url`}),` when you only need one field and want a safe empty-string fallback.`]}),(0,j.jsxs)(`li`,{children:[`Use `,(0,j.jsx)(`code`,{children:`has_profile`}),` as a gate before calling`,` `,(0,j.jsx)(`code`,{children:`get_profile`}),` to avoid decoding abort code 3.`]}),(0,j.jsxs)(`li`,{children:[`Use `,(0,j.jsx)(`code`,{children:`get_profile`}),` when you need `,(0,j.jsx)(`code`,{children:`updated_at`}),` `,`for cache invalidation or ordering.`]})]}),(0,j.jsxs)(`h2`,{children:[`Cache With `,(0,j.jsx)(`code`,{children:`updated_at`})]}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[`Store `,(0,j.jsx)(`code`,{children:`updated_at`}),` alongside any cached profile.`]}),(0,j.jsx)(`li`,{children:`Refetch when your local cache is older than the on-chain value.`}),(0,j.jsx)(`li`,{children:`On writes, refresh immediately after the transaction is confirmed.`})]}),(0,j.jsx)(`h2`,{children:`Avatars`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsx)(`li`,{children:`The contract does not validate the URL — it stores the string as-is.`}),(0,j.jsx)(`li`,{children:`Host avatars on HTTPS, sanitize the input, and fall back to a deterministic placeholder (initials, blockies) when the URL is empty or fails to load.`}),(0,j.jsx)(`li`,{children:`Treat the avatar URL as untrusted: it is set by the user's wallet and could change at any time.`})]}),(0,j.jsx)(`h2`,{children:`Multi-App Identity`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsx)(`li`,{children:`The profile is shared across all apps on the same wallet, so never assume a nickname is unique to your app.`}),(0,j.jsx)(`li`,{children:`Append an app-specific suffix or keep your own display name separate when you need in-app uniqueness.`}),(0,j.jsx)(`li`,{children:`If your app needs uniqueness, store an additional mapping in your own contract or off-chain index.`})]}),(0,j.jsx)(`h2`,{children:`Gas and Storage`}),(0,j.jsxs)(`ul`,{children:[(0,j.jsxs)(`li`,{children:[`The first `,(0,j.jsx)(`code`,{children:`set_profile`}),` creates a resource and costs more gas than subsequent updates.`]}),(0,j.jsxs)(`li`,{children:[`Each subsequent `,(0,j.jsx)(`code`,{children:`set_profile`}),` pays for the storage delta of the new strings.`]}),(0,j.jsxs)(`li`,{children:[`Call `,(0,j.jsx)(`code`,{children:`clear_profile`}),` when a user explicitly resets their identity to refund the storage deposit.`]})]})]}),(0,j.jsxs)(`div`,{id:`wallet-profile-error-handling`,className:`docs-section ${e===`wallet-profile-error-handling`?`active`:``}`,children:[(0,j.jsx)(`h1`,{children:`Wallet Profile - Error Handling`}),(0,j.jsxs)(`p`,{children:[`The module aborts with one of four error codes. Read calls on`,(0,j.jsx)(`code`,{children:` get_nickname`}),` and `,(0,j.jsx)(`code`,{children:`get_avatar_url`}),` never abort — they return an empty string when no profile exists.`]}),(0,j.jsx)(`div`,{className:`params-table`,children:(0,j.jsxs)(`table`,{children:[(0,j.jsx)(`thead`,{children:(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`th`,{children:`Code`}),(0,j.jsx)(`th`,{children:`Constant`}),(0,j.jsx)(`th`,{children:`Thrown by`}),(0,j.jsx)(`th`,{children:`Meaning`})]})}),(0,j.jsxs)(`tbody`,{children:[(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`1`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`E_NICKNAME_TOO_LONG`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`set_profile`})}),(0,j.jsx)(`td`,{children:`Nickname exceeds 20 characters.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`2`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`E_AVATAR_URL_TOO_LONG`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`set_profile`})}),(0,j.jsx)(`td`,{children:`Avatar URL exceeds 256 characters.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`3`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`E_PROFILE_NOT_FOUND`})}),(0,j.jsxs)(`td`,{children:[(0,j.jsx)(`code`,{children:`get_profile`}),`, `,(0,j.jsx)(`code`,{children:`clear_profile`})]}),(0,j.jsx)(`td`,{children:`No profile resource exists for this address.`})]}),(0,j.jsxs)(`tr`,{children:[(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`4`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`E_NICKNAME_EMPTY`})}),(0,j.jsx)(`td`,{children:(0,j.jsx)(`code`,{children:`set_profile`})}),(0,j.jsx)(`td`,{children:`Nickname is an empty string.`})]})]})]})}),(0,j.jsx)(`h2`,{children:`Map Abort Codes to UI Messages`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`function explainProfileError(message) {
+  if (message.includes("E_NICKNAME_TOO_LONG") || message.includes("Move abort 1")) {
+    return "Nickname must be at most 20 characters.";
+  }
+  if (message.includes("E_AVATAR_URL_TOO_LONG") || message.includes("Move abort 2")) {
+    return "Avatar URL must be at most 256 characters.";
+  }
+  if (message.includes("E_PROFILE_NOT_FOUND") || message.includes("Move abort 3")) {
+    return "No profile exists for this account yet.";
+  }
+  if (message.includes("E_NICKNAME_EMPTY") || message.includes("Move abort 4")) {
+    return "Nickname cannot be empty.";
+  }
+  return "Profile transaction failed. Please try again.";
+}`})}),(0,j.jsx)(`h2`,{children:`Safe Read Pattern`}),(0,j.jsx)(`div`,{className:`code-block`,children:(0,j.jsx)(`code`,{children:`async function loadProfile(address) {
+  const cedra = new Cedra({ network: Network.TESTNET });
+  const [hasProfile] = await cedra.view({
+    payload: {
+      function: "${t}::user_profiles::has_profile",
+      functionArguments: [address],
+    },
+  });
+
+  if (!hasProfile) {
+    return null;
+  }
+
+  const [nickname, avatarUrl, updatedAt] = await cedra.view({
+    payload: {
+      function: "${t}::user_profiles::get_profile",
+      functionArguments: [address],
+    },
+  });
+
+  return { nickname, avatarUrl, updatedAt };
+}`})})]})]})}var hr=[{title:`Nova Bot`,items:[{id:`nova-bot-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-bot-commands`,label:`Commands`,icon:`fas fa-terminal`},{id:`nova-bot-settings`,label:`Settings`,icon:`fas fa-cog`},{id:`nova-bot-prompts`,label:`Prompts`,icon:`fas fa-comments`}]},{title:`Nova API`,items:[{id:`nova-api-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`generate-api-key`,label:`Generate API Key`,icon:`fas fa-key`},{id:`tools`,label:`Tools`,icon:`fas fa-toolbox`},{id:`add-knowledge`,label:`Add Knowledge`,icon:`fas fa-book-open`},{id:`templates`,label:`Templates`,icon:`fas fa-puzzle-piece`},{id:`api-docs`,label:`API Docs`,icon:`fas fa-code`}]},{title:`Nova Connect`,items:[{id:`nova-connect-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`nova-connect-installation`,label:`Installation`,icon:`fas fa-download`},{id:`nova-connect-quickstart`,label:`Quick Start`,icon:`fas fa-rocket`},{id:`nova-connect-react-integration`,label:`React Integration`,icon:`fab fa-react`},{id:`nova-connect-api-reference`,label:`API Reference`,icon:`fas fa-code`},{id:`nova-connect-configuration`,label:`Configuration`,icon:`fas fa-cog`},{id:`nova-connect-mobile-relay`,label:`Mobile Relay`,icon:`fas fa-mobile-alt`},{id:`nova-connect-error-handling`,label:`Error Handling`,icon:`fas fa-exclamation-triangle`},{id:`nova-connect-provider-detection`,label:`Provider Detection`,icon:`fas fa-search`},{id:`nova-connect-session-management`,label:`Session Management`,icon:`fas fa-database`}]},{title:`Wallet Profile`,items:[{id:`wallet-profile-introduction`,label:`Introduction`,icon:`fas fa-book`},{id:`wallet-profile-contract-functions`,label:`Contract Functions`,icon:`fas fa-code`},{id:`wallet-profile-data-model`,label:`Data Model`,icon:`fas fa-database`},{id:`wallet-profile-cedra-ts-sdk`,label:`Cedra TS SDK`,icon:`fas fa-plug`},{id:`wallet-profile-nova-connect`,label:`Nova Connect`,icon:`fas fa-link`},{id:`wallet-profile-react-example`,label:`React Example`,icon:`fab fa-react`},{id:`wallet-profile-best-practices`,label:`Best Practices`,icon:`fas fa-lightbulb`},{id:`wallet-profile-error-handling`,label:`Error Handling`,icon:`fas fa-exclamation-triangle`}]}];function gr(){let e=ut().hash.slice(1)||`nova-bot-introduction`,[t,n]=(0,_.useState)(!1);return(0,j.jsxs)(`div`,{id:`docs-page`,className:`page-section docs-container docs-page`,children:[(0,j.jsx)(`button`,{className:`mobile-menu-toggle`,id:`mobileMenuToggle`,"aria-label":`Toggle Sidebar`,onClick:()=>n(!t),children:(0,j.jsx)(`i`,{className:`fas fa-list`})}),(0,j.jsx)(`div`,{className:`sidebar-overlay ${t?`active`:``}`,id:`sidebarOverlay`,onClick:()=>n(!1)}),(0,j.jsx)(`aside`,{className:`docs-sidebar ${t?`active`:``}`,id:`docsSidebar`,children:hr.map(t=>(0,j.jsxs)(`div`,{className:`sidebar-section`,children:[(0,j.jsx)(`div`,{className:`sidebar-title`,children:t.title}),t.items.map(t=>(0,j.jsxs)(Mn,{to:`/docs#${t.id}`,className:`sidebar-item ${e===t.id?`active`:``}`,onClick:()=>n(!1),children:[(0,j.jsx)(`i`,{className:t.icon}),` `,t.label]},t.id))]},t.title))}),(0,j.jsxs)(`main`,{className:`docs-content`,children:[(0,j.jsx)(dr,{hash:e}),(0,j.jsx)(fr,{hash:e}),(0,j.jsx)(pr,{hash:e}),(0,j.jsx)(mr,{hash:e})]})]})}function _r(){return(0,j.jsx)(Vt,{children:(0,j.jsx)(A,{path:`/*`,element:(0,j.jsx)(gr,{})})})}function vr(){return(0,j.jsx)(kn,{children:(0,j.jsx)(Vt,{children:(0,j.jsxs)(A,{path:`/`,element:(0,j.jsx)(er,{}),children:[(0,j.jsx)(A,{index:!0,element:(0,j.jsx)(tr,{})}),(0,j.jsx)(A,{path:`nova`,element:(0,j.jsx)(nr,{})}),(0,j.jsx)(A,{path:`nova-wallet`,element:(0,j.jsx)(ir,{})}),(0,j.jsx)(A,{path:`nova-desk`,element:(0,j.jsx)(ur,{})}),(0,j.jsx)(A,{path:`docs/*`,element:(0,j.jsx)(_r,{})})]})})})}(0,v.createRoot)(document.getElementById(`root`)).render((0,j.jsx)(_.StrictMode,{children:(0,j.jsx)(vr,{})}));
