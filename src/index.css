@@ -1620,6 +1620,24 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     margin: 0 auto;
 }
 
+.docs-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.docs-header a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.docs-header a:hover {
+    text-decoration: underline;
+}
+
 .docs-section {
     display: none;
 }
