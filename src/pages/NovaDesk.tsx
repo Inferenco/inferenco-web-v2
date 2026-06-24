@@ -95,6 +95,7 @@ export default function NovaDesk() {
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a
+                id="download-nova-desk-windows"
                 href={getDownloadUrl("windows")}
                 className="cta-button"
                 aria-label="Download for Windows"
@@ -106,6 +107,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-intel") && (
               <a
+                id="download-nova-desk-mac-intel"
                 href={getDownloadUrl("mac-intel")}
                 className="cta-button"
                 aria-label="Download for macOS Intel"
@@ -117,6 +119,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-arm64") && (
               <a
+                id="download-nova-desk-mac-arm64"
                 href={getDownloadUrl("mac-arm64")}
                 className="cta-button"
                 aria-label="Download for macOS Apple Silicon"
@@ -128,6 +131,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux") && (
               <a
+                id="download-nova-desk-linux"
                 href={getDownloadUrl("linux")}
                 className="cta-button"
                 aria-label="Download for Linux x64"
@@ -139,6 +143,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux-arm64") && (
               <a
+                id="download-nova-desk-linux-arm64"
                 href={getDownloadUrl("linux-arm64")}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
@@ -150,6 +155,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("freebsd") && (
               <a
+                id="download-nova-desk-freebsd"
                 href={getDownloadUrl("freebsd")}
                 className="cta-button"
                 aria-label="Download for FreeBSD"
