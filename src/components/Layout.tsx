@@ -198,6 +198,7 @@ export default function Layout() {
             <a href="https://t.me/inferenco" className="social-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-telegram" />
             </a>
+            <a rel="me" href="https://mastodon.social/@inferenco" className="nav-mastodon-link">Mastodon</a>
             <a href="https://mastodon.social/@inferenco" className="social-link" aria-label="Mastodon" target="_blank" rel="me noopener noreferrer">
               <i className="fab fa-mastodon" />
             </a>

@@ -5,9 +5,6 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
 
   return (
     <>
-      <header className="docs-header">
-        <a rel="me" href="https://mastodon.social/@inferenco">Mastodon</a>
-      </header>
       <div
         id="wallet-profile-introduction"
         className={`docs-section ${hash === "wallet-profile-introduction" ? "active" : ""}`}
