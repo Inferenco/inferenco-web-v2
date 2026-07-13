@@ -2083,10 +2083,9 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         font-size: 0.85rem;
         overflow-wrap: normal !important;
         word-break: normal !important;
-        white-space: nowrap;
     }
     
-    /* Explicit column widths to prevent truncation */
+    /* Explicit column widths and text handling */
     .params-table th:nth-child(1),
     .params-table td:nth-child(1) {
         width: 35%;
@@ -2118,7 +2117,6 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         white-space: normal !important;
         word-break: normal !important;
         overflow-wrap: break-word !important;
-        text-overflow: unset !important;
     }
 
     /* Better text readability on mobile */
@@ -2239,28 +2237,32 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     .params-table td {
         padding: 0.5rem 0.25rem;
         font-size: 0.8rem;
-        white-space: nowrap;
         word-break: normal !important;
         overflow-wrap: normal !important;
     }
     
-    /* Explicit column widths for very small screens */
+    /* Explicit column widths and text handling for very small screens */
     .params-table th:nth-child(1),
     .params-table td:nth-child(1) {
         width: 35%;
         min-width: 100px;
+        white-space: nowrap;
+        word-break: keep-all;
     }
     
     .params-table th:nth-child(2),
     .params-table td:nth-child(2) {
         width: 15%;
         min-width: 70px;
+        white-space: nowrap;
+        word-break: keep-all;
     }
     
     .params-table th:nth-child(3),
     .params-table td:nth-child(3) {
         width: 25%;
         min-width: 120px;
+        white-space: nowrap;
         word-break: break-all;
     }
     
@@ -2271,7 +2273,6 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         white-space: normal !important;
         word-break: normal !important;
         overflow-wrap: break-word !important;
-        text-overflow: unset !important;
     }
     
     /* Prevent any horizontal overflow on very small screens */
