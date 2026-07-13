@@ -2064,14 +2064,20 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     }
 
     /* Params table mobile layout - convert to stacked cards */
+    .params-table {
+        width: 100%;
+    }
+    
     .params-table table {
         width: 100%;
+        border: none;
     }
     
     /* On mobile, convert table rows to stacked cards */
     .params-table tbody tr {
         display: flex;
         flex-direction: column;
+        width: 100%;
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
         margin-bottom: 1rem;
@@ -2080,8 +2086,11 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     
     .params-table tbody tr td {
         display: block;
+        width: 100%;
         padding: 0.75rem 0.5rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     
     .params-table tbody tr td:last-child {
@@ -2240,14 +2249,20 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     }
     
     /* Compact tables - convert to stacked cards for very small screens */
+    .params-table {
+        width: 100%;
+    }
+    
     .params-table table {
         width: 100%;
+        border: none;
     }
     
     /* On very small screens, convert table rows to stacked cards */
     .params-table tbody tr {
         display: flex;
         flex-direction: column;
+        width: 100%;
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 6px;
         margin-bottom: 0.75rem;
@@ -2256,9 +2271,12 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     
     .params-table tbody tr td {
         display: block;
+        width: 100%;
         padding: 0.5rem 0.25rem;
         font-size: 0.8rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     
     .params-table tbody tr td:last-child {
