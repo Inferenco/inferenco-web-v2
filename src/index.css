@@ -1767,9 +1767,8 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 }
 
 .params-table {
-    overflow-x: auto;
+    width: 100%;
     margin-bottom: 1.5rem;
-    -webkit-overflow-scrolling: touch;
 }
 
 .params-table table {
@@ -2142,9 +2141,11 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     
     /* Allow description to wrap naturally */
     .params-table td:nth-child(4) {
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: break-word;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        text-overflow: unset !important;
+        max-width: none !important;
     }
 
     /* Better text readability on mobile */
@@ -2329,9 +2330,11 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     
     /* Allow description to wrap naturally on very small screens */
     .params-table td:nth-child(4) {
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: break-word;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        text-overflow: unset !important;
+        max-width: none !important;
     }
     
     /* Prevent any horizontal overflow on very small screens */
