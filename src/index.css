@@ -1775,7 +1775,7 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 .params-table table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 100%;
+    table-layout: auto;
 }
 
 .params-table th,
@@ -2063,60 +2063,79 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         line-height: 1.5;
     }
 
-    /* Tables mobile improvements - prevent text truncation and breaking */
-    .params-table {
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-        -webkit-overflow-scrolling: touch;
-    }
-
+    /* Params table mobile layout - convert to stacked cards */
     .params-table table {
-        min-width: max-content;
-        table-layout: fixed;
-        width: auto;
+        width: 100%;
     }
-
-    .params-table th,
-    .params-table td {
+    
+    /* On mobile, convert table rows to stacked cards */
+    .params-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .params-table tbody tr td {
+        display: block;
         padding: 0.75rem 0.5rem;
-        font-size: 0.85rem;
-        overflow-wrap: normal !important;
-        word-break: normal !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    /* Explicit column widths and text handling */
-    .params-table th:nth-child(1),
+    .params-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+    
+    .params-table tbody tr td::before {
+        font-weight: 600;
+        color: var(--accent);
+        margin-right: 0.5rem;
+    }
+    
+    .params-table tbody tr td:nth-child(1)::before {
+        content: "Option: ";
+    }
+    
+    .params-table tbody tr td:nth-child(2)::before {
+        content: "Type: ";
+    }
+    
+    .params-table tbody tr td:nth-child(3)::before {
+        content: "Default: ";
+    }
+    
+    .params-table tbody tr td:nth-child(4)::before {
+        content: "Description: ";
+    }
+    
+    /* Hide table headers on mobile since we're using labels */
+    .params-table thead {
+        display: none;
+    }
+    
+    /* Prevent word breaking in technical terms */
     .params-table td:nth-child(1) {
-        width: 35%;
-        min-width: 120px;
         white-space: nowrap;
         word-break: keep-all;
     }
     
-    .params-table th:nth-child(2),
     .params-table td:nth-child(2) {
-        width: 15%;
-        min-width: 80px;
         white-space: nowrap;
         word-break: keep-all;
     }
     
-    .params-table th:nth-child(3),
     .params-table td:nth-child(3) {
-        width: 25%;
-        min-width: 150px;
         white-space: nowrap;
         word-break: break-all;
     }
     
-    .params-table th:nth-child(4),
+    /* Allow description to wrap naturally */
     .params-table td:nth-child(4) {
-        width: 25%;
-        min-width: 200px;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     /* Better text readability on mobile */
@@ -2220,59 +2239,81 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         line-height: 1.4;
     }
     
-    /* Compact tables */
-    .params-table {
-        overflow-x: auto;
-        display: block;
-        -webkit-overflow-scrolling: touch;
-    }
-    
+    /* Compact tables - convert to stacked cards for very small screens */
     .params-table table {
-        min-width: max-content;
-        table-layout: fixed;
-        width: auto;
+        width: 100%;
     }
     
-    .params-table th,
-    .params-table td {
+    /* On very small screens, convert table rows to stacked cards */
+    .params-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        margin-bottom: 0.75rem;
+        background: rgba(0, 0, 0, 0.08);
+    }
+    
+    .params-table tbody tr td {
+        display: block;
         padding: 0.5rem 0.25rem;
         font-size: 0.8rem;
-        word-break: normal !important;
-        overflow-wrap: normal !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    /* Explicit column widths and text handling for very small screens */
-    .params-table th:nth-child(1),
+    .params-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+    
+    .params-table tbody tr td::before {
+        font-weight: 600;
+        color: var(--accent);
+        margin-right: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .params-table tbody tr td:nth-child(1)::before {
+        content: "Option: ";
+    }
+    
+    .params-table tbody tr td:nth-child(2)::before {
+        content: "Type: ";
+    }
+    
+    .params-table tbody tr td:nth-child(3)::before {
+        content: "Default: ";
+    }
+    
+    .params-table tbody tr td:nth-child(4)::before {
+        content: "Description: ";
+    }
+    
+    /* Hide table headers on very small screens since we're using labels */
+    .params-table thead {
+        display: none;
+    }
+    
+    /* Prevent word breaking in technical terms on very small screens */
     .params-table td:nth-child(1) {
-        width: 35%;
-        min-width: 100px;
         white-space: nowrap;
         word-break: keep-all;
     }
     
-    .params-table th:nth-child(2),
     .params-table td:nth-child(2) {
-        width: 15%;
-        min-width: 70px;
         white-space: nowrap;
         word-break: keep-all;
     }
     
-    .params-table th:nth-child(3),
     .params-table td:nth-child(3) {
-        width: 25%;
-        min-width: 120px;
         white-space: nowrap;
         word-break: break-all;
     }
     
-    .params-table th:nth-child(4),
+    /* Allow description to wrap naturally on very small screens */
     .params-table td:nth-child(4) {
-        width: 25%;
-        min-width: 150px;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
     
     /* Prevent any horizontal overflow on very small screens */
