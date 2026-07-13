@@ -1683,6 +1683,7 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     color: var(--light);
     white-space: pre-wrap;
     word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .endpoint-item {
@@ -1768,11 +1769,13 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 .params-table {
     overflow-x: auto;
     margin-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 .params-table table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 100%;
 }
 
 .params-table th,
@@ -1966,22 +1969,27 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         left: 0;
     }
 
-
-
     /* Make docs sidebar toggle button float so it's always accessible */
     .docs-container > .mobile-menu-toggle,
     .docs-page > .mobile-menu-toggle {
         position: fixed;
         top: 50%;
-        left: 1px;
+        left: 8px;
         transform: translateY(-50%);
-        z-index: 1001;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-secondary);
+        border-radius: 0 8px 8px 0;
+        z-index: 1002;
     }
     
     /* Add padding to docs content to prevent overlap with floating button */
     .docs-container > .docs-content,
     .docs-page > .docs-content {
-        padding-left: 40px !important;
+        padding-left: 48px !important;
     }
     
     /* Hide docs sidebar toggle button when sidebar is open */
@@ -2028,6 +2036,171 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 
     .download-buttons .cta-button {
         width: 100%;
+    }
+
+    /* Mobile docs content fixes - prevent cutoff and improve readability */
+    .docs-content {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .docs-section {
+        width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    /* Code blocks mobile improvements */
+    .code-block {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .code-block code {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    /* Tables mobile improvements */
+    .params-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .params-table table {
+        min-width: 100%;
+    }
+
+    .params-table th,
+    .params-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Better text readability on mobile */
+    .docs-section h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .docs-section h2 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .docs-section h3 {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .docs-section h4 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .docs-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .docs-section ul,
+    .docs-section ol {
+        padding-left: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .docs-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Prevent long words/URLs from breaking layout */
+    .docs-section {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Endpoint items and other code containers */
+    .endpoint-item {
+        overflow-x: auto;
+        word-break: break-word;
+    }
+
+    .endpoint-item code {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+}
+
+/* Extra small mobile devices - very focused mobile optimizations */
+@media (max-width: 768px) {
+    /* Ultra-compact menu button for very small screens */
+    .docs-container > .mobile-menu-toggle,
+    .docs-page > .mobile-menu-toggle {
+        left: 4px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .docs-container > .docs-content,
+    .docs-page > .docs-content {
+        padding-left: 44px !important;
+        padding-right: 12px;
+    }
+    
+    /* Even more compact typography for small screens */
+    .docs-section h1 {
+        font-size: 1.35rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 1.15rem;
+    }
+    
+    .docs-section h3 {
+        font-size: 1rem;
+    }
+    
+    .docs-section p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Smaller code for very small screens */
+    .code-block {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .code-block code {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+    
+    /* Compact tables */
+    .params-table th,
+    .params-table td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Prevent any horizontal overflow on very small screens */
+    .docs-container {
+        overflow-x: hidden;
+    }
+    
+    .docs-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem;
+    }
+    
+    .docs-section {
+        hyphens: auto;
     }
 }
 
