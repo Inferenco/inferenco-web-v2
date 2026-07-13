@@ -19,9 +19,20 @@ export default function NovaConnectDocs({ hash }: { hash: string }) {
           <li>Persist desktop and mobile sessions across page reloads</li>
           <li>Ship ESM, CommonJS, and TypeScript declaration files</li>
         </ul>
+
+        <h2>What's New in v0.2.0</h2>
+        <ul>
+          <li><strong>PKCE Support</strong> - Full Proof Key for Code Exchange implementation for secure deeplink flows</li>
+          <li><strong>Wallet-Initiated Disconnect Events</strong> - New <code>disconnect</code> event across all surfaces (<code>NovaWallet.onDisconnect</code>, <code>NovaClient.on(&quot;disconnect&quot;)</code>, <code>cedra:onDisconnect</code> in AIP-62)</li>
+          <li><strong>Nova Desk Embedded Browser Detection</strong> - <code>isHostedInNovaDesk()</code> prevents duplicate wallet registration when running inside Nova Desk's embedded browser</li>
+          <li><strong>Stale Request Cleanup</strong> - Automatic cancellation of pending requests on error with fallback to lazy expiration</li>
+          <li><strong>Deeplink Hardening</strong> - Callback origin verification for phishing protection via <code>expectedOrigin</code> option</li>
+          <li><strong>Session Liveness Heartbeat</strong> - Opt-in liveness monitoring via <code>sessionLivenessIntervalMs</code> for faster disconnect detection</li>
+          <li><strong>Pre-auth Flow</strong> - Direct bridge polling (no deeplink) for Nova Desk 0.6.0+</li>
+        </ul>
         <h3>Package</h3>
         <ul>
-          <li><code>@inferenco/nova-wallet-adapter</code> - Nova wallet adapter package (v0.1.0)</li>
+          <li><code>@inferenco/nova-wallet-adapter</code> - Nova wallet adapter package (v0.2.0)</li>
         </ul>
         <p>
           <strong>Note:</strong> There is no <code>@inferenco/nova-connect</code> package.
@@ -220,6 +231,54 @@ export function ConnectButton() {
   );
 }`}</code>
         </div>
+
+        <h2>Handling Disconnect Events</h2>
+        <p>
+          The adapter emits a <code>disconnect</code> event when the wallet revokes the session.
+          Use this to clear cached state and show reconnection UI.
+        </p>
+        <div className="code-block">
+          <code>{`import { useEffect } from "react";
+import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+const wallet = new NovaWallet();
+
+export function useNovaWalletWithDisconnect() {
+  const [account, setAccount] = useState(null);
+  const [connected, setConnected] = useState(false);
+
+  useEffect(() => {
+    // Check existing session on mount
+    wallet.account().then((acc) => {
+      setAccount(acc);
+      setConnected(true);
+    }).catch(() => {});
+
+    // Listen for disconnect events
+    const handleDisconnect = () => {
+      setAccount(null);
+      setConnected(false);
+    };
+
+    wallet.on("disconnect", handleDisconnect);
+
+    return () => {
+      wallet.off("disconnect", handleDisconnect);
+    };
+  }, []);
+
+  const connect = async () => {
+    setAccount(await wallet.connect());
+    setConnected(true);
+  };
+
+  return { account, connected, connect, wallet };
+}`}</code>
+        </div>
+        <p>
+          This pattern ensures your UI always reflects the current connection state,
+          even when the wallet revokes the session from another tab or window.
+        </p>
       </div>
 
       <div id="nova-connect-api-reference" className={`docs-section ${hash === "nova-connect-api-reference" ? "active" : ""}`}>
@@ -241,6 +300,13 @@ await wallet.signAndSubmitTransaction({ data: { /* payload */ } });
 await wallet.signAndSubmitBCSTransaction({ data: { /* payload */ } });
 await wallet.onAccountChange((account) => console.log(account));
 await wallet.onNetworkChange((network) => console.log(network));
+await wallet.onDisconnect(() => console.log("Wallet disconnected"));
+
+// Event emitter for disconnect events
+wallet.on("disconnect", () => {
+  // Wallet revoked session - clear cached state
+  console.log("Disconnected");
+});
 
 console.log(wallet.name);          // "Nova Connect"
 console.log(wallet.url);           // desktop or mobile Nova website URL
@@ -271,6 +337,13 @@ await client.signAndSubmitTransaction({ data: { /* payload */ } });
 await client.signAndSubmitBCSTransaction({ data: { /* payload */ } });
 await client.subscribe();
 
+// Event emitter for disconnect events
+client.on("disconnect", () => {
+  // Wallet revoked session - clear cached state
+  console.log("Wallet disconnected");
+  clearAccount();
+});
+
 console.log(client.account);          // cached AccountInfo | null
 console.log(client.cachedNetwork);    // cached NetworkInfo | null
 console.log(client.refreshProvider()); // NovaProvider | undefined
@@ -294,7 +367,25 @@ registerNovaWallet({ forceRegistration: true });`}</code>
           <li><code>cedra:onAccountChange</code> and <code>cedra:onNetworkChange</code></li>
           <li><code>cedra:signMessage</code>, <code>cedra:signTransaction</code>, and <code>cedra:signAndSubmitTransaction</code></li>
           <li><code>cedra:openInMobileApp</code></li>
+          <li><code>cedra:onDisconnect</code> - Wallet-initiated disconnect event (v0.2.0+)</li>
         </ul>
+        <p>
+          The <code>cedra:onDisconnect</code> feature allows dApps to detect when Nova Connect revokes their session.
+          This is important for clearing cached state and showing reconnection UI.
+        </p>
+        <div className="code-block">
+          <code>{`// Using cedra:onDisconnect feature
+const wallet = getCedraWallets().cedraWallets.find((w) => w.name === "Nova Connect");
+
+if (wallet.features["cedra:onDisconnect"]) {
+  await wallet.features["cedra:onDisconnect"].onDisconnect(() => {
+    // Wallet revoked session - clear cached state
+    console.log("Nova Connect disconnected");
+    clearAccount();
+    showConnectButton();
+  });
+}`}</code>
+        </div>
         <p>
           <code>registerNovaWallet()</code> prevents duplicate registration. It registers when a Nova provider exists,
           an external session exists, <code>forceRegistration</code> is true, a mobile browser is detected, or a desktop
@@ -310,14 +401,19 @@ registerNovaWallet({ forceRegistration: true });`}</code>
           <li><code>readExternalSession()</code>, <code>storeExternalSession()</code>, <code>clearExternalSession()</code>, and <code>readValidatedExternalSession()</code> manage stored sessions</li>
           <li><code>createKeyPair()</code>, <code>deriveSharedSecret()</code>, <code>encryptJson()</code>, and <code>decryptJson()</code> expose mobile relay crypto helpers</li>
           <li><code>connectViaMobileRelay()</code>, <code>resumeMobileRelaySessionFromCallback()</code>, and <code>watchRelaySocket()</code> support advanced relay flows</li>
+          <li><code>isHostedInNovaDesk()</code> detects if dApp is running inside Nova Desk's embedded browser to prevent duplicate wallet registration</li>
+          <li><code>generatePkcePair()</code>, <code>appendCodeChallengeToDeeplink()</code>, <code>exchangeCodeForSession()</code> expose PKCE helpers for secure deeplink flows</li>
+          <li><code>readBridgeToken()</code>, <code>bridgePathWithToken()</code>, <code>ensureBridgeToken()</code> manage bridge token</li>
+          <li><code>buildDeeplinkUrl(options?, callbackUrl?)</code> and <code>buildCallbackUrl()</code> for deeplink construction</li>
+          <li><code>consumeExternalCallbackIfPresent(options?)</code> for callback consumption</li>
         </ul>
       </div>
 
       <div id="nova-connect-configuration" className={`docs-section ${hash === "nova-connect-configuration" ? "active" : ""}`}>
         <h1>Nova Connect - Configuration</h1>
         <p>
-          <code>NovaWallet</code>, <code>NovaClient</code>, <code>registerNovaWallet</code>, and
-          <code> createNovaAIP62Wallet</code> accept <code>NovaWalletOptions</code>. Every field is optional.
+          <code>NovaWallet</code>, <code>NovaClient</code>, <code>registerNovaWallet</code> and
+          <code>createNovaAIP62Wallet</code> accept <code>NovaWalletOptions</code>. Every field is optional.
         </p>
         <div className="params-table">
           <table>
@@ -432,6 +528,18 @@ registerNovaWallet({ forceRegistration: true });`}</code>
                 <td><code>15000</code></td>
                 <td>WebSocket wait time before falling back to HTTP polling.</td>
               </tr>
+              <tr>
+                <td><code>sessionLivenessIntervalMs</code></td>
+                <td>number</td>
+                <td><code>0</code></td>
+                <td>Opt-in liveness heartbeat interval (ms) for detecting wallet-initiated disconnects. Set to 15000-60000 for 15-60 second checks. Default 0 (disabled) for backwards compatibility.</td>
+              </tr>
+              <tr>
+                <td><code>expectedOrigin</code></td>
+                <td>string</td>
+                <td><code>undefined</code></td>
+                <td>Tier 1 deeplink hardening: verifies callback <code>window.location.origin</code> matches this value. Mismatch throws <code>CallbackOriginMismatch</code>. Defends against phishing sites.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -452,6 +560,25 @@ const wallet = new NovaWallet({
   relayBaseUrl: "https://relay.your-domain.com",
   websocketBaseUrl: "wss://relay.your-domain.com/v1/ws",
   mobileRequestTimeoutMs: 240000,
+});`}</code>
+        </div>
+        <p>Enable session liveness heartbeat for faster disconnect detection:</p>
+        <div className="code-block">
+          <code>{`const wallet = new NovaWallet({
+  sessionLivenessIntervalMs: 30000, // Check every 30 seconds
+});
+
+// Listen for disconnect events
+wallet.on("disconnect", () => {
+  // Wallet revoked the session - clear cached state
+  clearAccount();
+  showConnectButton();
+});`}</code>
+        </div>
+        <p>Enable deeplink origin verification for phishing protection:</p>
+        <div className="code-block">
+          <code>{`const wallet = new NovaWallet({
+  expectedOrigin: "https://my-dapp.com",
 });`}</code>
         </div>
       </div>
@@ -527,6 +654,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
               <tr><td><code>InvalidParams</code></td><td><code>INVALID_PARAMS</code></td><td>Invalid request parameters.</td></tr>
               <tr><td><code>InvalidNetwork</code></td><td><code>INVALID_NETWORK</code></td><td>Network value is invalid or unavailable.</td></tr>
               <tr><td><code>InternalError</code></td><td><code>INTERNAL_ERROR</code></td><td>Unexpected adapter or provider failure.</td></tr>
+              <tr><td><code>CallbackOriginMismatch</code></td><td><code>CALLBACK_ORIGIN_MISMATCH</code></td><td>Deeplink callback origin doesn't match expected origin (phishing protection).</td></tr>
             </tbody>
           </table>
         </div>
@@ -534,6 +662,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
           <code>{`import {
   NovaAdapterError,
   NovaErrorCode,
+  CallbackOriginMismatch,
   NovaWallet,
 } from "@inferenco/nova-wallet-adapter";
 
@@ -560,8 +689,16 @@ try {
         console.log(error.message);
     }
   }
+  if (error instanceof CallbackOriginMismatch) {
+    console.log("Phishing attempt detected - callback origin mismatch:", error.message);
+  }
 }`}</code>
         </div>
+        <p>
+          The <code>CallbackOriginMismatch</code> error is thrown when the <code>expectedOrigin</code> option is set
+          and the deeplink callback's <code>window.location.origin</code> doesn't match. This is a security feature
+          that protects against phishing attacks that redirect the deeplink flow to a different origin.
+        </p>
       </div>
 
       <div id="nova-connect-provider-detection" className={`docs-section ${hash === "nova-connect-provider-detection" ? "active" : ""}`}>
@@ -650,6 +787,273 @@ clearPendingMobilePairing();`}</code>
           encrypted relay credentials and are reused by the relay transport. Cross-window updates are coordinated
           with storage events, window messaging, and <code>BroadcastChannel</code> when available.
         </p>
+      </div>
+
+      <div id="nova-connect-pkce" className={`docs-section ${hash === "nova-connect-pkce" ? "active" : ""}`}>
+        <h1>Nova Connect - PKCE (Proof Key for Code Exchange)</h1>
+        <p>
+          The adapter implements PKCE (RFC 7636) to secure the deeplink flow. PKCE prevents authorization code
+          interception attacks by ensuring that a code can only be exchanged for a session by the client that
+          requested it.
+        </p>
+        <h2>Cryptographic Flow</h2>
+        <ol>
+          <li>The dApp generates a <code>codeVerifier</code> (64-byte random string) and derives a <code>codeChallenge</code> from it</li>
+          <li>The <code>codeChallenge</code> is passed to Nova Wallet via the deeplink URL</li>
+          <li>Nova Wallet authorizes the request and returns an authorization <code>code</code></li>
+          <li>The adapter exchanges the <code>code</code> + <code>codeVerifier</code> for a session token</li>
+          <li>The session is validated against the local Nova Desk bridge before use</li>
+        </ol>
+        <h2>PKCE Functions</h2>
+        <div className="params-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Function</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>generatePkcePair()</code></td>
+                <td>Generates a cryptographically random <code>codeVerifier</code> and its SHA-256 <code>codeChallenge</code></td>
+              </tr>
+              <tr>
+                <td><code>appendCodeChallengeToDeeplink(deeplink, codeChallenge)</code></td>
+                <td>Appends the PKCE code challenge to a deeplink URL</td>
+              </tr>
+              <tr>
+                <td><code>exchangeCodeForSession(code, options?)</code></td>
+                <td>Exchanges the PKCE authorization code for a validated external session</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>Usage Example</h2>
+        <div className="code-block">
+          <code>{`import {
+  generatePkcePair,
+  appendCodeChallengeToDeeplink,
+  exchangeCodeForSession,
+  buildDeeplinkUrl,
+  NovaWallet
+} from "@inferenco/nova-wallet-adapter";
+
+// 1. Generate PKCE pair
+const { codeVerifier, codeChallenge } = generatePkcePair();
+
+// 2. Store verifier in sessionStorage (adapter does this internally, but manual flows need it)
+sessionStorage.setItem("inferenco:pkce-verifier", codeVerifier);
+
+// 3. Build deeplink with code challenge
+const deeplink = appendCodeChallengeToDeeplink(
+  buildDeeplinkUrl({ deeplinkScheme: "inferenco" }),
+  codeChallenge
+);
+
+// 4. After callback, exchange code for session
+// (adapter handles this automatically in normal flows)
+const session = await exchangeCodeForSession(codeVerifier);
+
+// 5. Use with NovaWallet
+const wallet = new NovaWallet();
+const account = await wallet.connect();`}</code>
+        </div>
+        <p>
+          <strong>Note:</strong> The adapter handles PKCE automatically for standard flows.
+          You only need to use these functions directly for custom integration scenarios.
+        </p>
+      </div>
+
+      <div id="nova-connect-bridge-api" className={`docs-section ${hash === "nova-connect-bridge-api" ? "active" : ""}`}>
+        <h1>Nova Connect - Bridge API</h1>
+        <p>
+          Nova Desk exposes a local HTTP bridge for desktop communication at <code>http://127.0.0.1:21984</code>.
+          The adapter uses this bridge for all desktop operations.
+        </p>
+        <h2>Default Bridge URL</h2>
+        <div className="code-block">
+          <code>{`http://127.0.0.1:21984`}</code>
+        </div>
+        <h2>Endpoints</h2>
+        <div className="params-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Path</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/connect</code></td>
+                <td>Initiate a new connection request</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/session/&lt;sessionId&gt;</code></td>
+                <td>Validate an existing session</td>
+              </tr>
+              <tr>
+                <td><code>DELETE</code></td>
+                <td><code>/connection</code></td>
+                <td>Revoke the current connection</td>
+              </tr>
+              <tr>
+                <td><code>DELETE</code></td>
+                <td><code>/session/&lt;sessionId&gt;</code></td>
+                <td>Revoke a specific session</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/sign-message</code></td>
+                <td>Request message signing</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/request/&lt;requestId&gt;</code></td>
+                <td>Poll for message signature result</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/sign-transaction</code></td>
+                <td>Request transaction signing</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/sign-transaction-request/&lt;requestId&gt;</code></td>
+                <td>Poll for transaction signature result</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/transaction</code></td>
+                <td>Sign and submit a transaction</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/transaction-request/&lt;requestId&gt;</code></td>
+                <td>Poll for transaction hash</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/cancel/&lt;requestId&gt;</code></td>
+                <td>Cancel a pending request (v0.2.0+)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>Pre-auth Connect</h2>
+        <p>
+          For Nova Desk 0.6.0+, the adapter uses a "pre-auth" flow that avoids the deeplink entirely.
+          Instead, it creates a connect request via <code>POST /preauth-connect</code> and polls
+          <code>GET /preauth-poll/&lt;requestId&gt;</code> until the user approves in Nova Desk.
+        </p>
+        <p>
+          This provides a smoother user experience by avoiding the browser's external-protocol
+          handler dialog on desktop platforms.
+        </p>
+      </div>
+
+      <div id="nova-connect-detection" className={`docs-section ${hash === "nova-connect-detection" ? "active" : ""}`}>
+        <h1>Nova Connect - Detection</h1>
+        <p>
+          The adapter provides utilities to detect if your dApp is running in special contexts.
+        </p>
+        <h2>Nova Desk Embedded Browser Detection</h2>
+        <p>
+          Use <code>isHostedInNovaDesk()</code> to check if your dApp is running inside Nova Desk's
+          embedded browser. This is useful to avoid duplicate wallet registration and to use
+          the embedded provider directly.
+        </p>
+        <div className="code-block">
+          <code>{`import { isHostedInNovaDesk, NovaWallet } from "@inferenco/nova-wallet-adapter";
+
+if (isHostedInNovaDesk()) {
+  // Running inside Nova Desk - embedded provider is available
+  // window.cedra, window.nova, or window.aptos (with isNovaDesk = true)
+  console.log("Using embedded Nova Desk provider");
+} else {
+  // Running in external browser - use Nova Connect adapter
+  const wallet = new NovaWallet();
+  console.log("Using Nova Connect adapter");
+}
+
+// Filter wallet selector to avoid duplicates
+import { getCedraWallets, registerNovaWallet } from "@inferenco/nova-wallet-adapter";
+
+if (!isHostedInNovaDesk()) {
+  registerNovaWallet();
+}
+
+const wallets = getCedraWallets().cedraWallets.filter(
+  (w) => !(isHostedInNovaDesk() && w.name === "Nova Connect")
+);`}</code>
+        </div>
+        <h2>How Detection Works</h2>
+        <p>
+          <code>isHostedInNovaDesk()</code> checks for these sentinel values:
+        </p>
+        <ul>
+          <li><code>window.cedra?.isNovaDesk</code> (primary)</li>
+          <li><code>window.nova?.isNovaDesk</code> (secondary)</li>
+          <li><code>window.aptos?.isNovaDesk</code> (branded alias)</li>
+          <li><code>window.__novaDeskProviderInjected</code> (fallback sentinel)</li>
+        </ul>
+        <p>
+          Any one of these being truthy is sufficient and reliable for detection.
+        </p>
+      </div>
+
+      <div id="nova-connect-version-migration" className={`docs-section ${hash === "nova-connect-version-migration" ? "active" : ""}`}>
+        <h1>Nova Connect - Version Migration</h1>
+        <h2>v0.2.0 Migration</h2>
+        <p>
+          <strong>No breaking changes.</strong> Version 0.2.0 is fully backwards compatible with v0.1.0.
+        </p>
+        <h3>New Features</h3>
+        <ul>
+          <li><strong>PKCE Support</strong> - Automatic for standard flows, no code changes required</li>
+          <li><strong>Wallet-Initiated Disconnect Events</strong> - New <code>disconnect</code> event for faster session invalidation</li>
+          <li><strong>Nova Desk Embedded Browser Detection</strong> - <code>isHostedInNovaDesk()</code> prevents duplicate registration</li>
+          <li><strong>Stale Request Cleanup</strong> - Automatic, no code changes required</li>
+          <li><strong>Deeplink Hardening</strong> - Automatic callback consumption and PKCE</li>
+        </ul>
+        <h3>Optional Enhancements</h3>
+        <p>
+          To take advantage of new features, you can optionally update your code:
+        </p>
+        <div className="code-block">
+          <code>{`// Enable session liveness heartbeat for faster disconnect detection
+const wallet = new NovaWallet({
+  sessionLivenessIntervalMs: 30000, // 30 second interval
+});
+
+// Listen for wallet-initiated disconnects
+wallet.on("disconnect", () => {
+  // Clear cached state
+  clearAccount();
+  clearNetwork();
+  showConnectButton();
+});
+
+// Enable phishing protection for deeplink flows
+const secureWallet = new NovaWallet({
+  expectedOrigin: "https://my-dapp.com",
+});
+
+// Prevent duplicate registration in Nova Desk embedded browser
+import { isHostedInNovaDesk, registerNovaWallet } from "@inferenco/nova-wallet-adapter";
+
+if (!isHostedInNovaDesk()) {
+  registerNovaWallet();
+}`}</code>
+        </div>
+        <h3>Deprecated</h3>
+        <ul>
+          <li><code>buildDesktopOrMobileConnectUrlWithRequest</code> - Deprecated, will be removed in v0.4.0. Use <code>NovaClient.connect()</code> instead.</li>
+        </ul>
       </div>
     </>
   );
