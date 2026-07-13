@@ -2090,6 +2090,9 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         overflow-wrap: break-word;
         word-break: break-word;
+        white-space: normal;
+        text-overflow: unset;
+        max-width: none;
     }
     
     .params-table tbody tr td:last-child {
@@ -2278,6 +2281,9 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         overflow-wrap: break-word;
         word-break: break-word;
+        white-space: normal;
+        text-overflow: unset;
+        max-width: none;
     }
     
     .params-table tbody tr td:last-child {
