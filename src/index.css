@@ -2084,7 +2084,6 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         overflow-wrap: normal !important;
         word-break: normal !important;
         white-space: nowrap;
-        text-overflow: ellipsis;
     }
     
     /* Explicit column widths to prevent truncation */
@@ -2116,10 +2115,10 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     .params-table td:nth-child(4) {
         width: 25%;
         min-width: 200px;
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: break-word;
-        text-overflow: clip;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        text-overflow: unset !important;
     }
 
     /* Better text readability on mobile */
@@ -2269,9 +2268,10 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     .params-table td:nth-child(4) {
         width: 25%;
         min-width: 150px;
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: break-word;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        text-overflow: unset !important;
     }
     
     /* Prevent any horizontal overflow on very small screens */
