@@ -89,7 +89,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Entry Functions (write)</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -123,7 +123,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>View Functions (read)</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>

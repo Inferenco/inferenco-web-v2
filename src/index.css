@@ -1548,11 +1548,11 @@ html.light .footer {
 
     .docs-container .docs-content,
     .docs-page .docs-content {
-        margin-left: 280px;
+        margin-left: calc(280px + 2rem);
     }
 
     #docs-page .docs-content {
-        margin-left: 280px;
+        margin-left: calc(280px + 2rem);
     }
 
     html.light .docs-sidebar {
@@ -1644,6 +1644,21 @@ html.light .sidebar-item.active {
 
 html.light .sidebar-item.active i {
     color: var(--brand-primary);
+}
+
+/* Light theme styling for functions-table */
+html.light .functions-table th,
+html.light .functions-table td {
+    border-bottom-color: var(--border);
+}
+
+html.light .functions-table th {
+    background: rgba(45, 108, 255, 0.1);
+    color: var(--brand-accent);
+}
+
+html.light .functions-table td {
+    color: var(--text-secondary);
 }
 
 .sidebar-overlay {
@@ -1813,7 +1828,7 @@ html.light .sidebar-item.active i {
     table-layout: fixed;
 }
 
-/* Better column distribution for params table */
+/* Better column distribution for params table (4-column tables - Option, Type, Default, Description) */
 .params-table th:nth-child(1),
 .params-table td:nth-child(1) {
     width: 15%;
@@ -1838,6 +1853,58 @@ html.light .sidebar-item.active i {
 .params-table th:nth-child(4),
 .params-table td:nth-child(4) {
     width: 35%;
+}
+
+/* Contract functions table - 3-column layout (Function, Signature, Description) */
+.functions-table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.functions-table table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.functions-table th,
+.functions-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.functions-table th {
+    background: rgba(0, 178, 255, 0.1);
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.functions-table td {
+    color: var(--light);
+}
+
+.functions-table th:nth-child(1),
+.functions-table td:nth-child(1) {
+    width: 20%;
+    min-width: 150px;
+}
+
+.functions-table th:nth-child(2),
+.functions-table td:nth-child(2) {
+    width: 35%;
+    min-width: 300px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.functions-table th:nth-child(3),
+.functions-table td:nth-child(3) {
+    width: 45%;
+    min-width: 300px;
 }
 
 .params-table th,
@@ -2223,6 +2290,86 @@ html.light .sidebar-item.active i {
         overflow-wrap: break-word !important;
         text-overflow: unset !important;
         max-width: none !important;
+    }
+
+    /* Functions table mobile styling - convert to stacked cards */
+    .functions-table {
+        width: 100%;
+    }
+
+    .functions-table table {
+        width: 100%;
+        border: none;
+    }
+
+    .functions-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .functions-table tbody tr td {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        text-overflow: unset;
+        max-width: none;
+    }
+
+    .functions-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    .functions-table tbody tr td::before {
+        font-weight: 600;
+        color: var(--accent);
+        margin-right: 0.5rem;
+    }
+
+    .functions-table tbody tr td:nth-child(1)::before {
+        content: "Function: ";
+    }
+
+    .functions-table tbody tr td:nth-child(2)::before {
+        content: "Signature: ";
+    }
+
+    .functions-table tbody tr td:nth-child(3)::before {
+        content: "Description: ";
+    }
+
+    /* Hide table headers on mobile since we're using labels */
+    .functions-table thead {
+        display: none;
+    }
+
+    /* Signature column should allow horizontal scrolling on mobile */
+    .functions-table td:nth-child(2) {
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    /* Light theme fixes for mobile functions-table */
+    html.light .functions-table tbody tr {
+        border: 1px solid var(--border);
+        background: var(--surface-soft);
+    }
+
+    html.light .functions-table tbody tr td {
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+    }
+
+    html.light .functions-table tbody tr td::before {
+        color: var(--brand-accent);
     }
 
     /* Light theme fixes for mobile params-table */
