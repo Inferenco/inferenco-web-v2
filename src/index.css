@@ -29,6 +29,7 @@
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.76);
     --text-muted: rgba(255, 255, 255, 0.58);
+    --border: rgba(255, 255, 255, 0.1);
     --brand-primary: #2d6cff;
     --brand-accent: #18e0ff;
 }
@@ -64,6 +65,7 @@ html.light {
     --text-primary: #0f172a;
     --text-secondary: #42526b;
     --text-muted: #6b7a90;
+    --border: #cbd5e1;
     --brand-primary: #2d6cff;
     --brand-accent: #18d7f7;
     
@@ -1520,20 +1522,42 @@ html.light .footer {
     min-height: calc(100vh - 80px);
 }
 
-.docs-sidebar {
-    width: 280px;
-    background: var(--bg-secondary);
-    border-right: 1px solid var(--brand-primary);
-    padding: 2rem 1rem;
-    position: fixed;
-    top: 80px;
-    height: calc(100vh - 80px);
-    overflow-y: auto;
-    flex-shrink: 0;
+/* Base docs content styles */
+.docs-container .docs-content,
+.docs-page .docs-content {
+    padding: 1.5rem;
 }
 
-html.light .docs-sidebar {
-    border-right-color: rgba(45, 108, 255, 0.12);
+#docs-page .docs-content {
+    padding: 1.5rem;
+}
+
+/* Desktop layout - sidebar visible on left */
+@media (min-width: 1025px) {
+    .docs-sidebar {
+        width: 280px;
+        background: var(--bg-secondary);
+        border-right: 1px solid var(--brand-primary);
+        padding: 2rem 1rem;
+        position: fixed;
+        top: 80px;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        flex-shrink: 0;
+    }
+
+    .docs-container .docs-content,
+    .docs-page .docs-content {
+        margin-left: 280px;
+    }
+
+    #docs-page .docs-content {
+        margin-left: 280px;
+    }
+
+    html.light .docs-sidebar {
+        border-right-color: rgba(45, 108, 255, 0.12);
+    }
 }
 
 /* Hide footer on docs page */
@@ -1603,10 +1627,23 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 .sidebar-item.active {
     background: rgba(45, 108, 255, 0.15);
     color: var(--brand-accent);
+    font-weight: 600;
 }
 
 .sidebar-item.active i {
     color: var(--brand-accent);
+}
+
+/* Light theme sidebar active state */
+html.light .sidebar-item.active {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    border-left: 3px solid var(--brand-primary);
+    font-weight: 600;
+}
+
+html.light .sidebar-item.active i {
+    color: var(--brand-primary);
 }
 
 .sidebar-overlay {
@@ -1617,7 +1654,6 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     flex: 1;
     padding: 3rem;
     max-width: 900px;
-    margin: 0 auto;
 }
 
 .docs-section {
@@ -1774,14 +1810,43 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 .params-table table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    table-layout: fixed;
+}
+
+/* Better column distribution for params table */
+.params-table th:nth-child(1),
+.params-table td:nth-child(1) {
+    width: 15%;
+    min-width: 120px;
+}
+
+.params-table th:nth-child(2),
+.params-table td:nth-child(2) {
+    width: 10%;
+    min-width: 80px;
+    word-break: break-all;
+}
+
+.params-table th:nth-child(3),
+.params-table td:nth-child(3) {
+    width: 40%;
+    min-width: 250px;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
+.params-table th:nth-child(4),
+.params-table td:nth-child(4) {
+    width: 35%;
 }
 
 .params-table th,
 .params-table td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .params-table th {
@@ -1792,6 +1857,14 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
 
 .params-table td {
     color: var(--light);
+}
+
+/* Ensure description column has enough space and wraps properly */
+.params-table td:nth-child(4) {
+    min-width: 200px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .required {
@@ -1960,6 +2033,15 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         border-right: 1px solid var(--brand-primary);
     }
 
+    .docs-container .docs-content,
+    .docs-page .docs-content {
+        margin-left: 0;
+    }
+
+    #docs-page .docs-content {
+        margin-left: 0;
+    }
+
     html.light .docs-sidebar {
         border-right-color: rgba(45, 108, 255, 0.12);
     }
@@ -1985,11 +2067,7 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         z-index: 1002;
     }
     
-    /* Add padding to docs content to prevent overlap with floating button */
-    .docs-container > .docs-content,
-    .docs-page > .docs-content {
-        padding-left: 48px !important;
-    }
+
     
     /* Hide docs sidebar toggle button when sidebar is open */
     .docs-container:has(.docs-sidebar.active) > .mobile-menu-toggle,
@@ -2018,10 +2096,6 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     .sidebar-overlay.active {
         opacity: 1;
         pointer-events: auto;
-    }
-
-    .docs-content {
-        padding: 1.5rem;
     }
 
     .footer-content {
@@ -2126,10 +2200,10 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         display: none;
     }
     
-    /* Prevent word breaking in technical terms */
+    /* Prevent word breaking in technical terms but allow wrapping */
     .params-table td:nth-child(1) {
-        white-space: nowrap;
-        word-break: keep-all;
+        white-space: normal;
+        word-break: break-word;
     }
     
     .params-table td:nth-child(2) {
@@ -2138,8 +2212,8 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     }
     
     .params-table td:nth-child(3) {
-        white-space: nowrap;
-        word-break: break-all;
+        white-space: normal;
+        word-break: break-word;
     }
     
     /* Allow description to wrap naturally */
@@ -2149,6 +2223,21 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         overflow-wrap: break-word !important;
         text-overflow: unset !important;
         max-width: none !important;
+    }
+
+    /* Light theme fixes for mobile params-table */
+    html.light .params-table tbody tr {
+        border: 1px solid var(--border);
+        background: var(--surface-soft);
+    }
+
+    html.light .params-table tbody tr td {
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+    }
+
+    html.light .params-table tbody tr td::before {
+        color: var(--brand-accent);
     }
 
     /* Better text readability on mobile */
@@ -2318,10 +2407,10 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         display: none;
     }
     
-    /* Prevent word breaking in technical terms on very small screens */
+    /* Prevent word breaking in technical terms on very small screens but allow wrapping */
     .params-table td:nth-child(1) {
-        white-space: nowrap;
-        word-break: keep-all;
+        white-space: normal;
+        word-break: break-word;
     }
     
     .params-table td:nth-child(2) {
@@ -2330,8 +2419,8 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
     }
     
     .params-table td:nth-child(3) {
-        white-space: nowrap;
-        word-break: break-all;
+        white-space: normal;
+        word-break: break-word;
     }
     
     /* Allow description to wrap naturally on very small screens */
@@ -2343,6 +2432,21 @@ html.light .docs-sidebar::-webkit-scrollbar-track {
         max-width: none !important;
     }
     
+    /* Light theme fixes for very small screens params-table */
+    html.light .params-table tbody tr {
+        border: 1px solid var(--border);
+        background: var(--surface-soft);
+    }
+
+    html.light .params-table tbody tr td {
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+    }
+
+    html.light .params-table tbody tr td::before {
+        color: var(--brand-accent);
+    }
+
     /* Prevent any horizontal overflow on very small screens */
     .docs-container {
         overflow-x: hidden;
@@ -2931,6 +3035,65 @@ html.light .section-title {
 
 html.light .section-title span {
     color: var(--brand-accent);
+}
+
+/* Fix light theme contrast for params-table */
+html.light .params-table table {
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+html.light .params-table th {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--brand-primary);
+    padding: 1rem;
+}
+
+html.light .params-table th,
+html.light .params-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+}
+
+html.light .params-table td {
+    color: var(--text-secondary);
+    background: var(--surface-base);
+}
+
+html.light .params-table tbody tr:nth-child(even) td {
+    background: var(--surface-base);
+}
+
+/* Fix light theme contrast for code blocks and inline code */
+html.light code {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    border: 1px solid var(--brand-primary);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 0.9em;
+}
+
+html.light .code-block {
+    background: var(--surface-base);
+    border: 1px solid var(--brand-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+html.light .code-block code {
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 /* Modal Overlay */
