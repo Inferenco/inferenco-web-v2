@@ -55,7 +55,7 @@ export default function NovaConnectDocs({ hash }: { hash: string }) {
           <code>{`pnpm add @inferenco/nova-wallet-adapter`}</code>
         </div>
         <h2>Entry Points</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -415,7 +415,7 @@ if (wallet.features["cedra:onDisconnect"]) {
           <code>NovaWallet</code>, <code>NovaClient</code>, <code>registerNovaWallet</code> and
           <code>createNovaAIP62Wallet</code> accept <code>NovaWalletOptions</code>. Every field is optional.
         </p>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -636,7 +636,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
           All adapter errors are normalized as <code>NovaAdapterError</code>. Enum keys are camel case,
           and each key maps to the uppercase string code shown below.
         </p>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -734,7 +734,7 @@ console.log(Boolean(provider), available);`}</code>
       <div id="nova-connect-session-management" className={`docs-section ${hash === "nova-connect-session-management" ? "active" : ""}`}>
         <h1>Nova Connect - Session Management</h1>
         <p>Nova Connect stores session data in browser storage so desktop and mobile flows survive reloads.</p>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -805,7 +805,7 @@ clearPendingMobilePairing();`}</code>
           <li>The session is validated against the local Nova Desk bridge before use</li>
         </ol>
         <h2>PKCE Functions</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -876,7 +876,7 @@ const account = await wallet.connect();`}</code>
           <code>{`http://127.0.0.1:21984`}</code>
         </div>
         <h2>Endpoints</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>

@@ -500,7 +500,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Headers</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Header</th>
@@ -528,7 +528,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Request Body</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>
@@ -671,7 +671,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Query Parameters</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>
@@ -701,7 +701,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Headers</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Header</th>
@@ -729,7 +729,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Request Body</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>

@@ -1863,6 +1863,28 @@ html.light .functions-table td {
     overflow-wrap: break-word;
 }
 
+/* Two column table layout (for PKCE functions and similar) */
+.two-col-table table {
+    table-layout: fixed;
+}
+
+.two-col-table th:nth-child(1),
+.two-col-table td:nth-child(1) {
+    width: 40%;
+    min-width: 200px;
+    white-space: nowrap;
+    word-break: normal;
+}
+
+.two-col-table th:nth-child(2),
+.two-col-table td:nth-child(2) {
+    width: 60%;
+    min-width: 250px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 /* Contract functions table - 3-column layout (Function, Signature, Description) */
 .functions-table {
     width: 100%;
@@ -2270,6 +2292,25 @@ html.light .functions-table td:nth-child(2) {
         margin: 0;
         padding: 0;
     }
+
+    /* Two column table - use stacked cards on mobile like functions-table */
+    .two-col-table {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
+    }
+    
+    .two-col-table table {
+        display: block;
+        width: 100%;
+        border: none;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+    }
     
     .params-table table {
         display: block;
@@ -2295,10 +2336,10 @@ html.light .functions-table td:nth-child(2) {
     
     .params-table tbody tr td {
         display: block;
-        padding: 0.75rem 0.5rem;
+        padding: 0.75rem 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         border-right: none !important;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
         word-break: break-word;
         white-space: normal;
         text-overflow: unset;
@@ -2318,7 +2359,8 @@ html.light .functions-table td:nth-child(2) {
     .params-table tbody tr td::before {
         font-weight: 600;
         color: var(--accent);
-        margin-right: 0.5rem;
+        display: block;
+        margin-bottom: 0.25rem;
     }
     
     .params-table tbody tr td:nth-child(1)::before {
@@ -2336,12 +2378,77 @@ html.light .functions-table td:nth-child(2) {
     .params-table tbody tr td:nth-child(4)::before {
         content: "Description: ";
     }
-    
+
     /* Hide table headers on mobile since we're using labels */
     .params-table thead {
         display: none;
     }
-    
+
+    /* Two column table mobile - use stacked cards */
+    .two-col-table tbody tr {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+        margin-bottom: 1rem;
+        background: rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .two-col-table tbody tr td {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: none !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        white-space: normal;
+        text-overflow: unset;
+        overflow: visible;
+        margin: 0;
+        box-sizing: border-box;
+        background: transparent;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .two-col-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    /* Two column table mobile labels */
+    .two-col-table tbody tr td::before {
+        font-weight: 600;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .two-col-table tbody tr td:nth-child(1)::before {
+        content: "Function: ";
+    }
+
+    .two-col-table tbody tr td:nth-child(2)::before {
+        content: "Description: ";
+    }
+
+    /* Hide table headers on mobile since we're using labels */
+    .two-col-table thead {
+        display: none;
+    }
+
+    /* Allow code elements in two-col table to wrap properly */
+    .two-col-table code {
+        white-space: normal;
+        display: inline-block;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
     /* Allow all columns to wrap properly on mobile */
     .params-table td:nth-child(1),
     .params-table td:nth-child(2),
@@ -2361,8 +2468,22 @@ html.light .functions-table td:nth-child(2) {
         min-width: 100% !important;
         white-space: normal !important;
         word-break: break-word !important;
-        overflow-wrap: break-word !important;
+        overflow-wrap: anywhere !important;
         box-sizing: border-box;
+        margin: 0.25rem 0;
+        font-size: 0.8em !important;
+    }
+
+    /* Two column table code - allow wrapping with overflow */
+    .two-col-table code {
+        display: block !important;
+        width: 100% !important;
+        padding: 0.2rem 0.4rem !important;
+        box-sizing: border-box !important;
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+        overflow-wrap: anywhere !important;
+        overflow-x: auto !important;
     }
 
     /* Functions table mobile styling - convert to stacked cards */
@@ -2454,6 +2575,106 @@ html.light .functions-table td:nth-child(2) {
     .functions-table tbody tr td:nth-child(3)::before {
         content: "Description: ";
     }
+    
+    .functions-table tbody tr td:nth-child(4)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova Connect Configuration table - 4 columns */
+    #nova-connect-configuration .functions-table tbody tr td:nth-child(1)::before {
+        content: "Option: ";
+    }
+    #nova-connect-configuration .functions-table tbody tr td:nth-child(2)::before {
+        content: "Type: ";
+    }
+    #nova-connect-configuration .functions-table tbody tr td:nth-child(3)::before {
+        content: "Default: ";
+    }
+    #nova-connect-configuration .functions-table tbody tr td:nth-child(4)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova Connect PKCE table - 2 columns */
+    #nova-connect-pkce .functions-table tbody tr td:nth-child(2)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova Connect Error Handling - 3 columns */
+    #nova-connect-error-handling .functions-table tbody tr td:nth-child(1)::before {
+        content: "Enum key: ";
+    }
+    #nova-connect-error-handling .functions-table tbody tr td:nth-child(2)::before {
+        content: "String code: ";
+    }
+    #nova-connect-error-handling .functions-table tbody tr td:nth-child(3)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova Connect Bridge API - 3 columns */
+    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(1)::before {
+        content: "Method: ";
+    }
+    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(2)::before {
+        content: "Path: ";
+    }
+    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(3)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova Connect Session Management - 3 columns */
+    #nova-connect-session-management .functions-table tbody tr td:nth-child(1)::before {
+        content: "Key: ";
+    }
+    #nova-connect-session-management .functions-table tbody tr td:nth-child(2)::before {
+        content: "Storage: ";
+    }
+    #nova-connect-session-management .functions-table tbody tr td:nth-child(3)::before {
+        content: "Purpose: ";
+    }
+    
+    /* Nova Connect Installation Entry Points - 2 columns */
+    #nova-connect-installation .functions-table tbody tr td:nth-child(1)::before {
+        content: "Import path: ";
+    }
+    #nova-connect-installation .functions-table tbody tr td:nth-child(2)::before {
+        content: "Exports: ";
+    }
+    
+    /* Wallet Profile Data Model - Field, Type, Notes (3 columns) */
+    #wallet-profile-data-model .functions-table tbody tr td:nth-child(1)::before {
+        content: "Field: ";
+    }
+    #wallet-profile-data-model .functions-table tbody tr td:nth-child(2)::before {
+        content: "Type: ";
+    }
+    #wallet-profile-data-model .functions-table tbody tr td:nth-child(3)::before {
+        content: "Notes: ";
+    }
+    
+    /* Wallet Profile Constants - Constant, Value, Description (3 columns) */
+    #wallet-profile-constants .functions-table tbody tr td:nth-child(1)::before {
+        content: "Constant: ";
+    }
+    #wallet-profile-constants .functions-table tbody tr td:nth-child(2)::before {
+        content: "Value: ";
+    }
+    #wallet-profile-constants .functions-table tbody tr td:nth-child(3)::before {
+        content: "Description: ";
+    }
+    
+    /* Nova API Docs - endpoint tables (Header/Parameter, Type, Required, Description) */
+    #api-docs .endpoint-item .functions-table tbody tr td:nth-child(1)::before {
+        content: "Field: ";
+    }
+    #api-docs .endpoint-item .functions-table tbody tr td:nth-child(2)::before {
+        content: "Type: ";
+    }
+    #api-docs .endpoint-item .functions-table tbody tr td:nth-child(3)::before {
+        content: "Required: ";
+    }
+    #api-docs .endpoint-item .functions-table tbody tr td:nth-child(4)::before {
+        content: "Description: ";
+    }
 
     /* Hide table headers on mobile since we're using labels */
     .functions-table thead {
@@ -2543,6 +2764,30 @@ html.light .functions-table td:nth-child(2) {
     }
 
     html.light .params-table tbody tr td::before {
+        color: var(--brand-primary);
+        font-weight: 600;
+    }
+
+    /* Light theme fixes for mobile two-col-table */
+    html.light .two-col-table tbody tr {
+        border: 1px solid var(--border);
+        background: var(--surface-inset);
+    }
+
+    html.light .two-col-table tbody tr td {
+        border-bottom: 1px solid var(--border);
+        border-right: none !important;
+        color: var(--text-secondary);
+        background: transparent;
+    }
+
+    /* Override alternating row colors for mobile - all rows same background */
+    html.light .two-col-table tbody tr:nth-child(even) td,
+    html.light .two-col-table tbody tr:nth-child(odd) td {
+        background: transparent !important;
+    }
+
+    html.light .two-col-table tbody tr td::before {
         color: var(--brand-primary);
         font-weight: 600;
     }
@@ -2653,6 +2898,13 @@ html.light .functions-table td:nth-child(2) {
         width: 100%;
     }
     
+    /* Two column table - ensure rows can grow */
+    .two-col-table tbody tr {
+        min-height: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
     .params-table table {
         width: 100%;
         border: none;
@@ -2681,6 +2933,17 @@ html.light .functions-table td:nth-child(2) {
         text-overflow: unset;
         max-width: none;
     }
+
+    /* Two column table - remove dividers and allow scrolling for cleaner look */
+    .two-col-table tbody tr td {
+        border-bottom: none !important;
+        overflow-x: auto !important;
+        max-width: 100% !important;
+    }
+
+    .two-col-table tbody tr td:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
     
     .params-table tbody tr td:last-child {
         border-bottom: none;
@@ -2708,6 +2971,15 @@ html.light .functions-table td:nth-child(2) {
     .params-table tbody tr td:nth-child(4)::before {
         content: "Description: ";
     }
+
+    /* Two column table mobile labels for extra small screens - override params-table */
+    .two-col-table tbody tr td:nth-child(1)::before {
+        content: "Function: ";
+    }
+
+    .two-col-table tbody tr td:nth-child(2)::before {
+        content: "Description: ";
+    }
     
     /* Hide table headers on very small screens since we're using labels */
     .params-table thead {
@@ -2725,6 +2997,13 @@ html.light .functions-table td:nth-child(2) {
         word-break: keep-all;
     }
     
+    /* Two column table - allow description to wrap on very small screens */
+    .two-col-table td:nth-child(2) {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
     .params-table td:nth-child(3) {
         white-space: normal;
         word-break: break-word;

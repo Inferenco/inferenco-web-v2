@@ -101,9 +101,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
             <tbody>
               <tr>
                 <td><code>set_profile</code></td>
-                <td>
-                  <code>(account: &amp;signer, nickname: String, avatar_url: String)</code>
-                </td>
+                <td><code className="func-sig">(account: &amp;signer, nickname: String, avatar_url: String)</code></td>
                 <td>
                   Create the profile if it does not exist, or update the nickname,
                   avatar URL, and <code>updated_at</code> if it does. Aborts on empty
@@ -112,7 +110,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>clear_profile</code></td>
-                <td><code>(account: &amp;signer)</code></td>
+                <td><code className="func-sig">(account: &amp;signer)</code></td>
                 <td>
                   Delete the profile resource and reclaim storage. Aborts with{" "}
                   <code>E_PROFILE_NOT_FOUND</code> if no profile exists.
@@ -135,7 +133,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
             <tbody>
               <tr>
                 <td><code>has_profile</code></td>
-                <td><code>(addr: address): bool</code></td>
+                <td><code className="func-sig">(addr: address): bool</code></td>
                 <td>
                   Returns <code>true</code> when the address holds a{" "}
                   <code>UserProfile</code> resource.
@@ -143,7 +141,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_profile</code></td>
-                <td><code>(addr: address): (String, String, u64)</code></td>
+                <td><code className="func-sig">(addr: address): (String, String, u64)</code></td>
                 <td>
                   Returns <code>(nickname, avatar_url, updated_at)</code>. Aborts
                   with <code>E_PROFILE_NOT_FOUND</code> when no profile exists.
@@ -151,7 +149,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_nickname</code></td>
-                <td><code>(addr: address): String</code></td>
+                <td><code className="func-sig">(addr: address): String</code></td>
                 <td>
                   Returns the nickname, or an empty string when no profile exists.
                   Safe to call without an existence check.
@@ -159,7 +157,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_avatar_url</code></td>
-                <td><code>(addr: address): String</code></td>
+                <td><code className="func-sig">(addr: address): String</code></td>
                 <td>
                   Returns the avatar URL, or an empty string when no profile exists.
                   Safe to call without an existence check.
@@ -202,7 +200,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
 }`}</code>
         </div>
 
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -232,7 +230,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>Constants</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -686,7 +684,7 @@ export function ProfileEditor({ account }) {
           they return an empty string when no profile exists.
         </p>
 
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
