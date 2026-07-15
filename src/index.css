@@ -1548,15 +1548,16 @@ html.light .footer {
 
     .docs-container .docs-content,
     .docs-page .docs-content {
-        margin-left: calc(280px + 2rem);
+        margin-left: calc(280px + 6rem);
     }
 
     #docs-page .docs-content {
-        margin-left: calc(280px + 2rem);
+        margin-left: calc(280px + 6rem);
     }
 
     html.light .docs-sidebar {
-        border-right-color: rgba(45, 108, 255, 0.12);
+        border-right: 1px solid rgba(45, 108, 255, 0.2);
+        background: var(--surface-soft);
     }
 }
 
@@ -1820,39 +1821,39 @@ html.light .functions-table td {
 .params-table {
     width: 100%;
     margin-bottom: 1.5rem;
+    overflow-x: auto;
+    min-width: 800px;
 }
 
 .params-table table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: auto;
 }
 
-/* Better column distribution for params table (4-column tables - Option, Type, Default, Description) */
+/* Params table - use auto layout with min-widths to ensure readability */
+/* Column widths will be distributed automatically based on content */
 .params-table th:nth-child(1),
 .params-table td:nth-child(1) {
-    width: 15%;
-    min-width: 120px;
+    min-width: 180px;
+    width: auto;
 }
 
 .params-table th:nth-child(2),
 .params-table td:nth-child(2) {
-    width: 10%;
-    min-width: 80px;
-    word-break: break-all;
+    min-width: 100px;
+    width: auto;
 }
 
 .params-table th:nth-child(3),
 .params-table td:nth-child(3) {
-    width: 40%;
     min-width: 250px;
-    word-break: break-all;
-    overflow-wrap: anywhere;
+    width: auto;
 }
 
 .params-table th:nth-child(4),
 .params-table td:nth-child(4) {
-    width: 35%;
+    min-width: 250px;
 }
 
 /* Contract functions table - 3-column layout (Function, Signature, Description) */
@@ -1860,6 +1861,7 @@ html.light .functions-table td {
     width: 100%;
     margin-bottom: 1.5rem;
     overflow-x: auto;
+    min-width: 800px;
 }
 
 .functions-table table {
@@ -1870,9 +1872,18 @@ html.light .functions-table td {
 
 .functions-table th,
 .functions-table td {
-    padding: 1rem;
+    padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid var(--border);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+}
+
+/* Allow code elements in functions table to wrap as needed */
+.functions-table code {
+    white-space: normal;
+    display: inline-block;
     word-break: break-word;
     overflow-wrap: break-word;
 }
@@ -1890,28 +1901,55 @@ html.light .functions-table td {
 .functions-table th:nth-child(1),
 .functions-table td:nth-child(1) {
     width: 20%;
-    min-width: 150px;
+    min-width: 140px;
+    white-space: nowrap;
+    overflow: visible;
+    border-right: 1px solid var(--border);
 }
 
 .functions-table th:nth-child(2),
 .functions-table td:nth-child(2) {
-    width: 35%;
-    min-width: 300px;
-    white-space: nowrap;
-    overflow-x: auto;
+    width: 55%;
+    min-width: 400px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    border-right: 1px solid var(--border);
+}
+
+/* Make vertical borders more visible */
+html.light .functions-table th:nth-child(1),
+html.light .functions-table td:nth-child(1),
+html.light .functions-table th:nth-child(2),
+html.light .functions-table td:nth-child(2) {
+    border-right-color: var(--brand-primary);
+    border-right-style: solid;
+    border-right-width: 1px;
 }
 
 .functions-table th:nth-child(3),
 .functions-table td:nth-child(3) {
-    width: 45%;
-    min-width: 300px;
+    width: 25%;
+    min-width: 200px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .params-table th,
 .params-table td {
-    padding: 1rem;
+    padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid var(--border);
+    word-break: normal;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+}
+
+/* Allow code elements in params table to wrap as needed */
+.params-table code {
+    white-space: normal;
+    display: inline-block;
     word-break: break-word;
     overflow-wrap: break-word;
 }
@@ -2116,6 +2154,13 @@ html.light .functions-table td {
     .docs-sidebar.active {
         left: 0;
     }
+    
+    /* When sidebar is active on mobile, push content to the right */
+    .docs-container:has(.docs-sidebar.active) .docs-content,
+    .docs-page:has(.docs-sidebar.active) .docs-content {
+        margin-left: 280px;
+        transition: margin-left 0.3s ease;
+    }
 
     /* Make docs sidebar toggle button float so it's always accessible */
     .docs-container > .mobile-menu-toggle,
@@ -2132,6 +2177,7 @@ html.light .functions-table td {
         background: var(--bg-secondary);
         border-radius: 0 8px 8px 0;
         z-index: 1002;
+        padding-left: 4px;
     }
     
 
@@ -2267,61 +2313,84 @@ html.light .functions-table td {
         display: none;
     }
     
-    /* Prevent word breaking in technical terms but allow wrapping */
-    .params-table td:nth-child(1) {
-        white-space: normal;
-        word-break: break-word;
-    }
-    
-    .params-table td:nth-child(2) {
-        white-space: nowrap;
-        word-break: keep-all;
-    }
-    
-    .params-table td:nth-child(3) {
-        white-space: normal;
-        word-break: break-word;
-    }
-    
-    /* Allow description to wrap naturally */
+    /* Allow all columns to wrap properly on mobile */
+    .params-table td:nth-child(1),
+    .params-table td:nth-child(2),
+    .params-table td:nth-child(3),
     .params-table td:nth-child(4) {
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        text-overflow: unset;
+        max-width: none;
+    }
+    
+    /* Allow code to wrap on mobile */
+    .params-table code {
         white-space: normal !important;
         word-break: break-word !important;
         overflow-wrap: break-word !important;
-        text-overflow: unset !important;
-        max-width: none !important;
     }
 
     /* Functions table mobile styling - convert to stacked cards */
     .functions-table {
+        width: 100%;
+        min-width: auto;
+        overflow-x: visible;
+    }
+    
+    .functions-table table {
+        display: block;
+        width: 100%;
+    }
+    
+    .functions-table thead {
+        display: none;
+    }
+    
+    .functions-table tbody {
+        display: block;
         width: 100%;
     }
 
     .functions-table table {
         width: 100%;
         border: none;
+        border-collapse: collapse;
+        table-layout: auto;
     }
 
     .functions-table tbody tr {
         display: flex;
         flex-direction: column;
         width: 100%;
+        max-width: 100vw;
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
         margin-bottom: 1rem;
         background: rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        padding: 0.5rem;
     }
 
     .functions-table tbody tr td {
         display: block;
         width: 100%;
-        padding: 0.75rem 0.5rem;
+        padding: 0.75rem 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
         word-break: break-word;
         white-space: normal;
         text-overflow: unset;
         max-width: none;
+        overflow: visible;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Add right padding to signature cell */
+    .functions-table tbody tr td:nth-child(2) {
+        padding-right: 1rem;
     }
 
     .functions-table tbody tr td:last-child {
@@ -2331,7 +2400,8 @@ html.light .functions-table td {
     .functions-table tbody tr td::before {
         font-weight: 600;
         color: var(--accent);
-        margin-right: 0.5rem;
+        display: block;
+        margin-bottom: 0.25rem;
     }
 
     .functions-table tbody tr td:nth-child(1)::before {
@@ -2351,10 +2421,43 @@ html.light .functions-table td {
         display: none;
     }
 
-    /* Signature column should allow horizontal scrolling on mobile */
+    /* Signature column should wrap normally on mobile */
     .functions-table td:nth-child(2) {
-        white-space: nowrap;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
         overflow-x: auto;
+        max-width: 100%;
+    }
+    
+    /* Function signature styling - wrap on mobile */
+    .func-sig {
+        white-space: normal !important;
+        word-break: break-all !important;
+        display: block !important;
+        overflow-wrap: anywhere !important;
+        max-width: 100% !important;
+        margin: 0.25rem 0;
+        font-size: 0.8em !important;
+    }
+    
+    /* All code blocks in mobile functions table should wrap and fit */
+    .functions-table code {
+        white-space: normal !important;
+        word-break: break-all !important;
+        display: block !important;
+        overflow-wrap: anywhere !important;
+        max-width: 100% !important;
+        margin: 0.25rem 0;
+        font-size: 0.8em !important;
+    }
+    
+    /* Desktop: allow signatures to wrap naturally but prefer single line */
+    @media (min-width: 769px) {
+        .func-sig {
+            white-space: normal !important;
+            display: inline-block !important;
+        }
     }
 
     /* Light theme fixes for mobile functions-table */
@@ -2384,7 +2487,8 @@ html.light .functions-table td {
     }
 
     html.light .params-table tbody tr td::before {
-        color: var(--brand-accent);
+        color: var(--brand-primary);
+        font-weight: 600;
     }
 
     /* Better text readability on mobile */
@@ -2591,7 +2695,8 @@ html.light .functions-table td {
     }
 
     html.light .params-table tbody tr td::before {
-        color: var(--brand-accent);
+        color: var(--brand-primary);
+        font-weight: 600;
     }
 
     /* Prevent any horizontal overflow on very small screens */
@@ -3207,11 +3312,42 @@ html.light .params-table td {
 }
 
 html.light .params-table td {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     background: var(--surface-base);
 }
 
 html.light .params-table tbody tr:nth-child(even) td {
+    background: var(--surface-base);
+}
+
+/* Fix light theme contrast for functions-table */
+html.light .functions-table table {
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+html.light .functions-table th {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--brand-primary);
+    padding: 1rem;
+}
+
+html.light .functions-table th,
+html.light .functions-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+}
+
+html.light .functions-table td {
+    color: var(--text-secondary);
+    background: var(--surface-base);
+}
+
+html.light .functions-table tbody tr:nth-child(even) td {
     background: var(--surface-base);
 }
 
