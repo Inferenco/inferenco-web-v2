@@ -1901,12 +1901,13 @@ html.light .functions-table td {
 
 .functions-table th,
 .functions-table td {
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     text-align: left;
     border-bottom: 1px solid var(--border);
     word-break: break-word;
     overflow-wrap: break-word;
     vertical-align: top;
+    line-height: 1.4;
 }
 
 /* Allow code elements in functions table to wrap as needed */
@@ -1951,7 +1952,9 @@ html.light .functions-table td {
 html.light .functions-table th:nth-child(1),
 html.light .functions-table td:nth-child(1),
 html.light .functions-table th:nth-child(2),
-html.light .functions-table td:nth-child(2) {
+html.light .functions-table td:nth-child(2),
+html.light .functions-table th:nth-child(3),
+html.light .functions-table td:nth-child(3) {
     border-right-color: var(--brand-primary);
     border-right-style: solid;
     border-right-width: 1px;
@@ -1959,7 +1962,17 @@ html.light .functions-table td:nth-child(2) {
 
 .functions-table th:nth-child(3),
 .functions-table td:nth-child(3) {
-    width: 25%;
+    width: 20%;
+    min-width: 150px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    border-right: 1px solid var(--border);
+}
+
+.functions-table th:nth-child(4),
+.functions-table td:nth-child(4) {
+    width: 40%;
     min-width: 250px;
     white-space: normal;
     word-break: break-word;
@@ -2608,6 +2621,20 @@ html.light .functions-table td:nth-child(2) {
     }
     #nova-connect-error-handling .functions-table tbody tr td:nth-child(3)::before {
         content: "Description: ";
+    }
+    
+    /* Wallet Profile Error Handling - 4 columns */
+    #wallet-profile-error-handling .functions-table tbody tr td:nth-child(1)::before {
+        content: "Code: ";
+    }
+    #wallet-profile-error-handling .functions-table tbody tr td:nth-child(2)::before {
+        content: "Constant: ";
+    }
+    #wallet-profile-error-handling .functions-table tbody tr td:nth-child(3)::before {
+        content: "Thrown by: ";
+    }
+    #wallet-profile-error-handling .functions-table tbody tr td:nth-child(4)::before {
+        content: "Meaning: ";
     }
     
     /* Nova Connect Bridge API - 3 columns */
