@@ -2144,6 +2144,12 @@ html.light .functions-table td:nth-child(2) {
         transition: left 0.3s ease;
         background: var(--bg-secondary);
         border-right: 1px solid var(--brand-primary);
+        overflow-y: auto;
+    }
+
+    /* Prevent body scrolling when mobile sidebar is active */
+    body:has(.docs-sidebar.active) {
+        overflow: hidden;
     }
 
     .docs-container .docs-content,
