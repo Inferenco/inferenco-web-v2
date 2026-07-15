@@ -1548,11 +1548,11 @@ html.light .footer {
 
     .docs-container .docs-content,
     .docs-page .docs-content {
-        margin-left: calc(280px + 6rem);
+        margin-left: calc(280px + 2rem);
     }
 
     #docs-page .docs-content {
-        margin-left: calc(280px + 6rem);
+        margin-left: calc(280px + 2rem);
     }
 
     html.light .docs-sidebar {
