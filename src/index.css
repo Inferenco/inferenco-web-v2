@@ -2924,6 +2924,12 @@ html.light .functions-table td:nth-child(3) {
     .params-table {
         width: 100%;
     }
+
+    /* Step-by-Step Guide - stack items vertically on mobile */
+    .step-list li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
     
     /* Two column table - ensure rows can grow */
     .two-col-table tbody tr {
