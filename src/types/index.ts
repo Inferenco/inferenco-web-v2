@@ -15,6 +15,7 @@ export interface BlogPost {
   content: string;
   excerpt?: string;
   published_at: string | null;
+  created_at: string;
   assets?: BlogAsset[];
 }
 

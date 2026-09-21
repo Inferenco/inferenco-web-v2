@@ -51,6 +51,7 @@ export default function BlogSingle() {
           content: data.content,
           excerpt: data.excerpt,
           published_at: data.published_at,
+          created_at: data.created_at,
           assets: data.assets.map(asset => ({
             id: asset.id,
             alt_text: asset.alt_text,

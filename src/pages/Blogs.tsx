@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 import type { BlogPost } from "../types";
 import { getAssetUrl } from "../utils/assetUrl";
 import "./Blogs.css";
@@ -26,7 +25,6 @@ export default function Blogs() {
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [total, setTotal] = useState(0);
 
   const observer = useRef<IntersectionObserver | null>(null);
   const lastBlogElementRef = useCallback(
@@ -74,7 +72,6 @@ export default function Blogs() {
         return [...prevBlogs, ...newBlogs];
       });
 
-      setTotal(data.pagination.total);
       setHasMore(pageNum * data.pagination.limit < data.pagination.total);
       setError(null);
     } catch (err) {
