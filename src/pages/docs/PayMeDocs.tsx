@@ -1,11 +1,75 @@
+import receiveImage from "../../../assets/images/pay-me/pay-me-01-receive.webp";
+import scanImage from "../../../assets/images/pay-me/pay-me-02-scan-pair.webp";
+import confirmImage from "../../../assets/images/pay-me/pay-me-03-confirm-connection.webp";
+import deskApprovalImage from "../../../assets/images/pay-me/pay-me-04-desk-ephemeral-approval.webp";
+import amountImage from "../../../assets/images/pay-me/pay-me-05-enter-amount.webp";
+import tokenImage from "../../../assets/images/pay-me/pay-me-06-choose-token.webp";
+import reviewImage from "../../../assets/images/pay-me/pay-me-07-review.webp";
+import emptyPairsImage from "../../../assets/images/pay-me/pay-me-08-reusable-empty.webp";
+import connectedPairImage from "../../../assets/images/pay-me/pay-me-09-reusable-connected.webp";
+
+const walkthrough = [
+  {
+    title: "Open Pay Me",
+    copy: "In Infer Wallet, open Receive and choose Pay Me to see your paired merchants.",
+    image: receiveImage,
+    alt: "Infer Wallet Receive CEDRA screen with the Pay Me action; the receive QR is omitted",
+    caption: "The Pay Me action sits above the receive QR.",
+  },
+  {
+    title: "Scan a Desk QR",
+    copy: "Tap Add pair and scan the QR presented by Infer Desk. Check whether Desk issued a reusable or ephemeral QR.",
+    image: scanImage,
+    alt: "Infer Wallet Scan QR screen showing the reusable-merchant pairing explanation and Scan QR button",
+    caption: "This phone capture describes a reusable merchant pair.",
+  },
+  {
+    title: "Confirm on the phone",
+    copy: "Review the connection prompt and tap Connect to continue.",
+    image: confirmImage,
+    alt: "Infer Wallet Connect to merchant confirmation with its short identifier redacted",
+    caption: "The short connection identifier has been redacted.",
+  },
+  {
+    title: "Approve on Infer Desk",
+    copy: "For an ephemeral request, the Desk operator reviews the pending pair and chooses Approve or Reject.",
+    image: deskApprovalImage,
+    alt: "Infer Desk pending ephemeral pair request with Approve or Reject and the Nostr identifier redacted",
+    caption: "Separate Desk example: an ephemeral request with its own expiry and shot budget. On a phone, swipe the image to see the approval control.",
+    desk: true,
+  },
+  {
+    title: "Enter an amount",
+    copy: "Choose the requested amount. The destination is the phone's active wallet account.",
+    image: amountImage,
+    alt: "Infer Wallet Pay Me amount form with recipient address and token balance redacted",
+    caption: "Review is disabled until a valid amount is entered.",
+  },
+  {
+    title: "Choose a token",
+    copy: "If needed, open the token selector and choose the asset for this request.",
+    image: tokenImage,
+    alt: "Infer Wallet Choose token sheet listing CEDRA and fungible assets with balances redacted",
+    caption: "The example token list has its balances redacted.",
+  },
+  {
+    title: "Review before signing",
+    copy: "Verify the amount, source, destination, and token before Sign and Submit. Desk still applies its normal transaction approval.",
+    image: reviewImage,
+    alt: "Infer Wallet Review Pay Me screen showing five CEDRA and Sign and Submit with the address redacted",
+    caption: "Illustrative 5 CEDRA review; this is not a completed transfer.",
+  },
+];
+
 export default function PayMeDocs({ hash }: { hash: string }) {
   return (
     <>
       <div id="pay-me-introduction" className={`docs-section ${hash === "pay-me-introduction" ? "active" : ""}`}>
         <h1>Pay Me</h1>
         <p className="docs-lead">
-          Pay Me lets Infer Wallet on mobile scan an ephemeral Nostr pairing QR from Infer Desk, then ask the
-          desktop wallet to transfer a selected token amount to the phone's active account.
+          Pay Me lets Infer Wallet on mobile pair with Infer Desk over Nostr, then ask the desktop wallet
+          to transfer a selected token amount to the phone's active account. Infer Desk can issue a
+          reusable pair QR or a short-lived ephemeral pair QR.
         </p>
 
         <div className="info-box">
@@ -21,6 +85,11 @@ export default function PayMeDocs({ hash }: { hash: string }) {
 
       <div id="pay-me-flow" className={`docs-section ${hash === "pay-me-flow" ? "active" : ""}`}>
         <h1>How a Pay Me transfer works</h1>
+        <p>
+          The flow below describes an <strong>ephemeral</strong> pair. A reusable <code>pair</code> QR
+          can leave the merchant in the phone's paired list across sessions, subject to Desk policy and
+          revocation. Ephemeral TTL and signing-shot limits are distinct from reusable-pair policy.
+        </p>
         <ol className="pay-me-flow">
           <li>
             <strong>Infer Desk creates a fresh QR.</strong> In the Bridge Remote tab, generate an ephemeral pairing QR.
@@ -44,6 +113,48 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             client disconnects. Polling and disconnect do not consume additional signing shots.
           </li>
         </ol>
+
+        <h2>Visual walkthrough</h2>
+        <p>
+          These edited, redacted illustrations show screens you may encounter, not one continuous session.
+          The phone's scan example describes a reusable pair; the Desk approval example shows an
+          <code> ephemeral_pair</code>. Follow the QR kind and policy shown by your own Desk.
+        </p>
+        <div className="pay-me-walkthrough">
+          {walkthrough.map((step, index) => (
+            <article
+              className={`pay-me-step${step.desk ? " pay-me-step--desk" : ""}`}
+              key={step.title}
+            >
+              <h3>
+                <span className="pay-me-step-number" aria-hidden="true">{index + 1}</span>
+                {step.title}
+              </h3>
+              <p>{step.copy}</p>
+              <figure className="pay-me-figure">
+                <img src={step.image} alt={step.alt} loading="lazy" />
+                <figcaption>{step.caption}</figcaption>
+              </figure>
+            </article>
+          ))}
+        </div>
+
+        <h2>Returning to a reusable merchant</h2>
+        <p>
+          A reusable <code>pair</code> can remain in the phone's merchant list across sessions until
+          removed, revoked, or otherwise unavailable. This is not a promise about one-shot ephemeral
+          pairs, which may disappear when their TTL or shot budget is exhausted.
+        </p>
+        <div className="pay-me-walkthrough pay-me-walkthrough--returning">
+          <figure className="pay-me-figure">
+            <img src={emptyPairsImage} alt="Infer Wallet paired merchants empty state with Add pair button" loading="lazy" />
+            <figcaption>Before adding a reusable merchant, the list shows No pairs yet.</figcaption>
+          </figure>
+          <figure className="pay-me-figure">
+            <img src={connectedPairImage} alt="Infer Wallet paired merchants list showing a connected reusable pair" loading="lazy" />
+            <figcaption>After reusable pairing, select the merchant to request another payment.</figcaption>
+          </figure>
+        </div>
 
         <h2>Canonical transfer functions</h2>
         <table className="functions-table">
@@ -77,8 +188,10 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             when its lifetime expires or its shot budget reaches zero.
           </li>
           <li>
-            <strong>Re-pair for the next payment:</strong> generate and scan a new ephemeral QR for each payment
-            cycle. A spent or expired pair is not silently renewed.
+            <strong>Re-pair after a spent ephemeral shot:</strong> with the default one-shot policy,
+            generate and scan a new ephemeral QR for the next payment. A spent or expired ephemeral pair
+            is not silently renewed. A configured multi-shot ephemeral pair remains until its shot
+            budget or TTL is exhausted; reusable pairs have separate lifetime and revocation rules.
           </li>
           <li>
             <strong>Discovery is not delivery:</strong> Nostr kind-20000 events are ephemeral and relays should not
@@ -110,7 +223,7 @@ export default function PayMeDocs({ hash }: { hash: string }) {
           </article>
           <article className="feature-card">
             <h2>Merchant request</h2>
-            <p>Scan a fresh desk QR, enter the agreed amount, and review the recipient and asset before approval.</p>
+            <p>Scan a fresh Desk QR or select an existing reusable merchant pair, then review the amount, recipient, and asset.</p>
           </article>
           <article className="feature-card">
             <h2>Quick one-off transfer</h2>
