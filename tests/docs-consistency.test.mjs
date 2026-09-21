@@ -11,6 +11,7 @@ const inferConnectDocs = readFileSync(
   "utf8"
 );
 const bridgeDocs = readFileSync(resolve(root, "src/pages/docs/BridgeDocs.tsx"), "utf8");
+const payMeDocs = readFileSync(resolve(root, "src/pages/docs/PayMeDocs.tsx"), "utf8");
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -41,6 +42,24 @@ describe("Infer Connect docs consistency", () => {
       "list_sessions",
     ]) {
       assert.match(bridgeDocs, new RegExp(operation));
+    }
+
+    const payMeIds = sectionIds(payMeDocs);
+    assert.equal(new Set(payMeIds).size, payMeIds.length);
+    for (const id of payMeIds) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+
+    for (const token of [
+      "pay-me-receive-cta",
+      "ephemeral_pair",
+      "relay_hints",
+      "0x1::cedra_account::transfer",
+      "0x1::primary_fungible_store::transfer",
+      "kind-20000",
+      "@noble/*",
+    ]) {
+      assert.ok(payMeDocs.includes(token));
     }
   });
 

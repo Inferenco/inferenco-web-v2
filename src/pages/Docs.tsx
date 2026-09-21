@@ -4,6 +4,7 @@ import InferBotDocs from "./docs/InferBotDocs";
 import InferAPIDocs from "./docs/InferAPIDocs";
 import InferConnectDocs from "./docs/InferConnectDocs";
 import BridgeDocs from "./docs/BridgeDocs";
+import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 
 const docsSections = [
@@ -53,6 +54,15 @@ const docsSections = [
       { id: "bridge-transport-choice", label: "Choose a Transport", icon: "fas fa-route" },
       { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
       { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
+    ],
+  },
+  {
+    title: "Pay Me",
+    items: [
+      { id: "pay-me-introduction", label: "Introduction", icon: "fas fa-mobile-alt" },
+      { id: "pay-me-flow", label: "Transfer Flow", icon: "fas fa-exchange-alt" },
+      { id: "pay-me-security", label: "Security & Recovery", icon: "fas fa-shield-alt" },
+      { id: "pay-me-scenarios", label: "Scenarios", icon: "fas fa-lightbulb" },
     ],
   },
   {
@@ -118,6 +128,7 @@ function DocsContent() {
         <InferAPIDocs hash={hash} />
         <InferConnectDocs hash={hash} />
         <BridgeDocs hash={hash} />
+        <PayMeDocs hash={hash} />
         <WalletProfileDocs hash={hash} />
       </main>
     </div>

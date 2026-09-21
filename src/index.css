@@ -1673,6 +1673,7 @@ html.light .functions-table td {
 
 .docs-section {
     display: none;
+    scroll-margin-top: 96px;
 }
 
 .docs-section.active {
