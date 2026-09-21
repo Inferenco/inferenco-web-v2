@@ -21,15 +21,15 @@ screenshots
 *.jpg
 *.jpeg
 
+# Allow specific image directories
+!assets/images/bridge/**
+
 # Playwright
 .playwright-cli/
 .playwright-mcp/
 
 # Vibe
 .vibe/
-
-# Generated assets
-assets/images/bridge/
 
 # Logs
 *.log
