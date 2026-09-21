@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import InferBotDocs from "./docs/InferBotDocs";
 import InferAPIDocs from "./docs/InferAPIDocs";
 import InferConnectDocs from "./docs/InferConnectDocs";
+import BridgeDocs from "./docs/BridgeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 
 const docsSections = [
@@ -43,6 +44,15 @@ const docsSections = [
       { id: "infer-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
       { id: "infer-connect-session-management", label: "Session Management", icon: "fas fa-database" },
       { id: "infer-connect-version-migration", label: "Version Migration", icon: "fas fa-code-branch" },
+    ],
+  },
+  {
+    title: "Bridge",
+    items: [
+      { id: "bridge-introduction", label: "Introduction", icon: "fas fa-bridge" },
+      { id: "bridge-transport-choice", label: "Choose a Transport", icon: "fas fa-route" },
+      { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
+      { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
     ],
   },
   {
@@ -107,6 +117,7 @@ function DocsContent() {
         <InferBotDocs hash={hash} />
         <InferAPIDocs hash={hash} />
         <InferConnectDocs hash={hash} />
+        <BridgeDocs hash={hash} />
         <WalletProfileDocs hash={hash} />
       </main>
     </div>

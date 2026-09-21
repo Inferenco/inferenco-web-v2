@@ -10,6 +10,7 @@ const inferConnectDocs = readFileSync(
   resolve(root, "src/pages/docs/InferConnectDocs.tsx"),
   "utf8"
 );
+const bridgeDocs = readFileSync(resolve(root, "src/pages/docs/BridgeDocs.tsx"), "utf8");
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -22,6 +23,24 @@ describe("Infer Connect docs consistency", () => {
 
     for (const id of ids) {
       assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+
+    const bridgeIds = sectionIds(bridgeDocs);
+    assert.equal(new Set(bridgeIds).size, bridgeIds.length);
+    for (const id of bridgeIds) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+
+    for (const operation of [
+      "connect",
+      "sign_message",
+      "sign_transaction",
+      "sign_and_submit",
+      "disconnect",
+      "revoke_session",
+      "list_sessions",
+    ]) {
+      assert.match(bridgeDocs, new RegExp(operation));
     }
   });
 
