@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Nova from "./pages/Nova";
-import NovaWallet from "./pages/NovaWallet";
-import NovaDesk from "./pages/NovaDesk";
+import Infer from "./pages/Infer";
+import InferWalletPage from "./pages/InferWalletPage";
+import InferDesk from "./pages/InferDesk";
 import Docs from "./pages/Docs";
 import Blogs from "./pages/Blogs";
 import BlogSingle from "./pages/BlogSingle";
@@ -15,9 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="nova" element={<Nova />} />
-          <Route path="nova-wallet" element={<NovaWallet />} />
-          <Route path="nova-desk" element={<NovaDesk />} />
+          <Route path="infer" element={<Infer />} />
+          <Route path="infer-wallet" element={<InferWalletPage />} />
+          <Route path="infer-desk" element={<InferDesk />} />
           <Route path="docs/*" element={<Docs />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:id" element={<BlogSingle />} />

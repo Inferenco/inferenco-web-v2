@@ -6,7 +6,7 @@
 
 /* Root variables for colour palette and sizing */
 :root {
-    /* Nova Desk theme system - default (dark) */
+    /* Infer Desk theme system - default (dark) */
     color-scheme: dark;
     --primary: #2d6cff;
     --secondary: #18e0ff;
@@ -18,7 +18,7 @@
     --radius: 12px;
     --transition-speed: 0.3s;
     
-    /* Nova Desk dark theme variables */
+    /* Infer Desk dark theme variables */
     --bg-primary: #0d0d14;
     --bg-secondary: #14141e;
     --bg-tertiary: #1c1c32;
@@ -34,11 +34,11 @@
     --brand-accent: #18e0ff;
 }
 
-/* Nova Desk Light Theme */
+/* Infer Desk Light Theme */
 html.light {
     color-scheme: light;
     
-    /* Nova Desk light theme - match exactly */
+    /* Infer Desk light theme - match exactly */
     /* For text colors: --light becomes dark, --dark becomes light */
     --primary: #2d6cff;
     --secondary: #18d7f7;
@@ -47,7 +47,7 @@ html.light {
     --light: #0f172a;
     --muted: #6b7a90;
     
-    /* Nova Desk light theme variables */
+    /* Infer Desk light theme variables */
     --bg-primary: #f4f7fb;
     --bg-secondary: #ffffff;
     --bg-tertiary: #eef4fb;
@@ -262,7 +262,7 @@ html.light body {
 }
 
 /* Lightweight Animated Background within Content */
-/* Inspired by Nova Desk but optimized for performance */
+/* Inspired by Infer Desk but optimized for performance */
 .main-content {
     position: relative;
     overflow: hidden;
@@ -980,7 +980,7 @@ html.light .hero::after {
     opacity: 0.7;
 }
 
-.nova-hero::before {
+.infer-hero::before {
     background-image: url("/assets/images/radial-bg.png");
 }
 
@@ -1019,8 +1019,8 @@ html.light .hero::after {
     }
 }
 
-/* Nova Logo Circular Container */
-.nova-logo-container {
+/* Infer Logo Circular Container */
+.infer-logo-container {
     position: relative;
     width: 200px;
     height: 200px;
@@ -1030,7 +1030,7 @@ html.light .hero::after {
     justify-content: center;
 }
 
-.nova-logo-circle {
+.infer-logo-circle {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -1046,16 +1046,16 @@ html.light .hero::after {
     justify-content: center;
     position: relative;
     z-index: 2;
-    animation: nova-pulse 4s ease-in-out infinite;
+    animation: infer-pulse 4s ease-in-out infinite;
 }
 
-.nova-logo-animated {
+.infer-logo-animated {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
     filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.9));
-    animation: nova-rotate 8s linear infinite;
+    animation: infer-rotate 8s linear infinite;
     clip-path: circle(50% at 50% 50%);
 }
 
@@ -1082,7 +1082,7 @@ html.light .hero::after {
     border-color: rgba(0, 178, 255, 0.15);
 }
 
-@keyframes nova-pulse {
+@keyframes infer-pulse {
     0%,
     100% {
         box-shadow: 0 0 20px rgba(0, 230, 255, 0.3);
@@ -1094,7 +1094,7 @@ html.light .hero::after {
     }
 }
 
-@keyframes nova-rotate {
+@keyframes infer-rotate {
     0% {
         transform: rotate(0deg);
     }
@@ -2162,7 +2162,7 @@ html.light .functions-table td:nth-child(3) {
         right: calc(50% - 3.5rem) !important;
     }
 
-    #nova-desk-gallery {
+    #infer-desk-gallery {
         padding-bottom: 5rem;
     }
 
@@ -2593,33 +2593,33 @@ html.light .functions-table td:nth-child(3) {
         content: "Description: ";
     }
     
-    /* Nova Connect Configuration table - 4 columns */
-    #nova-connect-configuration .functions-table tbody tr td:nth-child(1)::before {
+    /* Infer Connect Configuration table - 4 columns */
+    #infer-connect-configuration .functions-table tbody tr td:nth-child(1)::before {
         content: "Option: ";
     }
-    #nova-connect-configuration .functions-table tbody tr td:nth-child(2)::before {
+    #infer-connect-configuration .functions-table tbody tr td:nth-child(2)::before {
         content: "Type: ";
     }
-    #nova-connect-configuration .functions-table tbody tr td:nth-child(3)::before {
+    #infer-connect-configuration .functions-table tbody tr td:nth-child(3)::before {
         content: "Default: ";
     }
-    #nova-connect-configuration .functions-table tbody tr td:nth-child(4)::before {
+    #infer-connect-configuration .functions-table tbody tr td:nth-child(4)::before {
         content: "Description: ";
     }
     
-    /* Nova Connect PKCE table - 2 columns */
-    #nova-connect-pkce .functions-table tbody tr td:nth-child(2)::before {
+    /* Infer Connect PKCE table - 2 columns */
+    #infer-connect-pkce .functions-table tbody tr td:nth-child(2)::before {
         content: "Description: ";
     }
     
-    /* Nova Connect Error Handling - 3 columns */
-    #nova-connect-error-handling .functions-table tbody tr td:nth-child(1)::before {
+    /* Infer Connect Error Handling - 3 columns */
+    #infer-connect-error-handling .functions-table tbody tr td:nth-child(1)::before {
         content: "Enum key: ";
     }
-    #nova-connect-error-handling .functions-table tbody tr td:nth-child(2)::before {
+    #infer-connect-error-handling .functions-table tbody tr td:nth-child(2)::before {
         content: "String code: ";
     }
-    #nova-connect-error-handling .functions-table tbody tr td:nth-child(3)::before {
+    #infer-connect-error-handling .functions-table tbody tr td:nth-child(3)::before {
         content: "Description: ";
     }
     
@@ -2637,33 +2637,33 @@ html.light .functions-table td:nth-child(3) {
         content: "Meaning: ";
     }
     
-    /* Nova Connect Bridge API - 3 columns */
-    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(1)::before {
+    /* Infer Connect Bridge API - 3 columns */
+    #infer-connect-bridge-api .functions-table tbody tr td:nth-child(1)::before {
         content: "Method: ";
     }
-    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(2)::before {
+    #infer-connect-bridge-api .functions-table tbody tr td:nth-child(2)::before {
         content: "Path: ";
     }
-    #nova-connect-bridge-api .functions-table tbody tr td:nth-child(3)::before {
+    #infer-connect-bridge-api .functions-table tbody tr td:nth-child(3)::before {
         content: "Description: ";
     }
     
-    /* Nova Connect Session Management - 3 columns */
-    #nova-connect-session-management .functions-table tbody tr td:nth-child(1)::before {
+    /* Infer Connect Session Management - 3 columns */
+    #infer-connect-session-management .functions-table tbody tr td:nth-child(1)::before {
         content: "Key: ";
     }
-    #nova-connect-session-management .functions-table tbody tr td:nth-child(2)::before {
+    #infer-connect-session-management .functions-table tbody tr td:nth-child(2)::before {
         content: "Storage: ";
     }
-    #nova-connect-session-management .functions-table tbody tr td:nth-child(3)::before {
+    #infer-connect-session-management .functions-table tbody tr td:nth-child(3)::before {
         content: "Purpose: ";
     }
     
-    /* Nova Connect Installation Entry Points - 2 columns */
-    #nova-connect-installation .functions-table tbody tr td:nth-child(1)::before {
+    /* Infer Connect Installation Entry Points - 2 columns */
+    #infer-connect-installation .functions-table tbody tr td:nth-child(1)::before {
         content: "Import path: ";
     }
-    #nova-connect-installation .functions-table tbody tr td:nth-child(2)::before {
+    #infer-connect-installation .functions-table tbody tr td:nth-child(2)::before {
         content: "Exports: ";
     }
     
@@ -2689,7 +2689,7 @@ html.light .functions-table td:nth-child(3) {
         content: "Description: ";
     }
     
-    /* Nova API Docs - endpoint tables (Header/Parameter, Type, Required, Description) */
+    /* Infer API Docs - endpoint tables (Header/Parameter, Type, Required, Description) */
     #api-docs .endpoint-item .functions-table tbody tr td:nth-child(1)::before {
         content: "Field: ";
     }

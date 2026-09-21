@@ -1,5 +1,5 @@
 // Page types
-export type PageType = 'home' | 'nova' | 'nova-wallet' | 'nova-desk' | 'docs' | 'blogs';
+export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'docs' | 'blogs';
 
 // Blog types
 export interface BlogAsset {

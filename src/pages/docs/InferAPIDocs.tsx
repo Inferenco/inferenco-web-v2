@@ -1,13 +1,13 @@
-export default function NovaAPIDocs({ hash }: { hash: string }) {
+export default function InferAPIDocs({ hash }: { hash: string }) {
   return (
     <>
-      <div id="nova-api-introduction" className={`docs-section ${hash === "nova-api-introduction" ? "active" : ""}`}>
-        <h1>Nova API - Introduction</h1>
+      <div id="infer-api-introduction" className={`docs-section ${hash === "infer-api-introduction" ? "active" : ""}`}>
+        <h1>Infer API - Introduction</h1>
 
-        <p>Developers can integrate Nova's AI and blockchain capabilities into their applications through API key generation, enabling seamless access to its powerful features in third-party projects.</p>
+        <p>Developers can integrate Infer's AI and blockchain capabilities into their applications through API key generation, enabling seamless access to its powerful features in third-party projects.</p>
 
-        <h2>What is Nova API?</h2>
-        <p>Nova API is a RESTful API that provides programmatic access to Nova's AI and blockchain capabilities. The API offers:</p>
+        <h2>What is Infer API?</h2>
+        <p>Infer API is a RESTful API that provides programmatic access to Infer's AI and blockchain capabilities. The API offers:</p>
         <ul>
           <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
           <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
@@ -25,7 +25,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>AI-Powered Applications</h4>
-          <p>Integrate Nova's AI capabilities into web applications, mobile apps, or backend services via REST API calls. Use the <code>/ai</code> endpoint for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI with automatic tool calling.</p>
+          <p>Integrate Infer's AI capabilities into web applications, mobile apps, or backend services via REST API calls. Use the <code>/ai</code> endpoint for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI with automatic tool calling.</p>
         </div>
 
         <div className="use-case-card">
@@ -35,7 +35,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>Automated Crypto Intelligence Reports</h4>
-          <p>Integrate automated crypto intelligence reports into your applications using Nova's reports tool powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)" }}>Pond3r</a>. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities.</p>
+          <p>Integrate automated crypto intelligence reports into your applications using Infer's reports tool powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)" }}>Pond3r</a>. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities.</p>
         </div>
 
         <div className="use-case-card">
@@ -50,12 +50,12 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>Content Creation Platforms</h4>
-          <p>Use Nova's image generation capabilities via API calls.</p>
+          <p>Use Infer's image generation capabilities via API calls.</p>
         </div>
 
         <div className="use-case-card">
           <h4>Knowledge-Based Applications</h4>
-          <p>Build applications with custom knowledge bases using Nova's RAG capabilities. Upload documents to your API key's vector store.</p>
+          <p>Build applications with custom knowledge bases using Infer's RAG capabilities. Upload documents to your API key's vector store.</p>
         </div>
 
         <div className="use-case-card">
@@ -64,33 +64,33 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>Getting Started</h2>
-        <p>To start integrating Nova into your application:</p>
+        <p>To start integrating Infer into your application:</p>
         <ol>
-          <li>Create an account in the Nova Telegram bot</li>
+          <li>Create an account in the Infer Telegram bot</li>
           <li>Fund your account with supported tokens</li>
           <li>Generate an API key through the bot interface</li>
           <li>Use the API key to authenticate your requests</li>
-          <li>Start making API calls to access Nova's features</li>
+          <li>Start making API calls to access Infer's features</li>
         </ol>
       </div>
 
       <div id="generate-api-key" className={`docs-section ${hash === "generate-api-key" ? "active" : ""}`}>
         <h1>Generate API Key</h1>
 
-        <p>To use Nova's API in your applications, you need to generate an API key through the Nova Telegram bot. Follow these steps:</p>
+        <p>To use Infer's API in your applications, you need to generate an API key through the Infer Telegram bot. Follow these steps:</p>
 
         <h2>Prerequisites</h2>
         <ul>
           <li>A Telegram account</li>
-          <li>Access to the Nova Telegram bot: <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a></li>
+          <li>Access to the Infer Telegram bot: <a href="https://t.me/InferInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @InferInferencoBot</a></li>
         </ul>
 
         <h2>Step-by-Step Guide</h2>
 
         <ol className="step-list">
           <li>
-            <strong>Start the Nova Bot</strong>
-            <p>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a>, then click "Start" to begin.</p>
+            <strong>Start the Infer Bot</strong>
+            <p>Open Telegram and search for <a href="https://t.me/InferInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @InferInferencoBot</a>, then click "Start" to begin.</p>
           </li>
 
           <li>
@@ -100,12 +100,12 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <li>
             <strong>Get Your Wallet Address</strong>
-            <p>Send the command <code>/walletaddress</code> to retrieve your Nova wallet address. You'll need this to fund your account.</p>
+            <p>Send the command <code>/walletaddress</code> to retrieve your Infer wallet address. You'll need this to fund your account.</p>
           </li>
 
           <li>
             <strong>Fund Your Account</strong>
-            <p>Send funds to your Nova wallet address using one of the supported tokens: CEDRA or EURC.</p>
+            <p>Send funds to your Infer wallet address using one of the supported tokens: CEDRA or EURC.</p>
           </li>
 
           <li>
@@ -152,7 +152,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
       <div id="tools" className={`docs-section ${hash === "tools" ? "active" : ""}`}>
         <h1>Tools</h1>
-        <p>Nova provides a suite of powerful tools that the AI can autonomously call to answer queries.</p>
+        <p>Infer provides a suite of powerful tools that the AI can autonomously call to answer queries.</p>
 
         <h2>Built-in Tools</h2>
         <ul>
@@ -179,7 +179,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <p><strong>MCP Tools Pricing:</strong> Pricing will be updated when the new AI model is deployed. Pricing is based on output tokens with a minimum charge per request.</p>
 
         <h2>Example Prompts Using Tools</h2>
-        <p>Here are example prompts you can use with the Nova API to trigger different tools:</p>
+        <p>Here are example prompts you can use with the Infer API to trigger different tools:</p>
 
         <h3>Price Prediction Examples</h3>
         <div className="code-block">
@@ -406,7 +406,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       <div id="add-knowledge" className={`docs-section ${hash === "add-knowledge" ? "active" : ""}`}>
         <h1>Add Knowledge to Your API Key</h1>
 
-        <p>Nova supports Retrieval-Augmented Generation (RAG) by allowing you to upload documents to your API key's vector store. These documents are automatically indexed and used to provide context-aware responses.</p>
+        <p>Infer supports Retrieval-Augmented Generation (RAG) by allowing you to upload documents to your API key's vector store. These documents are automatically indexed and used to provide context-aware responses.</p>
 
         <h2>What is Knowledge Base?</h2>
         <p>Each API key has its own document library (vector store) where you can upload files that contain information relevant to your application.</p>
@@ -415,7 +415,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <ol className="step-list">
           <li>
             <strong>Access API Key Settings</strong>
-            <p>Open the Nova bot and send <code>/usersettings</code> to access your settings menu.</p>
+            <p>Open the Infer bot and send <code>/usersettings</code> to access your settings menu.</p>
           </li>
 
           <li>
@@ -435,7 +435,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </ol>
 
         <h2>Uploading Files via API</h2>
-        <p>Manage your knowledge base programmatically using the Nova Gateway API endpoints:</p>
+        <p>Manage your knowledge base programmatically using the Infer Gateway API endpoints:</p>
         <div className="code-block"><code>https://gateway.inferenco.com</code></div>
 
         <div className="endpoint-item">
@@ -454,30 +454,30 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>How Knowledge Base Works</h2>
-        <p>When you make an AI request, Nova automatically searches your uploaded documents for relevant information and includes it as context in the AI request.</p>
+        <p>When you make an AI request, Infer automatically searches your uploaded documents for relevant information and includes it as context in the AI request.</p>
       </div>
 
       <div id="templates" className={`docs-section ${hash === "templates" ? "active" : ""}`}>
         <h1>API Templates</h1>
 
-        <p>Jump-start your integration with prebuilt examples tailored for Nova Gateway. Templates include environment samples, deployment guides, and best practices so you can ship faster.</p>
+        <p>Jump-start your integration with prebuilt examples tailored for Infer Gateway. Templates include environment samples, deployment guides, and best practices so you can ship faster.</p>
 
         <div className="docs-card">
-          <h3>Nova Gateway Telegram Bot</h3>
-          <p>A Teloxide-based Rust bot that relays Telegram chats to the Nova Gateway <code>/ai</code> endpoint and streams responses back to the user.</p>
+          <h3>Infer Gateway Telegram Bot</h3>
+          <p>A Teloxide-based Rust bot that relays Telegram chats to the Infer Gateway <code>/ai</code> endpoint and streams responses back to the user.</p>
           <ul>
             <li>Clone the repository and copy <code>.env.sample</code> to <code>.env</code>.</li>
-            <li>Populate <code>TELEGRAM_BOT_TOKEN</code> and <code>NOVA_API_KEY</code> with your credentials.</li>
+            <li>Populate <code>TELEGRAM_BOT_TOKEN</code> and <code>INFER_API_KEY</code> with your credentials.</li>
             <li>Run <code>cargo run</code>, or use the provided Dockerfile / Cloud Run instructions for deployment.</li>
           </ul>
-          <p><a href="https://github.com/Inferenco/nova-gateway-telegram-bot" target="_blank" rel="noopener">View template on GitHub</a></p>
+          <p><a href="https://github.com/Inferenco" target="_blank" rel="noopener">View template on GitHub</a></p>
         </div>
       </div>
 
       <div id="api-docs" className={`docs-section ${hash === "api-docs" ? "active" : ""}`}>
         <h1>API Documentation</h1>
 
-        <p>All API requests should be made to the Nova Gateway endpoint. Include your API key in the <code>Authorization</code> header as a Bearer token.</p>
+        <p>All API requests should be made to the Infer Gateway endpoint. Include your API key in the <code>Authorization</code> header as a Bearer token.</p>
 
         <div className="code-block"><code>Authorization: Bearer YOUR_API_KEY</code></div>
 
@@ -487,7 +487,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <h2>Authentication</h2>
         <p>Most endpoints require authentication using your API key. Include it in the request header:</p>
-        <div className="code-block"><code>Authorization: Bearer nova_your_api_key_here</code></div>
+        <div className="code-block"><code>Authorization: Bearer infer_your_api_key_here</code></div>
 
         <h2>AI Endpoints</h2>
 
@@ -496,7 +496,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
             <span className="endpoint-badge badge-post">POST</span>
             <span className="endpoint-path">/ai</span>
           </div>
-          <p><strong>Send AI request</strong> - Submit a request to Nova's AI with optional tool calling and image inputs.</p>
+          <p><strong>Send AI request</strong> - Submit a request to Infer's AI with optional tool calling and image inputs.</p>
 
           <h5>Headers</h5>
           <div className="table-responsive">
@@ -765,7 +765,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <p>Call a single tool:</p>
           <div className="code-block">
             <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -783,7 +783,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <p>Call multiple tools:</p>
           <div className="code-block">
             <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -808,7 +808,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <p>Example with forecast tool:</p>
           <div className="code-block">
             <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -1079,7 +1079,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <p>API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a <code>429 Too Many Requests</code> response.</p>
 
         <h2>Support</h2>
-        <p>For API support, questions, or issues, contact the Nova team through our <a href="https://t.me/inferenco" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i>Telegram group</a> or visit the Nova documentation.</p>
+        <p>For API support, questions, or issues, contact the Infer team through our <a href="https://t.me/inferenco" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i>Telegram group</a> or visit the Infer documentation.</p>
       </div>
     </>
   );

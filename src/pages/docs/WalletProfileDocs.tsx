@@ -15,7 +15,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
           account a shared on-chain profile: a <strong>nickname</strong> and an
           optional <strong>avatar URL</strong>. Any app vertical (games, social,
           events, marketplaces) can read or write the same profile so the user
-          has one identity across the Nova ecosystem.
+          has one identity across the Infer ecosystem.
         </p>
 
         <h2>Deployment</h2>
@@ -58,7 +58,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         <div className="use-case-card">
           <h4>Social & Messaging</h4>
           <p>
-            Display the same nickname the user set in Nova Wallet inside group chats, comments, and notifications.
+            Display the same nickname the user set in Infer Wallet inside group chats, comments, and notifications.
           </p>
         </div>
 
@@ -387,16 +387,16 @@ await cedra.waitForTransaction({ transactionHash: pending.hash });`}</code>
       </div>
 
       <div
-        id="wallet-profile-nova-connect"
-        className={`docs-section ${hash === "wallet-profile-nova-connect" ? "active" : ""}`}
+        id="wallet-profile-infer-connect"
+        className={`docs-section ${hash === "wallet-profile-infer-connect" ? "active" : ""}`}
       >
-        <h1>Wallet Profile - Nova Connect</h1>
+        <h1>Wallet Profile - Infer Connect</h1>
         <p>
           When your dApp already uses{" "}
-          <a href="#nova-connect-introduction" style={{ color: "var(--primary)" }}>
-            Nova Connect
+          <a href="#infer-connect-introduction" style={{ color: "var(--primary)" }}>
+            Infer Connect
           </a>{" "}
-          to connect Nova Desk or Nova Wallet, route writes through the
+          to connect Infer Desk or Infer Wallet, route writes through the
           connected adapter. Reads can still use the SDK's <code>view</code>{" "}
           calls — signing is not required.
         </p>
@@ -418,11 +418,11 @@ async function fetchNickname(address) {
 }`}</code>
         </div>
 
-        <h2>Write Through NovaWallet</h2>
+        <h2>Write Through InferWallet</h2>
         <div className="code-block">
-          <code>{`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+          <code>{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
-const wallet = new NovaWallet();
+const wallet = new InferWallet();
 const { account } = await wallet.connect();
 
 await wallet.signAndSubmitTransaction({
@@ -438,11 +438,11 @@ await wallet.signAndSubmitTransaction({
 
         <h2>Write Through AIP-62</h2>
         <div className="code-block">
-          <code>{`import "@inferenco/nova-wallet-adapter/auto-register";
+          <code>{`import "@inferenco/infer-wallet-adapter/auto-register";
 import { getCedraWallets } from "@cedra-labs/wallet-standard";
 
 const { cedraWallets } = getCedraWallets();
-const wallet = cedraWallets.find((w) => w.name === "Nova Connect");
+const wallet = cedraWallets.find((w) => w.name === "Infer Connect");
 const account = (await wallet.features["cedra:connect"].connect()).args;
 
 await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction({
@@ -457,7 +457,7 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
 });`}</code>
         </div>
 
-        <h2>Clear Through NovaWallet</h2>
+        <h2>Clear Through InferWallet</h2>
         <div className="code-block">
           <code>{`await wallet.signAndSubmitTransaction({
   data: {
@@ -476,7 +476,7 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
         <p>
           Drop-in <code>useWalletProfile</code> hook that reads on mount and
           exposes a <code>save</code> function that validates inputs and writes
-          through Nova Connect.
+          through Infer Connect.
         </p>
 
         <h2>The Hook</h2>
@@ -530,10 +530,10 @@ export function useWalletProfile(address) {
         <h2>Editor Component</h2>
         <div className="code-block">
           <code>{`import { useState } from "react";
-import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+import { InferWallet } from "@inferenco/infer-wallet-adapter";
 import { useWalletProfile } from "./useWalletProfile";
 
-const wallet = new NovaWallet();
+const wallet = new InferWallet();
 const PROFILE_MODULE = "${contractAddress}::user_profiles";
 
 export function ProfileEditor({ account }) {
@@ -588,7 +588,7 @@ export function ProfileEditor({ account }) {
         </div>
 
         <p>
-          Pair the editor with a Nova Connect connection button and a state
+          Pair the editor with a Infer Connect connection button and a state
           hook for <code>account</code> to drive the full profile flow.
         </p>
       </div>

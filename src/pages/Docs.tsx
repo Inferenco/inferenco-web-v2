@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import NovaBotDocs from "./docs/NovaBotDocs";
-import NovaAPIDocs from "./docs/NovaAPIDocs";
-import NovaConnectDocs from "./docs/NovaConnectDocs";
+import InferBotDocs from "./docs/InferBotDocs";
+import InferAPIDocs from "./docs/InferAPIDocs";
+import InferConnectDocs from "./docs/InferConnectDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 
 const docsSections = [
   {
-    title: "Nova Bot",
+    title: "Infer Bot",
     items: [
-      { id: "nova-bot-introduction", label: "Introduction", icon: "fas fa-book" },
-      { id: "nova-bot-commands", label: "Commands", icon: "fas fa-terminal" },
-      { id: "nova-bot-settings", label: "Settings", icon: "fas fa-cog" },
-      { id: "nova-bot-prompts", label: "Prompts", icon: "fas fa-comments" },
+      { id: "infer-bot-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-bot-commands", label: "Commands", icon: "fas fa-terminal" },
+      { id: "infer-bot-settings", label: "Settings", icon: "fas fa-cog" },
+      { id: "infer-bot-prompts", label: "Prompts", icon: "fas fa-comments" },
     ],
   },
   {
-    title: "Nova API",
+    title: "Infer API",
     items: [
-      { id: "nova-api-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-api-introduction", label: "Introduction", icon: "fas fa-book" },
       { id: "generate-api-key", label: "Generate API Key", icon: "fas fa-key" },
       { id: "tools", label: "Tools", icon: "fas fa-toolbox" },
       { id: "add-knowledge", label: "Add Knowledge", icon: "fas fa-book-open" },
@@ -27,22 +27,22 @@ const docsSections = [
     ],
   },
   {
-    title: "Nova Connect",
+    title: "Infer Connect",
     items: [
-      { id: "nova-connect-introduction", label: "Introduction", icon: "fas fa-book" },
-      { id: "nova-connect-installation", label: "Installation", icon: "fas fa-download" },
-      { id: "nova-connect-quickstart", label: "Quick Start", icon: "fas fa-rocket" },
-      { id: "nova-connect-react-integration", label: "React Integration", icon: "fab fa-react" },
-      { id: "nova-connect-api-reference", label: "API Reference", icon: "fas fa-code" },
-      { id: "nova-connect-configuration", label: "Configuration", icon: "fas fa-cog" },
-      { id: "nova-connect-mobile-relay", label: "Mobile Relay", icon: "fas fa-mobile-alt" },
-      { id: "nova-connect-pkce", label: "PKCE", icon: "fas fa-lock" },
-      { id: "nova-connect-bridge-api", label: "Bridge API", icon: "fas fa-bridge" },
-      { id: "nova-connect-detection", label: "Detection", icon: "fas fa-eye" },
-      { id: "nova-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
-      { id: "nova-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
-      { id: "nova-connect-session-management", label: "Session Management", icon: "fas fa-database" },
-      { id: "nova-connect-version-migration", label: "Version Migration", icon: "fas fa-code-branch" },
+      { id: "infer-connect-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-connect-installation", label: "Installation", icon: "fas fa-download" },
+      { id: "infer-connect-quickstart", label: "Quick Start", icon: "fas fa-rocket" },
+      { id: "infer-connect-react-integration", label: "React Integration", icon: "fab fa-react" },
+      { id: "infer-connect-api-reference", label: "API Reference", icon: "fas fa-code" },
+      { id: "infer-connect-configuration", label: "Configuration", icon: "fas fa-cog" },
+      { id: "infer-connect-mobile-relay", label: "Mobile Relay", icon: "fas fa-mobile-alt" },
+      { id: "infer-connect-pkce", label: "PKCE", icon: "fas fa-lock" },
+      { id: "infer-connect-bridge-api", label: "Bridge API", icon: "fas fa-bridge" },
+      { id: "infer-connect-detection", label: "Detection", icon: "fas fa-eye" },
+      { id: "infer-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
+      { id: "infer-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
+      { id: "infer-connect-session-management", label: "Session Management", icon: "fas fa-database" },
+      { id: "infer-connect-version-migration", label: "Version Migration", icon: "fas fa-code-branch" },
     ],
   },
   {
@@ -52,7 +52,7 @@ const docsSections = [
       { id: "wallet-profile-contract-functions", label: "Contract Functions", icon: "fas fa-code" },
       { id: "wallet-profile-data-model", label: "Data Model", icon: "fas fa-database" },
       { id: "wallet-profile-cedra-ts-sdk", label: "Cedra TS SDK", icon: "fas fa-plug" },
-      { id: "wallet-profile-nova-connect", label: "Nova Connect", icon: "fas fa-link" },
+      { id: "wallet-profile-infer-connect", label: "Infer Connect", icon: "fas fa-link" },
       { id: "wallet-profile-react-example", label: "React Example", icon: "fab fa-react" },
       { id: "wallet-profile-best-practices", label: "Best Practices", icon: "fas fa-lightbulb" },
       { id: "wallet-profile-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
@@ -62,7 +62,7 @@ const docsSections = [
 
 function DocsContent() {
   const location = useLocation();
-  const hash = location.hash.slice(1) || "nova-bot-introduction";
+  const hash = location.hash.slice(1) || "infer-bot-introduction";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -104,9 +104,9 @@ function DocsContent() {
       </aside>
 
       <main className="docs-content">
-        <NovaBotDocs hash={hash} />
-        <NovaAPIDocs hash={hash} />
-        <NovaConnectDocs hash={hash} />
+        <InferBotDocs hash={hash} />
+        <InferAPIDocs hash={hash} />
+        <InferConnectDocs hash={hash} />
         <WalletProfileDocs hash={hash} />
       </main>
     </div>

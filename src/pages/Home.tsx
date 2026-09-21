@@ -197,14 +197,14 @@ export default function Home() {
             Proven track record of delivering innovative software solutions
           </p>
           <div className="features-grid">
-            {/* Nova Bot Card */}
+            {/* Infer Bot Card */}
             <div className="feature-card portfolio-card">
               <img
-                src="assets/logos/nova.png"
-                alt="Nova Bot logo"
+                src="/assets/logos/flame.png"
+                alt="Infer Bot logo"
                 className="portfolio-logo"
               />
-              <h4>Nova Bot</h4>
+              <h4>Infer Bot</h4>
               <p>
                 AI-powered community manager and personal assistant for Telegram.
                 Features transparent pay-per-use pricing, blockchain integration,
@@ -218,19 +218,19 @@ export default function Home() {
                 <span className="tag">Telegram Bot</span>
                 <span className="tag">Blockchain</span>
               </div>
-              <Link to="/nova" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/infer" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 Learn More
               </Link>
             </div>
 
-            {/* Nova Wallet Card */}
+            {/* Infer Wallet Card */}
             <div className="feature-card portfolio-card">
               <img
-                src="assets/logos/nova.png"
-                alt="Nova Wallet logo"
+                src="/assets/logos/flame.png"
+                alt="Infer Wallet logo"
                 className="portfolio-logo"
               />
-              <h4>Nova Wallet</h4>
+              <h4>Infer Wallet</h4>
               <p>
                 Cryptocurrency wallet for mobile devices built on the Cedra blockchain.
                 Secure asset management with built-in swaps, DeFi integrations, and
@@ -241,19 +241,19 @@ export default function Home() {
                 <span className="tag">Cedra</span>
                 <span className="tag">DeFi</span>
               </div>
-              <Link to="/nova-wallet" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/infer-wallet" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 Learn More
               </Link>
             </div>
 
-            {/* Nova Desk Card */}
+            {/* Infer Desk Card */}
             <div className="feature-card portfolio-card">
               <img
-                src="assets/logos/nova.png"
-                alt="Nova Desk logo"
+                src="/assets/logos/flame.png"
+                alt="Infer Desk logo"
                 className="portfolio-logo"
               />
-              <h4>Nova Desk</h4>
+              <h4>Infer Desk</h4>
               <p>
                 Desktop application for Cedra blockchain interactions and workflow management.
                 Cross-platform, secure, and built for professional users and enterprises.
@@ -264,19 +264,19 @@ export default function Home() {
                 <span className="tag">Cross-Platform</span>
                 <span className="tag">Enterprise</span>
               </div>
-              <Link to="/nova-desk" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/infer-desk" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 Learn More
               </Link>
             </div>
 
-            {/* Nova Ecosystem Card */}
+            {/* Infer Ecosystem Card */}
             <div className="feature-card portfolio-card">
               <img
-                src="assets/logos/nova.png"
-                alt="Nova Ecosystem logo"
+                src="/assets/logos/flame.png"
+                alt="Infer Ecosystem logo"
                 className="portfolio-logo"
               />
-              <h4>Nova Ecosystem</h4>
+              <h4>Infer Ecosystem</h4>
               <p>
                 Browser-based dApp for the Cedra Network featuring events management,
                 gaming hub with poker and casino, and community tools. Built with React

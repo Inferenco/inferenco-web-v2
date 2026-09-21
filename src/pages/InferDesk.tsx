@@ -2,15 +2,15 @@ import { getDownloadUrl, type OS } from "../services/github";
 import LightboxGallery from "../components/LightboxGallery";
 
 const deskImages = [
-  { id: '1', src: '/img/nova-ecosystem/nova-desk/vault-selection.png', alt: 'Vault Selection Screen' },
-  { id: '2', src: '/img/nova-ecosystem/nova-desk/light-theme.png', alt: 'Dashboard - Light Theme' },
-  { id: '3', src: '/img/nova-ecosystem/nova-desk/dark-theme.png', alt: 'Dashboard - Dark Theme' },
-  { id: '4', src: '/img/nova-ecosystem/nova-desk/browser.png', alt: 'Integrated DApp Browser' },
-  { id: '5', src: '/img/nova-ecosystem/nova-desk/send.png', alt: 'Send Tokens' },
-  { id: '6', src: '/img/nova-ecosystem/nova-desk/receive.png', alt: 'Receive Tokens' },
-  { id: '7', src: '/img/nova-ecosystem/nova-desk/swap.png', alt: 'Swap via Avera DEX' },
-  { id: '8', src: '/img/nova-ecosystem/nova-desk/nfts.png', alt: 'NFT Gallery' },
-  { id: '9', src: '/img/nova-ecosystem/nova-desk/transactions.png', alt: 'Transaction History' },
+  { id: '1', src: '/img/infer-ecosystem/infer-desk/vault-selection.png', alt: 'Vault Selection Screen' },
+  { id: '2', src: '/img/infer-ecosystem/infer-desk/light-theme.png', alt: 'Dashboard - Light Theme' },
+  { id: '3', src: '/img/infer-ecosystem/infer-desk/dark-theme.png', alt: 'Dashboard - Dark Theme' },
+  { id: '4', src: '/img/infer-ecosystem/infer-desk/browser.png', alt: 'Integrated DApp Browser' },
+  { id: '5', src: '/img/infer-ecosystem/infer-desk/send.png', alt: 'Send Tokens' },
+  { id: '6', src: '/img/infer-ecosystem/infer-desk/receive.png', alt: 'Receive Tokens' },
+  { id: '7', src: '/img/infer-ecosystem/infer-desk/swap.png', alt: 'Swap via Avera DEX' },
+  { id: '8', src: '/img/infer-ecosystem/infer-desk/nfts.png', alt: 'NFT Gallery' },
+  { id: '9', src: '/img/infer-ecosystem/infer-desk/transactions.png', alt: 'Transaction History' },
 ];
 
 const detectOS = (): OS => {
@@ -43,7 +43,7 @@ const detectOS = (): OS => {
   return "unknown";
 };
 
-export default function NovaDesk() {
+export default function InferDesk() {
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac" || detectedOS === "mac-intel" || detectedOS === "mac-arm64";
@@ -62,13 +62,13 @@ export default function NovaDesk() {
   };
 
   return (
-    <div id="nova-desk-page" className="page-section">
-      <section className="hero nova-hero" role="banner">
+    <div id="infer-desk-page" className="page-section">
+      <section className="hero infer-hero" role="banner">
         <div className="hero-content">
-          <div className="nova-logo-container" style={{ marginBottom: "2rem" }}>
+          <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>
             <img
-              src="assets/logos/nova.png"
-              alt="Nova Desk logo"
+              src="/assets/logos/flame.png"
+              alt="Infer Desk logo"
               style={{
                 width: "180px",
                 maxWidth: "100%",
@@ -77,7 +77,7 @@ export default function NovaDesk() {
               }}
             />
           </div>
-          <h1>Nova Desk — Secure Desktop Cryptocurrency Wallet</h1>
+          <h1>Infer Desk — Secure Desktop Cryptocurrency Wallet</h1>
           <p>
             A production-ready desktop wallet for the Cedra Network. Manage assets,
             connect to dApps, and securely store your crypto with advanced security features.
@@ -95,7 +95,7 @@ export default function NovaDesk() {
           <div className="download-buttons">
             {shouldShow("windows") && (
               <a
-                id="download-nova-desk-windows"
+                id="download-infer-desk-windows"
                 href={getDownloadUrl("windows")}
                 className="cta-button"
                 aria-label="Download for Windows"
@@ -107,7 +107,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-intel") && (
               <a
-                id="download-nova-desk-mac-intel"
+                id="download-infer-desk-mac-intel"
                 href={getDownloadUrl("mac-intel")}
                 className="cta-button"
                 aria-label="Download for macOS Intel"
@@ -119,7 +119,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("mac-arm64") && (
               <a
-                id="download-nova-desk-mac-arm64"
+                id="download-infer-desk-mac-arm64"
                 href={getDownloadUrl("mac-arm64")}
                 className="cta-button"
                 aria-label="Download for macOS Apple Silicon"
@@ -131,7 +131,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux") && (
               <a
-                id="download-nova-desk-linux"
+                id="download-infer-desk-linux"
                 href={getDownloadUrl("linux")}
                 className="cta-button"
                 aria-label="Download for Linux x64"
@@ -143,7 +143,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("linux-arm64") && (
               <a
-                id="download-nova-desk-linux-arm64"
+                id="download-infer-desk-linux-arm64"
                 href={getDownloadUrl("linux-arm64")}
                 className="cta-button"
                 aria-label="Download for Linux ARM64"
@@ -155,7 +155,7 @@ export default function NovaDesk() {
             )}
             {shouldShow("freebsd") && (
               <a
-                id="download-nova-desk-freebsd"
+                id="download-infer-desk-freebsd"
                 href={getDownloadUrl("freebsd")}
                 className="cta-button"
                 aria-label="Download for FreeBSD"
@@ -169,13 +169,13 @@ export default function NovaDesk() {
         </div>
       </section>
 
-      <section id="nova-desk-gallery" className="section">
+      <section id="infer-desk-gallery" className="section">
         <div className="container">
           <LightboxGallery images={deskImages} thumbnailWidth="760px" className="desktop-screenshot-gallery" />
         </div>
       </section>
 
-      <section id="nova-desk-features" className="section">
+      <section id="infer-desk-features" className="section">
         <div className="container">
           <h2 className="section-title">Features</h2>
           <div className="features-grid">
@@ -215,7 +215,7 @@ export default function NovaDesk() {
               <span className="emoji">🌐</span>
               <h4>Full DApp Browser</h4>
               <p>
-                Built-in browser for seamless dApp interaction with Nova Connect
+                Built-in browser for seamless dApp interaction with Infer Connect
                 support and deep link handling.
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function NovaDesk() {
               <span className="emoji">💱</span>
               <h4>Avera Swap Integration</h4>
               <p>
-                Swap tokens directly within Nova Desk using Avera DEX.
+                Swap tokens directly within Infer Desk using Avera DEX.
                 Get the best rates with multi-pool routing.
               </p>
             </div>
@@ -253,10 +253,10 @@ export default function NovaDesk() {
             </div>
             <div className="feature-card">
               <span className="emoji">🔗</span>
-              <h4>Nova Connect Integration</h4>
+              <h4>Infer Connect Integration</h4>
               <p>
-                Use your favorite browser or the internal browser with Nova Connect.
-                Seamlessly connect external browsers to Nova Desk for dApp access.
+                Use your favorite browser or the internal browser with Infer Connect.
+                Seamlessly connect external browsers to Infer Desk for dApp access.
               </p>
             </div>
             <div className="feature-card">
@@ -279,7 +279,7 @@ export default function NovaDesk() {
               <span className="emoji">📤</span>
               <h4>System Tray Integration</h4>
               <p>
-                Access your wallet quickly from the system tray. Nova Desk
+                Access your wallet quickly from the system tray. Infer Desk
                 stays available while you work.
               </p>
             </div>
@@ -288,14 +288,14 @@ export default function NovaDesk() {
               <h4>Deep Link Support</h4>
               <p>
                 Secure URI handling for blockchain actions. Open links directly
-                in Nova Desk for seamless Web3 workflows.
+                in Infer Desk for seamless Web3 workflows.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="nova-desk-security" className="section">
+      <section id="infer-desk-security" className="section">
         <div className="container">
           <h2 className="section-title">Security Features</h2>
           <div className="features-grid">
@@ -331,19 +331,19 @@ export default function NovaDesk() {
         </div>
       </section>
 
-      <section id="nova-desk-developers" className="section">
+      <section id="infer-desk-developers" className="section">
         <div className="container">
           <h2 className="section-title">For Developers</h2>
           <div className="developer-content">
             <p>
-              Want to integrate Nova Desk with your dApp? Check out our{" "}
-              <a href="/docs#nova-connect-introduction">
-                Nova Connect documentation
+              Want to integrate Infer Desk with your dApp? Check out our{" "}
+              <a href="/docs#infer-connect-introduction">
+                Infer Connect documentation
               </a>{" "}
               for browser integration and API details.
             </p>
             <a
-              href="/docs#nova-connect-introduction"
+              href="/docs#infer-connect-introduction"
               className="cta-button secondary"
             >
               View Documentation
