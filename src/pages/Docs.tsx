@@ -36,9 +36,13 @@ const docsSections = [
       { id: "nova-connect-api-reference", label: "API Reference", icon: "fas fa-code" },
       { id: "nova-connect-configuration", label: "Configuration", icon: "fas fa-cog" },
       { id: "nova-connect-mobile-relay", label: "Mobile Relay", icon: "fas fa-mobile-alt" },
+      { id: "nova-connect-pkce", label: "PKCE", icon: "fas fa-lock" },
+      { id: "nova-connect-bridge-api", label: "Bridge API", icon: "fas fa-bridge" },
+      { id: "nova-connect-detection", label: "Detection", icon: "fas fa-eye" },
       { id: "nova-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
       { id: "nova-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
       { id: "nova-connect-session-management", label: "Session Management", icon: "fas fa-database" },
+      { id: "nova-connect-version-migration", label: "Version Migration", icon: "fas fa-code-branch" },
     ],
   },
   {

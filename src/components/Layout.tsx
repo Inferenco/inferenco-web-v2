@@ -5,6 +5,7 @@ import type { PageType, ProductDropdownItem } from "../types";
 const navLinks: { label: string; path: string; page: PageType }[] = [
   { label: "Home", path: "/", page: "home" },
   { label: "Docs", path: "/docs", page: "docs" },
+  { label: "Blogs", path: "/blogs", page: "blogs" },
 ];
 
 const productsDropdown: ProductDropdownItem[] = [

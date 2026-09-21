@@ -5,6 +5,8 @@ import Nova from "./pages/Nova";
 import NovaWallet from "./pages/NovaWallet";
 import NovaDesk from "./pages/NovaDesk";
 import Docs from "./pages/Docs";
+import Blogs from "./pages/Blogs";
+import BlogSingle from "./pages/BlogSingle";
 import "./index.css";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path="nova-wallet" element={<NovaWallet />} />
           <Route path="nova-desk" element={<NovaDesk />} />
           <Route path="docs/*" element={<Docs />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:id" element={<BlogSingle />} />
         </Route>
       </Routes>
     </BrowserRouter>
