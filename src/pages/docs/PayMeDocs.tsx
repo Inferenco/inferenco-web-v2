@@ -1,4 +1,5 @@
 import receiveImage from "../../../assets/images/pay-me/pay-me-01-receive.webp";
+import deskQrChoiceImage from "../../../assets/images/pay-me/pay-me-desk-qr-choice.webp";
 import scanImage from "../../../assets/images/pay-me/pay-me-02-scan-pair.webp";
 import confirmImage from "../../../assets/images/pay-me/pay-me-03-confirm-connection.webp";
 import deskApprovalImage from "../../../assets/images/pay-me/pay-me-04-desk-ephemeral-approval.webp";
@@ -15,6 +16,14 @@ const walkthrough = [
     image: receiveImage,
     alt: "Infer Wallet Receive CEDRA screen with the Pay Me action; the receive QR is omitted",
     caption: "The Pay Me action sits above the receive QR.",
+  },
+  {
+    title: "Generate the Desk QR",
+    copy: "On Infer Desk, open Bridge, then Remote. Leave the permanent-pair checkbox clear for a short-lived ephemeral QR, or select it to issue a reusable pair QR. The operator can limit ephemeral signing requests at approval; a reusable pair remains subject to Desk policy and revocation.",
+    image: deskQrChoiceImage,
+    alt: "Infer Desk Bridge Remote screen with a non-scannable example QR and controls for ephemeral or permanent pairing",
+    caption: "Choose the QR kind before scanning. This QR is illustrative and cannot be scanned; generate a fresh QR on Infer Desk. On a phone, swipe the image to see the controls.",
+    desk: true,
   },
   {
     title: "Scan a Desk QR",
