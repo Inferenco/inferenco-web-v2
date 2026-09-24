@@ -4,6 +4,7 @@ interface LightboxImage {
   id: string;
   src: string;
   alt: string;
+  caption?: string;
 }
 
 interface LightboxGalleryProps {
@@ -179,7 +180,7 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
               onAuxClick={(e) => {
                 e.preventDefault();
               }}
-              className="lightbox-slide"
+              className={`lightbox-slide${img.caption ? ' lightbox-slide--captioned' : ''}`}
               style={{ flexShrink: 0 }}
             >
               <img
@@ -197,6 +198,7 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
                   objectFit: thumbnailHeight ? 'contain' : 'cover',
                 }}
               />
+              {img.caption && <span className="lightbox-caption">{img.caption}</span>}
             </a>
           ))}
         </div>
@@ -366,6 +368,7 @@ export default function LightboxGallery({ images, thumbnailWidth = '800px', thum
             }}
           >
             {currentIndex + 1} / {images.length}
+            {images[currentIndex].caption && ` · ${images[currentIndex].caption}`}
           </div>
         </div>
       )}

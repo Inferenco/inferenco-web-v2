@@ -2,15 +2,16 @@ import LightboxGallery from "../components/LightboxGallery";
 
 export default function InferWalletPage() {
   const walletImages = [
-    { id: '1', src: '/img/infer-ecosystem/infer-wallet/dashboard.png', alt: 'Main Dashboard' },
-    { id: '2', src: '/img/infer-ecosystem/infer-wallet/light.png', alt: 'Light Theme Dashboard' },
-    { id: '3', src: '/img/infer-ecosystem/infer-wallet/dark.png', alt: 'Dark Theme Dashboard' },
-    { id: '4', src: '/img/infer-ecosystem/infer-wallet/browser.png', alt: 'DApp Browser' },
-    { id: '5', src: '/img/infer-ecosystem/infer-wallet/activity.png', alt: 'Activity History' },
-    { id: '6', src: '/img/infer-ecosystem/infer-wallet/nft-collection.png', alt: 'NFT Collection' },
-    { id: '7', src: '/img/infer-ecosystem/infer-wallet/swap.png', alt: 'Swap via Avera DEX' },
-    { id: '8', src: '/img/infer-ecosystem/infer-wallet/settings.png', alt: 'Settings' },
-    { id: '9', src: '/img/infer-ecosystem/infer-wallet/nft-detail.png', alt: 'NFT Detail View' },
+    { id: '1', src: '/img/infer-ecosystem/infer-wallet/dashboard-dark-2026-09.webp', alt: 'Infer Wallet dark dashboard with account balance, token holdings and quick actions', caption: 'Dashboard' },
+    { id: '2', src: '/img/infer-ecosystem/infer-wallet/send-tokens-2026-09.webp', alt: 'Infer Wallet Send CEDRA screen with recipient, amount and transaction preview', caption: 'Send tokens' },
+    { id: '3', src: '/img/infer-ecosystem/infer-wallet/receive-tokens-2026-09.webp', alt: 'Infer Wallet Receive CEDRA screen with address QR code and Pay Me entry', caption: 'Receive tokens' },
+    { id: '4', src: '/img/infer-ecosystem/infer-wallet/swap-2026-09.webp', alt: 'Infer Wallet swap screen showing a CEDRA to AVA quote on Testnet', caption: 'Swap' },
+    { id: '5', src: '/img/infer-ecosystem/infer-wallet/activity-2026-09.webp', alt: 'Infer Wallet activity screen listing successful Testnet transactions', caption: 'Activity' },
+    { id: '6', src: '/img/infer-ecosystem/infer-wallet/nft-collection-2026-09.webp', alt: 'Infer Wallet NFT collection showing three illustrated badges', caption: 'NFT collection' },
+    { id: '7', src: '/img/infer-ecosystem/infer-wallet/nft-detail-2026-09.webp', alt: 'Infer Wallet NFT detail page for the Community Call Badge', caption: 'NFT detail' },
+    { id: '8', src: '/img/infer-ecosystem/infer-wallet/built-in-browser-2026-09.webp', alt: 'Infer Wallet built-in browser displaying Cedrascan on Testnet', caption: 'Built-in browser' },
+    { id: '9', src: '/img/infer-ecosystem/infer-wallet/settings-2026-09.webp', alt: 'Infer Wallet settings with account, network, security and appearance options', caption: 'Settings' },
+    { id: '10', src: '/img/infer-ecosystem/infer-wallet/dashboard-light-2026-09.webp', alt: 'Infer Wallet light dashboard with account balance, token holdings and quick actions', caption: 'Dashboard — light theme' },
   ];
 
   return (

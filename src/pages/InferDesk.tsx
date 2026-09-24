@@ -2,15 +2,16 @@ import { getDownloadUrl, type OS } from "../services/github";
 import LightboxGallery from "../components/LightboxGallery";
 
 const deskImages = [
-  { id: '1', src: '/img/infer-ecosystem/infer-desk/vault-selection.png', alt: 'Vault Selection Screen' },
-  { id: '2', src: '/img/infer-ecosystem/infer-desk/light-theme.png', alt: 'Dashboard - Light Theme' },
-  { id: '3', src: '/img/infer-ecosystem/infer-desk/dark-theme.png', alt: 'Dashboard - Dark Theme' },
-  { id: '4', src: '/img/infer-ecosystem/infer-desk/browser.png', alt: 'Integrated DApp Browser' },
-  { id: '5', src: '/img/infer-ecosystem/infer-desk/send.png', alt: 'Send Tokens' },
-  { id: '6', src: '/img/infer-ecosystem/infer-desk/receive.png', alt: 'Receive Tokens' },
-  { id: '7', src: '/img/infer-ecosystem/infer-desk/swap.png', alt: 'Swap via Avera DEX' },
-  { id: '8', src: '/img/infer-ecosystem/infer-desk/nfts.png', alt: 'NFT Gallery' },
-  { id: '9', src: '/img/infer-ecosystem/infer-desk/transactions.png', alt: 'Transaction History' },
+  { id: '1', src: '/img/infer-ecosystem/infer-desk/dashboard.webp', alt: 'Infer Desk light theme dashboard showing balance, events and recent activity', caption: 'Dashboard' },
+  { id: '2', src: '/img/infer-ecosystem/infer-desk/send-tokens.webp', alt: 'Infer Desk Send Tokens form with USDT selected and a prepared transfer', caption: 'Send tokens' },
+  { id: '3', src: '/img/infer-ecosystem/infer-desk/receive-tokens.webp', alt: 'Infer Desk Receive Cedra screen showing the selected account address and receive QR code', caption: 'Receive tokens' },
+  { id: '4', src: '/img/infer-ecosystem/infer-desk/swap.webp', alt: 'Infer Desk Swap screen showing Cedra and USDC assets with a displayed quote', caption: 'Swap' },
+  { id: '5', src: '/img/infer-ecosystem/infer-desk/transaction-history.webp', alt: 'Infer Desk Transactions screen showing a list of recent wallet activity', caption: 'Transaction history' },
+  { id: '6', src: '/img/infer-ecosystem/infer-desk/nfts-batch-selection.webp', alt: 'Infer Desk NFT gallery with two collectibles selected for batch transfer', caption: 'NFTs and batch selection' },
+  { id: '7', src: '/img/infer-ecosystem/infer-desk/built-in-browser.webp', alt: 'Infer Desk built-in browser showing an ecosystem dApp alongside the wallet navigation', caption: 'Built-in browser' },
+  { id: '8', src: '/img/infer-ecosystem/infer-desk/settings-profile.webp', alt: 'Infer Desk Settings screen showing theme, network and public profile controls', caption: 'Settings and public profile' },
+  { id: '9', src: '/img/infer-ecosystem/infer-desk/bridge-paired-apps.webp', alt: 'Infer Desk Bridge screen showing paired apps and recent bridge activity', caption: 'Bridge and paired apps' },
+  { id: '10', src: '/img/infer-ecosystem/infer-desk/dashboard-dark.webp', alt: 'Infer Desk dark theme dashboard showing balance, events and recent activity', caption: 'Dashboard — dark theme' },
 ];
 
 const detectOS = (): OS => {

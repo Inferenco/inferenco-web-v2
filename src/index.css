@@ -2071,6 +2071,26 @@ html.light .functions-table td:nth-child(3) {
     pointer-events: none;
 }
 
+.lightbox-slide--captioned {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+}
+
+.lightbox-caption {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-align: center;
+}
+
+#infer-desk-gallery,
+#infer-wallet-gallery {
+    position: relative;
+    z-index: 2;
+}
+
 /* Responsive Design - Mobile and Medium (Tablet) devices */
 @media (max-width: 1024px) {
     h1 {
