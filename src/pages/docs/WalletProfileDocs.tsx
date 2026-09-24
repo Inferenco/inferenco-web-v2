@@ -1,3 +1,4 @@
+import CodeBlock from "../../components/CodeBlock";
 export default function WalletProfileDocs({ hash }: { hash: string }) {
   const contractAddress =
     "0xbdf9c94e797716648980ed99a0c6e2b3d6452ce5c1d28dbad3517a9be682b724";
@@ -15,7 +16,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
           account a shared on-chain profile: a <strong>nickname</strong> and an
           optional <strong>avatar URL</strong>. Any app vertical (games, social,
           events, marketplaces) can read or write the same profile so the user
-          has one identity across the Nova ecosystem.
+          has one identity across the Infer ecosystem.
         </p>
 
         <h2>Deployment</h2>
@@ -58,7 +59,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         <div className="use-case-card">
           <h4>Social & Messaging</h4>
           <p>
-            Display the same nickname the user set in Nova Wallet inside group chats, comments, and notifications.
+            Display the same nickname the user set in Infer Wallet inside group chats, comments, and notifications.
           </p>
         </div>
 
@@ -89,7 +90,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Entry Functions (write)</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -101,9 +102,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
             <tbody>
               <tr>
                 <td><code>set_profile</code></td>
-                <td>
-                  <code>(account: &amp;signer, nickname: String, avatar_url: String)</code>
-                </td>
+                <td><code className="func-sig">(account: &amp;signer, nickname: String, avatar_url: String)</code></td>
                 <td>
                   Create the profile if it does not exist, or update the nickname,
                   avatar URL, and <code>updated_at</code> if it does. Aborts on empty
@@ -112,7 +111,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>clear_profile</code></td>
-                <td><code>(account: &amp;signer)</code></td>
+                <td><code className="func-sig">(account: &amp;signer)</code></td>
                 <td>
                   Delete the profile resource and reclaim storage. Aborts with{" "}
                   <code>E_PROFILE_NOT_FOUND</code> if no profile exists.
@@ -123,7 +122,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>View Functions (read)</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -135,7 +134,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
             <tbody>
               <tr>
                 <td><code>has_profile</code></td>
-                <td><code>(addr: address): bool</code></td>
+                <td><code className="func-sig">(addr: address): bool</code></td>
                 <td>
                   Returns <code>true</code> when the address holds a{" "}
                   <code>UserProfile</code> resource.
@@ -143,7 +142,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_profile</code></td>
-                <td><code>(addr: address): (String, String, u64)</code></td>
+                <td><code className="func-sig">(addr: address): (String, String, u64)</code></td>
                 <td>
                   Returns <code>(nickname, avatar_url, updated_at)</code>. Aborts
                   with <code>E_PROFILE_NOT_FOUND</code> when no profile exists.
@@ -151,7 +150,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_nickname</code></td>
-                <td><code>(addr: address): String</code></td>
+                <td><code className="func-sig">(addr: address): String</code></td>
                 <td>
                   Returns the nickname, or an empty string when no profile exists.
                   Safe to call without an existence check.
@@ -159,7 +158,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
               </tr>
               <tr>
                 <td><code>get_avatar_url</code></td>
-                <td><code>(addr: address): String</code></td>
+                <td><code className="func-sig">(addr: address): String</code></td>
                 <td>
                   Returns the avatar URL, or an empty string when no profile exists.
                   Safe to call without an existence check.
@@ -173,13 +172,11 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         <p>
           Address the module with <code>{contractAddress}::user_profiles::&lt;function&gt;</code>.
         </p>
-        <div className="code-block">
-          <code>{`// Read nickname on testnet
+        <CodeBlock language="typescript">{`// Read nickname on testnet
 {function:"${contractAddress}::user_profiles::get_nickname",functionArguments:["0xabc..."]}
 
 // Write nickname + avatar
-{function:"${contractAddress}::user_profiles::set_profile",functionArguments:["alice","https://cdn.example.com/avatars/alice.png"]}`}</code>
-        </div>
+{function:"${contractAddress}::user_profiles::set_profile",functionArguments:["alice","https://cdn.example.com/avatars/alice.png"]}`}</CodeBlock>
       </div>
 
       <div
@@ -194,15 +191,13 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Struct</h2>
-        <div className="code-block">
-          <code>{`struct UserProfile has key, store, drop {
+        <CodeBlock language="move">{`struct UserProfile has key, store, drop {
     nickname: String,
     avatar_url: String,
     updated_at: u64,
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -232,7 +227,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>Constants</h2>
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -287,8 +282,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Read a Nickname</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -300,12 +294,10 @@ const [nickname] = await cedra.view({
   },
 });
 
-console.log("nickname:", nickname); // "" when no profile exists`}</code>
-        </div>
+console.log("nickname:", nickname); // "" when no profile exists`}</CodeBlock>
 
         <h2>Read the Full Profile</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -316,12 +308,10 @@ const [nickname, avatarUrl, updatedAt] = await cedra.view({
   },
 });
 
-console.log(nickname, avatarUrl, updatedAt);`}</code>
-        </div>
+console.log(nickname, avatarUrl, updatedAt);`}</CodeBlock>
 
         <h2>Check Existence First</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -334,12 +324,10 @@ const [hasProfile] = await cedra.view({
 
 if (hasProfile) {
   // safe to call get_profile
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Write a Profile</h2>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   Account,
   Cedra,
   Network,
@@ -366,12 +354,10 @@ const pending = await cedra.signAndSubmitTransaction({
 });
 
 await cedra.waitForTransaction({ transactionHash: pending.hash });
-console.log("profile updated:", pending.hash);`}</code>
-        </div>
+console.log("profile updated:", pending.hash);`}</CodeBlock>
 
         <h2>Delete a Profile</h2>
-        <div className="code-block">
-          <code>{`const transaction = await cedra.transaction.build.simple({
+        <CodeBlock language="typescript">{`const transaction = await cedra.transaction.build.simple({
   sender: account.accountAddress,
   data: {
     function: "${contractAddress}::user_profiles::clear_profile",
@@ -384,28 +370,26 @@ const pending = await cedra.signAndSubmitTransaction({
   transaction,
 });
 
-await cedra.waitForTransaction({ transactionHash: pending.hash });`}</code>
-        </div>
+await cedra.waitForTransaction({ transactionHash: pending.hash });`}</CodeBlock>
       </div>
 
       <div
-        id="wallet-profile-nova-connect"
-        className={`docs-section ${hash === "wallet-profile-nova-connect" ? "active" : ""}`}
+        id="wallet-profile-infer-connect"
+        className={`docs-section ${hash === "wallet-profile-infer-connect" ? "active" : ""}`}
       >
-        <h1>Wallet Profile - Nova Connect</h1>
+        <h1>Wallet Profile - Infer Connect</h1>
         <p>
           When your dApp already uses{" "}
-          <a href="#nova-connect-introduction" style={{ color: "var(--primary)" }}>
-            Nova Connect
+          <a href="#infer-connect-introduction" style={{ color: "var(--primary)" }}>
+            Infer Connect
           </a>{" "}
-          to connect Nova Desk or Nova Wallet, route writes through the
+          to connect Infer Desk or Infer Wallet, route writes through the
           connected adapter. Reads can still use the SDK's <code>view</code>{" "}
           calls — signing is not required.
         </p>
 
         <h2>Read with the SDK</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -417,14 +401,12 @@ async function fetchNickname(address) {
     },
   });
   return nickname;
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <h2>Write Through NovaWallet</h2>
-        <div className="code-block">
-          <code>{`import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+        <h2>Write Through InferWallet</h2>
+        <CodeBlock language="typescript">{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
-const wallet = new NovaWallet();
+const wallet = new InferWallet();
 const { account } = await wallet.connect();
 
 await wallet.signAndSubmitTransaction({
@@ -435,16 +417,14 @@ await wallet.signAndSubmitTransaction({
       "https://cdn.example.com/avatars/alice.png",
     ],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
 
         <h2>Write Through AIP-62</h2>
-        <div className="code-block">
-          <code>{`import "@inferenco/nova-wallet-adapter/auto-register";
+        <CodeBlock language="typescript">{`import "@inferenco/infer-wallet-adapter/auto-register";
 import { getCedraWallets } from "@cedra-labs/wallet-standard";
 
 const { cedraWallets } = getCedraWallets();
-const wallet = cedraWallets.find((w) => w.name === "Nova Connect");
+const wallet = cedraWallets.find((w) => w.name === "Infer Connect");
 const account = (await wallet.features["cedra:connect"].connect()).args;
 
 await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction({
@@ -456,18 +436,15 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
       "https://cdn.example.com/avatars/alice.png",
     ],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
 
-        <h2>Clear Through NovaWallet</h2>
-        <div className="code-block">
-          <code>{`await wallet.signAndSubmitTransaction({
+        <h2>Clear Through InferWallet</h2>
+        <CodeBlock language="typescript">{`await wallet.signAndSubmitTransaction({
   data: {
     function: "${contractAddress}::user_profiles::clear_profile",
     functionArguments: [],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
       </div>
 
       <div
@@ -478,12 +455,11 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
         <p>
           Drop-in <code>useWalletProfile</code> hook that reads on mount and
           exposes a <code>save</code> function that validates inputs and writes
-          through Nova Connect.
+          through Infer Connect.
         </p>
 
         <h2>The Hook</h2>
-        <div className="code-block">
-          <code>{`import { useCallback, useEffect, useState } from "react";
+        <CodeBlock language="typescript">{`import { useCallback, useEffect, useState } from "react";
 import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
@@ -526,16 +502,14 @@ export function useWalletProfile(address) {
   }, [refresh]);
 
   return { profile, loading, error, refresh };
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Editor Component</h2>
-        <div className="code-block">
-          <code>{`import { useState } from "react";
-import { NovaWallet } from "@inferenco/nova-wallet-adapter";
+        <CodeBlock language="typescript">{`import { useState } from "react";
+import { InferWallet } from "@inferenco/infer-wallet-adapter";
 import { useWalletProfile } from "./useWalletProfile";
 
-const wallet = new NovaWallet();
+const wallet = new InferWallet();
 const PROFILE_MODULE = "${contractAddress}::user_profiles";
 
 export function ProfileEditor({ account }) {
@@ -586,11 +560,10 @@ export function ProfileEditor({ account }) {
       </button>
     </div>
   );
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <p>
-          Pair the editor with a Nova Connect connection button and a state
+          Pair the editor with a Infer Connect connection button and a state
           hook for <code>account</code> to drive the full profile flow.
         </p>
       </div>
@@ -686,7 +659,7 @@ export function ProfileEditor({ account }) {
           they return an empty string when no profile exists.
         </p>
 
-        <div className="params-table">
+        <div className="functions-table">
           <table>
             <thead>
               <tr>
@@ -728,8 +701,7 @@ export function ProfileEditor({ account }) {
         </div>
 
         <h2>Map Abort Codes to UI Messages</h2>
-        <div className="code-block">
-          <code>{`function explainProfileError(message) {
+        <CodeBlock language="typescript">{`function explainProfileError(message) {
   if (message.includes("E_NICKNAME_TOO_LONG") || message.includes("Move abort 1")) {
     return "Nickname must be at most 20 characters.";
   }
@@ -743,12 +715,10 @@ export function ProfileEditor({ account }) {
     return "Nickname cannot be empty.";
   }
   return "Profile transaction failed. Please try again.";
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Safe Read Pattern</h2>
-        <div className="code-block">
-          <code>{`async function loadProfile(address) {
+        <CodeBlock language="typescript">{`async function loadProfile(address) {
   const cedra = new Cedra({ network: Network.TESTNET });
   const [hasProfile] = await cedra.view({
     payload: {
@@ -769,8 +739,7 @@ export function ProfileEditor({ account }) {
   });
 
   return { nickname, avatarUrl, updatedAt };
-}`}</code>
-        </div>
+}`}</CodeBlock>
       </div>
     </>
   );

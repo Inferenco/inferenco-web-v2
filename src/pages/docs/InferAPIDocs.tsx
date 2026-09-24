@@ -1,13 +1,14 @@
-export default function NovaAPIDocs({ hash }: { hash: string }) {
+import CodeBlock from "../../components/CodeBlock";
+export default function InferAPIDocs({ hash }: { hash: string }) {
   return (
     <>
-      <div id="nova-api-introduction" className={`docs-section ${hash === "nova-api-introduction" ? "active" : ""}`}>
-        <h1>Nova API - Introduction</h1>
+      <div id="infer-api-introduction" className={`docs-section ${hash === "infer-api-introduction" ? "active" : ""}`}>
+        <h1>Infer API - Introduction</h1>
 
-        <p>Developers can integrate Nova's AI and blockchain capabilities into their applications through API key generation, enabling seamless access to its powerful features in third-party projects.</p>
+        <p>Developers can integrate Infer's AI and blockchain capabilities into their applications through API key generation, enabling seamless access to its powerful features in third-party projects.</p>
 
-        <h2>What is Nova API?</h2>
-        <p>Nova API is a RESTful API that provides programmatic access to Nova's AI and blockchain capabilities. The API offers:</p>
+        <h2>What is Infer API?</h2>
+        <p>Infer API is a RESTful API that provides programmatic access to Infer's AI and blockchain capabilities. The API offers:</p>
         <ul>
           <li><strong>RESTful Endpoints:</strong> Simple HTTP-based API with JSON request/response format. Base URL: <code>https://gateway.inferenco.com</code></li>
           <li><strong>API Key Authentication:</strong> Secure Bearer token authentication for all requests. Generate and manage multiple API keys with different configurations</li>
@@ -25,7 +26,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>AI-Powered Applications</h4>
-          <p>Integrate Nova's AI capabilities into web applications, mobile apps, or backend services via REST API calls. Use the <code>/ai</code> endpoint for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI with automatic tool calling.</p>
+          <p>Integrate Infer's AI capabilities into web applications, mobile apps, or backend services via REST API calls. Use the <code>/ai</code> endpoint for customer support chatbots, content generation, data analysis, or any application that needs intelligent conversational AI with automatic tool calling.</p>
         </div>
 
         <div className="use-case-card">
@@ -35,7 +36,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>Automated Crypto Intelligence Reports</h4>
-          <p>Integrate automated crypto intelligence reports into your applications using Nova's reports tool powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)" }}>Pond3r</a>. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities.</p>
+          <p>Integrate automated crypto intelligence reports into your applications using Infer's reports tool powered by <a href="https://pond3r.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)" }}>Pond3r</a>. Create scheduled reports that analyze blockchain data, track market trends, monitor token opportunities, and discover yield farming opportunities.</p>
         </div>
 
         <div className="use-case-card">
@@ -50,12 +51,12 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <div className="use-case-card">
           <h4>Content Creation Platforms</h4>
-          <p>Use Nova's image generation capabilities via API calls.</p>
+          <p>Use Infer's image generation capabilities via API calls.</p>
         </div>
 
         <div className="use-case-card">
           <h4>Knowledge-Based Applications</h4>
-          <p>Build applications with custom knowledge bases using Nova's RAG capabilities. Upload documents to your API key's vector store.</p>
+          <p>Build applications with custom knowledge bases using Infer's RAG capabilities. Upload documents to your API key's vector store.</p>
         </div>
 
         <div className="use-case-card">
@@ -64,33 +65,33 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>Getting Started</h2>
-        <p>To start integrating Nova into your application:</p>
+        <p>To start integrating Infer into your application:</p>
         <ol>
-          <li>Create an account in the Nova Telegram bot</li>
+          <li>Create an account in the Infer Telegram bot</li>
           <li>Fund your account with supported tokens</li>
           <li>Generate an API key through the bot interface</li>
           <li>Use the API key to authenticate your requests</li>
-          <li>Start making API calls to access Nova's features</li>
+          <li>Start making API calls to access Infer's features</li>
         </ol>
       </div>
 
       <div id="generate-api-key" className={`docs-section ${hash === "generate-api-key" ? "active" : ""}`}>
         <h1>Generate API Key</h1>
 
-        <p>To use Nova's API in your applications, you need to generate an API key through the Nova Telegram bot. Follow these steps:</p>
+        <p>To use Infer's API in your applications, you need to generate an API key through the Infer Telegram bot. Follow these steps:</p>
 
         <h2>Prerequisites</h2>
         <ul>
           <li>A Telegram account</li>
-          <li>Access to the Nova Telegram bot: <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a></li>
+          <li>Access to the Infer Telegram bot: <a href="https://t.me/InferInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @InferInferencoBot</a></li>
         </ul>
 
         <h2>Step-by-Step Guide</h2>
 
         <ol className="step-list">
           <li>
-            <strong>Start the Nova Bot</strong>
-            <p>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a>, then click "Start" to begin.</p>
+            <strong>Start the Infer Bot</strong>
+            <p>Open Telegram and search for <a href="https://t.me/InferInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @InferInferencoBot</a>, then click "Start" to begin.</p>
           </li>
 
           <li>
@@ -100,12 +101,12 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <li>
             <strong>Get Your Wallet Address</strong>
-            <p>Send the command <code>/walletaddress</code> to retrieve your Nova wallet address. You'll need this to fund your account.</p>
+            <p>Send the command <code>/walletaddress</code> to retrieve your Infer wallet address. You'll need this to fund your account.</p>
           </li>
 
           <li>
             <strong>Fund Your Account</strong>
-            <p>Send funds to your Nova wallet address using one of the supported tokens: CEDRA or EURC.</p>
+            <p>Send funds to your Infer wallet address using one of the supported tokens: CEDRA or EURC.</p>
           </li>
 
           <li>
@@ -152,7 +153,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
       <div id="tools" className={`docs-section ${hash === "tools" ? "active" : ""}`}>
         <h1>Tools</h1>
-        <p>Nova provides a suite of powerful tools that the AI can autonomously call to answer queries.</p>
+        <p>Infer provides a suite of powerful tools that the AI can autonomously call to answer queries.</p>
 
         <h2>Built-in Tools</h2>
         <ul>
@@ -179,225 +180,183 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <p><strong>MCP Tools Pricing:</strong> Pricing will be updated when the new AI model is deployed. Pricing is based on output tokens with a minimum charge per request.</p>
 
         <h2>Example Prompts Using Tools</h2>
-        <p>Here are example prompts you can use with the Nova API to trigger different tools:</p>
+        <p>Here are example prompts you can use with the Infer API to trigger different tools:</p>
 
         <h3>Price Prediction Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Predict Bitcoin price in 1 hour",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What will Ethereum price be in 1 week? Show me a forecast with chart data",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get a 4-hour price forecast for Solana",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Forecast CEDRA price for 1 month with confidence intervals",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Market Data Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me trending pools on Cedra Network",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Find pools for CEDRA/EURC on Cedra Network",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What's the current Fear & Greed Index?",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get historical price data for Ethereum for the last 7 days",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Image Generation Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Generate an image of a futuristic city with flying cars",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Document Search Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What does my documentation say about API integration?",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Web Search Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Search for the latest news about Cedra Network blockchain",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Calculator Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Calculate the ROI if I invest $1000 at 8% annual return for 5 years",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Social Intelligence Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What tokens are trending on Twitter right now?",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me the top mentions of Bitcoin on X in the last 24 hours",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get smart stats for the Twitter account @elonmusk",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What are the trending narratives in crypto right now?",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Search for mentions of Cedra Network on Twitter and summarize the sentiment",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Automated Reports Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "I want to create report of daily yield farming across Aave, Compound, and Convex protocols",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "List all my reports",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get the latest content for report 77d51445-4146-4ab4-bf5b-5e69bffe462c",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me available datasets for creating reports",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <p><strong>Note:</strong> The AI will automatically select and use the appropriate tools based on your input. You don't need to specify which tools to use - just describe what you want, and the AI will handle the rest!</p>
         <p><strong>Reports Tool:</strong> You can create reports, list executions, get report content, and manage reports through natural language prompts. Reports can be scheduled to run daily, weekly, monthly, or on-demand, and are available in both Markdown and JSON formats.</p>
@@ -406,7 +365,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       <div id="add-knowledge" className={`docs-section ${hash === "add-knowledge" ? "active" : ""}`}>
         <h1>Add Knowledge to Your API Key</h1>
 
-        <p>Nova supports Retrieval-Augmented Generation (RAG) by allowing you to upload documents to your API key's vector store. These documents are automatically indexed and used to provide context-aware responses.</p>
+        <p>Infer supports Retrieval-Augmented Generation (RAG) by allowing you to upload documents to your API key's vector store. These documents are automatically indexed and used to provide context-aware responses.</p>
 
         <h2>What is Knowledge Base?</h2>
         <p>Each API key has its own document library (vector store) where you can upload files that contain information relevant to your application.</p>
@@ -415,7 +374,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         <ol className="step-list">
           <li>
             <strong>Access API Key Settings</strong>
-            <p>Open the Nova bot and send <code>/usersettings</code> to access your settings menu.</p>
+            <p>Open the Infer bot and send <code>/usersettings</code> to access your settings menu.</p>
           </li>
 
           <li>
@@ -435,7 +394,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </ol>
 
         <h2>Uploading Files via API</h2>
-        <p>Manage your knowledge base programmatically using the Nova Gateway API endpoints:</p>
+        <p>Manage your knowledge base programmatically using the Infer Gateway API endpoints:</p>
         <div className="code-block"><code>https://gateway.inferenco.com</code></div>
 
         <div className="endpoint-item">
@@ -454,30 +413,30 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </div>
 
         <h2>How Knowledge Base Works</h2>
-        <p>When you make an AI request, Nova automatically searches your uploaded documents for relevant information and includes it as context in the AI request.</p>
+        <p>When you make an AI request, Infer automatically searches your uploaded documents for relevant information and includes it as context in the AI request.</p>
       </div>
 
       <div id="templates" className={`docs-section ${hash === "templates" ? "active" : ""}`}>
         <h1>API Templates</h1>
 
-        <p>Jump-start your integration with prebuilt examples tailored for Nova Gateway. Templates include environment samples, deployment guides, and best practices so you can ship faster.</p>
+        <p>Jump-start your integration with prebuilt examples tailored for Infer Gateway. Templates include environment samples, deployment guides, and best practices so you can ship faster.</p>
 
         <div className="docs-card">
-          <h3>Nova Gateway Telegram Bot</h3>
-          <p>A Teloxide-based Rust bot that relays Telegram chats to the Nova Gateway <code>/ai</code> endpoint and streams responses back to the user.</p>
+          <h3>Infer Gateway Telegram Bot</h3>
+          <p>A Teloxide-based Rust bot that relays Telegram chats to the Infer Gateway <code>/ai</code> endpoint and streams responses back to the user.</p>
           <ul>
             <li>Clone the repository and copy <code>.env.sample</code> to <code>.env</code>.</li>
-            <li>Populate <code>TELEGRAM_BOT_TOKEN</code> and <code>NOVA_API_KEY</code> with your credentials.</li>
+            <li>Populate <code>TELEGRAM_BOT_TOKEN</code> and <code>INFER_API_KEY</code> with your credentials.</li>
             <li>Run <code>cargo run</code>, or use the provided Dockerfile / Cloud Run instructions for deployment.</li>
           </ul>
-          <p><a href="https://github.com/Inferenco/nova-gateway-telegram-bot" target="_blank" rel="noopener">View template on GitHub</a></p>
+          <p><a href="https://github.com/Inferenco" target="_blank" rel="noopener">View template on GitHub</a></p>
         </div>
       </div>
 
       <div id="api-docs" className={`docs-section ${hash === "api-docs" ? "active" : ""}`}>
         <h1>API Documentation</h1>
 
-        <p>All API requests should be made to the Nova Gateway endpoint. Include your API key in the <code>Authorization</code> header as a Bearer token.</p>
+        <p>All API requests should be made to the Infer Gateway endpoint. Include your API key in the <code>Authorization</code> header as a Bearer token.</p>
 
         <div className="code-block"><code>Authorization: Bearer YOUR_API_KEY</code></div>
 
@@ -487,7 +446,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
         <h2>Authentication</h2>
         <p>Most endpoints require authentication using your API key. Include it in the request header:</p>
-        <div className="code-block"><code>Authorization: Bearer nova_your_api_key_here</code></div>
+        <div className="code-block"><code>Authorization: Bearer infer_your_api_key_here</code></div>
 
         <h2>AI Endpoints</h2>
 
@@ -496,11 +455,11 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
             <span className="endpoint-badge badge-post">POST</span>
             <span className="endpoint-path">/ai</span>
           </div>
-          <p><strong>Send AI request</strong> - Submit a request to Nova's AI with optional tool calling and image inputs.</p>
+          <p><strong>Send AI request</strong> - Submit a request to Infer's AI with optional tool calling and image inputs.</p>
 
           <h5>Headers</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Header</th>
@@ -528,7 +487,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Request Body</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>
@@ -597,8 +556,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           </div>
 
           <h5>Response</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "text": "AI response text",
   "model": "advanced",
   "image_data": null,
@@ -608,13 +566,11 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
   "file_search": 0,
   "image_generation": 0,
   "code_interpreter": 0
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h3>Streaming Response (TypeScript Example)</h3>
           <p>When <code>streaming: true</code> is set, the API returns a stream of Server-Sent Events (SSE). Here is an example of how to consume it using TypeScript:</p>
-          <div className="code-block">
-            <code>{`async function streamAIResponse(apiKey: string, prompt: string) {
+          <CodeBlock language="typescript">{`async function streamAIResponse(apiKey: string, prompt: string) {
   try {
     const response = await fetch('https://gateway.inferenco.com/ai', {
       method: 'POST',
@@ -658,8 +614,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
   } catch (error) {
     console.error('Streaming failed:', error);
   }
-}`}</code>
-          </div>
+}`}</CodeBlock>
         </div>
 
         <div className="endpoint-item">
@@ -671,7 +626,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Query Parameters</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>
@@ -701,7 +656,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Headers</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Header</th>
@@ -729,7 +684,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Request Body</h5>
           <div className="table-responsive">
-            <table className="params-table">
+            <table className="functions-table">
               <thead>
                 <tr>
                   <th>Parameter</th>
@@ -763,9 +718,8 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
 
           <h5>Example Request</h5>
           <p>Call a single tool:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -777,13 +731,11 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p>Call multiple tools:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -802,13 +754,11 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p>Example with forecast tool:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
-  -H "Authorization: Bearer nova_your_api_key_here" \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+  -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
     "tools": [
@@ -823,15 +773,13 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p><strong>Note:</strong> For <code>get_forecast</code>, use <code>asset_id</code> (CoinGecko format like "bitcoin", "ethereum", "stohn-coin") not ticker symbols. <code>forecast_type</code> should be "short" or "long". <code>duration</code> for short-term: "fifteen_minutes", "one_hour", "four_hours". For long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
 
           <h5>Response</h5>
           <p>Returns an array of tool execution results. Each result contains the tool's response content.</p>
-          <div className="code-block">
-            <code>{`[
+          <CodeBlock language="json">{`[
   {
     "content": [
       {
@@ -841,8 +789,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
     ],
     "isError": false
   }
-]`}</code>
-          </div>
+]`}</CodeBlock>
 
           <h5>Available MCP Tools</h5>
           <p>The following MCP tools are available (same tools that can be called automatically via the <code>/ai</code> endpoint):</p>
@@ -874,8 +821,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
           <h4>Tool Examples</h4>
 
           <h5>get_trending_pools</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_trending_pools",
     "arguments": {
@@ -885,12 +831,10 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "duration": "24h"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>search_pools</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "search_pools",
     "arguments": {
@@ -899,25 +843,21 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "limit": 5
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_token_price</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_token_price",
     "arguments": {
       "symbol": "BTC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_forecast</h5>
           <p><strong>Important:</strong> Use CoinGecko asset IDs (e.g., "bitcoin", "ethereum") not ticker symbols. Duration values: short-term: "fifteen_minutes", "one_hour", "four_hours"; long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_forecast",
     "arguments": {
@@ -928,12 +868,10 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "include_chart": false
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>social_intelligence</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "social_intelligence",
     "arguments": {
@@ -943,48 +881,40 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "min_mentions": 5
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>Other operations: "smart_stats" (requires account), "top_mentions" (requires ticker), "mentions_search" (requires keywords), "event_summary", "trending_narratives", "token_news", "trending_contracts_twitter", "trending_contracts_telegram".</p>
           <p><strong>Note:</strong> User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags to avoid confusion in other apps.</p>
 
           <h5>get_fear_and_greed_index</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_fear_and_greed_index",
     "arguments": {}
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>calculate_expression</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "calculate_expression",
     "arguments": {
       "expression": "1000 * (1 + 0.08) ^ 5"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_current_time</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_current_time",
     "arguments": {
       "timezone": "UTC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_coindesk_history</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_coindesk_history",
     "arguments": {
@@ -993,12 +923,10 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "end_date": "2024-01-31"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>dexscreener_api</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "dexscreener_api",
     "arguments": {
@@ -1006,14 +934,12 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "query": "CEDRA/EURC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>manage_reports</h5>
           <p><strong>Note:</strong> Available actions: "create", "list", "list_by_ref", "status", "datasets", "discover", "list_executions", "get_content", "get_latest_content", "get_all_executions_content", "delete".</p>
           <p>Create a report:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1024,11 +950,9 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "delivery_api_retention": true
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>Get latest report content:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1037,11 +961,9 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "format": "markdown"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>List all executions with content:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1051,8 +973,7 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
       "limit": 10
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <p><strong>Usage:</strong> Use this endpoint when you need to call specific tools directly without AI interpretation. The AI endpoint (<code>/ai</code>) automatically selects and calls appropriate tools based on your prompt, while this endpoint gives you direct control over tool execution.</p>
         </div>
@@ -1068,18 +989,16 @@ export default function NovaAPIDocs({ hash }: { hash: string }) {
         </ul>
 
         <p>Error responses follow this format:</p>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "message": "Error description",
   "status": 401
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Rate Limiting</h2>
         <p>API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a <code>429 Too Many Requests</code> response.</p>
 
         <h2>Support</h2>
-        <p>For API support, questions, or issues, contact the Nova team through our <a href="https://t.me/inferenco" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i>Telegram group</a> or visit the Nova documentation.</p>
+        <p>For API support, questions, or issues, contact the Infer team through our <a href="https://t.me/inferenco" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i>Telegram group</a> or visit the Infer documentation.</p>
       </div>
     </>
   );

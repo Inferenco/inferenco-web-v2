@@ -1,26 +1,27 @@
 import LightboxGallery from "../components/LightboxGallery";
 
-export default function NovaWallet() {
+export default function InferWalletPage() {
   const walletImages = [
-    { id: '1', src: '/img/nova-ecosystem/nova-wallet/dashboard.png', alt: 'Main Dashboard' },
-    { id: '2', src: '/img/nova-ecosystem/nova-wallet/light.png', alt: 'Light Theme Dashboard' },
-    { id: '3', src: '/img/nova-ecosystem/nova-wallet/dark.png', alt: 'Dark Theme Dashboard' },
-    { id: '4', src: '/img/nova-ecosystem/nova-wallet/browser.png', alt: 'DApp Browser' },
-    { id: '5', src: '/img/nova-ecosystem/nova-wallet/activity.png', alt: 'Activity History' },
-    { id: '6', src: '/img/nova-ecosystem/nova-wallet/nft-collection.png', alt: 'NFT Collection' },
-    { id: '7', src: '/img/nova-ecosystem/nova-wallet/swap.png', alt: 'Swap via Avera DEX' },
-    { id: '8', src: '/img/nova-ecosystem/nova-wallet/settings.png', alt: 'Settings' },
-    { id: '9', src: '/img/nova-ecosystem/nova-wallet/nft-detail.png', alt: 'NFT Detail View' },
+    { id: '1', src: '/img/infer-ecosystem/infer-wallet/dashboard-dark-2026-09.webp', alt: 'Infer Wallet dark dashboard with account balance, token holdings and quick actions', caption: 'Dashboard' },
+    { id: '2', src: '/img/infer-ecosystem/infer-wallet/send-tokens-2026-09.webp', alt: 'Infer Wallet Send CEDRA screen with recipient, amount and transaction preview', caption: 'Send tokens' },
+    { id: '3', src: '/img/infer-ecosystem/infer-wallet/receive-tokens-2026-09.webp', alt: 'Infer Wallet Receive CEDRA screen with address QR code and Pay Me entry', caption: 'Receive tokens' },
+    { id: '4', src: '/img/infer-ecosystem/infer-wallet/swap-2026-09.webp', alt: 'Infer Wallet swap screen showing a CEDRA to AVA quote on Testnet', caption: 'Swap' },
+    { id: '5', src: '/img/infer-ecosystem/infer-wallet/activity-2026-09.webp', alt: 'Infer Wallet activity screen listing successful Testnet transactions', caption: 'Activity' },
+    { id: '6', src: '/img/infer-ecosystem/infer-wallet/nft-collection-2026-09.webp', alt: 'Infer Wallet NFT collection showing three illustrated badges', caption: 'NFT collection' },
+    { id: '7', src: '/img/infer-ecosystem/infer-wallet/nft-detail-2026-09.webp', alt: 'Infer Wallet NFT detail page for the Community Call Badge', caption: 'NFT detail' },
+    { id: '8', src: '/img/infer-ecosystem/infer-wallet/built-in-browser-2026-09.webp', alt: 'Infer Wallet built-in browser displaying Cedrascan on Testnet', caption: 'Built-in browser' },
+    { id: '9', src: '/img/infer-ecosystem/infer-wallet/settings-2026-09.webp', alt: 'Infer Wallet settings with account, network, security and appearance options', caption: 'Settings' },
+    { id: '10', src: '/img/infer-ecosystem/infer-wallet/dashboard-light-2026-09.webp', alt: 'Infer Wallet light dashboard with account balance, token holdings and quick actions', caption: 'Dashboard — light theme' },
   ];
 
   return (
-    <div id="nova-wallet-page" className="page-section">
-      <section className="hero nova-hero" role="banner">
+    <div id="infer-wallet-page" className="page-section">
+      <section className="hero infer-hero" role="banner">
         <div className="hero-content">
-          <div className="nova-logo-container" style={{ marginBottom: "2rem" }}>
+          <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>
             <img
-              src="assets/images/nova-wallet.png"
-              alt="Nova Wallet logo"
+              src="/assets/logos/flame.png"
+              alt="Infer Wallet logo"
               style={{
                 width: "140px",
                 maxWidth: "100%",
@@ -30,7 +31,7 @@ export default function NovaWallet() {
             />
           </div>
           <h1>
-            Nova Wallet — Secure Next-Gen Mobile Cryptocurrency Wallet
+            Infer Wallet — Secure Next-Gen Mobile Cryptocurrency Wallet
           </h1>
           <p>
             A non-custodial mobile wallet for the Cedra Network. Manage assets,
@@ -49,22 +50,22 @@ export default function NovaWallet() {
           <a
             href="https://play.google.com/store/apps/details?id=com.inferenco.novawallet"
             className="cta-button"
-            aria-label="Get Nova Wallet on Google Play"
+            aria-label="Get Infer Wallet on Google Play"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get Nova Wallet
+            Get Infer Wallet
           </a>
         </div>
       </section>
 
-      <section id="nova-wallet-gallery" className="section">
+      <section id="infer-wallet-gallery" className="section">
         <div className="container">
           <LightboxGallery images={walletImages} thumbnailWidth="280px" />
         </div>
       </section>
 
-      <section id="nova-wallet-features" className="section">
+      <section id="infer-wallet-features" className="section">
         <div className="container">
           <h2 className="section-title">Features</h2>
           <div className="features-grid">
@@ -89,7 +90,7 @@ export default function NovaWallet() {
               <span className="emoji">💱</span>
               <h4>Avera Swap Integration</h4>
               <p>
-                Swap tokens directly within Nova Wallet using Avera DEX.
+                Swap tokens directly within Infer Wallet using Avera DEX.
                 Get competitive rates across multiple liquidity pools.
               </p>
             </div>
@@ -103,9 +104,9 @@ export default function NovaWallet() {
             </div>
             <div className="feature-card">
               <span className="emoji">🌐</span>
-              <h4>dApp Browser with Nova Connect</h4>
+              <h4>dApp Browser with Infer Connect</h4>
               <p>
-                Integrated browser to connect to the decentralized web. Use Nova Connect
+                Integrated browser to connect to the decentralized web. Use Infer Connect
                 for seamless interaction with external dApps.
               </p>
             </div>

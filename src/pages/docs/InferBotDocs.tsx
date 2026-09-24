@@ -1,20 +1,20 @@
-export default function NovaBotDocs({ hash }: { hash: string }) {
+export default function InferBotDocs({ hash }: { hash: string }) {
   return (
     <>
-      <div id="nova-bot-introduction" className={`docs-section ${hash === "nova-bot-introduction" ? "active" : ""}`}>
-        <h1>Nova Bot - Introduction</h1>
+      <div id="infer-bot-introduction" className={`docs-section ${hash === "infer-bot-introduction" ? "active" : ""}`}>
+        <h1>Infer Bot - Introduction</h1>
 
         <div className="maintenance-notice" style={{ background: "var(--background-secondary)", padding: "1rem", borderRadius: "0.5rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
           <p style={{ margin: 0, color: "var(--text-secondary)" }}>
-            <strong>⚠️ Nova Bot is currently unavailable</strong><br />
+            <strong>⚠️ Infer Bot is currently unavailable</strong><br />
             We are working on a significant update. The bot will be back soon with improved features and a new AI model.
           </p>
         </div>
 
-        <p>Nova is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Cedra Network. Nova provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
+        <p>Infer is a sophisticated AI-powered Telegram bot ecosystem with deep blockchain integration on Cedra Network. Infer provides advanced group management, AI-driven conversations with tool-calling capabilities, automated payment systems, content moderation, and decentralized governance features. It's designed for Telegram users and groups that need intelligent automation, financial operations, and comprehensive administrative controls.</p>
 
-        <h2>What is Nova Bot?</h2>
-        <p>Nova Bot combines cutting-edge AI technology with blockchain transparency to deliver:</p>
+        <h2>What is Infer Bot?</h2>
+        <p>Infer Bot combines cutting-edge AI technology with blockchain transparency to deliver:</p>
         <ul>
           <li><strong>AI-Powered Conversations:</strong> Access to advanced language models with tool-calling capabilities</li>
           <li><strong>Blockchain Integration:</strong> Multi-chain support across Cedra Network, Aptos, Solana, and 20+ EVM-compatible blockchains for transparent payments and transactions</li>
@@ -34,13 +34,13 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
           <li><strong>Multi-Chain Wallet Support:</strong> Manage wallets across Cedra Network, Aptos, Solana, and 20+ EVM-compatible blockchains. Send tokens seamlessly across different networks with automatic gas handling</li>
         </ul>
 
-        <h2>Getting Started with Nova Bot</h2>
-        <p>To start using Nova Bot:</p>
+        <h2>Getting Started with Infer Bot</h2>
+        <p>To start using Infer Bot:</p>
         <p style={{ color: "var(--text-secondary)" }}>
-          <em>Nova Bot is currently unavailable during our significant update. Please check back soon!</em>
+          <em>Infer Bot is currently unavailable during our significant update. Please check back soon!</em>
         </p>
         <ol>
-          <li>Open Telegram and search for <a href="https://t.me/NovaInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @NovaInferencoBot</a></li>
+          <li>Open Telegram and search for <a href="https://t.me/InferInferencoBot" target="_blank" className="telegram-link"><i className="fab fa-telegram"></i> @InferInferencoBot</a></li>
           <li>Click "Start" to begin</li>
           <li>Send <code>/loginuser</code> to authenticate</li>
           <li>Get your wallet address with <code>/walletaddress</code></li>
@@ -48,18 +48,18 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
           <li>Start using commands like <code>/c</code> for personal AI chat or <code>/g</code> for group AI chat</li>
         </ol>
 
-        <p>Continue to the <a href="#nova-bot-commands" style={{ color: "var(--primary)", textDecoration: "underline" }}>Commands</a> section to learn about all available commands.</p>
+        <p>Continue to the <a href="#infer-bot-commands" style={{ color: "var(--primary)", textDecoration: "underline" }}>Commands</a> section to learn about all available commands.</p>
       </div>
 
-      <div id="nova-bot-commands" className={`docs-section ${hash === "nova-bot-commands" ? "active" : ""}`}>
-        <h1>Nova Bot - Commands</h1>
+      <div id="infer-bot-commands" className={`docs-section ${hash === "infer-bot-commands" ? "active" : ""}`}>
+        <h1>Infer Bot - Commands</h1>
 
-        <p>Nova Bot provides a comprehensive set of commands for both personal and group use. Here are all available commands:</p>
+        <p>Infer Bot provides a comprehensive set of commands for both personal and group use. Here are all available commands:</p>
 
         <h2>Basic Commands</h2>
         <div className="endpoint-item">
           <h4><code>/start</code></h4>
-          <p>Start interacting with the bot. Use this command to begin your Nova Bot experience.</p>
+          <p>Start interacting with the bot. Use this command to begin your Infer Bot experience.</p>
         </div>
 
         <div className="endpoint-item">
@@ -68,13 +68,13 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </div>
 
         <div className="endpoint-item">
-          <h4><code>/novaconnect</code></h4>
-          <p>Import the Nova Desk public key</p>
+          <h4><code>/inferconnect</code></h4>
+          <p>Import the Infer Desk public key</p>
         </div>
 
         <div className="endpoint-item">
           <h4><code>/tutorial</code></h4>
-          <p>Watch the quick start tutorial video to learn how to use Nova Bot.</p>
+          <p>Watch the quick start tutorial video to learn how to use Infer Bot.</p>
         </div>
 
         <h2>Authentication Commands</h2>
@@ -109,7 +109,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         <h2>Wallet & Balance Commands</h2>
         <div className="endpoint-item">
           <h4><code>/walletaddress</code></h4>
-          <p>Get your Nova wallet address. Use this address to fund your account with tokens.</p>
+          <p>Get your Infer wallet address. Use this address to fund your account with tokens.</p>
         </div>
 
         <div className="endpoint-item">
@@ -188,10 +188,10 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </div>
       </div>
 
-      <div id="nova-bot-settings" className={`docs-section ${hash === "nova-bot-settings" ? "active" : ""}`}>
-        <h1>Nova Bot - Settings</h1>
+      <div id="infer-bot-settings" className={`docs-section ${hash === "infer-bot-settings" ? "active" : ""}`}>
+        <h1>Infer Bot - Settings</h1>
 
-        <p>Nova Bot provides comprehensive settings for both individual users and groups. Configure your preferences to customize your Nova experience.</p>
+        <p>Infer Bot provides comprehensive settings for both individual users and groups. Configure your preferences to customize your Infer experience.</p>
 
         <h2>User Settings (<code>/usersettings</code>)</h2>
         <p>User settings can only be accessed in direct messages (DM). Send <code>/usersettings</code> to open the settings menu.</p>
@@ -211,7 +211,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>API Key</h4>
-          <p>Generate and manage API keys for integrating Nova's capabilities into your applications. Each API key can have different application prompts, specific tool permissions, custom token limits, and different payment currencies.</p>
+          <p>Generate and manage API keys for integrating Infer's capabilities into your applications. Each API key can have different application prompts, specific tool permissions, custom token limits, and different payment currencies.</p>
         </div>
 
         <div className="endpoint-item">
@@ -270,13 +270,13 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </div>
       </div>
 
-      <div id="nova-bot-prompts" className={`docs-section ${hash === "nova-bot-prompts" ? "active" : ""}`}>
-        <h1>Nova Bot - Prompts</h1>
+      <div id="infer-bot-prompts" className={`docs-section ${hash === "infer-bot-prompts" ? "active" : ""}`}>
+        <h1>Infer Bot - Prompts</h1>
 
-        <p>Nova Bot provides powerful AI capabilities through prompts. You can use <code>/c</code> for personal conversations and <code>/g</code> for group conversations. The AI can automatically call various tools to help answer your questions.</p>
+        <p>Infer Bot provides powerful AI capabilities through prompts. You can use <code>/c</code> for personal conversations and <code>/g</code> for group conversations. The AI can automatically call various tools to help answer your questions.</p>
 
         <h2>Available Tools</h2>
-        <p>Nova Bot has access to a wide range of tools that the AI can use automatically based on your prompts. These tools are categorized into built-in tools and MCP (Model Context Protocol) tools.</p>
+        <p>Infer Bot has access to a wide range of tools that the AI can use automatically based on your prompts. These tools are categorized into built-in tools and MCP (Model Context Protocol) tools.</p>
 
         <h3>Built-in Tools</h3>
         <p>These tools are always available and work with both <code>/c</code> and <code>/g</code> commands:</p>
@@ -381,7 +381,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </div>
 
         <h3>Bot-Specific Tools</h3>
-        <p>These tools are specific to Nova Bot functionality:</p>
+        <p>These tools are specific to Infer Bot functionality:</p>
 
         <div className="endpoint-item">
           <h4>Get Balance</h4>
@@ -405,7 +405,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <div className="endpoint-item">
           <h4>Multi-Chain Wallet</h4>
-          <p>Nova supports wallets across multiple blockchains including Cedra Network, Aptos, Solana, and 20+ EVM-compatible chains (Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, and more). You can send tokens to users on different blockchains.</p>
+          <p>Infer supports wallets across multiple blockchains including Cedra Network, Aptos, Solana, and 20+ EVM-compatible chains (Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, and more). You can send tokens to users on different blockchains.</p>
           <p><strong>Supported Chains:</strong> Use <code>/supportedchains</code> to see all supported EVM blockchain mainnets.</p>
           <p><strong>Important:</strong> To send tokens on EVM chains (Ethereum, Arbitrum, Base, etc.) or Solana, you must have native tokens (e.g., ETH for Ethereum, SOL for Solana) in your wallet to pay for gas fees. Cedra Network is the exception—you can send tokens on Cedra Network without needing CEDRA for gas.</p>
         </div>
@@ -444,7 +444,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
         </ul>
 
         <h2>Example Prompts</h2>
-        <p>Here are some example prompts you can use with Nova Bot:</p>
+        <p>Here are some example prompts you can use with Infer Bot:</p>
 
         <h3>Wallet & Balance Examples</h3>
         <div className="code-block"><code>/c What's my wallet address?</code></div>
@@ -507,7 +507,7 @@ export default function NovaBotDocs({ hash }: { hash: string }) {
 
         <h3>Image Generation Examples</h3>
         <div className="code-block"><code>/c Generate an image of a futuristic city with flying cars</code></div>
-        <div className="code-block"><code>/c Create a logo for a crypto project called "Nova"</code></div>
+        <div className="code-block"><code>/c Create a logo for a crypto project called "Infer"</code></div>
 
         <h3>Document Search Examples</h3>
         <div className="code-block"><code>/c What does my documentation say about API integration?</code></div>

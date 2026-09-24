@@ -1,5 +1,23 @@
 // Page types
-export type PageType = 'home' | 'nova' | 'nova-wallet' | 'nova-desk' | 'docs';
+export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'docs' | 'blogs';
+
+// Blog types
+export interface BlogAsset {
+  id: string;
+  alt_text: string | null;
+  public_url: string | null;
+  path: string | null;
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  excerpt?: string;
+  published_at: string | null;
+  created_at: string;
+  assets?: BlogAsset[];
+}
 
 // Product dropdown item type
 export interface ProductDropdownItem {

@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 
-export default function Nova() {
+export default function Infer() {
   return (
-    <div id="nova-page" className="page-section">
+    <div id="infer-page" className="page-section">
       {/* Hero Section */}
-      <section className="hero nova-hero" role="banner">
+      <section className="hero infer-hero" role="banner">
         <div className="hero-content">
-          <div className="nova-logo-container">
-            <div className="nova-logo-circle">
+          <div className="infer-logo-container">
+            <div className="infer-logo-circle">
               <img
-                src="assets/logos/nova.png"
-                alt="Nova logo"
-                className="nova-logo-animated"
+                src="/assets/logos/flame.png"
+                alt="Infer logo"
+                className="infer-logo-animated"
               />
             </div>
             <div className="orbit-ring"></div>
             <div className="orbit-ring orbit-ring-2"></div>
           </div>
           <h1>
-            Nova — Your smart community manager and your personal assistant on Telegram
+            Infer — Your smart community manager and your personal assistant on Telegram
           </h1>
           <p>
             Transparent platform with pay‑per‑use pricing and reliable service.
@@ -35,18 +35,18 @@ export default function Nova() {
           </p>
           <div className="maintenance-notice" style={{ background: "var(--background-secondary)", padding: "1rem", borderRadius: "0.5rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
             <p style={{ margin: 0, color: "var(--text-secondary)" }}>
-              <strong>⚠️ Nova Bot is currently unavailable</strong><br />
+              <strong>⚠️ Infer Bot is currently unavailable</strong><br />
               We are working on a significant update. The bot will be back soon with improved features and a new AI model.
             </p>
           </div>
           <a
-            href="https://t.me/NovaInferencoBot"
+            href="https://t.me/inferenco"
             className="cta-button"
-            aria-label="Start with Nova Bot"
+            aria-label="Start with Infer Bot"
             style={{ opacity: 0.6, cursor: "not-allowed" }}
             onClick={(e) => { e.preventDefault(); }}
           >
-            Start with Nova Bot (Temporarily Unavailable)
+            Start with Infer Bot (Temporarily Unavailable)
           </a>
         </div>
       </section>
@@ -89,12 +89,12 @@ export default function Nova() {
       {/* Solution Section */}
       <section id="solution" className="section">
         <div className="container">
-          <h2 className="section-title">How Nova Works</h2>
+          <h2 className="section-title">How Infer Works</h2>
           <div className="steps">
             <div className="step">
               <div className="step-number">1</div>
               <div className="step-content">
-                <h4>Connect with Nova</h4>
+                <h4>Connect with Infer</h4>
                 <p>
                   Start a conversation in Telegram and fund your account with Cedra Network tokens.
                 </p>
@@ -214,14 +214,14 @@ export default function Nova() {
       <section id="integration" className="section">
         <div className="container">
           <h2 className="section-title">
-            Integrate Nova in Your Applications
+            Integrate Infer in Your Applications
           </h2>
           <p>
-            Nova's powerful AI and blockchain capabilities can
+            Infer's powerful AI and blockchain capabilities can
             be seamlessly integrated into your applications
             through our comprehensive API. Whether you're
             building web applications, mobile apps, trading
-            platforms, or workflow automation tools, Nova
+            platforms, or workflow automation tools, Infer
             provides the infrastructure you need.
           </p>
           <div className="features-grid" style={{ marginTop: "2rem" }}>
@@ -275,7 +275,7 @@ export default function Nova() {
         <div className="container">
           <h2 className="section-title">Pricing</h2>
           <p>
-            <strong>Usage Pricing (Nova)</strong><br />
+            <strong>Usage Pricing (Infer)</strong><br />
             Prices shown in USD equivalent — billed in CEDRA or EURC at current market rate.
           </p>
           <p style={{ color: "var(--text-secondary)", marginBottom: "2rem" }}>
@@ -309,24 +309,24 @@ export default function Nova() {
         </div>
       </section>
 
-      {/* Call to Action Section for Nova */}
+      {/* Call to Action Section for Infer */}
       <section className="cta-section">
         <div className="container">
           <h2>
             Ready to experience AI &amp; blockchain together?
           </h2>
           <p>
-            Join teams already using Nova's transparent,
+            Join teams already using Infer's transparent,
             pay‑per‑use tools in Telegram.
           </p>
           <a
-            href="https://t.me/NovaInferencoBot"
+            href="https://t.me/inferenco"
             className="cta-button"
-            aria-label="Start with Nova Bot"
+            aria-label="Start with Infer Bot"
             style={{ opacity: 0.6, cursor: "not-allowed" }}
             onClick={(e) => { e.preventDefault(); }}
           >
-            Start with Nova Bot (Temporarily Unavailable)
+            Start with Infer Bot (Temporarily Unavailable)
           </a>
         </div>
       </section>

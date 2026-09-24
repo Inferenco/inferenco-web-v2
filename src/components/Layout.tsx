@@ -5,13 +5,14 @@ import type { PageType, ProductDropdownItem } from "../types";
 const navLinks: { label: string; path: string; page: PageType }[] = [
   { label: "Home", path: "/", page: "home" },
   { label: "Docs", path: "/docs", page: "docs" },
+  { label: "Blogs", path: "/blogs", page: "blogs" },
 ];
 
 const productsDropdown: ProductDropdownItem[] = [
-  { label: "Nova Bot", path: "/nova", page: "nova" },
-  { label: "Nova Wallet", path: "/nova-wallet", page: "nova-wallet" },
-  { label: "Nova Desk", path: "/nova-desk", page: "nova-desk" },
-  { label: "Nova Ecosystem", path: "https://app.inferenco.com", external: true },
+  { label: "Infer Bot", path: "/infer", page: "infer" },
+  { label: "Infer Wallet", path: "/infer-wallet", page: "infer-wallet" },
+  { label: "Infer Desk", path: "/infer-desk", page: "infer-desk" },
+  { label: "Infer Ecosystem", path: "https://app.inferenco.com", external: true },
 ];
 
 const socialLinks = [
@@ -259,10 +260,10 @@ export default function Layout() {
             </div>
             <div className="footer-links">
               <h4>Products</h4>
-              <Link to="/nova">Nova Bot</Link>
-              <Link to="/nova-wallet">Nova Wallet</Link>
-              <Link to="/nova-desk">Nova Desk</Link>
-              <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">Nova Ecosystem</a>
+              <Link to="/infer">Infer Bot</Link>
+              <Link to="/infer-wallet">Infer Wallet</Link>
+              <Link to="/infer-desk">Infer Desk</Link>
+              <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">Infer Ecosystem</a>
             </div>
             <div className="footer-links">
               <h4>Resources</h4>
