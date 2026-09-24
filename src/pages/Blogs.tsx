@@ -25,72 +25,67 @@ export default function Blogs() {
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [retryToken, setRetryToken] = useState(0);
 
   const observer = useRef<IntersectionObserver | null>(null);
   const lastBlogElementRef = useCallback(
     (node: HTMLDivElement | null) => {
-      if (loading) return;
+      if (loading || error) return;
       if (observer.current) observer.current.disconnect();
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
+          setLoading(true);
           setPage((prevPage) => prevPage + 1);
         }
       });
 
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [loading, hasMore, error]
   );
 
-  const fetchBlogs = useCallback(async (pageNum: number = 1) => {
-    try {
-      setLoading(true);
-      const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
-      const response = await fetch(`${apiUrl}/api/blogs?page=${pageNum}&limit=10`);
+  useEffect(() => {
+    const controller = new AbortController();
+    const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
+    void fetch(`${apiUrl}/api/blogs?page=${page}&limit=10`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json() as Promise<BlogApiResponse>;
+      })
+      .then((data) => {
+        if (controller.signal.aborted) return;
+        const formattedBlogs = data.blogs.map((blog) => ({
+          ...blog,
+          formattedDate: new Date(blog.published_at || blog.created_at).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+        }));
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data: BlogApiResponse = await response.json();
-
-      const formattedBlogs = data.blogs.map((blog) => ({
-        ...blog,
-        formattedDate: new Date(blog.published_at || blog.created_at).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        }),
-      }));
-
-      setBlogs((prevBlogs) => {
-        // Avoid duplicates by checking IDs
-        const newBlogs = formattedBlogs.filter(
-          (newBlog) => !prevBlogs.some((existingBlog) => existingBlog.id === newBlog.id)
-        );
-        return [...prevBlogs, ...newBlogs];
+        setBlogs((prevBlogs) => {
+          const newBlogs = formattedBlogs.filter(
+            (newBlog) => !prevBlogs.some((existingBlog) => existingBlog.id === newBlog.id)
+          );
+          return [...prevBlogs, ...newBlogs];
+        });
+        setHasMore(page * data.pagination.limit < data.pagination.total);
+        setError(null);
+      })
+      .catch((err) => {
+        if (controller.signal.aborted) return;
+        setError(err instanceof Error ? err.message : "Failed to fetch blogs");
+        console.error("Error fetching blogs:", err);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
       });
 
-      setHasMore(pageNum * data.pagination.limit < data.pagination.total);
-      setError(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to fetch blogs");
-      console.error("Error fetching blogs:", err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchBlogs(1);
-  }, [fetchBlogs]);
-
-  useEffect(() => {
-    if (page > 1) {
-      fetchBlogs(page);
-    }
-  }, [page, fetchBlogs]);
+    return () => controller.abort();
+  }, [page, retryToken]);
 
   return (
     <div className="blogs-page">
@@ -105,7 +100,11 @@ export default function Blogs() {
         {error && (
           <div className="error-message">
             <p>Error loading blogs: {error}</p>
-            <button onClick={() => fetchBlogs(1)}>Retry</button>
+            <button onClick={() => {
+              setError(null);
+              setLoading(true);
+              setRetryToken((token) => token + 1);
+            }}>Retry</button>
           </div>
         )}
 
