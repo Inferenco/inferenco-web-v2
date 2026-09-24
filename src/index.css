@@ -1738,6 +1738,89 @@ html.light .functions-table td {
     overflow-wrap: break-word;
 }
 
+.highlighted-code {
+    position: relative;
+    margin-top: 0;
+    --code-keyword: #bca7ff;
+    --code-string: #a5e7ba;
+    --code-number: #ffc681;
+    --code-comment: #a6b2c2;
+    --code-type: #81ddf2;
+    --code-title: #81c9ff;
+    --code-attr: #f4a9cf;
+}
+
+.highlighted-code::before {
+    content: attr(data-language);
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--code-comment);
+    font: 600 0.7rem/1.2 sans-serif;
+    letter-spacing: 0.08em;
+    text-align: left;
+    padding-right: 6.5rem;
+    text-transform: uppercase;
+}
+
+.code-copy-button {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 32px;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--light);
+    font: 600 0.75rem/1.2 sans-serif;
+    cursor: pointer;
+}
+
+.code-copy-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.code-copy-button:focus-visible {
+    outline: 2px solid #81c9ff;
+    outline-offset: 2px;
+}
+
+html.light .code-copy-button {
+    border-color: rgba(25, 52, 90, 0.28);
+    background: rgba(25, 52, 90, 0.06);
+    color: var(--text-primary);
+}
+
+html.light .code-copy-button:hover {
+    background: rgba(25, 52, 90, 0.12);
+}
+
+.highlighted-code .hljs-keyword,
+.highlighted-code .hljs-literal { color: var(--code-keyword); }
+.highlighted-code .hljs-string { color: var(--code-string); }
+.highlighted-code .hljs-number { color: var(--code-number); }
+.highlighted-code .hljs-comment { color: var(--code-comment); font-style: italic; }
+.highlighted-code .hljs-type,
+.highlighted-code .hljs-built_in { color: var(--code-type); }
+.highlighted-code .hljs-title,
+.highlighted-code .hljs-function { color: var(--code-title); }
+.highlighted-code .hljs-attr,
+.highlighted-code .hljs-property,
+.highlighted-code .hljs-variable { color: var(--code-attr); }
+
+html.light .highlighted-code {
+    --code-keyword: #5d35b4;
+    --code-string: #087153;
+    --code-number: #995000;
+    --code-comment: #5b687b;
+    --code-type: #076989;
+    --code-title: #155dae;
+    --code-attr: #a22567;
+}
+
 .endpoint-item {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;

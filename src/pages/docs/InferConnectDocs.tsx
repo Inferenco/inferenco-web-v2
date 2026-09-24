@@ -1,3 +1,4 @@
+import CodeBlock from "../../components/CodeBlock";
 export default function InferConnectDocs({ hash }: { hash: string }) {
   return (
     <>
@@ -43,17 +44,11 @@ export default function InferConnectDocs({ hash }: { hash: string }) {
       <div id="infer-connect-installation" className={`docs-section ${hash === "infer-connect-installation" ? "active" : ""}`}>
         <h1>Infer Connect - Installation</h1>
         <p>Install the Infer wallet adapter in your project:</p>
-        <div className="code-block">
-          <code>{`npm install @inferenco/infer-wallet-adapter`}</code>
-        </div>
+        <CodeBlock language="bash">{`npm install @inferenco/infer-wallet-adapter`}</CodeBlock>
         <p>or with yarn:</p>
-        <div className="code-block">
-          <code>{`yarn add @inferenco/infer-wallet-adapter`}</code>
-        </div>
+        <CodeBlock language="bash">{`yarn add @inferenco/infer-wallet-adapter`}</CodeBlock>
         <p>or with pnpm:</p>
-        <div className="code-block">
-          <code>{`pnpm add @inferenco/infer-wallet-adapter`}</code>
-        </div>
+        <CodeBlock language="bash">{`pnpm add @inferenco/infer-wallet-adapter`}</CodeBlock>
         <h2>Entry Points</h2>
         <div className="functions-table">
           <table>
@@ -87,8 +82,7 @@ export default function InferConnectDocs({ hash }: { hash: string }) {
 
         <h2>Method 1: AIP-62 Wallet-Standard</h2>
         <p>Use auto-registration when your dApp discovers wallets through <code>@cedra-labs/wallet-standard</code>.</p>
-        <div className="code-block">
-          <code>{`import "@inferenco/infer-wallet-adapter/auto-register";
+        <CodeBlock language="typescript">{`import "@inferenco/infer-wallet-adapter/auto-register";
 import { getCedraWallets } from "@cedra-labs/wallet-standard";
 
 const { cedraWallets } = getCedraWallets();
@@ -99,22 +93,18 @@ if (!wallet) {
 }
 
 const response = await wallet.features["cedra:connect"].connect();
-const account = response.args;`}</code>
-        </div>
+const account = response.args;`}</CodeBlock>
         <p>Register manually when you need explicit options:</p>
-        <div className="code-block">
-          <code>{`import { registerInferWallet } from "@inferenco/infer-wallet-adapter/aip62";
+        <CodeBlock language="typescript">{`import { registerInferWallet } from "@inferenco/infer-wallet-adapter/aip62";
 
 registerInferWallet({
   forceRegistration: true,
   desktopRegistration: true,
-});`}</code>
-        </div>
+});`}</CodeBlock>
 
         <h2>Method 2: Plugin-Style Adapter</h2>
         <p>Use <code>InferWallet</code> when your dApp expects a plugin-style adapter instance.</p>
-        <div className="code-block">
-          <code>{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
 const wallet = new InferWallet();
 const account = await wallet.connect();
@@ -133,13 +123,11 @@ const result = await wallet.signAndSubmitTransaction({
 });
 
 console.log(account.address.toString(), result.hash);
-await wallet.disconnect();`}</code>
-        </div>
+await wallet.disconnect();`}</CodeBlock>
 
         <h2>Method 3: Direct InferClient</h2>
         <p>Use <code>InferClient</code> when you need direct control over connection, signing, and sessions.</p>
-        <div className="code-block">
-          <code>{`import { Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Network } from "@cedra-labs/ts-sdk";
 import { InferClient } from "@inferenco/infer-wallet-adapter";
 
 const client = new InferClient({
@@ -153,15 +141,13 @@ const signed = await client.signMessage({
 });
 
 console.log(account.address.toString(), network?.name, signed.signature);
-await client.disconnect();`}</code>
-        </div>
+await client.disconnect();`}</CodeBlock>
       </div>
 
       <div id="infer-connect-react-integration" className={`docs-section ${hash === "infer-connect-react-integration" ? "active" : ""}`}>
         <h1>Infer Connect - React Integration</h1>
         <p>Keep one adapter instance for the app lifecycle and expose connect state through a hook.</p>
-        <div className="code-block">
-          <code>{`import { useEffect, useState } from "react";
+        <CodeBlock language="typescript">{`import { useEffect, useState } from "react";
 import {
   InferAdapterError,
   InferErrorCode,
@@ -210,11 +196,9 @@ export function useInferWallet() {
   };
 
   return { account, loading, error, connect, wallet };
-}`}</code>
-        </div>
+}`}</CodeBlock>
         <p>Use the hook from a component:</p>
-        <div className="code-block">
-          <code>{`import { useInferWallet } from "./useInferWallet";
+        <CodeBlock language="typescript">{`import { useInferWallet } from "./useInferWallet";
 
 export function ConnectButton() {
   const { account, loading, error, connect } = useInferWallet();
@@ -229,16 +213,14 @@ export function ConnectButton() {
       {loading ? "Connecting..." : error || "Connect Infer"}
     </button>
   );
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Handling Disconnect Events</h2>
         <p>
           The adapter emits a <code>disconnect</code> event when the wallet revokes the session.
           Use this to clear cached state and show reconnection UI.
         </p>
-        <div className="code-block">
-          <code>{`import { useEffect } from "react";
+        <CodeBlock language="typescript">{`import { useEffect } from "react";
 import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
 const wallet = new InferWallet();
@@ -273,8 +255,7 @@ export function useInferWalletWithDisconnect() {
   };
 
   return { account, connected, connect, wallet };
-}`}</code>
-        </div>
+}`}</CodeBlock>
         <p>
           This pattern ensures your UI always reflects the current connection state,
           even when the wallet revokes the session from another tab or window.
@@ -286,8 +267,7 @@ export function useInferWalletWithDisconnect() {
 
         <h2>InferWallet Class</h2>
         <p><code>InferWallet</code> is the plugin-style adapter wrapper around <code>InferClient</code>.</p>
-        <div className="code-block">
-          <code>{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
 const wallet = new InferWallet(options);
 
@@ -316,13 +296,11 @@ console.log(wallet.connecting);    // boolean
 console.log(wallet.connected);     // boolean
 console.log(wallet.publicAccount); // cached address/public key metadata
 console.log(wallet.network);       // cached network metadata
-console.log(wallet.deeplinkProvider());`}</code>
-        </div>
+console.log(wallet.deeplinkProvider());`}</CodeBlock>
 
         <h2>InferClient Class</h2>
         <p><code>InferClient</code> owns provider detection, session reuse, bridge requests, relay requests, and signing.</p>
-        <div className="code-block">
-          <code>{`import { InferClient } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { InferClient } from "@inferenco/infer-wallet-adapter";
 
 const client = new InferClient(options);
 
@@ -348,19 +326,16 @@ console.log(client.account);          // cached AccountInfo | null
 console.log(client.cachedNetwork);    // cached NetworkInfo | null
 console.log(client.refreshProvider()); // InferProvider | undefined
 console.log(client.hasProvider());     // boolean
-console.log(client.hasExternalSession()); // boolean`}</code>
-        </div>
+console.log(client.hasExternalSession()); // boolean`}</CodeBlock>
 
         <h2>AIP-62 Functions</h2>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   createInferAIP62Wallet,
   registerInferWallet,
 } from "@inferenco/infer-wallet-adapter/aip62";
 
 const cedraWallet = createInferAIP62Wallet();
-registerInferWallet({ forceRegistration: true });`}</code>
-        </div>
+registerInferWallet({ forceRegistration: true });`}</CodeBlock>
         <p>The AIP-62 wallet implements these features:</p>
         <ul>
           <li><code>cedra:connect</code>, <code>cedra:disconnect</code>, <code>cedra:account</code>, and <code>cedra:network</code></li>
@@ -373,8 +348,7 @@ registerInferWallet({ forceRegistration: true });`}</code>
           The <code>cedra:onDisconnect</code> feature allows dApps to detect when Infer Connect revokes their session.
           This is important for clearing cached state and showing reconnection UI.
         </p>
-        <div className="code-block">
-          <code>{`// Using cedra:onDisconnect feature
+        <CodeBlock language="typescript">{`// Using cedra:onDisconnect feature
 const wallet = getCedraWallets().cedraWallets.find((w) => w.name === "Infer Connect");
 
 if (wallet.features["cedra:onDisconnect"]) {
@@ -384,8 +358,7 @@ if (wallet.features["cedra:onDisconnect"]) {
     clearAccount();
     showConnectButton();
   });
-}`}</code>
-        </div>
+}`}</CodeBlock>
         <p>
           <code>registerInferWallet()</code> prevents duplicate registration. It registers when a Infer provider exists,
           an external session exists, <code>forceRegistration</code> is true, a mobile browser is detected, or a desktop
@@ -545,26 +518,21 @@ if (wallet.features["cedra:onDisconnect"]) {
         </div>
 
         <h2>Examples</h2>
-        <div className="code-block">
-          <code>{`import { Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Network } from "@cedra-labs/ts-sdk";
 import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
 const wallet = new InferWallet({
   networkOverride: Network.TESTNET,
   forceRegistration: true,
   fullnodeUrl: "https://fullnode.testnet.cedralabs.com/v1",
-});`}</code>
-        </div>
-        <div className="code-block">
-          <code>{`const wallet = new InferWallet({
+});`}</CodeBlock>
+        <CodeBlock language="typescript">{`const wallet = new InferWallet({
   relayBaseUrl: "https://relay.your-domain.com",
   websocketBaseUrl: "wss://relay.your-domain.com/v1/ws",
   mobileRequestTimeoutMs: 240000,
-});`}</code>
-        </div>
+});`}</CodeBlock>
         <p>Enable session liveness heartbeat for faster disconnect detection:</p>
-        <div className="code-block">
-          <code>{`const wallet = new InferWallet({
+        <CodeBlock language="typescript">{`const wallet = new InferWallet({
   sessionLivenessIntervalMs: 30000, // Check every 30 seconds
 });
 
@@ -573,14 +541,11 @@ wallet.on("disconnect", () => {
   // Wallet revoked the session - clear cached state
   clearAccount();
   showConnectButton();
-});`}</code>
-        </div>
+});`}</CodeBlock>
         <p>Enable deeplink origin verification for phishing protection:</p>
-        <div className="code-block">
-          <code>{`const wallet = new InferWallet({
+        <CodeBlock language="typescript">{`const wallet = new InferWallet({
   expectedOrigin: "https://my-dapp.com",
-});`}</code>
-        </div>
+});`}</CodeBlock>
       </div>
 
       <div id="infer-connect-mobile-relay" className={`docs-section ${hash === "infer-connect-mobile-relay" ? "active" : ""}`}>
@@ -661,8 +626,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
             </tbody>
           </table>
         </div>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   InferAdapterError,
   InferErrorCode,
   CallbackOriginMismatch,
@@ -695,8 +659,7 @@ try {
   if (error instanceof CallbackOriginMismatch) {
     console.log("Phishing attempt detected - callback origin mismatch:", error.message);
   }
-}`}</code>
-        </div>
+}`}</CodeBlock>
         <p>
           The <code>CallbackOriginMismatch</code> error is thrown when the <code>expectedOrigin</code> option is set
           and the deeplink callback's <code>window.location.origin</code> doesn't match. This is a security feature
@@ -713,8 +676,7 @@ try {
           <li><code>window.cedra</code>, only when <code>isInferWallet === true</code> and <code>detectAliases</code> is enabled</li>
           <li><code>window.aptos</code>, only when <code>isInferWallet === true</code> and <code>detectAliases</code> is enabled</li>
         </ol>
-        <div className="code-block">
-          <code>{`import { InferWallet, detectProvider } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { InferWallet, detectProvider } from "@inferenco/infer-wallet-adapter";
 
 const provider = detectProvider({ detectAliases: true });
 const wallet = new InferWallet({ detectAliases: false });
@@ -723,8 +685,7 @@ const available =
   wallet.readyState !== "NotDetected" &&
   wallet.readyState !== "Unsupported";
 
-console.log(Boolean(provider), available);`}</code>
-        </div>
+console.log(Boolean(provider), available);`}</CodeBlock>
         <p>Ready states:</p>
         <ul>
           <li><code>"Installed"</code> - provider, stored session, or desktop bridge/deeplink path is available</li>
@@ -770,8 +731,7 @@ console.log(Boolean(provider), available);`}</code>
             </tbody>
           </table>
         </div>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   clearExternalSession,
   clearPendingMobilePairing,
   readExternalSession,
@@ -783,8 +743,7 @@ const validated = await readValidatedExternalSession();
 
 await wallet.disconnect(); // revokes active session and clears stored state
 clearExternalSession();
-clearPendingMobilePairing();`}</code>
-        </div>
+clearPendingMobilePairing();`}</CodeBlock>
         <p>
           Infer Desk sessions are validated against the local bridge before reuse. Infer Wallet sessions store
           encrypted relay credentials and are reused by the relay transport. Cross-window updates are coordinated
@@ -833,8 +792,7 @@ clearPendingMobilePairing();`}</code>
           </table>
         </div>
         <h2>Usage Example</h2>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   generatePkcePair,
   appendCodeChallengeToDeeplink,
   exchangeCodeForSession,
@@ -860,8 +818,7 @@ const session = await exchangeCodeForSession(codeVerifier);
 
 // 5. Use with InferWallet
 const wallet = new InferWallet();
-const account = await wallet.connect();`}</code>
-        </div>
+const account = await wallet.connect();`}</CodeBlock>
         <p>
           <strong>Note:</strong> The adapter handles PKCE automatically for standard flows.
           You only need to use these functions directly for custom integration scenarios.
@@ -970,8 +927,7 @@ const account = await wallet.connect();`}</code>
           embedded browser. This is useful to avoid duplicate wallet registration and to use
           the embedded provider directly.
         </p>
-        <div className="code-block">
-          <code>{`import { isHostedInInferDesk, InferWallet } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { isHostedInInferDesk, InferWallet } from "@inferenco/infer-wallet-adapter";
 
 if (isHostedInInferDesk()) {
   // Running inside Infer Desk - embedded provider is available
@@ -992,8 +948,7 @@ if (!isHostedInInferDesk()) {
 
 const wallets = getCedraWallets().cedraWallets.filter(
   (w) => !(isHostedInInferDesk() && w.name === "Infer Connect")
-);`}</code>
-        </div>
+);`}</CodeBlock>
         <h2>How Detection Works</h2>
         <p>
           <code>isHostedInInferDesk()</code> checks for these sentinel values:
@@ -1035,8 +990,7 @@ const wallets = getCedraWallets().cedraWallets.filter(
         <p>
           To take advantage of new features, you can optionally update your code:
         </p>
-        <div className="code-block">
-          <code>{`// Enable session liveness heartbeat for faster disconnect detection
+        <CodeBlock language="typescript">{`// Enable session liveness heartbeat for faster disconnect detection
 const wallet = new InferWallet({
   sessionLivenessIntervalMs: 30000, // 30 second interval
 });
@@ -1059,8 +1013,7 @@ import { isHostedInInferDesk, registerInferWallet } from "@inferenco/infer-walle
 
 if (!isHostedInInferDesk()) {
   registerInferWallet();
-}`}</code>
-        </div>
+}`}</CodeBlock>
         <h3>Deprecated</h3>
         <ul>
           <li><code>buildDesktopOrMobileConnectUrlWithRequest</code> - Deprecated, will be removed in v0.4.0. Use <code>InferClient.connect()</code> instead.</li>

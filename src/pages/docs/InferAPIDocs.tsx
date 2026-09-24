@@ -1,3 +1,4 @@
+import CodeBlock from "../../components/CodeBlock";
 export default function InferAPIDocs({ hash }: { hash: string }) {
   return (
     <>
@@ -182,222 +183,180 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
         <p>Here are example prompts you can use with the Infer API to trigger different tools:</p>
 
         <h3>Price Prediction Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Predict Bitcoin price in 1 hour",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What will Ethereum price be in 1 week? Show me a forecast with chart data",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get a 4-hour price forecast for Solana",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Forecast CEDRA price for 1 month with confidence intervals",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Market Data Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me trending pools on Cedra Network",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Find pools for CEDRA/EURC on Cedra Network",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What's the current Fear & Greed Index?",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get historical price data for Ethereum for the last 7 days",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Image Generation Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Generate an image of a futuristic city with flying cars",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Document Search Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What does my documentation say about API integration?",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Web Search Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Search for the latest news about Cedra Network blockchain",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Calculator Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Calculate the ROI if I invest $1000 at 8% annual return for 5 years",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Social Intelligence Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What tokens are trending on Twitter right now?",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me the top mentions of Bitcoin on X in the last 24 hours",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 1500,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get smart stats for the Twitter account @elonmusk",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "What are the trending narratives in crypto right now?",
   "model": "advanced",
   "verbosity": "High",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Search for mentions of Cedra Network on Twitter and summarize the sentiment",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h3>Automated Reports Examples</h3>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "I want to create report of daily yield farming across Aave, Compound, and Convex protocols",
   "model": "advanced",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "List all my reports",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Get the latest content for report 77d51445-4146-4ab4-bf5b-5e69bffe462c",
   "model": "standard",
   "verbosity": "Medium",
   "max_tokens": 2000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "input": "Show me available datasets for creating reports",
   "model": "standard",
   "verbosity": "Low",
   "max_tokens": 1000,
   "reasoning": false
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <p><strong>Note:</strong> The AI will automatically select and use the appropriate tools based on your input. You don't need to specify which tools to use - just describe what you want, and the AI will handle the rest!</p>
         <p><strong>Reports Tool:</strong> You can create reports, list executions, get report content, and manage reports through natural language prompts. Reports can be scheduled to run daily, weekly, monthly, or on-demand, and are available in both Markdown and JSON formats.</p>
@@ -597,8 +556,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
           </div>
 
           <h5>Response</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "text": "AI response text",
   "model": "advanced",
   "image_data": null,
@@ -608,13 +566,11 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
   "file_search": 0,
   "image_generation": 0,
   "code_interpreter": 0
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h3>Streaming Response (TypeScript Example)</h3>
           <p>When <code>streaming: true</code> is set, the API returns a stream of Server-Sent Events (SSE). Here is an example of how to consume it using TypeScript:</p>
-          <div className="code-block">
-            <code>{`async function streamAIResponse(apiKey: string, prompt: string) {
+          <CodeBlock language="typescript">{`async function streamAIResponse(apiKey: string, prompt: string) {
   try {
     const response = await fetch('https://gateway.inferenco.com/ai', {
       method: 'POST',
@@ -658,8 +614,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
   } catch (error) {
     console.error('Streaming failed:', error);
   }
-}`}</code>
-          </div>
+}`}</CodeBlock>
         </div>
 
         <div className="endpoint-item">
@@ -763,8 +718,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
 
           <h5>Example Request</h5>
           <p>Call a single tool:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
   -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -777,12 +731,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p>Call multiple tools:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
   -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -802,12 +754,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p>Example with forecast tool:</p>
-          <div className="code-block">
-            <code>{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
+          <CodeBlock language="bash">{`curl -X POST https://gateway.inferenco.com/mcp-tools \\
   -H "Authorization: Bearer infer_your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -823,15 +773,13 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
         }
       }
     ]
-  }'`}</code>
-          </div>
+  }'`}</CodeBlock>
 
           <p><strong>Note:</strong> For <code>get_forecast</code>, use <code>asset_id</code> (CoinGecko format like "bitcoin", "ethereum", "stohn-coin") not ticker symbols. <code>forecast_type</code> should be "short" or "long". <code>duration</code> for short-term: "fifteen_minutes", "one_hour", "four_hours". For long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
 
           <h5>Response</h5>
           <p>Returns an array of tool execution results. Each result contains the tool's response content.</p>
-          <div className="code-block">
-            <code>{`[
+          <CodeBlock language="json">{`[
   {
     "content": [
       {
@@ -841,8 +789,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
     ],
     "isError": false
   }
-]`}</code>
-          </div>
+]`}</CodeBlock>
 
           <h5>Available MCP Tools</h5>
           <p>The following MCP tools are available (same tools that can be called automatically via the <code>/ai</code> endpoint):</p>
@@ -874,8 +821,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
           <h4>Tool Examples</h4>
 
           <h5>get_trending_pools</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_trending_pools",
     "arguments": {
@@ -885,12 +831,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "duration": "24h"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>search_pools</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "search_pools",
     "arguments": {
@@ -899,25 +843,21 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "limit": 5
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_token_price</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_token_price",
     "arguments": {
       "symbol": "BTC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_forecast</h5>
           <p><strong>Important:</strong> Use CoinGecko asset IDs (e.g., "bitcoin", "ethereum") not ticker symbols. Duration values: short-term: "fifteen_minutes", "one_hour", "four_hours"; long-term: "one_day", "three_days", "one_week", "one_month", "three_months", "six_months", "one_year", "four_years".</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_forecast",
     "arguments": {
@@ -928,12 +868,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "include_chart": false
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>social_intelligence</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "social_intelligence",
     "arguments": {
@@ -943,48 +881,40 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "min_mentions": 5
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>Other operations: "smart_stats" (requires account), "top_mentions" (requires ticker), "mentions_search" (requires keywords), "event_summary", "trending_narratives", "token_news", "trending_contracts_twitter", "trending_contracts_telegram".</p>
           <p><strong>Note:</strong> User profiles in responses are returned as clickable profile links (e.g., <code>[username](https://x.com/username)</code>) instead of @username tags to avoid confusion in other apps.</p>
 
           <h5>get_fear_and_greed_index</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_fear_and_greed_index",
     "arguments": {}
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>calculate_expression</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "calculate_expression",
     "arguments": {
       "expression": "1000 * (1 + 0.08) ^ 5"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_current_time</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_current_time",
     "arguments": {
       "timezone": "UTC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>get_coindesk_history</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "get_coindesk_history",
     "arguments": {
@@ -993,12 +923,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "end_date": "2024-01-31"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>dexscreener_api</h5>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "dexscreener_api",
     "arguments": {
@@ -1006,14 +934,12 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "query": "CEDRA/EURC"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <h5>manage_reports</h5>
           <p><strong>Note:</strong> Available actions: "create", "list", "list_by_ref", "status", "datasets", "discover", "list_executions", "get_content", "get_latest_content", "get_all_executions_content", "delete".</p>
           <p>Create a report:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1024,11 +950,9 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "delivery_api_retention": true
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>Get latest report content:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1037,11 +961,9 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "format": "markdown"
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
           <p>List all executions with content:</p>
-          <div className="code-block">
-            <code>{`{
+          <CodeBlock language="json">{`{
   "tools": [{
     "name": "manage_reports",
     "arguments": {
@@ -1051,8 +973,7 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
       "limit": 10
     }
   }]
-}`}</code>
-          </div>
+}`}</CodeBlock>
 
           <p><strong>Usage:</strong> Use this endpoint when you need to call specific tools directly without AI interpretation. The AI endpoint (<code>/ai</code>) automatically selects and calls appropriate tools based on your prompt, while this endpoint gives you direct control over tool execution.</p>
         </div>
@@ -1068,12 +989,10 @@ export default function InferAPIDocs({ hash }: { hash: string }) {
         </ul>
 
         <p>Error responses follow this format:</p>
-        <div className="code-block">
-          <code>{`{
+        <CodeBlock language="json">{`{
   "message": "Error description",
   "status": 401
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Rate Limiting</h2>
         <p>API requests are subject to rate limiting based on your account tier and usage patterns. If you exceed the rate limit, you'll receive a <code>429 Too Many Requests</code> response.</p>

@@ -1,3 +1,4 @@
+import CodeBlock from "../../components/CodeBlock";
 export default function WalletProfileDocs({ hash }: { hash: string }) {
   const contractAddress =
     "0xbdf9c94e797716648980ed99a0c6e2b3d6452ce5c1d28dbad3517a9be682b724";
@@ -171,13 +172,11 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         <p>
           Address the module with <code>{contractAddress}::user_profiles::&lt;function&gt;</code>.
         </p>
-        <div className="code-block">
-          <code>{`// Read nickname on testnet
+        <CodeBlock language="typescript">{`// Read nickname on testnet
 {function:"${contractAddress}::user_profiles::get_nickname",functionArguments:["0xabc..."]}
 
 // Write nickname + avatar
-{function:"${contractAddress}::user_profiles::set_profile",functionArguments:["alice","https://cdn.example.com/avatars/alice.png"]}`}</code>
-        </div>
+{function:"${contractAddress}::user_profiles::set_profile",functionArguments:["alice","https://cdn.example.com/avatars/alice.png"]}`}</CodeBlock>
       </div>
 
       <div
@@ -192,13 +191,11 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Struct</h2>
-        <div className="code-block">
-          <code>{`struct UserProfile has key, store, drop {
+        <CodeBlock language="move">{`struct UserProfile has key, store, drop {
     nickname: String,
     avatar_url: String,
     updated_at: u64,
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <div className="functions-table">
           <table>
@@ -285,8 +282,7 @@ export default function WalletProfileDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Read a Nickname</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -298,12 +294,10 @@ const [nickname] = await cedra.view({
   },
 });
 
-console.log("nickname:", nickname); // "" when no profile exists`}</code>
-        </div>
+console.log("nickname:", nickname); // "" when no profile exists`}</CodeBlock>
 
         <h2>Read the Full Profile</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -314,12 +308,10 @@ const [nickname, avatarUrl, updatedAt] = await cedra.view({
   },
 });
 
-console.log(nickname, avatarUrl, updatedAt);`}</code>
-        </div>
+console.log(nickname, avatarUrl, updatedAt);`}</CodeBlock>
 
         <h2>Check Existence First</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -332,12 +324,10 @@ const [hasProfile] = await cedra.view({
 
 if (hasProfile) {
   // safe to call get_profile
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Write a Profile</h2>
-        <div className="code-block">
-          <code>{`import {
+        <CodeBlock language="typescript">{`import {
   Account,
   Cedra,
   Network,
@@ -364,12 +354,10 @@ const pending = await cedra.signAndSubmitTransaction({
 });
 
 await cedra.waitForTransaction({ transactionHash: pending.hash });
-console.log("profile updated:", pending.hash);`}</code>
-        </div>
+console.log("profile updated:", pending.hash);`}</CodeBlock>
 
         <h2>Delete a Profile</h2>
-        <div className="code-block">
-          <code>{`const transaction = await cedra.transaction.build.simple({
+        <CodeBlock language="typescript">{`const transaction = await cedra.transaction.build.simple({
   sender: account.accountAddress,
   data: {
     function: "${contractAddress}::user_profiles::clear_profile",
@@ -382,8 +370,7 @@ const pending = await cedra.signAndSubmitTransaction({
   transaction,
 });
 
-await cedra.waitForTransaction({ transactionHash: pending.hash });`}</code>
-        </div>
+await cedra.waitForTransaction({ transactionHash: pending.hash });`}</CodeBlock>
       </div>
 
       <div
@@ -402,8 +389,7 @@ await cedra.waitForTransaction({ transactionHash: pending.hash });`}</code>
         </p>
 
         <h2>Read with the SDK</h2>
-        <div className="code-block">
-          <code>{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
+        <CodeBlock language="typescript">{`import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
 
@@ -415,12 +401,10 @@ async function fetchNickname(address) {
     },
   });
   return nickname;
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Write Through InferWallet</h2>
-        <div className="code-block">
-          <code>{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
+        <CodeBlock language="typescript">{`import { InferWallet } from "@inferenco/infer-wallet-adapter";
 
 const wallet = new InferWallet();
 const { account } = await wallet.connect();
@@ -433,12 +417,10 @@ await wallet.signAndSubmitTransaction({
       "https://cdn.example.com/avatars/alice.png",
     ],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
 
         <h2>Write Through AIP-62</h2>
-        <div className="code-block">
-          <code>{`import "@inferenco/infer-wallet-adapter/auto-register";
+        <CodeBlock language="typescript">{`import "@inferenco/infer-wallet-adapter/auto-register";
 import { getCedraWallets } from "@cedra-labs/wallet-standard";
 
 const { cedraWallets } = getCedraWallets();
@@ -454,18 +436,15 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
       "https://cdn.example.com/avatars/alice.png",
     ],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
 
         <h2>Clear Through InferWallet</h2>
-        <div className="code-block">
-          <code>{`await wallet.signAndSubmitTransaction({
+        <CodeBlock language="typescript">{`await wallet.signAndSubmitTransaction({
   data: {
     function: "${contractAddress}::user_profiles::clear_profile",
     functionArguments: [],
   },
-});`}</code>
-        </div>
+});`}</CodeBlock>
       </div>
 
       <div
@@ -480,8 +459,7 @@ await wallet.features["cedra:signAndSubmitTransaction"].signAndSubmitTransaction
         </p>
 
         <h2>The Hook</h2>
-        <div className="code-block">
-          <code>{`import { useCallback, useEffect, useState } from "react";
+        <CodeBlock language="typescript">{`import { useCallback, useEffect, useState } from "react";
 import { Cedra, Network } from "@cedra-labs/ts-sdk";
 
 const cedra = new Cedra({ network: Network.TESTNET });
@@ -524,12 +502,10 @@ export function useWalletProfile(address) {
   }, [refresh]);
 
   return { profile, loading, error, refresh };
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Editor Component</h2>
-        <div className="code-block">
-          <code>{`import { useState } from "react";
+        <CodeBlock language="typescript">{`import { useState } from "react";
 import { InferWallet } from "@inferenco/infer-wallet-adapter";
 import { useWalletProfile } from "./useWalletProfile";
 
@@ -584,8 +560,7 @@ export function ProfileEditor({ account }) {
       </button>
     </div>
   );
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <p>
           Pair the editor with a Infer Connect connection button and a state
@@ -726,8 +701,7 @@ export function ProfileEditor({ account }) {
         </div>
 
         <h2>Map Abort Codes to UI Messages</h2>
-        <div className="code-block">
-          <code>{`function explainProfileError(message) {
+        <CodeBlock language="typescript">{`function explainProfileError(message) {
   if (message.includes("E_NICKNAME_TOO_LONG") || message.includes("Move abort 1")) {
     return "Nickname must be at most 20 characters.";
   }
@@ -741,12 +715,10 @@ export function ProfileEditor({ account }) {
     return "Nickname cannot be empty.";
   }
   return "Profile transaction failed. Please try again.";
-}`}</code>
-        </div>
+}`}</CodeBlock>
 
         <h2>Safe Read Pattern</h2>
-        <div className="code-block">
-          <code>{`async function loadProfile(address) {
+        <CodeBlock language="typescript">{`async function loadProfile(address) {
   const cedra = new Cedra({ network: Network.TESTNET });
   const [hasProfile] = await cedra.view({
     payload: {
@@ -767,8 +739,7 @@ export function ProfileEditor({ account }) {
   });
 
   return { nickname, avatarUrl, updatedAt };
-}`}</code>
-        </div>
+}`}</CodeBlock>
       </div>
     </>
   );
