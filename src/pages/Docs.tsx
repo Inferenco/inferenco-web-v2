@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import InferBotDocs from "./docs/InferBotDocs";
 import InferAPIDocs from "./docs/InferAPIDocs";
@@ -97,6 +97,16 @@ function DocsContent() {
   const hash = location.hash.slice(1) || "infer-bot-introduction";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const knownIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const section of docsSections) {
+      for (const item of section.items) {
+        ids.add(item.id);
+      }
+    }
+    return ids;
+  }, []);
+
   return (
     <div id="docs-page" className="page-section docs-container docs-page">
       <button
@@ -136,13 +146,30 @@ function DocsContent() {
       </aside>
 
       <main className="docs-content">
-        <InferBotDocs hash={hash} />
-        <InferAPIDocs hash={hash} />
-        <InferConnectDocs hash={hash} />
-        <BridgeDocs hash={hash} />
-        <PayMeDocs hash={hash} />
-        <WalletProfileDocs hash={hash} />
-        <MigrationDocs hash={hash} />
+        {!knownIds.has(hash) ? (
+          <div className="docs-section active">
+            <h1>Section not found</h1>
+            <p>
+              The section <code>#{hash}</code> doesn&apos;t exist in the
+              current docs. It may have been removed or renamed.
+            </p>
+            <p>
+              <a href="/docs#infer-bot-introduction" className="cta-button secondary">
+                Browse docs from the beginning
+              </a>
+            </p>
+          </div>
+        ) : (
+          <>
+            <InferBotDocs hash={hash} />
+            <InferAPIDocs hash={hash} />
+            <InferConnectDocs hash={hash} />
+            <BridgeDocs hash={hash} />
+            <PayMeDocs hash={hash} />
+            <WalletProfileDocs hash={hash} />
+            <MigrationDocs hash={hash} />
+          </>
+        )}
       </main>
     </div>
   );
