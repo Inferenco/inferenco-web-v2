@@ -33,7 +33,7 @@ export default function InferConnectDocs({ hash }: { hash: string }) {
         </ul>
         <h3>Package</h3>
         <ul>
-          <li><code>@inferenco/infer-wallet-adapter</code> - Infer wallet adapter package (v0.2.0-rc.18)</li>
+          <li><code>@inferenco/infer-wallet-adapter</code> - Infer wallet adapter package (v0.2.0)</li>
         </ul>
         <p>
           <strong>Note:</strong> There is no <code>@inferenco/infer-connect</code> package.
