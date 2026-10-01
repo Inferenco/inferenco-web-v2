@@ -11,6 +11,18 @@ export default function MigrationDocs({ hash }: DocsProps) {
           the rebrand is in the product name, the data directory, the bridge configuration,
           and the wallet adapter package.
         </p>
+        <div className="important-note">
+          <strong>⚠ Nova Desk cannot update itself to Infer Desk.</strong> The 0.5.x
+          in-app updater only installs artifacts published under the old Nova Desk
+          release identity, and Infer Desk 0.6.0 is not one of them. This is a
+          one-time <strong>manual install</strong>: download and run the Infer Desk
+          0.6.0 installer for your platform.
+          <br /><br />
+          If you clicked "Install" inside Nova Desk and saw an error like{" "}
+          <em>"Nova Desk downloaded the update but could not start the installer
+          helper"</em>, nothing was downloaded and nothing is wrong with your
+          computer or wallet. Follow the manual steps below.
+        </div>
         <p>
           Most of the migration is <strong>automatic on first launch</strong>: vaults move from
           the sled store to redb, the legacy data directory is detected and its recent-vaults
@@ -107,17 +119,19 @@ export default function MigrationDocs({ hash }: DocsProps) {
           consumer that was paired with the old pin.
         </p>
 
-        <h2>Nostr — master switch stays off by default</h2>
+        <h2>Nostr — settings carry over verbatim</h2>
         <p>
-          The Nostr configuration (relays, allow-list, threshold policies) is migrated, and a
-          default relay is seeded. <strong>The master enable switch stays OFF</strong> after
-          migration — explicit operator consent is required before the desktop starts
-          accepting Nostr pair requests.
+          The existing <code>RemoteNostr</code> entry is migrated as-is, including its{" "}
+          <code>enabled</code> flag. If you had Nostr enabled in Nova Desk, it is still enabled
+          in Infer Desk on first launch. The default relay is only seeded when no{" "}
+          <code>RemoteNostr</code> entry exists at all, and that fresh entry starts with{" "}
+          <code>enabled: false</code>.
         </p>
         <p>
-          This protects operators who ran Nova Desk with Nostr disabled and do not want
-          Infer Desk to silently start emitting DMs. Re-enable in Settings → Bridge → Remote
-          when you are ready.
+          <strong>Security consequence:</strong> if you ran Nova Desk with Nostr enabled,
+          open <strong>Settings → Bridge → Remote</strong> on first launch and verify the
+          master switch matches your intent. Infer Desk will otherwise continue emitting DMs to
+          your existing paired clients.
         </p>
 
         <h2>Existing pairs and allow-lists</h2>
@@ -256,6 +270,9 @@ export default function MigrationDocs({ hash }: DocsProps) {
               the official release page
             </a>
             . Verify the download against the minisign signature bundled with each asset.
+            <strong>Note:</strong> all official Infer Desk downloads live on the{" "}
+            <a href="/infer-desk">Infer Desk page</a>, which always points at the latest
+            available assets across every supported platform.
           </li>
           <li>
             <strong>First launch.</strong> Infer Desk detects the legacy directory and forwards
@@ -274,8 +291,9 @@ export default function MigrationDocs({ hash }: DocsProps) {
           </li>
           <li>
             <strong>If you used Remote Nostr:</strong> open Settings → Bridge → Remote and
-            explicitly enable the Nostr master switch. Existing npub pairs continue to work;
-            the switch is OFF by default as a safety measure.
+            <strong>verify</strong> the master switch state — your Nova Desk setting (on or
+            off) carried over unchanged. The switch is <strong>not</strong> forced off after
+            migration.
           </li>
           <li>
             <strong>Update your dApps.</strong> Install the new adapter package and rename
@@ -287,6 +305,12 @@ export default function MigrationDocs({ hash }: DocsProps) {
             one full sync cycle.
           </li>
         </ol>
+
+        <p>
+          <strong>Future updates are automatic again from 0.6.0 onward.</strong>{" "}
+          Settings → Check for Updates → Install handles every release after
+          this one. The manual step above is one-time.
+        </p>
 
         <p>
           If anything looks wrong, the legacy backup is the source of truth — Infer Desk
