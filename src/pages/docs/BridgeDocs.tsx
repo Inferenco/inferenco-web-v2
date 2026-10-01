@@ -214,6 +214,75 @@ export default function BridgeDocs({ hash }: { hash: string }) {
           <li><strong>Use discovery only for discovery:</strong> Nostr kind-20000 pairing events are ephemeral and should not be stored by relays; encrypted DMs carry the actual pair and request flow.</li>
         </ul>
       </div>
+
+      <div id="bridge-wallet-client" className={`docs-section ${hash === "bridge-wallet-client" ? "active" : ""}`}>
+        <h1>Bridge wallet client</h1>
+        <p>
+          A Bridge <em>wallet client</em> is any application that
+          initiates requests against Infer Desk through one of the three
+          transports. The flagship wallet client today is{" "}
+          <a href="/docs#pay-me-introduction">Infer Wallet's Pay Me</a>{" "}
+          flow.
+        </p>
+
+        <h2>Infer Wallet is a Nostr-only client</h2>
+        <p>
+          Infer Wallet can only consume the Bridge through the{" "}
+          <strong>Remote Nostr</strong> transport. It does not implement
+          Local IPC or mTLS, because:
+        </p>
+        <ul>
+          <li>Local IPC is for native binaries on the same host — a phone has no IPC socket to talk to.</li>
+          <li>mTLS requires a TCP port forward to the wallet's network — phones behind NAT cannot accept inbound connections.</li>
+          <li>Nostr is the only transport that works through firewalls and across networks with no firewall holes.</li>
+        </ul>
+        <p>
+          As a consequence, the Pay Me flow is always a Nostr pair — there
+          is no "faster" path from the wallet to the desk.
+        </p>
+
+        <h2>Building a third-party Nostr wallet client</h2>
+        <p>
+          A third-party mobile (or desktop) Nostr Bridge client must
+          implement:
+        </p>
+        <ol>
+          <li>
+            <strong>QR scan</strong> of a <code>cedra:</code> URI carrying a
+            JSON <code>NostrQrPayload</code> (<code>qr_kind</code>,{" "}
+            <code>wallet_npub</code>, token, <code>relay_hints</code>,
+            expiry, ephemeral token).
+          </li>
+          <li>
+            <strong>Kind-20000 discovery</strong> (ephemeral) or direct
+            kind-4 DM (reusable) to the merchant's wallet_npub.
+          </li>
+          <li>
+            <strong>NIP-44 v2 encryption</strong> of every DM payload
+            (hand-rolled or via <code>@noble/ciphers</code>; there is no
+            <code>nostr-tools</code> in this ecosystem).
+          </li>
+          <li>
+            <strong><code>connect</code> + <code>pollConnect</code></strong>{" "}
+            to confirm session-scoped reachability.
+          </li>
+          <li>
+            <strong><code>signAndSubmit</code> +{" "}
+            <code>pollSignAndSubmit</code></strong>{" "}
+            carrying a canonical{" "}
+            <code>0x1::cedra_account::transfer</code> or{" "}
+            <code>0x1::primary_fungible_store::transfer</code> payload.
+          </li>
+          <li>
+            <strong><code>Disconnect</code></strong> on user cancellation or
+            pair expiry.
+          </li>
+        </ol>
+        <p>
+          See <a href="/docs#pay-me-introduction">Pay Me → Introduction</a>{" "}
+          for the concrete walkthrough as implemented in Infer Wallet.
+        </p>
+      </div>
     </>
   );
 }
