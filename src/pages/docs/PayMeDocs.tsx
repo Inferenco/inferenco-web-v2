@@ -194,7 +194,8 @@ export default function PayMeDocs({ hash }: { hash: string }) {
         <p>
           Once the desk signs and submits the transfer, the wallet shows a
           confirmation screen with three actions: <strong>Request again</strong>
-          (same merchant, same amount pre-filled), <strong>Pair list</strong>
+          (same merchant — the active pair is kept and the amount is cleared
+          for re-entry), <strong>Pair list</strong>
           (manage your reusable merchants), and <strong>Dashboard</strong>
           (back to the home screen).
         </p>
@@ -269,7 +270,7 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             <strong>Two distinct TTLs.</strong> A Pay Me pair has both a QR
             validity window (<code>qrExpiresAtUnix</code>) and a post-approval
             session TTL (<code>ttlExpiresAtUnix</code>, derived from the desk's
-            <code>ttl_secs</code>). After 0.2.0-rc.24 the schema keeps them
+            <code>ttl_secs</code>). The wallet's pair-store schema keeps them
             separate — the QR can expire while a previously-paired session is
             still active, and vice versa.
           </li>
@@ -317,13 +318,13 @@ export default function PayMeDocs({ hash }: { hash: string }) {
         </p>
 
         <h2>Per-row status</h2>
-        <p>Each row shows a status badge:</p>
+        <p>Each row shows a status indicator:</p>
         <ul>
-          <li><strong>Active</strong> — ready for new transfers</li>
+          <li><strong>Connected</strong> — an active connection is live; ready for new transfers</li>
+          <li><strong>Connecting</strong> — a connection open is in flight</li>
+          <li><strong>Tap to connect</strong> — the pair is stored but no connection is open; tapping the row reconnects</li>
           <li><strong>Consumed</strong> — ephemeral pair used its single shot</li>
-          <li><strong>Expired</strong> — TTL elapsed</li>
-          <li><strong>Revoked</strong> — removed from either side</li>
-          <li><strong>Unavailable</strong> — merchant's desk offline</li>
+          <li><strong>Connection expired</strong> — the pair's TTL elapsed or the operator severed the connection</li>
         </ul>
 
         <h2>Pair list actions</h2>
@@ -331,8 +332,12 @@ export default function PayMeDocs({ hash }: { hash: string }) {
           <li><strong>Rename</strong> — give a pair a friendly label (default = merchant pubkey).</li>
           <li><strong>Remove</strong> — permanently deletes the pair from the wallet. The merchant's desk will see the next request as a fresh pairing.</li>
           <li><strong>Disconnect</strong> — close the active connection without removing the pair; the next transfer reconnects.</li>
-          <li><strong>Prune stale</strong> — bulk-removes all Expired and Revoked rows.</li>
         </ul>
+        <p>
+          Expired ephemeral entries are pruned <strong>automatically</strong>{" "}
+          every time the list renders — if any were removed, a brief toast
+          shows the count.
+        </p>
 
         <h2>Persistence across app restarts</h2>
         <p>

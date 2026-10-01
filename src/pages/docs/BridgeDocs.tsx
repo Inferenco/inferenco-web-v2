@@ -248,8 +248,8 @@ export default function BridgeDocs({ hash }: { hash: string }) {
         </p>
         <ol>
           <li>
-            <strong>QR scan</strong> of a <code>cedra:</code> URI carrying a
-            JSON <code>NostrQrPayload</code> (<code>qr_kind</code>,{" "}
+            <strong>QR scan</strong> of the JSON{" "}
+            <code>NostrQrPayload</code> itself (<code>qr_kind</code>,{" "}
             <code>wallet_npub</code>, token, <code>relay_hints</code>,
             expiry, ephemeral token).
           </li>
