@@ -6,6 +6,7 @@ import InferConnectDocs from "./docs/InferConnectDocs";
 import BridgeDocs from "./docs/BridgeDocs";
 import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
+import MigrationDocs from "./docs/MigrationDocs";
 
 const docsSections = [
   {
@@ -78,6 +79,17 @@ const docsSections = [
       { id: "wallet-profile-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
     ],
   },
+  {
+    title: "Migration",
+    items: [
+      { id: "migration-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "migration-data-directory", label: "Data Directory", icon: "fas fa-folder" },
+      { id: "migration-pairs-and-certs", label: "Pairs & Certificates", icon: "fas fa-key" },
+      { id: "migration-bridge-config", label: "Bridge Config", icon: "fas fa-bridge" },
+      { id: "migration-wallet-adapter", label: "Wallet Adapter", icon: "fab fa-react" },
+      { id: "migration-action-checklist", label: "Action Checklist", icon: "fas fa-list-ol" },
+    ],
+  },
 ];
 
 function DocsContent() {
@@ -130,6 +142,7 @@ function DocsContent() {
         <BridgeDocs hash={hash} />
         <PayMeDocs hash={hash} />
         <WalletProfileDocs hash={hash} />
+        <MigrationDocs hash={hash} />
       </main>
     </div>
   );

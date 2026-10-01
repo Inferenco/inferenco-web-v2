@@ -12,6 +12,10 @@ const inferConnectDocs = readFileSync(
 );
 const bridgeDocs = readFileSync(resolve(root, "src/pages/docs/BridgeDocs.tsx"), "utf8");
 const payMeDocs = readFileSync(resolve(root, "src/pages/docs/PayMeDocs.tsx"), "utf8");
+const migrationDocs = readFileSync(
+  resolve(root, "src/pages/docs/MigrationDocs.tsx"),
+  "utf8"
+);
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -60,6 +64,23 @@ describe("Infer Connect docs consistency", () => {
       "@noble/*",
     ]) {
       assert.ok(payMeDocs.includes(token));
+    }
+
+    const migrationIds = sectionIds(migrationDocs);
+    assert.equal(new Set(migrationIds).size, migrationIds.length);
+    for (const id of migrationIds) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+
+    for (const id of [
+      "migration-introduction",
+      "migration-data-directory",
+      "migration-pairs-and-certs",
+      "migration-bridge-config",
+      "migration-wallet-adapter",
+      "migration-action-checklist",
+    ]) {
+      assert.ok(migrationIds.includes(id), `missing migration section: ${id}`);
     }
   });
 
