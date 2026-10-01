@@ -13,7 +13,8 @@ export default function MigrationDocs({ hash }: DocsProps) {
         </p>
         <p>
           Most of the migration is <strong>automatic on first launch</strong>: vaults move from
-          the sled store to redb, the legacy data directory is detected and forwarded, and
+          the sled store to redb, the legacy data directory is detected and its recent-vaults
+          registry is forwarded, and
           the new bridge configuration schema is adopted. The pages below describe what
           changes, what is automatic, and what an operator must do manually.
         </p>
@@ -50,10 +51,14 @@ export default function MigrationDocs({ hash }: DocsProps) {
         <h2>Automatic fallback</h2>
         <p>
           On first launch, Infer Desk calls <code>infer_desk_app_data_dir_with_legacy_fallback()</code>:
-          if <code>~/.nova_desk/</code> exists and <code>~/.infer_desk/</code> does not, the
-          legacy directory is forwarded as the data directory for that run, and a
-          <code>.legacy_path_marker</code> is written into the new directory so the operator can
-          see that the fallback fired.
+          if <code>~/.nova_desk/</code> contains recognizable wallet artifacts
+          (<code>recent_vaults.ron</code>, <code>config.ron</code>, or <code>ui_theme.txt</code>)
+          and <code>~/.infer_desk/</code> does not exist yet, the new directory is created, the
+          legacy <code>recent_vaults.ron</code> registry is forwarded into it (deduplicated by
+          vault path), and a <code>.legacy_path_marker</code> is written into the new directory
+          so the operator can see that the fallback fired. The data directory itself is always
+          <code>~/.infer_desk/</code> — only the recent-vaults registry is forwarded, and the
+          fallback never re-triggers once the marker exists.
         </p>
         <p>
           The legacy directory is <strong>never deleted</strong>. It is left untouched so the
@@ -134,7 +139,7 @@ export default function MigrationDocs({ hash }: DocsProps) {
         <h2>Local IPC socket</h2>
         <p>
           The default Unix socket path is now <code>~/.infer_desk/runtime/infer-desk-bus.sock</code>.
-          On Windows, the named pipe is <code>\\.\pipe\infer-desk-bridge-local-pipe</code>.
+          On Windows, the named pipe is <code>\\.\pipe\infer-desk-bus</code>.
           Native consumers that hardcoded the legacy path must update.
         </p>
 
@@ -148,9 +153,10 @@ export default function MigrationDocs({ hash }: DocsProps) {
 
         <h2>Environment variables</h2>
         <p>
-          New installations should use the <code>INFER_DESK_*</code> prefix. The legacy{" "}
-          <code>NOVA_DESK_*</code> variables (e.g. <code>NOVA_DESK_ALLOW_HTTP_LOOPBACK</code>)
-          are still respected for one release cycle as a transition aid.
+          Use the <code>INFER_DESK_*</code> prefix (e.g.{" "}
+          <code>INFER_DESK_ALLOW_HTTP_LOOPBACK</code>). The legacy <code>NOVA_DESK_*</code>
+          variables are <strong>not</strong> honored by Infer Desk — update any scripts or
+          container definitions that still set them.
         </p>
       </div>
 
@@ -253,7 +259,7 @@ export default function MigrationDocs({ hash }: DocsProps) {
           </li>
           <li>
             <strong>First launch.</strong> Infer Desk detects the legacy directory and forwards
-            it. Watch the migration summary banner — it lists migrated files and any items that
+            its recent-vaults registry into the new data directory. Watch the migration summary banner — it lists migrated files and any items that
             require your attention (e.g. "mTLS identity needs re-mint").
           </li>
           <li>
