@@ -5,10 +5,11 @@ const REPO_NAME = "infer-desk-releases";
 // Downloads are pinned to the published v0.6.0 release. Bump RELEASE_TAG
 // when a new full release ships.
 const RELEASE_TAG = "v0.6.0";
-// macOS builds are not attached to RELEASE_TAG — they ship under a separate
-// tag. Point macOS users at that tag's release page; the zip assets become
-// directly downloadable there once they are attached.
-const MACOS_RELEASE_TAG = "v0.6.0-macos";
+// macOS binaries are not yet attached to any release. We link to the releases
+// listing page so users land on a working page where macOS assets will
+// appear when published. Once Inferenco publishes the macOS zips (likely
+// under their own tag), add a constant for that tag and switch the macOS
+// cases to use the same ${base} pattern as the other platforms.
 
 export const getLatestReleaseVersion = async (): Promise<string> => {
   try {
@@ -31,8 +32,9 @@ export const getDownloadUrl = (os: OS): string => {
     case "mac":
     case "mac-intel":
     case "mac-arm64":
-      // macOS zips are published under MACOS_RELEASE_TAG, not RELEASE_TAG.
-      return `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/tag/${MACOS_RELEASE_TAG}`;
+      // macOS binaries are not attached to any release yet, so link to the
+      // releases listing page rather than 404-ing on a not-yet-published tag.
+      return `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases`;
     case "linux":
       return `${base}/InferDesk-x86_64.AppImage`;
     case "linux-arm64":
