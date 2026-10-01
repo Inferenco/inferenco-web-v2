@@ -1,24 +1,27 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import NovaBotDocs from "./docs/NovaBotDocs";
-import NovaAPIDocs from "./docs/NovaAPIDocs";
-import NovaConnectDocs from "./docs/NovaConnectDocs";
+import InferBotDocs from "./docs/InferBotDocs";
+import InferAPIDocs from "./docs/InferAPIDocs";
+import InferConnectDocs from "./docs/InferConnectDocs";
+import BridgeDocs from "./docs/BridgeDocs";
+import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
+import MigrationDocs from "./docs/MigrationDocs";
 
 const docsSections = [
   {
-    title: "Nova Bot",
+    title: "Infer Bot",
     items: [
-      { id: "nova-bot-introduction", label: "Introduction", icon: "fas fa-book" },
-      { id: "nova-bot-commands", label: "Commands", icon: "fas fa-terminal" },
-      { id: "nova-bot-settings", label: "Settings", icon: "fas fa-cog" },
-      { id: "nova-bot-prompts", label: "Prompts", icon: "fas fa-comments" },
+      { id: "infer-bot-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-bot-commands", label: "Commands", icon: "fas fa-terminal" },
+      { id: "infer-bot-settings", label: "Settings", icon: "fas fa-cog" },
+      { id: "infer-bot-prompts", label: "Prompts", icon: "fas fa-comments" },
     ],
   },
   {
-    title: "Nova API",
+    title: "Infer API",
     items: [
-      { id: "nova-api-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-api-introduction", label: "Introduction", icon: "fas fa-book" },
       { id: "generate-api-key", label: "Generate API Key", icon: "fas fa-key" },
       { id: "tools", label: "Tools", icon: "fas fa-toolbox" },
       { id: "add-knowledge", label: "Add Knowledge", icon: "fas fa-book-open" },
@@ -27,18 +30,42 @@ const docsSections = [
     ],
   },
   {
-    title: "Nova Connect",
+    title: "Infer Connect",
     items: [
-      { id: "nova-connect-introduction", label: "Introduction", icon: "fas fa-book" },
-      { id: "nova-connect-installation", label: "Installation", icon: "fas fa-download" },
-      { id: "nova-connect-quickstart", label: "Quick Start", icon: "fas fa-rocket" },
-      { id: "nova-connect-react-integration", label: "React Integration", icon: "fab fa-react" },
-      { id: "nova-connect-api-reference", label: "API Reference", icon: "fas fa-code" },
-      { id: "nova-connect-configuration", label: "Configuration", icon: "fas fa-cog" },
-      { id: "nova-connect-mobile-relay", label: "Mobile Relay", icon: "fas fa-mobile-alt" },
-      { id: "nova-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
-      { id: "nova-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
-      { id: "nova-connect-session-management", label: "Session Management", icon: "fas fa-database" },
+      { id: "infer-connect-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "infer-connect-installation", label: "Installation", icon: "fas fa-download" },
+      { id: "infer-connect-quickstart", label: "Quick Start", icon: "fas fa-rocket" },
+      { id: "infer-connect-react-integration", label: "React Integration", icon: "fab fa-react" },
+      { id: "infer-connect-api-reference", label: "API Reference", icon: "fas fa-code" },
+      { id: "infer-connect-configuration", label: "Configuration", icon: "fas fa-cog" },
+      { id: "infer-connect-mobile-relay", label: "Mobile Relay", icon: "fas fa-mobile-alt" },
+      { id: "infer-connect-pkce", label: "PKCE", icon: "fas fa-lock" },
+      { id: "infer-connect-bridge-api", label: "Bridge API", icon: "fas fa-bridge" },
+      { id: "infer-connect-detection", label: "Detection", icon: "fas fa-eye" },
+      { id: "infer-connect-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
+      { id: "infer-connect-provider-detection", label: "Provider Detection", icon: "fas fa-search" },
+      { id: "infer-connect-session-management", label: "Session Management", icon: "fas fa-database" },
+      { id: "infer-connect-version-migration", label: "Version Migration", icon: "fas fa-code-branch" },
+    ],
+  },
+  {
+    title: "Bridge",
+    items: [
+      { id: "bridge-introduction", label: "Introduction", icon: "fas fa-bridge" },
+      { id: "bridge-transport-choice", label: "Choose a Transport", icon: "fas fa-route" },
+      { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
+      { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
+      { id: "bridge-wallet-client", label: "Wallet Client", icon: "fas fa-mobile-alt" },
+    ],
+  },
+  {
+    title: "Pay Me",
+    items: [
+      { id: "pay-me-introduction", label: "Introduction", icon: "fas fa-mobile-alt" },
+      { id: "pay-me-flow", label: "Transfer Flow", icon: "fas fa-exchange-alt" },
+      { id: "pay-me-security", label: "Security & Recovery", icon: "fas fa-shield-alt" },
+      { id: "pay-me-managing-pairs", label: "Managing Pairs", icon: "fas fa-link" },
+      { id: "pay-me-scenarios", label: "Scenarios", icon: "fas fa-lightbulb" },
     ],
   },
   {
@@ -48,18 +75,37 @@ const docsSections = [
       { id: "wallet-profile-contract-functions", label: "Contract Functions", icon: "fas fa-code" },
       { id: "wallet-profile-data-model", label: "Data Model", icon: "fas fa-database" },
       { id: "wallet-profile-cedra-ts-sdk", label: "Cedra TS SDK", icon: "fas fa-plug" },
-      { id: "wallet-profile-nova-connect", label: "Nova Connect", icon: "fas fa-link" },
+      { id: "wallet-profile-infer-connect", label: "Infer Connect", icon: "fas fa-link" },
       { id: "wallet-profile-react-example", label: "React Example", icon: "fab fa-react" },
       { id: "wallet-profile-best-practices", label: "Best Practices", icon: "fas fa-lightbulb" },
       { id: "wallet-profile-error-handling", label: "Error Handling", icon: "fas fa-exclamation-triangle" },
+    ],
+  },
+  {
+    title: "Migration",
+    items: [
+      { id: "migration-introduction", label: "Introduction", icon: "fas fa-book" },
+      { id: "migration-data-directory", label: "Data Directory", icon: "fas fa-folder" },
+      { id: "migration-wallet-adapter", label: "Wallet Adapter", icon: "fab fa-react" },
+      { id: "migration-action-checklist", label: "Action Checklist", icon: "fas fa-list-ol" },
     ],
   },
 ];
 
 function DocsContent() {
   const location = useLocation();
-  const hash = location.hash.slice(1) || "nova-bot-introduction";
+  const hash = location.hash.slice(1) || "infer-bot-introduction";
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const knownIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const section of docsSections) {
+      for (const item of section.items) {
+        ids.add(item.id);
+      }
+    }
+    return ids;
+  }, []);
 
   return (
     <div id="docs-page" className="page-section docs-container docs-page">
@@ -100,10 +146,30 @@ function DocsContent() {
       </aside>
 
       <main className="docs-content">
-        <NovaBotDocs hash={hash} />
-        <NovaAPIDocs hash={hash} />
-        <NovaConnectDocs hash={hash} />
-        <WalletProfileDocs hash={hash} />
+        {!knownIds.has(hash) ? (
+          <div className="docs-section active">
+            <h1>Section not found</h1>
+            <p>
+              The section <code>#{hash}</code> doesn&apos;t exist in the
+              current docs. It may have been removed or renamed.
+            </p>
+            <p>
+              <a href="/docs#infer-bot-introduction" className="cta-button secondary">
+                Browse docs from the beginning
+              </a>
+            </p>
+          </div>
+        ) : (
+          <>
+            <InferBotDocs hash={hash} />
+            <InferAPIDocs hash={hash} />
+            <InferConnectDocs hash={hash} />
+            <BridgeDocs hash={hash} />
+            <PayMeDocs hash={hash} />
+            <WalletProfileDocs hash={hash} />
+            <MigrationDocs hash={hash} />
+          </>
+        )}
       </main>
     </div>
   );

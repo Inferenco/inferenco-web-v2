@@ -1,0 +1,388 @@
+import { getDownloadUrl, type OS } from "../services/github";
+import LightboxGallery from "../components/LightboxGallery";
+
+const deskImages = [
+  { id: '1', src: '/img/infer-ecosystem/infer-desk/dashboard.webp', alt: 'Infer Desk light theme dashboard showing balance, events and recent activity', caption: 'Dashboard' },
+  { id: '2', src: '/img/infer-ecosystem/infer-desk/send-tokens.webp', alt: 'Infer Desk Send Tokens form with USDT selected and a prepared transfer', caption: 'Send tokens' },
+  { id: '3', src: '/img/infer-ecosystem/infer-desk/receive-tokens.webp', alt: 'Infer Desk Receive Cedra screen showing the selected account address and receive QR code', caption: 'Receive tokens' },
+  { id: '4', src: '/img/infer-ecosystem/infer-desk/swap.webp', alt: 'Infer Desk Swap screen showing Cedra and USDC assets with a displayed quote', caption: 'Swap' },
+  { id: '5', src: '/img/infer-ecosystem/infer-desk/transaction-history.webp', alt: 'Infer Desk Transactions screen showing a list of recent wallet activity', caption: 'Transaction history' },
+  { id: '6', src: '/img/infer-ecosystem/infer-desk/nfts-batch-selection.webp', alt: 'Infer Desk NFT gallery with two collectibles selected for batch transfer', caption: 'NFTs and batch selection' },
+  { id: '7', src: '/img/infer-ecosystem/infer-desk/built-in-browser.webp', alt: 'Infer Desk built-in browser showing an ecosystem dApp alongside the wallet navigation', caption: 'Built-in browser' },
+  { id: '8', src: '/img/infer-ecosystem/infer-desk/settings-profile.webp', alt: 'Infer Desk Settings screen showing theme, network and public profile controls', caption: 'Settings and public profile' },
+  { id: '9', src: '/img/infer-ecosystem/infer-desk/bridge-paired-apps.webp', alt: 'Infer Desk Bridge screen showing paired apps and recent bridge activity', caption: 'Bridge and paired apps' },
+  { id: '10', src: '/img/infer-ecosystem/infer-desk/dashboard-dark.webp', alt: 'Infer Desk dark theme dashboard showing balance, events and recent activity', caption: 'Dashboard — dark theme' },
+];
+
+const detectOS = (): OS => {
+  if (typeof navigator === "undefined") return "unknown";
+  const ua = navigator.userAgent.toLowerCase();
+  const platform = navigator.platform.toLowerCase();
+  
+  // Check if we can access navigator.oscpu for more precise detection (Firefox)
+  const oscpu =
+    (navigator as Navigator & { oscpu?: string }).oscpu?.toLowerCase() || "";
+
+  if (ua.includes("win") || platform.includes("win")) return "windows";
+  if (ua.includes("freebsd") || platform.includes("freebsd")) return "freebsd";
+  if (ua.includes("linux")) {
+    if (ua.includes("arm64") || ua.includes("aarch64") || platform.includes("arm64") || oscpu.includes("aarch64") || oscpu.includes("arm64")) {
+      return "linux-arm64";
+    }
+    return "linux";
+  }
+  if (ua.includes("mac") || platform.includes("mac")) {
+    // Detect Apple Silicon (M1/M2) vs Intel
+    // userAgent contains "Apple" + platform contains "Mac" + check for ARM
+    if (platform.includes("arm64") || ua.includes("arm64") || ua.includes("aarch64") || 
+        oscpu.includes("arm64") || oscpu.includes("aarch64") ||
+        navigator.maxTouchPoints > 0) { // M1/M2 Macs have touch capability
+      return "mac-arm64";
+    }
+    return "mac-intel";
+  }
+  return "unknown";
+};
+
+export default function InferDesk() {
+  const detectedOS = detectOS();
+  const isUnknownOS = detectedOS === "unknown";
+  const isMacOS = detectedOS === "mac" || detectedOS === "mac-intel" || detectedOS === "mac-arm64";
+  const showAllButtons = isUnknownOS || isMacOS;
+
+  // On Linux, always show both x64 and ARM64 buttons since we can't reliably
+  // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
+  // even when running on ARM64 hardware). Also show FreeBSD since Firefox on
+  // FreeBSD reports as Linux.
+  const shouldShow = (os: OS): boolean => {
+    if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64" || os === "freebsd")) return true;
+    if (detectedOS === "freebsd" && os === "freebsd") return true;
+    if (detectedOS === "mac-intel" && (os === "mac-intel" || os === "mac-arm64")) return true;
+    if (detectedOS === "mac-arm64" && (os === "mac-intel" || os === "mac-arm64")) return true;
+    return detectedOS === os || showAllButtons;
+  };
+
+  return (
+    <div id="infer-desk-page" className="page-section">
+      <section className="hero infer-hero" role="banner">
+        <div className="hero-content">
+          <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>
+            <img
+              src="/assets/logos/flame.png"
+              alt="Infer Desk logo"
+              style={{
+                width: "180px",
+                maxWidth: "100%",
+                borderRadius: "16px",
+                boxShadow: "0 4px 20px rgba(0, 178, 255, 0.4)",
+              }}
+            />
+          </div>
+          <h1>Infer Desk — Secure Desktop Cryptocurrency Wallet</h1>
+          <p>
+            A production-ready desktop wallet for the Cedra Network. Manage assets,
+            connect to dApps, and securely store your crypto with advanced security features.
+          </p>
+          <div className="download-buttons">
+            {shouldShow("windows") && (
+              <a
+                id="download-infer-desk-windows"
+                href={getDownloadUrl("windows")}
+                className="cta-button"
+                aria-label="Download for Windows"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-windows"></i> Windows
+              </a>
+            )}
+            {shouldShow("mac-intel") && (
+              <a
+                id="download-infer-desk-mac-intel"
+                href={getDownloadUrl("mac-intel")}
+                className="cta-button"
+                aria-label="Download for macOS Intel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-apple"></i> macOS Intel
+              </a>
+            )}
+            {shouldShow("mac-arm64") && (
+              <a
+                id="download-infer-desk-mac-arm64"
+                href={getDownloadUrl("mac-arm64")}
+                className="cta-button"
+                aria-label="Download for macOS Apple Silicon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-apple"></i> macOS Apple Silicon
+              </a>
+            )}
+            {shouldShow("linux") && (
+              <a
+                id="download-infer-desk-linux"
+                href={getDownloadUrl("linux")}
+                className="cta-button"
+                aria-label="Download for Linux x64"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linux"></i> Linux x64
+              </a>
+            )}
+            {shouldShow("linux-arm64") && (
+              <a
+                id="download-infer-desk-linux-arm64"
+                href={getDownloadUrl("linux-arm64")}
+                className="cta-button"
+                aria-label="Download for Linux ARM64"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linux"></i> Linux ARM64
+              </a>
+            )}
+            {shouldShow("freebsd") && (
+              <a
+                id="download-infer-desk-freebsd"
+                href={getDownloadUrl("freebsd")}
+                className="cta-button"
+                aria-label="Download for FreeBSD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-freebsd"></i> FreeBSD
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section id="infer-desk-gallery" className="section">
+        <div className="container">
+          <LightboxGallery images={deskImages} thumbnailWidth="760px" className="desktop-screenshot-gallery" />
+        </div>
+      </section>
+
+      <section id="infer-desk-features" className="section">
+        <div className="container">
+          <h2 className="section-title">Features</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <span className="emoji">👤</span>
+              <h4>Account Management</h4>
+              <p>
+                Create, import, and export accounts. Full control over your wallet
+                identities with support for multiple accounts.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔐</span>
+              <h4>Security First</h4>
+              <p>
+                Non-Custodial wallet with AES-GCM encryption, Argon2 key derivation,
+                and brute-force protection. You own your keys.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💰</span>
+              <h4>Asset Management</h4>
+              <p>
+                Send and receive assets across the network. Manage CEDRA coins and
+                custom tokens with real-time balances.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔄</span>
+              <h4>Online Update System</h4>
+              <p>
+                Automatic update checks on startup. Download and install updates
+                directly from GitHub releases.
+              </p>
+              <p>
+                <strong>Note:</strong> The one exception is the
+                Nova Desk → Infer Desk 0.6.0 upgrade, which is a one-time manual
+                install. See the <a href="/docs#migration-introduction">upgrade
+                guide</a> for details.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🕸️</span>
+              <h4>Devnet + Testnet Networks</h4>
+              <p>
+                First-class support for the Cedra Testnet and Devnet networks,
+                each with its own fullnode, GraphQL endpoint, and faucet. The
+                network selector in Settings lets you switch instantly and test
+                your dApps against either environment.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🌐</span>
+              <h4>Full DApp Browser</h4>
+              <p>
+                Built-in browser for seamless dApp interaction with Infer Connect
+                support and deep link handling.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📊</span>
+              <h4>Activity History</h4>
+              <p>
+                View all your transactions and wallet events in one place.
+                Track your activity across the Cedra Network.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💱</span>
+              <h4>Avera Swap Integration</h4>
+              <p>
+                Swap tokens directly within Infer Desk using Avera DEX.
+                Get the best rates with multi-pool routing.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🎮</span>
+              <h4>Gaming &amp; NFTs</h4>
+              <p>
+                View and manage digital collectibles. Native support for Cedra-based
+                games like decentralized Poker.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🛡️</span>
+              <h4>Audit Logging</h4>
+              <p>
+                Comprehensive security logging for all operations. Track all wallet
+                activity for security monitoring.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔗</span>
+              <h4>Infer Connect Integration</h4>
+              <p>
+                Use your favorite browser or the internal browser with Infer Connect.
+                Seamlessly connect external browsers to Infer Desk for dApp access.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💾</span>
+              <h4>External Device Storage</h4>
+              <p>
+                Store encryption keys on external devices (hard disks, micro SD, USB)
+                without requiring expensive hardware wallets.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🎨</span>
+              <h4>Dark &amp; Light Themes</h4>
+              <p>
+                Choose between dark and light themes for comfortable usage
+                in any lighting condition.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📤</span>
+              <h4>System Tray Integration</h4>
+              <p>
+                Access your wallet quickly from the system tray. Infer Desk
+                stays available while you work.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🛡️</span>
+              <h4>Operator Pair Approval</h4>
+              <p>
+                Bridge → Remote now shows pending ephemeral pair requests in the
+                "All paired apps" view. The operator can approve or reject each
+                request individually — ephemeral pairings are no longer fully
+                automatic.
+              </p>
+              <a href="/docs#bridge-introduction" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔗</span>
+              <h4>Deep Link Support</h4>
+              <p>
+                Secure URI handling for blockchain actions. Open links directly
+                in Infer Desk for seamless Web3 workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="infer-desk-security" className="section">
+        <div className="container">
+          <h2 className="section-title">Security Features</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <span className="emoji">🔒</span>
+              <h4>AES-GCM Encryption</h4>
+              <p>
+                Military-grade AES-256-GCM encryption for all sensitive data at rest.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">⚡</span>
+              <h4>Argon2 Key Derivation</h4>
+              <p>
+                Memory-hard Argon2id algorithm for secure password-derived keys.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🚫</span>
+              <h4>Brute Force Protection</h4>
+              <p>
+                Rate limiting and progressive delays after failed unlock attempts.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔐</span>
+              <h4>Storage Isolation</h4>
+              <p>
+                Separate encrypted storage per account for enhanced privacy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="infer-desk-developers" className="section">
+        <div className="container">
+          <h2 className="section-title">For Developers</h2>
+          <div className="developer-content">
+            <p>
+              Want to integrate Infer Desk with your dApp? Check out our{" "}
+              <a href="/docs#infer-connect-introduction">
+                Infer Connect documentation
+              </a>{" "}
+              for browser integration and API details.
+            </p>
+            <p>
+              <strong>Coming from Nova Desk?</strong> The upgrade guide walks you
+              through the one-time manual move and explains why the in-app updater
+              can't perform this one upgrade.
+            </p>
+            <a
+              href="/docs#infer-connect-introduction"
+              className="cta-button secondary"
+            >
+              View Documentation
+            </a>
+            <a
+              href="/docs#migration-introduction"
+              className="cta-button secondary"
+            >
+              Nova Desk → Infer Desk Upgrade Guide
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}

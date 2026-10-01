@@ -1,4 +1,44 @@
+# Dependencies
 node_modules
+
+# Build output
 dist
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
 .DS_Store
+
+# Screenshots and test artifacts
 screenshots
+*.png
+*.jpg
+*.jpeg
+
+# Allow specific image directories
+!assets/images/bridge/**
+
+# Playwright
+.playwright-cli/
+.playwright-mcp/
+
+# Vibe
+.vibe/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor directories and files
+*.swp
+*.swo
+*~
+.project
+.settings/
+

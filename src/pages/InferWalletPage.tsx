@@ -1,0 +1,149 @@
+import LightboxGallery from "../components/LightboxGallery";
+
+export default function InferWalletPage() {
+  const walletImages = [
+    { id: '1', src: '/img/infer-ecosystem/infer-wallet/dashboard-dark-2026-09.webp', alt: 'Infer Wallet dark dashboard with account balance, token holdings and quick actions', caption: 'Dashboard' },
+    { id: '2', src: '/img/infer-ecosystem/infer-wallet/send-tokens-2026-09.webp', alt: 'Infer Wallet Send CEDRA screen with recipient, amount and transaction preview', caption: 'Send tokens' },
+    { id: '3', src: '/img/infer-ecosystem/infer-wallet/receive-tokens-2026-09.webp', alt: 'Infer Wallet Receive CEDRA screen with address QR code and Pay Me entry', caption: 'Receive tokens' },
+    { id: '4', src: '/img/infer-ecosystem/infer-wallet/swap-2026-09.webp', alt: 'Infer Wallet swap screen showing a CEDRA to AVA quote on Testnet', caption: 'Swap' },
+    { id: '5', src: '/img/infer-ecosystem/infer-wallet/activity-2026-09.webp', alt: 'Infer Wallet activity screen listing successful Testnet transactions', caption: 'Activity' },
+    { id: '6', src: '/img/infer-ecosystem/infer-wallet/nft-collection-2026-09.webp', alt: 'Infer Wallet NFT collection showing three illustrated badges', caption: 'NFT collection' },
+    { id: '7', src: '/img/infer-ecosystem/infer-wallet/nft-detail-2026-09.webp', alt: 'Infer Wallet NFT detail page for the Community Call Badge', caption: 'NFT detail' },
+    { id: '8', src: '/img/infer-ecosystem/infer-wallet/built-in-browser-2026-09.webp', alt: 'Infer Wallet built-in browser displaying Cedrascan on Testnet', caption: 'Built-in browser' },
+    { id: '9', src: '/img/infer-ecosystem/infer-wallet/settings-2026-09.webp', alt: 'Infer Wallet settings with account, network, security and appearance options', caption: 'Settings' },
+    { id: '10', src: '/img/infer-ecosystem/infer-wallet/dashboard-light-2026-09.webp', alt: 'Infer Wallet light dashboard with account balance, token holdings and quick actions', caption: 'Dashboard — light theme' },
+  ];
+
+  return (
+    <div id="infer-wallet-page" className="page-section">
+      <section className="hero infer-hero" role="banner">
+        <div className="hero-content">
+          <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>
+            <img
+              src="/assets/logos/flame.png"
+              alt="Infer Wallet logo"
+              style={{
+                width: "140px",
+                maxWidth: "100%",
+                borderRadius: "40px",
+                boxShadow: "0 8px 24px rgba(0, 178, 255, 0.35)",
+              }}
+            />
+          </div>
+          <h1>
+            Infer Wallet — Secure Next-Gen Mobile Cryptocurrency Wallet
+          </h1>
+          <p>
+            A non-custodial mobile wallet for the Cedra Network. Manage assets,
+            connect to dApps, and securely store your crypto.
+          </p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.inferenco.novawallet"
+            className="cta-button"
+            aria-label="Get Infer Wallet on Google Play"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Infer Wallet
+          </a>
+        </div>
+      </section>
+
+      <section id="infer-wallet-gallery" className="section">
+        <div className="container">
+          <LightboxGallery images={walletImages} thumbnailWidth="280px" />
+        </div>
+      </section>
+
+      <section id="infer-wallet-features" className="section">
+        <div className="container">
+          <h2 className="section-title">Features</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <span className="emoji">🔐</span>
+              <h4>Security First</h4>
+              <p>
+                Non-Custodial wallet where you own your keys. Secure access with
+                Biometric Authentication (Face ID / Touch ID) and zero tracking.
+                No data collection — your privacy is guaranteed.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💰</span>
+              <h4>Asset Management</h4>
+              <p>
+                Send and receive assets with QR code support. Manage CEDRA coins
+                and custom tokens with real-time balance updates.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💱</span>
+              <h4>Avera Swap Integration</h4>
+              <p>
+                Swap tokens directly within Infer Wallet using Avera DEX.
+                Get competitive rates across multiple liquidity pools.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📊</span>
+              <h4>Activity History</h4>
+              <p>
+                View all your transactions and wallet events in one place.
+                Complete history of your on-chain activity.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🌐</span>
+              <h4>dApp Browser with Infer Connect</h4>
+              <p>
+                Integrated browser to connect to the decentralized web. Use Infer Connect
+                for seamless interaction with external dApps.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🤲</span>
+              <h4>Pay Me</h4>
+              <p>
+                Scan a QR from Infer Desk and receive tokens to your phone in one
+                tap. Pay Me pairs Infer Wallet with Infer Desk over Nostr DMs and
+                asks the desk to sign the transfer — your phone never exposes a
+                private key.
+              </p>
+              <a href="/docs#pay-me-introduction" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔌</span>
+              <h4>Bridge Connections</h4>
+              <p>
+                Infer Wallet pairs with Infer Desk over Nostr for secure remote
+                signing. Reusable merchants persist across app restarts; each
+                pair has its own status, TTL, and shot budget. The wallet is a
+                Nostr-only Bridge client.
+              </p>
+              <a href="/docs#bridge-wallet-client" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🖼️</span>
+              <h4>NFT Gallery</h4>
+              <p>
+                View and manage your digital collectibles in a dedicated gallery.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🎮</span>
+              <h4>Gaming Support</h4>
+              <p>
+                Native support for Cedra-based games like decentralized Poker.
+                Manage in-game assets and participate in blockchain gaming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
