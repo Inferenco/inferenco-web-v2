@@ -5,8 +5,6 @@ import Infer from "./pages/Infer";
 import InferWalletPage from "./pages/InferWalletPage";
 import InferDesk from "./pages/InferDesk";
 import Docs from "./pages/Docs";
-import Blogs from "./pages/Blogs";
-import BlogSingle from "./pages/BlogSingle";
 import NotFound from "./components/NotFound";
 import "./index.css";
 
@@ -20,9 +18,7 @@ function App() {
           <Route path="infer-wallet" element={<InferWalletPage />} />
           <Route path="infer-desk" element={<InferDesk />} />
           <Route path="docs/*" element={<Docs />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="blogs/:id" element={<BlogSingle />} />
-          {/* Catch-all so unknown/legacy routes (e.g. /nova) render a 404 page
+          {/* Catch-all so unknown/legacy routes (e.g. /nova, /blogs) render a 404 page
               inside the Layout instead of rendering a blank page. */}
           <Route path="*" element={<NotFound />} />
         </Route>
