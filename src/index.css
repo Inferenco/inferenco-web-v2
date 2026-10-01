@@ -4168,3 +4168,72 @@ html.light .modal {
         max-width: none;
     }
 }
+
+/* 404 / Not Found page */
+.not-found-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: var(--section-offset) 1.5rem;
+    text-align: center;
+}
+
+.not-found-content {
+    max-width: 40rem;
+}
+
+.not-found-code {
+    font-size: clamp(4rem, 16vw, 8rem);
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.not-found-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+}
+
+.not-found-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 2rem;
+}
+
+.not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found-links .cta-button {
+    margin: 0;
+    font-size: 1rem;
+    padding: 0.75rem 1.75rem;
+}
+
+/* The shared .cta-button.secondary uses a fixed near-black text colour; align
+   it with the theme tokens so it stays legible in both dark and light modes. */
+.not-found-links .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--brand-primary);
+    color: var(--text-primary);
+    box-shadow: none;
+}
+
+.not-found-links .cta-button.secondary:hover {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--bg-primary);
+    box-shadow: 0 0 25px rgba(0, 230, 255, 0.35);
+}
