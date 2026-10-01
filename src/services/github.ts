@@ -1,7 +1,14 @@
 export type OS = "windows" | "mac" | "mac-arm64" | "mac-intel" | "linux" | "linux-arm64" | "freebsd" | "unknown";
 
 const REPO_OWNER = "Inferenco";
-const REPO_NAME = "nova-desk-releases";
+const REPO_NAME = "infer-desk-releases";
+// Downloads are pinned to the published v0.6.0 release. Bump RELEASE_TAG
+// when a new full release ships.
+const RELEASE_TAG = "v0.6.0";
+// macOS builds are not attached to RELEASE_TAG — they ship under a separate
+// tag. Point macOS users at that tag's release page; the zip assets become
+// directly downloadable there once they are attached.
+const MACOS_RELEASE_TAG = "v0.6.0-macos";
 
 export const getLatestReleaseVersion = async (): Promise<string> => {
   try {
@@ -12,26 +19,26 @@ export const getLatestReleaseVersion = async (): Promise<string> => {
     return data.tag_name as string;
   } catch (error) {
     console.error("Failed to fetch latest version:", error);
-    return "v0.2.0"; // Fallback
+    return RELEASE_TAG; // Fallback
   }
 };
 
 export const getDownloadUrl = (os: OS): string => {
-  const base = `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/latest/download`;
+  const base = `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/download/${RELEASE_TAG}`;
   switch (os) {
     case "windows":
-      return `${base}/NovaDesk-Windows-x64.exe`;
+      return `${base}/InferDesk-Windows-x64.exe`;
     case "mac":
     case "mac-intel":
-      return `${base}/NovaDesk-macOS-x86_64.zip`;
     case "mac-arm64":
-      return `${base}/NovaDesk-macOS-aarch64.zip`;
+      // macOS zips are published under MACOS_RELEASE_TAG, not RELEASE_TAG.
+      return `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/tag/${MACOS_RELEASE_TAG}`;
     case "linux":
-      return `${base}/NovaDesk-x86_64.AppImage`;
+      return `${base}/InferDesk-x86_64.AppImage`;
     case "linux-arm64":
-      return `${base}/NovaDesk-aarch64.AppImage`;
+      return `${base}/InferDesk-aarch64.AppImage`;
     case "freebsd":
-      return `${base}/NovaDesk-FreeBSD-x86_64`;
+      return `${base}/InferDesk-FreeBSD-x86_64`;
     case "unknown":
     default:
       return `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/latest`;

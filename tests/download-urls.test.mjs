@@ -8,10 +8,27 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const githubService = readFileSync(resolve(root, "src/services/github.ts"), "utf8");
 
 describe("Infer Desk published download URLs", () => {
-  test("macOS downloads match the published zip release assets", () => {
-    assert.match(githubService, /releases\/latest\/download/);
-    assert.match(githubService, /NovaDesk-macOS-x86_64\.zip/);
-    assert.match(githubService, /NovaDesk-macOS-aarch64\.zip/);
-    assert.doesNotMatch(githubService, /NovaDesk-macOS-[^"`']+\.dmg/);
+  test("binary assets use the infer-desk-releases v0.6.0 tag with InferDesk- names", () => {
+    assert.match(githubService, /REPO_NAME = "infer-desk-releases"/);
+    // The download base is templated from RELEASE_TAG, so assert the pin and
+    // the template shape rather than a literal expanded URL.
+    assert.match(githubService, /RELEASE_TAG = "v0\.6\.0"/);
+    assert.match(githubService, /releases\/download\/\$\{RELEASE_TAG\}/);
+    assert.match(githubService, /InferDesk-Windows-x64\.exe/);
+    assert.match(githubService, /InferDesk-x86_64\.AppImage/);
+    assert.match(githubService, /InferDesk-aarch64\.AppImage/);
+    assert.match(githubService, /InferDesk-FreeBSD-x86_64/);
+    // No stale Nova asset names may remain.
+    assert.doesNotMatch(githubService, /NovaDesk-/);
+  });
+
+  test("macOS links to the dedicated macOS release tag page", () => {
+    // The source builds the URL from a constant, so assert on the constant
+    // plus the template shape rather than a literal expanded URL.
+    assert.match(githubService, /MACOS_RELEASE_TAG = "v0\.6\.0-macos"/);
+    assert.match(githubService, /releases\/tag\/\$\{MACOS_RELEASE_TAG\}/);
+    // macOS zips/dmgs are not attached to the main v0.6.0 release.
+    assert.doesNotMatch(githubService, /InferDesk-macOS-[^"`']+\.zip/);
+    assert.doesNotMatch(githubService, /InferDesk-macOS-[^"`']+\.dmg/);
   });
 });
