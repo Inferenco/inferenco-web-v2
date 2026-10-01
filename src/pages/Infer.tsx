@@ -23,16 +23,6 @@ export default function Infer() {
           <p>
             Transparent platform with pay‑per‑use pricing and reliable service.
           </p>
-          <p style={{ marginBottom: '1.5rem' }}>
-            <a
-              href="https://youtu.be/2ETNllY2yq8?si=_QYcjC8DGyQ1vAnt"
-              className="demo-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🎥 Watch Demo Video
-            </a>
-          </p>
           <div className="maintenance-notice" style={{ background: "var(--background-secondary)", padding: "1rem", borderRadius: "0.5rem", margin: "1rem 0", border: "1px solid var(--border)" }}>
             <p style={{ margin: 0, color: "var(--text-secondary)" }}>
               <strong>⚠️ Infer Bot is currently unavailable</strong><br />
