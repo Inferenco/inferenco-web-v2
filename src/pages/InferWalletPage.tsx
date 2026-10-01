@@ -101,6 +101,32 @@ export default function InferWalletPage() {
               </p>
             </div>
             <div className="feature-card">
+              <span className="emoji">🤲</span>
+              <h4>Pay Me</h4>
+              <p>
+                Scan a QR from Infer Desk and receive tokens to your phone in one
+                tap. Pay Me pairs Infer Wallet with Infer Desk over Nostr DMs and
+                asks the desk to sign the transfer — your phone never exposes a
+                private key.
+              </p>
+              <a href="/docs#pay-me-introduction" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔌</span>
+              <h4>Bridge Connections</h4>
+              <p>
+                Infer Wallet pairs with Infer Desk over Nostr for secure remote
+                signing. Reusable merchants persist across app restarts; each
+                pair has its own status, TTL, and shot budget. The wallet is a
+                Nostr-only Bridge client.
+              </p>
+              <a href="/docs#bridge-wallet-client" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div className="feature-card">
               <span className="emoji">🖼️</span>
               <h4>NFT Gallery</h4>
               <p>

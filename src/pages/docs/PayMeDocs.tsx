@@ -90,6 +90,11 @@ export default function PayMeDocs({ hash }: { hash: string }) {
           Pay Me uses the Bridge's <strong>Remote Nostr</strong> transport. It does not scan Local IPC or mTLS
           configuration, because Nostr is the only bridge-remote transport with a pairing QR.
         </p>
+        <p>
+          Pay Me is a first-party Infer Wallet feature. It has <strong>no
+          {" "}<code>@inferenco/infer-wallet-adapter</code> surface</strong> — the adapter
+          does not export it — so third-party dApps cannot integrate Pay Me directly.
+        </p>
       </div>
 
       <div id="pay-me-flow" className={`docs-section ${hash === "pay-me-flow" ? "active" : ""}`}>
@@ -121,6 +126,13 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             <strong>The phone tracks completion.</strong> Poll requests observe the transaction state, then the
             client disconnects. Polling and disconnect do not consume additional signing shots.
           </li>
+          <li>
+            <strong>Connect round-trip.</strong> The wallet sends a
+            <code>connect</code> request and polls for confirmation before
+            sending the signing request. This handshake confirms the merchant's
+            identity and the ephemeral pair's session-scoped reachability
+            before any on-chain action is requested.
+          </li>
         </ol>
 
         <h2>Visual walkthrough</h2>
@@ -147,6 +159,45 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             </article>
           ))}
         </div>
+
+        <h2>QR kinds</h2>
+        <p>
+          Infer Desk generates three different QR kinds, picked by the
+          operator based on the relationship with the payer:
+        </p>
+        <div className="functions-table">
+          <table>
+            <thead>
+              <tr><th>QR kind</th><th>Purpose</th><th>Used for</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ephemeral_pair</code></td>
+                <td>One-shot customer payment</td>
+                <td>Default customer flow. Single signing shot; auto-purges on TTL or budget.</td>
+              </tr>
+              <tr>
+                <td><code>pair</code></td>
+                <td>Reusable merchant pair</td>
+                <td>Returning customer / regular payer. Persists across app restarts; the wallet reconnects without re-scanning.</td>
+              </tr>
+              <tr>
+                <td><code>admin_pair</code></td>
+                <td>Threshold / admin operations</td>
+                <td>Operator-level requests requiring multi-sig. Rare for Pay Me.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>After the transfer</h2>
+        <p>
+          Once the desk signs and submits the transfer, the wallet shows a
+          confirmation screen with three actions: <strong>Request again</strong>
+          (same merchant, same amount pre-filled), <strong>Pair list</strong>
+          (manage your reusable merchants), and <strong>Dashboard</strong>
+          (back to the home screen).
+        </p>
 
         <h2>Returning to a reusable merchant</h2>
         <p>
@@ -214,6 +265,40 @@ export default function PayMeDocs({ hash }: { hash: string }) {
             <strong>Desk policy still applies:</strong> pairing never bypasses Infer Desk's active-wallet allow-list,
             request review, threshold policy, or other configured controls.
           </li>
+          <li>
+            <strong>Two distinct TTLs.</strong> A Pay Me pair has both a QR
+            validity window (<code>qrExpiresAtUnix</code>) and a post-approval
+            session TTL (<code>ttlExpiresAtUnix</code>, derived from the desk's
+            <code>ttl_secs</code>). After 0.2.0-rc.24 the schema keeps them
+            separate — the QR can expire while a previously-paired session is
+            still active, and vice versa.
+          </li>
+          <li>
+            <strong>Release builds enforce <code>wss://</code> relays only.</strong>{" "}
+            <code>relayGuard.ts</code> strips cleartext <code>ws://</code> relay
+            hints from QR payloads in production. LAN merchants continue to
+            work; public cleartext relays do not.
+          </li>
+          <li>
+            <strong>One pair per merchant, enforced server-side.</strong> If
+            you try to pair a second time with a merchant that already has an
+            active pair, Infer Desk replies with{" "}
+            <code>merchant_already_paired</code> and Infer Wallet shows a
+            dedicated toast directing you to the existing pair.
+          </li>
+          <li>
+            <strong>Operators can disconnect at any time.</strong> The
+            merchant's Infer Desk can sever the connection unilaterally. Infer
+            Wallet collapses the active connection and surfaces the disconnect.
+          </li>
+          <li>
+            <strong>Transaction state machine</strong> — submitted → pending →
+            one of <em>confirmed</em>, <em>chain-failed</em>,{" "}
+            <em>status-unknown</em>, or <em>awaiting-operator</em>. The last
+            terminal state means the desk reported <code>not_paired</code> (the
+            signing shot was consumed) and the merchant must re-authorize
+            before retry.
+          </li>
         </ul>
 
         <div className="info-box">
@@ -221,6 +306,55 @@ export default function PayMeDocs({ hash }: { hash: string }) {
           Its NIP-01, NIP-19, and NIP-44 implementation is built directly on the audited <code>@noble/*</code>
           primitives used by the mobile codebase.
         </div>
+      </div>
+
+      <div id="pay-me-managing-pairs" className={`docs-section ${hash === "pay-me-managing-pairs" ? "active" : ""}`}>
+        <h1>Managing Pay Me pairs</h1>
+        <p>
+          Every <code>pair</code> (reusable) merchant pair lives in your
+          wallet's encrypted pair store. Open <strong>Receive → Pay Me →
+          Pair list</strong> to see them.
+        </p>
+
+        <h2>Per-row status</h2>
+        <p>Each row shows a status badge:</p>
+        <ul>
+          <li><strong>Active</strong> — ready for new transfers</li>
+          <li><strong>Consumed</strong> — ephemeral pair used its single shot</li>
+          <li><strong>Expired</strong> — TTL elapsed</li>
+          <li><strong>Revoked</strong> — removed from either side</li>
+          <li><strong>Unavailable</strong> — merchant's desk offline</li>
+        </ul>
+
+        <h2>Pair list actions</h2>
+        <ul>
+          <li><strong>Rename</strong> — give a pair a friendly label (default = merchant pubkey).</li>
+          <li><strong>Remove</strong> — permanently deletes the pair from the wallet. The merchant's desk will see the next request as a fresh pairing.</li>
+          <li><strong>Disconnect</strong> — close the active connection without removing the pair; the next transfer reconnects.</li>
+          <li><strong>Prune stale</strong> — bulk-removes all Expired and Revoked rows.</li>
+        </ul>
+
+        <h2>Persistence across app restarts</h2>
+        <p>
+          Reusable pairs persist across app restarts. The full QR snapshot
+          is stored in the pair store, so reconnecting does not require
+          re-scanning. The single-use <code>ephemeral_pair</code> token, by
+          contrast, is consumed on first use and cannot be re-used.
+        </p>
+
+        <h2>Token picker</h2>
+        <p>
+          The amount screen's token picker is a three-source merge:
+        </p>
+        <ul>
+          <li><strong>Env defaults</strong> — the build-time configured token list (CEDRA in production).</li>
+          <li><strong>On-chain balances</strong> — fungible assets (FAs) you actually hold, fetched from the chain.</li>
+          <li><strong>User-added</strong> — any FA you add by address via "Add by address".</li>
+        </ul>
+        <p>
+          If the requested FA is not in the wallet, the wallet surfaces a
+          "missing-metadata" error and asks you to add it by address first.
+        </p>
       </div>
 
       <div id="pay-me-scenarios" className={`docs-section ${hash === "pay-me-scenarios" ? "active" : ""}`}>

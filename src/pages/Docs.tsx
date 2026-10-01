@@ -55,6 +55,7 @@ const docsSections = [
       { id: "bridge-transport-choice", label: "Choose a Transport", icon: "fas fa-route" },
       { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
       { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
+      { id: "bridge-wallet-client", label: "Wallet Client", icon: "fas fa-mobile-alt" },
     ],
   },
   {
@@ -63,6 +64,7 @@ const docsSections = [
       { id: "pay-me-introduction", label: "Introduction", icon: "fas fa-mobile-alt" },
       { id: "pay-me-flow", label: "Transfer Flow", icon: "fas fa-exchange-alt" },
       { id: "pay-me-security", label: "Security & Recovery", icon: "fas fa-shield-alt" },
+      { id: "pay-me-managing-pairs", label: "Managing Pairs", icon: "fas fa-link" },
       { id: "pay-me-scenarios", label: "Scenarios", icon: "fas fa-lightbulb" },
     ],
   },
