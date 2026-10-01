@@ -291,15 +291,6 @@ export default function InferDesk() {
               </p>
             </div>
             <div className="feature-card">
-              <span className="emoji">🪟</span>
-              <h4>Native System Tray</h4>
-              <p>
-                A native system-tray icon gives quick access to the wallet, the
-                Bridge status, and a one-click launch on login. Infer Desk ships
-                with a tray on every supported platform.
-              </p>
-            </div>
-            <div className="feature-card">
               <span className="emoji">🛡️</span>
               <h4>Operator Pair Approval</h4>
               <p>
@@ -308,6 +299,9 @@ export default function InferDesk() {
                 request individually — ephemeral pairings are no longer fully
                 automatic.
               </p>
+              <a href="/docs#bridge-introduction" className="cta-button secondary" style={{ marginTop: "1rem" }}>
+                Learn more <i className="fas fa-arrow-right"></i>
+              </a>
             </div>
             <div className="feature-card">
               <span className="emoji">🔗</span>
