@@ -86,8 +86,6 @@ const docsSections = [
     items: [
       { id: "migration-introduction", label: "Introduction", icon: "fas fa-book" },
       { id: "migration-data-directory", label: "Data Directory", icon: "fas fa-folder" },
-      { id: "migration-pairs-and-certs", label: "Pairs & Certificates", icon: "fas fa-key" },
-      { id: "migration-bridge-config", label: "Bridge Config", icon: "fas fa-bridge" },
       { id: "migration-wallet-adapter", label: "Wallet Adapter", icon: "fab fa-react" },
       { id: "migration-action-checklist", label: "Action Checklist", icon: "fas fa-list-ol" },
     ],

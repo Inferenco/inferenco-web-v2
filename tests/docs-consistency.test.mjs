@@ -75,8 +75,6 @@ describe("Infer Connect docs consistency", () => {
     for (const id of [
       "migration-introduction",
       "migration-data-directory",
-      "migration-pairs-and-certs",
-      "migration-bridge-config",
       "migration-wallet-adapter",
       "migration-action-checklist",
     ]) {

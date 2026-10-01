@@ -26,9 +26,8 @@ export default function MigrationDocs({ hash }: DocsProps) {
         <p>
           Most of the migration is <strong>automatic on first launch</strong>: vaults move from
           the sled store to redb, the legacy data directory is detected and its recent-vaults
-          registry is forwarded, and
-          the new bridge configuration schema is adopted. The pages below describe what
-          changes, what is automatic, and what an operator must do manually.
+          registry is forwarded, and your wallet settings carry over. The pages below describe
+          what changes, what is automatic, and what an operator must do manually.
         </p>
 
         <h2>What changes on upgrade</h2>
@@ -95,82 +94,6 @@ export default function MigrationDocs({ hash }: DocsProps) {
         <p>
           As an alternative, the vault-select screen has an explicit "Migrate this vault"
           button that lets the operator migrate a single vault on demand.
-        </p>
-      </div>
-
-      <div id="migration-pairs-and-certs" className={`docs-section ${hash === "migration-pairs-and-certs" ? "active" : ""}`}>
-        <h1>Pairs and Certificates</h1>
-        <p>
-          The bridge stores its configuration in an Argon2-encrypted RON envelope. Most of the
-          configuration carries over automatically. Two pieces of state require operator
-          attention: mTLS certificates and the Nostr master switch.
-        </p>
-
-        <h2>mTLS — server identity is rotated on upgrade</h2>
-        <p>
-          The bridge-server configuration (bind address, allow-list, CA path, per-CN policy) is
-          carried over automatically. <strong>The server certificate and private key are not
-          carried over.</strong> Operators must re-mint the mTLS identity on first Apply after
-          upgrade. This is the documented "rotation on upgrade" posture — it ensures that any
-          pre-upgrade leaked private key material cannot be replayed against consumers.
-        </p>
-        <p>
-          After re-mint, copy the new SPKI pin from Settings → Bridge and update every remote
-          consumer that was paired with the old pin.
-        </p>
-
-        <h2>Nostr — settings carry over verbatim</h2>
-        <p>
-          The existing <code>RemoteNostr</code> entry is migrated as-is, including its{" "}
-          <code>enabled</code> flag. If you had Nostr enabled in Nova Desk, it is still enabled
-          in Infer Desk on first launch. The default relay is only seeded when no{" "}
-          <code>RemoteNostr</code> entry exists at all, and that fresh entry starts with{" "}
-          <code>enabled: false</code>.
-        </p>
-        <p>
-          <strong>Security consequence:</strong> if you ran Nova Desk with Nostr enabled,
-          open <strong>Settings → Bridge → Remote</strong> on first launch and verify the
-          master switch matches your intent. Infer Desk will otherwise continue emitting DMs to
-          your existing paired clients.
-        </p>
-
-        <h2>Existing pairs and allow-lists</h2>
-        <p>
-          Pairings made under Nova Desk live in the encrypted pair store and are readable by
-          Infer Desk. The Nostr npub allow-list and the mTLS CN allow-list both survive the
-          upgrade without re-entry. Pair revocation continues to work as before.
-        </p>
-      </div>
-
-      <div id="migration-bridge-config" className={`docs-section ${hash === "migration-bridge-config" ? "active" : ""}`}>
-        <h1>Bridge Configuration</h1>
-        <p>
-          The Bridge is Infer Desk's third-party integration surface. See{" "}
-          <a href="/docs#bridge-introduction">Bridge → Introduction</a> for the transport
-          overview; this page covers only what changes during migration.
-        </p>
-
-        <h2>Local IPC socket</h2>
-        <p>
-          The default Unix socket path is now <code>~/.infer_desk/runtime/infer-desk-bus.sock</code>.
-          On Windows, the named pipe is <code>\\.\pipe\infer-desk-bus</code>.
-          Native consumers that hardcoded the legacy path must update.
-        </p>
-
-        <h2>Configuration schema</h2>
-        <p>
-          Bridge settings now live under the <code>bridges</code> key of the encrypted RON
-          envelope. The schema is documented in <code>BridgesConfig</code> (see
-          <code>infer-desk-bridge</code>). Field names match the keys shown in the Bridge
-          Settings UI.
-        </p>
-
-        <h2>Environment variables</h2>
-        <p>
-          Use the <code>INFER_DESK_*</code> prefix (e.g.{" "}
-          <code>INFER_DESK_ALLOW_HTTP_LOOPBACK</code>). The legacy <code>NOVA_DESK_*</code>
-          variables are <strong>not</strong> honored by Infer Desk — update any scripts or
-          container definitions that still set them.
         </p>
       </div>
 
