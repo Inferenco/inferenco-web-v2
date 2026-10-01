@@ -555,7 +555,7 @@ wallet.on("disconnect", () => {
           Infer Wallet. The relay receives opaque ciphertext only.
         </p>
         <p>
-          The rc.18 package still publishes the historical <code>nova-service-160604102004.europe-west1.run.app</code> hostname through its mobile relay defaults. This is a compatibility infrastructure identifier, not the product name; do not rewrite it unless a package release changes the exported defaults.
+          The 0.2.0-rc.24 package still publishes the historical <code>nova-service-160604102004.europe-west1.run.app</code> hostname through its mobile relay defaults. This is a compatibility infrastructure identifier, not the product name; do not rewrite it unless a package release changes the exported defaults.
         </p>
         <h2>Cryptographic Stack</h2>
         <ul>
@@ -976,7 +976,7 @@ const wallets = getCedraWallets().cedraWallets.filter(
         </p>
         <h3>Rebrand Compatibility</h3>
         <p>
-          Use <code>InferWallet</code>, <code>InferClient</code>, <code>InferWalletOptions</code>, <code>registerInferWallet</code>, and the <code>inferenco:infer-*</code> storage keys in new code. rc.18 still reads the legacy <code>inferenco:nova-session</code>, <code>inferenco:nova-protocol-key</code>, <code>inferenco:nova-pending-mobile-pairing</code>, and <code>inferenco:nova-callback-marker</code> keys during migration.
+          Use <code>InferWallet</code>, <code>InferClient</code>, <code>InferWalletOptions</code>, <code>registerInferWallet</code>, and the <code>inferenco:infer-*</code> storage keys in new code. 0.2.0-rc.24 still reads the legacy <code>inferenco:nova-session</code>, <code>inferenco:nova-protocol-key</code>, <code>inferenco:nova-pending-mobile-pairing</code>, and <code>inferenco:nova-callback-marker</code> keys during migration.
         </p>
         <h3>New Features</h3>
         <ul>
