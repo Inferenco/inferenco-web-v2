@@ -201,6 +201,22 @@ export default function InferDesk() {
                 Automatic update checks on startup. Download and install updates
                 directly from GitHub releases.
               </p>
+              <p>
+                <strong>Note:</strong> The one exception is the
+                Nova Desk → Infer Desk 0.6.0 upgrade, which is a one-time manual
+                install. See the <a href="/docs#migration-introduction">upgrade
+                guide</a> for details.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🕸️</span>
+              <h4>Devnet + Testnet Networks</h4>
+              <p>
+                First-class support for the Cedra Testnet and Devnet networks,
+                each with its own fullnode, GraphQL endpoint, and faucet. The
+                network selector in Settings lets you switch instantly and test
+                your dApps against either environment.
+              </p>
             </div>
             <div className="feature-card">
               <span className="emoji">🌐</span>
@@ -275,6 +291,25 @@ export default function InferDesk() {
               </p>
             </div>
             <div className="feature-card">
+              <span className="emoji">🪟</span>
+              <h4>Native System Tray</h4>
+              <p>
+                A native system-tray icon gives quick access to the wallet, the
+                Bridge status, and a one-click launch on login. Infer Desk ships
+                with a tray on every supported platform.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🛡️</span>
+              <h4>Operator Pair Approval</h4>
+              <p>
+                Bridge → Remote now shows pending ephemeral pair requests in the
+                "All paired apps" view. The operator can approve or reject each
+                request individually — ephemeral pairings are no longer fully
+                automatic.
+              </p>
+            </div>
+            <div className="feature-card">
               <span className="emoji">🔗</span>
               <h4>Deep Link Support</h4>
               <p>
@@ -333,11 +368,22 @@ export default function InferDesk() {
               </a>{" "}
               for browser integration and API details.
             </p>
+            <p>
+              <strong>Coming from Nova Desk?</strong> The upgrade guide walks you
+              through the one-time manual move and explains why the in-app updater
+              can't perform this one upgrade.
+            </p>
             <a
               href="/docs#infer-connect-introduction"
               className="cta-button secondary"
             >
               View Documentation
+            </a>
+            <a
+              href="/docs#migration-introduction"
+              className="cta-button secondary"
+            >
+              Nova Desk → Infer Desk Upgrade Guide
             </a>
           </div>
         </div>
