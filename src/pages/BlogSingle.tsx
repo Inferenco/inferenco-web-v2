@@ -123,12 +123,9 @@ export default function BlogSingle() {
     );
   }
 
-  // Get featured image (first image asset)
-  const featuredImage = blog.assets?.find(a => a.public_url && a.public_url.endsWith('.png')) 
-    || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.jpg'))
-    || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.jpeg'))
-    || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.webp'))
-    || blog.assets?.[0];
+  // Featured image is the first asset; the Poster API serves asset URLs
+  // without file extensions (/public/assets/<id>), so no extension check is possible.
+  const featuredImage = blog.assets?.[0];
   
   const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
 
@@ -147,8 +144,8 @@ export default function BlogSingle() {
           <header className="blog-single-header">
             <h1>{blog.title}</h1>
             <div className="blog-meta">
-              <time dateTime={blog.published_at || blog.created_at || ''}>
-                Published: {formatDate(blog.published_at || blog.created_at)}
+              <time dateTime={blog.published_at ?? blog.created_at ?? ''}>
+                Published: {formatDate(blog.published_at ?? blog.created_at ?? null)}
               </time>
             </div>
           </header>

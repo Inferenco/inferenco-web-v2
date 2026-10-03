@@ -57,14 +57,19 @@ export default function Blogs() {
       })
       .then((data) => {
         if (controller.signal.aborted) return;
-        const formattedBlogs = data.blogs.map((blog) => ({
-          ...blog,
-          formattedDate: new Date(blog.published_at || blog.created_at).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }),
-        }));
+        const formattedBlogs = data.blogs.map((blog) => {
+          const dateSource = blog.published_at ?? blog.created_at;
+          return {
+            ...blog,
+            formattedDate: dateSource
+              ? new Date(dateSource).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })
+              : "",
+          };
+        });
 
         setBlogs((prevBlogs) => {
           const newBlogs = formattedBlogs.filter(
@@ -115,12 +120,9 @@ export default function Blogs() {
         ) : (
           <div className="blogs-grid">
             {blogs.map((blog, index) => {
-              // Get featured image (first image asset)
-              const featuredImage = blog.assets?.find(a => a.public_url && a.public_url.endsWith('.png')) 
-                || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.jpg'))
-                || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.jpeg'))
-                || blog.assets?.find(a => a.public_url && a.public_url.endsWith('.webp'))
-                || blog.assets?.[0];
+              // Featured image is the first asset; the Poster API serves asset URLs
+              // without file extensions (/public/assets/<id>), so no extension check is possible.
+              const featuredImage = blog.assets?.[0];
               
               const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
 

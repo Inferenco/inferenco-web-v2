@@ -5,6 +5,7 @@ import type { PageType, ProductDropdownItem } from "../types";
 const navLinks: { label: string; path: string; page: PageType }[] = [
   { label: "Home", path: "/", page: "home" },
   { label: "Docs", path: "/docs", page: "docs" },
+  { label: "Blogs", path: "/blogs", page: "blogs" },
 ];
 
 const productsDropdown: ProductDropdownItem[] = [
@@ -267,6 +268,7 @@ export default function Layout() {
             <div className="footer-links">
               <h4>Resources</h4>
               <Link to="/docs">Documentation</Link>
+              <Link to="/blogs">Blog</Link>
             </div>
             <div className="footer-links">
               <h4>Company</h4>

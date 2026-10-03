@@ -30,6 +30,8 @@ export default function InferConnectDocs({ hash }: { hash: string }) {
           <li><strong>Deeplink Hardening</strong> - Callback origin verification for phishing protection via <code>expectedOrigin</code> option</li>
           <li><strong>Session Liveness Heartbeat</strong> - Opt-in liveness monitoring via <code>sessionLivenessIntervalMs</code> for faster disconnect detection</li>
           <li><strong>Pre-auth Flow</strong> - Direct bridge polling (no deeplink) for Infer Desk 0.6.0+</li>
+          <li><strong>Recovery and Invocation API</strong> - <code>reconcileRecoverableInvocation()</code> and <code>relaunchRecoverableInvocation()</code> recover interrupted requests, with lifecycle hooks such as <code>onRequestCreated</code>, <code>onInvocationPrepared</code>, and <code>onRecoveredOutcome</code></li>
+          <li><strong>Connection Health and New Error Codes</strong> - <code>connectionHealth</code> monitoring, <code>InferRequestError</code> for durable requests, and new <code>InferErrorCode</code> members including <code>BridgePrivateNetworkBlocked</code> (Chrome ≥ 142 Local Network Access)</li>
         </ul>
         <h3>Package</h3>
         <ul>
@@ -513,6 +515,12 @@ if (wallet.features["cedra:onDisconnect"]) {
                 <td><code>undefined</code></td>
                 <td>Tier 1 deeplink hardening: verifies callback <code>window.location.origin</code> matches this value. Mismatch throws <code>CallbackOriginMismatch</code>. Defends against phishing sites.</td>
               </tr>
+              <tr>
+                <td><code>mobileReturnMode</code></td>
+                <td>string</td>
+                <td><code>undefined</code></td>
+                <td>Set to <code>&quot;resume-browser-v1&quot;</code> to prefer returning to the existing Android browser task after relay approval.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -555,7 +563,7 @@ wallet.on("disconnect", () => {
           Infer Wallet. The relay receives opaque ciphertext only.
         </p>
         <p>
-          The 0.2.0-rc.24 package still publishes the historical <code>nova-service-160604102004.europe-west1.run.app</code> hostname through its mobile relay defaults. This is a compatibility infrastructure identifier, not the product name; do not rewrite it unless a package release changes the exported defaults.
+          The v0.2.0 package still publishes the historical <code>nova-service-160604102004.europe-west1.run.app</code> hostname through its mobile relay defaults. This is a compatibility infrastructure identifier, not the product name; v0.2.0 keeps it as the default for backward compatibility, so do not rewrite it unless a future package release changes the exported defaults.
         </p>
         <h2>Cryptographic Stack</h2>
         <ul>
@@ -601,7 +609,7 @@ inferenco://connect?callback=<encoded-url>`}</code>
       <div id="infer-connect-error-handling" className={`docs-section ${hash === "infer-connect-error-handling" ? "active" : ""}`}>
         <h1>Infer Connect - Error Handling</h1>
         <p>
-          All adapter errors are normalized as <code>InferAdapterError</code>. Enum keys are camel case,
+          Most adapter errors are normalized as <code>InferAdapterError</code>. Enum keys are camel case,
           and each key maps to the uppercase string code shown below.
         </p>
         <div className="functions-table">
@@ -620,12 +628,22 @@ inferenco://connect?callback=<encoded-url>`}</code>
               <tr><td><code>NotInstalled</code></td><td><code>NOT_INSTALLED</code></td><td>No provider, bridge, or usable session is available.</td></tr>
               <tr><td><code>ConnectionTimeout</code></td><td><code>CONNECTION_TIMEOUT</code></td><td>Connection or approval timed out.</td></tr>
               <tr><td><code>InvalidParams</code></td><td><code>INVALID_PARAMS</code></td><td>Invalid request parameters.</td></tr>
+              <tr><td><code>RequestNotInvoked</code></td><td><code>REQUEST_NOT_INVOKED</code></td><td>The wallet request was never sent because its durable invocation could not be saved.</td></tr>
+              <tr><td><code>RequestOutcomeUnknown</code></td><td><code>REQUEST_OUTCOME_UNKNOWN</code></td><td>The relay returned an invalid request creation receipt, so the outcome cannot be determined.</td></tr>
+              <tr><td><code>ConnectionUnavailable</code></td><td><code>CONNECTION_UNAVAILABLE</code></td><td>No usable wallet connection is available for the request.</td></tr>
               <tr><td><code>InvalidNetwork</code></td><td><code>INVALID_NETWORK</code></td><td>Network value is invalid or unavailable.</td></tr>
               <tr><td><code>InternalError</code></td><td><code>INTERNAL_ERROR</code></td><td>Unexpected adapter or provider failure.</td></tr>
-              <tr><td><code>CallbackOriginMismatch</code></td><td><code>CALLBACK_ORIGIN_MISMATCH</code></td><td>Deeplink callback origin doesn't match expected origin (phishing protection).</td></tr>
+              <tr><td><code>BridgePrivateNetworkBlocked</code></td><td><code>BRIDGE_PRIVATE_NETWORK_BLOCKED</code></td><td>The browser blocked the cross-origin request to the local bridge (e.g. Chrome ≥ 142 Local Network Access). Prompt the user to allow local network access for this site.</td></tr>
             </tbody>
           </table>
         </div>
+        <p>
+          <strong>Note:</strong> <code>CallbackOriginMismatch</code> is not an <code>InferErrorCode</code> enum
+          member. It is a standalone exception class (with <code>expected</code> and <code>actual</code> origin
+          fields) thrown by the deeplink hardening flow when the callback origin does not match
+          <code>expectedOrigin</code>. Check for it with <code>error instanceof CallbackOriginMismatch</code>,
+          as shown below.
+        </p>
         <CodeBlock language="typescript">{`import {
   InferAdapterError,
   InferErrorCode,
@@ -848,8 +866,18 @@ const account = await wallet.connect();`}</CodeBlock>
             <tbody>
               <tr>
                 <td><code>GET</code></td>
+                <td><code>/health</code></td>
+                <td>Bridge health check</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
                 <td><code>/connect</code></td>
                 <td>Initiate a new connection request</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/exchange</code></td>
+                <td>PKCE code exchange for hardened deeplink flows (v0.2.0+)</td>
               </tr>
               <tr>
                 <td><code>GET</code></td>
@@ -874,6 +902,11 @@ const account = await wallet.connect();`}</CodeBlock>
               <tr>
                 <td><code>GET</code></td>
                 <td><code>/request/&lt;requestId&gt;</code></td>
+                <td>Poll for connect request approval status</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/message-request/&lt;requestId&gt;</code></td>
                 <td>Poll for message signature result</td>
               </tr>
               <tr>
@@ -972,11 +1005,15 @@ const wallets = getCedraWallets().cedraWallets.filter(
         <h1>Infer Connect - Version Migration</h1>
         <h2>v0.2.0 Migration</h2>
         <p>
-          <strong>No breaking changes.</strong> Version 0.2.0 is fully backwards compatible with v0.1.0.
+          <strong>Breaking rebrand, stable API.</strong> Upgrading from the pre-rebrand
+          <code>@inferenco/nova-wallet-adapter</code> v0.1.x is a breaking change: the package name, public
+          identifiers, and storage keys were renamed (see the rebrand compatibility notes below). Within
+          <code>@inferenco/infer-wallet-adapter</code>, the stable 0.2.0 release ships with behavior identical
+          to the final release candidate (0.2.0-rc.24), so RC-to-stable upgrades require no changes.
         </p>
         <h3>Rebrand Compatibility</h3>
         <p>
-          Use <code>InferWallet</code>, <code>InferClient</code>, <code>InferWalletOptions</code>, <code>registerInferWallet</code>, and the <code>inferenco:infer-*</code> storage keys in new code. 0.2.0-rc.24 still reads the legacy <code>inferenco:nova-session</code>, <code>inferenco:nova-protocol-key</code>, <code>inferenco:nova-pending-mobile-pairing</code>, and <code>inferenco:nova-callback-marker</code> keys during migration.
+          Use <code>InferWallet</code>, <code>InferClient</code>, <code>InferWalletOptions</code>, <code>registerInferWallet</code>, and the <code>inferenco:infer-*</code> storage keys in new code. Version 0.2.0 still reads the legacy <code>inferenco:nova-session</code>, <code>inferenco:nova-protocol-key</code>, <code>inferenco:nova-pending-mobile-pairing</code>, and <code>inferenco:nova-callback-marker</code> keys during migration.
         </p>
         <h3>New Features</h3>
         <ul>

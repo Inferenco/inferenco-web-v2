@@ -1,5 +1,5 @@
 // Page types
-export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'docs';
+export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'docs' | 'blogs';
 
 // Blog types
 export interface BlogAsset {
@@ -15,7 +15,7 @@ export interface BlogPost {
   content: string;
   excerpt?: string;
   published_at: string | null;
-  created_at: string;
+  created_at?: string;
   assets?: BlogAsset[];
 }
 
