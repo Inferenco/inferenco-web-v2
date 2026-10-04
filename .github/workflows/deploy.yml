@@ -28,6 +28,8 @@ jobs:
         run: pnpm install
 
       - name: Build
+        env:
+          VITE_POSTER_API_URL: ${{ vars.VITE_POSTER_API_URL }}
         run: pnpm run build
 
       - name: Deploy
