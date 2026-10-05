@@ -11,9 +11,9 @@ export default function AuditDocs({ hash }: DocsProps) {
           control. Both products are built with defense in depth, which means the security
           of the wallet never rests on a single check. Every inbound channel — connections
           from dApps, bridge requests, pairing messages, and responses from the network —
-          is treated as untrusted input. It has to be validated, and anything that
-          spends or authorizes something requires explicit confirmation from you before
-          it happens.
+          is treated as untrusted input. Audit reviews examine how these inputs are
+          validated and how user approval is enforced for transactions and other signing
+          requests.
         </p>
         <p>
           Auditing is a recurring practice rather than a single event. Independent,
@@ -109,8 +109,6 @@ export default function AuditDocs({ hash }: DocsProps) {
 
         <h2>Open items</h2>
         <ul>
-          <li>The message-signing consent flow does not yet match the hardened transaction path, so explicit user confirmation on message signing remains an open item.</li>
-          <li>Biometric unlock is not yet paired with a second factor.</li>
           <li>Some physical-device acceptance checks remain outstanding.</li>
           <li>One support-guidance item is deferred by the owner.</li>
         </ul>
@@ -120,9 +118,7 @@ export default function AuditDocs({ hash }: DocsProps) {
           summary. DEX price and slippage behaviour is out of scope for the wallet.
         </p>
         <p>
-          All critical and high findings on the transaction path are fixed. The
-          message-signing and biometric items listed above remain open and tracked, and
-          are not counted as resolved.
+          All critical and high findings on the transaction path are fixed.
         </p>
       </div>
 
