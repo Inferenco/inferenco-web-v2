@@ -153,8 +153,10 @@ export default function AuditDocs({ hash }: DocsProps) {
         <h1>Reporting a Vulnerability</h1>
         <p>
           If you believe you have found a security issue in Infer Wallet or Infer Desk,
-          please report it to <a href="mailto:security@inferenco.com">security@inferenco.com</a>.
-          This is the only address for security reports.
+          please report it to{" "}
+          <a href="mailto:spielcrypto@inferenco.com">spielcrypto@inferenco.com</a> or{" "}
+          <a href="mailto:singularityshift@inferenco.com">singularityshift@inferenco.com</a>.
+          These are the only addresses for security reports.
         </p>
         <p>
           We ask that you give us reasonable time to release a fix before disclosing

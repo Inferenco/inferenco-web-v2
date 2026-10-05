@@ -97,7 +97,9 @@ describe("Infer Connect docs consistency", () => {
       assert.ok(auditIds.includes(id), `missing audit section: ${id}`);
     }
 
-    assert.ok(auditDocs.includes("security@inferenco.com"));
+    assert.ok(auditDocs.includes("spielcrypto@inferenco.com"));
+    assert.ok(auditDocs.includes("singularityshift@inferenco.com"));
+    assert.ok(!auditDocs.includes("security@inferenco.com"));
     assert.ok(!/Nova/i.test(auditDocs));
     assert.ok(!auditDocs.includes("CodeBlock"));
   });
