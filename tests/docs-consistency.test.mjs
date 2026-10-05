@@ -16,6 +16,7 @@ const migrationDocs = readFileSync(
   resolve(root, "src/pages/docs/MigrationDocs.tsx"),
   "utf8"
 );
+const auditDocs = readFileSync(resolve(root, "src/pages/docs/AuditDocs.tsx"), "utf8");
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -80,6 +81,27 @@ describe("Infer Connect docs consistency", () => {
     ]) {
       assert.ok(migrationIds.includes(id), `missing migration section: ${id}`);
     }
+
+    const auditIds = sectionIds(auditDocs);
+    assert.equal(new Set(auditIds).size, auditIds.length);
+    for (const id of auditIds) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+    for (const id of [
+      "audits-overview",
+      "audits-infer-desk",
+      "audits-infer-wallet",
+      "audits-themes",
+      "audits-reporting",
+    ]) {
+      assert.ok(auditIds.includes(id), `missing audit section: ${id}`);
+    }
+
+    assert.ok(auditDocs.includes("spielcrypto@inferenco.com"));
+    assert.ok(auditDocs.includes("singularityshift@inferenco.com"));
+    assert.ok(!auditDocs.includes("security@inferenco.com"));
+    assert.ok(!/Nova/i.test(auditDocs));
+    assert.ok(!auditDocs.includes("CodeBlock"));
   });
 
   test("configuration table documents every InferWalletOptions field", () => {

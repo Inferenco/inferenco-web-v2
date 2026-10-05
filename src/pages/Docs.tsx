@@ -7,6 +7,7 @@ import BridgeDocs from "./docs/BridgeDocs";
 import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 import MigrationDocs from "./docs/MigrationDocs";
+import AuditDocs from "./docs/AuditDocs";
 
 const docsSections = [
   {
@@ -90,6 +91,16 @@ const docsSections = [
       { id: "migration-action-checklist", label: "Action Checklist", icon: "fas fa-list-ol" },
     ],
   },
+  {
+    title: "Security Audits",
+    items: [
+      { id: "audits-overview", label: "Overview", icon: "fas fa-shield-alt" },
+      { id: "audits-infer-desk", label: "Infer Desk", icon: "fas fa-desktop" },
+      { id: "audits-infer-wallet", label: "Infer Wallet", icon: "fas fa-mobile-alt" },
+      { id: "audits-themes", label: "What the Audits Cover", icon: "fas fa-clipboard-list" },
+      { id: "audits-reporting", label: "Reporting a Vulnerability", icon: "fas fa-envelope" },
+    ],
+  },
 ];
 
 function DocsContent() {
@@ -168,6 +179,7 @@ function DocsContent() {
             <PayMeDocs hash={hash} />
             <WalletProfileDocs hash={hash} />
             <MigrationDocs hash={hash} />
+            <AuditDocs hash={hash} />
           </>
         )}
       </main>
