@@ -1,9 +1,6 @@
 import type { DocsProps } from "./types";
 import CodeBlock from "../../components/CodeBlock";
 
-const MCP_RELEASE_TAG = "mcp-bridge-v0.1.0";
-const MCP_RELEASE_URL = `https://github.com/Inferenco/infer-desk-releases/releases/tag/${MCP_RELEASE_TAG}`;
-
 export default function InferMcpDocs({ hash }: DocsProps) {
   return (
     <>
@@ -13,9 +10,8 @@ export default function InferMcpDocs({ hash }: DocsProps) {
           Infer MCP is a standalone Model Context Protocol (MCP) server that lets AI coding agents
           operate the Infer Desk wallet — connect, check health, list sessions, and submit typed
           token transfers — while every sensitive action is still approved on the wallet&apos;s own
-          screen. It speaks Streamable-HTTP MCP on <code>127.0.0.1:21986</code>, implements MCP
-          protocol revision <code>2025-11-25</code>, and authenticates every request with a Bearer
-          token. The feature list and the per-OS download buttons live on the{" "}
+          screen. It speaks Streamable-HTTP MCP and authenticates every request with a Bearer token.
+          The feature list and the per-OS download buttons live on the{" "}
           <a href="/infer-mcp">Infer MCP product page</a>; this documentation covers how it works,
           how to install and verify it, how to wire it into your code agent, and what to do when a
           call does not go through.
@@ -26,9 +22,8 @@ export default function InferMcpDocs({ hash }: DocsProps) {
         </a>
 
         <div className="important-note">
-          <strong>⚠ Prerelease — not a wallet release.</strong> <code>{MCP_RELEASE_TAG}</code> is
-          a bridge prerelease and does not appear under <code>releases/latest</code>. Do not install
-          it over a wallet release.
+          <strong>⚠ Prerelease — not a wallet release.</strong> mcp-bridge-v0.1.0 is a bridge
+          prerelease. Do not install it over a wallet release.
         </div>
       </div>
 
@@ -214,13 +209,8 @@ INFER_DESK_MCP_WALLET_SPKI_PIN_B64=<paste>
         <h1>Installation</h1>
         <p>
           The per-OS download buttons are on the{" "}
-          <a href="/infer-mcp">Infer MCP product page</a>. The commands below fetch the same{" "}
-          <code>{MCP_RELEASE_TAG}</code> artifacts directly, so you can script the whole install.
-          Release notes:{" "}
-          <a href={MCP_RELEASE_URL} target="_blank" rel="noopener noreferrer">
-            {MCP_RELEASE_TAG}
-          </a>
-          .
+          <a href="/infer-mcp">Infer MCP product page</a>. Grab your binary and its checksum
+          sidecar there, then follow the verify, make-executable, and run steps below.
         </p>
         <p>
           <strong>Note:</strong> each binary ships with a SHA-256 sidecar, and the{" "}
@@ -232,16 +222,20 @@ INFER_DESK_MCP_WALLET_SPKI_PIN_B64=<paste>
 
         <h2>Linux (x86_64 and ARM64)</h2>
         <p>
-          Download the binary and its checksum sidecar, verify, make it executable, and run it.
+          1. Download the binary and its <code>.sha256</code> sidecar for your platform from the
+          downloads section of the Infer MCP page:
         </p>
-        <CodeBlock language="bash">{`curl -LO https://github.com/Inferenco/infer-desk-releases/releases/download/${MCP_RELEASE_TAG}/InferDeskMCPBridge-Linux-x86_64{,.sha256}
-sha256sum -c InferDeskMCPBridge-Linux-x86_64.sha256
+        <a href="/infer-mcp" className="cta-button">
+          Infer MCP downloads <i className="fas fa-arrow-right"></i>
+        </a>
+        <p>2. Then verify, make it executable, and run it:</p>
+        <CodeBlock language="bash">{`sha256sum -c InferDeskMCPBridge-Linux-x86_64.sha256
 chmod +x InferDeskMCPBridge-Linux-x86_64
 ./InferDeskMCPBridge-Linux-x86_64`}</CodeBlock>
         <p>
           The build targets glibc 2.35 or newer (it was produced in an{" "}
           <code>ubuntu:22.04</code> container). On an ARM machine, substitute{" "}
-          <code>InferDeskMCPBridge-Linux-aarch64</code> everywhere in those four commands.
+          <code>InferDeskMCPBridge-Linux-aarch64</code> everywhere in those three commands.
         </p>
 
         <h2>Windows with WSL2</h2>
@@ -263,25 +257,16 @@ chmod +x InferDeskMCPBridge-Linux-x86_64
           network path between the two.
         </p>
 
-        <h2>macOS</h2>
-        <p>
-          No prebuilt macOS artifact is attached to this release. Build from source with the Rust
-          toolchain and the <code>infer_desk</code> workspace sources:
-        </p>
-        <CodeBlock language="bash">{`cargo build --locked --release -p infer-desk-mcp-bridge
-# result: target/release/infer-desk-mcp-bridge`}</CodeBlock>
-        <p>
-          Use{" "}
-          <a href={MCP_RELEASE_URL} target="_blank" rel="noopener noreferrer">
-            the {MCP_RELEASE_TAG} release page
-          </a>{" "}
-          as the reference for the expected artifact names and checksums while you build.
-        </p>
-
         <h2>FreeBSD</h2>
-        <p>Download, verify, and run — the same four commands as Linux:</p>
-        <CodeBlock language="bash">{`curl -LO https://github.com/Inferenco/infer-desk-releases/releases/download/${MCP_RELEASE_TAG}/InferDeskMCPBridge-FreeBSD-x86_64{,.sha256}
-sha256sum -c InferDeskMCPBridge-FreeBSD-x86_64.sha256
+        <p>
+          1. Download <code>InferDeskMCPBridge-FreeBSD-x86_64</code> and its{" "}
+          <code>.sha256</code> sidecar from the downloads section of the Infer MCP page:
+        </p>
+        <a href="/infer-mcp" className="cta-button">
+          Infer MCP downloads <i className="fas fa-arrow-right"></i>
+        </a>
+        <p>2. Then verify, make it executable, and run it:</p>
+        <CodeBlock language="bash">{`sha256sum -c InferDeskMCPBridge-FreeBSD-x86_64.sha256
 chmod +x InferDeskMCPBridge-FreeBSD-x86_64
 ./InferDeskMCPBridge-FreeBSD-x86_64`}</CodeBlock>
         <p>
@@ -303,11 +288,47 @@ chmod +x InferDeskMCPBridge-FreeBSD-x86_64
 
         <h2>Mistral Vibe</h2>
         <p>
-          Vibe is the verified reference setup and needs no config file. Open{" "}
-          <strong>Connectors</strong> → <strong>Add MCP server</strong>, set the URL to{" "}
-          <code>http://127.0.0.1:21986/mcp</code>, and for <strong>Authentication</strong> paste
-          the value of <code>INFER_DESK_MCP_BEARER_TOKEN</code> — Vibe auto-detects that this is
-          Bearer auth and sends the correct header.
+          There are two ways to wire Vibe up, and which one applies depends on whether the bridge
+          runs on your own machine or somewhere else.
+        </p>
+
+        <h3>Option 1 — Mistral Vibe CLI (recommended for the local bridge)</h3>
+        <p>
+          The CLI runs on your machine, so it can reach the loopback server directly. Add the
+          server with a single command:
+        </p>
+        <CodeBlock language="bash">{`vibe mcp add infer-mcp --url http://127.0.0.1:21986/mcp --transport streamable-http --header "Authorization: Bearer <YOUR_TOKEN>"`}</CodeBlock>
+        <p>
+          Or edit <code>~/.vibe/config.toml</code> by hand — the CLI writes the same entry:
+        </p>
+        <pre className="code-block">
+          <code>{`[[mcp_servers]]
+name = "infer-mcp"
+transport = "streamable-http"
+url = "http://127.0.0.1:21986/mcp"
+headers = { "Authorization" = "Bearer <YOUR_TOKEN>" }`}</code>
+        </pre>
+        <p>
+          To keep the token out of the config file entirely, point the entry at an environment
+          variable instead: use <code>api_key_env</code> together with{" "}
+          <code>api_key_header = "Authorization"</code> and{" "}
+          <code>api_key_format = "Bearer &#123;token&#125;"</code>, and export the token from your
+          shell before starting Vibe.
+        </p>
+        <p>
+          Once the server is registered, the tools show up in the session prefixed with the server
+          name — <code>infer-mcp_&lt;tool&gt;</code>. Run <code>/mcp</code> inside a session to
+          confirm the server is connected and the tools are listed.
+        </p>
+
+        <h3>Option 2 — Mistral Connectors (only for a deployed bridge)</h3>
+        <p>
+          The Custom MCP Connector in the Vibe web UI requires the server to be reachable over
+          <strong> HTTPS with a valid TLS certificate on a public domain</strong>. It cannot reach a
+          bridge running on your machine&apos;s loopback interface. Use this path only if you deploy
+          the bridge behind a public HTTPS endpoint — there, Bearer auth is detected automatically,
+          so you paste the value of <code>INFER_DESK_MCP_BEARER_TOKEN</code> into the
+          Authentication field.
         </p>
 
         <h2>Codex</h2>

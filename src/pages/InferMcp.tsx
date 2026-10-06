@@ -1,5 +1,4 @@
 const MCP_RELEASE_TAG = "mcp-bridge-v0.1.0";
-const MCP_RELEASE_URL = `https://github.com/Inferenco/infer-desk-releases/releases/tag/${MCP_RELEASE_TAG}`;
 const MCP_ASSET = (name: string) =>
   `https://github.com/Inferenco/infer-desk-releases/releases/download/${MCP_RELEASE_TAG}/${name}`;
 
@@ -63,29 +62,17 @@ export default function InferMcp() {
             </a>
             <a
               id="download-infer-mcp-windows"
-              href={MCP_RELEASE_URL}
+              href="/docs#mcp-installation"
               className="cta-button"
-              aria-label="Infer MCP bridge release notes for Windows via WSL2"
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-label="Infer MCP bridge install guide for Windows via WSL2"
             >
               <i className="fab fa-windows"></i> Windows (via WSL2)
             </a>
-            <a
-              id="download-infer-mcp-macos"
-              href={MCP_RELEASE_URL}
-              className="cta-button"
-              aria-label="Infer MCP bridge build instructions for macOS"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-apple"></i> macOS (from source)
-            </a>
           </div>
           <p>
-            Windows and macOS have no native binary — see the{" "}
-            <a href="/docs#mcp-installation">Installation</a> documentation for the WSL2 and
-            build-from-source paths.
+            Windows runs the Linux x86_64 build inside WSL2 — the{" "}
+            <a href="/docs#mcp-installation">installation guide</a> walks you through it step by
+            step.
           </p>
           <div className="important-note">
             <strong>⚠ Prerelease — not a wallet release.</strong>{" "}
@@ -144,7 +131,7 @@ export default function InferMcp() {
               <h4>Cross-platform</h4>
               <p>
                 Prebuilt for Linux x86_64 and ARM64 and FreeBSD; Windows runs the Linux build under
-                WSL2, and macOS builds from source.
+                WSL2.
               </p>
             </article>
           </div>

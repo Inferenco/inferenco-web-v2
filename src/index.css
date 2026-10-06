@@ -1983,6 +1983,20 @@ html.light .highlighted-code {
     table-layout: fixed;
 }
 
+/* Some docs pages apply .functions-table directly to the <table> element
+   (Infer MCP, Bridge) instead of wrapping it in a div. In that case the rules
+   above never match, so the table kept `min-width: 800px` + `overflow-x: auto`
+   (meaningless on a table) and auto layout, letting long inline content spill
+   into the neighbouring column. Give the table itself the same contract. */
+table.functions-table {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: visible;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
 .functions-table th,
 .functions-table td {
     padding: 0.5rem 0.75rem;
@@ -1994,12 +2008,16 @@ html.light .highlighted-code {
     line-height: 1.4;
 }
 
-/* Allow code elements in functions table to wrap as needed */
+/* Allow code elements in functions table to wrap as needed.
+   These must stay inline: an inline-block is atomic for line breaking, so a
+   long token (WalletError::MtlsNotBound, INFER_DESK_MCP_*) would overflow its
+   cell and paint over the next column. */
 .functions-table code {
     white-space: normal;
-    display: inline-block;
+    display: inline;
+    max-width: 100%;
     word-break: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 .functions-table th {
@@ -2016,10 +2034,10 @@ html.light .highlighted-code {
 .functions-table td:nth-child(1) {
     width: 25%;
     min-width: 160px;
-    white-space: nowrap;
-    overflow: visible;
+    white-space: normal;
     border-right: 1px solid var(--border);
-    word-break: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .functions-table th:nth-child(2),
@@ -2061,6 +2079,27 @@ html.light .functions-table td:nth-child(3) {
     white-space: normal;
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+/* Infer MCP troubleshooting table: three long, text-heavy columns. The default
+   25/50/20 split left the Symptom column too narrow for its inline <code>
+   tokens, which is what made the Symptom and Cause text collide. */
+#mcp-troubleshooting .functions-table th:nth-child(1),
+#mcp-troubleshooting .functions-table td:nth-child(1) {
+    width: 32%;
+    min-width: 0;
+}
+
+#mcp-troubleshooting .functions-table th:nth-child(2),
+#mcp-troubleshooting .functions-table td:nth-child(2) {
+    width: 30%;
+    min-width: 0;
+}
+
+#mcp-troubleshooting .functions-table th:nth-child(3),
+#mcp-troubleshooting .functions-table td:nth-child(3) {
+    width: 38%;
+    min-width: 0;
 }
 
 .params-table th,
@@ -2697,6 +2736,11 @@ html.light .functions-table td:nth-child(3) {
         content: "Description: ";
     }
     
+    /* Infer MCP Troubleshooting table - cells carry their own data-label */
+    #mcp-troubleshooting .functions-table tbody tr td::before {
+        content: attr(data-label) ": ";
+    }
+
     /* Infer Connect Configuration table - 4 columns */
     #infer-connect-configuration .functions-table tbody tr td:nth-child(1)::before {
         content: "Option: ";
