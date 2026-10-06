@@ -17,6 +17,7 @@ const migrationDocs = readFileSync(
   "utf8"
 );
 const auditDocs = readFileSync(resolve(root, "src/pages/docs/AuditDocs.tsx"), "utf8");
+const inferMcpDocs = readFileSync(resolve(root, "src/pages/docs/InferMcpDocs.tsx"), "utf8");
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -102,6 +103,32 @@ describe("Infer Connect docs consistency", () => {
     assert.ok(!auditDocs.includes("security@inferenco.com"));
     assert.ok(!/Nova/i.test(auditDocs));
     assert.ok(!auditDocs.includes("CodeBlock"));
+
+    const inferMcpIds = sectionIds(inferMcpDocs);
+    assert.equal(new Set(inferMcpIds).size, inferMcpIds.length);
+    for (const id of inferMcpIds) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+    for (const id of [
+      "mcp-introduction",
+      "mcp-how-it-works",
+      "mcp-downloads",
+      "mcp-installation",
+      "mcp-connecting-agents",
+      "mcp-prompt-examples",
+      "mcp-security",
+      "mcp-troubleshooting",
+    ]) {
+      assert.ok(inferMcpIds.includes(id), `missing Infer MCP section: ${id}`);
+    }
+
+    assert.ok(inferMcpDocs.includes('MCP_RELEASE_TAG = "mcp-bridge-v0.1.0"'));
+    assert.ok(inferMcpDocs.includes("WSL2"));
+    assert.ok(inferMcpDocs.includes("sha256sum -c"));
+    assert.ok(inferMcpDocs.includes("127.0.0.1:21986"));
+    assert.ok(!/Nova/i.test(inferMcpDocs));
+    assert.ok(!inferMcpDocs.includes("detectOS"));
+    assert.ok(!inferMcpDocs.includes("shouldShow"));
   });
 
   test("configuration table documents every InferWalletOptions field", () => {

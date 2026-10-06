@@ -4,6 +4,7 @@ import InferBotDocs from "./docs/InferBotDocs";
 import InferAPIDocs from "./docs/InferAPIDocs";
 import InferConnectDocs from "./docs/InferConnectDocs";
 import BridgeDocs from "./docs/BridgeDocs";
+import InferMcpDocs from "./docs/InferMcpDocs";
 import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 import MigrationDocs from "./docs/MigrationDocs";
@@ -57,6 +58,19 @@ const docsSections = [
       { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
       { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
       { id: "bridge-wallet-client", label: "Wallet Client", icon: "fas fa-mobile-alt" },
+    ],
+  },
+  {
+    title: "Infer MCP",
+    items: [
+      { id: "mcp-introduction", label: "Introduction", icon: "fas fa-plug" },
+      { id: "mcp-how-it-works", label: "How It Works", icon: "fas fa-project-diagram" },
+      { id: "mcp-downloads", label: "Downloads", icon: "fas fa-download" },
+      { id: "mcp-installation", label: "Installation", icon: "fas fa-list-ol" },
+      { id: "mcp-connecting-agents", label: "Connect Code Agents", icon: "fas fa-robot" },
+      { id: "mcp-prompt-examples", label: "Prompt Examples", icon: "fas fa-comments" },
+      { id: "mcp-security", label: "Security", icon: "fas fa-shield-alt" },
+      { id: "mcp-troubleshooting", label: "Troubleshooting", icon: "fas fa-wrench" },
     ],
   },
   {
@@ -176,6 +190,7 @@ function DocsContent() {
             <InferAPIDocs hash={hash} />
             <InferConnectDocs hash={hash} />
             <BridgeDocs hash={hash} />
+            <InferMcpDocs hash={hash} />
             <PayMeDocs hash={hash} />
             <WalletProfileDocs hash={hash} />
             <MigrationDocs hash={hash} />
