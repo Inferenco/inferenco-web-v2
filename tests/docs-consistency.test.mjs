@@ -112,7 +112,6 @@ describe("Infer Connect docs consistency", () => {
     for (const id of [
       "mcp-introduction",
       "mcp-how-it-works",
-      "mcp-downloads",
       "mcp-installation",
       "mcp-connecting-agents",
       "mcp-prompt-examples",
@@ -121,6 +120,13 @@ describe("Infer Connect docs consistency", () => {
     ]) {
       assert.ok(inferMcpIds.includes(id), `missing Infer MCP section: ${id}`);
     }
+
+    // Downloads and the feature grid live on the product page (/infer-mcp),
+    // not in the docs. The docs must point there instead.
+    assert.ok(!inferMcpDocs.includes('id="mcp-downloads"'));
+    assert.ok(!inferMcpDocs.includes("DownloadButtons"));
+    assert.ok(!inferMcpDocs.includes('className="features-grid"'));
+    assert.ok(inferMcpDocs.includes('href="/infer-mcp"'));
 
     assert.ok(inferMcpDocs.includes('MCP_RELEASE_TAG = "mcp-bridge-v0.1.0"'));
     assert.ok(inferMcpDocs.includes("WSL2"));

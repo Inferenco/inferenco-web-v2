@@ -12,6 +12,7 @@ const productsDropdown: ProductDropdownItem[] = [
   { label: "Infer Bot", path: "/infer", page: "infer" },
   { label: "Infer Wallet", path: "/infer-wallet", page: "infer-wallet" },
   { label: "Infer Desk", path: "/infer-desk", page: "infer-desk" },
+  { label: "Infer MCP", path: "/infer-mcp", page: "infer-mcp" },
   { label: "Infer Ecosystem", path: "https://app.inferenco.com", external: true },
 ];
 
@@ -263,6 +264,7 @@ export default function Layout() {
               <Link to="/infer">Infer Bot</Link>
               <Link to="/infer-wallet">Infer Wallet</Link>
               <Link to="/infer-desk">Infer Desk</Link>
+              <Link to="/infer-mcp">Infer MCP</Link>
               <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">Infer Ecosystem</a>
             </div>
             <div className="footer-links">

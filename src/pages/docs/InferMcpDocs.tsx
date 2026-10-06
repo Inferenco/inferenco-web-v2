@@ -3,64 +3,6 @@ import CodeBlock from "../../components/CodeBlock";
 
 const MCP_RELEASE_TAG = "mcp-bridge-v0.1.0";
 const MCP_RELEASE_URL = `https://github.com/Inferenco/infer-desk-releases/releases/tag/${MCP_RELEASE_TAG}`;
-const MCP_ASSET = (name: string) =>
-  `https://github.com/Inferenco/infer-desk-releases/releases/download/${MCP_RELEASE_TAG}/${name}`;
-
-const LINUX_X86_64_ASSET = "InferDeskMCPBridge-Linux-x86_64";
-const LINUX_ARM64_ASSET = "InferDeskMCPBridge-Linux-aarch64";
-const FREEBSD_X86_64_ASSET = "InferDeskMCPBridge-FreeBSD-x86_64";
-
-function DownloadButtons() {
-  return (
-    <div className="download-buttons">
-      <a
-        href={MCP_ASSET(LINUX_X86_64_ASSET)}
-        className="cta-button"
-        aria-label="Download the Infer MCP bridge for Linux x86_64"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="fab fa-linux"></i> Linux x86_64
-      </a>
-      <a
-        href={MCP_ASSET(LINUX_ARM64_ASSET)}
-        className="cta-button"
-        aria-label="Download the Infer MCP bridge for Linux ARM64"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="fab fa-linux"></i> Linux ARM64
-      </a>
-      <a
-        href={MCP_ASSET(FREEBSD_X86_64_ASSET)}
-        className="cta-button"
-        aria-label="Download the Infer MCP bridge for FreeBSD"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="fab fa-freebsd"></i> FreeBSD
-      </a>
-      <a
-        href={MCP_RELEASE_URL}
-        className="cta-button"
-        aria-label="Infer MCP bridge release notes for Windows via WSL2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="fab fa-windows"></i> Windows (via WSL2)
-      </a>
-      <a
-        href={MCP_RELEASE_URL}
-        className="cta-button"
-        aria-label="Infer MCP bridge build instructions for macOS"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i className="fab fa-apple"></i> macOS (from source)
-      </a>
-    </div>
-  );
-}
 
 export default function InferMcpDocs({ hash }: DocsProps) {
   return (
@@ -73,67 +15,15 @@ export default function InferMcpDocs({ hash }: DocsProps) {
           token transfers — while every sensitive action is still approved on the wallet&apos;s own
           screen. It speaks Streamable-HTTP MCP on <code>127.0.0.1:21986</code>, implements MCP
           protocol revision <code>2025-11-25</code>, and authenticates every request with a Bearer
-          token.
+          token. The feature list and the per-OS download buttons live on the{" "}
+          <a href="/infer-mcp">Infer MCP product page</a>; this documentation covers how it works,
+          how to install and verify it, how to wire it into your code agent, and what to do when a
+          call does not go through.
         </p>
 
-        <div className="features-grid">
-          <article className="feature-card">
-            <span className="emoji">🔌</span>
-            <h4>Any MCP client</h4>
-            <p>
-              Works with any agent that speaks Streamable-HTTP MCP, including the setups on the{" "}
-              <a href="/docs#mcp-connecting-agents">Connect Code Agents</a> page.
-            </p>
-          </article>
-          <article className="feature-card">
-            <span className="emoji">🔐</span>
-            <h4>Bearer + SPKI security</h4>
-            <p>
-              A token authenticates the agent to the bridge; SPKI-pinned mTLS (or NIP-44 Nostr DMs)
-              authenticates the bridge to the wallet.
-            </p>
-          </article>
-          <article className="feature-card">
-            <span className="emoji">✅</span>
-            <h4>Per-request approval</h4>
-            <p>
-              The wallet shows an approval sheet for every sensitive call. Nothing is auto-signed,
-              not even for a repeated prompt.
-            </p>
-          </article>
-          <article className="feature-card">
-            <span className="emoji">🪙</span>
-            <h4>Typed transfers</h4>
-            <p>
-              <code>send_token</code> builds a typed entry-function transfer, so the wallet can show
-              intent instead of an opaque blind-signing blob.
-            </p>
-          </article>
-          <article className="feature-card">
-            <span className="emoji">🌐</span>
-            <h4>Two transports</h4>
-            <p>
-              Mutual-TLS over loopback (default) or encrypted Nostr direct messages for wallets that
-              are not on the same machine.
-            </p>
-          </article>
-          <article className="feature-card">
-            <span className="emoji">🖥️</span>
-            <h4>Cross-platform</h4>
-            <p>
-              Prebuilt for Linux x86_64 and ARM64 and FreeBSD; Windows runs the Linux build under
-              WSL2, and macOS builds from source.
-            </p>
-          </article>
-        </div>
-
-        <h2>Download</h2>
-        <DownloadButtons />
-        <p>
-          Windows and macOS have no native binary — see{" "}
-          <a href="/docs#mcp-installation">Installation</a> for the WSL2 and build-from-source
-          paths.
-        </p>
+        <a href="/infer-mcp" className="cta-button">
+          Features and downloads <i className="fas fa-arrow-right"></i>
+        </a>
 
         <div className="important-note">
           <strong>⚠ Prerelease — not a wallet release.</strong> <code>{MCP_RELEASE_TAG}</code> is
@@ -320,104 +210,25 @@ INFER_DESK_MCP_WALLET_SPKI_PIN_B64=<paste>
         </ol>
       </div>
 
-      <div id="mcp-downloads" className={`docs-section ${hash === "mcp-downloads" ? "active" : ""}`}>
-        <h1>Downloads</h1>
+      <div id="mcp-installation" className={`docs-section ${hash === "mcp-installation" ? "active" : ""}`}>
+        <h1>Installation</h1>
         <p>
-          All artifacts for <code>{MCP_RELEASE_TAG}</code> are attached to the release page. Every
-          download button is always visible here — pick the row that matches your machine.
-        </p>
-
-        <DownloadButtons />
-
-        <h2>Artifacts</h2>
-        <div className="table-responsive">
-          <table className="functions-table">
-            <thead>
-              <tr>
-                <th>Asset</th>
-                <th>Platform</th>
-                <th>Requirement</th>
-                <th>Checksum</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Asset"><code>{LINUX_X86_64_ASSET}</code></td>
-                <td data-label="Platform">Linux x86_64</td>
-                <td data-label="Requirement">glibc 2.35 or newer</td>
-                <td data-label="Checksum">
-                  <a
-                    href={MCP_ASSET(`${LINUX_X86_64_ASSET}.sha256`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    .sha256
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Asset"><code>{LINUX_ARM64_ASSET}</code></td>
-                <td data-label="Platform">Linux ARM64</td>
-                <td data-label="Requirement">glibc 2.35 or newer</td>
-                <td data-label="Checksum">
-                  <a
-                    href={MCP_ASSET(`${LINUX_ARM64_ASSET}.sha256`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    .sha256
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Asset"><code>{FREEBSD_X86_64_ASSET}</code></td>
-                <td data-label="Platform">FreeBSD x86_64</td>
-                <td data-label="Requirement">
-                  Native build. mDNS LAN discovery may be degraded; connecting by direct IP or a
-                  configured address is unaffected.
-                </td>
-                <td data-label="Checksum">
-                  <a
-                    href={MCP_ASSET(`${FREEBSD_X86_64_ASSET}.sha256`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    .sha256
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2>Verifying a download</h2>
-        <p>Each binary ships with a SHA-256 sidecar. Check it before you run anything:</p>
-        <CodeBlock language="bash">{`sha256sum -c InferDeskMCPBridge-Linux-x86_64.sha256`}</CodeBlock>
-        <p>
-          <strong>Note:</strong> these artifacts are SHA-256 verified but <strong>not signed</strong>.
-          No minisign signature or MANIFEST exists for mcp-bridge releases yet, so treat the
-          sidecar as a transfer-integrity check only — it proves the file arrived intact, not that
-          it was published by us.
-        </p>
-        <p>
+          The per-OS download buttons are on the{" "}
+          <a href="/infer-mcp">Infer MCP product page</a>. The commands below fetch the same{" "}
+          <code>{MCP_RELEASE_TAG}</code> artifacts directly, so you can script the whole install.
           Release notes:{" "}
           <a href={MCP_RELEASE_URL} target="_blank" rel="noopener noreferrer">
             {MCP_RELEASE_TAG}
           </a>
-          . All releases:{" "}
-          <a
-            href="https://github.com/Inferenco/infer-desk-releases/releases"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            the Infer Desk releases listing
-          </a>
           .
         </p>
-      </div>
-
-      <div id="mcp-installation" className={`docs-section ${hash === "mcp-installation" ? "active" : ""}`}>
-        <h1>Installation</h1>
+        <p>
+          <strong>Note:</strong> each binary ships with a SHA-256 sidecar, and the{" "}
+          <code>sha256sum -c</code> step below checks it before you run anything. These artifacts
+          are SHA-256 verified but <strong>not signed</strong> — no minisign signature or MANIFEST
+          exists for mcp-bridge releases yet, so treat the sidecar as a transfer-integrity check
+          only: it proves the file arrived intact, not that it was published by us.
+        </p>
 
         <h2>Linux (x86_64 and ARM64)</h2>
         <p>

@@ -65,7 +65,6 @@ const docsSections = [
     items: [
       { id: "mcp-introduction", label: "Introduction", icon: "fas fa-plug" },
       { id: "mcp-how-it-works", label: "How It Works", icon: "fas fa-project-diagram" },
-      { id: "mcp-downloads", label: "Downloads", icon: "fas fa-download" },
       { id: "mcp-installation", label: "Installation", icon: "fas fa-list-ol" },
       { id: "mcp-connecting-agents", label: "Connect Code Agents", icon: "fas fa-robot" },
       { id: "mcp-prompt-examples", label: "Prompt Examples", icon: "fas fa-comments" },
