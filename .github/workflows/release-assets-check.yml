@@ -1,0 +1,69 @@
+name: Release asset contract check
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-assets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Assert wallet assets on the latest stable release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          expected=(
+            InferDesk-Windows-x64.exe
+            InferDesk-macOS-x86_64.zip
+            InferDesk-macOS-aarch64.zip
+            InferDesk-x86_64.AppImage
+            InferDesk-aarch64.AppImage
+            InferDesk-FreeBSD-x86_64
+          )
+          assets=$(gh api repos/Inferenco/infer-desk-releases/releases/latest --jq '.assets[].name')
+          for a in "${expected[@]}"; do
+            if ! grep -qxF "$a" <<<"$assets"; then
+              echo "::error::Latest wallet release is missing expected asset: $a (the releases/latest/download links on inferenco.com will 404)"
+              exit 1
+            fi
+          done
+          echo "Wallet asset contract OK"
+
+      - name: Assert MCP bridge assets on the newest mcp-bridge-v prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Same selection rule as the deploy manifest step: highest numeric
+          # mcp-bridge-v* version, drafts excluded. Keep the two in sync.
+          tag=$(gh api 'repos/Inferenco/infer-desk-releases/releases?per_page=100' --jq '
+            [ .[]
+              | select((.draft | not) and (.tag_name | startswith("mcp-bridge-v")))
+              | { tag: .tag_name,
+                  ver: (.tag_name | ltrimstr("mcp-bridge-v") | split(".")
+                        | map(((. | capture("^(?<n>[0-9]+)").n) // "0") | tonumber)),
+                  published: (.published_at // .created_at // "") } ]
+            | sort_by(.ver, .published)
+            | last
+            | .tag // empty')
+          if [ -z "$tag" ] || [ "$tag" = "null" ]; then
+            echo "::error::No release with tag prefix mcp-bridge-v found in Inferenco/infer-desk-releases"
+            exit 1
+          fi
+          expected=(
+            InferDeskMCPBridge-Linux-x86_64
+            InferDeskMCPBridge-Linux-aarch64
+            InferDeskMCPBridge-FreeBSD-x86_64
+          )
+          assets=$(gh api "repos/Inferenco/infer-desk-releases/releases/tags/$tag" --jq '.assets[].name')
+          for a in "${expected[@]}"; do
+            if ! grep -qxF "$a" <<<"$assets"; then
+              echo "::error::MCP bridge release $tag is missing expected asset: $a"
+              exit 1
+            fi
+          done
+          echo "MCP bridge asset contract OK for $tag"
