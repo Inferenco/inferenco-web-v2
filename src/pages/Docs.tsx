@@ -9,6 +9,7 @@ import PayMeDocs from "./docs/PayMeDocs";
 import WalletProfileDocs from "./docs/WalletProfileDocs";
 import MigrationDocs from "./docs/MigrationDocs";
 import AuditDocs from "./docs/AuditDocs";
+import InferDeskDocs from "./docs/InferDeskDocs";
 
 const docsSections = [
   {
@@ -58,6 +59,12 @@ const docsSections = [
       { id: "bridge-setup", label: "Setup Guide", icon: "fas fa-list-ol" },
       { id: "bridge-security", label: "Security", icon: "fas fa-shield-alt" },
       { id: "bridge-wallet-client", label: "Wallet Client", icon: "fas fa-mobile-alt" },
+    ],
+  },
+  {
+    title: "Infer Desk",
+    items: [
+      { id: "macos-installation", label: "Installation", icon: "fas fa-download" },
     ],
   },
   {
@@ -189,6 +196,7 @@ function DocsContent() {
             <InferAPIDocs hash={hash} />
             <InferConnectDocs hash={hash} />
             <BridgeDocs hash={hash} />
+            <InferDeskDocs hash={hash} />
             <InferMcpDocs hash={hash} />
             <PayMeDocs hash={hash} />
             <WalletProfileDocs hash={hash} />

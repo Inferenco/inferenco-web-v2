@@ -19,6 +19,8 @@ const migrationDocs = readFileSync(
 const auditDocs = readFileSync(resolve(root, "src/pages/docs/AuditDocs.tsx"), "utf8");
 const inferMcpDocs = readFileSync(resolve(root, "src/pages/docs/InferMcpDocs.tsx"), "utf8");
 const inferMcpPage = readFileSync(resolve(root, "src/pages/InferMcp.tsx"), "utf8");
+const inferDeskDocs = readFileSync(resolve(root, "src/pages/docs/InferDeskDocs.tsx"), "utf8");
+const inferDeskPage = readFileSync(resolve(root, "src/pages/InferDesk.tsx"), "utf8");
 
 function sectionIds(source) {
   return Array.from(source.matchAll(/<div id="([^"]+)"/g), (match) => match[1]);
@@ -153,6 +155,20 @@ describe("Infer Connect docs consistency", () => {
     assert.ok(inferMcpPage.includes("InferDeskMCPBridge-Linux-aarch64"));
     assert.ok(inferMcpPage.includes("InferDeskMCPBridge-FreeBSD-x86_64"));
     assert.ok(!/macOS/.test(inferMcpPage));
+  });
+
+  test("Infer Desk docs sections are unique and registered in the sidebar", () => {
+    const ids = sectionIds(inferDeskDocs);
+    assert.equal(new Set(ids).size, ids.length);
+    for (const id of ids) {
+      assert.match(docsPage, new RegExp(`id: "${id}"`));
+    }
+    assert.ok(ids.includes("macos-installation"), "missing Infer Desk section: macos-installation");
+  });
+
+  test("Infer Desk product page links macOS users to the install guide", () => {
+    assert.ok(inferDeskPage.includes("/docs#macos-installation"));
+    assert.ok(inferDeskPage.includes("isMacOS &&"));
   });
 
   test("configuration table documents every InferWalletOptions field", () => {
