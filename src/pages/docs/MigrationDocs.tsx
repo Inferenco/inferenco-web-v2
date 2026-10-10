@@ -15,8 +15,8 @@ export default function MigrationDocs({ hash }: DocsProps) {
           <strong>⚠ Nova Desk cannot update itself to Infer Desk.</strong> The 0.5.x
           in-app updater only installs artifacts published under the old Nova Desk
           release identity, and Infer Desk 0.6.0 is not one of them. This is a
-          one-time <strong>manual install</strong>: download and run the Infer Desk
-          0.6.0 installer for your platform.
+          one-time <strong>manual install</strong>: download and run the Infer Desk{" "}
+          <strong>0.6.2</strong> installer for your platform.
           <br /><br />
           If you clicked "Install" inside Nova Desk and saw an error like{" "}
           <em>"Nova Desk downloaded the update but could not start the installer
@@ -188,8 +188,8 @@ export default function MigrationDocs({ hash }: DocsProps) {
             <code>cp -r ~/.nova_desk ~/.nova_desk.bak</code>.
           </li>
           <li>
-            <strong>Install Infer Desk v0.6.0</strong> from{" "}
-            <a href="https://github.com/Inferenco/infer-desk-releases/releases/tag/v0.6.0">
+            <strong>Install Infer Desk v0.6.2</strong> from{" "}
+            <a href="https://github.com/Inferenco/infer-desk-releases/releases/tag/v0.6.2">
               the official release page
             </a>
             . Verify the download against the minisign signature bundled with each asset.
