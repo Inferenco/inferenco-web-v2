@@ -22,8 +22,8 @@ export default function InferMcpDocs({ hash }: DocsProps) {
         </a>
 
         <div className="important-note">
-          <strong>⚠ Prerelease — not a wallet release.</strong> mcp-bridge-v0.1.0 is a bridge
-          prerelease. Do not install it over a wallet release.
+          <strong>⚠ Prerelease — not a wallet release.</strong> The latest bridge prerelease
+          is not a wallet release. Do not install it over a wallet release.
         </div>
       </div>
 
