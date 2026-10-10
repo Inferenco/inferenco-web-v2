@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { getDownloadUrl, type OS } from "../services/github";
 import LightboxGallery from "../components/LightboxGallery";
 
@@ -48,18 +49,54 @@ export default function InferDesk() {
   const detectedOS = detectOS();
   const isUnknownOS = detectedOS === "unknown";
   const isMacOS = detectedOS === "mac" || detectedOS === "mac-intel" || detectedOS === "mac-arm64";
-  const showAllButtons = isUnknownOS || isMacOS;
+  const showAllButtons = isUnknownOS;
+
+  // macOS architecture is only confidently detectable through Chromium's
+  // asynchronous high-entropy UA values. Start at "unknown" so mac users see
+  // BOTH mac buttons on the first paint (never a wrong single button) and only
+  // collapse to one once the architecture is actually resolved. Safari and
+  // Firefox on macOS cannot reliably distinguish Intel from Apple Silicon, so
+  // they keep both.
+  const [macArch, setMacArch] = useState<"unknown" | "intel" | "arm">("unknown");
+
+  useEffect(() => {
+    if (!isMacOS) return;
+    // navigator.userAgentData is not in lib.dom (TS 6.0.2) — local type shim,
+    // same cast style as the oscpu probe in detectOS().
+    const uad = (navigator as Navigator & {
+      userAgentData?: {
+        getHighEntropyValues(hints: string[]): Promise<{ architecture?: string }>;
+      };
+    }).userAgentData;
+    if (typeof uad?.getHighEntropyValues === "function") {
+      // Chromium-only, async. architecture === "arm" on Apple Silicon, "x86" on Intel.
+      uad.getHighEntropyValues(["architecture"])
+        .then((values) => {
+          if (values.architecture === "arm") setMacArch("arm");
+          else if (values.architecture === "x86") setMacArch("intel");
+        })
+        .catch(() => {
+          /* leave "unknown" — both mac buttons stay visible */
+        });
+    }
+    // Safari and Firefox on macOS cannot reliably distinguish Intel from Apple
+    // Silicon (Safari's maxTouchPoints > 0 has Intel Touch Bar false positives;
+    // Firefox reports Intel-style oscpu on all Macs) — keep "unknown" and show both.
+  }, [isMacOS]);
 
   // On Linux, always show both x64 and ARM64 buttons since we can't reliably
   // detect architecture from browser (Raspberry Pi OS reports x86_64 in userAgent
   // even when running on ARM64 hardware). Also show FreeBSD since Firefox on
-  // FreeBSD reports as Linux.
+  // FreeBSD reports as Linux. On macOS show only the macOS button(s) — a single
+  // arch-matched one once the architecture is confidently detected (Chromium
+  // high-entropy values), otherwise both so nobody is handed the wrong build.
   const shouldShow = (os: OS): boolean => {
+    if (showAllButtons) return true;
     if (detectedOS === "linux" && (os === "linux" || os === "linux-arm64" || os === "freebsd")) return true;
     if (detectedOS === "freebsd" && os === "freebsd") return true;
-    if (detectedOS === "mac-intel" && (os === "mac-intel" || os === "mac-arm64")) return true;
-    if (detectedOS === "mac-arm64" && (os === "mac-intel" || os === "mac-arm64")) return true;
-    return detectedOS === os || showAllButtons;
+    if (isMacOS && os === "mac-intel") return macArch === "unknown" || macArch === "intel";
+    if (isMacOS && os === "mac-arm64") return macArch === "unknown" || macArch === "arm";
+    return detectedOS === os;
   };
 
   return (
@@ -203,7 +240,7 @@ export default function InferDesk() {
               </p>
               <p>
                 <strong>Note:</strong> The one exception is the
-                Nova Desk → Infer Desk 0.6.0 upgrade, which is a one-time manual
+                Nova Desk → Infer Desk upgrade, which is a one-time manual
                 install. See the <a href="/docs#migration-introduction">upgrade
                 guide</a> for details.
               </p>

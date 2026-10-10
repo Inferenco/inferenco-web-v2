@@ -8,11 +8,11 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const githubService = readFileSync(resolve(root, "src/services/github.ts"), "utf8");
 
 describe("Infer Desk published download URLs", () => {
-  test("binary assets use the infer-desk-releases v0.6.0 tag with InferDesk- names", () => {
+  test("binary assets use the infer-desk-releases v0.6.2 tag with InferDesk- names", () => {
     assert.match(githubService, /REPO_NAME = "infer-desk-releases"/);
     // The download base is templated from RELEASE_TAG, so assert the pin and
     // the template shape rather than a literal expanded URL.
-    assert.match(githubService, /RELEASE_TAG = "v0\.6\.0"/);
+    assert.match(githubService, /RELEASE_TAG = "v0\.6\.2"/);
     assert.match(githubService, /releases\/download\/\$\{RELEASE_TAG\}/);
     assert.match(githubService, /InferDesk-Windows-x64\.exe/);
     assert.match(githubService, /InferDesk-x86_64\.AppImage/);
@@ -22,15 +22,13 @@ describe("Infer Desk published download URLs", () => {
     assert.doesNotMatch(githubService, /NovaDesk-/);
   });
 
-  test("macOS links to the releases listing page (macOS tag not yet published)", () => {
-    // macOS binaries are not attached to any release yet — point users at the
-    // releases listing so they land on a working page.
+  test("macOS downloads are the v0.6.2 zips attached to the main tag", () => {
+    assert.match(githubService, /InferDesk-macOS-x86_64\.zip/);
+    assert.match(githubService, /InferDesk-macOS-aarch64\.zip/);
+    // The "mac" fallback case still links to the releases listing.
     assert.match(githubService, /REPO_NAME\}\/releases`;/);
-    // No 404 to a not-yet-published tag.
-    assert.doesNotMatch(githubService, /releases\/tag\/v0\.6\.0-macos/);
-    assert.doesNotMatch(githubService, /MACOS_RELEASE_TAG/);
-    // macOS zips/dmgs are not attached to the main v0.6.0 release.
-    assert.doesNotMatch(githubService, /InferDesk-macOS-[^"`']+\.zip/);
+    // No dmg/universal builds exist; no separate macOS tag was ever published.
     assert.doesNotMatch(githubService, /InferDesk-macOS-[^"`']+\.dmg/);
+    assert.doesNotMatch(githubService, /MACOS_RELEASE_TAG/);
   });
 });
