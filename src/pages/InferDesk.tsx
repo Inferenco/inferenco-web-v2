@@ -194,6 +194,12 @@ export default function InferDesk() {
               </a>
             )}
           </div>
+          {isMacOS && (
+            <p>
+              New to macOS? The <a href="/docs#macos-installation">install guide</a> walks
+              you through unzipping, installing, and the first-launch security prompt.
+            </p>
+          )}
         </div>
       </section>
 
