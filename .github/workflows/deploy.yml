@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  # Nightly refresh of public/downloads.json so the Infer MCP download buttons
+  # always point at the newest mcp-bridge-v* prerelease without a source edit.
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -26,6 +31,45 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Resolve latest MCP bridge release into public/downloads.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Pick the highest mcp-bridge-v* version by numeric semver, not by list
+          # position: every release in infer-desk-releases shares one created_at
+          # (bulk import), so the API's "created_at descending" order is a tie and
+          # its tie-break is unspecified. Drafts are excluded (their assets are not
+          # publicly downloadable); published_at breaks a genuine version tie.
+          tag=$(gh api 'repos/Inferenco/infer-desk-releases/releases?per_page=100' --jq '
+            [ .[]
+              | select((.draft | not) and (.tag_name | startswith("mcp-bridge-v")))
+              | { tag: .tag_name,
+                  ver: (.tag_name | ltrimstr("mcp-bridge-v") | split(".")
+                        | map(((. | capture("^(?<n>[0-9]+)").n) // "0") | tonumber)),
+                  published: (.published_at // .created_at // "") } ]
+            | sort_by(.ver, .published)
+            | last
+            | .tag // empty')
+          if [ -z "$tag" ] || [ "$tag" = "null" ]; then
+            echo "::error::No release with tag prefix mcp-bridge-v found in Inferenco/infer-desk-releases"
+            exit 1
+          fi
+          assets=$(gh api "repos/Inferenco/infer-desk-releases/releases/tags/$tag" --jq '.assets[].name')
+          for a in InferDeskMCPBridge-Linux-x86_64 InferDeskMCPBridge-Linux-aarch64 InferDeskMCPBridge-FreeBSD-x86_64; do
+            if ! grep -qxF "$a" <<<"$assets"; then
+              echo "::error::MCP bridge release $tag is missing expected asset: $a"
+              exit 1
+            fi
+          done
+          printf '{"mcpTag": "%s", "generatedAt": "%s"}\n' \
+            "$tag" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > public/downloads.json
+          echo "Resolved MCP bridge manifest:"
+          cat public/downloads.json
 
       - name: Build
         env:

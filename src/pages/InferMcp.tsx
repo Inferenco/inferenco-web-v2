@@ -1,12 +1,40 @@
-const MCP_RELEASE_TAG = "mcp-bridge-v0.1.0";
-const MCP_ASSET = (name: string) =>
-  `https://github.com/Inferenco/infer-desk-releases/releases/download/${MCP_RELEASE_TAG}/${name}`;
+import { useEffect, useState } from "react";
+
+const MCP_DOWNLOAD_BASE = "https://github.com/Inferenco/infer-desk-releases/releases/download";
+// Last-resort tag used for first paint and when /downloads.json cannot be
+// fetched. CI regenerates public/downloads.json daily with the newest
+// mcp-bridge-v* prerelease (see .github/workflows/deploy.yml).
+const MCP_FALLBACK_TAG = "mcp-bridge-v0.1.1";
+const MCP_ASSET = (tag: string, name: string) => `${MCP_DOWNLOAD_BASE}/${tag}/${name}`;
 
 const LINUX_X86_64_ASSET = "InferDeskMCPBridge-Linux-x86_64";
 const LINUX_ARM64_ASSET = "InferDeskMCPBridge-Linux-aarch64";
 const FREEBSD_X86_64_ASSET = "InferDeskMCPBridge-FreeBSD-x86_64";
 
+interface DownloadsManifest {
+  mcpTag: string;
+}
+
 export default function InferMcp() {
+  const [mcpTag, setMcpTag] = useState(MCP_FALLBACK_TAG);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/downloads.json", { cache: "no-cache" })
+      .then((response) => (response.ok ? (response.json() as Promise<DownloadsManifest>) : null))
+      .then((manifest) => {
+        if (!cancelled && manifest?.mcpTag?.startsWith("mcp-bridge-v")) {
+          setMcpTag(manifest.mcpTag);
+        }
+      })
+      .catch(() => {
+        /* keep fallback tag; the asset-contract CI guards tag validity */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <div id="infer-mcp-page" className="page-section">
       <section className="hero infer-hero" role="banner">
@@ -32,7 +60,7 @@ export default function InferMcp() {
           <div className="download-buttons">
             <a
               id="download-infer-mcp-linux-x86_64"
-              href={MCP_ASSET(LINUX_X86_64_ASSET)}
+              href={MCP_ASSET(mcpTag, LINUX_X86_64_ASSET)}
               className="cta-button"
               aria-label="Download the Infer MCP bridge for Linux x86_64"
               target="_blank"
@@ -42,7 +70,7 @@ export default function InferMcp() {
             </a>
             <a
               id="download-infer-mcp-linux-arm64"
-              href={MCP_ASSET(LINUX_ARM64_ASSET)}
+              href={MCP_ASSET(mcpTag, LINUX_ARM64_ASSET)}
               className="cta-button"
               aria-label="Download the Infer MCP bridge for Linux ARM64"
               target="_blank"
@@ -52,7 +80,7 @@ export default function InferMcp() {
             </a>
             <a
               id="download-infer-mcp-freebsd"
-              href={MCP_ASSET(FREEBSD_X86_64_ASSET)}
+              href={MCP_ASSET(mcpTag, FREEBSD_X86_64_ASSET)}
               className="cta-button"
               aria-label="Download the Infer MCP bridge for FreeBSD"
               target="_blank"
@@ -76,8 +104,9 @@ export default function InferMcp() {
           </p>
           <div className="important-note">
             <strong>⚠ Prerelease — not a wallet release.</strong>{" "}
-            <code>{MCP_RELEASE_TAG}</code> is a bridge prerelease and does not appear under{" "}
-            <code>releases/latest</code>. Do not install it over a wallet release.
+            <code>{mcpTag}</code> is a bridge prerelease. The download buttons always
+            target the newest published bridge prerelease. Do not install it over a
+            wallet release.
           </div>
         </div>
       </section>
