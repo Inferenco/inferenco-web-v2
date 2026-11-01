@@ -984,6 +984,25 @@ html.light .hero::after {
     background-image: url("/assets/images/radial-bg.png");
 }
 
+/* Utility Apps page: hero content is short, so let the hero size to its
+   content on desktop and keep the gallery above the fold. The min-width
+   guard is load-bearing: without it this rule (specificity 1,1,0 — one ID
+   plus one class) would override the mobile .hero { min-height: 80vh }
+   rule, which is only (0,1,0). */
+@media (min-width: 1025px) {
+    #utility-apps-page .hero {
+        min-height: auto;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Anchor target for the hero nav-pill: clear the fixed navbar on jump
+   (same 96px offset the docs sections use). */
+#utility-apps-gallery {
+    scroll-margin-top: 96px;
+}
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -3364,6 +3383,15 @@ html.light .functions-table td:nth-child(3) {
     border-radius: 50%;
     object-fit: cover;
     filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.5));
+}
+
+.utility-app-screenshot {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
 }
 
 .portfolio-card h4 {

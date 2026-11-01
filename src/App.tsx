@@ -5,6 +5,7 @@ import Infer from "./pages/Infer";
 import InferWalletPage from "./pages/InferWalletPage";
 import InferDesk from "./pages/InferDesk";
 import InferMcp from "./pages/InferMcp";
+import UtilityApps from "./pages/UtilityApps";
 import Docs from "./pages/Docs";
 import Blogs from "./pages/Blogs";
 import BlogSingle from "./pages/BlogSingle";
@@ -21,6 +22,7 @@ function App() {
           <Route path="infer-wallet" element={<InferWalletPage />} />
           <Route path="infer-desk" element={<InferDesk />} />
           <Route path="infer-mcp" element={<InferMcp />} />
+          <Route path="utility-apps" element={<UtilityApps />} />
           <Route path="docs/*" element={<Docs />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:id" element={<BlogSingle />} />

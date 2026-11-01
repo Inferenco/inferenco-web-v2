@@ -27,6 +27,7 @@ screenshots
 
 # Allow specific image directories
 !assets/images/bridge/**
+!public/img/infer-ecosystem/utility-apps/**
 
 # Playwright
 .playwright/
