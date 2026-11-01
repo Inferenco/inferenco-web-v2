@@ -51,6 +51,14 @@ export default function UtilityApps() {
             Free, privacy-first tools that run entirely in your browser — your files never
             leave your device, and no account is ever required.
           </p>
+          <div className="hero-navigation">
+            <nav className="hero-nav-index" aria-label="Utility Apps sections">
+              <a href="#utility-apps-gallery" className="nav-pill">
+                <i className="fas fa-chevron-down"></i>
+                <span>Browse the apps</span>
+              </a>
+            </nav>
+          </div>
         </div>
       </section>
 
