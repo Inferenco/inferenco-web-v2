@@ -3366,6 +3366,15 @@ html.light .functions-table td:nth-child(3) {
     filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.5));
 }
 
+.utility-app-screenshot {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
 .portfolio-card h4 {
     margin-bottom: 0.75rem;
     color: var(--light);
