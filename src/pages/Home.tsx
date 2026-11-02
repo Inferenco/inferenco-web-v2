@@ -30,49 +30,49 @@ export default function Home() {
       {/* Floating Side Navigation */}
       <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label="Quick navigation">
         <div className="side-nav-items">
-          <button 
-            onClick={() => scrollToSection("about")} 
-            className="side-nav-item" 
+          <button
+            onClick={() => scrollToSection("portfolio")}
+            className="side-nav-item"
+            aria-label="Go to Products section"
+            title="Products"
+          >
+            <i className="fas fa-box-open"></i>
+          </button>
+          <button
+            onClick={() => scrollToSection("about")}
+            className="side-nav-item"
             aria-label="Go to About section"
             title="About"
           >
             <i className="fas fa-info-circle"></i>
           </button>
-          <button 
-            onClick={() => scrollToSection("portfolio")} 
-            className="side-nav-item" 
-            aria-label="Go to Portfolio section"
-            title="Portfolio"
-          >
-            <i className="fas fa-briefcase"></i>
-          </button>
-          <button 
-            onClick={() => scrollToSection("services")} 
-            className="side-nav-item" 
-            aria-label="Go to Services section"
-            title="Services"
+          <button
+            onClick={() => scrollToSection("services")}
+            className="side-nav-item"
+            aria-label="Go to Capabilities section"
+            title="Capabilities"
           >
             <i className="fas fa-cogs"></i>
           </button>
-          <button 
-            onClick={() => scrollToSection("methodology")} 
-            className="side-nav-item" 
-            aria-label="Go to Methodology section"
-            title="Methodology"
+          <button
+            onClick={() => scrollToSection("methodology")}
+            className="side-nav-item"
+            aria-label="Go to How We Build section"
+            title="How We Build"
           >
             <i className="fas fa-project-diagram"></i>
           </button>
-          <button 
-            onClick={() => scrollToSection("approach")} 
-            className="side-nav-item" 
+          <button
+            onClick={() => scrollToSection("approach")}
+            className="side-nav-item"
             aria-label="Go to Approach section"
             title="Approach"
           >
             <i className="fas fa-lightbulb"></i>
           </button>
-          <button 
-            onClick={() => setShowContactModal(true)} 
-            className="side-nav-item contact-item" 
+          <button
+            onClick={() => setShowContactModal(true)}
+            className="side-nav-item contact-item"
             aria-label="Contact Us"
             title="Contact"
           >
@@ -91,37 +91,53 @@ export default function Home() {
               className="main-logo-animated"
             />
           </div>
-          <h1>
-            Enterprise Software Development &amp; IT Solutions
-          </h1>
+          <h1>Software Products, Built In-House</h1>
           <p>
-            Building custom software solutions for businesses. From web applications
-            to blockchain platforms, AI systems to mobile apps&mdash;we deliver
-            quality at scale.
+            We design, build, and ship our own products — from on-chain wallets and
+            developer tools to free, everyday web utilities.
           </p>
           <div className="hero-navigation">
-            <p className="nav-intro">Jump to section:</p>
-            <nav className="hero-nav-index" aria-label="Home page sections">
-              <a href="#about" className="nav-pill">
-                <i className="fas fa-info-circle"></i>
-                <span>About</span>
-              </a>
-              <a href="#portfolio" className="nav-pill">
-                <i className="fas fa-briefcase"></i>
-                <span>Portfolio</span>
-              </a>
-              <a href="#services" className="nav-pill">
-                <i className="fas fa-cogs"></i>
-                <span>Services</span>
-              </a>
-              <a href="#methodology" className="nav-pill">
-                <i className="fas fa-project-diagram"></i>
-                <span>Methodology</span>
-              </a>
-              <a href="#approach" className="nav-pill">
-                <i className="fas fa-lightbulb"></i>
-                <span>Approach</span>
-              </a>
+            <nav className="hero-nav-index" aria-label="Inferenco products">
+              <Link
+                to="/infer-desk"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-desktop"></i>
+                <span>Infer Desk</span>
+              </Link>
+              <Link
+                to="/infer-wallet"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-wallet"></i>
+                <span>Infer Wallet</span>
+              </Link>
+              <Link
+                to="/utility-apps"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-toolbox"></i>
+                <span>Utility Apps</span>
+              </Link>
+              <Link
+                to="/infer-mcp"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-terminal"></i>
+                <span>Infer MCP</span>
+              </Link>
+              <Link
+                to="/docs#infer-connect-introduction"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-plug"></i>
+                <span>Infer Connect</span>
+              </Link>
               <button
                 onClick={() => setShowContactModal(true)}
                 className="nav-pill contact-pill"
@@ -135,90 +151,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="section">
-        <div className="container">
-          <h2 className="section-title">
-            About <span>Inferenco</span> &ndash; Your Software Development Partner
-          </h2>
-          <div className="two-col">
-            <div className="text-col" style={{ maxWidth: "100%" }}>
-              <p>
-                <strong>Inferenco</strong> is a leading software development company,
-                formed through the collaboration of <strong>Singularity Shift Ltd</strong> and
-                <strong> Spielcrypto Ltd</strong>. We specialize in building custom
-                software solutions that drive business growth and innovation.
-              </p>
-              <p>
-                With deep expertise in full-stack development, blockchain technology,
-                artificial intelligence, and enterprise applications, we deliver
-                high-quality software that meets your exact requirements.
-              </p>
-              <p>
-                Our approach combines technical excellence with business acumen,
-                ensuring that every solution we build aligns with your strategic
-                objectives and delivers measurable value.
-              </p>
-              <div className="services-list">
-                <h4>Our Core Expertise:</h4>
-                <ul className="values-list">
-                  <li>
-                    <i className="fas fa-code"></i>Full-Stack Development
-                  </li>
-                  <li>
-                    <i className="fas fa-cubes"></i>Custom Software Solutions
-                  </li>
-                  <li>
-                    <i className="fas fa-link"></i>Blockchain &amp; Web3 Integration
-                  </li>
-                  <li>
-                    <i className="fas fa-brain"></i>AI &amp; Machine Learning
-                  </li>
-                  <li>
-                    <i className="fas fa-mobile-alt"></i>Mobile Application Development
-                  </li>
-                  <li>
-                    <i className="fas fa-server"></i>Enterprise System Architecture
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
+      {/* Products Section */}
       <section id="portfolio" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Portfolio</span>
+            Our <span>Products</span>
           </h2>
           <p className="section-subtitle">
-            Proven track record of delivering innovative software solutions
+            Everything we build and ship ourselves — wallets, developer tools, and free utilities
           </p>
           <div className="features-grid">
-            {/* Infer Bot Card */}
+            {/* Infer Desk Card */}
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Bot logo"
+                alt="Infer Desk logo"
                 className="portfolio-logo"
               />
-              <h4>Infer Bot</h4>
+              <h4>Infer Desk</h4>
               <p>
-                AI-powered community manager and personal assistant for Telegram.
-                Features transparent pay-per-use pricing, blockchain integration,
-                and 24/7 automated community support.
-              </p>
-              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "0.5rem 0" }}>
-                <em>⚠️ Currently unavailable - significant update in progress</em>
+                Desktop application for Cedra blockchain interactions and workflow management.
+                Cross-platform, secure, and built for professional users and enterprises.
               </p>
               <div className="portfolio-tags">
-                <span className="tag">AI Assistant</span>
-                <span className="tag">Telegram Bot</span>
-                <span className="tag">Blockchain</span>
+                <span className="tag">Desktop App</span>
+                <span className="tag">Cedra</span>
+                <span className="tag">Cross-Platform</span>
+                <span className="tag">Enterprise</span>
               </div>
-              <Link to="/infer" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/infer-desk" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 Learn More
               </Link>
             </div>
@@ -246,26 +207,73 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Infer Desk Card */}
+            {/* Utility Apps Card */}
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Desk logo"
+                alt="Utility Apps logo"
                 className="portfolio-logo"
               />
-              <h4>Infer Desk</h4>
+              <h4>Utility Apps</h4>
               <p>
-                Desktop application for Cedra blockchain interactions and workflow management.
-                Cross-platform, secure, and built for professional users and enterprises.
+                Free, privacy-first web tools that run entirely in your browser — Make My
+                Image Fit for resizing and compressing images, and Sound Flipper for
+                converting audio. No uploads, no accounts, no installs.
               </p>
               <div className="portfolio-tags">
-                <span className="tag">Desktop App</span>
-                <span className="tag">Cedra</span>
-                <span className="tag">Cross-Platform</span>
-                <span className="tag">Enterprise</span>
+                <span className="tag">Web Tools</span>
+                <span className="tag">Free</span>
+                <span className="tag">On-Device</span>
+                <span className="tag">Privacy-First</span>
               </div>
-              <Link to="/infer-desk" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/utility-apps" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 Learn More
+              </Link>
+            </div>
+
+            {/* Infer MCP Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="/assets/logos/flame.png"
+                alt="Infer MCP logo"
+                className="portfolio-logo"
+              />
+              <h4>Infer MCP</h4>
+              <p>
+                The Model Context Protocol server that lets AI coding agents operate the
+                Infer Desk wallet — connect, check health, and submit typed token
+                transfers, with every sensitive action approved on the wallet's screen.
+              </p>
+              <div className="portfolio-tags">
+                <span className="tag">MCP</span>
+                <span className="tag">AI Agents</span>
+                <span className="tag">Developer Tool</span>
+              </div>
+              <Link to="/infer-mcp" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+                Learn More
+              </Link>
+            </div>
+
+            {/* Infer Connect Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="/assets/logos/flame.png"
+                alt="Infer Connect logo"
+                className="portfolio-logo"
+              />
+              <h4>Infer Connect</h4>
+              <p>
+                The wallet-standard adapter that connects Cedra dApps to Infer Desk and
+                Infer Wallet — connection, transaction signing, and message signing
+                through one plugin-style integration.
+              </p>
+              <div className="portfolio-tags">
+                <span className="tag">Wallet Adapter</span>
+                <span className="tag">dApps</span>
+                <span className="tag">AIP-62</span>
+              </div>
+              <Link to="/docs#infer-connect-introduction" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+                Read the Docs
               </Link>
             </div>
 
@@ -303,78 +311,129 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Section */}
+      <section id="about" className="section">
+        <div className="container">
+          <h2 className="section-title">
+            About <span>Inferenco</span> &ndash; The Team Behind the Products
+          </h2>
+          <div className="two-col">
+            <div className="text-col" style={{ maxWidth: "100%" }}>
+              <p>
+                <strong>Inferenco</strong> is a software company formed through the
+                collaboration of <strong>Singularity Shift Ltd</strong> and{" "}
+                <strong>Spielcrypto Ltd</strong>. We build products, not client projects —
+                everything on this site is designed, built, and shipped by us.
+              </p>
+              <p>
+                Our product line spans on-chain wallets, dApps, and developer tooling
+                alongside free, everyday web utilities — all backed by
+                security reviews and signed releases.
+              </p>
+              <p>
+                Every product is maintained by the same team that wrote it — with
+                documentation, install guides, and a direct line to the developers.
+              </p>
+              <div className="services-list">
+                <h4>What we build:</h4>
+                <ul className="values-list">
+                  <li>
+                    <i className="fas fa-code"></i>Desktop &amp; Mobile Wallets
+                  </li>
+                  <li>
+                    <i className="fas fa-link"></i>On-Chain Products for Cedra (Wallets, dApps &amp; Adapter)
+                  </li>
+                  <li>
+                    <i className="fas fa-terminal"></i>Developer Tooling &amp; MCP Integrations
+                  </li>
+                  <li>
+                    <i className="fas fa-globe"></i>Free Browser Utilities
+                  </li>
+                  <li>
+                    <i className="fas fa-brain"></i>AI-Powered Assistants
+                  </li>
+                  <li>
+                    <i className="fas fa-shield-alt"></i>Security Reviews &amp; Signed Releases
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Section */}
       <section id="services" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Services</span>
+            Product <span>Capabilities</span>
           </h2>
           <p className="section-subtitle">
-            Comprehensive software development services tailored to your business needs
+            What our products deliver out of the box
           </p>
           <div className="features-grid">
             <div className="feature-card">
               <span className="emoji">💻</span>
-              <h4>Custom Application Development</h4>
+              <h4>Manage Assets with Infer Desk</h4>
               <p>
-                Bespoke software solutions designed and built to your exact specifications,
-                ensuring perfect fit for your business processes.
-              </p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🌐</span>
-              <h4>Web Development & Design</h4>
-              <p>
-                Modern, responsive web applications with intuitive UX/UI design that engage
-                users and drive conversions.
+                A desktop wallet for Cedra: send, receive, swap, and manage tokens and
+                NFTs with enterprise-grade security.
               </p>
             </div>
             <div className="feature-card">
               <span className="emoji">📱</span>
-              <h4>Mobile App Development</h4>
+              <h4>Take Your Wallet Anywhere</h4>
               <p>
-                Native and cross-platform mobile applications for iOS and Android that
-                deliver seamless experiences.
-              </p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">⛓️</span>
-              <h4>Blockchain & Web3 Development</h4>
-              <p>
-                Smart contract development, decentralized applications, and Web3 integrations
-                that leverage the power of blockchain technology.
+                Infer Wallet brings Cedra to mobile with biometric protection, built-in
+                swaps, and DeFi integrations.
               </p>
             </div>
             <div className="feature-card">
               <span className="emoji">🤖</span>
-              <h4>AI & Machine Learning Solutions</h4>
+              <h4>Let AI Agents Do the Work</h4>
               <p>
-                Intelligent systems that automate processes, provide insights, and create
-                competitive advantages through artificial intelligence.
+                Infer MCP connects AI coding agents to your Infer Desk wallet, with every
+                sensitive action approved on-screen.
               </p>
             </div>
             <div className="feature-card">
-              <span className="emoji">☁️</span>
-              <h4>Cloud & DevOps Solutions</h4>
+              <span className="emoji">🔗</span>
+              <h4>Connect dApps in One Click</h4>
               <p>
-                Scalable cloud infrastructure, CI/CD pipelines, and DevOps practices that
-                ensure reliability and performance.
+                Infer Connect gives Cedra dApps a standard wallet adapter for connections,
+                transaction signing, and message signing.
               </p>
             </div>
             <div className="feature-card">
-              <span className="emoji">🎯</span>
-              <h4>IT Consulting & Strategy</h4>
+              <span className="emoji">🖼️</span>
+              <h4>Fix Files Without Uploads</h4>
               <p>
-                Expert guidance on technology selection, architecture design, and digital
-                transformation strategies.
+                Make My Image Fit and Sound Flipper resize, compress, and convert entirely
+                on your device — nothing is uploaded.
               </p>
             </div>
             <div className="feature-card">
-              <span className="emoji">🔧</span>
-              <h4>Legacy System Modernization</h4>
+              <span className="emoji">🎮</span>
+              <h4>Play and Connect in the Ecosystem</h4>
               <p>
-                Upgrade and modernize outdated systems to improve performance, security,
-                and maintainability.
+                The Infer Ecosystem dApp offers events management, a gaming hub, and
+                community tools on the Cedra Network.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔐</span>
+              <h4>Security-First by Default</h4>
+              <p>
+                Audited releases, signed and notarized binaries, and on-device processing
+                across the product line.
+              </p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🧩</span>
+              <h4>Built on Open Standards</h4>
+              <p>
+                AIP-62, MCP, and Move smart contracts — our on-chain products interoperate
+                instead of locking you in.
               </p>
             </div>
           </div>
@@ -385,60 +444,60 @@ export default function Home() {
       <section id="methodology" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Methodology</span> &ndash; How We Work With You
+            Our <span>Methodology</span> &ndash; How We Build and Release
           </h2>
           <p className="section-subtitle">
-            A clear, transparent process from first contact to project delivery
+            From an idea to a signed release you can verify
           </p>
           <div className="methodology-steps">
             <div className="methodology-step">
               <div className="step-icon">
                 <span className="step-number">01</span>
-                <i className="fas fa-envelope"></i>
+                <i className="fas fa-lightbulb"></i>
               </div>
               <div className="step-content">
-                <h4>You Contact Us</h4>
-                <p>Reach out via email to start the conversation about your project needs</p>
+                <h4>We Scope It</h4>
+                <p>Every product starts as a focused idea: one job, done properly, with no feature bloat.</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
                 <span className="step-number">02</span>
-                <i className="fas fa-calendar-alt"></i>
+                <i className="fas fa-code"></i>
               </div>
               <div className="step-content">
-                <h4>We Schedule an Interview</h4>
-                <p>We meet to understand exactly what you need and your business objectives</p>
+                <h4>We Build It In-House</h4>
+                <p>Our own team designs, implements, and tests every product — no outsourcing, no hand-offs.</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
                 <span className="step-number">03</span>
-                <i className="fas fa-file-invoice-dollar"></i>
+                <i className="fas fa-shield-alt"></i>
               </div>
               <div className="step-content">
-                <h4>You Receive a Detailed Proposal</h4>
-                <p>We provide costs, timeline, and specify what we need from you (server access, accounts, etc.)</p>
+                <h4>We Put It Through Security Review</h4>
+                <p>New wallet and bridge releases go through audits and internal review before anything ships.</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
                 <span className="step-number">04</span>
-                <i className="fas fa-handshake"></i>
+                <i className="fas fa-file-signature"></i>
               </div>
               <div className="step-content">
-                <h4>We Sign the Contract</h4>
-                <p>Once you agree, both parties sign and we officially begin your project</p>
+                <h4>We Sign and Publish</h4>
+                <p>Releases are signed, notarized where applicable, and published with signatures you can verify.</p>
               </div>
             </div>
             <div className="methodology-step">
               <div className="step-icon">
                 <span className="step-number">05</span>
-                <i className="fas fa-file-invoice"></i>
+                <i className="fas fa-headset"></i>
               </div>
               <div className="step-content">
-                <h4>You Get Your Invoice</h4>
-                <p>One of our companies (your choice) sends the invoice and we start working</p>
+                <h4>We Support What We Ship</h4>
+                <p>Documentation, install guides, and a direct line to the team back every product.</p>
               </div>
             </div>
           </div>
@@ -449,21 +508,21 @@ export default function Home() {
       <section id="approach" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Approach</span> &ndash; Building What Businesses Need
+            Our <span>Approach</span> &ndash; Why Our Products Are Different
           </h2>
           <p>
-            We believe software development should be <strong>transparent</strong>,
-            <strong> collaborative</strong>, and <strong>results-driven</strong>.
+            We build software the way we want to use it: <strong>transparent</strong>,{" "}
+            <strong>private by design</strong>, and <strong>verifiable</strong>.
             Our approach focuses on:
           </p>
           <ul className="values-list">
             <li>
-              <i className="fas fa-users"></i>Client-centered development with
-              continuous communication
+              <i className="fas fa-file-signature"></i>Verifiable software — every
+              release is signed and documented
             </li>
             <li>
-              <i className="fas fa-eye"></i>Transparent processes and honest
-              pricing
+              <i className="fas fa-lock"></i>Privacy by default — on-device processing
+              wherever possible
             </li>
             <li>
               <i className="fas fa-check-circle"></i>Quality and reliability in
@@ -471,15 +530,15 @@ export default function Home() {
             </li>
             <li>
               <i className="fas fa-lightbulb"></i>Innovation combined with
-              practical, business-focused solutions
+              practical, usable tools
             </li>
             <li>
-              <i className="fas fa-clock"></i>Timely delivery without
+              <i className="fas fa-clock"></i>Timely releases without
               compromising on quality
             </li>
             <li>
-              <i className="fas fa-cogs"></i>Scalable architectures that
-              grow with your business
+              <i className="fas fa-cubes"></i>Interoperable products that
+              work better together
             </li>
           </ul>
         </div>
@@ -488,10 +547,10 @@ export default function Home() {
       {/* Call to Action Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>Partner With Us For Your Next Software Project</h2>
+          <h2>Questions About Our Products?</h2>
           <p>
-            From concept to deployment, we build software that drives your business
-            forward. Let's discuss how we can help you achieve your technology goals.
+            Want to know more about a product, report an issue, or discuss something
+            custom? Get in touch with the team that builds the software.
           </p>
           <button
             onClick={() => setShowContactModal(true)}
@@ -512,7 +571,8 @@ export default function Home() {
             </button>
             <h2>Contact Us</h2>
             <p>
-              Get in touch with us to discuss your software development needs.
+              Get in touch with the team behind our products — questions, issues, or
+              custom work.
             </p>
             <div className="contact-emails">
               <a
