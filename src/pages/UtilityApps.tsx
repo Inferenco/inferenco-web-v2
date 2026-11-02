@@ -47,17 +47,24 @@ export default function UtilityApps() {
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <h1>Utility Apps</h1>
-          <p>
-            Free, privacy-first tools that run entirely in your browser — your files never
-            leave your device, and no account is ever required.
-          </p>
-          <div className="hero-navigation">
-            <nav className="hero-nav-index" aria-label="Utility Apps sections">
-              <a href="#utility-apps-gallery" className="nav-pill">
-                <i className="fas fa-chevron-down"></i>
-                <span>Browse the apps</span>
-              </a>
-            </nav>
+          <p>Free, privacy-first tools that run entirely in your browser.</p>
+          <div className="download-buttons">
+            <a
+              href="https://www.resizeandcompress.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              Make My Image Fit
+            </a>
+            <a
+              href="https://www.soundflipper.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              Sound Flipper
+            </a>
           </div>
         </div>
       </section>
@@ -65,6 +72,9 @@ export default function UtilityApps() {
       <section id="utility-apps-gallery" className="section">
         <div className="container">
           <h2 className="section-title">Our Utility Apps</h2>
+          <p className="section-subtitle">
+            Two free, privacy-first services — no uploads, no accounts, no installs.
+          </p>
           <div className="features-grid">
             {/* Make My Image Fit Card */}
             <div className="feature-card portfolio-card">
@@ -72,9 +82,13 @@ export default function UtilityApps() {
                 src="/img/infer-ecosystem/utility-apps/resize-and-compress-image.png"
                 alt="Make My Image Fit screenshot"
                 className="utility-app-screenshot"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="630"
               />
               <h4>Make My Image Fit</h4>
-              <p style={{ color: "var(--muted)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
+              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
                 by Singularity Shift Ltd
               </p>
               <p>
@@ -112,9 +126,13 @@ export default function UtilityApps() {
                 src="/img/infer-ecosystem/utility-apps/sound-flipper.png"
                 alt="Sound Flipper screenshot"
                 className="utility-app-screenshot"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="630"
               />
               <h4>Sound Flipper</h4>
-              <p style={{ color: "var(--muted)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
+              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
                 by Singularity Shift Ltd
               </p>
               <p>
