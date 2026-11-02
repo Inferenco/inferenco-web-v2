@@ -327,7 +327,7 @@ export default function Home() {
               </p>
               <p>
                 Our product line spans on-chain wallets, dApps, and developer tooling
-                alongside free, everyday web utilities — all developed in the open, with
+                alongside free, everyday web utilities — all backed by
                 security reviews and signed releases.
               </p>
               <p>
@@ -466,8 +466,8 @@ export default function Home() {
                 <i className="fas fa-code"></i>
               </div>
               <div className="step-content">
-                <h4>We Build in the Open</h4>
-                <p>Development happens in public repositories — issues, milestones, and releases are visible as they happen.</p>
+                <h4>We Build It In-House</h4>
+                <p>Our own team designs, implements, and tests every product — no outsourcing, no hand-offs.</p>
               </div>
             </div>
             <div className="methodology-step">
@@ -517,8 +517,8 @@ export default function Home() {
           </p>
           <ul className="values-list">
             <li>
-              <i className="fas fa-eye"></i>Open development — public code, public issues,
-              public releases
+              <i className="fas fa-file-signature"></i>Verifiable software — every
+              release is signed and documented
             </li>
             <li>
               <i className="fas fa-lock"></i>Privacy by default — on-device processing

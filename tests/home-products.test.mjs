@@ -15,7 +15,7 @@ test("Home links every product, including Utility Apps", () => {
   }
 });
 
-test("Home no longer carries consulting/IT-services messaging", () => {
+test("Home no longer carries consulting or open-source messaging", () => {
   const banned = [
     /consulting/i,
     /consultanc/i,
@@ -29,10 +29,18 @@ test("Home no longer carries consulting/IT-services messaging", () => {
     "You Receive a Detailed Proposal",
     "We Sign the Contract",
     /tailored to your business/i,
+    /open development/i,
+    /public code/i,
+    /build in the open/i,
+    /in the open/i,
+    /public repositories/i,
+    /public issues/i,
   ];
   for (const b of banned) {
     assert.ok(!home.match(b), "Home.tsx must not contain: " + b);
   }
+  assert.match(home, /security reviews and signed releases/);
+  assert.match(home, /Verifiable software/);
 });
 
 test("Home section anchors and side-nav targets resolve to real ids", () => {
