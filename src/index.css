@@ -992,8 +992,26 @@ html.light .hero::after {
 @media (min-width: 1025px) {
     #utility-apps-page .hero {
         min-height: auto;
-        padding-top: 7rem;
-        padding-bottom: 3rem;
+        padding-top: 6rem;
+        padding-bottom: 1.5rem;
+    }
+    #utility-apps-page .hero h1 {
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+    }
+    #utility-apps-page .hero p {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+    #utility-apps-page .section {
+        padding-top: 2.5rem;
+    }
+    #utility-apps-page .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    #utility-apps-page .section .container {
+        max-width: 1080px;
     }
 }
 
@@ -1001,6 +1019,18 @@ html.light .hero::after {
    (same 96px offset the docs sections use). */
 #utility-apps-gallery {
     scroll-margin-top: 96px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Utility Apps modal: center the "Visit Website" CTA under the feature
+   tags while the modal's h2/p stay left-aligned. Must stay OUTSIDE any
+   media query — the misalignment exists on mobile too. Page-scoped so
+   the shared .modal and .cta-button rules are untouched. */
+#utility-apps-page .modal .cta-button {
+    display: block;
+    width: fit-content;
+    margin: 0.5rem auto;
 }
 
 .hero-content {
@@ -3387,7 +3417,7 @@ html.light .functions-table td:nth-child(3) {
 
 .utility-app-screenshot {
     width: 100%;
-    max-width: 320px;
+    max-width: 420px;
     height: auto;
     border-radius: 12px;
     border: 1px solid var(--border);
