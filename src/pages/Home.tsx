@@ -93,8 +93,8 @@ export default function Home() {
           </div>
           <h1>Software Products, Built In-House</h1>
           <p>
-            We design, build, and ship our own products — desktop and mobile wallets,
-            developer tooling, and free browser utilities for the Cedra ecosystem.
+            We design, build, and ship our own products — from on-chain wallets and
+            developer tools to free, everyday web utilities.
           </p>
           <div className="hero-navigation">
             <nav className="hero-nav-index" aria-label="Inferenco products">
@@ -326,9 +326,9 @@ export default function Home() {
                 everything on this site is designed, built, and shipped by us.
               </p>
               <p>
-                Our product line spans desktop and mobile wallets, developer tooling, free
-                browser utilities, and dApps for the Cedra blockchain — developed in the
-                open, with security reviews and signed releases.
+                Our product line spans on-chain wallets, dApps, and developer tooling
+                alongside free, everyday web utilities — all developed in the open, with
+                security reviews and signed releases.
               </p>
               <p>
                 Every product is maintained by the same team that wrote it — with
@@ -341,7 +341,7 @@ export default function Home() {
                     <i className="fas fa-code"></i>Desktop &amp; Mobile Wallets
                   </li>
                   <li>
-                    <i className="fas fa-link"></i>Blockchain &amp; Web3 Products
+                    <i className="fas fa-link"></i>On-Chain Products for Cedra (Wallets, dApps &amp; Adapter)
                   </li>
                   <li>
                     <i className="fas fa-terminal"></i>Developer Tooling &amp; MCP Integrations
@@ -432,8 +432,8 @@ export default function Home() {
               <span className="emoji">🧩</span>
               <h4>Built on Open Standards</h4>
               <p>
-                AIP-62, MCP, and Move smart contracts — our products interoperate instead
-                of locking you in.
+                AIP-62, MCP, and Move smart contracts — our on-chain products interoperate
+                instead of locking you in.
               </p>
             </div>
           </div>
