@@ -1004,11 +1004,14 @@ html.light .hero::after {
         margin-bottom: 0.5rem;
     }
     #utility-apps-page .section {
-        padding-top: 2.5rem;
+        padding-top: 1.5rem;
     }
     #utility-apps-page .section-title {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    #utility-apps-page .section-subtitle {
+        margin-bottom: 2rem;
     }
     #utility-apps-page .section .container {
         max-width: 1080px;
