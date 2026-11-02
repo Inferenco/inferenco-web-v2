@@ -1003,6 +1003,38 @@ html.light .hero::after {
     scroll-margin-top: 96px;
 }
 
+/* Home page: products-first layout on desktop — slim the hero so the
+   product grid is visible without scrolling. The min-width guard is
+   load-bearing: without it these rules (specificity 1,1,0+) would
+   override the mobile .hero { min-height: 80vh } rule, which is (0,1,0). */
+@media (min-width: 1025px) {
+    #home-page .hero { min-height: auto; padding-top: 6rem; padding-bottom: 1.5rem; }
+    #home-page .hero-logo { margin-bottom: 1rem; }
+    #home-page .main-logo-animated { width: 96px; }
+    #home-page .hero h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+    #home-page .hero p { font-size: 1.05rem; margin-bottom: 0; }
+    #home-page .hero-navigation { margin-top: 1.25rem; }
+    #home-page .section { padding: 2rem 0 3rem; }
+    #home-page .section-title { font-size: 1.9rem; }
+    #home-page .section-subtitle { font-size: 1.1rem; }
+    #home-page .section-subtitle { margin-bottom: 1rem; }
+    #home-page #portfolio .container { max-width: 1180px; }
+}
+
+/* Smaller hero logo on mobile keeps the 80vh hero from overflowing
+   the first viewport with the pill row. */
+@media (max-width: 1024px) {
+    #home-page .main-logo-animated { width: 110px; }
+}
+
+/* Home section anchors: clear the fixed navbar for hash jumps and
+   side-nav scrollIntoView (same 96px offset the docs sections use). */
+#home-page .section { scroll-margin-top: 96px; }
+
+/* Home products section: paint above the decorative orbs (same pattern
+   as #infer-desk-gallery / #infer-wallet-gallery). */
+#home-page #portfolio { position: relative; z-index: 2; }
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
