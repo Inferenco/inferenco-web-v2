@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- legal:title --></title>
+    <!-- legal:canonical -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="stylesheet" href="/src/legal/page.css" />
+    <script>
+      try {
+        const theme = localStorage.getItem('theme') ?? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (theme === 'light') document.documentElement.className = 'light';
+      } catch {
+        // Use the default theme if storage is unavailable.
+      }
+    </script>
+  </head>
+  <body>
+    <header class="legal-header">
+      <a href="/" class="legal-brand">
+        <img src="/assets/logos/flame.png" alt="" width="32" height="32" />
+        Inferenco
+      </a>
+      <nav class="legal-related" aria-label="Related legal page">
+        <!-- legal:related -->
+      </nav>
+    </header>
+    <main class="legal-page">
+      <article>
+        <!-- legal:content -->
+      </article>
+    </main>
+  </body>
+</html>

@@ -76,6 +76,9 @@ jobs:
           VITE_POSTER_API_URL: ${{ vars.VITE_POSTER_API_URL }}
         run: pnpm run build
 
+      - name: Verify built app legal URLs
+        run: pnpm run test:legal
+
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
