@@ -71,3 +71,14 @@ export default defineConfig([
   },
 ])
 ```
+
+## App privacy policies and terms
+
+Add the app slug to the registry in `src/legal/build.ts`, then add
+`privacy.md` and `terms.md` to `src/legal/<slug>/`. Start each document with
+its title as an H1. Include the app's platform publishers, privacy and
+support contacts, data handling, ads, purchases, and related terms as applicable.
+
+Run `pnpm run build` followed by `pnpm run test:legal` to check the built legal
+URLs. The build writes a static directory index for each page at
+`/<slug>/privacy/` and `/<slug>/terms/`. App links can use the slashless URLs.
