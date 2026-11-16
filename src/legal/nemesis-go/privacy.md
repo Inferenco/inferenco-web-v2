@@ -34,7 +34,7 @@ We keep support emails for as long as needed to respond, handle relevant follow-
 
 Depending on where you live, you may have the right to access, correct or delete personal information we hold, receive a copy in a portable format, restrict or object to its use, withdraw consent and complain to your local privacy regulator. To ask about this policy or exercise your rights, contact the publisher for your platform. You can also contact us if you believe a child's personal information was provided to us without legally required permission.
 
-- **Android — Singularity Shift Ltd.** [singularityshiftai@gmail.com](mailto:singularityshiftai@gmail.com)
-- **iOS — Spielcrypto LLC.** [fjnavarro@spielcrypto.com](mailto:fjnavarro@spielcrypto.com)
+- **Android — Singularity Shift Ltd.** [singularityshift@inferenco.com](mailto:singularityshift@inferenco.com)
+- **iOS — Spielcrypto LLC.** [spielcrypto@inferenco.com](mailto:spielcrypto@inferenco.com)
 
 If this policy changes, we will publish the updated version on this page.

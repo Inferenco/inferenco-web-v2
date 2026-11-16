@@ -30,7 +30,7 @@ We may update the app and these terms as features, store requirements or laws ch
 
 For help using the app, contact the publisher for your platform.
 
-- **Android — Singularity Shift Ltd.** [singularityshiftai@gmail.com](mailto:singularityshiftai@gmail.com)
-- **iOS — Spielcrypto LLC.** [fjnavarro@spielcrypto.com](mailto:fjnavarro@spielcrypto.com)
+- **Android — Singularity Shift Ltd.** [singularityshift@inferenco.com](mailto:singularityshift@inferenco.com)
+- **iOS — Spielcrypto LLC.** [spielcrypto@inferenco.com](mailto:spielcrypto@inferenco.com)
 
 For details about how we handle personal information, see the [Nemesis Go Privacy Policy](/nemesis-go/privacy/).

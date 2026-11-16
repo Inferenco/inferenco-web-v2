@@ -52,8 +52,8 @@ for (const { path, title, copy, related } of pages) {
         assert.equal(document.title, title);
         assert.equal(article.querySelector("h1").textContent, title);
         for (const phrase of copy) assert.ok(article.textContent.includes(phrase), phrase);
-        assert.ok(article.querySelector('a[href="mailto:singularityshiftai@gmail.com"]'));
-        assert.ok(article.querySelector('a[href="mailto:fjnavarro@spielcrypto.com"]'));
+        assert.ok(article.querySelector('a[href="mailto:singularityshift@inferenco.com"]'));
+        assert.ok(article.querySelector('a[href="mailto:spielcrypto@inferenco.com"]'));
         assert.equal(document.querySelector(".legal-related a").getAttribute("href"), related);
         assert.equal(document.querySelector('link[rel="canonical"]').href, `https://inferenco.com${path}/`);
       } finally {
