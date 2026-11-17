@@ -65,6 +65,7 @@ const docsSections = [
     title: "Infer Desk",
     items: [
       { id: "macos-installation", label: "Installation", icon: "fas fa-download" },
+      { id: "memlock-configuration", label: "Swap & Memory Protection", icon: "fas fa-lock" },
     ],
   },
   {

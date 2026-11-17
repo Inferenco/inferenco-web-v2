@@ -88,9 +88,6 @@ export default function UtilityApps() {
                 height="630"
               />
               <h4>Make My Image Fit</h4>
-              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
-                by Singularity Shift Ltd
-              </p>
               <p>
                 A free, privacy-first image resizer and compressor that runs entirely in your
                 browser — no uploads, no account. Set a maximum file size or exact pixel
@@ -132,9 +129,6 @@ export default function UtilityApps() {
                 height="630"
               />
               <h4>Sound Flipper</h4>
-              <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", margin: "-0.5rem 0 0.75rem" }}>
-                by Singularity Shift Ltd
-              </p>
               <p>
                 A free audio converter that works entirely in your browser — your recordings
                 and songs never get uploaded. Convert between MP3, WAV, M4A, FLAC, Ogg, Opus

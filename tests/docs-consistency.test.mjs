@@ -164,6 +164,34 @@ describe("Infer Connect docs consistency", () => {
       assert.match(docsPage, new RegExp(`id: "${id}"`));
     }
     assert.ok(ids.includes("macos-installation"), "missing Infer Desk section: macos-installation");
+    assert.ok(
+      ids.includes("memlock-configuration"),
+      "missing Infer Desk section: memlock-configuration"
+    );
+
+    // The swap / memory-protection guide must keep every command the wallet
+    // itself tells the user to run, so the published page and the in-app
+    // remediation text cannot drift apart.
+    for (const pin of [
+      "RLIMIT_MEMLOCK",
+      "ulimit -l",
+      "LimitMEMLOCK",
+      "--ulimit memlock=-1:-1",
+      "setcap cap_ipc_lock+ep",
+      "INFER_DESK_REQUIRE_MEMLOCK",
+      "VmLck",
+    ]) {
+      assert.ok(
+        inferDeskDocs.includes(pin),
+        `memlock guide must document "${pin}"`
+      );
+    }
+
+    // Public docs must not point users at a file inside the source repo.
+    assert.ok(
+      !inferDeskDocs.includes("MEMLOCK_CONFIGURATION.md"),
+      "memlock guide must not reference the in-repo runbook filename"
+    );
   });
 
   test("Infer Desk product page links macOS users to the install guide", () => {
