@@ -290,6 +290,11 @@ export default function Layout() {
               <a href="https://spielcrypto.com/" target="_blank" rel="noopener noreferrer">Spielcrypto Ltd</a>
               <a href="https://sshift.xyz/" target="_blank" rel="noopener noreferrer">Singularity Shift Ltd</a>
             </div>
+            <div className="footer-links">
+              <h4>Nemesis Go</h4>
+              <a href="https://inferenco.com/nemesis-go/privacy/">Nemesis Go Privacy Policy</a>
+              <a href="https://inferenco.com/nemesis-go/terms/">Nemesis Go Terms of Use</a>
+            </div>
           </div>
           <div className="footer-bottom">
             <p>&copy; 2025 Inferenco. All rights reserved.</p>
