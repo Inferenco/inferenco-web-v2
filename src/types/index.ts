@@ -21,7 +21,8 @@ export interface BlogPost {
 
 // Product dropdown item type
 export interface ProductDropdownItem {
-  label: string;
+  /** i18n key in the `chrome` namespace. */
+  labelKey: string;
   path: string;
   page?: PageType;
   external?: boolean;

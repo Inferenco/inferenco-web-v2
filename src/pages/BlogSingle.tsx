@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import type { BlogPost } from "../types";
 import { getAssetUrl } from "../utils/assetUrl";
+import i18n, { currentLocaleTag } from "../i18n";
 import "./Blogs.css";
 
 interface BlogSingleApiResponse {
@@ -24,6 +26,7 @@ interface BlogSingleApiResponse {
 export default function BlogSingle() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation("blog");
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -63,7 +66,7 @@ export default function BlogSingle() {
         setBlog(blogPost);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to fetch blog post");
+        setError(err instanceof Error ? err.message : i18n.t("blog:single.fetchError"));
         console.error("Error fetching blog post:", err);
       } finally {
         setLoading(false);
@@ -77,7 +80,7 @@ export default function BlogSingle() {
 
   const formatDate = (dateString: string | null): string => {
     if (!dateString) return '';
-    return new Date(dateString).toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString(currentLocaleTag(), {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -90,7 +93,7 @@ export default function BlogSingle() {
         <div className="container">
           <div className="loading-indicator">
             <div className="spinner"></div>
-            <p>Loading blog post...</p>
+            <p>{t("single.loading")}</p>
           </div>
         </div>
       </div>
@@ -102,8 +105,8 @@ export default function BlogSingle() {
       <div className="blogs-page">
         <div className="container">
           <div className="error-message">
-            <p>Error loading blog post: {error}</p>
-            <button onClick={() => navigate('/blogs')}>Back to Blogs</button>
+            <p>{t("single.error", { error })}</p>
+            <button onClick={() => navigate('/blogs')}>{t("single.backToBlogs")}</button>
           </div>
         </div>
       </div>
@@ -115,8 +118,8 @@ export default function BlogSingle() {
       <div className="blogs-page">
         <div className="container">
           <div className="no-blogs">
-            <p>Blog post not found.</p>
-            <button onClick={() => navigate('/blogs')}>Back to Blogs</button>
+            <p>{t("single.notFound")}</p>
+            <button onClick={() => navigate('/blogs')}>{t("single.backToBlogs")}</button>
           </div>
         </div>
       </div>
@@ -136,7 +139,7 @@ export default function BlogSingle() {
           {/* Back navigation */}
           <nav className="blog-back-nav">
             <button onClick={() => navigate('/blogs')} className="back-button">
-              ← Back to Blogs
+              {t("single.backArrow")}
             </button>
           </nav>
 
@@ -145,7 +148,7 @@ export default function BlogSingle() {
             <h1>{blog.title}</h1>
             <div className="blog-meta">
               <time dateTime={blog.published_at ?? blog.created_at ?? ''}>
-                Published: {formatDate(blog.published_at ?? blog.created_at ?? null)}
+                {t("single.published", { date: formatDate(blog.published_at ?? blog.created_at ?? null) })}
               </time>
             </div>
           </header>
@@ -169,7 +172,7 @@ export default function BlogSingle() {
           {/* Assets gallery (if there are additional images) */}
           {blog.assets && blog.assets.length > (featuredImage ? 1 : 0) && (
             <div className="blog-assets-gallery">
-              <h3>Gallery</h3>
+              <h3>{t("single.gallery")}</h3>
               <div className="blog-assets">
                 {blog.assets
                   .filter(asset => featuredImage ? asset.id !== featuredImage.id : true)
@@ -180,7 +183,7 @@ export default function BlogSingle() {
                       <img
                         key={asset.id}
                         src={finalUrl}
-                        alt={asset.alt_text || 'Blog image'}
+                        alt={asset.alt_text || t("single.blogImage")}
                         className="blog-asset-image"
                       />
                     );
@@ -192,7 +195,7 @@ export default function BlogSingle() {
           {/* Back to blogs */}
           <footer className="blog-single-footer">
             <button onClick={() => navigate('/blogs')} className="back-button">
-              ← Back to All Blogs
+              {t("single.backAllArrow")}
             </button>
           </footer>
         </article>

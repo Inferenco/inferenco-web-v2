@@ -808,6 +808,83 @@ html.light .mobile-dropdown-content {
     gap: 0.5rem;
 }
 
+/* Navbar single-row mitigation for the 1025-1279px band (E2E, 2026-11-22).
+
+   Arithmetic, from the measured numbers rather than font guesses:
+   - Budget. `.nav-container` is `width: 90%` + `padding: 0 2rem` under
+     border-box, so at 1025px its clientWidth is 923 (as measured) and the flex
+     row has 923 - 64 = 859px to live in.
+   - Demand. E2E measured scrollWidth 953 (en) / 962 (de) / 960 (ru) / 940 (ar)
+     at that width; scrollWidth includes the 64px of padding, so the row itself
+     was 876-898px wide — and that is *after* the browser had already wrapped
+     "Media & Entertainment" onto a second line to shrink it. The row was over
+     budget even while wrapping: hence both symptoms at once — a 97px two-line
+     bar (the 75px single-row baseline plus one extra ~24px line: `.nav-link` is
+     line-height 1.5 at 1rem) and a 30px horizontal overflow.
+   - The lever. `.nav-social` is exactly 7 x 40px + 6 x 8px = 328px. Removing it
+     takes the wrapped row to 548-570px; letting the label go back to one line
+     costs the ~40-65px the wrap had been saving, so 588-635px — 224-271px of
+     slack at 1025px, the tightest width in the band, against 1087px of room at
+     1279px.
+   - `white-space: nowrap` pins the one-line contract explicitly instead of
+     leaving it emergent. It is what protects the CJK locales: ja measured 145px
+     (three extra lines) because CJK breaks between any two characters, not only
+     at spaces. With 224px of slack it cannot trade the wrap for an overflow, and
+     the gap tightening below buys a further 3 x 0.75rem = 36px on top.
+
+   Scope: this guard covers <=1279px; the 1025-1299px band below covers the bar
+   geometry. Together they leave >=1300px on the unreduced 2rem gap (where E2E
+   measured ja clean) and the pre-existing <=1024px rule that also hides
+   `.nav-social` (bottom of this file) in place. No guarded `min-width: 1025px`
+   page block, theme rule, or 96px scroll-margin contract is touched. */
+@media (max-width: 1279px) {
+    .nav-social {
+        display: none;
+    }
+}
+
+/* Second band: 1025-1299px. Two levers, both needed, and the `min-width` half
+   of the guard is load-bearing — below 1025px `.nav-links` is `display: none`
+   and the mobile drawer must not shift by even 8px.
+   (1) `gap: 2rem -> 1.25rem` on `.nav-links` removes 3 x 12px = 36px of row.
+   (2) `white-space: nowrap` pins the one-line contract explicitly instead of
+       leaving it emergent, which is what protects the CJK locales.
+   Why 36px is provably enough for the 1280-1298px ja wrap (E2E round 2),
+   derived from the browser's own boundary rather than from font metrics:
+   - Budget = `width: 90%` (border-box, `padding: 0 2rem`), so content box =
+     90% x W - 64: 1088px at 1280, 1097 at 1290, 1104 at 1298, 1105 at 1299.
+   - ja is single-row at 1299 with the UNREDUCED 2rem gap, so the ja row's
+     single-line demand D satisfies D <= 1105px. It wraps at 1298 (budget
+     1104), so D > 1104 — i.e. D is bracketed to (1104, 1105].
+   - Worst deficit in the band = D - 1088 <= 1105 - 1088 = 17px.
+   - The gap reduction removes 36px > 17px, so the reduced demand is
+     <= 1105 - 36 = 1069px against 1088px at the band's narrowest point:
+     >= 19px of slack, single row, and `scrollWidth <= clientWidth` — which is
+     why `nowrap` is safe here instead of trading the wrap for an overflow.
+   - E2E round 2 measured en/de/ru/ar/zh clean at 1280 with the 2rem gap, and
+     it did not sweep the other eight locales. The tightening is therefore
+     applied to the whole band for every locale, not gated on ja: it only ever
+     lowers demand, and the unmeasured ones are the same shape (kk is the
+     longest of them, "Медиа және ойын-сауық", estimated ~1089px unreduced —
+     i.e. marginal at 1280 and covered by the same 36px).
+   The 1299px ceiling is deliberate: at >=1300px the unreduced row fits, so the
+   desktop bar keeps its 2rem rhythm there. Crossing 1300px therefore changes
+   the nav gap by 36px total — visible only to someone resizing across the
+   boundary, and cheaper than hiding the social cluster at 1280-1299. */
+@media (min-width: 1025px) and (max-width: 1299px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+
+    /* Top-level bar only: `.dropdown-content .nav-link` already declares
+       `white-space: nowrap`, and the mobile drawer's links are not descendants
+       of `.nav-links`, so neither is affected. */
+    .nav-links .nav-link,
+    .nav-links .dropdown-toggle {
+        white-space: nowrap;
+    }
+}
+
 .social-link {
     display: flex;
     align-items: center;
@@ -3459,6 +3536,47 @@ html.light .functions-table td:nth-child(3) {
     margin-bottom: 1rem;
 }
 
+/* App-icon variant used by the media & entertainment gallery card. */
+.media-app-icon {
+    display: block;
+    width: 128px;
+    height: 128px;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: 0 auto 1rem auto;
+}
+
+/* Hash targets on the /utility-apps gallery cards must clear the fixed navbar. */
+#utility-apps-page .feature-card[id] {
+    scroll-margin-top: 96px;
+}
+
+/* Full-width band inside a .features-grid, used on Home to split product groups. */
+.portfolio-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.portfolio-divider::before,
+.portfolio-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+html.light .portfolio-divider {
+    color: var(--text-secondary);
+}
+
 .portfolio-card h4 {
     margin-bottom: 0.75rem;
     color: var(--light);
@@ -3883,6 +4001,131 @@ html.light .contact-pill i {
 
 .theme-toggle i {
     pointer-events: none;
+}
+
+/* Language switcher — mirrors the theme toggle so the navbar stays a single row. */
+.lang-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lang-switcher-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 0.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: var(--accent);
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    margin-left: 1rem;
+}
+
+.lang-switcher-toggle:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.lang-switcher-toggle i {
+    pointer-events: none;
+}
+
+.lang-switcher-current {
+    color: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lang-switcher-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.lang-switcher-item {
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.lang-switcher-item:hover {
+    background: var(--surface-glass);
+    color: var(--text-primary);
+}
+
+.lang-switcher-item.active {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.lang-switcher-item.active::after {
+    content: "✓";
+    margin-left: 0.5rem;
+    color: var(--accent);
+}
+
+/* Inside the mobile drawer the switcher is a full-width row, not a pill. */
+.lang-switcher-mobile {
+    width: 100%;
+}
+
+.lang-switcher-mobile .lang-switcher-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+    border-radius: 8px;
+}
+
+.lang-switcher-mobile .lang-switcher-menu {
+    position: static;
+    width: 100%;
+    max-height: 240px;
+    margin-top: 0.5rem;
+    box-shadow: none;
+}
+
+html.light .lang-switcher-toggle {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: var(--border);
+}
+
+html.light .lang-switcher-current {
+    color: var(--text-primary);
+}
+
+html.light .lang-switcher-menu {
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
+}
+
+html.light .lang-switcher-item.active {
+    color: var(--text-primary);
 }
 
 /* Dark theme specific styles */

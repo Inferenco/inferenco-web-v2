@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation("home");
   const [showContactModal, setShowContactModal] = useState(false);
   const [showSideNav, setShowSideNav] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
@@ -25,56 +27,58 @@ export default function Home() {
     }
   };
 
+  const tags = (key: string): string[] => t(key, { returnObjects: true }) as string[];
+
   return (
     <div id="home-page" className="page-section active">
       {/* Floating Side Navigation */}
-      <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label="Quick navigation">
+      <nav className={`side-nav ${showSideNav ? "visible" : ""}`} aria-label={t("sideNav.quickNav")}>
         <div className="side-nav-items">
           <button
             onClick={() => scrollToSection("portfolio")}
             className="side-nav-item"
-            aria-label="Go to Products section"
-            title="Products"
+            aria-label={t("sideNav.aria", { section: t("sideNav.sections.products") })}
+            title={t("sideNav.sections.products")}
           >
             <i className="fas fa-box-open"></i>
           </button>
           <button
             onClick={() => scrollToSection("about")}
             className="side-nav-item"
-            aria-label="Go to About section"
-            title="About"
+            aria-label={t("sideNav.aria", { section: t("sideNav.sections.about") })}
+            title={t("sideNav.sections.about")}
           >
             <i className="fas fa-info-circle"></i>
           </button>
           <button
             onClick={() => scrollToSection("services")}
             className="side-nav-item"
-            aria-label="Go to Capabilities section"
-            title="Capabilities"
+            aria-label={t("sideNav.aria", { section: t("sideNav.sections.capabilities") })}
+            title={t("sideNav.sections.capabilities")}
           >
             <i className="fas fa-cogs"></i>
           </button>
           <button
             onClick={() => scrollToSection("methodology")}
             className="side-nav-item"
-            aria-label="Go to How We Build section"
-            title="How We Build"
+            aria-label={t("sideNav.aria", { section: t("sideNav.sections.howWeBuild") })}
+            title={t("sideNav.sections.howWeBuild")}
           >
             <i className="fas fa-project-diagram"></i>
           </button>
           <button
             onClick={() => scrollToSection("approach")}
             className="side-nav-item"
-            aria-label="Go to Approach section"
-            title="Approach"
+            aria-label={t("sideNav.aria", { section: t("sideNav.sections.approach") })}
+            title={t("sideNav.sections.approach")}
           >
             <i className="fas fa-lightbulb"></i>
           </button>
           <button
             onClick={() => setShowContactModal(true)}
             className="side-nav-item contact-item"
-            aria-label="Contact Us"
-            title="Contact"
+            aria-label={t("sideNav.contactAria")}
+            title={t("sideNav.sections.contact")}
           >
             <i className="fas fa-envelope"></i>
           </button>
@@ -87,24 +91,29 @@ export default function Home() {
           <div className="hero-logo">
             <img
               src="assets/logos/flame.png"
-              alt="Inferenco logo"
+              alt={t("hero.logoAlt")}
               className="main-logo-animated"
             />
           </div>
-          <h1>Software Products, Built In-House</h1>
-          <p>
-            We design, build, and ship our own products — from on-chain wallets and
-            developer tools to free, everyday web utilities.
-          </p>
+          <h1>{t("hero.title")}</h1>
+          <p>{t("hero.tagline")}</p>
           <div className="hero-navigation">
-            <nav className="hero-nav-index" aria-label="Inferenco products">
+            <nav className="hero-nav-index" aria-label={t("hero.pillsAria")}>
+              <Link
+                to="/utility-apps"
+                className="nav-pill"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <i className="fas fa-toolbox"></i>
+                <span>{t("hero.pillMedia")}</span>
+              </Link>
               <Link
                 to="/infer-desk"
                 className="nav-pill"
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <i className="fas fa-desktop"></i>
-                <span>Infer Desk</span>
+                <span>{t("hero.pillDesk")}</span>
               </Link>
               <Link
                 to="/infer-wallet"
@@ -112,15 +121,7 @@ export default function Home() {
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <i className="fas fa-wallet"></i>
-                <span>Infer Wallet</span>
-              </Link>
-              <Link
-                to="/utility-apps"
-                className="nav-pill"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                <i className="fas fa-toolbox"></i>
-                <span>Utility Apps</span>
+                <span>{t("hero.pillWallet")}</span>
               </Link>
               <Link
                 to="/infer-mcp"
@@ -128,7 +129,7 @@ export default function Home() {
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <i className="fas fa-terminal"></i>
-                <span>Infer MCP</span>
+                <span>{t("hero.pillMcp")}</span>
               </Link>
               <Link
                 to="/docs#infer-connect-introduction"
@@ -136,15 +137,15 @@ export default function Home() {
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <i className="fas fa-plug"></i>
-                <span>Infer Connect</span>
+                <span>{t("hero.pillConnect")}</span>
               </Link>
               <button
                 onClick={() => setShowContactModal(true)}
                 className="nav-pill contact-pill"
-                aria-label="Contact Us"
+                aria-label={t("hero.pillContact")}
               >
                 <i className="fas fa-envelope"></i>
-                <span>Contact</span>
+                <span>{t("hero.pillContact")}</span>
               </button>
             </nav>
           </div>
@@ -155,32 +156,70 @@ export default function Home() {
       <section id="portfolio" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Products</span>
+            <Trans i18nKey="portfolio.title" ns="home" components={{ span: <span /> }} />
           </h2>
-          <p className="section-subtitle">
-            Everything we build and ship ourselves — wallets, developer tools, and free utilities
-          </p>
+          <p className="section-subtitle">{t("portfolio.subtitle")}</p>
           <div className="features-grid">
+            {/* Nemesis Go Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="/img/infer-ecosystem/utility-apps/nemesis-go-icon.webp"
+                alt={t("portfolio.cards.nemesis.alt")}
+                className="portfolio-logo"
+                loading="lazy"
+                decoding="async"
+                width="256"
+                height="256"
+              />
+              <h4>{t("portfolio.cards.nemesis.name")}</h4>
+              <p>{t("portfolio.cards.nemesis.blurb")}</p>
+              <div className="portfolio-tags">
+                {tags("portfolio.cards.nemesis.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <Link to="/utility-apps#nemesis-go" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+                {t("portfolio.learnMore")}
+              </Link>
+            </div>
+
+            {/* Media & Entertainment Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="/assets/logos/flame.png"
+                alt={t("portfolio.cards.media.alt")}
+                className="portfolio-logo"
+              />
+              <h4>{t("portfolio.cards.media.name")}</h4>
+              <p>{t("portfolio.cards.media.blurb")}</p>
+              <div className="portfolio-tags">
+                {tags("portfolio.cards.media.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <Link to="/utility-apps" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+                {t("portfolio.learnMore")}
+              </Link>
+            </div>
+
+            <div className="portfolio-divider">{t("portfolio.divider")}</div>
+
             {/* Infer Desk Card */}
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Desk logo"
+                alt={t("portfolio.cards.desk.alt")}
                 className="portfolio-logo"
               />
-              <h4>Infer Desk</h4>
-              <p>
-                Desktop application for Cedra blockchain interactions and workflow management.
-                Cross-platform, secure, and built for professional users and enterprises.
-              </p>
+              <h4>{t("portfolio.cards.desk.name")}</h4>
+              <p>{t("portfolio.cards.desk.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">Desktop App</span>
-                <span className="tag">Cedra</span>
-                <span className="tag">Cross-Platform</span>
-                <span className="tag">Enterprise</span>
+                {tags("portfolio.cards.desk.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <Link to="/infer-desk" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
-                Learn More
+                {t("portfolio.learnMore")}
               </Link>
             </div>
 
@@ -188,46 +227,18 @@ export default function Home() {
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Wallet logo"
+                alt={t("portfolio.cards.wallet.alt")}
                 className="portfolio-logo"
               />
-              <h4>Infer Wallet</h4>
-              <p>
-                Cryptocurrency wallet for mobile devices built on the Cedra blockchain.
-                Secure asset management with built-in swaps, DeFi integrations, and
-                enterprise-grade security.
-              </p>
+              <h4>{t("portfolio.cards.wallet.name")}</h4>
+              <p>{t("portfolio.cards.wallet.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">Mobile App</span>
-                <span className="tag">Cedra</span>
-                <span className="tag">DeFi</span>
+                {tags("portfolio.cards.wallet.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <Link to="/infer-wallet" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
-                Learn More
-              </Link>
-            </div>
-
-            {/* Utility Apps Card */}
-            <div className="feature-card portfolio-card">
-              <img
-                src="/assets/logos/flame.png"
-                alt="Utility Apps logo"
-                className="portfolio-logo"
-              />
-              <h4>Utility Apps</h4>
-              <p>
-                Free, privacy-first web tools that run entirely in your browser — Make My
-                Image Fit for resizing and compressing images, and Sound Flipper for
-                converting audio. No uploads, no accounts, no installs.
-              </p>
-              <div className="portfolio-tags">
-                <span className="tag">Web Tools</span>
-                <span className="tag">Free</span>
-                <span className="tag">On-Device</span>
-                <span className="tag">Privacy-First</span>
-              </div>
-              <Link to="/utility-apps" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
-                Learn More
+                {t("portfolio.learnMore")}
               </Link>
             </div>
 
@@ -235,22 +246,18 @@ export default function Home() {
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer MCP logo"
+                alt={t("portfolio.cards.mcp.alt")}
                 className="portfolio-logo"
               />
-              <h4>Infer MCP</h4>
-              <p>
-                The Model Context Protocol server that lets AI coding agents operate the
-                Infer Desk wallet — connect, check health, and submit typed token
-                transfers, with every sensitive action approved on the wallet's screen.
-              </p>
+              <h4>{t("portfolio.cards.mcp.name")}</h4>
+              <p>{t("portfolio.cards.mcp.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">MCP</span>
-                <span className="tag">AI Agents</span>
-                <span className="tag">Developer Tool</span>
+                {tags("portfolio.cards.mcp.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <Link to="/infer-mcp" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
-                Learn More
+                {t("portfolio.learnMore")}
               </Link>
             </div>
 
@@ -258,22 +265,18 @@ export default function Home() {
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Connect logo"
+                alt={t("portfolio.cards.connect.alt")}
                 className="portfolio-logo"
               />
-              <h4>Infer Connect</h4>
-              <p>
-                The wallet-standard adapter that connects Cedra dApps to Infer Desk and
-                Infer Wallet — connection, transaction signing, and message signing
-                through one plugin-style integration.
-              </p>
+              <h4>{t("portfolio.cards.connect.name")}</h4>
+              <p>{t("portfolio.cards.connect.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">Wallet Adapter</span>
-                <span className="tag">dApps</span>
-                <span className="tag">AIP-62</span>
+                {tags("portfolio.cards.connect.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <Link to="/docs#infer-connect-introduction" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
-                Read the Docs
+                {t("portfolio.readDocs")}
               </Link>
             </div>
 
@@ -281,21 +284,15 @@ export default function Home() {
             <div className="feature-card portfolio-card">
               <img
                 src="/assets/logos/flame.png"
-                alt="Infer Ecosystem logo"
+                alt={t("portfolio.cards.ecosystem.alt")}
                 className="portfolio-logo"
               />
-              <h4>Infer Ecosystem</h4>
-              <p>
-                Browser-based dApp for the Cedra Network featuring events management,
-                gaming hub with poker and casino, and community tools. Built with React
-                and Move smart contracts for a seamless Web3 experience.
-              </p>
+              <h4>{t("portfolio.cards.ecosystem.name")}</h4>
+              <p>{t("portfolio.cards.ecosystem.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">dApp</span>
-                <span className="tag">Cedra</span>
-                <span className="tag">Gaming</span>
-                <span className="tag">Events</span>
-                <span className="tag">Web3</span>
+                {tags("portfolio.cards.ecosystem.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <a
                 href="https://app.inferenco.com"
@@ -304,7 +301,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit dApp
+                {t("portfolio.visitDapp")}
               </a>
             </div>
           </div>
@@ -315,45 +312,38 @@ export default function Home() {
       <section id="about" className="section">
         <div className="container">
           <h2 className="section-title">
-            About <span>Inferenco</span> &ndash; The Team Behind the Products
+            <Trans i18nKey="about.title" ns="home" components={{ span: <span /> }} />
           </h2>
           <div className="two-col">
             <div className="text-col" style={{ maxWidth: "100%" }}>
               <p>
-                <strong>Inferenco</strong> is a software company formed through the
-                collaboration of <strong>Singularity Shift Ltd</strong> and{" "}
-                <strong>Spielcrypto Ltd</strong>. We build products, not client projects —
-                everything on this site is designed, built, and shipped by us.
+                <Trans i18nKey="about.p1" ns="home" components={{ strong: <strong /> }} />
               </p>
-              <p>
-                Our product line spans on-chain wallets, dApps, and developer tooling
-                alongside free, everyday web utilities — all backed by
-                security reviews and signed releases.
-              </p>
-              <p>
-                Every product is maintained by the same team that wrote it — with
-                documentation, install guides, and a direct line to the developers.
-              </p>
+              <p>{t("about.p2")}</p>
+              <p>{t("about.p3")}</p>
               <div className="services-list">
-                <h4>What we build:</h4>
+                <h4>{t("about.buildHeading")}</h4>
                 <ul className="values-list">
                   <li>
-                    <i className="fas fa-code"></i>Desktop &amp; Mobile Wallets
+                    <i className="fas fa-gamepad"></i>{t("about.build.gamesMedia")}
                   </li>
                   <li>
-                    <i className="fas fa-link"></i>On-Chain Products for Cedra (Wallets, dApps &amp; Adapter)
+                    <i className="fas fa-globe"></i>{t("about.build.browserUtilities")}
                   </li>
                   <li>
-                    <i className="fas fa-terminal"></i>Developer Tooling &amp; MCP Integrations
+                    <i className="fas fa-code"></i>{t("about.build.wallets")}
                   </li>
                   <li>
-                    <i className="fas fa-globe"></i>Free Browser Utilities
+                    <i className="fas fa-link"></i>{t("about.build.onchainCedra")}
                   </li>
                   <li>
-                    <i className="fas fa-brain"></i>AI-Powered Assistants
+                    <i className="fas fa-terminal"></i>{t("about.build.devTooling")}
                   </li>
                   <li>
-                    <i className="fas fa-shield-alt"></i>Security Reviews &amp; Signed Releases
+                    <i className="fas fa-brain"></i>{t("about.build.ai")}
+                  </li>
+                  <li>
+                    <i className="fas fa-shield-alt"></i>{t("about.build.security")}
                   </li>
                 </ul>
               </div>
@@ -366,75 +356,54 @@ export default function Home() {
       <section id="services" className="section">
         <div className="container">
           <h2 className="section-title">
-            Product <span>Capabilities</span>
+            <Trans i18nKey="services.title" ns="home" components={{ span: <span /> }} />
           </h2>
-          <p className="section-subtitle">
-            What our products deliver out of the box
-          </p>
+          <p className="section-subtitle">{t("services.subtitle")}</p>
           <div className="features-grid">
             <div className="feature-card">
-              <span className="emoji">💻</span>
-              <h4>Manage Assets with Infer Desk</h4>
-              <p>
-                A desktop wallet for Cedra: send, receive, swap, and manage tokens and
-                NFTs with enterprise-grade security.
-              </p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">📱</span>
-              <h4>Take Your Wallet Anywhere</h4>
-              <p>
-                Infer Wallet brings Cedra to mobile with biometric protection, built-in
-                swaps, and DeFi integrations.
-              </p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🤖</span>
-              <h4>Let AI Agents Do the Work</h4>
-              <p>
-                Infer MCP connects AI coding agents to your Infer Desk wallet, with every
-                sensitive action approved on-screen.
-              </p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🔗</span>
-              <h4>Connect dApps in One Click</h4>
-              <p>
-                Infer Connect gives Cedra dApps a standard wallet adapter for connections,
-                transaction signing, and message signing.
-              </p>
+              <span className="emoji">♟️</span>
+              <h4>{t("services.nemesis.title")}</h4>
+              <p>{t("services.nemesis.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🖼️</span>
-              <h4>Fix Files Without Uploads</h4>
-              <p>
-                Make My Image Fit and Sound Flipper resize, compress, and convert entirely
-                on your device — nothing is uploaded.
-              </p>
+              <h4>{t("services.fixFiles.title")}</h4>
+              <p>{t("services.fixFiles.text")}</p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">💻</span>
+              <h4>{t("services.desk.title")}</h4>
+              <p>{t("services.desk.text")}</p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">📱</span>
+              <h4>{t("services.wallet.title")}</h4>
+              <p>{t("services.wallet.text")}</p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🤖</span>
+              <h4>{t("services.agents.title")}</h4>
+              <p>{t("services.agents.text")}</p>
+            </div>
+            <div className="feature-card">
+              <span className="emoji">🔗</span>
+              <h4>{t("services.dapps.title")}</h4>
+              <p>{t("services.dapps.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🎮</span>
-              <h4>Play and Connect in the Ecosystem</h4>
-              <p>
-                The Infer Ecosystem dApp offers events management, a gaming hub, and
-                community tools on the Cedra Network.
-              </p>
+              <h4>{t("services.ecosystem.title")}</h4>
+              <p>{t("services.ecosystem.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🔐</span>
-              <h4>Security-First by Default</h4>
-              <p>
-                Audited releases, signed and notarized binaries, and on-device processing
-                across the product line.
-              </p>
+              <h4>{t("services.security.title")}</h4>
+              <p>{t("services.security.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🧩</span>
-              <h4>Built on Open Standards</h4>
-              <p>
-                AIP-62, MCP, and Move smart contracts — our on-chain products interoperate
-                instead of locking you in.
-              </p>
+              <h4>{t("services.standards.title")}</h4>
+              <p>{t("services.standards.text")}</p>
             </div>
           </div>
         </div>
@@ -444,11 +413,9 @@ export default function Home() {
       <section id="methodology" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Methodology</span> &ndash; How We Build and Release
+            <Trans i18nKey="methodology.title" ns="home" components={{ span: <span /> }} />
           </h2>
-          <p className="section-subtitle">
-            From an idea to a signed release you can verify
-          </p>
+          <p className="section-subtitle">{t("methodology.subtitle")}</p>
           <div className="methodology-steps">
             <div className="methodology-step">
               <div className="step-icon">
@@ -456,8 +423,8 @@ export default function Home() {
                 <i className="fas fa-lightbulb"></i>
               </div>
               <div className="step-content">
-                <h4>We Scope It</h4>
-                <p>Every product starts as a focused idea: one job, done properly, with no feature bloat.</p>
+                <h4>{t("methodology.steps.scope.title")}</h4>
+                <p>{t("methodology.steps.scope.text")}</p>
               </div>
             </div>
             <div className="methodology-step">
@@ -466,8 +433,8 @@ export default function Home() {
                 <i className="fas fa-code"></i>
               </div>
               <div className="step-content">
-                <h4>We Build It In-House</h4>
-                <p>Our own team designs, implements, and tests every product — no outsourcing, no hand-offs.</p>
+                <h4>{t("methodology.steps.build.title")}</h4>
+                <p>{t("methodology.steps.build.text")}</p>
               </div>
             </div>
             <div className="methodology-step">
@@ -476,8 +443,8 @@ export default function Home() {
                 <i className="fas fa-shield-alt"></i>
               </div>
               <div className="step-content">
-                <h4>We Put It Through Security Review</h4>
-                <p>New wallet and bridge releases go through audits and internal review before anything ships.</p>
+                <h4>{t("methodology.steps.review.title")}</h4>
+                <p>{t("methodology.steps.review.text")}</p>
               </div>
             </div>
             <div className="methodology-step">
@@ -486,8 +453,8 @@ export default function Home() {
                 <i className="fas fa-file-signature"></i>
               </div>
               <div className="step-content">
-                <h4>We Sign and Publish</h4>
-                <p>Releases are signed, notarized where applicable, and published with signatures you can verify.</p>
+                <h4>{t("methodology.steps.sign.title")}</h4>
+                <p>{t("methodology.steps.sign.text")}</p>
               </div>
             </div>
             <div className="methodology-step">
@@ -496,8 +463,8 @@ export default function Home() {
                 <i className="fas fa-headset"></i>
               </div>
               <div className="step-content">
-                <h4>We Support What We Ship</h4>
-                <p>Documentation, install guides, and a direct line to the team back every product.</p>
+                <h4>{t("methodology.steps.support.title")}</h4>
+                <p>{t("methodology.steps.support.text")}</p>
               </div>
             </div>
           </div>
@@ -508,37 +475,29 @@ export default function Home() {
       <section id="approach" className="section">
         <div className="container">
           <h2 className="section-title">
-            Our <span>Approach</span> &ndash; Why Our Products Are Different
+            <Trans i18nKey="approach.title" ns="home" components={{ span: <span /> }} />
           </h2>
           <p>
-            We build software the way we want to use it: <strong>transparent</strong>,{" "}
-            <strong>private by design</strong>, and <strong>verifiable</strong>.
-            Our approach focuses on:
+            <Trans i18nKey="approach.intro" ns="home" components={{ strong: <strong /> }} />
           </p>
           <ul className="values-list">
             <li>
-              <i className="fas fa-file-signature"></i>Verifiable software — every
-              release is signed and documented
+              <i className="fas fa-file-signature"></i>{t("approach.values.verifiable")}
             </li>
             <li>
-              <i className="fas fa-lock"></i>Privacy by default — on-device processing
-              wherever possible
+              <i className="fas fa-lock"></i>{t("approach.values.privacy")}
             </li>
             <li>
-              <i className="fas fa-check-circle"></i>Quality and reliability in
-              every line of code
+              <i className="fas fa-check-circle"></i>{t("approach.values.quality")}
             </li>
             <li>
-              <i className="fas fa-lightbulb"></i>Innovation combined with
-              practical, usable tools
+              <i className="fas fa-lightbulb"></i>{t("approach.values.innovation")}
             </li>
             <li>
-              <i className="fas fa-clock"></i>Timely releases without
-              compromising on quality
+              <i className="fas fa-clock"></i>{t("approach.values.timely")}
             </li>
             <li>
-              <i className="fas fa-cubes"></i>Interoperable products that
-              work better together
+              <i className="fas fa-cubes"></i>{t("approach.values.interoperable")}
             </li>
           </ul>
         </div>
@@ -547,17 +506,14 @@ export default function Home() {
       {/* Call to Action Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>Questions About Our Products?</h2>
-          <p>
-            Want to know more about a product, report an issue, or discuss something
-            custom? Get in touch with the team that builds the software.
-          </p>
+          <h2>{t("cta.title")}</h2>
+          <p>{t("cta.text")}</p>
           <button
             onClick={() => setShowContactModal(true)}
             className="cta-button secondary"
-            aria-label="Contact Us"
+            aria-label={t("cta.button")}
           >
-            Contact Us
+            {t("cta.button")}
           </button>
         </div>
       </section>
@@ -569,11 +525,8 @@ export default function Home() {
             <button className="modal-close" onClick={() => setShowContactModal(false)}>
               <i className="fas fa-times"></i>
             </button>
-            <h2>Contact Us</h2>
-            <p>
-              Get in touch with the team behind our products — questions, issues, or
-              custom work.
-            </p>
+            <h2>{t("modal.title")}</h2>
+            <p>{t("modal.text")}</p>
             <div className="contact-emails">
               <a
                 href="mailto:spielcrypto@inferenco.com"
@@ -590,7 +543,7 @@ export default function Home() {
                 singularityshift@inferenco.com
               </a>
             </div>
-            <p className="modal-note">We'll get back to you as soon as possible.</p>
+            <p className="modal-note">{t("modal.note")}</p>
           </div>
         </div>
       )}
