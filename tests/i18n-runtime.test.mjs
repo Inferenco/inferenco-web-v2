@@ -165,3 +165,28 @@ test("nemesisLegalUrl builds per-locale legal URLs with an EN fallback", async (
   await i18n.changeLanguage("xx");
   assert.equal(mod.nemesisLegalUrl("privacy"), "/nemesis-go/privacy/");
 });
+
+test("supportUrl builds per-locale support URLs with an EN fallback", async () => {
+  stubBrowser({ languages: ["en"] });
+  const mod = await vite.ssrLoadModule("/src/i18n/index.ts?support");
+  const i18n = mod.default;
+  await mod.initI18n();
+
+  // EN uses the canonical unlocalized path.
+  assert.equal(mod.supportUrl(), "/support/");
+
+  // A supported non-EN locale uses its code-named directory.
+  await mod.setLanguage("ar");
+  assert.equal(mod.supportUrl(), "/support/ar/");
+
+  // Region-tagged codes keep their full code and stay distinct.
+  await mod.setLanguage("pt-BR");
+  assert.equal(mod.supportUrl(), "/support/pt-BR/");
+  await mod.setLanguage("pt-PT");
+  assert.equal(mod.supportUrl(), "/support/pt-PT/");
+  assert.notEqual(mod.supportUrl(), "/support/pt-BR/", "pt-PT must resolve to its own support directory");
+
+  // An unknown resolution falls back to the EN path.
+  await i18n.changeLanguage("xx");
+  assert.equal(mod.supportUrl(), "/support/");
+});

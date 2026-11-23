@@ -153,4 +153,11 @@ export function nemesisLegalUrl(doc: "privacy" | "terms"): string {
   return lng ? `/nemesis-go/${lng}/${doc}/` : `/nemesis-go/${doc}/`;
 }
 
+/** Per-locale support URL: EN (and unknown) → /support/, others → /support/<lng>/. */
+export function supportUrl(): string {
+  const resolved = i18n.resolvedLanguage ?? i18n.language;
+  const lng = isSupportedLanguage(resolved) && resolved !== "en" ? resolved : null;
+  return lng ? `/support/${lng}/` : `/support/`;
+}
+
 export default i18n;

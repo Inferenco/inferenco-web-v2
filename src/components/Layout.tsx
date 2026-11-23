@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { PageType, ProductDropdownItem } from "../types";
-import { nemesisLegalUrl } from "../i18n";
+import { nemesisLegalUrl, supportUrl } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks: { labelKey: string; path: string; page: PageType }[] = [
@@ -289,6 +289,7 @@ export default function Layout() {
               <h4>{t("footer.resourcesColumn")}</h4>
               <Link to="/docs">{t("footer.documentation")}</Link>
               <Link to="/blogs">{t("footer.blog")}</Link>
+              <a href={supportUrl()}>{t("footer.support")}</a>
             </div>
             <div className="footer-links">
               <h4>{t("footer.companyColumn")}</h4>
