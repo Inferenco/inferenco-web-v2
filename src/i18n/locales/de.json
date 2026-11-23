@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "App-Symbol von Nemesis Go",
-          "blurb": "Ein 9×9-Go-Spiel für Android mit einem offlinefähigen, lokalen KI-Gegner und Zuganalyse. Kein Konto nötig – gespeicherte Partien und Einstellungen bleiben auf Ihrem Gerät.",
+          "blurb": "Spielen Sie 9×9-Go gegen eine KI, die vollständig auf Ihrem Android-Gerät läuft. Kein Konto nötig.",
           "tags": [
             "Mobile-Game",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS in Kürze"
           ]
         },
-        "media": {
-          "name": "Medien & Unterhaltung",
-          "alt": "Logo „Medien & Unterhaltung“",
-          "blurb": "Unsere Spiele und Alltags-Apps – Nemesis Go für Android, Make My Image Fit zum Skalieren und Komprimieren von Bildern und Sound Flipper zum Konvertieren von Audio. Die Web-Tools laufen vollständig in Ihrem Browser: ohne Uploads, ohne Konten, ohne Installation.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Screenshot von Sound Flipper",
+          "blurb": "Konvertieren Sie Audio zwischen MP3, WAV, FLAC und mehr — kostenlos, privat und vollständig lokal auf Ihrem Gerät.",
           "tags": [
-            "Mobile-Game",
-            "Web-Tools",
+            "Audio-Konverter",
+            "Web-Tool",
             "Kostenlos",
-            "Lokal",
-            "Datenschutzfreundlich"
+            "Lokal"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Screenshot von Make My Image Fit",
+          "blurb": "Größe ändern und Bilder komprimieren, damit sie jedes Upload-Limit erfüllen — kostenlos, privat und lokal.",
+          "tags": [
+            "Bild-Tool",
+            "Web-Tool",
+            "Kostenlos",
+            "Lokal"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer-Desk-Logo",
-          "blurb": "Desktop-Anwendung für Cedra-Blockchain-Interaktionen und Workflow-Verwaltung. Plattformübergreifend, sicher und für professionelle Nutzer und Unternehmen gebaut.",
+          "blurb": "Desktop-Wallet für Cedra — Token und NFTs sicher senden, empfangen, tauschen und verwalten.",
           "tags": [
             "Desktop-App",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer-Wallet-Logo",
-          "blurb": "Kryptowallet für Mobilgeräte auf der Cedra-Blockchain. Sichere Vermögensverwaltung mit integrierten Swaps, DeFi-Integrationen und Sicherheit auf Unternehmensniveau.",
+          "blurb": "Mobile Wallet für Cedra mit integrierten Swaps, DeFi-Zugang und biometrischem Schutz.",
           "tags": [
             "Mobile-App",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer-MCP-Logo",
-          "blurb": "Der Model Context Protocol-Server, mit dem KI-Coding-Agenten das Infer-Desk-Wallet bedienen können – verbinden, Status prüfen und Überweisungen eingegebener Token ausführen, wobei jede sensible Aktion auf dem Bildschirm des Wallets bestätigt wird.",
+          "blurb": "Lässt KI-Coding-Agenten Ihr Infer-Desk-Wallet bedienen, mit Bestätigung auf dem Bildschirm.",
           "tags": [
             "MCP",
             "KI-Agenten",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Infer-Connect-Logo",
-          "blurb": "Der Wallet-Standard-Adapter, der Cedra-dApps mit Infer Desk und Infer Wallet verbindet – Verbindung, Transaktionssignatur und Nachrichtensignatur über eine einzige Integration als Plugin.",
+          "blurb": "Verbinden Sie Cedra-dApps mit Infer Desk und Infer Wallet für Signaturen und Transaktionen.",
           "tags": [
             "Wallet-Adapter",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer-Ecosystem-Logo",
-          "blurb": "Browserbasierte dApp für das Cedra-Netzwerk mit Event-Verwaltung, Gaming-Hub mit Poker und Casino sowie Community-Werkzeugen. Gebaut mit React und Move-Smart-Contracts für ein nahtloses Web3-Erlebnis.",
+          "blurb": "Events, Gaming und Community-Tools im Cedra-Netzwerk — direkt im Browser.",
           "tags": [
             "dApp",
             "Cedra",

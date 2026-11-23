@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Icône de l'application Nemesis Go",
-          "blurb": "Un jeu de Go 9×9 pour Android avec un adversaire IA hors ligne exécuté sur l'appareil et une analyse des coups. Aucun compte nécessaire, et vos parties sauvegardées et préférences restent sur votre appareil.",
+          "blurb": "Jouez au Go 9×9 contre une IA qui fonctionne entièrement sur votre appareil Android. Aucun compte nécessaire.",
           "tags": [
             "Jeu mobile",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS bientôt"
           ]
         },
-        "media": {
-          "name": "Médias et Divertissement",
-          "alt": "Logo Médias et Divertissement",
-          "blurb": "Nos jeux et applications du quotidien — Nemesis Go pour Android, Make My Image Fit pour redimensionner et compresser les images, et Sound Flipper pour convertir l'audio. Les outils web fonctionnent entièrement dans votre navigateur : aucun téléversement, aucun compte, aucune installation.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Capture de Sound Flipper",
+          "blurb": "Convertissez l'audio entre MP3, WAV, FLAC et plus — gratuit, privé et entièrement sur votre appareil.",
           "tags": [
-            "Jeu mobile",
-            "Outils web",
+            "Convertisseur audio",
+            "Outil web",
             "Gratuit",
-            "Sur l'appareil",
-            "Confidentialité d'abord"
+            "Sur l'appareil"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Capture de Make My Image Fit",
+          "blurb": "Redimensionnez et compressez vos images pour respecter toute limite d'envoi — gratuit, privé et sur votre appareil.",
+          "tags": [
+            "Utilitaire image",
+            "Outil web",
+            "Gratuit",
+            "Sur l'appareil"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Logo Infer Desk",
-          "blurb": "Application de bureau pour les interactions avec la blockchain Cedra et la gestion de flux de travail. Multiplateforme, sécurisée et conçue pour les utilisateurs professionnels et les entreprises.",
+          "blurb": "Portefeuille de bureau pour Cedra — envoyez, recevez, échangez et gérez tokens et NFTs en toute sécurité.",
           "tags": [
             "Application bureau",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logo Infer Wallet",
-          "blurb": "Portefeuille de cryptomonnaies pour appareils mobiles, construit sur la blockchain Cedra. Gestion sécurisée des actifs avec échanges intégrés, intégrations DeFi et sécurité de niveau professionnel.",
+          "blurb": "Portefeuille mobile pour Cedra avec swaps intégrés, accès DeFi et protection biométrique.",
           "tags": [
             "Application mobile",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logo Infer MCP",
-          "blurb": "Le serveur du Protocole de Contexte de Modèle qui permet aux agents de codage IA de piloter le portefeuille Infer Desk — se connecter, vérifier l'état et envoyer des transferts de tokens saisis, chaque action sensible étant approuvée sur l'écran du portefeuille.",
+          "blurb": "Permet aux agents de codage IA d'opérer votre portefeuille Infer Desk, avec approbation à l'écran.",
           "tags": [
             "MCP",
             "Agents IA",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logo Infer Connect",
-          "blurb": "L'adaptateur standard de portefeuille qui relie les dApps Cedra à Infer Desk et Infer Wallet — connexion, signature de transactions et signature de messages via une seule intégration sous forme de plugin.",
+          "blurb": "Connectez les dApps Cedra à Infer Desk et Infer Wallet pour les signatures et transactions.",
           "tags": [
             "Adaptateur de portefeuille",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Logo Infer Ecosystem",
-          "blurb": "dApp dans le navigateur pour le réseau Cedra, avec gestion d'événements, pôle de jeux incluant poker et casino, et outils communautaires. Construite avec React et des contrats intelligents Move pour une expérience Web3 fluide.",
+          "blurb": "Événements, jeux et outils communautaires sur le réseau Cedra — dans votre navigateur.",
           "tags": [
             "dApp",
             "Cedra",

@@ -22,10 +22,11 @@ function homeCopy(file) {
 }
 
 test("Home links every product, including Utility Apps", () => {
-  const targets = ["/infer-desk", "/infer-wallet", "/utility-apps", "/infer-mcp", "/docs#infer-connect-introduction"];
+  const targets = ["/infer-desk", "/infer-wallet", "/utility-apps", "/utility-apps#sound-flipper", "/utility-apps#image-fit", "/infer-mcp", "/docs#infer-connect-introduction"];
   for (const target of targets) {
     assert.ok(home.includes('to="' + target + '"'), "Home.tsx must link to " + target);
   }
+  assert.ok(!/portfolio\.cards\.media/.test(home), "aggregate media card must be gone");
 });
 
 test("Home no longer carries consulting or open-source messaging", () => {

@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Nemesis Go 应用图标",
-          "blurb": "一款面向 Android 的 9×9 围棋游戏，配备离线、在设备本地运行的 AI 对手与着法分析。无需账号，已保存的对局与偏好设置都留在您的设备上。",
+          "blurb": "与完全在您 Android 设备上运行的 AI 对弈 9×9 围棋。无需账号。",
           "tags": [
             "移动游戏",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS 即将推出"
           ]
         },
-        "media": {
-          "name": "媒体与娱乐",
-          "alt": "媒体与娱乐标志",
-          "blurb": "我们的游戏与日常应用 — 面向 Android 的 Nemesis Go、用于缩放与压缩图片的 Make My Image Fit，以及用于音频转换的 Sound Flipper。网页工具完全在浏览器中运行：不上传、无需账号、无需安装。",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Sound Flipper 截图",
+          "blurb": "在 MP3、WAV、FLAC 等格式之间转换音频 — 免费、私密，完全在设备本地完成。",
           "tags": [
-            "移动游戏",
+            "音频转换器",
             "网页工具",
             "免费",
-            "设备本地",
-            "隐私优先"
+            "设备本地"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Make My Image Fit 截图",
+          "blurb": "调整并压缩图片以满足任何上传限制 — 免费、私密、设备本地处理。",
+          "tags": [
+            "图片工具",
+            "网页工具",
+            "免费",
+            "设备本地"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer Desk 标志",
-          "blurb": "用于 Cedra 区块链交互与工作流管理的桌面应用。跨平台、安全，为专业用户与企业打造。",
+          "blurb": "Cedra 桌面钱包 — 安全地发送、接收、兑换和管理代币与 NFT。",
           "tags": [
             "桌面应用",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer Wallet 标志",
-          "blurb": "基于 Cedra 区块链构建的移动端加密货币钱包。内置交换与 DeFi 集成，并提供企业级安全性的资产管理。",
+          "blurb": "Cedra 移动钱包 — 内置兑换、DeFi 访问与生物识别保护。",
           "tags": [
             "移动应用",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP 标志",
-          "blurb": "让 AI 编码代理操作 Infer Desk 钱包的模型上下文协议服务器 — 连接、检查状态、提交键入的代币转账，每一项敏感操作都需在钱包界面上确认。",
+          "blurb": "让 AI 编码代理操作您的 Infer Desk 钱包，并在屏幕上逐项批准。",
           "tags": [
             "MCP",
             "AI 代理",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Infer Connect 标志",
-          "blurb": "把 Cedra dApp 连接到 Infer Desk 与 Infer Wallet 的钱包标准适配器 — 通过一个插件式集成完成连接、交易签名与消息签名。",
+          "blurb": "将 Cedra dApp 连接到 Infer Desk 和 Infer Wallet，进行签名与交易。",
           "tags": [
             "钱包适配器",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem 标志",
-          "blurb": "面向 Cedra 网络的浏览器 dApp，提供活动管理、含扑克与赌场的游戏中心以及社区工具。使用 React 与 Move 智能合约构建，带来顺畅的 Web3 体验。",
+          "blurb": "Cedra 网络上的活动、游戏与社区工具 — 尽在浏览器中。",
           "tags": [
             "dApp",
             "Cedra",

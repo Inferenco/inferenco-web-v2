@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Nemesis Go uygulama simgesi",
-          "blurb": "Cihazınızda çevrimdışı çalışan bir YZ rakibi ve hamle analizi sunan Android için bir 9×9 Go oyunu. Hesap gerekmez; kaydedilmiş oyunlarınız ve tercihleriniz cihazınızda kalır.",
+          "blurb": "Tamamen Android cihazınızda çalışan bir YZ'ye karşı 9×9 Go oynayın. Hesap gerekmez.",
           "tags": [
             "Mobil oyun",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS yakında"
           ]
         },
-        "media": {
-          "name": "Medya ve Eğlence",
-          "alt": "Medya ve Eğlence logosu",
-          "blurb": "Oyunlarımız ve gündelik uygulamalarımız — Android için Nemesis Go, görüntüleri yeniden boyutlandırmak ve sıkıştırmak için Make My Image Fit, sesi dönüştürmek için Sound Flipper. Web araçları tamamen tarayıcınızda çalışır: yükleme yok, hesap yok, kurulum yok.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Sound Flipper ekran görüntüsü",
+          "blurb": "Sesi MP3, WAV, FLAC ve daha fazlası arasında dönüştürün — ücretsiz, özel ve tamamen cihazınızda.",
           "tags": [
-            "Mobil oyun",
-            "Web araçları",
+            "Ses dönüştürücü",
+            "Web aracı",
             "Ücretsiz",
-            "Cihazda",
-            "Önce gizlilik"
+            "Cihazda"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Make My Image Fit ekran görüntüsü",
+          "blurb": "Görüntüleri her yükleme sınırına uyacak şekilde yeniden boyutlandırın ve sıkıştırın — ücretsiz, özel ve cihazda.",
+          "tags": [
+            "Görüntü yardımcısı",
+            "Web aracı",
+            "Ücretsiz",
+            "Cihazda"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer Desk logosu",
-          "blurb": "Cedra blockchain etkileşimleri ve iş akışı yönetimi için masaüstü uygulaması. Platformlar arası, güvenli ve profesyonel kullanıcılar ile kurumlar için geliştirilmiş.",
+          "blurb": "Cedra için masaüstü cüzdanı — token'ları ve NFT'leri güvenle gönderin, alın, takas edin ve yönetin.",
           "tags": [
             "Masaüstü uygulama",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer Wallet logosu",
-          "blurb": "Cedra blockchain üzerinde geliştirilmiş mobil cihazlar için kripto para cüzdanı. Yerleşik takaslar, DeFi entegrasyonları ve kurumsal düzeyde güvenlikle güvenli varlık yönetimi.",
+          "blurb": "Cedra için mobil cüzdan — yerleşik takaslar, DeFi erişimi ve biyometrik koruma.",
           "tags": [
             "Mobil uygulama",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP logosu",
-          "blurb": "YZ kodlama ajanlarının Infer Desk cüzdanını kullanmasını sağlayan Model Context Protocol sunucusu — bağlanın, durumu kontrol edin ve yazılan token transferlerini gönderin; hassas her işlem cüzdanın ekranında onaylanır.",
+          "blurb": "YZ kodlama ajanlarının Infer Desk cüzdanınızı kullanmasına olanak tanır, ekran üzerinde onayla.",
           "tags": [
             "MCP",
             "YZ ajanları",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Infer Connect logosu",
-          "blurb": "Cedra dApp'lerini Infer Desk ve Infer Wallet'a bağlayan standart cüzdan adaptörü — bağlantı, işlem imzalama ve mesaj imzalama tek bir eklenti tabanlı entegrasyon üzerinden.",
+          "blurb": "İmza ve işlemler için Cedra dApp'lerini Infer Desk ve Infer Wallet'e bağlayın.",
           "tags": [
             "Cüzdan adaptörü",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem logosu",
-          "blurb": "Cedra Ağı için tarayıcı tabanlı dApp; etkinlik yönetimi, poker ve kumarhane içeren oyun merkezi ve topluluk araçları sunar. Kesintisiz bir Web3 deneyimi için React ve Move akıllı sözleşmeleriyle geliştirilmiştir.",
+          "blurb": "Cedra Ağında etkinlikler, oyunlar ve topluluk araçları — tarayıcınızda.",
           "tags": [
             "dApp",
             "Cedra",
