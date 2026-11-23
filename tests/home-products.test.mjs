@@ -87,3 +87,10 @@ test("Home Link targets exist as routes in App.tsx", () => {
     assert.ok(exists, 'Link to="/' + target + '" has no route in App.tsx');
   }
 });
+
+test("Utility Apps scrolls to hash targets on client-side navigation", () => {
+  const ua = readFileSync("src/pages/UtilityApps.tsx", "utf8");
+  assert.match(ua, /useLocation/);
+  assert.match(ua, /location\.hash/);
+  assert.match(ua, /scrollIntoView/);
+});
