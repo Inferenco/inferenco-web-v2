@@ -28,8 +28,8 @@ test("top-level nav is Home / Media & Entertainment / Blogs, with no Docs entry"
   const nav = arrayLiteral("navLinks");
   assert.ok(!nav.includes('path: "/docs"'), "Docs must not be a top-level nav item");
   assert.ok(
-    nav.includes('{ labelKey: "nav.media", path: "/utility-apps", page: "utility-apps" }'),
-    "Media & Entertainment must point at /utility-apps with the utility-apps PageType",
+    nav.includes('{ labelKey: "nav.media", path: "/games-and-apps", page: "games-and-apps" }'),
+    "Media & Entertainment must point at /games-and-apps with the games-and-apps PageType",
   );
   assert.equal(chrome.nav.media, "Media & Entertainment");
   assert.equal(chrome.nav.blogs, "Blogs");
@@ -73,10 +73,10 @@ test("the footer carries a Media & Entertainment column before the Onchain colum
 
   const column = layout.slice(meIdx, onchainIdx);
   for (const target of [
-    'to="/utility-apps"',
-    'to="/utility-apps#nemesis-go"',
-    'to="/utility-apps#sound-flipper"',
-    'to="/utility-apps#image-fit"',
+    'to="/games-and-apps"',
+    'to="/games-and-apps#nemesis-go"',
+    'to="/games-and-apps#sound-flipper"',
+    'to="/games-and-apps#image-fit"',
   ]) {
     assert.ok(column.includes(target), "M&E column must link to " + target);
   }
@@ -86,7 +86,7 @@ test("the footer carries a Media & Entertainment column before the Onchain colum
 
   const onchainColumn = layout.slice(onchainIdx, layout.indexOf("<h4>{t(\"footer.resourcesColumn\")}</h4>"));
   assert.ok(onchainColumn.includes('to="/docs"'), "Onchain column must link Docs");
-  assert.ok(!onchainColumn.includes("/utility-apps"), "Onchain column must not link Utility Apps");
+  assert.ok(!onchainColumn.includes("/games-and-apps"), "Onchain column must not link Games & Apps");
 
   assert.equal(chrome.footer.mediaColumn, "Media & Entertainment");
   assert.equal(chrome.footer.nemesisGo, "Nemesis Go");
@@ -155,4 +155,28 @@ test("the navbar keeps its single-row contract in the 1025-1299px band", () => {
     /@media \(max-width: 1024px\) \{[\s\S]*?\n    \.nav-social \{\n        display: none;\n    \}/,
   );
   assert.ok(mobile, "the <=1024px .nav-social hide must stay in place");
+});
+
+test("the navbar keeps its single-row contract at >=1300px (kk wide-font guard)", () => {
+  // kk's wider default fonts overflow the unreduced 2rem row even at >=1300px,
+  // so the band's two levers are extended here and the 328px social cluster is
+  // reclaimed. This is a NEW min-width block; the 1025-1299 band and the
+  // <=1279 social guard above stay byte-intact.
+  const css = readFileSync("src/index.css", "utf8");
+
+  const wideGuard = css.match(/@media \(min-width: 1300px\) \{([\s\S]*?)\n\}/);
+  assert.ok(wideGuard, "the min-width: 1300px navbar guard is missing from index.css");
+  assert.ok(
+    /\.nav-links \{\n\s+gap: 1\.25rem;\n\s+\}/.test(wideGuard[1]),
+    ".nav-links gap must tighten to 1.25rem at >=1300px",
+  );
+  assert.match(
+    wideGuard[1],
+    /\.nav-links \.nav-link,\s*\n\s*\.nav-links \.dropdown-toggle \{\n\s*white-space: nowrap;/,
+    "the top-level nav links must be pinned to one line at >=1300px",
+  );
+  assert.ok(
+    /\.nav-social\s*\{\s*display:\s*none;/.test(wideGuard[1]),
+    "the >=1300px guard must hide the 328px .nav-social cluster",
+  );
 });

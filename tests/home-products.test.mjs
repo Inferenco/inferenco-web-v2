@@ -22,7 +22,7 @@ function homeCopy(file) {
 }
 
 test("Home links every product, including Utility Apps", () => {
-  const targets = ["/infer-desk", "/infer-wallet", "/utility-apps", "/utility-apps#sound-flipper", "/utility-apps#image-fit", "/infer-mcp", "/docs#infer-connect-introduction"];
+  const targets = ["/infer-desk", "/infer-wallet", "/games-and-apps", "/games-and-apps#sound-flipper", "/games-and-apps#image-fit", "/infer-mcp", "/docs#infer-connect-introduction"];
   for (const target of targets) {
     assert.ok(home.includes('to="' + target + '"'), "Home.tsx must link to " + target);
   }

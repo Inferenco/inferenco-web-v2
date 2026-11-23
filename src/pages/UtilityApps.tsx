@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { mediaProducts } from "../data/mediaProducts";
+import { nemesisLegalUrl } from "../i18n";
 
 type ActiveApp = "nemesis" | "resize" | "sound" | null;
 
@@ -58,7 +59,7 @@ export default function UtilityApps() {
   const features = (product: string): string[] => t(`modal.${product}.features`, { returnObjects: true }) as string[];
 
   return (
-    <div id="utility-apps-page" className="page-section">
+    <div id="games-and-apps-page" className="page-section">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <h1>{t("hero.title")}</h1>
@@ -92,7 +93,7 @@ export default function UtilityApps() {
         </div>
       </section>
 
-      <section id="utility-apps-gallery" className="section">
+      <section id="games-and-apps-gallery" className="section">
         <div className="container">
           <h2 className="section-title">{t("gallery.title")}</h2>
           <p className="section-subtitle">{t("gallery.subtitle")}</p>
@@ -264,8 +265,8 @@ export default function UtilityApps() {
             ))}
             {"legal" in app && app.legal && (
               <div className="portfolio-tags" style={{ marginTop: "1rem" }}>
-                <a href={app.legal.privacy}>{t("modal.nemesis.privacy")}</a>
-                <a href={app.legal.terms}>{t("modal.nemesis.terms")}</a>
+                <a href={nemesisLegalUrl("privacy")}>{t("modal.nemesis.privacy")}</a>
+                <a href={nemesisLegalUrl("terms")}>{t("modal.nemesis.terms")}</a>
               </div>
             )}
             <p className="modal-note">{t(`modal.${app.key}.note`)}</p>

@@ -27,7 +27,8 @@ Rules for these files:
 - Never translate brand names (Nemesis Go, Inferenco, Spielcrypto, Singularity
   Shift), e-mail addresses or URLs.
 - `pt-BR` and `pt-BR`/`pt-PT` must stay genuinely distinct variants, and `zh` is
-  Simplified. `ar` pages are rendered LTR on this site (Nemesis Go decision D3):
-  no `dir="rtl"` is set.
+  Simplified. `ar` pages render **RTL on this site** (`dir="rtl"` on `<html>`):
+  a deliberate site-only reversal of Nemesis Go decision D3 — the app itself
+  stays LTR, and the cross-repo divergence is intentional and documented.
 - English wins. If the English text changes, re-translate the locales and record
   a native/professional review here before describing any locale as reviewed.

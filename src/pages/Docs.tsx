@@ -140,7 +140,7 @@ function DocsContent() {
   }, []);
 
   return (
-    <div id="docs-page" className="page-section docs-container docs-page">
+    <div id="docs-page" className="page-section docs-container docs-page" dir="ltr">
       <button
         className="mobile-menu-toggle"
         id="mobileMenuToggle"

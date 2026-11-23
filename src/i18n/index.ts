@@ -67,11 +67,14 @@ async function ensureCatalogue(language: SupportedLanguage): Promise<void> {
 }
 
 function applyDocumentLang(language: string): void {
-  const tag = isSupportedLanguage(language) ? LANGUAGE_TAGS[language] : "en";
-  // Brand-only <title> and an LTR-retained layout for `ar` (Nemesis Go
-  // decision D3): never set `dir="rtl"` here, and never touch the theme
-  // classes or `data-theme`.
+  const supported = isSupportedLanguage(language);
+  const tag = supported ? LANGUAGE_TAGS[language] : "en";
   document.documentElement.lang = tag;
+  // D3 reversal (site-only): Arabic renders RTL; every other locale LTR.
+  // English-only islands (/docs, /infer*) carry static dir="ltr" wrappers.
+  // The Nemesis Go app itself remains LTR — this divergence is intentional
+  // and documented. Never touch the theme classes or `data-theme`.
+  document.documentElement.dir = supported && language === "ar" ? "rtl" : "ltr";
 }
 
 /**
@@ -137,6 +140,17 @@ export async function initI18n(): Promise<typeof i18n> {
 export function currentLocaleTag(): string {
   const resolved = i18n.resolvedLanguage ?? i18n.language;
   return isSupportedLanguage(resolved) ? LANGUAGE_TAGS[resolved] : "en";
+}
+
+/**
+ * Per-locale Nemesis Go legal URL. EN (and any unknown resolution) uses the
+ * canonical unlocalized pair; the 13 other locales use /nemesis-go/<lng>/<doc>/
+ * emitted by src/legal/build.ts. Relative so it works on dev/preview/prod.
+ */
+export function nemesisLegalUrl(doc: "privacy" | "terms"): string {
+  const resolved = i18n.resolvedLanguage ?? i18n.language;
+  const lng = isSupportedLanguage(resolved) && resolved !== "en" ? resolved : null;
+  return lng ? `/nemesis-go/${lng}/${doc}/` : `/nemesis-go/${doc}/`;
 }
 
 export default i18n;

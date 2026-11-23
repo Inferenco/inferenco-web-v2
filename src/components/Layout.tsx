@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { PageType, ProductDropdownItem } from "../types";
+import { nemesisLegalUrl } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks: { labelKey: string; path: string; page: PageType }[] = [
   { labelKey: "nav.home", path: "/", page: "home" },
-  { labelKey: "nav.media", path: "/utility-apps", page: "utility-apps" },
+  { labelKey: "nav.media", path: "/games-and-apps", page: "games-and-apps" },
   { labelKey: "nav.blogs", path: "/blogs", page: "blogs" },
 ];
 
@@ -270,10 +271,10 @@ export default function Layout() {
             </div>
             <div className="footer-links">
               <h4>{t("footer.mediaColumn")}</h4>
-              <Link to="/utility-apps">{t("footer.allApps")}</Link>
-              <Link to="/utility-apps#nemesis-go">{t("footer.nemesisGo")}</Link>
-              <Link to="/utility-apps#sound-flipper">{t("footer.soundFlipper")}</Link>
-              <Link to="/utility-apps#image-fit">{t("footer.imageFit")}</Link>
+              <Link to="/games-and-apps">{t("footer.allApps")}</Link>
+              <Link to="/games-and-apps#nemesis-go">{t("footer.nemesisGo")}</Link>
+              <Link to="/games-and-apps#sound-flipper">{t("footer.soundFlipper")}</Link>
+              <Link to="/games-and-apps#image-fit">{t("footer.imageFit")}</Link>
             </div>
             <div className="footer-links">
               <h4>{t("footer.onchainColumn")}</h4>
@@ -307,8 +308,8 @@ export default function Layout() {
             </div>
             <div className="footer-links">
               <h4>{t("footer.nemesisGoColumn")}</h4>
-              <a href="https://inferenco.com/nemesis-go/privacy/">{t("footer.nemesisPrivacy")}</a>
-              <a href="https://inferenco.com/nemesis-go/terms/">{t("footer.nemesisTerms")}</a>
+              <a href={nemesisLegalUrl("privacy")}>{t("footer.nemesisPrivacy")}</a>
+              <a href={nemesisLegalUrl("terms")}>{t("footer.nemesisTerms")}</a>
             </div>
           </div>
           <div className="footer-bottom">

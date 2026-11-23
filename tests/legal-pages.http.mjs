@@ -131,6 +131,29 @@ for (const [lng, tag] of Object.entries(localeTags)) {
   }
 }
 
+test("Arabic legal pages render RTL; other locales carry no dir attribute", async () => {
+  for (const kind of kinds) {
+    const ar = await fetch(origin + `/nemesis-go/ar/${kind}/`);
+    const arDom = new JSDOM(await ar.text());
+    try {
+      assert.equal(arDom.window.document.documentElement.getAttribute("dir"), "rtl", kind);
+    } finally {
+      arDom.window.close();
+    }
+    // Non-Arabic locales (and the canonical EN pages) carry no dir attribute.
+    for (const lng of ["de", "en"]) {
+      const path = lng === "en" ? `/nemesis-go/${kind}/` : `/nemesis-go/${lng}/${kind}/`;
+      const res = await fetch(origin + path);
+      const dom = new JSDOM(await res.text());
+      try {
+        assert.equal(dom.window.document.documentElement.getAttribute("dir"), null, path);
+      } finally {
+        dom.window.close();
+      }
+    }
+  }
+});
+
 test("the English pages stay on their canonical unlocalised paths", async () => {
   for (const kind of kinds) {
     const response = await fetch(origin + `/nemesis-go/${kind}/`);

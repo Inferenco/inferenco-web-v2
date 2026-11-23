@@ -100,7 +100,7 @@ export default function Home() {
           <div className="hero-navigation">
             <nav className="hero-nav-index" aria-label={t("hero.pillsAria")}>
               <Link
-                to="/utility-apps"
+                to="/games-and-apps"
                 className="nav-pill"
                 onClick={() => window.scrollTo(0, 0)}
               >
@@ -178,7 +178,7 @@ export default function Home() {
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
-              <Link to="/utility-apps#nemesis-go" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/games-and-apps#nemesis-go" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 {t("portfolio.learnMore")}
               </Link>
             </div>
@@ -201,7 +201,7 @@ export default function Home() {
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
-              <Link to="/utility-apps#sound-flipper" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/games-and-apps#sound-flipper" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 {t("portfolio.learnMore")}
               </Link>
             </div>
@@ -224,7 +224,7 @@ export default function Home() {
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
-              <Link to="/utility-apps#image-fit" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/games-and-apps#image-fit" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 {t("portfolio.learnMore")}
               </Link>
             </div>

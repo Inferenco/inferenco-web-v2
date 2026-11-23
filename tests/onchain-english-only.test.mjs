@@ -52,8 +52,9 @@ test("the legal sources are English v1 and untouched by localization", () => {
     const source = readFileSync(file, "utf8");
     assert.ok(!/react-i18next|useTranslation|i18nKey/.test(source), `${file} must not reference i18n`);
   }
-  // The app links all 14 locales at the same two EN legal URLs — one shared
-  // pair, not per-locale legal pages.
+  // mediaProducts keeps the canonical EN pair as the fallback; the SPA builds
+  // per-locale URLs client-side via nemesisLegalUrl (src/i18n/index.ts),
+  // matching the per-locale pages emitted since 50aaed2.
   const media = JSON.parse(readFileSync("src/i18n/locales/en.json", "utf8")).media;
   assert.equal(media.modal.nemesis.privacy, "Privacy Policy");
   assert.ok(
