@@ -1,0 +1,274 @@
+/* The image sits on its own side of the hero so every translated store action has a quiet field. */
+.studio-detail {
+  --campaign-ground: #070914;
+  --campaign-accent: #82f3ff;
+  --campaign-edge: max(var(--studio-gutter), calc((100vw - 87rem) / 2));
+  --campaign-fade: to right;
+}
+.studio-detail:dir(rtl) { --campaign-fade: to left; }
+.studio-detail--nemesis { --campaign-ground: #061414; --campaign-accent: #adf4c8; }
+.studio-detail--resize { --campaign-ground: #1a1019; --campaign-accent: #ffdbb2; }
+
+.studio-page.studio-detail .studio-product-hero.product-campaign {
+  --studio-accent: var(--campaign-accent);
+  --studio-accent-ink: #061324;
+  --studio-muted: #dae3eb;
+  position: relative;
+  overflow: clip;
+  background: var(--campaign-ground);
+  color: #fff;
+  border-block-end: 1px solid color-mix(in srgb, var(--campaign-accent) 25%, var(--campaign-ground));
+}
+.product-campaign-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  gap: clamp(1rem, 2.8vw, 3.5rem);
+  min-block-size: clamp(29rem, 37vw, 38rem);
+}
+.product-campaign .product-campaign-copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+  gap: clamp(.55rem, 1vw, 1.05rem);
+  padding-block: clamp(1.75rem, 4vw, 3.75rem);
+}
+.product-campaign-copy .studio-back-link {
+  margin-block-end: clamp(.65rem, 2.3vw, 2.25rem);
+  color: #d1dae5;
+  font-size: .91rem;
+}
+.product-campaign-copy h1 {
+  max-inline-size: 100%;
+  text-wrap: balance;
+}
+.studio-detail--sound .product-campaign-copy h1 { letter-spacing: -.068em; }
+.studio-detail--resize .product-campaign-copy h1 { max-inline-size: 12ch; }
+.product-campaign-copy .studio-actions { margin-block-start: .5rem; gap: .35rem .9rem; }
+.product-campaign-copy :is(.studio-actions, .studio-actions li, a),
+.product-proof-links li,
+.product-proof-links a {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+.product-campaign-copy .studio-actions .studio-button--outline {
+  justify-content: start;
+  padding-inline: .2rem;
+  border: 0;
+  color: #e1f3f7;
+  text-decoration: underline;
+  text-decoration-color: #61727b;
+  text-underline-offset: .36em;
+}
+.product-campaign-copy .studio-actions .studio-button--outline:hover { text-decoration-color: currentColor; }
+.product-campaign-copy .studio-platform-note { color: var(--studio-muted); }
+
+.product-campaign .product-campaign-art {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-inline-size: 0;
+  padding-block: clamp(1.25rem, 2vw, 2.5rem);
+}
+.product-campaign-art::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset-block: 0;
+  inset-inline: -18% calc(0px - var(--campaign-edge));
+  mask-image: linear-gradient(var(--campaign-fade), transparent, #000 27%);
+  pointer-events: none;
+}
+.studio-detail--sound .product-campaign-art {
+  --signal-ribbon: url("/img/redesign/studio-ribbon.webp");
+  --signal-size: 130% auto;
+}
+.studio-detail--sound .product-campaign-art::before {
+  background: var(--signal-ribbon) center 55% / var(--signal-size) no-repeat,
+    radial-gradient(ellipse at 76% 56%, #391650 0%, #12122a 48%, var(--campaign-ground) 84%);
+}
+.product-signal-light {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  inset-inline: -18% calc(0px - var(--campaign-edge));
+  background: linear-gradient(var(--campaign-fade), #00a9cb00 0%, #00accc00 6%, #00c9e457 19%, #00edff 34%, #5a74ff 58%, #e440ff 84%);
+  mask: var(--signal-ribbon) center 55% / var(--signal-size) no-repeat;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.studio-detail--sound .product-campaign-art::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: 0 calc(0px - var(--campaign-edge));
+  inset-block-start: 45%;
+  block-size: 19%;
+  background: repeating-linear-gradient(90deg, #9cf3ff 0 1px, transparent 2px 7px);
+  opacity: .41;
+  pointer-events: none;
+  clip-path: polygon(0 49%, 8% 41%, 14% 29%, 20% 41%, 28% 7%, 35% 32%, 42% 15%, 50% 42%, 58% 8%, 65% 27%, 74% 11%, 83% 39%, 90% 20%, 100% 45%, 100% 55%, 90% 80%, 83% 61%, 74% 89%, 65% 73%, 58% 92%, 50% 58%, 42% 85%, 35% 68%, 28% 93%, 20% 59%, 14% 71%, 8% 59%, 0 51%);
+}
+.studio-detail--nemesis .product-campaign-art::before {
+  background: linear-gradient(0deg, #021513a6, transparent 42%),
+    url("/img/redesign/blue-hour-forest.webp") center 72% / cover;
+}
+.studio-detail--resize .product-campaign-art::before {
+  background: linear-gradient(0deg, #21101dc9, #33223815 60%, #29182f38),
+    url("/img/redesign/resize-sunset.webp") 64% center / cover;
+}
+.product-campaign-art .studio-handset {
+  position: relative;
+  inline-size: clamp(13rem, 20vw, 19.25rem);
+  max-inline-size: 85%;
+}
+.studio-detail .product-campaign-art .studio-handset-image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.studio-detail .product-proof {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  grid-template-areas: "caption images" "help images";
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  gap: .65rem clamp(1.5rem, 5vw, 5.5rem);
+  padding-block: clamp(2rem, 4.4vw, 4.75rem);
+}
+.product-proof-copy {
+  grid-area: caption;
+  grid-template-columns: minmax(0, 1fr);
+  align-self: end;
+  min-inline-size: 0;
+  max-inline-size: 39rem;
+}
+.product-proof-links { grid-area: help; align-self: start; }
+.product-proof-copy h2 { text-wrap: balance; }
+.product-proof-images {
+  grid-area: images;
+  display: grid;
+  place-items: center;
+  min-inline-size: 0;
+  border-block: 1px solid var(--studio-line);
+  padding: clamp(.8rem, 2vw, 1.5rem);
+}
+.studio-detail--sound .product-proof-images {
+  background: radial-gradient(ellipse at 78% 80%, #342443, transparent 67%), #0c192a;
+}
+.studio-detail--nemesis .product-proof-images {
+  background: radial-gradient(ellipse at 50% 12%, #35433b, transparent 75%), #0d1f1c;
+}
+.product-proof-images .product-proof-image {
+  position: relative;
+  display: block;
+  min-inline-size: 0;
+  inline-size: min(100%, 23rem);
+  cursor: zoom-in;
+}
+.studio-detail .product-proof-image:focus-visible {
+  outline-color: #8af4ff;
+  box-shadow: 0 0 0 2px #06131e;
+}
+.studio-detail--nemesis .product-proof-image { inline-size: min(100%, 26rem); }
+.product-proof-image > img { display: block; inline-size: 100%; border-radius: .5rem; }
+.product-proof-expand {
+  margin-block-start: .35rem;
+  margin-inline-start: auto;
+  display: grid;
+  place-items: center;
+  inline-size: 1.8rem;
+  block-size: 1.8rem;
+  border: 1px solid #ffffff75;
+  border-radius: 50%;
+  background: #08151bee;
+  color: #fff;
+}
+.product-proof-image:is(:hover,:focus-visible) .product-proof-expand { background: #fff; color: #09151b; }
+.studio-detail--resize .product-proof-images {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(.5rem, 1vw, 1.1rem);
+  background: #352535;
+}
+.studio-detail--resize .product-proof-image > img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.studio-detail .product-comparison {
+  gap: clamp(1rem, 2vw, 1.6rem);
+  padding-block: clamp(2rem, 4vw, 4rem);
+}
+.studio-detail .product-comparison-pair {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: clamp(.5rem, 1.25vw, 1.2rem);
+}
+.product-comparison .product-comparison-pair figure {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.product-comparison-pair figure > img { aspect-ratio: 1.95; }
+.product-comparison .product-comparison-pair figcaption {
+  align-items: baseline;
+  padding: .65rem 0;
+  border-block-end: 1px solid var(--studio-line);
+}
+.product-comparison-pair figcaption span { font-size: .9rem; }
+
+@media (min-width: 46.01rem) {
+  .studio-detail--sound .product-campaign-art { align-items: end; padding-block-end: 0; }
+  .studio-detail--sound .product-campaign-art .studio-handset { transform: translateY(.65rem); }
+}
+
+@media (min-width: 46.01rem) and (max-width: 60rem) {
+  .studio-detail .product-campaign-copy h1 { font-size: clamp(2.35rem, 5.45vw, 3.3rem); }
+}
+
+@media (max-width: 46rem) {
+  .product-campaign-inner { grid-template-columns: minmax(0, 1fr); gap: 0; min-block-size: 0; }
+  .product-campaign .product-campaign-copy { padding-block: 1.1rem .7rem; gap: .48rem; }
+  .product-campaign-copy .studio-back-link { margin-block-end: .18rem; }
+  .product-campaign-copy .studio-actions { margin-block-start: .35rem; }
+  .product-campaign .product-campaign-art {
+    padding-block: .75rem .45rem;
+    min-block-size: 13rem;
+  }
+  .product-campaign-art::before {
+    inset-inline: calc(0px - var(--campaign-edge));
+    mask-image: linear-gradient(to bottom, transparent, #000 29%);
+  }
+  .product-campaign-art .studio-handset { inline-size: clamp(10rem, 45vw, 13rem); }
+  .studio-detail--sound .product-campaign-art {
+    --signal-ribbon: url("/img/redesign/studio-ribbon-small.webp");
+    --signal-size: 145% auto;
+  }
+  .studio-detail--sound .product-campaign-copy .studio-actions { inline-size: 100%; }
+  .studio-detail--sound .product-campaign-copy .studio-actions li:first-child { flex-basis: 100%; }
+  .product-signal-light { inset-inline: calc(0px - var(--campaign-edge)); }
+  .studio-detail--sound .product-campaign-art::after { inset-inline: calc(0px - var(--campaign-edge)); }
+  .studio-detail--nemesis .product-campaign-art::before {
+    background-image: linear-gradient(0deg, #02151396, transparent 60%), url("/img/redesign/blue-hour-forest-small.webp");
+  }
+  .studio-detail--resize .product-campaign-art::before {
+    background-image: linear-gradient(0deg, #21101db3, #33223818 68%), url("/img/redesign/resize-sunset-small.webp");
+  }
+  .studio-detail .product-proof {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "caption" "images" "help";
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .product-proof-images { padding: .6rem; }
+  .product-comparison-pair figure > img { aspect-ratio: 1.3; }
+}

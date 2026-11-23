@@ -8,7 +8,7 @@ Diese Richtlinie gilt für die Nemesis Go App für Android und iOS sowie für je
 
 ## Spiel und Informationen auf Ihrem Gerät
 
-Sie können Nemesis Go offline und ohne ein App-Konto spielen. Der Computergegner und die Analyse hinter Zugvorschlägen laufen auf Ihrem Gerät. Die App speichert Ihr laufendes Spiel, recente Ergebnisse, Einstellungen und Ihren Tutorial-Fortschritt auf Ihrem Gerät, damit Sie weiterspielen und Ihre Einstellungen behalten können. Sie speichert außerdem Informationen, die dazu dienen, die Häufigkeit von Anzeigen zu steuern, das lokale Spielmodell zu prüfen und zu merken, ob Ihr Abonnement „Werbung entfernen“ beim letzten Prüfvorgang aktiv war. Ihre Züge oder gespeicherten Spiele empfangen wir über die App nicht.
+Sie können Nemesis Go offline und ohne ein App-Konto spielen. Der Computergegner und die Analyse hinter Zugvorschlägen laufen auf Ihrem Gerät. Die App speichert Ihr laufendes Spiel, jüngste Ergebnisse, Einstellungen und Ihren Tutorial-Fortschritt auf Ihrem Gerät, damit Sie weiterspielen und Ihre Einstellungen behalten können. Sie speichert außerdem Informationen, die dazu dienen, die Häufigkeit von Anzeigen zu steuern, das lokale Spielmodell zu prüfen und zu merken, ob Ihr Abonnement „Werbung entfernen“ beim letzten Prüfvorgang aktiv war. Ihre Züge oder gespeicherten Spiele empfangen wir über die App nicht.
 
 ## Anzeigen und Datenschutz-Einstellungen
 
@@ -24,7 +24,7 @@ Wenn Sie ein Abonnement „Werbung entfernen“ kaufen oder wiederherstellen, we
 
 Wenn Sie uns per E-Mail über Nemesis Go kontaktieren, verwenden wir Ihre E-Mail-Adresse, Ihre Nachricht und alles, was Sie uns sonst schicken, um zu antworten und die Anfrage nachzuverfolgen. Unser E-Mail-Anbieter bearbeitet diese Korrespondenz als Teil der Erbringung des Dienstes. Wir können Informationen offenlegen, wenn das Gesetz dies verlangt.
 
-Soweit das britische oder europäische Datenschutzrecht anwendbar ist, stützen wir uns auf Ihre Einwilligung für Werbetätigkeiten, die eine Einwilligung erfordern, auf die Erfüllung unseres Vertrags mit Ihnen zur Bereitstellung gekaufter Zugänge, auf unsere berechtigten Interessen an der Bearbeitung von Support-Anfragen und der Verhinderung von Missbrauch sowie auf gesetzliche Pflichten, soweit sie gelten. Google und Apple können Daten außerhalb Ihres Landes verarbeiten. Deren Datenschutzrichtlinien beschreiben, wo sie Informationen verarbeiten und welche Schutzmaßnahmen sie für internationale Übermittlungen nutzen. [Datenschutzerklärung von Google](https://policies.google.com/privacy) · [Datenschutzrichtlinie von Apple](https://www.apple.com/legal/privacy/)
+Soweit das Datenschutzrecht des Vereinigten Königreichs oder der EU gilt, stützen wir uns auf Ihre Einwilligung für Werbetätigkeiten, die eine Einwilligung erfordern, auf die Erfüllung unseres Vertrags mit Ihnen zur Bereitstellung gekaufter Zugänge, auf unsere berechtigten Interessen an der Bearbeitung von Support-Anfragen und der Verhinderung von Missbrauch sowie auf gesetzliche Pflichten, soweit sie gelten. Google und Apple können Daten außerhalb Ihres Landes verarbeiten. Deren Datenschutzrichtlinien beschreiben, wo sie Informationen verarbeiten und welche Schutzmaßnahmen sie für internationale Übermittlungen nutzen. [Datenschutzerklärung von Google](https://policies.google.com/privacy) · [Datenschutzrichtlinie von Apple](https://www.apple.com/legal/privacy/)
 
 ## Speicherung, Aufbewahrung und Löschung
 

@@ -2,10 +2,11 @@
   "chrome": {
     "nav": {
       "home": "Inicio",
-      "media": "Multimedia y Ocio",
+      "media": "Apps y juegos",
       "blogs": "Blogs",
       "onchain": "Onchain",
-      "docs": "Docs"
+      "docs": "Documentación",
+      "story": "Nuestra historia"
     },
     "products": {
       "inferBot": "Infer Bot",
@@ -13,11 +14,11 @@
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "Docs"
+      "docs": "Documentación",
+      "inferConnect": "Infer Connect"
     },
     "social": {
       "telegram": "Telegram",
-      "mastodon": "Mastodon",
       "fountain": "Fountain",
       "farcaster": "Farcaster",
       "soclly": "Soclly",
@@ -25,11 +26,14 @@
       "lensforum": "Lensforum"
     },
     "aria": {
-      "joinOn": "Sigue a Inferenco en {{provider}}",
+      "joinOn": "Únete a Inferenco en {{provider}}",
       "toggleTheme": "Cambiar tema",
-      "toggleMenu": "Abrir menú",
+      "toggleMenu": "Abrir el menú",
       "switchLanguage": "Cambiar idioma",
-      "currentLanguage": "Idioma actual: {{language}}"
+      "currentLanguage": "Idioma actual: {{language}}",
+      "primaryNavigation": "Navegación principal",
+      "closeMenu": "Cerrar menú",
+      "skipToContent": "Ir al contenido"
     },
     "theme": {
       "toDark": "Cambiar a modo oscuro",
@@ -39,19 +43,19 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente.",
-      "mediaColumn": "Multimedia y Ocio",
+      "tagline": "Nuestro equipo crea juegos, herramientas multimedia y apps para el día a día.",
+      "mediaColumn": "Apps y juegos",
       "allApps": "Todas las apps",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
-      "imageFit": "Make My Image Fit",
+      "imageFit": "Image: Resize & Compress",
       "onchainColumn": "Onchain",
       "inferBot": "Infer Bot",
       "inferWallet": "Infer Wallet",
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "Docs",
+      "docs": "Documentación",
       "resourcesColumn": "Recursos",
       "documentation": "Documentación",
       "blog": "Blog",
@@ -63,8 +67,9 @@
       "singularityShift": "Singularity Shift Ltd",
       "nemesisGoColumn": "Nemesis Go",
       "nemesisPrivacy": "Política de privacidad de Nemesis Go",
-      "nemesisTerms": "Términos de uso de Nemesis Go",
-      "copyright": "© 2025 Inferenco. Todos los derechos reservados."
+      "nemesisTerms": "Condiciones de uso de Nemesis Go",
+      "copyright": "© 2025 Inferenco. Todos los derechos reservados.",
+      "inferConnect": "Infer Connect"
     },
     "notFound": {
       "title": "Página no encontrada",
@@ -81,7 +86,7 @@
       "sections": {
         "products": "Productos",
         "about": "Nosotros",
-        "capabilities": "Capacidades",
+        "capabilities": "Funciones",
         "howWeBuild": "Cómo desarrollamos",
         "approach": "Enfoque",
         "contact": "Contacto"
@@ -89,19 +94,19 @@
     },
     "hero": {
       "logoAlt": "Logotipo de Inferenco",
-      "title": "Juegos y apps del día a día, desarrollados internamente",
-      "tagline": "Diseñamos, construimos y publicamos nuestros propios productos: desde juegos móviles y herramientas de uso diario hasta wallets onchain y herramientas para desarrolladores.",
+      "title": "Juegos y apps para el día a día, creados por nuestro equipo",
+      "tagline": "Diseñamos, desarrollamos y publicamos nuestros propios productos, desde juegos para móvil y herramientas multimedia de uso diario hasta carteras onchain y herramientas para desarrolladores.",
       "pillsAria": "Productos de Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Multimedia y Ocio",
+      "pillMedia": "Multimedia y ocio",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contacto"
     },
     "portfolio": {
-      "title": "Nuestros <span>Productos</span>",
-      "subtitle": "Todo lo que desarrollamos y publicamos nosotros mismos: juegos, herramientas multimedia, wallets y utilidades para desarrolladores",
+      "title": "Nuestros <span>productos</span>",
+      "subtitle": "Los juegos, las herramientas multimedia, las carteras y las herramientas para desarrolladores que creamos y publicamos",
       "divider": "Productos Onchain",
       "learnMore": "Saber más",
       "readDocs": "Leer la documentación",
@@ -121,7 +126,7 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Captura de Sound Flipper",
-          "blurb": "Convierte audio entre MP3, WAV, FLAC y más — gratis, privado y totalmente en tu dispositivo.",
+          "blurb": "Convierte audio entre MP3, WAV, FLAC y otros formatos gratis. Todo se procesa en tu dispositivo para que tus archivos sigan siendo privados.",
           "tags": [
             "Conversor de audio",
             "Herramienta web",
@@ -132,7 +137,7 @@
         "image": {
           "name": "Make My Image Fit",
           "alt": "Captura de Make My Image Fit",
-          "blurb": "Redimensiona y comprime imágenes para ajustarte a cualquier límite de subida — gratis, privado y en tu dispositivo.",
+          "blurb": "Ajusta las dimensiones de tus imágenes y comprímelas para cumplir los límites de subida. Es gratis y tus imágenes se quedan en tu dispositivo.",
           "tags": [
             "Utilidad de imagen",
             "Herramienta web",
@@ -143,7 +148,7 @@
         "desk": {
           "name": "Infer Desk",
           "alt": "Logotipo de Infer Desk",
-          "blurb": "Wallet de escritorio para Cedra — envía, recibe, intercambia y gestiona tokens y NFTs de forma segura.",
+          "blurb": "Cartera de escritorio para Cedra que te permite enviar, recibir, intercambiar y gestionar tokens y NFT de forma segura.",
           "tags": [
             "App de escritorio",
             "Cedra",
@@ -154,7 +159,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logotipo de Infer Wallet",
-          "blurb": "Wallet móvil para Cedra con swaps integrados, acceso a DeFi y protección biométrica.",
+          "blurb": "Cartera móvil para Cedra con intercambio de tokens integrado, acceso a DeFi y protección biométrica.",
           "tags": [
             "App móvil",
             "Cedra",
@@ -164,7 +169,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logotipo de Infer MCP",
-          "blurb": "Permite que agentes de programación con IA operen tu wallet Infer Desk, con aprobación en pantalla.",
+          "blurb": "Permite que los agentes de programación con IA usen tu cartera Infer Desk con tu aprobación en pantalla.",
           "tags": [
             "MCP",
             "Agentes de IA",
@@ -174,9 +179,9 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logotipo de Infer Connect",
-          "blurb": "Conecta dApps de Cedra a Infer Desk e Infer Wallet para firmas y transacciones.",
+          "blurb": "Conecta las dApps de Cedra con Infer Desk e Infer Wallet para firmar y realizar transacciones.",
           "tags": [
-            "Adaptador de wallet",
+            "Adaptador de carteras",
             "dApps",
             "AIP-62"
           ]
@@ -198,33 +203,33 @@
     "about": {
       "title": "Sobre <span>Inferenco</span> – El equipo detrás de los productos",
       "p1": "<strong>Inferenco</strong> es una empresa de software surgida de la colaboración entre <strong>Singularity Shift Ltd</strong> y <strong>Spielcrypto Ltd</strong>. Construimos productos, no proyectos de clientes: todo lo que hay en este sitio lo diseñamos, desarrollamos y publicamos nosotros.",
-      "p2": "Nuestra línea de productos empieza con juegos y apps multimedia de uso diario y llega hasta wallets onchain, dApps y herramientas para desarrolladores, todo respaldado por revisiones de seguridad y versiones firmadas.",
-      "p3": "Cada producto lo mantiene el mismo equipo que lo escribió, con documentación, guías de instalación y un canal directo con los desarrolladores.",
-      "buildHeading": "Qué construimos:",
+      "p2": "Creamos juegos, apps multimedia de uso diario, carteras onchain, dApps y herramientas para desarrolladores. Toda la gama cuenta con revisiones de seguridad y versiones firmadas.",
+      "p3": "El equipo que desarrolla cada producto también lo mantiene, publica su documentación y sus guías de instalación y responde directamente a tus consultas.",
+      "buildHeading": "Qué desarrollamos",
       "build": {
         "gamesMedia": "Juegos móviles y apps multimedia",
-        "browserUtilities": "Utilidades gratuitas de navegador",
-        "wallets": "Wallets de escritorio y móviles",
-        "onchainCedra": "Productos onchain para Cedra (wallets, dApps y adaptador)",
+        "browserUtilities": "Herramientas gratuitas para el navegador",
+        "wallets": "Carteras para ordenador y móvil",
+        "onchainCedra": "Productos onchain para Cedra (carteras, dApps y adaptador)",
         "devTooling": "Herramientas para desarrolladores e integraciones MCP",
         "ai": "Asistentes impulsados por IA",
         "security": "Revisiones de seguridad y versiones firmadas"
       }
     },
     "services": {
-      "title": "<span>Capacidades</span> del producto",
+      "title": "<span>Funciones</span> de nuestros productos",
       "subtitle": "Lo que nuestros productos ofrecen desde el primer momento",
       "agents": {
         "title": "Deja que los agentes de IA hagan el trabajo",
-        "text": "Los agentes de programación obtienen herramientas de wallet tipadas y comprobaciones de estado, mientras tú apruebas cada acción sensible en pantalla."
+        "text": "Los agentes de programación disponen de herramientas tipadas para la cartera y comprobaciones de estado. Tú apruebas en pantalla cada acción sensible."
       },
       "security": {
         "title": "Seguridad ante todo, por defecto",
         "text": "Versiones auditadas, binarios firmados y notarizados, y procesamiento local en toda la línea de productos."
       },
       "standards": {
-        "title": "Construido sobre estándares abiertos",
-        "text": "AIP-62, MCP y contratos inteligentes Move: nuestros productos onchain interoperan en lugar de atarte a nosotros."
+        "title": "Desarrollados con estándares abiertos",
+        "text": "Gracias a AIP-62, MCP y los contratos inteligentes en Move, nuestros productos onchain funcionan entre sí sin obligarte a depender de un único proveedor."
       }
     },
     "methodology": {
@@ -233,19 +238,19 @@
       "steps": {
         "scope": {
           "title": "Definimos el alcance",
-          "text": "Cada producto empieza como una idea enfocada: un trabajo, bien hecho, sin funciones de relleno."
+          "text": "Cada producto nace de una idea concreta. Resuelve bien una tarea sin añadir funciones innecesarias."
         },
         "build": {
-          "title": "Lo construimos nosotros",
-          "text": "Nuestro propio equipo diseña, implementa y prueba cada producto: sin externalizar, sin traspasos."
+          "title": "Lo desarrolla nuestro equipo",
+          "text": "Nuestro equipo diseña, desarrolla y prueba cada producto de principio a fin, sin delegar el trabajo en terceros."
         },
         "review": {
           "title": "Lo pasamos por revisión de seguridad",
-          "text": "Las nuevas versiones del wallet y del bridge pasan auditorías y revisión interna antes de publicarse nada."
+          "text": "Antes de publicar una nueva versión de la cartera o del puente, realizamos auditorías y revisiones internas."
         },
         "sign": {
           "title": "Firmamos y publicamos",
-          "text": "Las versiones se firman, se notarizan cuando aplica y se publican con firmas que puedes verificar."
+          "text": "Firmamos las versiones, las notarizamos cuando corresponde y las publicamos con firmas que puedes verificar."
         },
         "support": {
           "title": "Damos soporte a lo que publicamos",
@@ -260,26 +265,36 @@
         "verifiable": "Software verificable — cada versión está firmada y documentada",
         "privacy": "Privacidad por defecto — procesamiento local siempre que es posible",
         "quality": "Calidad y fiabilidad en cada línea de código",
-        "innovation": "Innovación combinada con herramientas prácticas y usables",
+        "innovation": "Innovación con herramientas prácticas y fáciles de usar",
         "timely": "Versiones a tiempo sin comprometer la calidad",
         "interoperable": "Productos interoperables que funcionan mejor juntos"
       }
     },
     "cta": {
       "title": "¿Preguntas sobre nuestros productos?",
-      "text": "¿Quieres saber más sobre un producto, reportar un problema o comentar algo a medida? Habla con el equipo que desarrolla el software.",
+      "text": "¿Quieres saber más sobre un producto, comunicar un problema o hablar de un proyecto a medida? Ponte en contacto con el equipo que desarrolla el software.",
       "button": "Contactar"
     },
     "modal": {
       "title": "Contactar",
-      "text": "Escríbele al equipo detrás de nuestros productos: preguntas, incidencias o trabajo a medida.",
+      "text": "Para resolver dudas, comunicar un problema o hablar de un proyecto a medida, escribe al equipo que desarrolla nuestros productos.",
       "note": "Te responderemos lo antes posible."
+    },
+    "studio": {
+      "eyebrow": "Apps, juegos y herramientas multimedia independientes",
+      "headline": "Hecho para jugar.",
+      "accent": "Pensado para <emphasis>crear.</emphasis>",
+      "intro": "Juegos originales, aplicaciones útiles y herramientas creativas de un equipo independiente.",
+      "explore": "Explora las apps y los juegos",
+      "more": "Más de Inferenco",
+      "partners": "Inferenco nace de la colaboración entre Singularity Shift y Spielcrypto. Diseñamos, desarrollamos y mantenemos nuestro propio software.",
+      "story": "Nuestra historia"
     }
   },
   "media": {
     "hero": {
-      "title": "Multimedia y Ocio",
-      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente por nuestro propio equipo.",
+      "title": "Multimedia y ocio",
+      "tagline": "Nuestro equipo crea juegos, herramientas multimedia y apps para el día a día.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
@@ -290,7 +305,7 @@
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Icono de la app Nemesis Go",
-        "blurb": "Un juego de Go 9×9 para Android con un rival de IA sin conexión que se ejecuta en tu dispositivo y análisis de jugadas. Sin cuenta y sin conexión: tus partidas guardadas y preferencias quedan en tu dispositivo.",
+        "blurb": "Juega al go en un tablero de 9×9 en Android. Tanto el rival de IA como el análisis de jugadas funcionan en tu dispositivo, sin conexión. No necesitas una cuenta y tus partidas guardadas y preferencias se quedan en el dispositivo.",
         "tags": [
           "Juego móvil",
           "9×9 Go",
@@ -311,7 +326,7 @@
       "image": {
         "name": "Make My Image Fit",
         "alt": "Captura de Make My Image Fit",
-        "blurb": "Un redimensionador y compresor de imágenes gratuito y centrado en la privacidad, que funciona por completo en tu navegador: sin subidas, sin cuenta. Define un tamaño máximo de archivo o dimensiones exactas en píxeles y prepara hasta 10 imágenes para cumplir los requisitos de cualquier formulario de subida.",
+        "blurb": "Esta herramienta gratuita redimensiona y comprime imágenes en tu navegador. No tienes que subir archivos ni crear una cuenta. Indica el tamaño máximo del archivo o las dimensiones exactas en píxeles para preparar hasta 10 imágenes con los requisitos del formulario.",
         "tags": [
           "Utilidad de imagen",
           "Privacidad ante todo",
@@ -328,22 +343,22 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go es un juego de Go 9×9 para Android que se ejecuta por completo en tu dispositivo. El rival informático y el análisis que hay detrás de las sugerencias de jugada funcionan sin conexión, así que puedes jugar en cualquier sitio sin cuenta y sin conexión. Tus partidas guardadas, resultados recientes y preferencias se guardan en el dispositivo, de modo que puedes cerrar la app a mitad de partida y retomar el mismo tablero más tarde. El juego es gratuito y se sostiene con anuncios mostrados entre partidas; también puedes elegir ver un anuncio cuando quieras una pista o deshacer tu último turno. Una suscripción mensual opcional para quitar los anuncios desactiva la publicidad dentro de la app y te da acceso directo a Pista y Deshacer.",
+        "long": "Nemesis Go es un juego de go de 9×9 para Android. El rival de IA y el análisis de las jugadas sugeridas funcionan en tu dispositivo, así que puedes jugar donde quieras, sin cuenta ni conexión. Las partidas guardadas, los resultados recientes y las preferencias se conservan en el dispositivo. Puedes cerrar la app a mitad de una partida y retomarla más tarde. El juego es gratuito y se financia con anuncios entre partidas. También puedes elegir ver un anuncio para pedir una pista o deshacer tu última jugada. La suscripción mensual opcional «Quitar anuncios» elimina la publicidad de la app y te da acceso directo a Pista y Deshacer.",
         "features": [
           "9×9 Go",
           "IA local sin conexión",
           "Análisis de jugadas",
-          "Sin cuenta",
+          "No se necesita una cuenta",
           "Partidas guardadas en el dispositivo",
           "Pista y Deshacer",
-          "Quitar anuncios por suscripción mensual"
+          "Suscripción mensual opcional para quitar los anuncios"
         ],
         "note": "La versión para iOS llegará próximamente.",
         "privacy": "Política de privacidad",
-        "terms": "Términos de uso"
+        "terms": "Condiciones de uso"
       },
       "sound": {
-        "long": "Sound Flipper (soundflipper.com) es un conversor de audio en línea gratuito para grabaciones, canciones y otros archivos de sonido que ya están guardados en tu dispositivo: todo se procesa localmente en tu navegador, así tu audio sigue siendo privado. Su inspector lee el audio real del archivo y te dice exactamente qué detecta, y rechaza los archivos no compatibles con una explicación clara. Puedes convertir hasta diez archivos a la vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis y Opus, con ajustes de calidad razonables resueltos automáticamente. Es ideal para arreglar subidas rechazadas — por ejemplo, convertir una nota de voz en MP3 — e incluye guías de conversión paso a paso. Se ofrece actualmente como una vista previa evaluable, gratuita y sin registro.",
+        "long": "Sound Flipper (soundflipper.com) es un conversor de audio gratuito para grabaciones, canciones y otros archivos de sonido guardados en tu dispositivo. Todo se procesa en tu navegador para proteger la privacidad de tu audio. La herramienta analiza el contenido del archivo, te muestra qué ha detectado y te explica por qué no admite un archivo cuando corresponde. Puedes convertir hasta diez archivos a la vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis y Opus. Los ajustes de calidad se eligen automáticamente. Si un formulario rechaza una grabación, puedes convertir, por ejemplo, una nota de voz en MP3. Incluye guías de conversión paso a paso. Puedes probar la versión preliminar gratis y sin registrarte.",
         "features": [
           "100% en el dispositivo",
           "Hasta 10 archivos en lote",
@@ -351,12 +366,12 @@
           "Inspector de contenido",
           "Ajustes de calidad automáticos",
           "Guías de conversión",
-          "Estado de vista previa"
+          "Versión preliminar"
         ],
-        "note": "Vista previa gratuita — sin registro."
+        "note": "Prueba la versión preliminar gratis y sin registrarte."
       },
       "resize": {
-        "long": "Make My Image Fit (resizeandcompress.app) es una utilidad de imagen en línea gratuita que comprime, redimensiona y convierte imágenes sin subirlas nunca: todo el procesamiento ocurre en tu dispositivo, en el navegador. Puedes procesar hasta 10 imágenes a la vez (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC o DNG), fijar un tamaño máximo de archivo en KB/MB y/o dimensiones exactas en píxeles, y elegir el formato de salida. Antes de descargar, la herramienta comprueba cada resultado con tus requisitos, y puedes rotar, fijar fondos o convertir fotos HEIC de móvil y archivos RAW DNG en el dispositivo. Los resultados se descargan de forma individual o en un ZIP. Es completamente gratuito y no requiere registro, y no se cargan analíticas ni anuncios sin consentimiento.",
+        "long": "Make My Image Fit (resizeandcompress.app) es una herramienta web gratuita para comprimir, redimensionar y convertir imágenes. Todo se procesa en el navegador de tu dispositivo, sin subir los archivos. Puedes trabajar con hasta 10 imágenes a la vez (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC o DNG), elegir el formato de salida y fijar el tamaño máximo del archivo en KB o MB, las dimensiones exactas en píxeles o ambas cosas. Antes de la descarga, la herramienta comprueba que cada resultado cumple tus requisitos. También puedes girar las imágenes, elegir fondos y convertir fotos HEIC de móvil o archivos RAW DNG en el propio dispositivo. Descarga los resultados por separado o en un ZIP. Es completamente gratuita y no requiere registro. Las herramientas de analítica y los anuncios solo se cargan con tu consentimiento.",
         "features": [
           "100% en el dispositivo",
           "Hasta 10 imágenes en lote",
@@ -365,10 +380,51 @@
           "Redimensionar por píxeles",
           "Rotación y fondos",
           "Descarga en ZIP",
-          "Sin analíticas sin consentimiento"
+          "Analítica solo con tu consentimiento"
         ],
         "note": "Completamente gratuito y sin registro."
       }
+    },
+    "showcase": {
+      "explore": "Explorar",
+      "detailsLink": "Explorar <product>{{name}}</product>",
+      "collectionTitle": "Apps y juegos",
+      "collectionIntro": "Juegos originales y herramientas útiles que creamos en nuestro pequeño equipo.",
+      "platforms": "Plataformas",
+      "openWeb": "Abrir la app web",
+      "related": "Más apps y juegos",
+      "collectionHeadline": "Buenas ideas, hechas aquí.",
+      "nemesis": {
+        "category": "Juego de estrategia",
+        "intro": "Tu próxima jugada, estés donde estés.",
+        "cover": "Tablero de Go de madera con piedras blancas y negras en un bosque",
+        "boardDetail": "Una piedra negra y otra blanca en un tablero de go de 9 × 9",
+        "feature": "Go en un tablero de 9 × 9, vayas donde vayas",
+        "detail": "Juega contra el ordenador sin conexión y retoma tus partidas guardadas cuando quieras.",
+        "screen1": "Partida de Go con puntuación y controles de juego"
+      },
+      "sound": {
+        "category": "Herramienta de audio",
+        "intro": "Convierte y edita archivos de audio.",
+        "cover": "Conversor de audio con forma de onda y controles de salida",
+        "feature": "De la grabación al archivo final",
+        "detail": "Elige un formato de salida, recorta la grabación o ajusta los fundidos antes de exportar.",
+        "screen1": "Editor de audio con controles de recorte y de fundido de entrada y salida"
+      },
+      "resize": {
+        "category": "Herramienta de imagen",
+        "intro": "La imagen que necesitas, con el tamaño justo.",
+        "cover": "Pantalla de inicio de Resize & Compress con la vista previa de una foto",
+        "feature": "Ajusta tus imágenes",
+        "detail": "Define las dimensiones o el tamaño del archivo y revisa el resultado antes de guardar.",
+        "screen1": "Pantalla para ajustar el tamaño y el formato de la imagen",
+        "screen2": "Vista de inspección con los detalles de la imagen exportada",
+        "examplePhoto": "Una flor roja de hibisco entre hojas verdes",
+        "example": "Así cambia el tamaño de una foto",
+        "before": "Antes",
+        "after": "Después"
+      },
+      "webPlatform": "Web"
     }
   },
   "blog": {
@@ -377,24 +433,25 @@
       "description": "Últimas noticias, novedades y análisis del equipo de Inferenco.",
       "errorLoading": "Error al cargar los blogs: {{error}}",
       "retry": "Reintentar",
-      "empty": "Todavía no se ha publicado ningún blog.",
-      "noExcerpt": "Sin extracto disponible",
+      "empty": "Todavía no se ha publicado ninguna entrada.",
+      "noExcerpt": "Sin resumen disponible",
       "readMore": "Leer más →",
-      "loadingMore": "Cargando más blogs...",
-      "end": "Has llegado al final de todos los blogs.",
-      "fetchError": "No se pudieron cargar los blogs"
+      "loadingMore": "Cargando más entradas…",
+      "end": "Ya has visto todas las entradas.",
+      "fetchError": "No se pudieron cargar las entradas.",
+      "loadMore": "Cargar más entradas"
     },
     "single": {
-      "loading": "Cargando la publicación del blog...",
+      "loading": "Cargando la entrada del blog…",
       "error": "Error al cargar la publicación: {{error}}",
-      "notFound": "Publicación no encontrada.",
-      "backToBlogs": "Volver a los blogs",
-      "backArrow": "← Volver a los blogs",
-      "backAllArrow": "← Volver a todos los blogs",
+      "notFound": "No se encontró la entrada.",
+      "backToBlogs": "Volver al blog",
+      "backArrow": "← Volver al blog",
+      "backAllArrow": "← Volver a todas las entradas del blog",
       "published": "Publicado: {{date}}",
       "gallery": "Galería",
-      "blogImage": "Imagen del blog",
-      "fetchError": "No se pudo cargar la publicación"
+      "blogImage": "Imagen de la entrada",
+      "fetchError": "No se pudo cargar la entrada."
     }
   }
 }

@@ -2,10 +2,11 @@
   "chrome": {
     "nav": {
       "home": "首页",
-      "media": "媒体与娱乐",
+      "media": "应用与游戏",
       "blogs": "博客",
       "onchain": "Onchain",
-      "docs": "文档"
+      "docs": "文档",
+      "story": "我们的故事"
     },
     "products": {
       "inferBot": "Infer Bot",
@@ -13,11 +14,11 @@
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "文档"
+      "docs": "文档",
+      "inferConnect": "Infer Connect"
     },
     "social": {
       "telegram": "Telegram",
-      "mastodon": "Mastodon",
       "fountain": "Fountain",
       "farcaster": "Farcaster",
       "soclly": "Soclly",
@@ -25,11 +26,14 @@
       "lensforum": "Lensforum"
     },
     "aria": {
-      "joinOn": "在 {{provider}} 上关注 Inferenco",
+      "joinOn": "在 {{provider}} 上与 Inferenco 交流",
       "toggleTheme": "切换主题",
       "toggleMenu": "打开/关闭菜单",
       "switchLanguage": "更换语言",
-      "currentLanguage": "当前语言：{{language}}"
+      "currentLanguage": "当前语言：{{language}}",
+      "primaryNavigation": "主导航",
+      "closeMenu": "关闭菜单",
+      "skipToContent": "跳至内容"
     },
     "theme": {
       "toDark": "切换到深色模式",
@@ -39,12 +43,12 @@
       "label": "语言"
     },
     "footer": {
-      "tagline": "游戏、媒体与日常应用 — 全部自主开发。",
-      "mediaColumn": "媒体与娱乐",
+      "tagline": "游戏、媒体工具和日常应用，全部由我们自主开发。",
+      "mediaColumn": "应用与游戏",
       "allApps": "全部应用",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
-      "imageFit": "Make My Image Fit",
+      "imageFit": "Image: Resize & Compress",
       "onchainColumn": "Onchain",
       "inferBot": "Infer Bot",
       "inferWallet": "Infer Wallet",
@@ -58,13 +62,14 @@
       "support": "支持",
       "companyColumn": "公司",
       "contactColumn": "联系我们",
-      "ourCompaniesColumn": "旗下公司",
+      "ourCompaniesColumn": "运营公司",
       "spielcrypto": "Spielcrypto Ltd",
       "singularityShift": "Singularity Shift Ltd",
       "nemesisGoColumn": "Nemesis Go",
       "nemesisPrivacy": "Nemesis Go 隐私政策",
       "nemesisTerms": "Nemesis Go 使用条款",
-      "copyright": "© 2025 Inferenco。保留所有权利。"
+      "copyright": "© 2025 Inferenco。保留所有权利。",
+      "inferConnect": "Infer Connect"
     },
     "notFound": {
       "title": "页面未找到",
@@ -76,21 +81,21 @@
   "home": {
     "sideNav": {
       "quickNav": "快捷导航",
-      "aria": "前往{{section}}部分",
+      "aria": "跳转到“{{section}}”部分",
       "contactAria": "联系我们",
       "sections": {
         "products": "产品",
         "about": "关于",
-        "capabilities": "能力",
+        "capabilities": "产品功能",
         "howWeBuild": "如何开发",
-        "approach": "理念",
+        "approach": "开发理念",
         "contact": "联系"
       }
     },
     "hero": {
       "logoAlt": "Inferenco 标志",
       "title": "游戏与日常应用，全部自主开发",
-      "tagline": "我们设计、开发并发布自己的产品 — 从手机游戏和日常媒体工具，到链上钱包与开发者工具。",
+      "tagline": "从手机游戏、日常使用的媒体工具，到链上钱包和开发者工具，我们的产品都由团队自己设计、开发和发布。",
       "pillsAria": "Inferenco 产品",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
@@ -101,7 +106,7 @@
     },
     "portfolio": {
       "title": "我们的<span>产品</span>",
-      "subtitle": "一切由我们自己开发并发布的产品 — 游戏、媒体工具、钱包与开发者工具",
+      "subtitle": "从游戏和媒体工具到钱包和开发者工具，全部由我们自主开发并发布。",
       "divider": "Onchain 产品",
       "learnMore": "了解更多",
       "readDocs": "阅读文档",
@@ -110,7 +115,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Nemesis Go 应用图标",
-          "blurb": "与完全在您 Android 设备上运行的 AI 对弈 9×9 围棋。无需账号。",
+          "blurb": "在 Android 设备上与 AI 对弈九路围棋。AI 完全在本机运行，无需注册账号。",
           "tags": [
             "移动游戏",
             "9×9 Go",
@@ -121,23 +126,23 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Sound Flipper 截图",
-          "blurb": "在 MP3、WAV、FLAC 等格式之间转换音频 — 免费、私密，完全在设备本地完成。",
+          "blurb": "在 MP3、WAV、FLAC 等音频格式之间免费转换。文件完全在设备上处理，无需上传。",
           "tags": [
             "音频转换器",
             "网页工具",
             "免费",
-            "设备本地"
+            "本机处理"
           ]
         },
         "image": {
           "name": "Make My Image Fit",
           "alt": "Make My Image Fit 截图",
-          "blurb": "调整并压缩图片以满足任何上传限制 — 免费、私密、设备本地处理。",
+          "blurb": "调整图片尺寸并压缩文件，满足上传限制。全程在设备上处理，无需上传，免费使用。",
           "tags": [
             "图片工具",
             "网页工具",
             "免费",
-            "设备本地"
+            "本机处理"
           ]
         },
         "desk": {
@@ -154,7 +159,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer Wallet 标志",
-          "blurb": "Cedra 移动钱包 — 内置兑换、DeFi 访问与生物识别保护。",
+          "blurb": "适用于 Cedra 的移动钱包，支持直接兑换和使用 DeFi 服务，并可通过生物识别保护钱包。",
           "tags": [
             "移动应用",
             "Cedra",
@@ -164,10 +169,10 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP 标志",
-          "blurb": "让 AI 编码代理操作您的 Infer Desk 钱包，并在屏幕上逐项批准。",
+          "blurb": "您可以在屏幕上确认操作，让 AI 编程智能体使用您的 Infer Desk 钱包。",
           "tags": [
             "MCP",
-            "AI 代理",
+            "AI 智能体",
             "开发者工具"
           ]
         },
@@ -184,7 +189,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem 标志",
-          "blurb": "Cedra 网络上的活动、游戏与社区工具 — 尽在浏览器中。",
+          "blurb": "打开浏览器，即可参加 Cedra 网络上的活动、玩游戏或使用社区工具。",
           "tags": [
             "dApp",
             "Cedra",
@@ -196,11 +201,11 @@
       }
     },
     "about": {
-      "title": "关于<span>Inferenco</span> – 产品背后的团队",
-      "p1": "<strong>Inferenco</strong> 是一家由 <strong>Singularity Shift Ltd</strong> 与 <strong>Spielcrypto Ltd</strong> 合作成立的软件公司。我们做产品，而不是客户项目 — 本站的一切都由我们设计、开发并发布。",
-      "p2": "我们的产品从游戏和日常媒体应用起步，延伸到链上钱包、dApp 与开发者工具 — 全部以安全审查和签名发布作为支撑。",
-      "p3": "每一款产品都由编写它的同一个团队维护 — 配有文档、安装指南，以及直达开发者的通道。",
-      "buildHeading": "我们开发：",
+      "title": "关于 <span>Inferenco</span>：我们的开发团队",
+      "p1": "<strong>Inferenco</strong> 是由 <strong>Singularity Shift Ltd</strong> 与 <strong>Spielcrypto Ltd</strong> 合作成立的软件公司。我们专注于自有产品，不承接客户项目。本站展示的产品都由我们设计、开发并发布。",
+      "p2": "从游戏和日常使用的媒体应用，到链上钱包、dApp 和开发者工具，我们都会进行安全审查，并为发布的版本签名。",
+      "p3": "每款产品都由原开发团队持续维护。您可以查阅文档和安装指南，也可以直接联系开发者。",
+      "buildHeading": "我们开发的产品和工具",
       "build": {
         "gamesMedia": "移动游戏与媒体应用",
         "browserUtilities": "免费浏览器工具",
@@ -212,24 +217,24 @@
       }
     },
     "services": {
-      "title": "产品<span>能力</span>",
-      "subtitle": "我们的产品开箱即用的能力",
+      "title": "产品<span>功能</span>",
+      "subtitle": "产品自带哪些功能",
       "agents": {
-        "title": "让 AI 代理替你完成工作",
-        "text": "编码代理获得类型化钱包工具与健康检查，而您在屏幕上批准每一项敏感操作。"
+        "title": "让 AI 智能体帮您完成操作",
+        "text": "编程智能体可以使用带类型定义的钱包工具并检查运行状态。每项敏感操作都由您在屏幕上确认。"
       },
       "security": {
         "title": "默认安全优先",
-        "text": "经过审计的发布、已签名并公证的二进制文件，以及贯穿产品线的设备本地处理。"
+        "text": "发布的版本经过审计，二进制文件经过签名和软件公证。各类产品都在设备上处理数据。"
       },
       "standards": {
         "title": "构建于开放标准之上",
-        "text": "AIP-62、MCP 与 Move 智能合约 — 我们的链上产品彼此互操作，而不是把您锁住。"
+        "text": "借助 AIP-62、MCP 和 Move 智能合约，我们的链上产品可以互相配合使用，您也不必局限于某一款产品。"
       }
     },
     "methodology": {
       "title": "我们的<span>方法</span> – 如何开发与发布",
-      "subtitle": "从一个想法到您可验证的签名发布",
+      "subtitle": "从最初的想法，到附有可验证签名的发布版本",
       "steps": {
         "scope": {
           "title": "确定范围",
@@ -237,19 +242,19 @@
         },
         "build": {
           "title": "自主开发",
-          "text": "我们自己的团队设计、实现并测试每一款产品 — 不外包，不转手。"
+          "text": "每款产品都由我们自己的团队设计、实现和测试，全程不外包，也不转交给其他团队。"
         },
         "review": {
-          "title": "经过安全审查",
-          "text": "新的钱包与桥接发布在上线前都要经过审计与内部审查。"
+          "title": "进行安全审查",
+          "text": "钱包和跨链桥的新版本在发布前都会经过审计和内部审查。"
         },
         "sign": {
           "title": "签名并发布",
-          "text": "发布版本经过签名，在适用时经过公证，并附带可供您验证的签名一同发布。"
+          "text": "我们会为发布版本签名，并在适用时完成软件公证。随版本提供的签名可供您自行验证。"
         },
         "support": {
-          "title": "支持我们发布的一切",
-          "text": "文档、安装指南以及直达团队的通道，为每一款产品提供支撑。"
+          "title": "持续为已发布的产品提供支持",
+          "text": "我们为每款产品提供文档和安装指南，您也可以直接联系开发团队。"
         }
       }
     },
@@ -258,7 +263,7 @@
       "intro": "我们按照自己希望使用的方式来开发软件：<strong>透明</strong>、<strong>以设计守护隐私</strong>、<strong>可验证</strong>。我们的理念聚焦于：",
       "values": {
         "verifiable": "可验证的软件 — 每次发布都已签名并有文档",
-        "privacy": "默认隐私 — 尽可能在设备本地处理",
+        "privacy": "默认保护隐私，尽量在设备上处理数据",
         "quality": "每一行代码的品质与可靠性",
         "innovation": "创新与实用易用的工具相结合",
         "timely": "及时发布，不在品质上妥协",
@@ -272,25 +277,35 @@
     },
     "modal": {
       "title": "联系我们",
-      "text": "与我们产品背后的团队联系 — 问题、故障或定制需求。",
+      "text": "有产品疑问、遇到了问题，或想讨论定制开发？请直接联系开发团队。",
       "note": "我们会尽快回复您。"
+    },
+    "studio": {
+      "eyebrow": "独立应用、游戏与媒体工具",
+      "headline": "为游戏而生。",
+      "accent": "为<emphasis>创作</emphasis>而造。",
+      "intro": "来自独立团队的原创游戏、实用应用和创意工具。",
+      "explore": "探索应用与游戏",
+      "more": "Inferenco 的更多作品",
+      "partners": "Inferenco 由 Singularity Shift 和 Spielcrypto 合作组建。我们自行设计、开发和维护软件。",
+      "story": "我们的故事"
     }
   },
   "media": {
     "hero": {
       "title": "媒体与娱乐",
-      "tagline": "游戏、媒体工具与日常应用 — 由我们自己的团队自主开发。",
+      "tagline": "游戏、媒体工具和日常应用，都由我们的团队自主开发。",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
     },
     "gallery": {
       "title": "游戏与日常应用",
-      "subtitle": "一款移动围棋游戏与两款免费、隐私优先的网页工具 — 无需账号，除非您主动要求，否则没有任何内容会离开您的设备。",
+      "subtitle": "一款手机围棋游戏，以及两款注重隐私的免费网页工具。无需注册账号，只有在您主动要求时，数据才会传出设备。",
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Nemesis Go 应用图标",
-        "blurb": "一款面向 Android 的 9×9 围棋游戏，配备离线、在设备本地运行的 AI 对手与着法分析。无需账号、无需联网 — 已保存的对局与偏好设置都留在您的设备上。",
+        "blurb": "这是一款 Android 九路围棋游戏，AI 对手和着法分析都能在设备上离线运行。无需账号，也无需联网。保存的对局和设置都留在您的设备上。",
         "tags": [
           "移动游戏",
           "9×9 Go",
@@ -301,7 +316,7 @@
       "sound": {
         "name": "Sound Flipper",
         "alt": "Sound Flipper 截图",
-        "blurb": "完全在浏览器中运行的免费音频转换器 — 您的录音与歌曲永不被上传。可在 MP3、WAV、M4A、FLAC、Ogg、Opus 等格式之间转换，无需账号，也无需安装软件。",
+        "blurb": "这款免费音频转换器完全在浏览器中运行，无需上传录音或歌曲。支持在 MP3、WAV、M4A、FLAC、Ogg、Opus 等格式之间转换，无需注册或安装软件。",
         "tags": [
           "音频转换器",
           "隐私优先",
@@ -311,7 +326,7 @@
       "image": {
         "name": "Make My Image Fit",
         "alt": "Make My Image Fit 截图",
-        "blurb": "免费、隐私优先的图片缩放与压缩工具，完全在浏览器中运行 — 不上传、无需账号。设定最大文件体积或精确像素尺寸，它就能为您准备好最多 10 张图片，以满足任何上传表单的要求。",
+        "blurb": "这款免费图片工具注重隐私，直接在浏览器中调整尺寸和压缩图片，无需上传或注册。指定文件大小上限或准确的像素尺寸后，即可一次处理最多 10 张图片，使其符合上传表单的要求。",
         "tags": [
           "图片工具",
           "隐私优先",
@@ -328,47 +343,88 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go 是一款完全在您的设备上运行的 Android 9×9 围棋游戏。电脑对手以及着法建议背后的分析都离线工作，因此无论有无账号、有无网络，您都可以在任何地方对弈。已保存的对局、最近的结果与偏好设置都保存在设备本地，所以您可以在对局中途关闭应用，稍后再从同一棋盘继续。游戏免费可玩，依靠对局之间展示的广告获得支持；当您想要一个提示或撤销上一步时，也可以选择观看一段广告。可选的按月订阅“移除广告”会关闭应用内广告，并让您直接使用提示与撤销功能。",
+        "long": "Nemesis Go 是一款完全在 Android 设备上运行的九路围棋游戏。电脑对手和推荐着法的分析都支持离线运行，无需账号或网络连接，随时都能对弈。对局存档、最近战绩和设置保存在设备上，中途关闭应用后仍可从原来的局面继续。游戏免费，对局之间会展示广告。您也可以选择观看广告，以获得提示或撤回上一步棋。可选的“移除广告”月度订阅可关闭应用内广告，并让您直接使用提示和悔棋功能。",
         "features": [
           "9×9 Go",
-          "离线设备本地 AI",
+          "本机离线 AI",
           "着法分析",
           "无需账号",
-          "对局保存在设备本地",
-          "提示与撤销",
-          "可选按月移除广告"
+          "对局存档保存在设备上",
+          "提示和悔棋",
+          "可按月订阅移除广告"
         ],
         "note": "iOS 版本即将推出。",
         "privacy": "隐私政策",
         "terms": "使用条款"
       },
       "sound": {
-        "long": "Sound Flipper（soundflipper.com）是一款免费的在线音频转换器，用于处理已经保存在您设备上的录音、歌曲及其他声音文件 — 所有内容都在浏览器中本地处理，因此您的音频保持私密。它的内容检查器会读取文件里的真实音频，并准确告诉您它检测到了什么；对于不支持的文件，它会给出清楚的解释并拒绝处理。您可以在 MP3、WAV、M4A/AAC、FLAC、ALAC、AIFF、Ogg Vorbis 与 Opus 之间一次转换最多十个文件，质量设置会自动按合理方式确定。它非常适合用来修复被拒绝的上传 — 例如把语音备忘录转成 MP3 — 并附有分步转换指南。目前以可试用的预览形式提供，免费且无需注册。",
+        "long": "Sound Flipper（soundflipper.com）是一款免费的在线音频转换器，适用于设备上已有的录音、歌曲和其他音频文件。所有处理都在浏览器中完成，音频不会上传。工具会检查文件中的实际音频内容，显示检测结果；遇到不支持的文件时，会说明无法处理的原因。一次最多可转换 10 个文件，支持 MP3、WAV、M4A/AAC、FLAC、ALAC、AIFF、Ogg Vorbis 和 Opus，并会自动选择合适的音质设置。如果上传时遇到格式问题，可以按分步指南进行转换，例如将语音备忘录转为 MP3。目前提供免费预览版，无需注册即可试用。",
         "features": [
-          "100% 设备本地",
-          "一次最多 10 个文件",
+          "100% 本机处理",
+          "批量转换，最多 10 个文件",
           "MP3/WAV/M4A/FLAC/ALAC/AIFF/Ogg/Opus",
-          "内容检查器",
+          "音频内容检测",
           "自动质量设置",
           "转换指南",
-          "预览状态"
+          "预览版"
         ],
         "note": "免费预览 — 无需注册。"
       },
       "resize": {
-        "long": "Make My Image Fit（resizeandcompress.app）是一款免费的在线图片工具，可在从不上传图片的情况下压缩、缩放并转换图片 — 全部处理都在浏览器中的您的设备上完成。您可以一次处理最多 10 张图片（JPG、PNG、WebP、GIF、BMP、TIFF、AVIF、HEIC 或 DNG），以 KB/MB 设定最大文件体积，和/或设定精确的像素尺寸，并选择输出格式。在下载之前，工具会依据您的要求逐项检查结果；您还可以旋转、设置背景，或在设备本地转换手机拍摄的 HEIC 照片与 DNG RAW 文件。结果可单独下载，也可打包为 ZIP 下载。它完全免费且无需注册，并且在未经您同意时不会加载任何分析或广告。",
+        "long": "Make My Image Fit（resizeandcompress.app）是一款免费的在线图片工具。压缩、调整尺寸和格式转换都在设备的浏览器中完成，图片不会上传。您可以一次处理最多 10 张图片（JPG、PNG、WebP、GIF、BMP、TIFF、AVIF、HEIC 或 DNG），按 KB 或 MB 设置文件大小上限，或指定准确的像素尺寸。两个条件可以同时使用，也可以选择输出格式。下载前，工具会逐张检查结果是否符合要求。您还可以旋转图片、设置背景，或在设备上转换手机拍摄的 HEIC 照片和 DNG RAW 文件。处理结果可逐张下载，也可打包为 ZIP。完全免费，无需注册；未经您同意，不会加载分析工具或广告。",
         "features": [
-          "100% 设备本地",
-          "一次最多 10 张图片",
+          "100% 本机处理",
+          "批量处理，最多 10 张图片",
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
           "最大文件体积限制",
           "按像素缩放",
           "旋转与背景",
           "ZIP 下载",
-          "未经同意不加载分析"
+          "仅在获得同意后加载分析工具"
         ],
         "note": "完全免费，无需注册。"
       }
+    },
+    "showcase": {
+      "explore": "探索",
+      "detailsLink": "了解 <product>{{name}}</product>",
+      "collectionTitle": "应用与游戏",
+      "collectionIntro": "这些原创游戏和实用工具，都出自我们的小团队。",
+      "platforms": "平台",
+      "openWeb": "打开网页应用",
+      "related": "更多应用与游戏",
+      "collectionHeadline": "好作品，在这里诞生。",
+      "nemesis": {
+        "category": "策略游戏",
+        "intro": "随时随地，再下一手。",
+        "cover": "森林中摆有黑白棋子的木质围棋棋盘",
+        "boardDetail": "9 路围棋棋盘上的一颗黑子和一颗白子",
+        "feature": "随时随地玩九路围棋",
+        "detail": "离线也能和对手下棋，保存的对局随时可以接着下。",
+        "screen1": "显示比分和走棋按钮的围棋对局画面"
+      },
+      "sound": {
+        "category": "音频工具",
+        "intro": "转换和编辑音频。",
+        "cover": "显示波形和输出设置的音频转换器",
+        "feature": "从录音到导出成品",
+        "detail": "选择输出格式，在导出前剪裁录音或调整淡入淡出效果。",
+        "screen1": "音频编辑器中的剪裁和淡入淡出控件"
+      },
+      "resize": {
+        "category": "图像工具",
+        "intro": "让图片尺寸刚刚好。",
+        "cover": "Resize & Compress 首页，显示照片预览",
+        "feature": "调好图片尺寸",
+        "detail": "设定图片尺寸或文件大小，保存前先查看处理结果。",
+        "screen1": "调整图片尺寸的工作区，含尺寸和格式设置",
+        "screen2": "查看处理结果及输出文件信息的界面",
+        "examplePhoto": "绿叶间的一朵红色朱槿花",
+        "example": "图片调整尺寸实例",
+        "before": "调整前",
+        "after": "调整后"
+      },
+      "webPlatform": "网页"
     }
   },
   "blog": {
@@ -377,12 +433,13 @@
       "description": "来自 Inferenco 团队的最新消息、动态与见解。",
       "errorLoading": "加载博客时出错：{{error}}",
       "retry": "重试",
-      "empty": "尚未发布任何博客。",
+      "empty": "尚未发布文章。",
       "noExcerpt": "暂无摘要",
       "readMore": "阅读全文 →",
-      "loadingMore": "正在加载更多博客……",
-      "end": "已到达所有博客的末尾。",
-      "fetchError": "获取博客失败"
+      "loadingMore": "正在加载更多文章……",
+      "end": "已显示全部博客文章。",
+      "fetchError": "未能加载文章。",
+      "loadMore": "加载更多文章"
     },
     "single": {
       "loading": "正在加载博客文章……",
@@ -393,8 +450,8 @@
       "backAllArrow": "← 返回所有博客",
       "published": "发布时间：{{date}}",
       "gallery": "图集",
-      "blogImage": "博客图片",
-      "fetchError": "获取博客文章失败"
+      "blogImage": "文章配图",
+      "fetchError": "未能加载这篇文章。"
     }
   }
 }

@@ -79,6 +79,9 @@ jobs:
       - name: Verify built app legal URLs
         run: pnpm run test:legal
 
+      - name: Verify published route delivery
+        run: pnpm run test:routes
+
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4

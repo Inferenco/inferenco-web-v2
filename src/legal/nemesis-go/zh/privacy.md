@@ -4,7 +4,7 @@
 
 本政策自发布时生效，并在更新前持续有效。
 
-本政策适用于 Android 和 iOS 平台的 Nemesis Go 应用以及有关该应用的任何通信。Singularity Shift Ltd 是 Android 版本发布者，Spielcrypto LLC 是 iOS 版本发布者。每家公司对其在处理自身应用版本过程中所涉及的个人信息负责。
+本政策适用于 Android 和 iOS 平台的 Nemesis Go 应用以及有关该应用的任何通信。Singularity Shift Ltd 是 Android 版本发布者，Spielcrypto LLC 是 iOS 版本发布者。两家公司分别对其在运营相应版本时处理的个人信息负责。
 
 ## 游戏与您设备上的信息
 
@@ -12,7 +12,7 @@
 
 ## 广告与隐私选择
 
-启用广告时，Nemesis Go 使用 Google AdMob 投放广告，并使用 Google 的用户消息平台（User Messaging Platform）处理广告隐私选择。Google 及其广告合作伙伴可能处理如下信息：您的 IP 地址及由此推断的大致位置、可用时的设备或广告标识符、与广告和应用的交互情况以及诊断信息。他们使用这些信息投放和衡量广告、管理广告展示频率以及检测欺诈或滥用行为。所使用的信息以及您看到的广告可能因您所在地区、设备设置和隐私选择而异。 [Google 如何使用使用其服务的应用提供的信息](https://policies.google.com/technologies/partner-sites) · [Google 隐私政策](https://policies.google.com/privacy)
+启用广告时，Nemesis Go 使用 Google AdMob 投放广告，并使用 Google 的用户消息平台（User Messaging Platform）处理广告隐私选择。Google 及其广告合作伙伴可能处理如下信息：您的 IP 地址及由此推断的大致位置、可用时的设备或广告标识符、与广告和应用的交互情况以及诊断信息。他们使用这些信息投放和衡量广告、管理广告展示频率以及检测欺诈或滥用行为。所使用的信息以及您看到的广告可能因您所在地区、设备设置和隐私选择而异。 [Google 如何使用接入其服务的应用所提供的信息](https://policies.google.com/technologies/partner-sites) · [Google 隐私政策](https://policies.google.com/privacy)
 
 在适用情况下，Google 会显示隐私提示，让您可以就广告作出选择。Android 在设备设置中提供广告控制项。在 iOS 上，您可以在**“设置”→“隐私与安全性”→“跟踪”**中管理是否允许 Nemesis Go 进行跟踪。您还可以通过 Google 的控制项管理 Google 账号的广告个性化。 [Google 广告管理中心](https://support.google.com/My-Ad-Center-Help/answer/12155451?co=GENIE.Platform&hl=en)
 
@@ -24,17 +24,17 @@
 
 如果您通过电子邮件就 Nemesis Go 与我们联系，我们会使用您的邮箱地址、您的邮件内容以及您选择发送的任何信息来回复并跟踪该请求。我们的邮件服务商在提供服务的过程中处理这些通信。在法律要求的情况下，我们可能披露相关信息。
 
-在适用英国或欧盟数据保护法的情况下，我们依据您的同意开展需要同意的广告活动，依据与您签订的合同履行以提供已购买的访问权限，依据我们在回应支持请求和防止滥用方面的正当利益，以及在适用时的法律义务。Google 和 Apple 可能在其您所在国家之外处理数据。他们的隐私政策说明了其处理信息的地点以及针对跨境传输所采用的保障措施。 [Google 隐私政策](https://policies.google.com/privacy) · [Apple 隐私政策](https://www.apple.com/legal/privacy/)
+在英国或欧盟数据保护法适用时，我们以您的同意为依据开展需要同意的广告活动，以履行与您的协议为依据向您提供已购买的使用权限，以正当利益为依据回应支持请求并协助防止滥用，在适用时也以履行法定义务为依据。Google 和 Apple 可能会在您所在国家以外处理数据。他们的隐私政策说明了其处理信息的地点以及针对跨境传输所采用的保障措施。 [Google 隐私政策](https://policies.google.com/privacy) · [Apple 隐私政策](https://www.apple.com/legal/privacy/)
 
 ## 存储、保留与删除
 
 对局记录和设置存储在您设备上应用的私有存储空间中，在应用替换它们或该存储空间被清除之前一直保留。在 Android 上，您可以在设备设置中清除应用存储。在 iOS 上，选择**“删除 App”**以移除其本地数据。如果您的设备会进行备份，则可能按照您的备份设置保留副本。Google 和 Apple 根据其各自政策管理其广告和商店记录的保留。
 
-我们会在回复、处理相关后续事项或履行适用的记录保存义务所需的期限内保留支持邮件。您可以联系您所在平台的发布者，请求删除特定的支持往来记录。
+我们会在回复、处理相关后续事项或履行适用的记录保存义务所需的期限内保留支持邮件。您可以联系您所用平台对应的应用发行商，请求删除特定的支持往来记录。
 
 ## 您的权利及联系方式
 
-根据您所在的地区，您可能有权访问、更正或删除我们持有的个人信息，以可携带的格式获取副本，限制或反对对其的使用，撤回同意，并向当地隐私监管机构投诉。如就本政策进行咨询或行使您的权利，请联系您所在平台的发布者。如果您认为我们在未取得法律要求许可的情况下获取了儿童的个人信息，也可以与我们联系。
+根据您所在的地区，您可能有权访问、更正或删除我们持有的个人信息，以可携带的格式获取副本，限制或反对对其的使用，撤回同意，并向当地隐私监管机构投诉。如就本政策进行咨询或行使您的权利，请联系您所用平台对应的应用发行商。如果您认为我们在未取得法律要求许可的情况下获取了儿童的个人信息，也可以与我们联系。
 
 - **Android — Singularity Shift Ltd.** [singularityshift@inferenco.com](mailto:singularityshift@inferenco.com)
 - **iOS — Spielcrypto LLC.** [spielcrypto@inferenco.com](mailto:spielcrypto@inferenco.com)

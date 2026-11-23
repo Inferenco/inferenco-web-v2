@@ -12,11 +12,11 @@ Pode descarregar e utilizar o Nemesis Go para jogo pessoal em conformidade com o
 
 Os direitos de autor da aplicação, das imagens e dos outros conteúdos da aplicação pertencem aos respetivos titulares. Os componentes de terceiros e de código aberto estão disponíveis ao abrigo das suas próprias licenças. Pode exercer quaisquer direitos que essas licenças ou a legislação aplicável lhe confiram.
 
-Se descarregar o Nemesis Go através da App Store, o Acordo de Licença de Utilizador Final da Apple para Aplicações Licenciadas Padrão aplica-se à sua licença da aplicação, salvo se for fornecida uma licença distinta através da App Store. Os downloads e as compras no Google Play estão igualmente sujeitos aos termos do Google Play aplicáveis ao seu país. [Acordo de Licença Padrão da Apple](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) · [Termos de Serviço do Google Play](https://play.google.com/about/play-terms/)
+Se descarregar o Nemesis Go através da App Store, o acordo padrão de licença de utilizador final da Apple para aplicações licenciadas aplica-se à sua licença da aplicação, salvo se for fornecida uma licença distinta através da App Store. Os downloads e as compras no Google Play estão igualmente sujeitos aos termos do Google Play aplicáveis ao seu país. [Acordo de Licença Padrão da Apple](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) · [Termos de Serviço do Google Play](https://play.google.com/about/play-terms/)
 
-## Anúncios, sugestões e Anular
+## Anúncios, dicas e Anular
 
-Quando os anúncios estão ativados, podem surgir anúncios em ecrã completo nas pausas entre partidas. Pode optar por ver um anúncio para revelar uma sugestão ou anular a sua última jogada. A aplicação desbloqueia essa ação depois de obter a recompensa e de fechar o anúncio. A disponibilidade dos anúncios pode variar consoante a sua ligação, a sua região e as suas opções de privacidade. Uma subscrição «Remover anúncios» ativa elimina os anúncios na aplicação e dá acesso direto a Sugestão e Anular.
+Quando os anúncios estão ativados, podem surgir anúncios em ecrã completo nas pausas entre partidas. Pode optar por ver um anúncio até ao fim para obter uma dica ou anular a sua última jogada. A aplicação desbloqueia essa ação depois de o jogador receber a recompensa e fechar o anúncio. A disponibilidade dos anúncios pode variar consoante a sua ligação, a sua região e as suas opções de privacidade. Uma subscrição «Remover anúncios» ativa elimina os anúncios na aplicação e dá acesso direto a Dica e Anular.
 
 ## Subscrição «Remover anúncios»
 

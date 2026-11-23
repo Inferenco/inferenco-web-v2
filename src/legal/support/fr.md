@@ -2,7 +2,7 @@
 
 > Cette page est traduite automatiquement depuis l'anglais.
 
-Besoin d'aide avec l'un de nos jeux ou applis ? Contactez l'éditeur de votre plateforme. Nous répondons dès que possible.
+Besoin d’aide avec l’un de nos jeux ou l’une de nos applis ? Contactez l’éditeur qui propose le jeu ou l’appli sur votre plateforme. Nous répondons dès que possible.
 
 ## Android — Singularity Shift Ltd.
 

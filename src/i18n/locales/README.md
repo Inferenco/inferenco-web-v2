@@ -26,14 +26,11 @@ wrappers so their prose stays left-to-right inside the RTL chrome.
   `en.json` (221 leaf keys across the `chrome`, `home`, `media` and `blog`
   namespaces) on **2026-11-22**. They are fresh site catalogues; they are not
   derived from the Nemesis Go app's own 631-key catalogues.
-- **Status: UNREVIEWED by native speakers.** No human translation pass has
-  happened yet for any locale other than English. Treat wording, tone, and
-  register in `ar, de, es, fr, it, ja, kk, pt-BR, pt-PT, ru, tr, uk, zh` as
-  provisional.
-- **Follow-up (not done):** a native-speaker review of each locale, starting
-  with the marketing copy in the `home` and `media` namespaces. Until that
-  review lands, do not describe this site as human-reviewed or
-  professionally translated anywhere public.
+- **Editorial audit, 2026-11-23:** compared all 309 English strings, counting
+  list entries individually, against the 13 current locale catalogues. The
+  review also covered localized support and Nemesis Go policy pages. It
+  corrected meaning and phrasing, including consent and subscription terms.
+  Native-speaker and professional legal review remain separate from this audit.
 - **Never translated:** brand and product names (`Nemesis Go`,
   `Sound Flipper`, `Make My Image Fit`, `Inferenco`, `Infer Desk`,
   `Infer Wallet`, `Infer MCP`, `Infer Connect`, `Infer Ecosystem`), the
@@ -42,8 +39,9 @@ wrappers so their prose stays left-to-right inside the RTL chrome.
   `9×9 Go`). `tests/i18n-catalogs.test.mjs` enforces this.
 - **Not localised on purpose:** the onchain product pages (`/infer`,
   `/infer-wallet`, `/infer-desk`, `/infer-mcp`), everything under `/docs`, and
-  the legal pages stay English in every locale. Blog *content* comes from the
-  Poster API and is untranslated; only the blog page chrome is.
+  the authoritative policy texts stay in English. The legal and support
+  pages also have localized routes. Blog entries come from the Poster API in
+  their original language, and the controls and labels around them are translated.
 
 ## Structure
 

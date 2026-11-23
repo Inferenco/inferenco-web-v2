@@ -36,7 +36,7 @@ export default function InferMcp() {
   }, []);
 
   return (
-    <div id="infer-mcp-page" className="page-section" dir="ltr">
+    <div id="infer-mcp-page" className="page-section" lang="en" dir="ltr">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>

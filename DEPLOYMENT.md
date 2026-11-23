@@ -1,75 +1,32 @@
-# Inferenco Web App - Deployment Guide
+# Inferenco deployment
 
-This is a single-page application (SPA) that combines all content into one file for easy deployment on GitHub Pages.
+The Vite build publishes `dist/` to GitHub Pages for `inferenco.com`. The [deployment workflow](.github/workflows/deploy.yml) builds and tests pull requests. Its deployment step runs only for `refs/heads/main`, including the scheduled refresh and a manual run on main.
 
-## Structure
+## Verify a release candidate locally
 
-- `app.html` - Main SPA file containing all pages and functionality
-- `index.html` - Redirect file that automatically redirects to `app.html`
-- `styles.css` - All styles for the application
-- `assets/` - Images and logos
-- Other files - SEO and configuration files
+Use Node 22 and the repository’s pnpm lockfile. Run these commands from the project checkout.
 
-## GitHub Pages Deployment
+```sh
+pnpm install --frozen-lockfile
+pnpm test
+pnpm lint
+pnpm run build
+pnpm run test:legal
+pnpm run test:routes
+pnpm run preview
+```
 
-### Option 1: Direct Deployment
-1. Push all files to your GitHub repository
-2. Go to repository Settings → Pages
-3. Select "Deploy from a branch" → "main" → "/ (root)"
-4. Your site will be available at `https://username.github.io/repository-name/`
+Set the public `VITE_POSTER_API_URL` build variable when testing live blog content. The configured build emits static entries for current published articles and fails if it cannot obtain the article index. The nightly or manual main workflow refreshes those entries and generates the latest MCP download manifest.
 
-### Option 2: Custom Domain
-1. Follow Option 1 steps
-2. Add your custom domain in the "Custom domain" field
-3. Ensure your domain's DNS points to GitHub Pages
-4. The `CNAME` file is already configured
+## Check the published site after release
 
-## Features
+Verify the domain and static routing from a fresh browser tab. Compare against the release candidate checks in the [redesign plan](docs/redesign/PLAN.md).
 
-### Single Page Application
-- Client-side routing with hash-based navigation
-- No server-side rendering required
-- Fast navigation between pages
-- SEO-friendly with dynamic meta tag updates
+- Load the homepage, Apps & Games, each app page, the blog and a published article, Docs and an Onchain product by URL. Each published page should return HTTP 200 at its canonical address. An unknown address should return 404.
+- Check that Docs section links and older Apps & Games links still reach their targets. The `/utility-apps/` redirect preserves the query and fragment.
+- Check `/robots.txt`, `/sitemap.xml`, `/app-ads.txt`, `/downloads.json`, localized support and Nemesis Go policy pages. Verify that a product page’s share image loads and matches its metadata.
+- Open the mobile drawer and a product page in Arabic. Check RTL layout, theme persistence and the appropriate platform links.
 
-### GitHub Pages Compatible
-- No build process required
-- All assets are self-contained
-- Works with GitHub Pages' static hosting
-- Automatic redirects from old URLs
+## Roll back an approved release
 
-### Navigation
-- `#home` or `/` - Home page
-- `#nova` - Nova product page
-- Browser back/forward button support
-- Deep linking support
-
-## File Modifications
-
-### What Changed
-1. Combined `index.html` and `nova.html` into `app.html`
-2. Added JavaScript-based SPA routing
-3. Updated navigation to use hash-based routing
-4. Added dynamic meta tag updates for SEO
-5. Created redirect from old `index.html` to `app.html`
-
-### Preserved Features
-- All original content and design
-- Complete CSS styling
-- SEO meta tags and structured data
-- Responsive design
-- All animations and interactions
-
-## Testing Locally
-
-1. Open `app.html` in a web browser
-2. Test navigation between Home and Nova pages
-3. Test browser back/forward buttons
-4. Test direct URL access with `#home` and `#nova`
-
-## Maintenance
-
-- To update content: Edit the corresponding sections in `app.html`
-- To update styles: Edit `styles.css`
-- To add new pages: Add new page sections and update the router
-- To update assets: Replace files in the `assets/` directory
+Record the last verified production source commit before release. If a release needs rollback, revert the release change on main through the normal review and Pages workflow. Verify the restored source commit and repeat the public checks once the workflow publishes.

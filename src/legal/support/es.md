@@ -2,7 +2,7 @@
 
 > Esta página está traducida automáticamente del inglés.
 
-¿Necesitas ayuda con uno de nuestros juegos o apps? Contacta con el editor de tu plataforma. Respondemos lo antes posible.
+¿Necesitas ayuda con uno de nuestros juegos o apps? Escribe a la empresa que publica la app en tu plataforma. Respondemos lo antes posible.
 
 ## Android — Singularity Shift Ltd.
 
@@ -14,4 +14,4 @@ Para nuestros juegos y apps de iOS, escribe a [spielcrypto@inferenco.com](mailto
 
 ## Qué incluir
 
-Dinos el nombre de la app, tu dispositivo y la versión del sistema operativo, y qué ocurrió. Las capturas de pantalla o una breve descripción de los pasos nos ayudan a reproducir el problema.
+Indícanos el nombre de la app, qué dispositivo y versión del sistema operativo usas y qué ocurrió. Las capturas de pantalla o una breve descripción de los pasos nos ayudan a reproducir el problema.

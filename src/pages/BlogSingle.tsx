@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import type { BlogPost } from "../types";
 import { getAssetUrl } from "../utils/assetUrl";
-import i18n, { currentLocaleTag } from "../i18n";
+import { currentLocaleTag } from "../i18n";
 import "./Blogs.css";
 
 interface BlogSingleApiResponse {
@@ -29,18 +29,21 @@ export default function BlogSingle() {
   const { t } = useTranslation("blog");
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<"notFound" | "fetchError" | null>(null);
 
   useEffect(() => {
+    if (!id) return;
+    const controller = new AbortController();
     const fetchBlog = async () => {
       try {
         setLoading(true);
-        const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
-        const response = await fetch(`${apiUrl}/api/blogs/${id}`);
+        const apiUrl = (import.meta.env.VITE_POSTER_API_URL || "").replace(/\/$/, "");
+        const response = await fetch(`${apiUrl}/api/blogs/${encodeURIComponent(id)}`, { signal: controller.signal });
 
         if (!response.ok) {
           if (response.status === 404) {
-            throw new Error('Blog post not found');
+            if (!controller.signal.aborted) setError("notFound");
+            return;
           }
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -63,19 +66,21 @@ export default function BlogSingle() {
           }))
         };
         
+        if (controller.signal.aborted) return;
         setBlog(blogPost);
+        document.title = blogPost.title + " | Inferenco";
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : i18n.t("blog:single.fetchError"));
+        if (controller.signal.aborted) return;
+        setError("fetchError");
         console.error("Error fetching blog post:", err);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
 
-    if (id) {
-      fetchBlog();
-    }
+    void fetchBlog();
+    return () => controller.abort();
   }, [id]);
 
   const formatDate = (dateString: string | null): string => {
@@ -91,7 +96,7 @@ export default function BlogSingle() {
     return (
       <div className="blogs-page">
         <div className="container">
-          <div className="loading-indicator">
+          <div className="loading-indicator" role="status">
             <div className="spinner"></div>
             <p>{t("single.loading")}</p>
           </div>
@@ -105,8 +110,8 @@ export default function BlogSingle() {
       <div className="blogs-page">
         <div className="container">
           <div className="error-message">
-            <p>{t("single.error", { error })}</p>
-            <button onClick={() => navigate('/blogs')}>{t("single.backToBlogs")}</button>
+            <p role="alert">{t(error === "notFound" ? "single.notFound" : "single.fetchError")}</p>
+            <button onClick={() => navigate("/blogs/")}>{t("single.backToBlogs")}</button>
           </div>
         </div>
       </div>
@@ -119,7 +124,7 @@ export default function BlogSingle() {
         <div className="container">
           <div className="no-blogs">
             <p>{t("single.notFound")}</p>
-            <button onClick={() => navigate('/blogs')}>{t("single.backToBlogs")}</button>
+            <button onClick={() => navigate("/blogs/")}>{t("single.backToBlogs")}</button>
           </div>
         </div>
       </div>
@@ -130,7 +135,7 @@ export default function BlogSingle() {
   // without file extensions (/public/assets/<id>), so no extension check is possible.
   const featuredImage = blog.assets?.[0];
   
-  const apiUrl = import.meta.env.VITE_POSTER_API_URL || '';
+  const apiUrl = (import.meta.env.VITE_POSTER_API_URL || "").replace(/\/$/, "");
 
   return (
     <div className="blogs-page">
@@ -138,14 +143,14 @@ export default function BlogSingle() {
         <article className="blog-single">
           {/* Back navigation */}
           <nav className="blog-back-nav">
-            <button onClick={() => navigate('/blogs')} className="back-button">
+            <button onClick={() => navigate("/blogs/")} className="back-button">
               {t("single.backArrow")}
             </button>
           </nav>
 
           {/* Header */}
           <header className="blog-single-header">
-            <h1>{blog.title}</h1>
+            <h1 lang="en" dir="ltr">{blog.title}</h1>
             <div className="blog-meta">
               <time dateTime={blog.published_at ?? blog.created_at ?? ''}>
                 {t("single.published", { date: formatDate(blog.published_at ?? blog.created_at ?? null) })}
@@ -165,7 +170,7 @@ export default function BlogSingle() {
           )}
 
           {/* Content */}
-          <div className="blog-single-content" dir="ltr">
+          <div className="blog-single-content" lang="en" dir="ltr">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
 
@@ -194,7 +199,7 @@ export default function BlogSingle() {
 
           {/* Back to blogs */}
           <footer className="blog-single-footer">
-            <button onClick={() => navigate('/blogs')} className="back-button">
+            <button onClick={() => navigate("/blogs/")} className="back-button">
               {t("single.backAllArrow")}
             </button>
           </footer>

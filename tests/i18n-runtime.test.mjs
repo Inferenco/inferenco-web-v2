@@ -69,7 +69,7 @@ test("first visit paints in the browser language, with no English pre-paint", as
 
   assert.equal(i18n.resolvedLanguage, "de");
   // Translated at init time, not after a catalogue fetch.
-  assert.equal(i18n.t("chrome:nav.media"), "Medien & Unterhaltung");
+  assert.equal(i18n.t("chrome:nav.media"), "Apps & Spiele");
   assert.equal(i18n.t("home:portfolio.divider"), "Onchain-Produkte");
   assert.equal(documentStub.documentElement.lang, "de");
 });
@@ -82,7 +82,7 @@ test("an unsupported browser language renders English", async () => {
   await mod.initI18n();
 
   assert.equal(i18n.resolvedLanguage, "en");
-  assert.equal(i18n.t("chrome:nav.media"), "Media & Entertainment");
+  assert.equal(i18n.t("chrome:nav.media"), "Apps & Games");
   assert.equal(documentStub.documentElement.lang, "en");
 });
 
@@ -97,7 +97,7 @@ test("a switcher choice loads its lazy catalogue, translates and persists", asyn
 
   await mod.setLanguage("kk");
   assert.equal(i18n.resolvedLanguage, "kk");
-  assert.equal(i18n.t("chrome:nav.media"), "Медиа және ойын-сауық");
+  assert.equal(i18n.t("chrome:nav.media"), "Қолданбалар мен ойындар");
   assert.equal(i18n.t("home:portfolio.divider"), "Onchain өнімдер");
   assert.equal(documentStub.documentElement.lang, "kk");
   assert.equal(store.get("inferenco.locale"), "kk");
@@ -114,6 +114,8 @@ test("a switcher choice loads its lazy catalogue, translates and persists", asyn
   await mod.setLanguage("ar");
   assert.equal(documentStub.documentElement.lang, "ar");
   assert.equal(documentStub.documentElement.dir, "rtl");
+  assert.equal(i18n.t("media:showcase.collectionTitle"), "التطبيقات والألعاب");
+  assert.match(i18n.t("media:showcase.sound.screen1"), /القصّ والتلاشي التدريجي/u);
   await mod.setLanguage("de");
   assert.equal(documentStub.documentElement.lang, "de");
   assert.equal(documentStub.documentElement.dir, "ltr");

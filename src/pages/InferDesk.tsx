@@ -100,7 +100,7 @@ export default function InferDesk() {
   };
 
   return (
-    <div id="infer-desk-page" className="page-section" dir="ltr">
+    <div id="infer-desk-page" className="page-section" lang="en" dir="ltr">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>

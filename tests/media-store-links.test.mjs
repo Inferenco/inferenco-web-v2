@@ -9,6 +9,10 @@ import assert from "node:assert/strict";
 
 const data = readFileSync("src/data/mediaProducts.ts", "utf8");
 const page = readFileSync("src/pages/UtilityApps.tsx", "utf8");
+const showcase = readFileSync("src/components/ProductShowcase.tsx", "utf8");
+const product = readFileSync("src/pages/MediaProduct.tsx", "utf8");
+const presentation = readFileSync("src/data/productPresentation.ts", "utf8");
+const app = readFileSync("src/App.tsx", "utf8");
 
 const SOUND_APP_STORE = "https://apps.apple.com/app/sound-flipper/id6830835335";
 
@@ -52,15 +56,18 @@ test("iOS availability is expressed as data, not as invented links", () => {
   assert.ok(!resize.includes("apps.apple.com"), "Make My Image Fit must carry no App Store URL");
 });
 
-test("UtilityApps.tsx consumes mediaProducts instead of hardcoded URLs", () => {
-  assert.match(page, /import\s*\{[^}]*mediaProducts[^}]*\}\s*from\s*"\.\.\/data\/mediaProducts"/);
-  assert.match(page, /mediaProducts\.nemesis\.android/);
-  assert.match(page, /mediaProducts\.sound\.ios/);
-  assert.match(page, /mediaProducts\.resize\.android/);
-  assert.match(page, /type ActiveApp = "nemesis" \| /, "the ActiveApp union must include nemesis");
-  assert.match(page, /id="nemesis-go"/);
-  assert.match(page, /id="sound-flipper"/);
-  assert.match(page, /id="image-fit"/);
+test("the catalogue and dedicated routes share product IDs and platform data", () => {
+  assert.match(showcase, /mediaProducts\[product\]/);
+  assert.match(showcase, /ios === "coming-soon" \? null : ios/);
+  assert.match(page, /<ProductCard key=\{product\} product=\{product\}/);
+  assert.match(product, /<ProductPlatforms product=\{product\} links/);
+  assert.match(showcase, /id=\{anchor\}/);
+  for (const anchor of ["nemesis-go", "sound-flipper", "image-fit"]) {
+    assert.ok(presentation.includes('anchor: "' + anchor + '"'));
+  }
+  for (const slug of ["nemesis-go", "sound-flipper", "resize-and-compress"]) {
+    assert.ok(app.includes('path="games-and-apps/' + slug + '"'));
+  }
 });
 
 test("no apps.apple.com URL exists anywhere in src/ except Sound Flipper's", () => {
@@ -76,9 +83,4 @@ test("no apps.apple.com URL exists anywhere in src/ except Sound Flipper's", () 
   assert.ok(hits.length > 0, "the Sound Flipper App Store URL must exist somewhere in src/");
   assert.deepEqual(offenders, [], "unexpected App Store URL(s): " + offenders.join(", "));
 
-  // And neither product without an iOS build may link one from its own surface.
-  const nemesisBlock = page.slice(page.indexOf('id="nemesis-go"'), page.indexOf('id="sound-flipper"'));
-  const resizeBlock = page.slice(page.indexOf('id="image-fit"'));
-  assert.ok(!nemesisBlock.includes("apps.apple.com"), "Nemesis Go card must not link the App Store");
-  assert.ok(!resizeBlock.includes("apps.apple.com"), "Make My Image Fit card must not link the App Store");
 });

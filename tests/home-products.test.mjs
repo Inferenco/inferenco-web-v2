@@ -21,12 +21,15 @@ function homeCopy(file) {
   return JSON.stringify(catalogue.home ?? {});
 }
 
-test("Home links every product, including Utility Apps", () => {
-  const targets = ["/infer-desk", "/infer-wallet", "/games-and-apps", "/games-and-apps#sound-flipper", "/games-and-apps#image-fit", "/infer-mcp", "/docs#infer-connect-introduction"];
-  for (const target of targets) {
-    assert.ok(home.includes('to="' + target + '"'), "Home.tsx must link to " + target);
+test("Home showcases the apps and links every Onchain product", () => {
+  const onchainTargets = ["/infer-desk/", "/infer-wallet/", "/infer-mcp/", "/docs/#infer-connect-introduction", "https://app.inferenco.com", "/infer/"];
+  for (const target of onchainTargets) {
+    assert.ok(home.includes('path: "' + target + '"'), "Home.tsx must link to " + target);
   }
-  assert.ok(!/portfolio\.cards\.media/.test(home), "aggregate media card must be gone");
+  assert.match(home, /to=\{cataloguePath\}/);
+  assert.match(home, /to=\{nemesis\.path\}/);
+  assert.match(home, /<ProductCard product="sound"/);
+  assert.match(home, /<ProductCard product="resize"/);
 });
 
 test("Home no longer carries consulting or open-source messaging", () => {
@@ -82,15 +85,16 @@ test("Home section anchors and side-nav targets resolve to real ids", () => {
 test("Home Link targets exist as routes in App.tsx", () => {
   const routes = [...app.matchAll(/path="([^"]+)"/g)].map((m) => m[1]);
   for (const m of home.matchAll(/to="\/([^"#]+)/g)) {
-    const target = m[1];
+    const target = m[1].replace(/\/$/, "");
     const exists = routes.some((r) => r === target || r.startsWith(target + "/"));
     assert.ok(exists, 'Link to="/' + target + '" has no route in App.tsx');
   }
 });
 
-test("Utility Apps scrolls to hash targets on client-side navigation", () => {
-  const ua = readFileSync("src/pages/UtilityApps.tsx", "utf8");
-  assert.match(ua, /useLocation/);
-  assert.match(ua, /location\.hash/);
-  assert.match(ua, /scrollIntoView/);
+test("shared route scroll restores history and resolves client-side hash targets", () => {
+  const layout = readFileSync("src/components/Layout.tsx", "utf8");
+  assert.match(layout, /useLocation/);
+  assert.match(layout, /getElementById\(hash\.slice\(1\)\)/);
+  assert.match(layout, /scrollIntoView/);
+  assert.match(layout, /navigationType === "POP"/);
 });
