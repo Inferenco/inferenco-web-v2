@@ -867,10 +867,10 @@ html.light .mobile-dropdown-content {
      lowers demand, and the unmeasured ones are the same shape (kk is the
      longest of them, "Медиа және ойын-сауық", estimated ~1089px unreduced —
      i.e. marginal at 1280 and covered by the same 36px).
-   The 1299px ceiling is deliberate: at >=1300px the unreduced row fits, so the
-   desktop bar keeps its 2rem rhythm there. Crossing 1300px therefore changes
-   the nav gap by 36px total — visible only to someone resizing across the
-   boundary, and cheaper than hiding the social cluster at 1280-1299. */
+   The 1299px ceiling was originally chosen on the assumption that at >=1300px
+   the unreduced row fits — kk disproved that (wider default fonts overflow the
+   budget), so the >=1300px block below now extends the same tightening and
+   hides the social cluster there too. The 1025-1299 band itself is unchanged. */
 @media (min-width: 1025px) and (max-width: 1299px) {
     .nav-links {
         gap: 1.25rem;
@@ -882,6 +882,25 @@ html.light .mobile-dropdown-content {
     .nav-links .nav-link,
     .nav-links .dropdown-toggle {
         white-space: nowrap;
+    }
+}
+
+/* Wide desktop (>=1300px): the unreduced 2rem row fits en/ja but NOT kk with
+   wider default fonts (DejaVu renders "Медиа және ойын-сауық" ~27px wider,
+   overflowing the fixed 1136px budget and wrapping the bar to 97px). Extend
+   the band's two levers here and reclaim the 328px social cluster (social
+   lives in the footer + mobile menu). Keeps the <=1279 social guard and the
+   1025-1299 band above untouched. */
+@media (min-width: 1300px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+    .nav-links .nav-link,
+    .nav-links .dropdown-toggle {
+        white-space: nowrap;
+    }
+    .nav-social {
+        display: none;
     }
 }
 
