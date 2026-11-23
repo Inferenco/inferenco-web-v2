@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Inicio",
-      "media": "Medios y Entretenimiento",
+      "media": "Multimedia y Ocio",
       "blogs": "Blogs",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Juegos, medios y apps del día a día — desarrollados internamente.",
-      "mediaColumn": "Medios y Entretenimiento",
+      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente.",
+      "mediaColumn": "Multimedia y Ocio",
       "allApps": "Todas las apps",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -93,14 +93,14 @@
       "pillsAria": "Productos de Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Medios y Entretenimiento",
+      "pillMedia": "Multimedia y Ocio",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contacto"
     },
     "portfolio": {
       "title": "Nuestros <span>Productos</span>",
-      "subtitle": "Todo lo que desarrollamos y publicamos nosotros mismos: juegos, herramientas de medios, wallets y utilidades para desarrolladores",
+      "subtitle": "Todo lo que desarrollamos y publicamos nosotros mismos: juegos, herramientas multimedia, wallets y utilidades para desarrolladores",
       "divider": "Productos Onchain",
       "learnMore": "Saber más",
       "readDocs": "Leer la documentación",
@@ -197,11 +197,11 @@
     "about": {
       "title": "Sobre <span>Inferenco</span> – El equipo detrás de los productos",
       "p1": "<strong>Inferenco</strong> es una empresa de software surgida de la colaboración entre <strong>Singularity Shift Ltd</strong> y <strong>Spielcrypto Ltd</strong>. Construimos productos, no proyectos de clientes: todo lo que hay en este sitio lo diseñamos, desarrollamos y publicamos nosotros.",
-      "p2": "Nuestra línea de productos empieza con juegos y apps de medios de uso diario y llega hasta wallets onchain, dApps y herramientas para desarrolladores, todo respaldado por revisiones de seguridad y versiones firmadas.",
+      "p2": "Nuestra línea de productos empieza con juegos y apps multimedia de uso diario y llega hasta wallets onchain, dApps y herramientas para desarrolladores, todo respaldado por revisiones de seguridad y versiones firmadas.",
       "p3": "Cada producto lo mantiene el mismo equipo que lo escribió, con documentación, guías de instalación y un canal directo con los desarrolladores.",
       "buildHeading": "Qué construimos:",
       "build": {
-        "gamesMedia": "Juegos móviles y apps de medios",
+        "gamesMedia": "Juegos móviles y apps multimedia",
         "browserUtilities": "Utilidades gratuitas de navegador",
         "wallets": "Wallets de escritorio y móviles",
         "onchainCedra": "Productos onchain para Cedra (wallets, dApps y adaptador)",
@@ -277,8 +277,8 @@
   },
   "media": {
     "hero": {
-      "title": "Medios y Entretenimiento",
-      "tagline": "Juegos, herramientas de medios y apps del día a día — desarrollados internamente por nuestro propio equipo.",
+      "title": "Multimedia y Ocio",
+      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente por nuestro propio equipo.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"

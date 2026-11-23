@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Início",
-      "media": "Mídia e Entretenimento",
+      "media": "Multimídia e Lazer",
       "blogs": "Blogs",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Jogos, mídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
-      "mediaColumn": "Mídia e Entretenimento",
+      "tagline": "Jogos, multimídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
+      "mediaColumn": "Multimídia e Lazer",
       "allApps": "Todos os aplicativos",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -89,18 +89,18 @@
     "hero": {
       "logoAlt": "Logo da Inferenco",
       "title": "Jogos e aplicativos do dia a dia, feitos pela nossa equipe",
-      "tagline": "A gente projeta, constrói e lança os nossos próprios produtos — de jogos para celular e ferramentas de mídia do dia a dia a carteiras onchain e ferramentas para desenvolvedores.",
+      "tagline": "A gente projeta, constrói e lança os nossos próprios produtos — de jogos para celular e ferramentas multimídia do dia a dia a carteiras onchain e ferramentas para desenvolvedores.",
       "pillsAria": "Produtos da Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Mídia e Entretenimento",
+      "pillMedia": "Multimídia e Lazer",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contato"
     },
     "portfolio": {
       "title": "Nossos <span>produtos</span>",
-      "subtitle": "Tudo o que a gente constrói e lança — jogos, ferramentas de mídia, carteiras e ferramentas para desenvolvedores",
+      "subtitle": "Tudo o que a gente constrói e lança — jogos, ferramentas multimídia, carteiras e ferramentas para desenvolvedores",
       "divider": "Produtos Onchain",
       "learnMore": "Saiba mais",
       "readDocs": "Ler a documentação",
@@ -197,11 +197,11 @@
     "about": {
       "title": "Sobre a <span>Inferenco</span> – a equipe por trás dos produtos",
       "p1": "A <strong>Inferenco</strong> é uma empresa de software que nasceu da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. A gente faz produtos, não projetos para clientes — tudo o que você vê neste site foi projetado, construído e lançado por nós.",
-      "p2": "Nossa linha de produtos começa com jogos e aplicativos de mídia do dia a dia e vai até carteiras onchain, dApps e ferramentas para desenvolvedores — tudo com revisões de segurança e releases assinados.",
+      "p2": "Nossa linha de produtos começa com jogos e aplicativos multimídia do dia a dia e vai até carteiras onchain, dApps e ferramentas para desenvolvedores — tudo com revisões de segurança e releases assinados.",
       "p3": "Cada produto é mantido pela mesma equipe que o escreveu — com documentação, guias de instalação e um canal direto com os desenvolvedores.",
       "buildHeading": "O que a gente constrói:",
       "build": {
-        "gamesMedia": "Jogos para celular e apps de mídia",
+        "gamesMedia": "Jogos para celular e apps multimídia",
         "browserUtilities": "Ferramentas gratuitas no navegador",
         "wallets": "Carteiras para computador e celular",
         "onchainCedra": "Produtos onchain para a Cedra (carteiras, dApps e adaptador)",
@@ -277,8 +277,8 @@
   },
   "media": {
     "hero": {
-      "title": "Mídia e Entretenimento",
-      "tagline": "Jogos, ferramentas de mídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
+      "title": "Multimídia e Lazer",
+      "tagline": "Jogos, ferramentas multimídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"

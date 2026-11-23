@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Início",
-      "media": "Media e Entretenimento",
+      "media": "Multimédia e Lazer",
       "blogs": "Blogues",
       "onchain": "Onchain",
       "docs": "Documentação"
@@ -39,8 +39,8 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Jogos, media e aplicações do dia a dia — desenvolvidos internamente.",
-      "mediaColumn": "Media e Entretenimento",
+      "tagline": "Jogos, multimédia e aplicações do dia a dia — desenvolvidos internamente.",
+      "mediaColumn": "Multimédia e Lazer",
       "allApps": "Todas as aplicações",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -89,18 +89,18 @@
     "hero": {
       "logoAlt": "Logótipo da Inferenco",
       "title": "Jogos e aplicações do dia a dia, desenvolvidos internamente",
-      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários de media aos portefólios onchain e ferramentas para programadores.",
+      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários multimédia aos portefólios onchain e ferramentas para programadores.",
       "pillsAria": "Produtos da Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Media e Entretenimento",
+      "pillMedia": "Multimédia e Lazer",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contactos"
     },
     "portfolio": {
       "title": "Os nossos <span>produtos</span>",
-      "subtitle": "Tudo o que desenvolvemos e publicamos — jogos, utilitários de media, portefólios e ferramentas para programadores",
+      "subtitle": "Tudo o que desenvolvemos e publicamos — jogos, utilitários multimédia, portefólios e ferramentas para programadores",
       "divider": "Produtos Onchain",
       "learnMore": "Saber mais",
       "readDocs": "Ler a documentação",
@@ -197,11 +197,11 @@
     "about": {
       "title": "Sobre a <span>Inferenco</span> – a equipa por trás dos produtos",
       "p1": "A <strong>Inferenco</strong> é uma empresa de software nascida da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. Desenvolvemos produtos, não projetos por encomenda — tudo o que vê neste site é desenhado, desenvolvido e publicado por nós.",
-      "p2": "A nossa linha de produtos começa nos jogos e nas aplicações de media do dia a dia e estende-se aos portefólios onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
+      "p2": "A nossa linha de produtos começa nos jogos e nas aplicações multimédia do dia a dia e estende-se aos portefólios onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
       "p3": "Cada produto é mantido pela mesma equipa que o escreveu — com documentação, guias de instalação e um contacto direto com os programadores.",
       "buildHeading": "O que desenvolvemos:",
       "build": {
-        "gamesMedia": "Jogos móveis e aplicações de media",
+        "gamesMedia": "Jogos móveis e aplicações multimédia",
         "browserUtilities": "Utilitários gratuitos no navegador",
         "wallets": "Portefólios para computador e móvel",
         "onchainCedra": "Produtos onchain para a Cedra (portefólios, dApps e adaptador)",
@@ -277,8 +277,8 @@
   },
   "media": {
     "hero": {
-      "title": "Media e Entretenimento",
-      "tagline": "Jogos, utilitários de media e aplicações do dia a dia — desenvolvidos pela nossa própria equipa.",
+      "title": "Multimédia e Lazer",
+      "tagline": "Jogos, utilitários multimédia e aplicações do dia a dia — desenvolvidos pela nossa própria equipa.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"

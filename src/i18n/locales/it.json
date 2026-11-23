@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Home",
-      "media": "Media e Intrattenimento",
+      "media": "Multimedia e Svago",
       "blogs": "Blog",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Lingua"
     },
     "footer": {
-      "tagline": "Giochi, media e app di tutti i giorni — sviluppate internamente.",
-      "mediaColumn": "Media e Intrattenimento",
+      "tagline": "Giochi, multimedia e app di tutti i giorni — sviluppate internamente.",
+      "mediaColumn": "Multimedia e Svago",
       "allApps": "Tutte le app",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -93,7 +93,7 @@
       "pillsAria": "Prodotti Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Media e Intrattenimento",
+      "pillMedia": "Multimedia e Svago",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contatti"
@@ -277,7 +277,7 @@
   },
   "media": {
     "hero": {
-      "title": "Media e Intrattenimento",
+      "title": "Multimedia e Svago",
       "tagline": "Giochi, strumenti multimediali e app di tutti i giorni — sviluppate internamente dal nostro team.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
