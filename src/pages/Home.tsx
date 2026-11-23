@@ -183,21 +183,48 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Media & Entertainment Card */}
+            {/* Sound Flipper Card */}
             <div className="feature-card portfolio-card">
               <img
-                src="/assets/logos/flame.png"
-                alt={t("portfolio.cards.media.alt")}
-                className="portfolio-logo"
+                src="/img/infer-ecosystem/utility-apps/sound-flipper.png"
+                alt={t("portfolio.cards.sound.alt")}
+                className="media-app-icon"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="630"
               />
-              <h4>{t("portfolio.cards.media.name")}</h4>
-              <p>{t("portfolio.cards.media.blurb")}</p>
+              <h4>{t("portfolio.cards.sound.name")}</h4>
+              <p>{t("portfolio.cards.sound.blurb")}</p>
               <div className="portfolio-tags">
-                {tags("portfolio.cards.media.tags").map((tag) => (
+                {tags("portfolio.cards.sound.tags").map((tag) => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
-              <Link to="/utility-apps" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/utility-apps#sound-flipper" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
+                {t("portfolio.learnMore")}
+              </Link>
+            </div>
+
+            {/* Make My Image Fit Card */}
+            <div className="feature-card portfolio-card">
+              <img
+                src="/img/infer-ecosystem/utility-apps/resize-and-compress-image.png"
+                alt={t("portfolio.cards.image.alt")}
+                className="media-app-icon"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="630"
+              />
+              <h4>{t("portfolio.cards.image.name")}</h4>
+              <p>{t("portfolio.cards.image.blurb")}</p>
+              <div className="portfolio-tags">
+                {tags("portfolio.cards.image.tags").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <Link to="/utility-apps#image-fit" className="cta-button" style={{ marginTop: "1rem" }} onClick={() => window.scrollTo(0, 0)}>
                 {t("portfolio.learnMore")}
               </Link>
             </div>
@@ -361,39 +388,9 @@ export default function Home() {
           <p className="section-subtitle">{t("services.subtitle")}</p>
           <div className="features-grid">
             <div className="feature-card">
-              <span className="emoji">♟️</span>
-              <h4>{t("services.nemesis.title")}</h4>
-              <p>{t("services.nemesis.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🖼️</span>
-              <h4>{t("services.fixFiles.title")}</h4>
-              <p>{t("services.fixFiles.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">💻</span>
-              <h4>{t("services.desk.title")}</h4>
-              <p>{t("services.desk.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">📱</span>
-              <h4>{t("services.wallet.title")}</h4>
-              <p>{t("services.wallet.text")}</p>
-            </div>
-            <div className="feature-card">
               <span className="emoji">🤖</span>
               <h4>{t("services.agents.title")}</h4>
               <p>{t("services.agents.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🔗</span>
-              <h4>{t("services.dapps.title")}</h4>
-              <p>{t("services.dapps.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🎮</span>
-              <h4>{t("services.ecosystem.title")}</h4>
-              <p>{t("services.ecosystem.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🔐</span>

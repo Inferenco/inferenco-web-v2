@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { mediaProducts } from "../data/mediaProducts";
 
 type ActiveApp = "nemesis" | "resize" | "sound" | null;
@@ -35,6 +36,19 @@ const apps = {
 
 export default function UtilityApps() {
   const { t } = useTranslation("media");
+  const location = useLocation();
+
+  // Client-side navigation (e.g. Home card CTAs) does not trigger the
+  // browser's native fragment scroll — do it after render. The cards'
+  // scroll-margin-top: 96px clears the fixed navbar automatically.
+  useEffect(() => {
+    if (!location.hash) return;
+    const target = document.getElementById(location.hash.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+  }, [location.hash]);
+
   const [activeApp, setActiveApp] = useState<ActiveApp>(null);
 
   const close = () => setActiveApp(null);

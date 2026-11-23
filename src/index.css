@@ -1129,6 +1129,7 @@ html.light .hero::after {
     #home-page .section-subtitle { font-size: 1.1rem; }
     #home-page .section-subtitle { margin-bottom: 1rem; }
     #home-page #portfolio .container { max-width: 1180px; }
+    #home-page #services .container { max-width: 1180px; }
 }
 
 /* Smaller hero logo on mobile keeps the 80vh hero from overflowing

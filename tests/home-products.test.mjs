@@ -22,10 +22,11 @@ function homeCopy(file) {
 }
 
 test("Home links every product, including Utility Apps", () => {
-  const targets = ["/infer-desk", "/infer-wallet", "/utility-apps", "/infer-mcp", "/docs#infer-connect-introduction"];
+  const targets = ["/infer-desk", "/infer-wallet", "/utility-apps", "/utility-apps#sound-flipper", "/utility-apps#image-fit", "/infer-mcp", "/docs#infer-connect-introduction"];
   for (const target of targets) {
     assert.ok(home.includes('to="' + target + '"'), "Home.tsx must link to " + target);
   }
+  assert.ok(!/portfolio\.cards\.media/.test(home), "aggregate media card must be gone");
 });
 
 test("Home no longer carries consulting or open-source messaging", () => {
@@ -85,4 +86,11 @@ test("Home Link targets exist as routes in App.tsx", () => {
     const exists = routes.some((r) => r === target || r.startsWith(target + "/"));
     assert.ok(exists, 'Link to="/' + target + '" has no route in App.tsx');
   }
+});
+
+test("Utility Apps scrolls to hash targets on client-side navigation", () => {
+  const ua = readFileSync("src/pages/UtilityApps.tsx", "utf8");
+  assert.match(ua, /useLocation/);
+  assert.match(ua, /location\.hash/);
+  assert.match(ua, /scrollIntoView/);
 });

@@ -213,3 +213,24 @@ test("Trans markup tags survive translation", () => {
     }
   }
 });
+
+test("the five Romance locales no longer use press/news-media terms for the category", () => {
+  const PRESS = {
+    es: /\bmedios\b/i,
+    fr: /\bmédias?\b/i,
+    it: /\bmedia\b/i,
+    "pt-BR": /\bmídias?\b/i,
+    "pt-PT": /\bmedia\b/i,
+  };
+  const values = (o, out = []) => {
+    if (Array.isArray(o)) o.forEach((v) => values(v, out));
+    else if (o && typeof o === "object") Object.values(o).forEach((v) => values(v, out));
+    else if (typeof o === "string") out.push(o);
+    return out;
+  };
+  for (const [code, rx] of Object.entries(PRESS)) {
+    for (const v of values(catalogue(code))) {
+      assert.ok(!rx.test(v), `${code}.json value must not use press-media term ${rx}: ${v}`);
+    }
+  }
+});

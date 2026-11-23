@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Home",
-      "media": "Media e Intrattenimento",
+      "media": "Multimedia e Svago",
       "blogs": "Blog",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Lingua"
     },
     "footer": {
-      "tagline": "Giochi, media e app di tutti i giorni — sviluppate internamente.",
-      "mediaColumn": "Media e Intrattenimento",
+      "tagline": "Giochi, strumenti multimediali e app di tutti i giorni — sviluppati internamente.",
+      "mediaColumn": "Multimedia e Svago",
       "allApps": "Tutte le app",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -88,12 +88,12 @@
     },
     "hero": {
       "logoAlt": "Logo Inferenco",
-      "title": "Giochi e app di tutti i giorni, sviluppate internamente",
+      "title": "Giochi e app di tutti i giorni, sviluppati internamente",
       "tagline": "Progettiamo, sviluppiamo e pubblichiamo i nostri prodotti — dai giochi per dispositivi mobili e gli strumenti multimediali quotidiani ai wallet onchain e agli strumenti per sviluppatori.",
       "pillsAria": "Prodotti Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Media e Intrattenimento",
+      "pillMedia": "Multimedia e Svago",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contatti"
@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Icona dell'app Nemesis Go",
-          "blurb": "Un gioco di Go 9×9 per Android con un avversario IA offline che gira sul dispositivo e analisi delle mosse. Nessun account necessario, e le partite salvate e le preferenze restano sul tuo dispositivo.",
+          "blurb": "Gioca a Go 9×9 contro un'IA che gira interamente sul tuo dispositivo Android. Nessun account necessario.",
           "tags": [
             "Gioco mobile",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS in arrivo"
           ]
         },
-        "media": {
-          "name": "Media e Intrattenimento",
-          "alt": "Logo Media e Intrattenimento",
-          "blurb": "I nostri giochi e le nostre app di tutti i giorni — Nemesis Go per Android, Make My Image Fit per ridimensionare e comprimere immagini, e Sound Flipper per convertire audio. Gli strumenti web funzionano interamente nel tuo browser: nessun caricamento, nessun account, nessuna installazione.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Schermata di Sound Flipper",
+          "blurb": "Converti l'audio tra MP3, WAV, FLAC e altro — gratuito, privato e interamente sul tuo dispositivo.",
           "tags": [
-            "Gioco mobile",
-            "Strumenti web",
+            "Convertitore audio",
+            "Strumento web",
             "Gratuito",
-            "Sul dispositivo",
-            "Privacy prima di tutto"
+            "Sul dispositivo"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Schermata di Make My Image Fit",
+          "blurb": "Ridimensiona e comprimi le immagini per rispettare qualsiasi limite di caricamento — gratuito, privato e sul dispositivo.",
+          "tags": [
+            "Utilità immagini",
+            "Strumento web",
+            "Gratuito",
+            "Sul dispositivo"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Logo Infer Desk",
-          "blurb": "Applicazione desktop per le interazioni con la blockchain Cedra e la gestione dei flussi di lavoro. Multi-piattaforma, sicura e pensata per utenti professionali e aziende.",
+          "blurb": "Wallet desktop per Cedra — invia, ricevi, scambia e gestisci token e NFT in sicurezza.",
           "tags": [
             "App desktop",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logo Infer Wallet",
-          "blurb": "Wallet di criptovalute per dispositivi mobili costruito sulla blockchain Cedra. Gestione sicura degli asset con swap integrati, integrazioni DeFi e sicurezza di livello aziendale.",
+          "blurb": "Wallet mobile per Cedra con swap integrati, accesso DeFi e protezione biometrica.",
           "tags": [
             "App mobile",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logo Infer MCP",
-          "blurb": "Il server del Model Context Protocol che consente agli agenti di coding IA di operare il wallet Infer Desk — connettersi, verificare lo stato e inviare trasferimenti di token digitati, con ogni azione sensibile approvata sullo schermo del wallet.",
+          "blurb": "Consente agli agenti di coding IA di operare sul tuo wallet Infer Desk, con approvazione sullo schermo.",
           "tags": [
             "MCP",
             "Agenti IA",
@@ -163,9 +173,9 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logo Infer Connect",
-          "blurb": "L'adapter wallet standard che collega le dApps Cedra a Infer Desk e Infer Wallet — connessione, firma delle transazioni e firma dei messaggi attraverso una sola integrazione a plugin.",
+          "blurb": "Collega le dApps di Cedra a Infer Desk e Infer Wallet per firme e transazioni.",
           "tags": [
-            "Adapter wallet",
+            "Adattatore wallet",
             "dApps",
             "AIP-62"
           ]
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Logo Infer Ecosystem",
-          "blurb": "dApp basata su browser per la rete Cedra con gestione di eventi, hub di gioco con poker e casinò e strumenti per la community. Costruita con React e smart contract Move per un'esperienza Web3 senza attriti.",
+          "blurb": "Eventi, gaming e strumenti per la community sulla rete Cedra — nel tuo browser.",
           "tags": [
             "dApp",
             "Cedra",
@@ -185,7 +195,7 @@
       }
     },
     "about": {
-      "title": "Su <span>Inferenco</span> – Il team dietro i prodotti",
+      "title": "Chi è <span>Inferenco</span> – Il team dietro i prodotti",
       "p1": "<strong>Inferenco</strong> è una software company nata dalla collaborazione tra <strong>Singularity Shift Ltd</strong> e <strong>Spielcrypto Ltd</strong>. Costruiamo prodotti, non progetti per clienti — tutto ciò che vedi su questo sito è progettato, sviluppato e pubblicato da noi.",
       "p2": "La nostra linea di prodotti parte dai giochi e dalle app multimediali di tutti i giorni e arriva ai wallet onchain, alle dApps e agli strumenti per sviluppatori — il tutto supportato da verifiche di sicurezza e release firmate.",
       "p3": "Ogni prodotto è mantenuto dallo stesso team che lo ha scritto — con documentazione, guide di installazione e un canale diretto con gli sviluppatori.",
@@ -194,7 +204,7 @@
         "gamesMedia": "Giochi mobili e app multimediali",
         "browserUtilities": "Utilità gratuite nel browser",
         "wallets": "Wallet desktop e mobili",
-        "onchainCedra": "Prodotti on-chain per Cedra (wallet, dApps e adapter)",
+        "onchainCedra": "Prodotti onchain per Cedra (wallet, dApps e adapter)",
         "devTooling": "Strumenti per sviluppatori e integrazioni MCP",
         "ai": "Assistenti basati su IA",
         "security": "Verifiche di sicurezza e release firmate"
@@ -203,33 +213,9 @@
     "services": {
       "title": "<span>Funzionalità</span> dei prodotti",
       "subtitle": "Cosa offrono i nostri prodotti fin da subito",
-      "nemesis": {
-        "title": "Gioca a Go contro un'IA locale",
-        "text": "Nemesis Go è un gioco di Go 9×9 per Android il cui avversario e la cui analisi delle mosse girano entrambi sul tuo dispositivo — senza account, e funziona offline."
-      },
-      "fixFiles": {
-        "title": "Sistema i file senza caricarli",
-        "text": "Make My Image Fit e Sound Flipper ridimensionano, comprimono e convertono interamente sul tuo dispositivo — nulla viene caricato."
-      },
-      "desk": {
-        "title": "Gestisci gli asset con Infer Desk",
-        "text": "Un wallet desktop per Cedra: invia, ricevi, scambia e gestisci token e NFT con sicurezza di livello aziendale."
-      },
-      "wallet": {
-        "title": "Porta il wallet ovunque",
-        "text": "Infer Wallet porta Cedra sul mobile con protezione biometrica, swap integrati e integrazioni DeFi."
-      },
       "agents": {
         "title": "Lascia lavorare gli agenti IA",
-        "text": "Infer MCP collega gli agenti di coding IA al tuo wallet Infer Desk, con ogni azione sensibile approvata sullo schermo."
-      },
-      "dapps": {
-        "title": "Collega le dApps in un clic",
-        "text": "Infer Connect offre alle dApps Cedra un adapter wallet standard per connessioni, firma delle transazioni e firma dei messaggi."
-      },
-      "ecosystem": {
-        "title": "Gioca e connettiti nell'Ecosystem",
-        "text": "La dApp Infer Ecosystem offre gestione di eventi, un hub di gioco e strumenti per la community sulla rete Cedra."
+        "text": "Gli agenti di coding ottengono strumenti wallet tipizzati e controlli di stato, mentre tu approvi ogni azione sensibile sullo schermo."
       },
       "security": {
         "title": "Sicurezza prima di tutto, per impostazione predefinita",
@@ -246,7 +232,7 @@
       "steps": {
         "scope": {
           "title": "Definiamo il perimetro",
-          "text": "Ogni prodotto nasce come un'idea mirata: un compito, fatto bene, senza gonfiamento di funzionalità."
+          "text": "Ogni prodotto nasce come un'idea mirata: un compito, fatto bene, senza funzionalità superflue."
         },
         "build": {
           "title": "Sviluppiamo internamente",
@@ -254,7 +240,7 @@
         },
         "review": {
           "title": "Lo sottoponiamo a verifica di sicurezza",
-          "text": "Le nuove release del wallet e del bridge passano audit e verifiche interne prima che venga pubblicato qualsiasi cosa."
+          "text": "Le nuove release del wallet e del bridge passano audit e verifiche interne prima che venga pubblicata qualsiasi cosa."
         },
         "sign": {
           "title": "Firmiamo e pubblichiamo",
@@ -291,8 +277,8 @@
   },
   "media": {
     "hero": {
-      "title": "Media e Intrattenimento",
-      "tagline": "Giochi, strumenti multimediali e app di tutti i giorni — sviluppate internamente dal nostro team.",
+      "title": "Multimedia e Svago",
+      "tagline": "Giochi, strumenti multimediali e app di tutti i giorni — sviluppati internamente dal nostro team.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
@@ -341,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go è un gioco di Go 9×9 per Android che gira interamente sul tuo dispositivo. L'avversario informatico e l'analisi alla base dei suggerimenti di mossa funzionano offline, quindi puoi giocare ovunque senza account e senza connessione. Le partite salvate, i risultati recenti e le preferenze sono conservati sul dispositivo: puoi chiudere l'app a partita in corso e riprendere lo stesso tabellone più tardi. Il gioco è gratuito e sostenuto da pubblicità mostrate tra una partita e l'altra; puoi anche scegliere di guardare una pubblicità quando vuoi un indizio o per annullare la tua ultima mossa. Un abbonamento mensile opzionale per rimuovere la pubblicità disattiva gli annunci in-app e dà accesso diretto a Indizio e Annulla.",
+        "long": "Nemesis Go è un gioco di Go 9×9 per Android che gira interamente sul tuo dispositivo. L'avversario informatico e l'analisi alla base dei suggerimenti di mossa funzionano offline, quindi puoi giocare ovunque senza account e senza connessione. Le partite salvate, i risultati recenti e le preferenze sono conservati sul dispositivo: puoi chiudere l'app a partita in corso e riprendere lo stesso tabellone più tardi. Il gioco è gratuito e sostenuto da pubblicità mostrate tra una partita e l'altra; puoi anche scegliere di guardare una pubblicità quando vuoi un indizio o annullare la tua ultima mossa. Un abbonamento mensile opzionale per rimuovere la pubblicità disattiva gli annunci in-app e dà accesso diretto a Indizio e Annulla.",
         "features": [
           "9×9 Go",
           "IA offline sul dispositivo",
@@ -398,8 +384,8 @@
       "fetchError": "Impossibile caricare i blog"
     },
     "single": {
-      "loading": "Caricamento dell articolo del blog...",
-      "error": "Errore nel caricamento dell articolo: {{error}}",
+      "loading": "Caricamento dell'articolo del blog...",
+      "error": "Errore nel caricamento dell'articolo: {{error}}",
       "notFound": "Articolo del blog non trovato.",
       "backToBlogs": "Torna ai blog",
       "backArrow": "← Torna ai blog",
@@ -407,7 +393,7 @@
       "published": "Pubblicato: {{date}}",
       "gallery": "Galleria",
       "blogImage": "Immagine del blog",
-      "fetchError": "Impossibile caricare l articolo"
+      "fetchError": "Impossibile caricare l'articolo"
     }
   }
 }

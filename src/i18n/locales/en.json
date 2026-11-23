@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Nemesis Go app icon",
-          "blurb": "A 9×9 Go game for Android with an offline, on-device AI opponent and move analysis. No account needed, and your saved games and preferences stay on your device.",
+          "blurb": "Play 9×9 Go against an AI that runs entirely on your Android device. No account needed.",
           "tags": [
             "Mobile Game",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS coming soon"
           ]
         },
-        "media": {
-          "name": "Media & Entertainment",
-          "alt": "Media & Entertainment logo",
-          "blurb": "Our games and everyday apps — Nemesis Go for Android, Make My Image Fit for resizing and compressing images, and Sound Flipper for converting audio. The web tools run entirely in your browser: no uploads, no accounts, no installs.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Sound Flipper screenshot",
+          "blurb": "Convert audio between MP3, WAV, FLAC, and more — free, private, and entirely on-device.",
           "tags": [
-            "Mobile Game",
-            "Web Tools",
+            "Audio Converter",
+            "Web Tool",
             "Free",
-            "On-Device",
-            "Privacy-First"
+            "On-Device"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Make My Image Fit screenshot",
+          "blurb": "Resize and compress images to fit any upload limit — free, private, and on-device.",
+          "tags": [
+            "Image Utility",
+            "Web Tool",
+            "Free",
+            "On-Device"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer Desk logo",
-          "blurb": "Desktop application for Cedra blockchain interactions and workflow management. Cross-platform, secure, and built for professional users and enterprises.",
+          "blurb": "Desktop wallet for Cedra — send, receive, swap, and manage tokens and NFTs securely.",
           "tags": [
             "Desktop App",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer Wallet logo",
-          "blurb": "Cryptocurrency wallet for mobile devices built on the Cedra blockchain. Secure asset management with built-in swaps, DeFi integrations, and enterprise-grade security.",
+          "blurb": "Mobile wallet for Cedra with built-in swaps, DeFi access, and biometric protection.",
           "tags": [
             "Mobile App",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP logo",
-          "blurb": "The Model Context Protocol server that lets AI coding agents operate the Infer Desk wallet — connect, check health, and submit typed token transfers, with every sensitive action approved on the wallet's screen.",
+          "blurb": "Lets AI coding agents operate your Infer Desk wallet, with on-screen approval.",
           "tags": [
             "MCP",
             "AI Agents",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Infer Connect logo",
-          "blurb": "The wallet-standard adapter that connects Cedra dApps to Infer Desk and Infer Wallet — connection, transaction signing, and message signing through one plugin-style integration.",
+          "blurb": "Connect Cedra dApps to Infer Desk and Infer Wallet for signing and transactions.",
           "tags": [
             "Wallet Adapter",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem logo",
-          "blurb": "Browser-based dApp for the Cedra Network featuring events management, gaming hub with poker and casino, and community tools. Built with React and Move smart contracts for a seamless Web3 experience.",
+          "blurb": "Events, gaming, and community tools on the Cedra Network — in your browser.",
           "tags": [
             "dApp",
             "Cedra",
@@ -203,33 +213,9 @@
     "services": {
       "title": "Product <span>Capabilities</span>",
       "subtitle": "What our products deliver out of the box",
-      "nemesis": {
-        "title": "Play Go Against an On-Device AI",
-        "text": "Nemesis Go is a 9×9 Go game for Android whose opponent and move analysis both run on your device — no account, and it works offline."
-      },
-      "fixFiles": {
-        "title": "Fix Files Without Uploads",
-        "text": "Make My Image Fit and Sound Flipper resize, compress, and convert entirely on your device — nothing is uploaded."
-      },
-      "desk": {
-        "title": "Manage Assets with Infer Desk",
-        "text": "A desktop wallet for Cedra: send, receive, swap, and manage tokens and NFTs with enterprise-grade security."
-      },
-      "wallet": {
-        "title": "Take Your Wallet Anywhere",
-        "text": "Infer Wallet brings Cedra to mobile with biometric protection, built-in swaps, and DeFi integrations."
-      },
       "agents": {
         "title": "Let AI Agents Do the Work",
-        "text": "Infer MCP connects AI coding agents to your Infer Desk wallet, with every sensitive action approved on-screen."
-      },
-      "dapps": {
-        "title": "Connect dApps in One Click",
-        "text": "Infer Connect gives Cedra dApps a standard wallet adapter for connections, transaction signing, and message signing."
-      },
-      "ecosystem": {
-        "title": "Play and Connect in the Ecosystem",
-        "text": "The Infer Ecosystem dApp offers events management, a gaming hub, and community tools on the Cedra Network."
+        "text": "Coding agents get typed wallet tools and health checks, while you approve every sensitive action on-screen."
       },
       "security": {
         "title": "Security-First by Default",

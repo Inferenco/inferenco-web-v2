@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Inicio",
-      "media": "Medios y Entretenimiento",
+      "media": "Multimedia y Ocio",
       "blogs": "Blogs",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Juegos, medios y apps del día a día — desarrollados internamente.",
-      "mediaColumn": "Medios y Entretenimiento",
+      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente.",
+      "mediaColumn": "Multimedia y Ocio",
       "allApps": "Todas las apps",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -67,7 +67,7 @@
     },
     "notFound": {
       "title": "Página no encontrada",
-      "text": "La página que busca no existe. Puede que se haya movido durante el cambio de Nova a Infer, o que el enlace esté obsoleto.",
+      "text": "La página que buscas no existe. Puede que se haya movido durante el cambio de Nova a Infer, o que el enlace esté obsoleto.",
       "goHome": "Ir al inicio",
       "browseDocs": "Ver la documentación"
     }
@@ -93,14 +93,14 @@
       "pillsAria": "Productos de Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Medios y Entretenimiento",
+      "pillMedia": "Multimedia y Ocio",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contacto"
     },
     "portfolio": {
       "title": "Nuestros <span>Productos</span>",
-      "subtitle": "Todo lo que desarrollamos y publicamos nosotros mismos: juegos, herramientas de medios, wallets y utilidades para desarrolladores",
+      "subtitle": "Todo lo que desarrollamos y publicamos nosotros mismos: juegos, herramientas multimedia, wallets y utilidades para desarrolladores",
       "divider": "Productos Onchain",
       "learnMore": "Saber más",
       "readDocs": "Leer la documentación",
@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Icono de la app Nemesis Go",
-          "blurb": "Un juego de Go 9×9 para Android con un rival de IA sin conexión que se ejecuta en su dispositivo y análisis de jugadas. No necesita cuenta, y sus partidas guardadas y preferencias permanecen en su dispositivo.",
+          "blurb": "Juega al Go 9×9 contra una IA que se ejecuta por completo en tu dispositivo Android. No necesitas cuenta.",
           "tags": [
             "Juego móvil",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS próximamente"
           ]
         },
-        "media": {
-          "name": "Medios y Entretenimiento",
-          "alt": "Logotipo de Medios y Entretenimiento",
-          "blurb": "Nuestros juegos y apps del día a día: Nemesis Go para Android, Make My Image Fit para redimensionar y comprimir imágenes, y Sound Flipper para convertir audio. Las herramientas web se ejecutan por completo en su navegador: sin subidas, sin cuentas, sin instalaciones.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Captura de Sound Flipper",
+          "blurb": "Convierte audio entre MP3, WAV, FLAC y más — gratis, privado y totalmente en tu dispositivo.",
           "tags": [
-            "Juego móvil",
-            "Herramientas web",
+            "Conversor de audio",
+            "Herramienta web",
             "Gratis",
-            "En el dispositivo",
-            "Privacidad primero"
+            "En el dispositivo"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Captura de Make My Image Fit",
+          "blurb": "Redimensiona y comprime imágenes para ajustarte a cualquier límite de subida — gratis, privado y en tu dispositivo.",
+          "tags": [
+            "Utilidad de imagen",
+            "Herramienta web",
+            "Gratis",
+            "En el dispositivo"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Logotipo de Infer Desk",
-          "blurb": "Aplicación de escritorio para interacciones con la blockchain Cedra y gestión de flujos de trabajo. Multiplataforma, segura y creada para usuarios profesionales y empresas.",
+          "blurb": "Wallet de escritorio para Cedra — envía, recibe, intercambia y gestiona tokens y NFTs de forma segura.",
           "tags": [
             "App de escritorio",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logotipo de Infer Wallet",
-          "blurb": "Wallet de criptomonedas para dispositivos móviles construida sobre la blockchain Cedra. Gestión segura de activos con swaps integrados, integraciones DeFi y seguridad de nivel empresarial.",
+          "blurb": "Wallet móvil para Cedra con swaps integrados, acceso a DeFi y protección biométrica.",
           "tags": [
             "App móvil",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logotipo de Infer MCP",
-          "blurb": "El servidor del Protocolo de Contexto de Modelo que permite a los agentes de programación con IA operar el wallet Infer Desk: conectar, comprobar el estado y enviar transferencias de tokens escritas, con cada acción sensible aprobada en la pantalla del wallet.",
+          "blurb": "Permite que agentes de programación con IA operen tu wallet Infer Desk, con aprobación en pantalla.",
           "tags": [
             "MCP",
             "Agentes de IA",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logotipo de Infer Connect",
-          "blurb": "El adaptador estándar de wallet que conecta las dApps de Cedra con Infer Desk e Infer Wallet: conexión, firma de transacciones y firma de mensajes mediante una única integración de tipo plugin.",
+          "blurb": "Conecta dApps de Cedra a Infer Desk e Infer Wallet para firmas y transacciones.",
           "tags": [
             "Adaptador de wallet",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Logotipo de Infer Ecosystem",
-          "blurb": "dApp basada en navegador para la red Cedra con gestión de eventos, hub de juegos con póker y casino, y herramientas comunitarias. Construida con React y contratos inteligentes Move para una experiencia Web3 sin fricciones.",
+          "blurb": "Eventos, juegos y herramientas comunitarias en la red Cedra — en tu navegador.",
           "tags": [
             "dApp",
             "Cedra",
@@ -187,11 +197,11 @@
     "about": {
       "title": "Sobre <span>Inferenco</span> – El equipo detrás de los productos",
       "p1": "<strong>Inferenco</strong> es una empresa de software surgida de la colaboración entre <strong>Singularity Shift Ltd</strong> y <strong>Spielcrypto Ltd</strong>. Construimos productos, no proyectos de clientes: todo lo que hay en este sitio lo diseñamos, desarrollamos y publicamos nosotros.",
-      "p2": "Nuestra línea de productos empieza con juegos y apps de medios de uso diario y llega hasta wallets onchain, dApps y herramientas para desarrolladores, todo respaldado por revisiones de seguridad y versiones firmadas.",
+      "p2": "Nuestra línea de productos empieza con juegos y apps multimedia de uso diario y llega hasta wallets onchain, dApps y herramientas para desarrolladores, todo respaldado por revisiones de seguridad y versiones firmadas.",
       "p3": "Cada producto lo mantiene el mismo equipo que lo escribió, con documentación, guías de instalación y un canal directo con los desarrolladores.",
       "buildHeading": "Qué construimos:",
       "build": {
-        "gamesMedia": "Juegos móviles y apps de medios",
+        "gamesMedia": "Juegos móviles y apps multimedia",
         "browserUtilities": "Utilidades gratuitas de navegador",
         "wallets": "Wallets de escritorio y móviles",
         "onchainCedra": "Productos onchain para Cedra (wallets, dApps y adaptador)",
@@ -203,36 +213,12 @@
     "services": {
       "title": "<span>Capacidades</span> del producto",
       "subtitle": "Lo que nuestros productos ofrecen desde el primer momento",
-      "nemesis": {
-        "title": "Juega al Go contra una IA local",
-        "text": "Nemesis Go es un juego de Go 9×9 para Android cuyo rival y análisis de jugadas se ejecutan en su dispositivo: sin cuenta y funciona sin conexión."
-      },
-      "fixFiles": {
-        "title": "Arregla archivos sin subirlos",
-        "text": "Make My Image Fit y Sound Flipper redimensionan, comprimen y convierten por completo en su dispositivo: nada se sube."
-      },
-      "desk": {
-        "title": "Gestiona tus activos con Infer Desk",
-        "text": "Un wallet de escritorio para Cedra: envía, recibe, intercambia y gestiona tokens y NFT con seguridad de nivel empresarial."
-      },
-      "wallet": {
-        "title": "Lleva tu wallet a todas partes",
-        "text": "Infer Wallet lleva Cedra al móvil con protección biométrica, swaps integrados e integraciones DeFi."
-      },
       "agents": {
         "title": "Deja que los agentes de IA hagan el trabajo",
-        "text": "Infer MCP conecta agentes de programación con IA a tu wallet Infer Desk, con cada acción sensible aprobada en pantalla."
-      },
-      "dapps": {
-        "title": "Conecta dApps en un clic",
-        "text": "Infer Connect da a las dApps de Cedra un adaptador estándar de wallet para conexiones, firma de transacciones y firma de mensajes."
-      },
-      "ecosystem": {
-        "title": "Juega y conecta en el Ecosystem",
-        "text": "La dApp Infer Ecosystem ofrece gestión de eventos, un hub de juegos y herramientas comunitarias en la red Cedra."
+        "text": "Los agentes de programación obtienen herramientas de wallet tipadas y comprobaciones de estado, mientras tú apruebas cada acción sensible en pantalla."
       },
       "security": {
-        "title": "La seguridad primero, por defecto",
+        "title": "Seguridad ante todo, por defecto",
         "text": "Versiones auditadas, binarios firmados y notarizados, y procesamiento local en toda la línea de productos."
       },
       "standards": {
@@ -274,7 +260,7 @@
         "privacy": "Privacidad por defecto — procesamiento local siempre que es posible",
         "quality": "Calidad y fiabilidad en cada línea de código",
         "innovation": "Innovación combinada con herramientas prácticas y usables",
-        "timely": "Versiones puntuales sin comprometer la calidad",
+        "timely": "Versiones a tiempo sin comprometer la calidad",
         "interoperable": "Productos interoperables que funcionan mejor juntos"
       }
     },
@@ -291,15 +277,15 @@
   },
   "media": {
     "hero": {
-      "title": "Medios y Entretenimiento",
-      "tagline": "Juegos, herramientas de medios y apps del día a día — desarrollados internamente por nuestro propio equipo.",
+      "title": "Multimedia y Ocio",
+      "tagline": "Juegos, herramientas multimedia y apps del día a día — desarrollados internamente por nuestro propio equipo.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
     },
     "gallery": {
       "title": "Juegos y apps del día a día",
-      "subtitle": "Un juego de Go móvil y dos herramientas web gratuitas con privacidad primero: sin cuentas, y nada sale de tu dispositivo salvo que tú lo pidas.",
+      "subtitle": "Un juego de Go móvil y dos herramientas web gratuitas que anteponen la privacidad: sin cuentas, y nada sale de tu dispositivo salvo que tú lo pidas.",
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Icono de la app Nemesis Go",
@@ -317,17 +303,17 @@
         "blurb": "Un conversor de audio gratuito que funciona por completo en tu navegador: tus grabaciones y canciones nunca se suben. Convierte entre MP3, WAV, M4A, FLAC, Ogg, Opus y más, sin cuenta ni instalación de software.",
         "tags": [
           "Conversor de audio",
-          "Privacidad primero",
+          "Privacidad ante todo",
           "En el navegador"
         ]
       },
       "image": {
         "name": "Make My Image Fit",
         "alt": "Captura de Make My Image Fit",
-        "blurb": "Un redimensionador y compresor de imágenes gratuito y con privacidad primero que funciona por completo en tu navegador: sin subidas, sin cuenta. Define un tamaño máximo de archivo o dimensiones exactas en píxeles y prepara hasta 10 imágenes para cumplir los requisitos de cualquier formulario de subida.",
+        "blurb": "Un redimensionador y compresor de imágenes gratuito y centrado en la privacidad, que funciona por completo en tu navegador: sin subidas, sin cuenta. Define un tamaño máximo de archivo o dimensiones exactas en píxeles y prepara hasta 10 imágenes para cumplir los requisitos de cualquier formulario de subida.",
         "tags": [
           "Utilidad de imagen",
-          "Privacidad primero",
+          "Privacidad ante todo",
           "En el navegador"
         ]
       }

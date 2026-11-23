@@ -2,7 +2,7 @@
   "chrome": {
     "nav": {
       "home": "Início",
-      "media": "Mídia e Entretenimento",
+      "media": "Multimídia e Lazer",
       "blogs": "Blogs",
       "onchain": "Onchain",
       "docs": "Docs"
@@ -39,8 +39,8 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Jogos, mídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
-      "mediaColumn": "Mídia e Entretenimento",
+      "tagline": "Jogos, multimídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
+      "mediaColumn": "Multimídia e Lazer",
       "allApps": "Todos os aplicativos",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
@@ -89,18 +89,18 @@
     "hero": {
       "logoAlt": "Logo da Inferenco",
       "title": "Jogos e aplicativos do dia a dia, feitos pela nossa equipe",
-      "tagline": "A gente projeta, constrói e lança os nossos próprios produtos — de jogos para celular e ferramentas de mídia do dia a dia a carteiras onchain e ferramentas para desenvolvedores.",
+      "tagline": "A gente projeta, constrói e lança os nossos próprios produtos — de jogos para celular e ferramentas multimídia do dia a dia a carteiras onchain e ferramentas para desenvolvedores.",
       "pillsAria": "Produtos da Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Mídia e Entretenimento",
+      "pillMedia": "Multimídia e Lazer",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contato"
     },
     "portfolio": {
       "title": "Nossos <span>produtos</span>",
-      "subtitle": "Tudo o que a gente constrói e lança — jogos, ferramentas de mídia, carteiras e ferramentas para desenvolvedores",
+      "subtitle": "Tudo o que a gente constrói e lança — jogos, ferramentas multimídia, carteiras e ferramentas para desenvolvedores",
       "divider": "Produtos Onchain",
       "learnMore": "Saiba mais",
       "readDocs": "Ler a documentação",
@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Ícone do aplicativo Nemesis Go",
-          "blurb": "Um jogo de Go 9×9 para Android com oponente de IA e análise de lances que rodam offline, direto no aparelho. Não precisa de conta, e suas partidas salvas e preferências ficam no seu dispositivo.",
+          "blurb": "Jogue Go 9×9 contra uma IA que roda inteiramente no seu dispositivo Android. Não precisa de conta.",
           "tags": [
             "Jogo para celular",
             "9×9 Go",
@@ -117,22 +117,32 @@
             "iOS em breve"
           ]
         },
-        "media": {
-          "name": "Mídia e Entretenimento",
-          "alt": "Logo de Mídia e Entretenimento",
-          "blurb": "Nossos jogos e aplicativos do dia a dia — Nemesis Go para Android, Make My Image Fit para redimensionar e comprimir imagens e Sound Flipper para converter áudio. As ferramentas web rodam inteiramente no seu navegador: sem upload, sem conta, sem instalação.",
+        "sound": {
+          "name": "Sound Flipper",
+          "alt": "Captura de tela do Sound Flipper",
+          "blurb": "Converta áudio entre MP3, WAV, FLAC e mais — grátis, privado e totalmente no seu dispositivo.",
           "tags": [
-            "Jogo para celular",
-            "Ferramentas web",
+            "Conversor de áudio",
+            "Ferramenta web",
             "Grátis",
-            "No aparelho",
-            "Privacidade em primeiro lugar"
+            "No aparelho"
+          ]
+        },
+        "image": {
+          "name": "Make My Image Fit",
+          "alt": "Captura de tela do Make My Image Fit",
+          "blurb": "Redimensione e comprima imagens para caber em qualquer limite de upload — grátis, privado e no dispositivo.",
+          "tags": [
+            "Ferramenta de imagens",
+            "Ferramenta web",
+            "Grátis",
+            "No aparelho"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Logo do Infer Desk",
-          "blurb": "Aplicativo para computador voltado a interações com a blockchain Cedra e gestão de fluxos de trabalho. Multiplataforma, seguro e feito para usuários profissionais e empresas.",
+          "blurb": "Carteira desktop para Cedra — envie, receba, troque e gerencie tokens e NFTs com segurança.",
           "tags": [
             "App para computador",
             "Cedra",
@@ -143,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logo do Infer Wallet",
-          "blurb": "Carteira de criptomoedas para dispositivos móveis construída sobre a blockchain Cedra. Gestão segura de ativos com trocas embutidas, integrações DeFi e segurança de nível empresarial.",
+          "blurb": "Carteira móvel para Cedra com swaps integrados, acesso a DeFi e proteção biométrica.",
           "tags": [
             "App para celular",
             "Cedra",
@@ -153,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logo do Infer MCP",
-          "blurb": "O servidor Model Context Protocol que deixa agentes de programação com IA operar a carteira Infer Desk — conectar, checar o estado e enviar transferências de tokens validadas, com toda ação sensível aprovada na tela da carteira.",
+          "blurb": "Permite que agentes de programação com IA operem sua carteira Infer Desk, com aprovação na tela.",
           "tags": [
             "MCP",
             "Agentes de IA",
@@ -163,7 +173,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logo do Infer Connect",
-          "blurb": "O adaptador wallet-standard que conecta as dApps da Cedra ao Infer Desk e ao Infer Wallet — conexão, assinatura de transações e assinatura de mensagens em uma única integração em formato de plugin.",
+          "blurb": "Conecte dApps da Cedra ao Infer Desk e ao Infer Wallet para assinaturas e transações.",
           "tags": [
             "Adaptador de carteira",
             "dApps",
@@ -173,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Logo do Infer Ecosystem",
-          "blurb": "dApp que roda no navegador para a Cedra Network, com gestão de eventos, hub de jogos com pôquer e cassino e ferramentas para a comunidade. Feita com React e contratos inteligentes Move para uma experiência Web3 sem fricção.",
+          "blurb": "Eventos, jogos e ferramentas de comunidade na rede Cedra — no seu navegador.",
           "tags": [
             "dApp",
             "Cedra",
@@ -187,11 +197,11 @@
     "about": {
       "title": "Sobre a <span>Inferenco</span> – a equipe por trás dos produtos",
       "p1": "A <strong>Inferenco</strong> é uma empresa de software que nasceu da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. A gente faz produtos, não projetos para clientes — tudo o que você vê neste site foi projetado, construído e lançado por nós.",
-      "p2": "Nossa linha de produtos começa com jogos e aplicativos de mídia do dia a dia e vai até carteiras onchain, dApps e ferramentas para desenvolvedores — tudo com revisões de segurança e releases assinados.",
+      "p2": "Nossa linha de produtos começa com jogos e aplicativos multimídia do dia a dia e vai até carteiras onchain, dApps e ferramentas para desenvolvedores — tudo com revisões de segurança e releases assinados.",
       "p3": "Cada produto é mantido pela mesma equipe que o escreveu — com documentação, guias de instalação e um canal direto com os desenvolvedores.",
       "buildHeading": "O que a gente constrói:",
       "build": {
-        "gamesMedia": "Jogos para celular e apps de mídia",
+        "gamesMedia": "Jogos para celular e apps multimídia",
         "browserUtilities": "Ferramentas gratuitas no navegador",
         "wallets": "Carteiras para computador e celular",
         "onchainCedra": "Produtos onchain para a Cedra (carteiras, dApps e adaptador)",
@@ -203,36 +213,12 @@
     "services": {
       "title": "<span>Recursos</span> dos produtos",
       "subtitle": "O que nossos produtos entregam já de saída",
-      "nemesis": {
-        "title": "Jogue Go contra uma IA no aparelho",
-        "text": "O Nemesis Go é um jogo de Go 9×9 para Android em que o oponente e a análise de lances rodam no seu aparelho — sem conta, e funciona offline."
-      },
-      "fixFiles": {
-        "title": "Conserte arquivos sem enviar nada",
-        "text": "O Make My Image Fit e o Sound Flipper redimensionam, comprimem e convertem tudo no seu aparelho — nada é enviado."
-      },
-      "desk": {
-        "title": "Gerencie seus ativos com o Infer Desk",
-        "text": "Uma carteira para computador da Cedra: envie, receba, troque e gerencie tokens e NFTs com segurança de nível empresarial."
-      },
-      "wallet": {
-        "title": "Leve sua carteira para qualquer lugar",
-        "text": "O Infer Wallet leva a Cedra para o celular com proteção biométrica, trocas embutidas e integrações DeFi."
-      },
       "agents": {
         "title": "Deixe o trabalho com os agentes de IA",
-        "text": "O Infer MCP conecta agentes de programação com IA à sua carteira Infer Desk, com toda ação sensível aprovada na tela."
-      },
-      "dapps": {
-        "title": "Conecte dApps em um clique",
-        "text": "O Infer Connect dá às dApps da Cedra um adaptador de carteira padrão para conexões, assinatura de transações e assinatura de mensagens."
-      },
-      "ecosystem": {
-        "title": "Jogue e se conecte no Ecosystem",
-        "text": "A dApp Infer Ecosystem traz gestão de eventos, um hub de jogos e ferramentas para a comunidade na Cedra Network."
+        "text": "Agentes de programação recebem ferramentas de carteira tipadas e verificações de estado, enquanto você aprova cada ação sensível na tela."
       },
       "security": {
-        "title": "Privacidade e segurança por padrão",
+        "title": "Segurança em primeiro lugar, por padrão",
         "text": "Releases auditados, binários assinados e notarizados e processamento no aparelho em toda a linha de produtos."
       },
       "standards": {
@@ -291,8 +277,8 @@
   },
   "media": {
     "hero": {
-      "title": "Mídia e Entretenimento",
-      "tagline": "Jogos, ferramentas de mídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
+      "title": "Multimídia e Lazer",
+      "tagline": "Jogos, ferramentas multimídia e aplicativos do dia a dia — feitos pela nossa própria equipe.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
@@ -341,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que roda inteiramente no seu aparelho. O oponente controlado pelo computador e a análise por trás das sugestões de lance funcionam offline, então você pode jogar em qualquer lugar, sem conta nem conexão. Suas partidas salvas, resultados recentes e preferências ficam no aparelho, e você pode fechar o aplicativo no meio de uma partida e retomar o mesmo tabuleiro depois. O jogo é gratuito e sustentado por anúncios exibidos entre uma partida e outra; você também pode escolher assistir a um anúncio quando quiser uma dica ou desfazer o último lance. A assinatura mensal opcional Remover anúncios desliga os anúncios dentro do app e dá acesso direto a Dica e Desfazer.",
+        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que roda inteiramente no seu aparelho. O oponente controlado pelo computador e a análise por trás das sugestões de lance funcionam offline, então você pode jogar em qualquer lugar, sem conta nem conexão. Suas partidas salvas, resultados recentes e preferências ficam no aparelho, e você pode fechar o aplicativo no meio de uma partida e retomar o mesmo tabuleiro depois. O jogo é gratuito e financiado por anúncios exibidos entre uma partida e outra; você também pode escolher assistir a um anúncio quando quiser uma dica ou desfazer o último lance. A assinatura mensal opcional Remover anúncios desliga os anúncios dentro do app e dá acesso direto a Dica e Desfazer.",
         "features": [
           "9×9 Go",
           "IA offline no aparelho",
@@ -356,7 +342,7 @@
         "terms": "Termos de Uso"
       },
       "sound": {
-        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros arquivos de som que já estão salvos no seu aparelho — tudo é processado localmente no navegador, então seu áudio continua privado. O inspetor lê o áudio de verdade que está dentro do arquivo e diz exatamente o que detecta, recusando arquivos não suportados com uma explicação clara. Você pode converter até dez arquivos de uma vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com configurações de qualidade sensatas definidas automaticamente. É perfeito para consertar envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Hoje ele é oferecido como uma versão de testes, gratuita e sem cadastro.",
+        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros arquivos de som que já estão salvos no seu aparelho — tudo é processado localmente no navegador, então seu áudio continua privado. O inspetor lê o áudio real do arquivo e diz exatamente o que detecta, recusando arquivos não suportados com uma explicação clara. Você pode converter até dez arquivos de uma vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com configurações de qualidade adequadas definidas automaticamente. É perfeito para consertar envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Hoje ele é oferecido como uma versão de testes, gratuita e sem cadastro.",
         "features": [
           "100% no aparelho",
           "Até 10 arquivos de uma vez",
@@ -376,7 +362,7 @@
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
           "Limite de tamanho máximo",
           "Redimensionar por pixels",
-          "Giro e fundos",
+          "Rotação e fundos",
           "Download em ZIP",
           "Sem analytics sem consentimento"
         ],
