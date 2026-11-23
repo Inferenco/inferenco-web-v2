@@ -2,10 +2,11 @@
   "chrome": {
     "nav": {
       "home": "Ana Sayfa",
-      "media": "Medya ve Eğlence",
+      "media": "Uygulamalar ve oyunlar",
       "blogs": "Bloglar",
       "onchain": "Onchain",
-      "docs": "Belgeler"
+      "docs": "Belgeler",
+      "story": "Hikâyemiz"
     },
     "products": {
       "inferBot": "Infer Bot",
@@ -13,11 +14,11 @@
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "Belgeler"
+      "docs": "Belgeler",
+      "inferConnect": "Infer Connect"
     },
     "social": {
       "telegram": "Telegram",
-      "mastodon": "Mastodon",
       "fountain": "Fountain",
       "farcaster": "Farcaster",
       "soclly": "Soclly",
@@ -25,11 +26,14 @@
       "lensforum": "Lensforum"
     },
     "aria": {
-      "joinOn": "Inferenco'yu {{provider}} üzerinde takip edin",
+      "joinOn": "{{provider}} üzerinden Inferenco’ya katılın",
       "toggleTheme": "Temayı değiştir",
       "toggleMenu": "Menüyü aç/kapat",
       "switchLanguage": "Dili değiştir",
-      "currentLanguage": "Geçerli dil: {{language}}"
+      "currentLanguage": "Geçerli dil: {{language}}",
+      "primaryNavigation": "Ana gezinme",
+      "closeMenu": "Menüyü kapat",
+      "skipToContent": "İçeriğe geç"
     },
     "theme": {
       "toDark": "Koyu moda geç",
@@ -39,12 +43,12 @@
       "label": "Dil"
     },
     "footer": {
-      "tagline": "Oyunlar, medya ve gündelik uygulamalar — tamamen kendi ekibimiz tarafından geliştiriliyor.",
-      "mediaColumn": "Medya ve Eğlence",
+      "tagline": "Oyunları, medya araçlarını ve günlük uygulamaları kendi ekibimiz geliştiriyor.",
+      "mediaColumn": "Uygulamalar ve oyunlar",
       "allApps": "Tüm uygulamalar",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
-      "imageFit": "Make My Image Fit",
+      "imageFit": "Image: Resize & Compress",
       "onchainColumn": "Onchain",
       "inferBot": "Infer Bot",
       "inferWallet": "Infer Wallet",
@@ -53,7 +57,7 @@
       "inferEcosystem": "Infer Ecosystem",
       "docs": "Belgeler",
       "resourcesColumn": "Kaynaklar",
-      "documentation": "Belgelendirme",
+      "documentation": "Dokümantasyon",
       "blog": "Blog",
       "support": "Destek",
       "companyColumn": "Şirket",
@@ -64,7 +68,8 @@
       "nemesisGoColumn": "Nemesis Go",
       "nemesisPrivacy": "Nemesis Go Gizlilik Politikası",
       "nemesisTerms": "Nemesis Go Kullanım Koşulları",
-      "copyright": "© 2025 Inferenco. Tüm hakları saklıdır."
+      "copyright": "© 2025 Inferenco. Tüm hakları saklıdır.",
+      "inferConnect": "Infer Connect"
     },
     "notFound": {
       "title": "Sayfa bulunamadı",
@@ -81,7 +86,7 @@
       "sections": {
         "products": "Ürünler",
         "about": "Hakkımızda",
-        "capabilities": "Yetenekler",
+        "capabilities": "Ürün özellikleri",
         "howWeBuild": "Nasıl geliştiriyoruz",
         "approach": "Yaklaşım",
         "contact": "İletişim"
@@ -89,8 +94,8 @@
     },
     "hero": {
       "logoAlt": "Inferenco logosu",
-      "title": "Oyunlar ve gündelik uygulamalar, kendi bünyemizde geliştiriliyor",
-      "tagline": "Kendi ürünlerimizi tasarlıyor, geliştiriyor ve yayımlıyoruz — mobil oyunlar ve gündelik medya araçlarından onchain cüzdanlara ve geliştirici araçlarına kadar.",
+      "title": "Kendi geliştirdiğimiz oyunlar ve günlük uygulamalar",
+      "tagline": "Mobil oyunlardan günlük medya araçlarına, zincir üstü cüzdanlardan geliştirici araçlarına kadar tüm ürünlerimizi kendimiz tasarlıyor, geliştiriyor ve yayımlıyoruz.",
       "pillsAria": "Inferenco ürünleri",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
@@ -101,16 +106,16 @@
     },
     "portfolio": {
       "title": "<span>Ürünlerimiz</span>",
-      "subtitle": "Baştan sona kendi geliştirip yayımladığımız her şey — oyunlar, medya araçları, cüzdanlar ve geliştirici araçları",
+      "subtitle": "Oyunlar, medya araçları, cüzdanlar ve geliştirici araçları. Hepsini kendimiz geliştirip yayımlıyoruz.",
       "divider": "Onchain ürünler",
       "learnMore": "Daha fazla bilgi",
-      "readDocs": "Belgeleri okuyun",
+      "readDocs": "Belgeleri oku",
       "visitDapp": "dApp'i aç",
       "cards": {
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Nemesis Go uygulama simgesi",
-          "blurb": "Tamamen Android cihazınızda çalışan bir YZ'ye karşı 9×9 Go oynayın. Hesap gerekmez.",
+          "blurb": "Android cihazınızda çalışan yapay zekâya karşı 9×9 Go oynayın. Hesap gerekmez.",
           "tags": [
             "Mobil oyun",
             "9×9 Go",
@@ -121,29 +126,29 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Sound Flipper ekran görüntüsü",
-          "blurb": "Sesi MP3, WAV, FLAC ve daha fazlası arasında dönüştürün — ücretsiz, özel ve tamamen cihazınızda.",
+          "blurb": "Ses dosyalarınızı MP3, WAV, FLAC ve başka biçimler arasında ücretsiz dönüştürün. Tüm işlemler cihazınızda yapılır, dosyalarınız gizli kalır.",
           "tags": [
             "Ses dönüştürücü",
             "Web aracı",
             "Ücretsiz",
-            "Cihazda"
+            "Cihazda işlenir"
           ]
         },
         "image": {
           "name": "Make My Image Fit",
           "alt": "Make My Image Fit ekran görüntüsü",
-          "blurb": "Görüntüleri her yükleme sınırına uyacak şekilde yeniden boyutlandırın ve sıkıştırın — ücretsiz, özel ve cihazda.",
+          "blurb": "Görselleri yükleme sınırlarına uygun boyuta getirin ve sıkıştırın. İşlemler ücretsizdir ve dosyalarınız cihazınızda kalır.",
           "tags": [
-            "Görüntü yardımcısı",
+            "Görsel aracı",
             "Web aracı",
             "Ücretsiz",
-            "Cihazda"
+            "Cihazda işlenir"
           ]
         },
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer Desk logosu",
-          "blurb": "Cedra için masaüstü cüzdanı — token'ları ve NFT'leri güvenle gönderin, alın, takas edin ve yönetin.",
+          "blurb": "Cedra için masaüstü cüzdanı. Token ve NFT’lerinizi güvenle gönderin, alın, takas edin ve yönetin.",
           "tags": [
             "Masaüstü uygulama",
             "Cedra",
@@ -154,7 +159,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Infer Wallet logosu",
-          "blurb": "Cedra için mobil cüzdan — yerleşik takaslar, DeFi erişimi ve biyometrik koruma.",
+          "blurb": "Cedra için takas özelliği, DeFi erişimi ve biyometrik koruma sunan mobil cüzdan.",
           "tags": [
             "Mobil uygulama",
             "Cedra",
@@ -164,17 +169,17 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP logosu",
-          "blurb": "YZ kodlama ajanlarının Infer Desk cüzdanınızı kullanmasına olanak tanır, ekran üzerinde onay ile.",
+          "blurb": "Kodlama yapan yapay zekâ ajanları, ekranda vereceğiniz onayla Infer Desk cüzdanınızı kullanabilir.",
           "tags": [
             "MCP",
-            "YZ ajanları",
+            "Yapay zekâ ajanları",
             "Geliştirici aracı"
           ]
         },
         "connect": {
           "name": "Infer Connect",
           "alt": "Infer Connect logosu",
-          "blurb": "İmza ve işlemler için Cedra dApp'lerini Infer Desk ve Infer Wallet'e bağlayın.",
+          "blurb": "İmzalama ve işlem yapmak için Cedra dApp’lerini Infer Desk ve Infer Wallet’a bağlayın.",
           "tags": [
             "Cüzdan adaptörü",
             "dApps",
@@ -184,7 +189,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem logosu",
-          "blurb": "Cedra Ağı'nda etkinlikler, oyunlar ve topluluk araçları — tarayıcınızda.",
+          "blurb": "Cedra ağındaki etkinliklere, oyunlara ve topluluk araçlarına tarayıcınızdan erişin.",
           "tags": [
             "dApp",
             "Cedra",
@@ -197,100 +202,110 @@
     },
     "about": {
       "title": "<span>Inferenco</span> hakkında – Ürünlerin arkasındaki ekip",
-      "p1": "<strong>Inferenco</strong>, <strong>Singularity Shift Ltd</strong> ile <strong>Spielcrypto Ltd</strong> iş birliğinden doğmuş bir yazılım şirketidir. Müşteri projeleri değil, ürünler geliştiriyoruz — bu sitede gördüğünüz her şeyi biz tasarlıyor, geliştiriyor ve yayımlıyoruz.",
-      "p2": "Ürün hattımız oyunlar ve gündelik medya uygulamalarıyla başlar; onchain cüzdanlara, dApp'lere ve geliştirici araçlarına kadar uzanır — hepsi güvenlik incelemeleri ve imzalı sürümlerle desteklenir.",
-      "p3": "Her ürünü, onu yazan aynı ekip sürdürür — belgeler, kurulum rehberleri ve geliştiricilere doğrudan bir hat ile.",
+      "p1": "<strong>Inferenco</strong>, <strong>Singularity Shift Ltd</strong> ile <strong>Spielcrypto Ltd</strong> ortaklığında kurulan bir yazılım şirketidir. Müşteriler için proje üstlenmek yerine kendi ürünlerimizi geliştiriyoruz. Bu sitedeki her ürünü biz tasarlıyor, geliştiriyor ve yayımlıyoruz.",
+      "p2": "Oyunlar ve günlük medya uygulamalarının yanı sıra zincir üstü cüzdanlar, dApp’ler ve geliştirici araçları üretiyoruz. Tüm ürünlerimizde güvenlik incelemeleri yapıyor ve sürümleri imzalıyoruz.",
+      "p3": "Her ürünün bakımını onu geliştiren ekip üstlenir. Belgeler ve kurulum kılavuzları sunuyoruz; geliştiricilerle doğrudan iletişime de geçebilirsiniz.",
       "buildHeading": "Neler geliştiriyoruz:",
       "build": {
         "gamesMedia": "Mobil oyunlar ve medya uygulamaları",
-        "browserUtilities": "Ücretsiz tarayıcı yardımcıları",
+        "browserUtilities": "Ücretsiz tarayıcı araçları",
         "wallets": "Masaüstü ve mobil cüzdanlar",
-        "onchainCedra": "Cedra için onchain ürünler (cüzdanlar, dApp'ler ve adaptör)",
+        "onchainCedra": "Cedra için zincir üstü ürünler (cüzdanlar, dApp’ler ve adaptör)",
         "devTooling": "Geliştirici araçları ve MCP entegrasyonları",
         "ai": "YZ destekli asistanlar",
         "security": "Güvenlik incelemeleri ve imzalı sürümler"
       }
     },
     "services": {
-      "title": "Ürün <span>yetenekleri</span>",
-      "subtitle": "Ürünlerimizin kutudan çıktığı haliyle sundukları",
+      "title": "Ürün <span>özellikleri</span>",
+      "subtitle": "Ürünlerimizi kullanmaya başladığınızda neler yapabilirsiniz?",
       "agents": {
-        "title": "İşi YZ ajanlarına bırakın",
-        "text": "Kodlama ajanları tip güvenli cüzdan araçları ve sağlık kontrolleri alır, siz ise her hassas işlemi ekran üzerinde onaylarsınız."
+        "title": "İşi yapay zekâ ajanlarına bırakın",
+        "text": "Kodlama ajanları tür bilgisi içeren cüzdan araçlarını kullanabilir ve sistemin durumunu kontrol edebilir. Hassas işlemlerin her birini ekranda siz onaylarsınız."
       },
       "security": {
         "title": "Varsayılan olarak önce güvenlik",
-        "text": "Denetlenmiş sürümler, imzalı ve noter onaylı ikili dosyalar ve ürün hattı boyunca cihazda işleme."
+        "text": "Sürümler denetimden geçer, ikili dosyalar imzalanır ve yazılım doğrulama hizmetiyle onaylanır (notarization). Ürünlerimizde veriler cihaz üzerinde işlenir."
       },
       "standards": {
-        "title": "Açık standartlar üzerine kuruldu",
-        "text": "AIP-62, MCP ve Move akıllı sözleşmeleri — onchain ürünlerimiz sizi kilitlemek yerine birbirleriyle çalışır."
+        "title": "Açık standartlar üzerine kurulu",
+        "text": "Zincir üstü ürünlerimiz AIP-62, MCP ve Move akıllı sözleşmeleri sayesinde birbiriyle çalışır. Böylece tek bir ürüne bağımlı kalmazsınız."
       }
     },
     "methodology": {
       "title": "<span>Yöntemimiz</span> – Nasıl geliştiriyor ve yayımlıyoruz",
-      "subtitle": "Bir fikirden, doğrulayabileceğiniz imzalı bir sürüme",
+      "subtitle": "İlk fikirden imzasını doğrulayabileceğiniz sürüme",
       "steps": {
         "scope": {
           "title": "Kapsamı belirliyoruz",
-          "text": "Her ürün odaklı bir fikirle başlar: tek bir iş, düzgün yapılmış, özellik şişirmesi yok."
+          "text": "Her ürün tek bir ihtiyacı karşılamak üzere tasarlanır. Gereksiz özellikler eklemek yerine o işi iyi yapmaya odaklanırız."
         },
         "build": {
           "title": "Kendi bünyemizde geliştiriyoruz",
-          "text": "Kendi ekibimiz her ürünü tasarlar, uygular ve test eder — dışarıya iş verme yok, devir teslim yok."
+          "text": "Her ürünü kendi ekibimiz tasarlar, geliştirir ve test eder. İşi dışarıya vermeyiz veya başka bir ekibe devretmeyiz."
         },
         "review": {
           "title": "Güvenlik incelemesinden geçiriyoruz",
-          "text": "Yeni cüzdan ve köprü sürümleri, bir şey yayımlanmadan önce denetimlerden ve iç incelemelerden geçer."
+          "text": "Cüzdan ve köprülerimizin yeni sürümleri yayımlanmadan önce denetimden ve ekip içi güvenlik incelemesinden geçer."
         },
         "sign": {
           "title": "İmzalıyor ve yayımlıyoruz",
-          "text": "Sürümler imzalanır, uygulandığı yerlerde noter onayından geçer ve doğrulayabileceğiniz imzalarla yayımlanır."
+          "text": "Sürümleri imzalar, gerektiğinde yazılım doğrulama hizmetinin onayından geçiririz. Sürümle birlikte yayımladığımız imzaları kendiniz doğrulayabilirsiniz."
         },
         "support": {
-          "title": "Yayımladığımızın arkasında duruyoruz",
-          "text": "Belgeler, kurulum rehberleri ve ekibe doğrudan bir hat her ürünü destekler."
+          "title": "Yayımladığımız ürünlere destek veriyoruz",
+          "text": "Her ürün için belgeler ve kurulum kılavuzları sunuyoruz. Ekibimizle doğrudan iletişime de geçebilirsiniz."
         }
       }
     },
     "approach": {
       "title": "<span>Yaklaşımımız</span> – Ürünlerimiz neden farklı",
-      "intro": "Yazılımı, kendimiz nasıl kullanmak istiyorsak öyle geliştiriyoruz: <strong>şeffaf</strong>, <strong>tasarım gereği gizli</strong> ve <strong>doğrulanabilir</strong>. Yaklaşımımız şu noktalara odaklanır:",
+      "intro": "Kendimiz kullanmak isteyeceğimiz yazılımlar geliştiriyoruz: <strong>şeffaf</strong>, <strong>gizliliği tasarım aşamasından başlayarak gözeten</strong> ve <strong>doğrulanabilir</strong>. Şunlara önem veriyoruz:",
       "values": {
         "verifiable": "Doğrulanabilir yazılım — her sürüm imzalı ve belgelenmiş",
-        "privacy": "Varsayılan olarak gizlilik — mümkün olan her yerde cihazda işleme",
+        "privacy": "Gizlilik varsayılanımızdır. Verileri mümkün olduğunda cihazda işleriz.",
         "quality": "Her kod satırında kalite ve güvenilirlik",
-        "innovation": "Yenilik, pratik ve kullanılabilir araçlarla bir arada",
-        "timely": "Kaliteden ödün vermeden zamanında sürümler",
+        "innovation": "Yenilikleri işinize yarayan, kolay kullanılan araçlara dönüştürmek",
+        "timely": "Kaliteden ödün vermeden sürümleri zamanında yayımlamak",
         "interoperable": "Birlikte daha iyi çalışan, birbirleriyle uyumlu ürünler"
       }
     },
     "cta": {
       "title": "Ürünlerimiz hakkında sorularınız mı var?",
-      "text": "Bir ürünü daha yakından tanımak, bir sorunu bildirmek ya da size özel bir konuyu konuşmak ister misiniz? Yazılımı geliştiren ekiple iletişime geçin.",
+      "text": "Bir ürün hakkında bilgi almak, sorun bildirmek veya size özel bir çalışma görüşmek için yazılımı geliştiren ekiple iletişime geçebilirsiniz.",
       "button": "Bize ulaşın"
     },
     "modal": {
       "title": "Bize ulaşın",
-      "text": "Ürünlerimizin arkasındaki ekiple iletişime geçin — sorular, sorunlar veya size özel işler.",
+      "text": "Ürünlerimizle ilgili sorularınız, yaşadığınız sorunlar veya özel geliştirme talepleriniz için ekibimize ulaşabilirsiniz.",
       "note": "Mümkün olan en kısa sürede dönüş yapacağız."
+    },
+    "studio": {
+      "eyebrow": "Bağımsız uygulamalar, oyunlar ve medya araçları",
+      "headline": "Oynamak için.",
+      "accent": "<emphasis>Üretmek</emphasis> için.",
+      "intro": "Bağımsız bir ekipten özgün oyunlar, kullanışlı uygulamalar ve yaratıcı araçlar.",
+      "explore": "Uygulamaları ve oyunları keşfet",
+      "more": "Inferenco’dan daha fazlası",
+      "partners": "Inferenco, Singularity Shift ile Spielcrypto’nun ortaklığıdır. Kendi yazılımlarımızı tasarlıyor, geliştiriyor ve bakımlarını üstleniyoruz.",
+      "story": "Hikâyemiz"
     }
   },
   "media": {
     "hero": {
       "title": "Medya ve Eğlence",
-      "tagline": "Oyunlar, medya araçları ve gündelik uygulamalar — kendi ekibimiz tarafından geliştiriliyor.",
+      "tagline": "Oyunlar, medya araçları ve günlük uygulamalarımızı kendi ekibimiz geliştiriyor.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
       "ctaImage": "Make My Image Fit"
     },
     "gallery": {
       "title": "Oyunlar ve gündelik uygulamalar",
-      "subtitle": "Bir mobil Go oyunu ve iki ücretsiz, gizlilik öncelikli web aracı — hesap gerekmez ve siz istemedikçe hiçbir şey cihazınızdan çıkmaz.",
+      "subtitle": "Bir mobil Go oyunu ve gizliliği ön planda tutan iki ücretsiz web aracı. Hesap gerekmez; siz istemedikçe verileriniz cihazınızdan çıkmaz.",
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Nemesis Go uygulama simgesi",
-        "blurb": "Cihazınızda çevrimdışı çalışan bir YZ rakibi ve hamle analizi sunan Android için bir 9×9 Go oyunu. Hesap da bağlantı da gerekmez — kaydedilmiş oyunlarınız ve tercihleriniz cihazınızda kalır.",
+        "blurb": "Android için geliştirilmiş bu 9×9 Go oyununda yapay zekâ rakibi ve hamle analizi, cihazınızda çevrimdışı çalışır. Hesap veya internet bağlantısı gerekmez. Kaydettiğiniz oyunlar ve tercihleriniz cihazınızda kalır.",
         "tags": [
           "Mobil oyun",
           "9×9 Go",
@@ -301,7 +316,7 @@
       "sound": {
         "name": "Sound Flipper",
         "alt": "Sound Flipper ekran görüntüsü",
-        "blurb": "Tamamen tarayıcınızda çalışan ücretsiz bir ses dönüştürücü — kayıtlarınız ve şarkılarınız asla yüklenmez. MP3, WAV, M4A, FLAC, Ogg, Opus ve daha fazlası arasında dönüştürün; hesap veya yazılım kurulumu gerekmez.",
+        "blurb": "Tarayıcınızda çalışan bu ücretsiz ses dönüştürücüyle kayıtlarınızı ve şarkılarınızı yüklemeden dönüştürebilirsiniz. MP3, WAV, M4A, FLAC, Ogg, Opus ve diğer biçimler arasında dönüşüm için hesap açmak veya yazılım kurmak gerekmez.",
         "tags": [
           "Ses dönüştürücü",
           "Önce gizlilik",
@@ -311,9 +326,9 @@
       "image": {
         "name": "Make My Image Fit",
         "alt": "Make My Image Fit ekran görüntüsü",
-        "blurb": "Tamamen tarayıcınızda çalışan ücretsiz, gizlilik öncelikli bir görüntü yeniden boyutlandırıcı ve sıkıştırıcı — yükleme yok, hesap yok. Bir üst dosya boyutu sınırı veya tam piksel boyutları belirleyin, araç yükleme formunun gereksinimlerini karşılaması için en fazla 10 görüntüyü hazırlar.",
+        "blurb": "Gizliliği ön planda tutan bu ücretsiz araçla görselleri tarayıcınızda yeniden boyutlandırabilir ve sıkıştırabilirsiniz. Görseller yüklenmez, hesap gerekmez. Dosya boyutu için bir üst sınır veya tam piksel ölçüleri belirleyerek en fazla 10 görseli yükleme formunun istediği ölçütlere uygun hâle getirebilirsiniz.",
         "tags": [
-          "Görüntü yardımcısı",
+          "Görsel aracı",
           "Önce gizlilik",
           "Tarayıcıda"
         ]
@@ -328,64 +343,106 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go, tamamen cihazınızda çalışan bir Android 9×9 Go oyunudur. Bilgisayar rakibi ve hamle önerilerinin arkasındaki analiz çevrimdışı çalışır; böylece hesap ve bağlantı olmadan her yerde oynayabilirsiniz. Kaydedilmiş oyunlarınız, son sonuçlarınız ve tercihleriniz cihazınızda saklanır; oyunu ortasında kapatıp daha sonra aynı tahtadan devam edebilirsiniz. Oyun ücretsizdir ve oyunlar arasında gösterilen reklamlarla desteklenir; bir ipucu istediğinizde veya son hamlenizi geri almak istediğinizde reklam izlemeyi de seçebilirsiniz. İsteğe bağlı aylık “Reklamları kaldır” aboneliği, uygulama içi reklamları kapatır ve İpucu ile Geri Al işlevlerine doğrudan erişim sağlar.",
+        "long": "Nemesis Go, tümüyle Android cihazınızda çalışan bir 9×9 Go oyunudur. Bilgisayar rakibi ve hamle önerilerini üreten analiz çevrimdışı çalışır. Hesap veya internet bağlantısı olmadan her yerde oynayabilirsiniz. Kayıtlı oyunlar, son sonuçlar ve tercihler cihazınızda kalır. Uygulamayı oyun sırasında kapatsanız bile aynı konumdan devam edebilirsiniz. Oyunu ücretsiz oynayabilirsiniz; oyun aralarında reklam gösterilir. İpucu almak veya son hamlenizi geri almak için reklam izlemeyi de seçebilirsiniz. İsteğe bağlı aylık “Reklamları kaldır” aboneliği, uygulama içi reklamları kapatır ve İpucu ile Geri Al özelliklerini doğrudan kullanmanızı sağlar.",
         "features": [
           "9×9 Go",
           "Cihazda çevrimdışı YZ",
           "Hamle analizi",
           "Hesap gerekmez",
-          "Kayıtlar cihazda",
+          "Oyun kayıtları cihazda saklanır",
           "İpucu ve Geri Al",
           "İsteğe bağlı aylık reklamsız kullanım"
         ],
-        "note": "iOS sürümü yakında geliyor.",
+        "note": "iOS sürümü yakında.",
         "privacy": "Gizlilik Politikası",
         "terms": "Kullanım Koşulları"
       },
       "sound": {
-        "long": "Sound Flipper (soundflipper.com), cihazınızda zaten kayıtlı olan ses kayıtları, şarkılar ve diğer ses dosyaları için ücretsiz bir çevrimiçi ses dönüştürücüdür — her şey tarayıcınızda yerel olarak işlenir, böylece sesiniz gizli kalır. Denetçisi dosyanın içindeki gerçek sesi okur ve tam olarak ne algıladığını size söyler; desteklenmeyen dosyaları net bir açıklamayla reddeder. MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis ve Opus arasında aynı anda on dosyaya kadar dönüştürebilirsiniz; mantıklı kalite ayarları otomatik olarak belirlenir. Reddedilen yüklemeleri düzeltmek — örneğin bir ses notunu MP3'e çevirmek — için idealdir ve adım adım dönüşüm rehberleriyle gelir. Şu anda, kayıt olmadan ücretsiz olarak kullanılabilen denenebilir bir ön sürüm olarak sunulmaktadır.",
+        "long": "Sound Flipper (soundflipper.com), cihazınızda kayıtlı sesleri, şarkıları ve diğer ses dosyalarını dönüştüren ücretsiz bir çevrimiçi araçtır. Dosyalar tarayıcınızda işlenir ve cihazınızda kalır. Araç dosyanın içindeki sesi inceleyip ne algıladığını gösterir; dosya desteklenmiyorsa nedenini açıklar. MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis ve Opus biçimleri arasında en fazla 10 dosyayı aynı anda dönüştürebilirsiniz. Uygun kalite ayarları otomatik seçilir. Örneğin yükleme sırasında kabul edilmeyen bir sesli notu MP3’e çevirebilirsiniz. Adım adım dönüşüm kılavuzları da sunulur. Önizleme sürümünü ücretsiz, hesap açmadan deneyebilirsiniz.",
         "features": [
-          "%100 cihazda",
+          "Tümüyle cihazda işlenir",
           "Aynı anda 10 dosyaya kadar",
           "MP3/WAV/M4A/FLAC/ALAC/AIFF/Ogg/Opus",
-          "İçerik denetçisi",
+          "Ses içeriğini inceleme",
           "Otomatik kalite ayarları",
           "Dönüşüm rehberleri",
-          "Ön sürüm durumu"
+          "Önizleme sürümü"
         ],
-        "note": "Ücretsiz ön sürüm — kayıt gerekmez."
+        "note": "Ücretsiz önizleme, kayıt gerekmez."
       },
       "resize": {
-        "long": "Make My Image Fit (resizeandcompress.app), görüntüleri hiç yüklemeden sıkıştıran, yeniden boyutlandıran ve dönüştüren ücretsiz bir çevrimiçi görüntü yardımcısıdır — tüm işleme tarayıcıda, cihazınızda gerçekleşir. Aynı anda en fazla 10 görüntüyü (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC veya DNG) işleyebilir, KB/MB cinsinden bir üst dosya boyutu sınırı ve/veya tam piksel boyutları belirleyebilir ve çıktı biçimini seçebilirsiniz. İndirmeden önce araç, her sonucu gereksinimlerinize göre kontrol eder; ayrıca döndürme, arka plan belirleme veya telefon HEIC fotoğrafları ile DNG RAW dosyalarını cihazda dönüştürme yapabilirsiniz. Sonuçlar tek tek veya bir ZIP olarak indirilir. Tamamen ücretsizdir ve kayıt gerektirmez; onayınız olmadan hiçbir analitik veya reklam yüklenmez.",
+        "long": "Make My Image Fit (resizeandcompress.app), görselleri yüklemeden sıkıştıran, yeniden boyutlandıran ve biçimini değiştiren ücretsiz bir çevrimiçi araçtır. Tüm işlemler cihazınızda, tarayıcı içinde yapılır. En fazla 10 görseli (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC veya DNG) birlikte işleyebilirsiniz. Dosya boyutuna KB veya MB cinsinden sınır koyabilir, tam piksel ölçülerini belirleyebilir veya ikisini birlikte kullanabilirsiniz. Çıktı biçimini de seçebilirsiniz. Araç, indirmeden önce her sonucun belirlediğiniz koşulları karşıladığını kontrol eder. Görselleri döndürebilir, arka planı ayarlayabilir, telefonla çekilen HEIC fotoğrafları ve DNG RAW dosyalarını cihazınızda dönüştürebilirsiniz. Sonuçları tek tek veya ZIP dosyası olarak indirebilirsiniz. Kullanım tamamen ücretsizdir ve kayıt gerekmez. Onayınız olmadan analiz araçları veya reklamlar yüklenmez.",
         "features": [
-          "%100 cihazda",
+          "Tümüyle cihazda işlenir",
           "Aynı anda 10 görüntüye kadar",
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
           "Maksimum dosya boyutu",
-          "Piksellerle yeniden boyutlandırma",
+          "Piksel ölçülerine göre boyutlandırma",
           "Döndürme ve arka planlar",
           "ZIP indirme",
-          "Onay olmadan analitik yok"
+          "Analiz araçları yalnızca onayınızla yüklenir"
         ],
         "note": "Tamamen ücretsiz, kayıt gerekmez."
       }
+    },
+    "showcase": {
+      "explore": "Keşfet",
+      "detailsLink": "<product>{{name}}</product> hakkında bilgi al",
+      "collectionTitle": "Uygulamalar ve oyunlar",
+      "collectionIntro": "Küçük ekibimizin geliştirdiği özgün oyunlar ve işinize yarayacak araçlar.",
+      "platforms": "Platformlar",
+      "openWeb": "Web uygulamasını aç",
+      "related": "Daha fazla uygulama ve oyun",
+      "collectionHeadline": "Güzel işler burada doğuyor.",
+      "nemesis": {
+        "category": "Strateji oyunu",
+        "intro": "Bir sonraki hamlenizi dilediğiniz yerde yapın.",
+        "cover": "Ormanda siyah ve beyaz taşları olan ahşap Go tahtası",
+        "boardDetail": "9×9 Go tahtasında bir siyah ve bir beyaz taş",
+        "feature": "Her yerde 9×9 Go",
+        "detail": "İnternet bağlantısı olmadan rakibinizle oynayabilir, kaydettiğiniz oyunlara dilediğiniz zaman devam edebilirsiniz.",
+        "screen1": "Skorları ve hamle düğmeleriyle Go maçı"
+      },
+      "sound": {
+        "category": "Ses aracı",
+        "intro": "Ses dosyalarını dönüştür ve düzenle.",
+        "cover": "Dalga biçimini ve çıktı ayarlarını gösteren ses dönüştürücü",
+        "feature": "Kayıttan dışa aktarıma",
+        "detail": "Çıktı biçimini seçebilir, kaydınızı kırpabilir veya dışa aktarmadan önce sesin girişte ve çıkışta nasıl değişeceğini ayarlayabilirsiniz.",
+        "screen1": "Ses düzenleyicisinde kırpma ve sesi kademeli açıp kısma ayarları"
+      },
+      "resize": {
+        "category": "Görsel aracı",
+        "intro": "Doğru görsel, doğru boyut.",
+        "cover": "Fotoğraf önizlemesini gösteren Resize & Compress başlangıç ekranı",
+        "feature": "Görsellerin boyutunu ayarla",
+        "detail": "Görselin ölçülerini veya dosya boyutunu belirleyip kaydetmeden önce sonucu kontrol edebilirsiniz.",
+        "screen1": "Görsel ölçülerinin ve dosya biçiminin ayarlandığı ekran",
+        "screen2": "Çıktı bilgilerini gösteren görsel inceleme ekranı",
+        "examplePhoto": "Yeşil yaprakların arasında kırmızı bir hibiskus çiçeği",
+        "example": "Bir görselin boyutlandırma öncesi ve sonrası",
+        "before": "Önce",
+        "after": "Sonra"
+      },
+      "webPlatform": "Web"
     }
   },
   "blog": {
     "index": {
       "title": "Inferenco Blogları",
-      "description": "Inferenco ekibinden en son haberler, güncellemeler ve görüşler.",
+      "description": "Inferenco ekibinden son haberler, güncellemeler ve değerlendirmeler.",
       "errorLoading": "Bloglar yüklenirken hata: {{error}}",
       "retry": "Yeniden dene",
-      "empty": "Henüz yayımlanmış blog yok.",
+      "empty": "Henüz bir yazı yayımlanmadı.",
       "noExcerpt": "Özet yok",
-      "readMore": "Daha fazla oku →",
-      "loadingMore": "Daha fazla blog yükleniyor...",
-      "end": "Tüm blogların sonuna ulaştınız.",
-      "fetchError": "Bloglar alınamadı"
+      "readMore": "Devamını oku →",
+      "loadingMore": "Daha fazla yazı yükleniyor…",
+      "end": "Tüm blog yazıları gösterildi.",
+      "fetchError": "Yazılar yüklenemedi.",
+      "loadMore": "Daha fazla yazı yükle"
     },
     "single": {
-      "loading": "Blog yazısı yükleniyor...",
+      "loading": "Blog yazısı yükleniyor…",
       "error": "Blog yazısı yüklenirken hata: {{error}}",
       "notFound": "Blog yazısı bulunamadı.",
       "backToBlogs": "Bloglara dön",
@@ -393,8 +450,8 @@
       "backAllArrow": "← Tüm bloglara dön",
       "published": "Yayın tarihi: {{date}}",
       "gallery": "Galeri",
-      "blogImage": "Blog görseli",
-      "fetchError": "Blog yazısı alınamadı"
+      "blogImage": "Yazı görseli",
+      "fetchError": "Yazı yüklenemedi."
     }
   }
 }

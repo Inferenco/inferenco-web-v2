@@ -12,11 +12,11 @@ Puede descargar y usar Nemesis Go para juego personal de acuerdo con estas condi
 
 Los derechos de autor de la aplicación, los gráficos y demás contenido de la aplicación pertenecen a sus respectivos titulares. Los componentes de terceros y de código abierto están disponibles bajo sus propias licencias. Puede ejercer cualquier derecho que le otorguen esas licencias o la legislación aplicable.
 
-Si descarga Nemesis Go desde App Store, el Acuerdo de licencia de usuario final de aplicaciones con licencia estándar de Apple se aplica a su licencia de la aplicación, salvo que se suministre una licencia independiente a través de App Store. Las descargas y compras en Google Play también están sujetas a las condiciones de Google Play de su país. [Acuerdo de licencia estándar de Apple](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) · [Condiciones de servicio de Google Play](https://play.google.com/about/play-terms/)
+Si descarga Nemesis Go desde App Store, el acuerdo estándar de licencia de usuario final de Apple para aplicaciones con licencia se aplica a su licencia de la aplicación, salvo que se suministre una licencia independiente a través de App Store. Las descargas y compras en Google Play también están sujetas a las condiciones de Google Play de su país. [Acuerdo de licencia estándar de Apple](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) · [Condiciones de servicio de Google Play](https://play.google.com/about/play-terms/)
 
 ## Anuncios, pistas y Deshacer
 
-Cuando los anuncios están activados, pueden aparecer anuncios a pantalla completa en los descansos entre partidas. Puede elegir ver un anuncio para revelar una pista o deshacer su último turno. La aplicación desbloquea esa acción después de obtener la recompensa y cerrar el anuncio. La disponibilidad de los anuncios puede variar según su conexión, su región y sus opciones de privacidad. Una suscripción «Quitar anuncios» activa elimina los anuncios dentro de la aplicación y le da acceso directo a Pista y Deshacer.
+Cuando los anuncios están activados, pueden aparecer anuncios a pantalla completa en los descansos entre partidas. Puede optar por ver un anuncio hasta el final para obtener una pista o deshacer su última jugada. La aplicación desbloquea esa acción cuando usted obtiene la recompensa y cierra el anuncio. La disponibilidad de los anuncios puede variar según su conexión, su región y sus opciones de privacidad. Una suscripción «Quitar anuncios» activa elimina los anuncios dentro de la aplicación y le da acceso directo a Pista y Deshacer.
 
 ## Suscripción «Quitar anuncios»
 

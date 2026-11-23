@@ -18,7 +18,9 @@ sources, generated 2026-11-22 and UNREVIEWED by professional legal translators
 or native-speaker reviewers.** They mirror the same disclosure practice as the
 site catalogues in `src/i18n/locales/README.md`. Each translated page carries a
 visible note that it is a translation and that the English version prevails in
-case of conflict.
+case of conflict. The 2026-11-23 editorial comparison corrected passages in
+the translations while retaining English as the source of record and
+preserving existing URLs.
 
 Rules for these files:
 
@@ -26,7 +28,7 @@ Rules for these files:
   paragraph order, same links and `mailto:` targets. Only prose is translated.
 - Never translate brand names (Nemesis Go, Inferenco, Spielcrypto, Singularity
   Shift), e-mail addresses or URLs.
-- `pt-BR` and `pt-BR`/`pt-PT` must stay genuinely distinct variants, and `zh` is
+- `pt-BR` and `pt-PT` must stay genuinely distinct variants, and `zh` is
   Simplified. `ar` pages render **RTL on this site** (`dir="rtl"` on `<html>`):
   a deliberate site-only reversal of Nemesis Go decision D3 — the app itself
   stays LTR, and the cross-repo divergence is intentional and documented.
@@ -44,8 +46,8 @@ Its sources live one level up from this directory: `src/legal/support.md` (EN)
 and `src/legal/support/<lng>.md` (13 locales). It is emitted by the same
 `src/legal/build.ts` plugin (appended to the legal `pages` array), so it shares
 the template, the slashless→directory 301 redirects, and the `ar` `dir="rtl"`
-handling. The related nav links to `/games-and-apps/` and `/` with a
-"Related pages" aria-label (legal pages keep "Related legal page").
+handling. The related nav links to `/games-and-apps/` and `/` and has an
+accessible label in the document’s language.
 
 The page splits the contact by platform publisher: **Android — Singularity
 Shift Ltd.** (`singularityshift@inferenco.com`) and **iOS — Spielcrypto LLC.**

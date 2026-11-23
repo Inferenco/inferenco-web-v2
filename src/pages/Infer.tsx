@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Infer() {
   return (
-    <div id="infer-page" className="page-section" dir="ltr">
+    <div id="infer-page" className="page-section" lang="en" dir="ltr">
       {/* Hero Section */}
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">

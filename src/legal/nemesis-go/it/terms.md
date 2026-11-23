@@ -16,7 +16,7 @@ Se scarichi Nemesis Go dall’App Store, alla tua licenza dell’app si applica 
 
 ## Pubblicità, suggerimenti e Annulla mossa
 
-Quando gli annunci sono attivati, possono comparire annunci a schermo intero nelle pause tra le partite. Puoi scegliere di guardare un annuncio per rivelare un suggerimento o annullare la tua ultima mossa. L’app sblocca quell’azione dopo che hai ottenuto la ricompensa e hai chiuso l’annuncio. La disponibilità degli annunci può variare in base alla connessione, alla regione e alle tue scelte sulla privacy. Un abbonamento «Rimuovi pubblicità» attivo rimuove gli annunci nell’app e ti dà accesso diretto a Suggerimento e Annulla mossa.
+Quando gli annunci sono attivati, possono comparire annunci a schermo intero nelle pause tra le partite. Puoi scegliere di guardare un annuncio fino alla fine per ottenere un suggerimento o annullare la tua ultima mossa. L’app sblocca quell’azione dopo che hai ottenuto la ricompensa e hai chiuso l’annuncio. La disponibilità degli annunci può variare in base alla connessione, alla regione e alle tue scelte sulla privacy. Un abbonamento «Rimuovi pubblicità» attivo rimuove gli annunci nell’app e ti dà accesso diretto a Suggerimento e Annulla mossa.
 
 ## Abbonamento «Rimuovi pubblicità»
 

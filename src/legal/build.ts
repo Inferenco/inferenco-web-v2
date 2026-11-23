@@ -57,21 +57,21 @@ const localeLabels: Readonly<Record<string, { privacy: string; terms: string }>>
   zh: { privacy: "隐私政策", terms: "使用条款" },
 };
 
-/** Label of the link back to the governing English text (locale pages only). */
-const localeOriginalLabels: Readonly<Record<string, string>> = {
-  ar: "النسخة الإنجليزية",
-  de: "Englische Fassung",
-  es: "Versión en inglés",
-  fr: "Version anglaise",
-  it: "Versione in inglese",
-  ja: "英語版",
-  kk: "Ағылшын нұсқасы",
-  "pt-BR": "Versão em inglês",
-  "pt-PT": "Versão em inglês",
-  ru: "Английская версия",
-  tr: "İngilizce sürüm",
-  uk: "Англійська версія",
-  zh: "英文版本",
+/** Localised related-navigation and language labels for static pages. */
+const relatedNavigation: Readonly<Record<string, { label: string; english: string }>> = {
+  ar: { label: "صفحات ذات صلة", english: " (بالإنجليزية)" },
+  de: { label: "Verwandte Seiten", english: " (auf Englisch)" },
+  es: { label: "Páginas relacionadas", english: " (en inglés)" },
+  fr: { label: "Pages connexes", english: " (en anglais)" },
+  it: { label: "Pagine correlate", english: " (in inglese)" },
+  ja: { label: "関連ページ", english: "（英語）" },
+  kk: { label: "Қатысты беттер", english: " (ағылшын тілінде)" },
+  "pt-BR": { label: "Páginas relacionadas", english: " (em inglês)" },
+  "pt-PT": { label: "Páginas relacionadas", english: " (em inglês)" },
+  ru: { label: "Связанные страницы", english: " (на английском)" },
+  tr: { label: "İlgili sayfalar", english: " (İngilizce)" },
+  uk: { label: "Пов’язані сторінки", english: " (англійською)" },
+  zh: { label: "相关页面", english: "（英语）" },
 };
 
 type LegalPage = {
@@ -114,7 +114,7 @@ const supportLocalized = Object.entries(localeTags).map(([lng, tag]): LegalPage 
   path: `/support/${lng}/`,
   source: `src/legal/support/${lng}.md`,
   lang: tag,
-  relatedLabel: "Related pages",
+  relatedLabel: relatedNavigation[lng].label,
   related: [
     { path: "/games-and-apps/", label: supportRelatedLabels[lng].apps },
     { path: "/", label: supportRelatedLabels[lng].home },
@@ -136,9 +136,10 @@ const pages: LegalPage[] = [
       path: `/${app}/${lng}/${kind}/`,
       source: `src/legal/${app}/${lng}/${kind}.md`,
       lang: tag,
+      relatedLabel: relatedNavigation[lng].label,
       related: [
         { path: `/${app}/${lng}/${other}/`, label: localeLabels[lng][other] },
-        { path: `/${app}/${other}/`, label: localeOriginalLabels[lng] },
+        { path: `/${app}/${other}/`, label: localeLabels[lng][other] + relatedNavigation[lng].english },
       ],
     }));
 
@@ -148,6 +149,8 @@ const pages: LegalPage[] = [
   supportEnglish,
   ...supportLocalized,
 ];
+
+export const legalPagePaths = pages.map(({ path }) => path);
 
 function renderPage(template: string, root: string, page: LegalPage) {
   const markdown = readFileSync(resolve(root, page.source), "utf8");
@@ -177,8 +180,7 @@ function renderPage(template: string, root: string, page: LegalPage) {
         )
         .join(" · "),
     )
-    // Legal pages omit relatedLabel, so this resolves to the template's own
-    // value and keeps their output byte-identical; support pages override it.
+    // The English legal pages use the template label.
     .replace("<!-- legal:related-label -->", () => page.relatedLabel ?? "Related legal page");
 }
 

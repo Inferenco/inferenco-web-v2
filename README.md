@@ -82,3 +82,20 @@ support contacts, data handling, ads, purchases, and related terms as applicable
 Run `pnpm run build` followed by `pnpm run test:legal` to check the built legal
 URLs. The build writes a static directory index for each page at
 `/<slug>/privacy/` and `/<slug>/terms/`. App links can use the slashless URLs.
+
+## Published routes
+
+The GitHub Pages build emits directory indexes with canonical URLs from
+`src/site/metadata.ts`. It also publishes `public/robots.txt`, the generated
+sitemap and the custom 404. Keep in-app links on the trailing-slash URLs.
+
+When the public `VITE_POSTER_API_URL` is set, the build paginates the published
+blog index and emits an article entry for each published ID. The blog
+continues to fetch live content. New or unpublished article URLs are reflected
+after the next Pages build, which runs nightly or can be triggered manually
+after an article update. A configured API failure stops the build so an outage
+does not replace the published article entries with an empty set. Local builds
+without a Poster URL can still build the rest of the site.
+
+Run `pnpm run test:routes` to check static routing, metadata, the paginated
+article feed and the sitemap with a local Poster fixture.

@@ -33,7 +33,7 @@ export const mediaProducts = {
     web: "https://www.soundflipper.com",
   },
   resize: {
-    name: "Make My Image Fit",
+    name: "Image: Resize & Compress",
     android: "https://play.google.com/store/apps/details?id=com.inferenco.imagefit",
     ios: null,
     web: "https://www.resizeandcompress.app",

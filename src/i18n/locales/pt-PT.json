@@ -2,10 +2,11 @@
   "chrome": {
     "nav": {
       "home": "Início",
-      "media": "Multimédia e Lazer",
-      "blogs": "Blogues",
+      "media": "Apps e jogos",
+      "blogs": "Blogs",
       "onchain": "Onchain",
-      "docs": "Documentação"
+      "docs": "Documentação",
+      "story": "A nossa história"
     },
     "products": {
       "inferBot": "Infer Bot",
@@ -13,11 +14,11 @@
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "Documentação"
+      "docs": "Documentação",
+      "inferConnect": "Infer Connect"
     },
     "social": {
       "telegram": "Telegram",
-      "mastodon": "Mastodon",
       "fountain": "Fountain",
       "farcaster": "Farcaster",
       "soclly": "Soclly",
@@ -29,7 +30,10 @@
       "toggleTheme": "Alternar o tema",
       "toggleMenu": "Abrir ou fechar o menu",
       "switchLanguage": "Alterar o idioma",
-      "currentLanguage": "Idioma atual: {{language}}"
+      "currentLanguage": "Idioma atual: {{language}}",
+      "primaryNavigation": "Navegação principal",
+      "closeMenu": "Fechar menu",
+      "skipToContent": "Saltar para o conteúdo"
     },
     "theme": {
       "toDark": "Mudar para o modo escuro",
@@ -39,12 +43,12 @@
       "label": "Idioma"
     },
     "footer": {
-      "tagline": "Jogos, multimédia e aplicações do dia a dia — desenvolvidos internamente.",
-      "mediaColumn": "Multimédia e Lazer",
+      "tagline": "A nossa equipa cria jogos, ferramentas multimédia e aplicações para o dia a dia.",
+      "mediaColumn": "Apps e jogos",
       "allApps": "Todas as aplicações",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
-      "imageFit": "Make My Image Fit",
+      "imageFit": "Image: Resize & Compress",
       "onchainColumn": "Onchain",
       "inferBot": "Infer Bot",
       "inferWallet": "Infer Wallet",
@@ -54,7 +58,7 @@
       "docs": "Documentação",
       "resourcesColumn": "Recursos",
       "documentation": "Documentação",
-      "blog": "Blogue",
+      "blog": "Blog",
       "support": "Suporte",
       "companyColumn": "Empresa",
       "contactColumn": "Contactos",
@@ -64,11 +68,12 @@
       "nemesisGoColumn": "Nemesis Go",
       "nemesisPrivacy": "Política de Privacidade do Nemesis Go",
       "nemesisTerms": "Termos de Utilização do Nemesis Go",
-      "copyright": "© 2025 Inferenco. Todos os direitos reservados."
+      "copyright": "© 2025 Inferenco. Todos os direitos reservados.",
+      "inferConnect": "Infer Connect"
     },
     "notFound": {
       "title": "Página não encontrada",
-      "text": "A página que procura não existe. Pode ter sido movida durante a transição da Nova para a Inferenco ou a ligação pode estar desatualizada.",
+      "text": "A página que procura não existe. O endereço pode ter mudado quando a marca passou de Nova para Infer, ou a ligação pode estar desatualizada.",
       "goHome": "Ir para o início",
       "browseDocs": "Consultar a documentação"
     }
@@ -89,12 +94,12 @@
     },
     "hero": {
       "logoAlt": "Logótipo da Inferenco",
-      "title": "Jogos e aplicações do dia a dia, desenvolvidos internamente",
-      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários multimédia às carteiras onchain e ferramentas para programadores.",
+      "title": "Jogos e aplicações para o dia a dia, criados pela nossa equipa",
+      "tagline": "Concebemos, desenvolvemos e lançamos os nossos próprios produtos, desde jogos para telemóvel e ferramentas multimédia para o dia a dia até carteiras onchain e ferramentas para programadores.",
       "pillsAria": "Produtos da Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
-      "pillMedia": "Multimédia e Lazer",
+      "pillMedia": "Multimédia e entretenimento",
       "pillMcp": "Infer MCP",
       "pillConnect": "Infer Connect",
       "pillContact": "Contactos"
@@ -110,7 +115,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Ícone da aplicação Nemesis Go",
-          "blurb": "Jogue Go 9×9 contra uma IA que corre inteiramente no seu dispositivo Android. Não precisa de conta.",
+          "blurb": "Jogue go num tabuleiro 9×9 contra uma IA que funciona inteiramente no seu dispositivo Android. Não precisa de conta.",
           "tags": [
             "Jogo móvel",
             "9×9 Go",
@@ -121,7 +126,7 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Captura de ecrã do Sound Flipper",
-          "blurb": "Converta áudio entre MP3, WAV, FLAC e mais — gratuito, privado e totalmente no seu dispositivo.",
+          "blurb": "Converta áudio entre MP3, WAV, FLAC e outros formatos gratuitamente. O processamento é feito no seu dispositivo para que os ficheiros se mantenham privados.",
           "tags": [
             "Conversor de áudio",
             "Utilitário web",
@@ -132,7 +137,7 @@
         "image": {
           "name": "Make My Image Fit",
           "alt": "Captura de ecrã do Make My Image Fit",
-          "blurb": "Redimensione e comprima imagens para caber em qualquer limite de carregamento — gratuito, privado e no dispositivo.",
+          "blurb": "Ajuste as dimensões e comprima as imagens para respeitar o limite de qualquer formulário de envio. É gratuito e as imagens ficam no seu dispositivo.",
           "tags": [
             "Utilitário de imagens",
             "Utilitário web",
@@ -143,7 +148,7 @@
         "desk": {
           "name": "Infer Desk",
           "alt": "Logótipo do Infer Desk",
-          "blurb": "Carteira de desktop para Cedra — envie, receba, troque e gere tokens e NFTs com segurança.",
+          "blurb": "Carteira para computador que permite enviar, receber, trocar e gerir tokens e NFTs em segurança na rede Cedra.",
           "tags": [
             "Aplicação de computador",
             "Cedra",
@@ -164,7 +169,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logótipo do Infer MCP",
-          "blurb": "Permite que agentes de programação com IA operem a sua carteira Infer Desk, com aprovação no ecrã.",
+          "blurb": "Permite que os agentes de programação com IA usem a sua carteira Infer Desk, com a sua aprovação no ecrã.",
           "tags": [
             "MCP",
             "Agentes de IA",
@@ -174,7 +179,7 @@
         "connect": {
           "name": "Infer Connect",
           "alt": "Logótipo do Infer Connect",
-          "blurb": "Ligue dApps da Cedra ao Infer Desk e ao Infer Wallet para assinaturas e transações.",
+          "blurb": "Ligue as dApps da Cedra ao Infer Desk e ao Infer Wallet para assinar e efetuar transações.",
           "tags": [
             "Adaptador de carteira",
             "dApps",
@@ -199,7 +204,7 @@
       "title": "Sobre a <span>Inferenco</span> – a equipa por trás dos produtos",
       "p1": "A <strong>Inferenco</strong> é uma empresa de software nascida da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. Desenvolvemos produtos, não projetos por encomenda — tudo o que vê neste site é desenhado, desenvolvido e publicado por nós.",
       "p2": "A nossa linha de produtos começa nos jogos e nas aplicações multimédia do dia a dia e estende-se às carteiras onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
-      "p3": "Cada produto é mantido pela mesma equipa que o escreveu — com documentação, guias de instalação e um contacto direto com os programadores.",
+      "p3": "A equipa que desenvolve cada produto também assegura a sua manutenção, disponibiliza documentação e guias de instalação e responde diretamente às suas dúvidas.",
       "buildHeading": "O que desenvolvemos:",
       "build": {
         "gamesMedia": "Jogos móveis e aplicações multimédia",
@@ -223,8 +228,8 @@
         "text": "Versões auditadas, binários assinados e notarizados e processamento local em toda a linha de produtos."
       },
       "standards": {
-        "title": "Construído sobre padrões abertos",
-        "text": "AIP-62, MCP e contratos inteligentes Move — os nossos produtos onchain são interoperáveis em vez de o prenderem."
+        "title": "Desenvolvidos com normas abertas",
+        "text": "Graças ao AIP-62, ao MCP e aos contratos inteligentes em Move, os nossos produtos onchain funcionam em conjunto sem o obrigar a depender de um único fornecedor."
       }
     },
     "methodology": {
@@ -233,14 +238,14 @@
       "steps": {
         "scope": {
           "title": "Delimitamos o âmbito",
-          "text": "Cada produto começa como uma ideia focada: uma tarefa, bem feita, sem excesso de funcionalidades."
+          "text": "Cada produto nasce de uma ideia concreta. Resolve bem uma tarefa sem acumular funcionalidades desnecessárias."
         },
         "build": {
           "title": "Desenvolvemos internamente",
           "text": "A nossa própria equipa desenha, implementa e testa cada produto — sem subcontratações, sem entregas a terceiros."
         },
         "review": {
-          "title": "Submetemos a revisão de segurança",
+          "title": "Fazemos uma revisão de segurança",
           "text": "As novas versões da carteira e da ponte passam por auditorias e revisão interna antes de qualquer publicação."
         },
         "sign": {
@@ -249,7 +254,7 @@
         },
         "support": {
           "title": "Damos suporte ao que publicamos",
-          "text": "Documentação, guias de instalação e um contacto direto com a equipa sustentam cada produto."
+          "text": "Cada produto inclui documentação, guias de instalação e uma forma de contactar diretamente a equipa."
         }
       }
     },
@@ -260,8 +265,8 @@
         "verifiable": "Software verificável — cada versão é assinada e documentada",
         "privacy": "Privacidade por predefinição — processamento local sempre que possível",
         "quality": "Qualidade e fiabilidade em cada linha de código",
-        "innovation": "Inovação aliada a ferramentas práticas e utilizáveis",
-        "timely": "Versões a horas, sem comprometer a qualidade",
+        "innovation": "Inovação aliada a ferramentas práticas e fáceis de usar",
+        "timely": "Lançamentos atempados sem comprometer a qualidade",
         "interoperable": "Produtos interoperáveis que funcionam melhor em conjunto"
       }
     },
@@ -274,11 +279,21 @@
       "title": "Contactar-nos",
       "text": "Fale com a equipa por trás dos nossos produtos — dúvidas, problemas ou trabalhos à medida.",
       "note": "Responderemos o mais depressa possível."
+    },
+    "studio": {
+      "eyebrow": "Apps, jogos e ferramentas multimédia independentes",
+      "headline": "Feito para jogar.",
+      "accent": "Pensado para <emphasis>criar.</emphasis>",
+      "intro": "Jogos originais, apps úteis e ferramentas criativas de uma equipa independente.",
+      "explore": "Explorar apps e jogos",
+      "more": "Mais da Inferenco",
+      "partners": "A Inferenco é uma parceria entre Singularity Shift e Spielcrypto. Concebemos, desenvolvemos e mantemos o nosso próprio software.",
+      "story": "A nossa história"
     }
   },
   "media": {
     "hero": {
-      "title": "Multimédia e Lazer",
+      "title": "Multimédia e entretenimento",
       "tagline": "Jogos, utilitários multimédia e aplicações do dia a dia — desenvolvidos pela nossa própria equipa.",
       "ctaNemesis": "Nemesis Go",
       "ctaSound": "Sound Flipper",
@@ -290,7 +305,7 @@
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Ícone da aplicação Nemesis Go",
-        "blurb": "Um jogo de Go 9×9 para Android com um adversário de IA e análise de jogadas que correm localmente, sem ligação. Sem conta e sem ligação necessária — os jogos guardados e as preferências ficam no seu dispositivo.",
+        "blurb": "Jogue go num tabuleiro 9×9 em Android. O adversário de IA e a análise de jogadas funcionam no seu dispositivo, sem ligação à Internet. Não precisa de conta e as partidas guardadas e as preferências ficam no dispositivo.",
         "tags": [
           "Jogo móvel",
           "9×9 Go",
@@ -311,7 +326,7 @@
       "image": {
         "name": "Make My Image Fit",
         "alt": "Captura de ecrã do Make My Image Fit",
-        "blurb": "Um redimensionador e compressor de imagens gratuito, com privacidade em primeiro lugar, que corre inteiramente no navegador — sem envios, sem conta. Defina um tamanho máximo de ficheiro ou dimensões exatas em píxeis e o utilitário prepara até 10 imagens para cumprir os requisitos de qualquer formulário de envio.",
+        "blurb": "Esta ferramenta gratuita redimensiona e comprime imagens no navegador. Não precisa de enviar os ficheiros para um servidor nem de criar uma conta. Defina o tamanho máximo do ficheiro ou as dimensões exatas em píxeis para preparar até 10 imagens de acordo com os requisitos do formulário de envio.",
         "tags": [
           "Utilitário de imagens",
           "Privacidade em primeiro lugar",
@@ -328,22 +343,22 @@
     },
     "modal": {
       "nemesis": {
-        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que corre inteiramente no seu dispositivo. O adversário controlado pelo computador e a análise por detrás das sugestões de jogada funcionam sem ligação, pelo que pode jogar em qualquer lado, sem conta nem rede. Os jogos guardados, os resultados recentes e as preferências ficam no seu dispositivo, podendo fechar a aplicação a meio de uma partida e retomar mais tarde o mesmo tabuleiro. O jogo é gratuito e financiado por anúncios mostrados entre partidas; pode também escolher ver um anúncio quando quiser uma dica ou desfazer a última jogada. A subscrição mensal opcional Remover anúncios desliga os anúncios na aplicação e dá acesso direto às funções Dica e Desfazer.",
+        "long": "O Nemesis Go é um jogo de go de 9×9 para Android. O adversário de IA e a análise das jogadas sugeridas funcionam no seu dispositivo, pelo que pode jogar onde quiser, sem conta nem ligação à Internet. As partidas guardadas, os resultados recentes e as preferências ficam no dispositivo. Pode fechar a aplicação a meio de uma partida e retomá-la mais tarde. O jogo é gratuito e financiado por anúncios apresentados entre partidas. Também pode optar por ver um anúncio para obter uma dica ou anular a última jogada. A subscrição mensal opcional «Remover anúncios» elimina a publicidade da aplicação e dá acesso direto às opções Dica e Anular.",
         "features": [
           "9×9 Go",
           "IA local sem ligação",
           "Análise de jogadas",
-          "Sem conta",
-          "Jogos guardados no dispositivo",
-          "Dica e Desfazer",
-          "Remoção de anúncios mensal opcional"
+          "Não requer conta",
+          "Partidas guardadas no dispositivo",
+          "Dica e Anular",
+          "Subscrição mensal opcional para remover anúncios"
         ],
         "note": "Versão para iOS em breve.",
         "privacy": "Política de Privacidade",
         "terms": "Termos de Utilização"
       },
       "sound": {
-        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros ficheiros de áudio que já estão guardados no seu dispositivo — tudo é processado localmente no navegador, pelo que o seu áudio permanece privado. O inspetor lê o áudio efetivo do ficheiro e diz-lhe exatamente o que deteta, recusando ficheiros não suportados com uma explicação clara. Pode converter até dez ficheiros em simultâneo entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com definições de qualidade razoáveis resolvidas automaticamente. É ideal para corrigir envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Está atualmente disponível como uma pré-visualização testável, gratuita e sem registo.",
+        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros ficheiros de som guardados no seu dispositivo. Todo o processamento é feito no navegador para proteger a privacidade do seu áudio. A ferramenta analisa o conteúdo do ficheiro, mostra o que detetou e explica por que motivo um ficheiro é incompatível. Pode converter até dez ficheiros em simultâneo entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus. As definições de qualidade são escolhidas automaticamente. Se um formulário recusar um ficheiro, pode, por exemplo, converter uma nota de voz para MP3. Estão disponíveis guias de conversão passo a passo. Pode experimentar a versão preliminar gratuitamente, sem registo.",
         "features": [
           "100% no dispositivo",
           "Até 10 ficheiros em simultâneo",
@@ -351,50 +366,92 @@
           "Inspetor de conteúdo",
           "Definições automáticas de qualidade",
           "Guias de conversão",
-          "Estado de pré-visualização"
+          "Versão preliminar"
         ],
-        "note": "Pré-visualização gratuita — sem registo."
+        "note": "Experimente a versão preliminar gratuitamente, sem registo."
       },
       "resize": {
-        "long": "O Make My Image Fit (resizeandcompress.app) é um utilitário de imagens online gratuito que comprime, redimensiona e converte imagens sem as enviar — todo o processamento acontece no seu dispositivo, no navegador. Pode processar até 10 imagens em simultâneo (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC ou DNG), definir um tamanho máximo de ficheiro em KB/MB e/ou dimensões exatas em píxeis e escolher o formato de saída. Antes de transferir, o utilitário verifica cada resultado face aos seus requisitos, e pode rodar a imagem, definir fundos ou converter fotografias HEIC do telemóvel e ficheiros RAW DNG localmente. Os resultados são transferidos individualmente ou em ZIP. É completamente gratuito e sem registo, e nenhuma análise de utilização ou anúncio é carregada sem o seu consentimento.",
+        "long": "O Make My Image Fit (resizeandcompress.app) é uma ferramenta online gratuita para comprimir, redimensionar e converter imagens. Todo o processamento é feito no navegador do seu dispositivo, sem enviar os ficheiros para um servidor. Pode trabalhar com até 10 imagens em simultâneo (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC ou DNG), escolher o formato de saída e definir o tamanho máximo do ficheiro em KB ou MB, as dimensões exatas em píxeis ou ambos. Antes da transferência, a ferramenta verifica se cada resultado cumpre os seus requisitos. Pode também rodar as imagens, escolher fundos e converter fotografias HEIC do telemóvel ou ficheiros RAW DNG no próprio dispositivo. Transfira os resultados individualmente ou num ficheiro ZIP. A ferramenta é inteiramente gratuita e dispensa registo. As ferramentas de análise de utilização e os anúncios só são carregados com o seu consentimento.",
         "features": [
           "100% no dispositivo",
           "Até 10 imagens em simultâneo",
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
-          "Limite de tamanho máximo",
+          "Tamanho máximo do ficheiro",
           "Redimensionar por píxeis",
           "Rotação e fundos",
           "Transferência em ZIP",
-          "Sem análise de utilização sem consentimento"
+          "Análise de utilização só com o seu consentimento"
         ],
         "note": "Completamente gratuito, sem registo."
       }
+    },
+    "showcase": {
+      "explore": "Explorar",
+      "detailsLink": "Explorar <product>{{name}}</product>",
+      "collectionTitle": "Apps e jogos",
+      "collectionIntro": "Uma coleção de jogos originais e ferramentas úteis da nossa pequena equipa.",
+      "platforms": "Plataformas",
+      "openWeb": "Abrir no navegador",
+      "related": "Mais apps e jogos",
+      "collectionHeadline": "Coisas boas, feitas aqui.",
+      "nemesis": {
+        "category": "Jogo de estratégia",
+        "intro": "A sua próxima jogada, em qualquer lugar.",
+        "cover": "Tabuleiro de Go em madeira com pedras pretas e brancas numa floresta",
+        "boardDetail": "Uma pedra preta e uma branca num tabuleiro de go de 9 × 9",
+        "feature": "Go num tabuleiro 9×9, em qualquer lugar",
+        "detail": "Jogue contra o computador sem ligação à Internet e retome as partidas guardadas quando quiser.",
+        "screen1": "Jogo de Go com pontuação e comandos"
+      },
+      "sound": {
+        "category": "Ferramenta de áudio",
+        "intro": "Converta e edite os seus ficheiros de áudio.",
+        "cover": "Conversor de áudio com forma de onda e definições de saída",
+        "feature": "Da gravação ao ficheiro final",
+        "detail": "Antes de exportar, escolha o formato de saída, corte a gravação ou ajuste a subida gradual do volume no início e a descida no fim.",
+        "screen1": "Editor de áudio com controlos para cortar a gravação e fazer o som entrar ou sair gradualmente"
+      },
+      "resize": {
+        "category": "Ferramenta de imagem",
+        "intro": "A imagem certa, com o tamanho certo.",
+        "cover": "Ecrã inicial do Resize & Compress com a pré-visualização de uma fotografia",
+        "feature": "Ajuste as suas imagens",
+        "detail": "Defina as dimensões ou o tamanho do ficheiro e verifique o resultado antes de guardar.",
+        "screen1": "Área de redimensionamento com opções de tamanho e formato",
+        "screen2": "Inspeção de imagem com dados do ficheiro de saída",
+        "examplePhoto": "Uma flor vermelha de hibisco entre folhas verdes",
+        "example": "Um exemplo real de redimensionamento",
+        "before": "Antes",
+        "after": "Depois"
+      },
+      "webPlatform": "Web"
     }
   },
   "blog": {
     "index": {
-      "title": "Blogues da Inferenco",
+      "title": "Blogs da Inferenco",
       "description": "As últimas notícias, atualizações e análises da equipa da Inferenco.",
-      "errorLoading": "Erro ao carregar os blogues: {{error}}",
+      "errorLoading": "Erro ao carregar os blogs: {{error}}",
       "retry": "Tentar novamente",
-      "empty": "Ainda não foi publicado nenhum blogue.",
+      "empty": "Ainda não foi publicado nenhum artigo.",
       "noExcerpt": "Sem resumo disponível",
       "readMore": "Ler mais →",
-      "loadingMore": "A carregar mais blogues...",
-      "end": "Chegou ao fim de todos os blogues.",
-      "fetchError": "Não foi possível obter os blogues"
+      "loadingMore": "A carregar mais artigos…",
+      "end": "Chegou ao fim da lista de artigos.",
+      "fetchError": "Não foi possível carregar os artigos.",
+      "loadMore": "Carregar mais artigos"
     },
     "single": {
-      "loading": "A carregar a publicação...",
-      "error": "Erro ao carregar a publicação: {{error}}",
-      "notFound": "Publicação não encontrada.",
-      "backToBlogs": "Voltar aos blogues",
-      "backArrow": "← Voltar aos blogues",
-      "backAllArrow": "← Voltar a todos os blogues",
+      "loading": "A carregar o artigo…",
+      "error": "Erro ao carregar o artigo do blog: {{error}}",
+      "notFound": "Artigo não encontrado.",
+      "backToBlogs": "Voltar aos blogs",
+      "backArrow": "← Voltar aos blogs",
+      "backAllArrow": "← Voltar a todos os artigos do blog",
       "published": "Publicado: {{date}}",
       "gallery": "Galeria",
-      "blogImage": "Imagem do blogue",
-      "fetchError": "Não foi possível obter a publicação"
+      "blogImage": "Imagem do artigo",
+      "fetchError": "Não foi possível carregar o artigo."
     }
   }
 }

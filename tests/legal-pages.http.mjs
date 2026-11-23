@@ -73,19 +73,18 @@ test("unregistered app policies return 404", async () => {
 
 // Localised legal documents: App Store Connect asks for a privacy/terms URL per
 // language, so every supported locale emits `/nemesis-go/<lng>/<doc>/`.
-// Spot-check a representative sample (Latin, CJK, Arabic script and the
-// pt-BR/pt-PT variant pair) against the markdown sources that generated them.
-const localeTags = { de: "de", "pt-BR": "pt-BR", "pt-PT": "pt-PT", zh: "zh", ar: "ar" };
+// Check every locale against the Markdown source that generated it.
+const locales = ["ar", "de", "es", "fr", "it", "ja", "kk", "pt-BR", "pt-PT", "ru", "tr", "uk", "zh"];
 const kinds = ["privacy", "terms"];
 const sourceTitle = (lng, kind) =>
   /^# (.+)$/m.exec(readFileSync(`src/legal/nemesis-go/${lng}/${kind}.md`, "utf8"))[1];
 
-for (const [lng, tag] of Object.entries(localeTags)) {
+for (const lng of locales) {
   for (const kind of kinds) {
     const other = kind === "privacy" ? "terms" : "privacy";
     const path = `/nemesis-go/${lng}/${kind}/`;
 
-    test(`${path} serves the ${tag} ${kind} page`, async () => {
+    test(`${path} serves the ${lng} ${kind} page`, async () => {
       for (const url of [path.slice(0, -1), path]) {
         const response = await fetch(origin + url);
         assert.equal(response.status, 200, url);
@@ -95,7 +94,7 @@ for (const [lng, tag] of Object.entries(localeTags)) {
           const { document } = dom.window;
           const article = document.querySelector("main article");
 
-          assert.equal(document.documentElement.getAttribute("lang"), tag, url);
+          assert.equal(document.documentElement.getAttribute("lang"), lng, url);
           assert.equal(document.title, sourceTitle(lng, kind));
           assert.equal(article.querySelector("h1").textContent, sourceTitle(lng, kind));
           assert.equal(
@@ -118,11 +117,14 @@ for (const [lng, tag] of Object.entries(localeTags)) {
             `${url} still carries the English body`,
           );
 
-          // Related nav: same-locale sibling first, then the governing EN text.
-          const related = [...document.querySelectorAll(".legal-related a")].map((a) =>
-            a.getAttribute("href"),
-          );
-          assert.deepEqual(related, [`/nemesis-go/${lng}/${other}/`, `/nemesis-go/${other}/`]);
+          // Both links lead to the sibling document, in this language and in English.
+          const navigation = document.querySelector(".legal-related");
+          const related = [...navigation.querySelectorAll("a")];
+          assert.deepEqual(related.map((a) => a.getAttribute("href")),
+            [`/nemesis-go/${lng}/${other}/`, `/nemesis-go/${other}/`]);
+          assert.ok(related[1].textContent.startsWith(related[0].textContent));
+          assert.notEqual(related[1].textContent, related[0].textContent);
+          assert.notEqual(navigation.getAttribute("aria-label"), "Related legal page");
         } finally {
           dom.window.close();
         }
@@ -240,7 +242,7 @@ test("/support/ serves the English support page with both platform contacts", as
   }
 });
 
-for (const lng of ["de", "pt-BR", "pt-PT", "zh", "ar"]) {
+for (const lng of locales) {
   test(`/support/${lng}/ serves the localised support page`, async () => {
     const path = `/support/${lng}/`;
     for (const url of [path.slice(0, -1), path]) {

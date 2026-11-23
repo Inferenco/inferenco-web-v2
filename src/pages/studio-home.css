@@ -1,0 +1,315 @@
+.studio-home-hero {
+  --studio-accent: #29efff;
+  --studio-accent-ink: #02121d;
+  --studio-muted: #d8e9f3;
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+  border-block-end: 1px solid var(--studio-line);
+  background: #041220 url("/img/redesign/blue-hour-forest.webp") right 80% / cover no-repeat;
+}
+
+.studio-home-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, #030d17 3%, #04121bf2 27%, #061b2966 59%, #04152200 83%),
+    linear-gradient(0deg, #030e16bc, transparent 39%);
+}
+
+.studio-home-hero:dir(rtl)::before {
+  background:
+    linear-gradient(270deg, #030d17 3%, #04121bf2 27%, #061b2966 59%, #04152200 83%),
+    linear-gradient(0deg, #030e16bc, transparent 39%);
+}
+
+.studio-home-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  min-block-size: clamp(27rem, 32vw, 30rem);
+}
+
+.studio-home-intro {
+  display: grid;
+  gap: clamp(.7rem, 1.1vw, 1.1rem);
+  padding-block: 1.5rem;
+}
+
+.studio-home .studio-home-intro h1 {
+  font-size: clamp(2.05rem, 5.15vw + .1rem, 5.05rem);
+  line-height: 1.02;
+}
+
+.studio-home .studio-home-intro h1:lang(ar) { line-height: 1.24; }
+.studio-home-title-line { display: block; }
+.studio-home-title-line em { color: var(--studio-accent); font-style: normal; }
+.studio-home-intro > .studio-eyebrow { color: inherit; }
+.studio-home-intro .studio-lede { max-inline-size: 42ch; }
+
+.studio-home-intro .studio-actions {
+  column-gap: clamp(.8rem, 2.4vw, 2rem);
+  margin-block-start: clamp(.35rem, 1.15vw, 1rem);
+}
+
+.studio-home .studio-home-intro .studio-button {
+  min-block-size: 49px;
+  padding-inline: clamp(.95rem, 2vw, 1.95rem);
+  border-radius: 2rem;
+  box-shadow: 0 8px 34px #09d8ff24;
+}
+
+.studio-home-intro .studio-arrow-link {
+  text-decoration: underline;
+  text-underline-offset: .48rem;
+  text-decoration-color: var(--studio-accent);
+}
+
+.studio-page .studio-home-feature {
+  --forest-device-size: clamp(11rem, 19vw, 17rem);
+  display: grid;
+  grid-template-columns: minmax(0, var(--forest-device-size)) minmax(0, 12.5rem);
+  justify-content: center;
+  align-items: center;
+  gap: clamp(.5rem, 1.15vw, 1.65rem);
+  text-decoration: none;
+  isolation: isolate;
+  align-self: stretch;
+  position: relative;
+  color: #f8faff;
+}
+
+.studio-home-device { position: relative; isolation: isolate; margin-block-end: -1.6rem; }
+
+.studio-home-device::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3% -35% 4%;
+  content: "";
+  background: radial-gradient(ellipse at 50% 42%, #008fee4b 0%, #02a8ec24 37%, transparent 72%);
+}
+
+.studio-home-device::after {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  inset-inline: -56%;
+  inset-block-end: -3.3%;
+  block-size: 28%;
+  background: url("/img/redesign/blue-hour-moss.webp") center / 100% 100% no-repeat;
+}
+
+.studio-home-device .studio-handset {
+  position: relative;
+  filter: drop-shadow(1px 11px 7px #01080bdc);
+}
+
+.studio-home-caption {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: start;
+  gap: .3rem;
+  max-inline-size: 100%;
+  margin-block-start: clamp(.5rem, 10vw, 7.75rem);
+  padding: .4rem .68rem;
+  border-inline-start: 3px solid #29efff;
+  background: linear-gradient(90deg, #03111bd9, #03111b13);
+  color: #f8faff;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+}
+
+.studio-home-caption:dir(rtl) { background: linear-gradient(270deg, #03111bd9, #03111b13); }
+.studio-home .studio-home-caption p { color: inherit; font-size: clamp(1.05rem, 1.55vw, 1.5rem); font-weight: 800; }
+.studio-home-caption span { font-size: .92rem; color: #deebf3; }
+.studio-home-feature:hover .studio-home-caption p { text-decoration: underline; text-underline-offset: .25em; }
+
+.studio-home #portfolio { padding-block: .8rem clamp(1.6rem, 4vw, 3rem); }
+.studio-home #portfolio > h2 { margin-block-start: .2rem; color: var(--studio-text); }
+
+.studio-home .studio-product-card--featured {
+  --card-copy-inline: clamp(1rem, 2.9vw, 2.5rem);
+  --card-base: #071523;
+  --card-mid: #071724b5;
+  --card-edge: #091c3022;
+  --card-haze: #075184;
+  --card-paper: #f7faff;
+  --card-muted: #dceaf4;
+  --card-accent: #39eeff;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 49%) minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  align-content: center;
+  min-block-size: clamp(14.4rem, 17.3vw, 18rem);
+  border-color: #2940578a;
+  background: var(--card-base);
+  color: var(--card-paper);
+}
+
+.studio-home .studio-product-card--featured.studio-product-card--resize {
+  --card-base: #211424;
+  --card-mid: #261823bc;
+  --card-edge: #39213710;
+  --card-haze: #a45342;
+}
+
+.studio-product-card--featured::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    linear-gradient(90deg, var(--card-base) 0, var(--card-mid) 45%, var(--card-edge) 82%),
+    var(--card-scene) center / cover no-repeat,
+    radial-gradient(ellipse at 77% 54%, var(--card-haze), var(--card-base) 70%);
+}
+
+.studio-product-card--featured:dir(rtl)::before {
+  background:
+    linear-gradient(270deg, var(--card-base) 0, var(--card-mid) 45%, var(--card-edge) 82%),
+    var(--card-scene) center / cover no-repeat,
+    radial-gradient(ellipse at 25% 54%, var(--card-haze), var(--card-base) 70%);
+}
+
+.studio-home .studio-product-card--sound { --card-scene: url("/img/redesign/studio-ribbon.webp"); }
+.studio-home .studio-product-card--resize { --card-scene: url("/img/redesign/resize-sunset.webp"); }
+.studio-home .studio-product-card--featured .studio-card-art {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  inset-inline: 38% 0;
+  min-block-size: 0;
+  inline-size: auto;
+  block-size: auto;
+  display: block;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+.studio-product-card--featured .studio-handset {
+  position: absolute;
+  inset-block-start: -.2rem;
+  inset-inline-end: clamp(-2.1rem, -1.2vw, -.2rem);
+  inline-size: clamp(14rem, 25vw, 25rem);
+  max-inline-size: none;
+  filter: drop-shadow(7px 11px 10px #02081383);
+}
+.studio-product-card--featured .studio-handset img {
+  max-inline-size: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.studio-home .studio-product-card--featured .studio-card-caption,
+.studio-home .studio-product-card--featured .studio-card-meta {
+  display: grid;
+  grid-column: 1;
+  padding-inline: var(--card-copy-inline) 0;
+}
+
+.studio-home .studio-product-card--featured .studio-card-caption {
+  grid-row: 1;
+  align-self: end;
+  padding-block: clamp(1rem, 2vw, 2rem) .42rem;
+}
+
+.studio-home .studio-product-card--featured .studio-card-meta {
+  grid-row: 2;
+  align-self: start;
+  padding-block: .05rem clamp(1rem, 2vw, 1.75rem);
+  color: var(--card-muted);
+}
+.studio-home .studio-product-card--featured .studio-card-caption h3 {
+  font-size: clamp(1.45rem, 2.5vw, 2.28rem);
+  line-height: 1.08;
+  text-shadow: 0 1px 5px #04111b;
+}
+.studio-home .studio-product-card--featured .studio-card-meta :is(p, ul) { color: var(--card-muted); }
+.studio-product-card--featured .studio-platforms { gap: .24rem .55rem; }
+.studio-product-card--featured .studio-platforms li + li::before { margin-inline-end: .42rem; }
+.studio-home .studio-product-card--featured .studio-arrow-link { color: var(--card-accent); }
+.studio-home .studio-product-card--featured :focus-visible { outline-color: var(--card-accent); }
+
+html.light .studio-home .studio-home-hero {
+  --studio-accent: #006589;
+  --studio-accent-ink: #fff;
+  --studio-muted: #344c59;
+  background: #f4f1e8;
+  color: #122330;
+}
+
+html.light .studio-home .studio-home-hero::before { content: none; }
+html.light .studio-home .studio-home-intro .studio-button { box-shadow: none; }
+html.light .studio-home .studio-home-intro h1 { line-height: 1.07; }
+html.light .studio-home .studio-home-feature {
+  background:
+    linear-gradient(0deg, #061a24a3, transparent 71%),
+    #0c2832 url("/img/redesign/blue-hour-forest.webp") right 79% / cover no-repeat;
+  overflow: clip;
+  border-radius: .8rem;
+  margin-block: 1.25rem;
+}
+
+@media (min-width: 761px) and (max-width: 1020px) {
+  .studio-home .studio-home-cards { grid-template-columns: 1fr; }
+  .studio-home .studio-product-card--featured { grid-template-columns: minmax(0, 46%) minmax(0, 1fr); min-block-size: 15rem; }
+  .studio-product-card--featured .studio-handset { inline-size: min(29rem, 45vw); }
+}
+
+@media (max-width: 1000px) {
+  .studio-home .studio-home-feature {
+    --forest-device-size: clamp(10rem, 22vw, 15rem);
+    grid-template-columns: minmax(0, var(--forest-device-size)) minmax(0, 10rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .studio-home .studio-home-cards { grid-template-columns: 1fr; }
+  .studio-home-hero { background-image: url("/img/redesign/blue-hour-forest-small.webp"); background-position: 65% 75%; }
+  .studio-home-hero::before, .studio-home-hero:dir(rtl)::before {
+    background: linear-gradient(180deg, #030d17f5 4%, #041220ef 41%, #06344b4d 72%, #061b26bf);
+  }
+  .studio-home-hero-inner { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .studio-home-intro { padding-block: 1.5rem .85rem; }
+  .studio-home .studio-home-feature {
+    --forest-device-size: clamp(9rem, 45vw, 14rem);
+    grid-template-columns: minmax(0, var(--forest-device-size)) minmax(0, 10.5rem);
+    padding-block: .2rem .55rem;
+  }
+  .studio-home-device { margin-block-end: 0; }
+  .studio-home-device::after { inset-inline: -25%; }
+  .studio-home-caption { margin-block-start: 2rem; }
+  .studio-home .studio-card-caption h3 { font-size: clamp(1.4rem, 4vw, 1.95rem); }
+  .studio-product-card--featured .studio-handset { inline-size: clamp(13rem, 43vw, 20rem); }
+  html.light .studio-home .studio-home-feature {
+    margin-block: .25rem 1rem;
+    background-image: linear-gradient(0deg, #061a24a3, transparent 80%), url("/img/redesign/blue-hour-forest-small.webp");
+  }
+}
+
+@media (max-width: 560px) {
+  .studio-home .studio-product-card--sound { --card-scene: url("/img/redesign/studio-ribbon-small.webp"); }
+  .studio-home .studio-product-card--resize { --card-scene: url("/img/redesign/resize-sunset-small.webp"); }
+  .studio-product-card--featured .studio-handset {
+    inset-block-start: .8rem;
+    inset-inline-end: clamp(-1.2rem, -3vw, -.35rem);
+    inline-size: clamp(10rem, 49vw, 16rem);
+  }
+  .studio-home .studio-product-card--featured { grid-template-columns: minmax(0, 53%) minmax(0, 1fr); }
+  .studio-home .studio-product-card--featured .studio-card-caption h3 { font-size: clamp(1.25rem, 4.6vw, 1.55rem); }
+}
+
+@supports (background-image: image-set(url("test.avif") type("image/avif"))) {
+  @media (max-width: 560px) {
+    .studio-home .studio-product-card--sound {
+      --card-scene: image-set(url("/img/redesign/studio-ribbon-small.avif") type("image/avif"), url("/img/redesign/studio-ribbon-small.webp") type("image/webp"));
+    }
+  }
+}

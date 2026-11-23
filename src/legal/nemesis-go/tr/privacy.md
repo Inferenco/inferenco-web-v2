@@ -30,11 +30,11 @@ Birleşik Krallık veya AB veri koruma hukukunun geçerli olduğu durumlarda; iz
 
 Oyun kayıtları ve ayarlar, cihazınızda uygulamanın özel depolama alanında saklanır. Uygulama bunların yerini alana veya bu depolama alanı temizlenene kadar orada kalırlar. Android'de cihaz ayarlarından uygulamanın depolama alanını temizleyebilirsiniz. iOS'ta yerel verileri kaldırmak için **Uygulamayı Sil** seçeneğini kullanın. Cihazınız yedekleme yapıyorsa, yedekleme ayarlarınıza göre kopyalar kalabilir. Google ve Apple, kendi reklam ve mağaza kayıtlarının saklanmasını politikalarına göre yönetir.
 
-Destek e-postalarını; yanıt vermek, ilgili takip işlemlerini yürütmek veya geçerli bir kayıt saklama yükümlülüğünü yerine getirmek için gerekli süre boyunca saklarız. Belirli bir destek yazışmasının silinmesini talep etmek için platformunuzun yayımcısıyla iletişime geçebilirsiniz.
+Destek e-postalarını; yanıt vermek, ilgili takip işlemlerini yürütmek veya geçerli bir kayıt saklama yükümlülüğünü yerine getirmek için gerekli süre boyunca saklarız. Belirli bir destek yazışmasının silinmesini talep etmek için kullandığınız platform için uygulamayı yayımlayan şirketle iletişime geçebilirsiniz.
 
 ## Haklarınız ve bize nasıl ulaşacağınız
 
-İkamet ettiğiniz yere bağlı olarak; sakladığımız kişisel verilere erişme, bunları düzeltme veya silme, taşınabilir bir formatta kopyasını alma, kullanımlarını kısıtlama veya bunlara itiraz etme, onayınızı geri çekme ve yerel gizlilik kurumuna şikâyette bulunma hakkına sahip olabilirsiniz. Bu politika hakkında sorularınız için veya haklarınızı kullanmak üzere platformunuzun yayımcısıyla iletişime geçin. Bir çocuğa ait kişisel verilerin yasanın zorunlu kıldığı izin alınmadan bize sağlandığını düşünüyorsanız bizimle de iletişime geçebilirsiniz.
+İkamet ettiğiniz yere bağlı olarak; sakladığımız kişisel verilere erişme, bunları düzeltme veya silme, taşınabilir bir formatta kopyasını alma, bu verilerin kullanımını kısıtlama veya kullanılmasına itiraz etme, rızanızı geri çekme ve yerel veri koruma denetim makamına şikâyette bulunma hakkına sahip olabilirsiniz. Bu politika hakkında sorularınız için veya haklarınızı kullanmak üzere kullandığınız platform için uygulamayı yayımlayan şirketle iletişime geçin. Bir çocuğa ait kişisel verilerin yasanın zorunlu kıldığı izin alınmadan bize sağlandığını düşünüyorsanız bizimle de iletişime geçebilirsiniz.
 
 - **Android — Singularity Shift Ltd.** [singularityshift@inferenco.com](mailto:singularityshift@inferenco.com)
 - **iOS — Spielcrypto LLC.** [spielcrypto@inferenco.com](mailto:spielcrypto@inferenco.com)

@@ -16,7 +16,7 @@ Si vous téléchargez Nemesis Go depuis l’App Store, le Contrat de licence App
 
 ## Publicités, indices et Annuler
 
-Lorsque les annonces sont activées, des annonces plein écran peuvent apparaître entre les parties. Vous pouvez choisir de regarder une annonce pour révéler un indice ou annuler votre dernier coup. L’application débloque cette action une fois la récompense obtenue et l’annonce fermée. La disponibilité des annonces peut varier selon votre connexion, votre région et vos choix de confidentialité. Un abonnement « Suppression des publicités » actif supprime les annonces dans l’application et donne un accès direct à Indice et Annuler.
+Lorsque les annonces sont activées, des annonces plein écran peuvent apparaître entre les parties. Vous pouvez choisir de regarder une publicité jusqu’au bout pour obtenir un indice ou annuler votre dernier coup. L’application débloque cette action une fois la récompense obtenue et l’annonce fermée. La disponibilité des annonces peut varier selon votre connexion, votre région et vos choix de confidentialité. Un abonnement « Suppression des publicités » actif supprime les annonces dans l’application et donne un accès direct à Indice et Annuler.
 
 ## Abonnement « Suppression des publicités »
 

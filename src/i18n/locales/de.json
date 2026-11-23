@@ -2,10 +2,11 @@
   "chrome": {
     "nav": {
       "home": "Startseite",
-      "media": "Medien & Unterhaltung",
+      "media": "Apps & Spiele",
       "blogs": "Blog",
       "onchain": "Onchain",
-      "docs": "Doku"
+      "docs": "Doku",
+      "story": "Unsere Geschichte"
     },
     "products": {
       "inferBot": "Infer Bot",
@@ -13,11 +14,11 @@
       "inferDesk": "Infer Desk",
       "inferMcp": "Infer MCP",
       "inferEcosystem": "Infer Ecosystem",
-      "docs": "Doku"
+      "docs": "Doku",
+      "inferConnect": "Infer Connect"
     },
     "social": {
       "telegram": "Telegram",
-      "mastodon": "Mastodon",
       "fountain": "Fountain",
       "farcaster": "Farcaster",
       "soclly": "Soclly",
@@ -27,9 +28,12 @@
     "aria": {
       "joinOn": "Inferenco auf {{provider}} folgen",
       "toggleTheme": "Design wechseln",
-      "toggleMenu": "Menü umschalten",
+      "toggleMenu": "Menü öffnen",
       "switchLanguage": "Sprache ändern",
-      "currentLanguage": "Aktuelle Sprache: {{language}}"
+      "currentLanguage": "Aktuelle Sprache: {{language}}",
+      "primaryNavigation": "Hauptnavigation",
+      "closeMenu": "Menü schließen",
+      "skipToContent": "Zum Inhalt springen"
     },
     "theme": {
       "toDark": "Zum dunklen Design wechseln",
@@ -40,11 +44,11 @@
     },
     "footer": {
       "tagline": "Spiele, Medien & Alltags-Apps – aus eigener Entwicklung.",
-      "mediaColumn": "Medien & Unterhaltung",
+      "mediaColumn": "Apps & Spiele",
       "allApps": "Alle Apps",
       "nemesisGo": "Nemesis Go",
       "soundFlipper": "Sound Flipper",
-      "imageFit": "Make My Image Fit",
+      "imageFit": "Image: Resize & Compress",
       "onchainColumn": "Onchain",
       "inferBot": "Infer Bot",
       "inferWallet": "Infer Wallet",
@@ -64,11 +68,12 @@
       "nemesisGoColumn": "Nemesis Go",
       "nemesisPrivacy": "Datenschutzerklärung für Nemesis Go",
       "nemesisTerms": "Nutzungsbedingungen für Nemesis Go",
-      "copyright": "© 2025 Inferenco. Alle Rechte vorbehalten."
+      "copyright": "© 2025 Inferenco. Alle Rechte vorbehalten.",
+      "inferConnect": "Infer Connect"
     },
     "notFound": {
       "title": "Seite nicht gefunden",
-      "text": "Die gesuchte Seite existiert nicht. Sie ist möglicherweise während des Nova-zu-Infer-Rebrands umgezogen, oder der Link ist veraltet.",
+      "text": "Die gesuchte Seite existiert nicht. Vielleicht wurde sie bei der Umbenennung von Nova in Infer verschoben oder der Link ist veraltet.",
       "goHome": "Zur Startseite",
       "browseDocs": "Doku durchsuchen"
     }
@@ -89,7 +94,7 @@
     },
     "hero": {
       "logoAlt": "Inferenco-Logo",
-      "title": "Spiele & Alltags-Apps, aus eigener Hand gebaut",
+      "title": "Spiele und Apps für den Alltag aus eigener Entwicklung",
       "tagline": "Wir entwerfen, bauen und veröffentlichen unsere eigenen Produkte – von Mobile-Games und Medien-Tools für den Alltag bis zu Onchain-Wallets und Entwicklerwerkzeugen.",
       "pillsAria": "Inferenco-Produkte",
       "pillDesk": "Infer Desk",
@@ -121,28 +126,28 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Screenshot von Sound Flipper",
-          "blurb": "Konvertieren Sie Audio zwischen MP3, WAV, FLAC und mehr – kostenlos, privat und vollständig lokal auf Ihrem Gerät.",
+          "blurb": "Wandeln Sie Audiodateien zwischen MP3, WAV, FLAC und weiteren Formaten um. Das ist kostenlos und geschieht vollständig auf Ihrem Gerät, sodass Ihre Dateien privat bleiben.",
           "tags": [
             "Audio-Konverter",
             "Web-Tool",
             "Kostenlos",
-            "Lokal"
+            "Auf dem Gerät"
           ]
         },
         "image": {
           "name": "Make My Image Fit",
           "alt": "Screenshot von Make My Image Fit",
-          "blurb": "Größe ändern und Bilder komprimieren, damit sie jedes Upload-Limit erfüllen – kostenlos, privat und lokal.",
+          "blurb": "Ändern Sie die Größe Ihrer Bilder und komprimieren Sie sie passend zu den Upload-Vorgaben. Das ist kostenlos und geschieht direkt auf Ihrem Gerät. Ihre Bilder bleiben privat.",
           "tags": [
             "Bild-Tool",
             "Web-Tool",
             "Kostenlos",
-            "Lokal"
+            "Auf dem Gerät"
           ]
         },
         "desk": {
           "name": "Infer Desk",
-          "alt": "Infer-Desk-Logo",
+          "alt": "Logo von Infer Desk",
           "blurb": "Desktop-Wallet für Cedra – Token und NFTs sicher senden, empfangen, tauschen und verwalten.",
           "tags": [
             "Desktop-App",
@@ -153,7 +158,7 @@
         },
         "wallet": {
           "name": "Infer Wallet",
-          "alt": "Infer-Wallet-Logo",
+          "alt": "Logo von Infer Wallet",
           "blurb": "Mobile Wallet für Cedra mit integrierten Swaps, DeFi-Zugang und biometrischem Schutz.",
           "tags": [
             "Mobile-App",
@@ -163,8 +168,8 @@
         },
         "mcp": {
           "name": "Infer MCP",
-          "alt": "Infer-MCP-Logo",
-          "blurb": "Lässt KI-Coding-Agenten Ihr Infer-Desk-Wallet bedienen, mit Bestätigung auf dem Bildschirm.",
+          "alt": "Logo von Infer MCP",
+          "blurb": "Mit Ihrer Freigabe auf dem Bildschirm können KI-Programmieragenten Ihre Wallet in Infer Desk bedienen.",
           "tags": [
             "MCP",
             "KI-Agenten",
@@ -173,7 +178,7 @@
         },
         "connect": {
           "name": "Infer Connect",
-          "alt": "Infer-Connect-Logo",
+          "alt": "Logo von Infer Connect",
           "blurb": "Verbinden Sie Cedra-dApps mit Infer Desk und Infer Wallet für Signaturen und Transaktionen.",
           "tags": [
             "Wallet-Adapter",
@@ -183,7 +188,7 @@
         },
         "ecosystem": {
           "name": "Infer Ecosystem",
-          "alt": "Infer-Ecosystem-Logo",
+          "alt": "Logo von Infer Ecosystem",
           "blurb": "Events, Gaming und Community-Tools im Cedra-Netzwerk – direkt im Browser.",
           "tags": [
             "dApp",
@@ -220,11 +225,11 @@
       },
       "security": {
         "title": "Sicherheit zuerst – standardmäßig",
-        "text": "Geprüfte Releases, signierte und notariell beglaubigte Binärdateien und lokale Verarbeitung über die gesamte Produktlinie."
+        "text": "Geprüfte Versionen, signierte und notarisierte Programmdateien sowie die Verarbeitung von Daten auf dem Gerät gehören zu unserer gesamten Produktpalette."
       },
       "standards": {
-        "title": "Gebaut auf offenen Standards",
-        "text": "AIP-62, MCP und Move-Smart-Contracts – unsere Onchain-Produkte interoperieren, statt Sie an uns zu binden."
+        "title": "Auf offenen Standards aufgebaut",
+        "text": "Dank AIP-62, MCP und Smart Contracts in Move arbeiten unsere Onchain-Produkte mit anderen Anwendungen zusammen. Sie bleiben unabhängig von einem einzelnen Anbieter."
       }
     },
     "methodology": {
@@ -232,7 +237,7 @@
       "subtitle": "Von der Idee zum signierten Release, das Sie prüfen können",
       "steps": {
         "scope": {
-          "title": "Wir grenzen ein",
+          "title": "Wir legen den Umfang fest",
           "text": "Jedes Produkt beginnt als fokussierte Idee: eine Aufgabe, sauber gelöst, ohne Funktionsballast."
         },
         "build": {
@@ -240,12 +245,12 @@
           "text": "Unser eigenes Team entwirft, implementiert und testet jedes Produkt – ohne Auslagerung, ohne Übergaben."
         },
         "review": {
-          "title": "Wir lassen es prüfen",
+          "title": "Wir prüfen die Sicherheit",
           "text": "Neue Wallet- und Bridge-Releases durchlaufen Audits und interne Prüfungen, bevor etwas erscheint."
         },
         "sign": {
           "title": "Wir signieren und veröffentlichen",
-          "text": "Releases werden signiert, wo nötig notariell beglaubigt und mit Signaturen veröffentlicht, die Sie prüfen können."
+          "text": "Wir signieren unsere Versionen, lassen sie gegebenenfalls digital notarisieren und veröffentlichen sie mit Signaturen, die Sie prüfen können."
         },
         "support": {
           "title": "Wir unterstützen, was wir liefern",
@@ -267,13 +272,23 @@
     },
     "cta": {
       "title": "Fragen zu unseren Produkten?",
-      "text": "Sie möchten mehr über ein Produkt erfahren, ein Problem melden oder etwas Eigenes besprechen? Schreiben Sie dem Team, das die Software baut.",
+      "text": "Sie möchten mehr über ein Produkt erfahren, ein Problem melden oder eine individuelle Lösung besprechen? Schreiben Sie dem Team, das die Software entwickelt.",
       "button": "Kontakt aufnehmen"
     },
     "modal": {
       "title": "Kontakt aufnehmen",
       "text": "Sprechen Sie mit dem Team hinter unseren Produkten – Fragen, Probleme oder eigene Wünsche.",
       "note": "Wir melden uns so schnell wie möglich."
+    },
+    "studio": {
+      "eyebrow": "Unabhängige Apps, Spiele und Medienwerkzeuge",
+      "headline": "Zum Spielen gemacht.",
+      "accent": "Entwickelt zum <emphasis>Gestalten.</emphasis>",
+      "intro": "Eigene Spiele, praktische Apps und kreative Werkzeuge von einem unabhängigen Team.",
+      "explore": "Apps und Spiele entdecken",
+      "more": "Mehr von Inferenco",
+      "partners": "Bei Inferenco arbeiten Singularity Shift und Spielcrypto zusammen. Wir entwerfen, entwickeln und pflegen unsere eigene Software.",
+      "story": "Unsere Geschichte"
     }
   },
   "media": {
@@ -286,7 +301,7 @@
     },
     "gallery": {
       "title": "Spiele & Alltags-Apps",
-      "subtitle": "Ein Mobile-Go-Spiel und zwei kostenlose, datenschutzfreundliche Web-Tools – ohne Konten, und nichts verlässt Ihr Gerät, sofern Sie es nicht wollen.",
+      "subtitle": "Ein Go-Spiel für unterwegs und zwei kostenlose Web-Tools für Ihre Privatsphäre. Sie brauchen kein Konto. Daten verlassen Ihr Gerät nur, wenn Sie das ausdrücklich veranlassen.",
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "App-Symbol von Nemesis Go",
@@ -334,41 +349,82 @@
           "Offline-KI auf dem Gerät",
           "Zuganalyse",
           "Ohne Konto",
-          "Gespeicherte Partien lokal",
+          "Partien auf dem Gerät speichern",
           "Hinweis & Rückgängig",
-          "Optionale monatliche Werbefreiheit"
+          "Optionales Monatsabo ohne Werbung"
         ],
         "note": "Die iOS-Version kommt in Kürze.",
         "privacy": "Datenschutzerklärung",
         "terms": "Nutzungsbedingungen"
       },
       "sound": {
-        "long": "Sound Flipper (soundflipper.com) ist ein kostenloser Online-Audio-Konverter für Aufnahmen, Songs und andere Klangdateien, die bereits auf Ihrem Gerät liegen – alles wird lokal in Ihrem Browser verarbeitet, Ihre Audio-Daten bleiben also privat. Der Inspektor liest das eigentliche Audio aus und sagt Ihnen genau, was er erkennt; nicht unterstützte Dateien lehnt er mit einer klaren Erklärung ab. Sie können bis zu zehn Dateien gleichzeitig zwischen MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis und Opus konvertieren, wobei die Qualitätseinstellungen automatisch sinnvoll gewählt werden. Ideal, um abgelehnte Uploads zu reparieren – etwa eine Sprachnotiz in MP3 zu verwandeln – und mit Schritt-für-Schritt-Anleitungen ausgestattet. Derzeit als testbare Vorschau verfügbar, kostenlos und ohne Registrierung.",
+        "long": "Sound Flipper (soundflipper.com) ist ein kostenloser Online-Konverter für Aufnahmen, Musik und andere Audiodateien auf Ihrem Gerät. Die Verarbeitung erfolgt vollständig in Ihrem Browser. Ihre Dateien bleiben privat. Sound Flipper prüft den tatsächlichen Audioinhalt und zeigt an, was es erkannt hat. Bei nicht unterstützten Dateien erklärt es den Grund. Sie können bis zu zehn Dateien gleichzeitig zwischen MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis und Opus umwandeln. Passende Qualitätseinstellungen werden automatisch gewählt. Wurde ein Upload abgelehnt, können Sie etwa eine Sprachnotiz in MP3 umwandeln. Schritt-für-Schritt-Anleitungen helfen dabei. Die Vorschau können Sie kostenlos und ohne Anmeldung ausprobieren.",
         "features": [
-          "100 % lokal",
-          "Bis zu 10 Dateien gestapelt",
+          "100 % auf dem Gerät",
+          "Bis zu 10 Dateien auf einmal",
           "MP3/WAV/M4A/FLAC/ALAC/AIFF/Ogg/Opus",
-          "Inhalts-Inspektor",
+          "Audioinhalt prüfen",
           "Automatische Qualitätseinstellungen",
           "Konvertierungs-Anleitungen",
-          "Vorschau-Status"
+          "Vorschauversion"
         ],
         "note": "Kostenlose Vorschau – ohne Registrierung."
       },
       "resize": {
-        "long": "Make My Image Fit (resizeandcompress.app) ist ein kostenloses Online-Bild-Tool, das Bilder komprimiert, skaliert und konvertiert, ohne sie jemals hochzuladen – die gesamte Verarbeitung geschieht auf Ihrem Gerät im Browser. Sie können bis zu 10 Bilder gleichzeitig bearbeiten (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC oder DNG), eine maximale Dateigröße in KB/MB und/oder exakte Pixelmaße festlegen und das Ausgabeformat wählen. Vor dem Download prüft das Tool jedes Ergebnis gegen Ihre Vorgaben; zudem können Sie drehen, Hintergründe setzen oder HEIC-Handyfotos und DNG-RAW-Dateien lokal konvertieren. Ergebnisse werden einzeln oder als ZIP geladen. Vollständig kostenlos ohne Registrierung, und ohne Zustimmung werden weder Analysen noch Werbung geladen.",
+        "long": "Make My Image Fit (resizeandcompress.app) ist ein kostenloses Online-Tool zum Komprimieren, Skalieren und Umwandeln von Bildern. Die Dateien werden nie hochgeladen. Die gesamte Verarbeitung erfolgt im Browser auf Ihrem Gerät. Sie können bis zu 10 Bilder gleichzeitig bearbeiten (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC oder DNG), eine maximale Dateigröße in KB oder MB, genaue Bildmaße in Pixeln oder beides festlegen und das Ausgabeformat wählen. Vor dem Download prüft das Tool, ob jedes Bild Ihre Vorgaben erfüllt. Sie können Bilder drehen, Hintergründe festlegen sowie HEIC-Fotos vom Handy und DNG-RAW-Dateien direkt auf dem Gerät umwandeln. Die Ergebnisse lassen sich einzeln oder als ZIP-Datei herunterladen. Das Tool ist kostenlos und erfordert keine Anmeldung. Ohne Ihre Einwilligung werden weder Werkzeuge zur Nutzungsanalyse noch Werbeanzeigen geladen.",
         "features": [
-          "100 % lokal",
-          "Bis zu 10 Bilder gestapelt",
+          "100 % auf dem Gerät",
+          "Bis zu 10 Bilder auf einmal",
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
           "Maximale Dateigröße",
           "Skalieren in Pixeln",
           "Drehen & Hintergründe",
           "ZIP-Download",
-          "Keine Analyse ohne Zustimmung"
+          "Keine Nutzungsanalyse ohne Einwilligung"
         ],
         "note": "Vollständig kostenlos, ohne Registrierung."
       }
+    },
+    "showcase": {
+      "explore": "Entdecken",
+      "detailsLink": "<product>{{name}}</product> entdecken",
+      "collectionTitle": "Apps & Spiele",
+      "collectionIntro": "Eine Sammlung eigener Spiele und praktischer Tools von unserem kleinen Team.",
+      "platforms": "Plattformen",
+      "openWeb": "Web-App öffnen",
+      "related": "Weitere Apps und Spiele",
+      "collectionHeadline": "Gutes entsteht hier.",
+      "nemesis": {
+        "category": "Strategiespiel",
+        "intro": "Ihr nächster Zug. Wo Sie wollen.",
+        "cover": "Ein hölzernes Go-Brett mit schwarzen und weißen Steinen in einem Wald",
+        "boardDetail": "Ein schwarzer und ein weißer Stein auf einem 9×9-Go-Brett",
+        "feature": "Go auf 9×9 Feldern für unterwegs",
+        "detail": "Spielen Sie offline gegen den Computer und setzen Sie Ihre gespeicherten Partien jederzeit fort.",
+        "screen1": "Go-Partie mit Punktestand und Bedienelementen für Spielzüge"
+      },
+      "sound": {
+        "category": "Audiowerkzeug",
+        "intro": "Audiodateien umwandeln und bearbeiten.",
+        "cover": "Audiokonverter mit Wellenform und Ausgabeeinstellungen",
+        "feature": "Von der Aufnahme zur fertigen Datei",
+        "detail": "Wählen Sie ein Ausgabeformat. Vor dem Export können Sie Ihre Aufnahme kürzen oder die Ein- und Ausblendungen anpassen.",
+        "screen1": "Bedienelemente zum Kürzen und Ein- und Ausblenden im Audioeditor"
+      },
+      "resize": {
+        "category": "Bildwerkzeug",
+        "intro": "Das richtige Bild in der richtigen Größe.",
+        "cover": "Startbildschirm von Resize & Compress mit Fotovorschau",
+        "feature": "Bilder passend machen",
+        "detail": "Legen Sie die Bildmaße oder die Dateigröße fest und prüfen Sie das Ergebnis vor dem Speichern.",
+        "screen1": "Arbeitsbereich zum Skalieren mit Einstellungen für Bildgröße und Format",
+        "screen2": "Bildprüfung mit Angaben zur Ausgabedatei",
+        "examplePhoto": "Eine rote Hibiskusblüte zwischen grünen Blättern",
+        "example": "Ein Bild vor und nach der Größenänderung",
+        "before": "Vorher",
+        "after": "Nachher"
+      },
+      "webPlatform": "Web"
     }
   },
   "blog": {
@@ -381,8 +437,9 @@
       "noExcerpt": "Kein Auszug verfügbar",
       "readMore": "Weiterlesen →",
       "loadingMore": "Weitere Blogbeiträge werden geladen …",
-      "end": "Sie haben das Ende aller Blogbeiträge erreicht.",
-      "fetchError": "Blogbeiträge konnten nicht geladen werden"
+      "end": "Alle Blogbeiträge wurden angezeigt.",
+      "fetchError": "Die Blogbeiträge konnten nicht geladen werden.",
+      "loadMore": "Weitere Artikel laden"
     },
     "single": {
       "loading": "Blogbeitrag wird geladen …",
@@ -393,8 +450,8 @@
       "backAllArrow": "← Zurück zu allen Blogbeiträgen",
       "published": "Veröffentlicht: {{date}}",
       "gallery": "Galerie",
-      "blogImage": "Blogbild",
-      "fetchError": "Blogbeitrag konnte nicht geladen werden"
+      "blogImage": "Bild zum Blogbeitrag",
+      "fetchError": "Der Blogbeitrag konnte nicht geladen werden."
     }
   }
 }
