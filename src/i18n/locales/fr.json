@@ -213,33 +213,9 @@
     "services": {
       "title": "<span>Fonctionnalités</span> des produits",
       "subtitle": "Ce que nos produits offrent dès le départ",
-      "nemesis": {
-        "title": "Jouez au Go contre une IA locale",
-        "text": "Nemesis Go est un jeu de Go 9×9 pour Android dont l'adversaire et l'analyse des coups s'exécutent sur votre appareil — sans compte, et il fonctionne hors ligne."
-      },
-      "fixFiles": {
-        "title": "Réparez vos fichiers sans téléverser",
-        "text": "Make My Image Fit et Sound Flipper redimensionnent, compressent et convertissent entièrement sur votre appareil — rien n'est téléversé."
-      },
-      "desk": {
-        "title": "Gérez vos actifs avec Infer Desk",
-        "text": "Un portefeuille de bureau pour Cedra : envoyez, recevez, échangez et gérez tokens et NFT avec une sécurité de niveau professionnel."
-      },
-      "wallet": {
-        "title": "Emportez votre portefeuille partout",
-        "text": "Infer Wallet amène Cedra sur mobile avec protection biométrique, échanges intégrés et intégrations DeFi."
-      },
       "agents": {
         "title": "Laissez les agents IA faire le travail",
-        "text": "Infer MCP connecte les agents de codage IA à votre portefeuille Infer Desk, chaque action sensible étant approuvée à l'écran."
-      },
-      "dapps": {
-        "title": "Connectez vos dApps en un clic",
-        "text": "Infer Connect donne aux dApps Cedra un adaptateur de portefeuille standard pour les connexions, la signature de transactions et la signature de messages."
-      },
-      "ecosystem": {
-        "title": "Jouez et échangez dans l'Ecosystem",
-        "text": "La dApp Infer Ecosystem propose la gestion d'événements, un pôle de jeux et des outils communautaires sur le réseau Cedra."
+        "text": "Les agents de codage disposent d'outils de portefeuille typés et de vérifications d'état, tandis que vous approuvez chaque action sensible à l'écran."
       },
       "security": {
         "title": "La sécurité d'abord, par défaut",

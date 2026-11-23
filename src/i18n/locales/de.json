@@ -213,33 +213,9 @@
     "services": {
       "title": "Produkt<span>funktionen</span>",
       "subtitle": "Was unsere Produkte sofort bieten",
-      "nemesis": {
-        "title": "Go gegen eine lokale KI spielen",
-        "text": "Nemesis Go ist ein 9×9-Go-Spiel für Android, dessen Gegner und Zuganalyse beide auf Ihrem Gerät laufen – ohne Konto und offline spielbar."
-      },
-      "fixFiles": {
-        "title": "Dateien ohne Upload korrigieren",
-        "text": "Make My Image Fit und Sound Flipper skalieren, komprimieren und konvertieren vollständig auf Ihrem Gerät – nichts wird hochgeladen."
-      },
-      "desk": {
-        "title": "Vermögenswerte mit Infer Desk verwalten",
-        "text": "Ein Desktop-Wallet für Cedra: Token und NFTs senden, empfangen, tauschen und verwalten – mit Sicherheit auf Unternehmensniveau."
-      },
-      "wallet": {
-        "title": "Ihr Wallet überall dabei",
-        "text": "Infer Wallet bringt Cedra auf Mobilgeräte – mit biometrischem Schutz, integrierten Swaps und DeFi-Integrationen."
-      },
       "agents": {
         "title": "KI-Agenten die Arbeit überlassen",
-        "text": "Infer MCP verbindet KI-Coding-Agenten mit Ihrem Infer-Desk-Wallet, wobei jede sensible Aktion auf dem Bildschirm bestätigt wird."
-      },
-      "dapps": {
-        "title": "dApps mit einem Klick verbinden",
-        "text": "Infer Connect gibt Cedra-dApps einen Standard-Wallet-Adapter für Verbindungen, Transaktions- und Nachrichtensignaturen."
-      },
-      "ecosystem": {
-        "title": "Im Ecosystem spielen und verbinden",
-        "text": "Die Infer-Ecosystem-dApp bietet Event-Verwaltung, einen Gaming-Hub und Community-Werkzeuge im Cedra-Netzwerk."
+        "text": "Coding-Agenten erhalten typisierte Wallet-Tools und Health-Checks, während Sie jede sensible Aktion auf dem Bildschirm bestätigen."
       },
       "security": {
         "title": "Sicherheit zuerst – standardmäßig",

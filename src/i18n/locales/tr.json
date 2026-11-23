@@ -213,33 +213,9 @@
     "services": {
       "title": "Ürün <span>yetenekleri</span>",
       "subtitle": "Ürünlerimizin kutudan çıktığı haliyle sundukları",
-      "nemesis": {
-        "title": "Cihazdaki bir YZ'ye karşı Go oynayın",
-        "text": "Nemesis Go, rakibi ve hamle analizi cihazınızda çalışan, Android için bir 9×9 Go oyunudur — hesap gerekmez ve çevrimdışı çalışır."
-      },
-      "fixFiles": {
-        "title": "Dosyalarınızı yüklemeden düzeltin",
-        "text": "Make My Image Fit ve Sound Flipper, tamamen cihazınızda yeniden boyutlandırır, sıkıştırır ve dönüştürür — hiçbir şey yüklenmez."
-      },
-      "desk": {
-        "title": "Varlıklarınızı Infer Desk ile yönetin",
-        "text": "Cedra için bir masaüstü cüzdanı: kurumsal düzeyde güvenlikle token ve NFT gönderin, alın, takas edin ve yönetin."
-      },
-      "wallet": {
-        "title": "Cüzdanınızı her yere taşıyın",
-        "text": "Infer Wallet, biyometrik koruma, yerleşik takaslar ve DeFi entegrasyonlarıyla Cedra'yı mobil cihazlara getirir."
-      },
       "agents": {
         "title": "İşi YZ ajanlarına bırakın",
-        "text": "Infer MCP, YZ kodlama ajanlarını Infer Desk cüzdanınıza bağlar ve hassas her işlem ekran üzerinde onaylanır."
-      },
-      "dapps": {
-        "title": "dApp'leri tek tıkla bağlayın",
-        "text": "Infer Connect, Cedra dApp'lerine bağlantı, işlem imzalama ve mesaj imzalama için standart bir cüzdan adaptörü kazandırır."
-      },
-      "ecosystem": {
-        "title": "Ecosystem içinde oynayın ve bağlanın",
-        "text": "Infer Ecosystem dApp'i, Cedra Ağı üzerinde etkinlik yönetimi, bir oyun merkezi ve topluluk araçları sunar."
+        "text": "Kodlama ajanları tipli cüzdan araçları ve sağlık kontrolleri alır, siz ise her hassas işlemi ekran üzerinde onaylarsınız."
       },
       "security": {
         "title": "Varsayılan olarak önce güvenlik",

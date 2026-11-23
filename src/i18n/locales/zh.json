@@ -213,33 +213,9 @@
     "services": {
       "title": "产品<span>能力</span>",
       "subtitle": "我们的产品开箱即用的能力",
-      "nemesis": {
-        "title": "与本地 AI 对弈围棋",
-        "text": "Nemesis Go 是一款面向 Android 的 9×9 围棋游戏，对手与着法分析都在您的设备上运行 — 无需账号，离线也能玩。"
-      },
-      "fixFiles": {
-        "title": "无需上传即可修复文件",
-        "text": "Make My Image Fit 与 Sound Flipper 完全在您的设备上完成缩放、压缩与转换 — 不会上传任何内容。"
-      },
-      "desk": {
-        "title": "用 Infer Desk 管理资产",
-        "text": "面向 Cedra 的桌面钱包：以企业级安全性发送、接收、交换并管理代币与 NFT。"
-      },
-      "wallet": {
-        "title": "钱包随身带",
-        "text": "Infer Wallet 把 Cedra 带到移动端，配备生物识别保护、内置交换与 DeFi 集成。"
-      },
       "agents": {
         "title": "让 AI 代理替你完成工作",
-        "text": "Infer MCP 将 AI 编码代理连接到您的 Infer Desk 钱包，每一项敏感操作都需在界面上确认。"
-      },
-      "dapps": {
-        "title": "一键连接 dApp",
-        "text": "Infer Connect 为 Cedra dApp 提供标准钱包适配器，用于连接、交易签名与消息签名。"
-      },
-      "ecosystem": {
-        "title": "在 Ecosystem 中游戏与连接",
-        "text": "Infer Ecosystem dApp 在 Cedra 网络上提供活动管理、游戏中心与社区工具。"
+        "text": "编码代理获得类型化钱包工具与健康检查，而您在屏幕上批准每一项敏感操作。"
       },
       "security": {
         "title": "默认安全优先",

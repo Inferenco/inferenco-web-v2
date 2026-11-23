@@ -213,33 +213,9 @@
     "services": {
       "title": "製品<span>機能</span>",
       "subtitle": "私たちの製品が最初から提供するもの",
-      "nemesis": {
-        "title": "デバイス上の AI と围棋対局",
-        "text": "Nemesis Go は Android 向けの 9×9 の围棋ゲームで、対戦相手も手分析もデバイス内で動作します。アカウント不要でオフラインでも遊べます。"
-      },
-      "fixFiles": {
-        "title": "アップロードなしでファイルを直せる",
-        "text": "Make My Image Fit と Sound Flipper は、すべてデバイス内で縮小・圧縮・変換を行うため、何もアップロードされません。"
-      },
-      "desk": {
-        "title": "Infer Desk で資産を管理",
-        "text": "Cedra 向けのデスクトップウォレット。トークンと NFT の送受信、スワップ、管理を企業レベルのセキュリティで実行できます。"
-      },
-      "wallet": {
-        "title": "ウォレットを持ち歩く",
-        "text": "Infer Wallet は生体認証保護、組み込みスワップ、DeFi 連携とともに Cedra をモバイルへ届けます。"
-      },
       "agents": {
         "title": "AI エージェントに仕事を任せる",
-        "text": "Infer MCP は AI コーディングエージェントを Infer Desk ウォレットに接続し、機微な操作はすべて画面で承認します。"
-      },
-      "dapps": {
-        "title": "ワンクリックで dApps 接続",
-        "text": "Infer Connect は Cedra の dApps に、接続・トランザクション署名・メッセージ署名用の標準ウォレットアダプターを提供します。"
-      },
-      "ecosystem": {
-        "title": "Ecosystem で遊び、つながる",
-        "text": "Infer Ecosystem の dApp は、Cedra ネットワーク上でイベント管理、ゲームハブ、コミュニティツールを提供します。"
+        "text": "コーディングエージェントは型付きウォレットツールとヘルスチェックを利用でき、機微な操作はすべてあなたが画面で承認します。"
       },
       "security": {
         "title": "デフォルトでセキュリティ最優先",

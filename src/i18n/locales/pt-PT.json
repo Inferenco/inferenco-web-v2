@@ -213,33 +213,9 @@
     "services": {
       "title": "<span>Funcionalidades</span> dos produtos",
       "subtitle": "O que os nossos produtos oferecem desde o primeiro momento",
-      "nemesis": {
-        "title": "Jogue Go contra uma IA no dispositivo",
-        "text": "O Nemesis Go é um jogo de Go 9×9 para Android em que o adversário e a análise de jogadas correm no seu dispositivo — sem conta e sem ligação."
-      },
-      "fixFiles": {
-        "title": "Corrija ficheiros sem enviar nada",
-        "text": "O Make My Image Fit e o Sound Flipper redimensionam, comprimem e convertem inteiramente no seu dispositivo — nada é enviado."
-      },
-      "desk": {
-        "title": "Gira os seus ativos com o Infer Desk",
-        "text": "Um portefólio para computador da Cedra: envie, receba, troque e gira tokens e NFT com segurança de nível empresarial."
-      },
-      "wallet": {
-        "title": "Leve o seu portefólio para todo o lado",
-        "text": "O Infer Wallet leva a Cedra ao telemóvel com proteção biométrica, trocas integradas e integrações DeFi."
-      },
       "agents": {
         "title": "Deixe o trabalho aos agentes de IA",
-        "text": "O Infer MCP liga agentes de programação com IA ao seu portefólio Infer Desk, com todas as ações sensíveis aprovadas no ecrã."
-      },
-      "dapps": {
-        "title": "Ligue dApps com um clique",
-        "text": "O Infer Connect dá às dApps da Cedra um adaptador de portefólio padrão para ligações, assinatura de transações e assinatura de mensagens."
-      },
-      "ecosystem": {
-        "title": "Jogue e ligue-se no Ecosystem",
-        "text": "A dApp Infer Ecosystem oferece gestão de eventos, um centro de jogos e ferramentas para a comunidade na Cedra Network."
+        "text": "Os agentes de programação recebem ferramentas de portefólio tipadas e verificações de estado, enquanto aprova cada ação sensível no ecrã."
       },
       "security": {
         "title": "Segurança em primeiro lugar por omissão",

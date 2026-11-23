@@ -388,39 +388,9 @@ export default function Home() {
           <p className="section-subtitle">{t("services.subtitle")}</p>
           <div className="features-grid">
             <div className="feature-card">
-              <span className="emoji">♟️</span>
-              <h4>{t("services.nemesis.title")}</h4>
-              <p>{t("services.nemesis.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🖼️</span>
-              <h4>{t("services.fixFiles.title")}</h4>
-              <p>{t("services.fixFiles.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">💻</span>
-              <h4>{t("services.desk.title")}</h4>
-              <p>{t("services.desk.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">📱</span>
-              <h4>{t("services.wallet.title")}</h4>
-              <p>{t("services.wallet.text")}</p>
-            </div>
-            <div className="feature-card">
               <span className="emoji">🤖</span>
               <h4>{t("services.agents.title")}</h4>
               <p>{t("services.agents.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🔗</span>
-              <h4>{t("services.dapps.title")}</h4>
-              <p>{t("services.dapps.text")}</p>
-            </div>
-            <div className="feature-card">
-              <span className="emoji">🎮</span>
-              <h4>{t("services.ecosystem.title")}</h4>
-              <p>{t("services.ecosystem.text")}</p>
             </div>
             <div className="feature-card">
               <span className="emoji">🔐</span>
