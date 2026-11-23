@@ -27,7 +27,7 @@
     "aria": {
       "joinOn": "在 {{provider}} 上关注 Inferenco",
       "toggleTheme": "切换主题",
-      "toggleMenu": "打开菜单",
+      "toggleMenu": "打开/关闭菜单",
       "switchLanguage": "更换语言",
       "currentLanguage": "当前语言：{{language}}"
     },

@@ -27,7 +27,7 @@
     "aria": {
       "joinOn": "Inferenco'yu {{provider}} üzerinde takip edin",
       "toggleTheme": "Temayı değiştir",
-      "toggleMenu": "Menüyü aç",
+      "toggleMenu": "Menüyü aç/kapat",
       "switchLanguage": "Dili değiştir",
       "currentLanguage": "Geçerli dil: {{language}}"
     },
@@ -100,7 +100,7 @@
     },
     "portfolio": {
       "title": "<span>Ürünlerimiz</span>",
-      "subtitle": "Kendi baştan sona geliştirip yayımladığımız her şey — oyunlar, medya araçları, cüzdanlar ve geliştirici araçları",
+      "subtitle": "Baştan sona kendi geliştirip yayımladığımız her şey — oyunlar, medya araçları, cüzdanlar ve geliştirici araçları",
       "divider": "Onchain ürünler",
       "learnMore": "Daha fazla bilgi",
       "readDocs": "Belgeleri okuyun",
@@ -163,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Infer MCP logosu",
-          "blurb": "YZ kodlama ajanlarının Infer Desk cüzdanınızı kullanmasına olanak tanır, ekran üzerinde onayla.",
+          "blurb": "YZ kodlama ajanlarının Infer Desk cüzdanınızı kullanmasına olanak tanır, ekran üzerinde onay ile.",
           "tags": [
             "MCP",
             "YZ ajanları",
@@ -183,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer Ecosystem logosu",
-          "blurb": "Cedra Ağında etkinlikler, oyunlar ve topluluk araçları — tarayıcınızda.",
+          "blurb": "Cedra Ağı'nda etkinlikler, oyunlar ve topluluk araçları — tarayıcınızda.",
           "tags": [
             "dApp",
             "Cedra",
@@ -204,7 +204,7 @@
         "gamesMedia": "Mobil oyunlar ve medya uygulamaları",
         "browserUtilities": "Ücretsiz tarayıcı yardımcıları",
         "wallets": "Masaüstü ve mobil cüzdanlar",
-        "onchainCedra": "Cedra için zincir üstü ürünler (cüzdanlar, dApp'ler ve adaptör)",
+        "onchainCedra": "Cedra için onchain ürünler (cüzdanlar, dApp'ler ve adaptör)",
         "devTooling": "Geliştirici araçları ve MCP entegrasyonları",
         "ai": "YZ destekli asistanlar",
         "security": "Güvenlik incelemeleri ve imzalı sürümler"
@@ -215,7 +215,7 @@
       "subtitle": "Ürünlerimizin kutudan çıktığı haliyle sundukları",
       "agents": {
         "title": "İşi YZ ajanlarına bırakın",
-        "text": "Kodlama ajanları tipli cüzdan araçları ve sağlık kontrolleri alır, siz ise her hassas işlemi ekran üzerinde onaylarsınız."
+        "text": "Kodlama ajanları tip güvenli cüzdan araçları ve sağlık kontrolleri alır, siz ise her hassas işlemi ekran üzerinde onaylarsınız."
       },
       "security": {
         "title": "Varsayılan olarak önce güvenlik",
@@ -310,7 +310,7 @@
       "image": {
         "name": "Make My Image Fit",
         "alt": "Make My Image Fit ekran görüntüsü",
-        "blurb": "Tamamen tarayıcınızda çalışan ücretsiz, gizlilik öncelikli bir görüntü yeniden boyutlandırıcı ve sıkıştırıcı — yükleme yok, hesap yok. Bir en büyük dosya boyutu veya tam piksel boyutları belirleyin, aracın yükleme formunun gereksinimlerini karşılaması için en fazla 10 görüntüyü hazırlar.",
+        "blurb": "Tamamen tarayıcınızda çalışan ücretsiz, gizlilik öncelikli bir görüntü yeniden boyutlandırıcı ve sıkıştırıcı — yükleme yok, hesap yok. Bir üst dosya boyutu sınırı veya tam piksel boyutları belirleyin, araç yükleme formunun gereksinimlerini karşılaması için en fazla 10 görüntüyü hazırlar.",
         "tags": [
           "Görüntü yardımcısı",
           "Önce gizlilik",
@@ -327,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go, tamamen cihazınızda çalışan bir Android 9×9 Go oyunudur. Bilgisayar rakibi ve hamle önerilerinin arkasındaki analiz çevrimdışı çalışır; böylece hesap ve bağlantı olmadan her yerde oynayabilirsiniz. Kaydedilmiş oyunlarınız, son sonuçlarınız ve tercihleriniz cihazınızda saklanır; oyunu ortasında kapatıp daha sonra aynı tahtadan devam edebilirsiniz. Oyun ücretsizdir ve oyunlar arasında gösterilen reklamlarla desteklenir; bir ipucu istediğinizde veya son hamlenizi geri almak istediğinizde reklam izlemeyi de seçebilirsiniz. İsteğe bağlı aylık \"Reklamları kaldır\" aboneliği, uygulama içi reklamları kapatır ve İpucu ile Geri Al işlevlerine doğrudan erişim sağlar.",
+        "long": "Nemesis Go, tamamen cihazınızda çalışan bir Android 9×9 Go oyunudur. Bilgisayar rakibi ve hamle önerilerinin arkasındaki analiz çevrimdışı çalışır; böylece hesap ve bağlantı olmadan her yerde oynayabilirsiniz. Kaydedilmiş oyunlarınız, son sonuçlarınız ve tercihleriniz cihazınızda saklanır; oyunu ortasında kapatıp daha sonra aynı tahtadan devam edebilirsiniz. Oyun ücretsizdir ve oyunlar arasında gösterilen reklamlarla desteklenir; bir ipucu istediğinizde veya son hamlenizi geri almak istediğinizde reklam izlemeyi de seçebilirsiniz. İsteğe bağlı aylık “Reklamları kaldır” aboneliği, uygulama içi reklamları kapatır ve İpucu ile Geri Al işlevlerine doğrudan erişim sağlar.",
         "features": [
           "9×9 Go",
           "Cihazda çevrimdışı YZ",
@@ -355,12 +355,12 @@
         "note": "Ücretsiz ön sürüm — kayıt gerekmez."
       },
       "resize": {
-        "long": "Make My Image Fit (resizeandcompress.app), görüntüleri hiç yüklemeden sıkıştıran, yeniden boyutlandıran ve dönüştüren ücretsiz bir çevrimiçi görüntü yardımcısıdır — tüm işleme tarayıcıda, cihazınızda gerçekleşir. Aynı anda en fazla 10 görüntüyü (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC veya DNG) işleyebilir, KB/MB cinsinden bir en büyük dosya boyutu ve/veya tam piksel boyutları belirleyebilir ve çıktı biçimini seçebilirsiniz. İndirmeden önce araç, her sonucu gereksinimlerinize göre kontrol eder; ayrıca döndürme, arka plan belirleme veya telefon HEIC fotoğrafları ile DNG RAW dosyalarını cihazda dönüştürme yapabilirsiniz. Sonuçlar tek tek veya bir ZIP olarak indirilir. Tamamen ücretsizdir ve kayıt gerektirmez; onayınız olmadan hiçbir analitik veya reklam yüklenmez.",
+        "long": "Make My Image Fit (resizeandcompress.app), görüntüleri hiç yüklemeden sıkıştıran, yeniden boyutlandıran ve dönüştüren ücretsiz bir çevrimiçi görüntü yardımcısıdır — tüm işleme tarayıcıda, cihazınızda gerçekleşir. Aynı anda en fazla 10 görüntüyü (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC veya DNG) işleyebilir, KB/MB cinsinden bir üst dosya boyutu sınırı ve/veya tam piksel boyutları belirleyebilir ve çıktı biçimini seçebilirsiniz. İndirmeden önce araç, her sonucu gereksinimlerinize göre kontrol eder; ayrıca döndürme, arka plan belirleme veya telefon HEIC fotoğrafları ile DNG RAW dosyalarını cihazda dönüştürme yapabilirsiniz. Sonuçlar tek tek veya bir ZIP olarak indirilir. Tamamen ücretsizdir ve kayıt gerektirmez; onayınız olmadan hiçbir analitik veya reklam yüklenmez.",
         "features": [
           "%100 cihazda",
           "Aynı anda 10 görüntüye kadar",
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
-          "En büyük dosya boyutu",
+          "Maksimum dosya boyutu",
           "Piksellerle yeniden boyutlandırma",
           "Döndürme ve arka planlar",
           "ZIP indirme",

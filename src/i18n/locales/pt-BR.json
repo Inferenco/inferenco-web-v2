@@ -215,10 +215,10 @@
       "subtitle": "O que nossos produtos entregam já de saída",
       "agents": {
         "title": "Deixe o trabalho com os agentes de IA",
-        "text": "Agentes de programação recebem ferramentas de carteira tipadas e verificações de integridade, enquanto você aprova cada ação sensível na tela."
+        "text": "Agentes de programação recebem ferramentas de carteira tipadas e verificações de estado, enquanto você aprova cada ação sensível na tela."
       },
       "security": {
-        "title": "Privacidade e segurança por padrão",
+        "title": "Segurança em primeiro lugar, por padrão",
         "text": "Releases auditados, binários assinados e notarizados e processamento no aparelho em toda a linha de produtos."
       },
       "standards": {
@@ -327,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que roda inteiramente no seu aparelho. O oponente controlado pelo computador e a análise por trás das sugestões de lance funcionam offline, então você pode jogar em qualquer lugar, sem conta nem conexão. Suas partidas salvas, resultados recentes e preferências ficam no aparelho, e você pode fechar o aplicativo no meio de uma partida e retomar o mesmo tabuleiro depois. O jogo é gratuito e sustentado por anúncios exibidos entre uma partida e outra; você também pode escolher assistir a um anúncio quando quiser uma dica ou desfazer o último lance. A assinatura mensal opcional Remover anúncios desliga os anúncios dentro do app e dá acesso direto a Dica e Desfazer.",
+        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que roda inteiramente no seu aparelho. O oponente controlado pelo computador e a análise por trás das sugestões de lance funcionam offline, então você pode jogar em qualquer lugar, sem conta nem conexão. Suas partidas salvas, resultados recentes e preferências ficam no aparelho, e você pode fechar o aplicativo no meio de uma partida e retomar o mesmo tabuleiro depois. O jogo é gratuito e financiado por anúncios exibidos entre uma partida e outra; você também pode escolher assistir a um anúncio quando quiser uma dica ou desfazer o último lance. A assinatura mensal opcional Remover anúncios desliga os anúncios dentro do app e dá acesso direto a Dica e Desfazer.",
         "features": [
           "9×9 Go",
           "IA offline no aparelho",
@@ -342,7 +342,7 @@
         "terms": "Termos de Uso"
       },
       "sound": {
-        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros arquivos de som que já estão salvos no seu aparelho — tudo é processado localmente no navegador, então seu áudio continua privado. O inspetor lê o áudio de verdade que está dentro do arquivo e diz exatamente o que detecta, recusando arquivos não suportados com uma explicação clara. Você pode converter até dez arquivos de uma vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com configurações de qualidade sensatas definidas automaticamente. É perfeito para consertar envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Hoje ele é oferecido como uma versão de testes, gratuita e sem cadastro.",
+        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros arquivos de som que já estão salvos no seu aparelho — tudo é processado localmente no navegador, então seu áudio continua privado. O inspetor lê o áudio real do arquivo e diz exatamente o que detecta, recusando arquivos não suportados com uma explicação clara. Você pode converter até dez arquivos de uma vez entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com configurações de qualidade adequadas definidas automaticamente. É perfeito para consertar envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Hoje ele é oferecido como uma versão de testes, gratuita e sem cadastro.",
         "features": [
           "100% no aparelho",
           "Até 10 arquivos de uma vez",
@@ -362,7 +362,7 @@
           "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
           "Limite de tamanho máximo",
           "Redimensionar por pixels",
-          "Giro e fundos",
+          "Rotação e fundos",
           "Download em ZIP",
           "Sem analytics sem consentimento"
         ],

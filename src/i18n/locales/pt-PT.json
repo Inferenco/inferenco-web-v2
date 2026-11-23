@@ -25,7 +25,7 @@
       "lensforum": "Lensforum"
     },
     "aria": {
-      "joinOn": "Siga o Inferenco no {{provider}}",
+      "joinOn": "Siga a Inferenco no {{provider}}",
       "toggleTheme": "Alternar o tema",
       "toggleMenu": "Abrir ou fechar o menu",
       "switchLanguage": "Alterar o idioma",
@@ -89,7 +89,7 @@
     "hero": {
       "logoAlt": "Logótipo da Inferenco",
       "title": "Jogos e aplicações do dia a dia, desenvolvidos internamente",
-      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários multimédia aos portefólios onchain e ferramentas para programadores.",
+      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários multimédia às carteiras onchain e ferramentas para programadores.",
       "pillsAria": "Produtos da Inferenco",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
@@ -100,7 +100,7 @@
     },
     "portfolio": {
       "title": "Os nossos <span>produtos</span>",
-      "subtitle": "Tudo o que desenvolvemos e publicamos — jogos, utilitários multimédia, portefólios e ferramentas para programadores",
+      "subtitle": "Tudo o que desenvolvemos e publicamos — jogos, utilitários multimédia, carteiras e ferramentas para programadores",
       "divider": "Produtos Onchain",
       "learnMore": "Saber mais",
       "readDocs": "Ler a documentação",
@@ -131,7 +131,7 @@
         "image": {
           "name": "Make My Image Fit",
           "alt": "Captura de ecrã do Make My Image Fit",
-          "blurb": "Redimensione e comprima imagens para cumprir qualquer limite de carregamento — gratuito, privado e no dispositivo.",
+          "blurb": "Redimensione e comprima imagens para caber em qualquer limite de carregamento — gratuito, privado e no dispositivo.",
           "tags": [
             "Utilitário de imagens",
             "Utilitário web",
@@ -142,7 +142,7 @@
         "desk": {
           "name": "Infer Desk",
           "alt": "Logótipo do Infer Desk",
-          "blurb": "Portefólio de desktop para Cedra — envie, receba, troque e gira tokens e NFTs com segurança.",
+          "blurb": "Carteira de desktop para Cedra — envie, receba, troque e gere tokens e NFTs com segurança.",
           "tags": [
             "Aplicação de computador",
             "Cedra",
@@ -153,7 +153,7 @@
         "wallet": {
           "name": "Infer Wallet",
           "alt": "Logótipo do Infer Wallet",
-          "blurb": "Portefólio móvel para Cedra com swaps integrados, acesso a DeFi e proteção biométrica.",
+          "blurb": "Carteira móvel para Cedra com swaps integrados, acesso a DeFi e proteção biométrica.",
           "tags": [
             "Aplicação móvel",
             "Cedra",
@@ -163,7 +163,7 @@
         "mcp": {
           "name": "Infer MCP",
           "alt": "Logótipo do Infer MCP",
-          "blurb": "Permite que agentes de programação com IA operem o seu portefólio Infer Desk, com aprovação no ecrã.",
+          "blurb": "Permite que agentes de programação com IA operem a sua carteira Infer Desk, com aprovação no ecrã.",
           "tags": [
             "MCP",
             "Agentes de IA",
@@ -175,7 +175,7 @@
           "alt": "Logótipo do Infer Connect",
           "blurb": "Ligue dApps da Cedra ao Infer Desk e ao Infer Wallet para assinaturas e transações.",
           "tags": [
-            "Adaptador de portefólio",
+            "Adaptador de carteira",
             "dApps",
             "AIP-62"
           ]
@@ -197,14 +197,14 @@
     "about": {
       "title": "Sobre a <span>Inferenco</span> – a equipa por trás dos produtos",
       "p1": "A <strong>Inferenco</strong> é uma empresa de software nascida da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. Desenvolvemos produtos, não projetos por encomenda — tudo o que vê neste site é desenhado, desenvolvido e publicado por nós.",
-      "p2": "A nossa linha de produtos começa nos jogos e nas aplicações multimédia do dia a dia e estende-se aos portefólios onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
+      "p2": "A nossa linha de produtos começa nos jogos e nas aplicações multimédia do dia a dia e estende-se às carteiras onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
       "p3": "Cada produto é mantido pela mesma equipa que o escreveu — com documentação, guias de instalação e um contacto direto com os programadores.",
       "buildHeading": "O que desenvolvemos:",
       "build": {
         "gamesMedia": "Jogos móveis e aplicações multimédia",
         "browserUtilities": "Utilitários gratuitos no navegador",
-        "wallets": "Portefólios para computador e móvel",
-        "onchainCedra": "Produtos onchain para a Cedra (portefólios, dApps e adaptador)",
+        "wallets": "Carteiras para computador e telemóvel",
+        "onchainCedra": "Produtos onchain para a Cedra (carteiras, dApps e adaptador)",
         "devTooling": "Ferramentas para programadores e integrações MCP",
         "ai": "Assistentes com IA",
         "security": "Revisões de segurança e versões assinadas"
@@ -215,10 +215,10 @@
       "subtitle": "O que os nossos produtos oferecem desde o primeiro momento",
       "agents": {
         "title": "Deixe o trabalho aos agentes de IA",
-        "text": "Os agentes de programação recebem ferramentas de portefólio tipadas e verificações de estado, enquanto aprova cada ação sensível no ecrã."
+        "text": "Os agentes de programação recebem ferramentas de carteira tipadas e verificações de estado, enquanto aprova cada ação sensível no ecrã."
       },
       "security": {
-        "title": "Segurança em primeiro lugar por omissão",
+        "title": "Segurança em primeiro lugar por predefinição",
         "text": "Versões auditadas, binários assinados e notarizados e processamento local em toda a linha de produtos."
       },
       "standards": {
@@ -240,7 +240,7 @@
         },
         "review": {
           "title": "Submetemos a revisão de segurança",
-          "text": "As novas versões do portefólio e da ponte passam por auditorias e revisão interna antes de qualquer publicação."
+          "text": "As novas versões da carteira e da ponte passam por auditorias e revisão interna antes de qualquer publicação."
         },
         "sign": {
           "title": "Assinamos e publicamos",
@@ -253,14 +253,14 @@
       }
     },
     "approach": {
-      "title": "A nossa <span>abordagem</span> – porque os nossos produtos são diferentes",
+      "title": "A nossa <span>abordagem</span> – por que os nossos produtos são diferentes",
       "intro": "Desenvolvemos software como queremos usá-lo: <strong>transparente</strong>, <strong>privado por conceção</strong> e <strong>verificável</strong>. A nossa abordagem assenta em:",
       "values": {
         "verifiable": "Software verificável — cada versão é assinada e documentada",
-        "privacy": "Privacidade por omissão — processamento local sempre que possível",
+        "privacy": "Privacidade por predefinição — processamento local sempre que possível",
         "quality": "Qualidade e fiabilidade em cada linha de código",
         "innovation": "Inovação aliada a ferramentas práticas e utilizáveis",
-        "timely": "Versões atempadas sem comprometer a qualidade",
+        "timely": "Versões a horas, sem comprometer a qualidade",
         "interoperable": "Produtos interoperáveis que funcionam melhor em conjunto"
       }
     },
@@ -327,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que corre inteiramente no seu dispositivo. O adversário controlado pelo computador e a análise por detrás das sugestões de jogada funcionam sem ligação, pelo que pode jogar em qualquer lado, sem conta nem rede. Os jogos guardados, os resultados recentes e as preferências ficam no seu dispositivo, podendo fechar a aplicação a meio de uma partida e retomar mais tarde o mesmo tabuleiro. O jogo é gratuito e sustentado por anúncios mostrados entre partidas; pode também escolher ver um anúncio quando quiser uma dica ou desfazer a última jogada. A subscrição mensal opcional Remover anúncios desliga os anúncios na aplicação e dá acesso direto às funções Dica e Desfazer.",
+        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que corre inteiramente no seu dispositivo. O adversário controlado pelo computador e a análise por detrás das sugestões de jogada funcionam sem ligação, pelo que pode jogar em qualquer lado, sem conta nem rede. Os jogos guardados, os resultados recentes e as preferências ficam no seu dispositivo, podendo fechar a aplicação a meio de uma partida e retomar mais tarde o mesmo tabuleiro. O jogo é gratuito e financiado por anúncios mostrados entre partidas; pode também escolher ver um anúncio quando quiser uma dica ou desfazer a última jogada. A subscrição mensal opcional Remover anúncios desliga os anúncios na aplicação e dá acesso direto às funções Dica e Desfazer.",
         "features": [
           "9×9 Go",
           "IA local sem ligação",

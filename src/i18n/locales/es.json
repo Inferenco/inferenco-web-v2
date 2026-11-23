@@ -67,7 +67,7 @@
     },
     "notFound": {
       "title": "Página no encontrada",
-      "text": "La página que busca no existe. Puede que se haya movido durante el cambio de Nova a Infer, o que el enlace esté obsoleto.",
+      "text": "La página que buscas no existe. Puede que se haya movido durante el cambio de Nova a Infer, o que el enlace esté obsoleto.",
       "goHome": "Ir al inicio",
       "browseDocs": "Ver la documentación"
     }
@@ -109,7 +109,7 @@
         "nemesis": {
           "name": "Nemesis Go",
           "alt": "Icono de la app Nemesis Go",
-          "blurb": "Juega al Go 9×9 contra una IA que se ejecuta por completo en tu dispositivo Android. No necesita cuenta.",
+          "blurb": "Juega al Go 9×9 contra una IA que se ejecuta por completo en tu dispositivo Android. No necesitas cuenta.",
           "tags": [
             "Juego móvil",
             "9×9 Go",
@@ -131,7 +131,7 @@
         "image": {
           "name": "Make My Image Fit",
           "alt": "Captura de Make My Image Fit",
-          "blurb": "Redimensiona y comprime imágenes para cumplir cualquier límite de subida — gratis, privado y en tu dispositivo.",
+          "blurb": "Redimensiona y comprime imágenes para ajustarte a cualquier límite de subida — gratis, privado y en tu dispositivo.",
           "tags": [
             "Utilidad de imagen",
             "Herramienta web",
@@ -218,7 +218,7 @@
         "text": "Los agentes de programación obtienen herramientas de wallet tipadas y comprobaciones de estado, mientras tú apruebas cada acción sensible en pantalla."
       },
       "security": {
-        "title": "La seguridad primero, por defecto",
+        "title": "Seguridad ante todo, por defecto",
         "text": "Versiones auditadas, binarios firmados y notarizados, y procesamiento local en toda la línea de productos."
       },
       "standards": {
@@ -260,7 +260,7 @@
         "privacy": "Privacidad por defecto — procesamiento local siempre que es posible",
         "quality": "Calidad y fiabilidad en cada línea de código",
         "innovation": "Innovación combinada con herramientas prácticas y usables",
-        "timely": "Versiones puntuales sin comprometer la calidad",
+        "timely": "Versiones a tiempo sin comprometer la calidad",
         "interoperable": "Productos interoperables que funcionan mejor juntos"
       }
     },
@@ -285,7 +285,7 @@
     },
     "gallery": {
       "title": "Juegos y apps del día a día",
-      "subtitle": "Un juego de Go móvil y dos herramientas web gratuitas con privacidad primero: sin cuentas, y nada sale de tu dispositivo salvo que tú lo pidas.",
+      "subtitle": "Un juego de Go móvil y dos herramientas web gratuitas que anteponen la privacidad: sin cuentas, y nada sale de tu dispositivo salvo que tú lo pidas.",
       "nemesis": {
         "name": "Nemesis Go",
         "alt": "Icono de la app Nemesis Go",
@@ -303,17 +303,17 @@
         "blurb": "Un conversor de audio gratuito que funciona por completo en tu navegador: tus grabaciones y canciones nunca se suben. Convierte entre MP3, WAV, M4A, FLAC, Ogg, Opus y más, sin cuenta ni instalación de software.",
         "tags": [
           "Conversor de audio",
-          "Privacidad primero",
+          "Privacidad ante todo",
           "En el navegador"
         ]
       },
       "image": {
         "name": "Make My Image Fit",
         "alt": "Captura de Make My Image Fit",
-        "blurb": "Un redimensionador y compresor de imágenes gratuito y con privacidad primero que funciona por completo en tu navegador: sin subidas, sin cuenta. Define un tamaño máximo de archivo o dimensiones exactas en píxeles y prepara hasta 10 imágenes para cumplir los requisitos de cualquier formulario de subida.",
+        "blurb": "Un redimensionador y compresor de imágenes gratuito y centrado en la privacidad, que funciona por completo en tu navegador: sin subidas, sin cuenta. Define un tamaño máximo de archivo o dimensiones exactas en píxeles y prepara hasta 10 imágenes para cumplir los requisitos de cualquier formulario de subida.",
         "tags": [
           "Utilidad de imagen",
-          "Privacidad primero",
+          "Privacidad ante todo",
           "En el navegador"
         ]
       }

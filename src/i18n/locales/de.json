@@ -89,7 +89,7 @@
     "hero": {
       "logoAlt": "Inferenco-Logo",
       "title": "Spiele & Alltags-Apps, aus eigener Hand gebaut",
-      "tagline": "Wir entwerfen, bauen und veröffentlichen unsere eigenen Produkte – von Mobile-Games und täglichen Medien-Tools bis zu Onchain-Wallets und Entwicklerwerkzeugen.",
+      "tagline": "Wir entwerfen, bauen und veröffentlichen unsere eigenen Produkte – von Mobile-Games und Medien-Tools für den Alltag bis zu Onchain-Wallets und Entwicklerwerkzeugen.",
       "pillsAria": "Inferenco-Produkte",
       "pillDesk": "Infer Desk",
       "pillWallet": "Infer Wallet",
@@ -120,7 +120,7 @@
         "sound": {
           "name": "Sound Flipper",
           "alt": "Screenshot von Sound Flipper",
-          "blurb": "Konvertieren Sie Audio zwischen MP3, WAV, FLAC und mehr — kostenlos, privat und vollständig lokal auf Ihrem Gerät.",
+          "blurb": "Konvertieren Sie Audio zwischen MP3, WAV, FLAC und mehr – kostenlos, privat und vollständig lokal auf Ihrem Gerät.",
           "tags": [
             "Audio-Konverter",
             "Web-Tool",
@@ -131,7 +131,7 @@
         "image": {
           "name": "Make My Image Fit",
           "alt": "Screenshot von Make My Image Fit",
-          "blurb": "Größe ändern und Bilder komprimieren, damit sie jedes Upload-Limit erfüllen — kostenlos, privat und lokal.",
+          "blurb": "Größe ändern und Bilder komprimieren, damit sie jedes Upload-Limit erfüllen – kostenlos, privat und lokal.",
           "tags": [
             "Bild-Tool",
             "Web-Tool",
@@ -142,7 +142,7 @@
         "desk": {
           "name": "Infer Desk",
           "alt": "Infer-Desk-Logo",
-          "blurb": "Desktop-Wallet für Cedra — Token und NFTs sicher senden, empfangen, tauschen und verwalten.",
+          "blurb": "Desktop-Wallet für Cedra – Token und NFTs sicher senden, empfangen, tauschen und verwalten.",
           "tags": [
             "Desktop-App",
             "Cedra",
@@ -183,7 +183,7 @@
         "ecosystem": {
           "name": "Infer Ecosystem",
           "alt": "Infer-Ecosystem-Logo",
-          "blurb": "Events, Gaming und Community-Tools im Cedra-Netzwerk — direkt im Browser.",
+          "blurb": "Events, Gaming und Community-Tools im Cedra-Netzwerk – direkt im Browser.",
           "tags": [
             "dApp",
             "Cedra",
@@ -197,14 +197,14 @@
     "about": {
       "title": "Über <span>Inferenco</span> – Das Team hinter den Produkten",
       "p1": "<strong>Inferenco</strong> ist ein Softwareunternehmen, das aus der Zusammenarbeit von <strong>Singularity Shift Ltd</strong> und <strong>Spielcrypto Ltd</strong> hervorgegangen ist. Wir bauen Produkte, keine Kundenprojekte – alles auf dieser Seite wird von uns entworfen, entwickelt und veröffentlicht.",
-      "p2": "Unsere Produktlinie beginnt bei Spielen und täglichen Medien-Apps und reicht bis zu Onchain-Wallets, dApps und Entwicklerwerkzeugen – alles abgesichert durch Sicherheitsprüfungen und signierte Releases.",
+      "p2": "Unsere Produktlinie beginnt bei Spielen und Medien-Apps für den Alltag und reicht bis zu Onchain-Wallets, dApps und Entwicklerwerkzeugen – alles abgesichert durch Sicherheitsprüfungen und signierte Releases.",
       "p3": "Jedes Produkt wird von demselben Team gepflegt, das es geschrieben hat – mit Dokumentation, Installationsanleitungen und einem direkten Draht zu den Entwicklern.",
       "buildHeading": "Was wir bauen:",
       "build": {
         "gamesMedia": "Mobile Spiele & Medien-Apps",
         "browserUtilities": "Kostenlose Browser-Tools",
         "wallets": "Desktop- & Mobile-Wallets",
-        "onchainCedra": "On-Chain-Produkte für Cedra (Wallets, dApps & Adapter)",
+        "onchainCedra": "Onchain-Produkte für Cedra (Wallets, dApps & Adapter)",
         "devTooling": "Entwicklerwerkzeuge & MCP-Integrationen",
         "ai": "KI-gestützte Assistenten",
         "security": "Sicherheitsprüfungen & signierte Releases"
@@ -219,7 +219,7 @@
       },
       "security": {
         "title": "Sicherheit zuerst – standardmäßig",
-        "text": "Geprüfte Releases, signierte und notariell bestätigte Programmdateien und lokale Verarbeitung über die gesamte Produktlinie."
+        "text": "Geprüfte Releases, signierte und notariell beglaubigte Binärdateien und lokale Verarbeitung über die gesamte Produktlinie."
       },
       "standards": {
         "title": "Gebaut auf offenen Standards",
@@ -244,7 +244,7 @@
         },
         "sign": {
           "title": "Wir signieren und veröffentlichen",
-          "text": "Releases werden signiert, wo nötig notariell bestätigt und mit Signaturen veröffentlicht, die Sie prüfen können."
+          "text": "Releases werden signiert, wo nötig notariell beglaubigt und mit Signaturen veröffentlicht, die Sie prüfen können."
         },
         "support": {
           "title": "Wir unterstützen, was wir liefern",
@@ -257,7 +257,7 @@
       "intro": "Wir bauen Software so, wie wir sie selbst nutzen wollen: <strong>transparent</strong>, <strong>Privacy by Design</strong> und <strong>überprüfbar</strong>. Unser Ansatz konzentriert sich auf:",
       "values": {
         "verifiable": "Verifizierbare Software – jedes Release ist signiert und dokumentiert",
-        "privacy": "Privatsphäre by default – lokale Verarbeitung, wo immer möglich",
+        "privacy": "Privatsphäre als Standard – lokale Verarbeitung, wo immer möglich",
         "quality": "Qualität und Verlässlichkeit in jeder Codezeile",
         "innovation": "Innovation, verbunden mit praktischen, bedienbaren Werkzeugen",
         "timely": "Rechtzeitige Releases, ohne Abstriche bei der Qualität",
@@ -327,7 +327,7 @@
     },
     "modal": {
       "nemesis": {
-        "long": "Nemesis Go ist ein 9×9-Go-Spiel für Android, das vollständig auf Ihrem Gerät läuft. Der Computergegner und die Berechnung hinter den Zugvorschlägen arbeiten offline, sodass Sie überall spielen können – ohne Konto und ohne Verbindung. Ihre gespeicherten Partien, letzten Ergebnisse und Einstellungen bleiben auf dem Gerät, sodass Sie eine Partie unterbrechen und später genau dort fortsetzen können. Das Spiel ist kostenlos und wird durch Werbung zwischen den Partien finanziert; Sie können sich zudem entscheiden, eine Werbung anzusehen, wenn Sie einen Hinweis wünschen oder Ihren letzten Zug zurücknehmen möchten. Ein optionales monatliches Abo „Werbung entfernen\" schaltet die In-App-Werbung aus und gibt Ihnen direkten Zugriff auf Hinweis und Rückgängig.",
+        "long": "Nemesis Go ist ein 9×9-Go-Spiel für Android, das vollständig auf Ihrem Gerät läuft. Der Computergegner und die Berechnung hinter den Zugvorschlägen arbeiten offline, sodass Sie überall spielen können – ohne Konto und ohne Verbindung. Ihre gespeicherten Partien, letzten Ergebnisse und Einstellungen bleiben auf dem Gerät, sodass Sie eine Partie unterbrechen und später genau dort fortsetzen können. Das Spiel ist kostenlos und wird durch Werbung zwischen den Partien finanziert; Sie können sich zudem entscheiden, eine Werbung anzusehen, wenn Sie einen Hinweis wünschen oder Ihren letzten Zug zurücknehmen möchten. Ein optionales monatliches Abo „Werbung entfernen“ schaltet die In-App-Werbung aus und gibt Ihnen direkten Zugriff auf Hinweis und Rückgängig.",
         "features": [
           "9×9 Go",
           "Offline-KI auf dem Gerät",
@@ -355,7 +355,7 @@
         "note": "Kostenlose Vorschau – ohne Registrierung."
       },
       "resize": {
-        "long": "Make My Image Fit (resizeandcompress.app) ist ein kostenloses Online-Bild-Tool, das Bilder komprimiert, skaliert und konvertiert, ohne sie jemals hochzuladen – die gesamte Verarbeitung geschieht auf Ihrem Gerät im Browser. Sie können bis zu 10 Bilder gleichzeitig bearbeiten (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC oder DNG), eine maximale Dateigröße in KB/MB und/oder exakte Pixelmaße festlegen und das Ausgabeformat wählen. Vor dem Download prüft das Tool jedes Ergebnis gegen Ihre Vorgaben; zudem können Sie drehen, Hintergründe setzen oder HEIC-Handyfotos und DNG-RAW-Dateien lokal konvertieren. Ergebnisse werden einzeln oder als ZIP geladen.Vollständig kostenlos ohne Registrierung, und ohne Zustimmung werden weder Analysen noch Werbung geladen.",
+        "long": "Make My Image Fit (resizeandcompress.app) ist ein kostenloses Online-Bild-Tool, das Bilder komprimiert, skaliert und konvertiert, ohne sie jemals hochzuladen – die gesamte Verarbeitung geschieht auf Ihrem Gerät im Browser. Sie können bis zu 10 Bilder gleichzeitig bearbeiten (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC oder DNG), eine maximale Dateigröße in KB/MB und/oder exakte Pixelmaße festlegen und das Ausgabeformat wählen. Vor dem Download prüft das Tool jedes Ergebnis gegen Ihre Vorgaben; zudem können Sie drehen, Hintergründe setzen oder HEIC-Handyfotos und DNG-RAW-Dateien lokal konvertieren. Ergebnisse werden einzeln oder als ZIP geladen. Vollständig kostenlos ohne Registrierung, und ohne Zustimmung werden weder Analysen noch Werbung geladen.",
         "features": [
           "100 % lokal",
           "Bis zu 10 Bilder gestapelt",
@@ -380,7 +380,7 @@
       "noExcerpt": "Kein Auszug verfügbar",
       "readMore": "Weiterlesen →",
       "loadingMore": "Weitere Blogbeiträge werden geladen …",
-      "end": "Du hast das Ende aller Blogbeiträge erreicht.",
+      "end": "Sie haben das Ende aller Blogbeiträge erreicht.",
       "fetchError": "Blogbeiträge konnten nicht geladen werden"
     },
     "single": {
