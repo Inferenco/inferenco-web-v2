@@ -139,4 +139,15 @@ export function currentLocaleTag(): string {
   return isSupportedLanguage(resolved) ? LANGUAGE_TAGS[resolved] : "en";
 }
 
+/**
+ * Per-locale Nemesis Go legal URL. EN (and any unknown resolution) uses the
+ * canonical unlocalized pair; the 13 other locales use /nemesis-go/<lng>/<doc>/
+ * emitted by src/legal/build.ts. Relative so it works on dev/preview/prod.
+ */
+export function nemesisLegalUrl(doc: "privacy" | "terms"): string {
+  const resolved = i18n.resolvedLanguage ?? i18n.language;
+  const lng = isSupportedLanguage(resolved) && resolved !== "en" ? resolved : null;
+  return lng ? `/nemesis-go/${lng}/${doc}/` : `/nemesis-go/${doc}/`;
+}
+
 export default i18n;

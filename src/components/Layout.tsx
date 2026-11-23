@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { PageType, ProductDropdownItem } from "../types";
+import { nemesisLegalUrl } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks: { labelKey: string; path: string; page: PageType }[] = [
@@ -307,8 +308,8 @@ export default function Layout() {
             </div>
             <div className="footer-links">
               <h4>{t("footer.nemesisGoColumn")}</h4>
-              <a href="https://inferenco.com/nemesis-go/privacy/">{t("footer.nemesisPrivacy")}</a>
-              <a href="https://inferenco.com/nemesis-go/terms/">{t("footer.nemesisTerms")}</a>
+              <a href={nemesisLegalUrl("privacy")}>{t("footer.nemesisPrivacy")}</a>
+              <a href={nemesisLegalUrl("terms")}>{t("footer.nemesisTerms")}</a>
             </div>
           </div>
           <div className="footer-bottom">

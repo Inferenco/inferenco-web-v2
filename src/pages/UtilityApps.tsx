@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { mediaProducts } from "../data/mediaProducts";
+import { nemesisLegalUrl } from "../i18n";
 
 type ActiveApp = "nemesis" | "resize" | "sound" | null;
 
@@ -264,8 +265,8 @@ export default function UtilityApps() {
             ))}
             {"legal" in app && app.legal && (
               <div className="portfolio-tags" style={{ marginTop: "1rem" }}>
-                <a href={app.legal.privacy}>{t("modal.nemesis.privacy")}</a>
-                <a href={app.legal.terms}>{t("modal.nemesis.terms")}</a>
+                <a href={nemesisLegalUrl("privacy")}>{t("modal.nemesis.privacy")}</a>
+                <a href={nemesisLegalUrl("terms")}>{t("modal.nemesis.terms")}</a>
               </div>
             )}
             <p className="modal-note">{t(`modal.${app.key}.note`)}</p>

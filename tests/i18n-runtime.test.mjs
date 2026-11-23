@@ -131,3 +131,33 @@ test("pt-PT and pt-BR are distinct catalogues, not aliases", async () => {
   assert.equal(br, "Jogos e aplicativos do dia a dia");
   assert.equal(pt, "Jogos e aplicações do dia a dia");
 });
+
+test("nemesisLegalUrl builds per-locale legal URLs with an EN fallback", async () => {
+  stubBrowser({ languages: ["en"] });
+  const mod = await vite.ssrLoadModule("/src/i18n/index.ts?legal");
+  const i18n = mod.default;
+  await mod.initI18n();
+
+  // EN uses the canonical unlocalized pair.
+  assert.equal(mod.nemesisLegalUrl("privacy"), "/nemesis-go/privacy/");
+  assert.equal(mod.nemesisLegalUrl("terms"), "/nemesis-go/terms/");
+
+  // A supported non-EN locale uses its code-named directory.
+  await mod.setLanguage("ar");
+  assert.equal(mod.nemesisLegalUrl("privacy"), "/nemesis-go/ar/privacy/");
+
+  // Region-tagged codes keep their full code (legal dirs are named by code).
+  await mod.setLanguage("pt-BR");
+  assert.equal(mod.nemesisLegalUrl("terms"), "/nemesis-go/pt-BR/terms/");
+  await mod.setLanguage("pt-PT");
+  assert.equal(mod.nemesisLegalUrl("terms"), "/nemesis-go/pt-PT/terms/");
+  assert.notEqual(
+    mod.nemesisLegalUrl("terms"),
+    "/nemesis-go/pt-BR/terms/",
+    "pt-PT must resolve to its own legal directory",
+  );
+
+  // An unknown resolution falls back to the EN pair.
+  await i18n.changeLanguage("xx");
+  assert.equal(mod.nemesisLegalUrl("privacy"), "/nemesis-go/privacy/");
+});
