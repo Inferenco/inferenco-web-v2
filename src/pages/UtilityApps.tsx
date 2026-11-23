@@ -59,7 +59,7 @@ export default function UtilityApps() {
   const features = (product: string): string[] => t(`modal.${product}.features`, { returnObjects: true }) as string[];
 
   return (
-    <div id="utility-apps-page" className="page-section">
+    <div id="games-and-apps-page" className="page-section">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <h1>{t("hero.title")}</h1>
@@ -93,7 +93,7 @@ export default function UtilityApps() {
         </div>
       </section>
 
-      <section id="utility-apps-gallery" className="section">
+      <section id="games-and-apps-gallery" className="section">
         <div className="container">
           <h2 className="section-title">{t("gallery.title")}</h2>
           <p className="section-subtitle">{t("gallery.subtitle")}</p>

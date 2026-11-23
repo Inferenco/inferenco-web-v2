@@ -7,7 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks: { labelKey: string; path: string; page: PageType }[] = [
   { labelKey: "nav.home", path: "/", page: "home" },
-  { labelKey: "nav.media", path: "/utility-apps", page: "utility-apps" },
+  { labelKey: "nav.media", path: "/games-and-apps", page: "games-and-apps" },
   { labelKey: "nav.blogs", path: "/blogs", page: "blogs" },
 ];
 
@@ -271,10 +271,10 @@ export default function Layout() {
             </div>
             <div className="footer-links">
               <h4>{t("footer.mediaColumn")}</h4>
-              <Link to="/utility-apps">{t("footer.allApps")}</Link>
-              <Link to="/utility-apps#nemesis-go">{t("footer.nemesisGo")}</Link>
-              <Link to="/utility-apps#sound-flipper">{t("footer.soundFlipper")}</Link>
-              <Link to="/utility-apps#image-fit">{t("footer.imageFit")}</Link>
+              <Link to="/games-and-apps">{t("footer.allApps")}</Link>
+              <Link to="/games-and-apps#nemesis-go">{t("footer.nemesisGo")}</Link>
+              <Link to="/games-and-apps#sound-flipper">{t("footer.soundFlipper")}</Link>
+              <Link to="/games-and-apps#image-fit">{t("footer.imageFit")}</Link>
             </div>
             <div className="footer-links">
               <h4>{t("footer.onchainColumn")}</h4>

@@ -1,5 +1,5 @@
 // Page types
-export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'infer-mcp' | 'utility-apps' | 'docs' | 'blogs';
+export type PageType = 'home' | 'infer' | 'infer-wallet' | 'infer-desk' | 'infer-mcp' | 'games-and-apps' | 'docs' | 'blogs';
 
 // Blog types
 export interface BlogAsset {

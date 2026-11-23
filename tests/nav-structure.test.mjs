@@ -28,8 +28,8 @@ test("top-level nav is Home / Media & Entertainment / Blogs, with no Docs entry"
   const nav = arrayLiteral("navLinks");
   assert.ok(!nav.includes('path: "/docs"'), "Docs must not be a top-level nav item");
   assert.ok(
-    nav.includes('{ labelKey: "nav.media", path: "/utility-apps", page: "utility-apps" }'),
-    "Media & Entertainment must point at /utility-apps with the utility-apps PageType",
+    nav.includes('{ labelKey: "nav.media", path: "/games-and-apps", page: "games-and-apps" }'),
+    "Media & Entertainment must point at /games-and-apps with the games-and-apps PageType",
   );
   assert.equal(chrome.nav.media, "Media & Entertainment");
   assert.equal(chrome.nav.blogs, "Blogs");
@@ -73,10 +73,10 @@ test("the footer carries a Media & Entertainment column before the Onchain colum
 
   const column = layout.slice(meIdx, onchainIdx);
   for (const target of [
-    'to="/utility-apps"',
-    'to="/utility-apps#nemesis-go"',
-    'to="/utility-apps#sound-flipper"',
-    'to="/utility-apps#image-fit"',
+    'to="/games-and-apps"',
+    'to="/games-and-apps#nemesis-go"',
+    'to="/games-and-apps#sound-flipper"',
+    'to="/games-and-apps#image-fit"',
   ]) {
     assert.ok(column.includes(target), "M&E column must link to " + target);
   }
@@ -86,7 +86,7 @@ test("the footer carries a Media & Entertainment column before the Onchain colum
 
   const onchainColumn = layout.slice(onchainIdx, layout.indexOf("<h4>{t(\"footer.resourcesColumn\")}</h4>"));
   assert.ok(onchainColumn.includes('to="/docs"'), "Onchain column must link Docs");
-  assert.ok(!onchainColumn.includes("/utility-apps"), "Onchain column must not link Utility Apps");
+  assert.ok(!onchainColumn.includes("/games-and-apps"), "Onchain column must not link Games & Apps");
 
   assert.equal(chrome.footer.mediaColumn, "Media & Entertainment");
   assert.equal(chrome.footer.nemesisGo, "Nemesis Go");
