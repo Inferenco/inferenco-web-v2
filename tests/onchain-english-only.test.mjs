@@ -26,6 +26,7 @@ const LEGAL_FILES = [
   `${LEGAL_DIR}/page.css`,
   `${LEGAL_DIR}/nemesis-go/privacy.md`,
   `${LEGAL_DIR}/nemesis-go/terms.md`,
+  `${LEGAL_DIR}/support.md`,
 ];
 
 const FORBIDDEN = [

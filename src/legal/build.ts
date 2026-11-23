@@ -79,9 +79,50 @@ type LegalPage = {
   source: string;
   lang: string;
   related: { path: string; label: string }[];
+  relatedLabel?: string;
 };
 
-const pages: LegalPage[] = apps.flatMap((app) =>
+/** Related-nav labels for the support page's two links, per locale. */
+const supportRelatedLabels: Readonly<Record<string, { apps: string; home: string }>> = {
+  ar: { apps: "الألعاب والتطبيقات", home: "الرئيسية" },
+  de: { apps: "Spiele & Apps", home: "Startseite" },
+  es: { apps: "Juegos y apps", home: "Inicio" },
+  fr: { apps: "Jeux et applis", home: "Accueil" },
+  it: { apps: "Giochi e app", home: "Home" },
+  ja: { apps: "ゲームとアプリ", home: "ホーム" },
+  kk: { apps: "Ойындар мен қолданбалар", home: "Басты бет" },
+  "pt-BR": { apps: "Jogos e apps", home: "Início" },
+  "pt-PT": { apps: "Jogos e aplicações", home: "Início" },
+  ru: { apps: "Игры и приложения", home: "Главная" },
+  tr: { apps: "Oyunlar ve uygulamalar", home: "Ana sayfa" },
+  uk: { apps: "Ігри та застосунки", home: "Головна" },
+  zh: { apps: "游戏和应用", home: "首页" },
+};
+
+const supportEnglish: LegalPage = {
+  path: "/support/",
+  source: "src/legal/support.md",
+  lang: "en",
+  relatedLabel: "Related pages",
+  related: [
+    { path: "/games-and-apps/", label: "Games & Apps" },
+    { path: "/", label: "Home" },
+  ],
+};
+
+const supportLocalized = Object.entries(localeTags).map(([lng, tag]): LegalPage => ({
+  path: `/support/${lng}/`,
+  source: `src/legal/support/${lng}.md`,
+  lang: tag,
+  relatedLabel: "Related pages",
+  related: [
+    { path: "/games-and-apps/", label: supportRelatedLabels[lng].apps },
+    { path: "/", label: supportRelatedLabels[lng].home },
+  ],
+}));
+
+const pages: LegalPage[] = [
+  ...apps.flatMap((app) =>
   documents.flatMap((kind) => {
     const other = kind === "privacy" ? "terms" : "privacy";
     const english: LegalPage = {
@@ -103,7 +144,10 @@ const pages: LegalPage[] = apps.flatMap((app) =>
 
     return [english, ...localized];
   }),
-);
+  ),
+  supportEnglish,
+  ...supportLocalized,
+];
 
 function renderPage(template: string, root: string, page: LegalPage) {
   const markdown = readFileSync(resolve(root, page.source), "utf8");
@@ -132,7 +176,10 @@ function renderPage(template: string, root: string, page: LegalPage) {
           renderToStaticMarkup(createElement("a", { href: related.path }, related.label)),
         )
         .join(" · "),
-    );
+    )
+    // Legal pages omit relatedLabel, so this resolves to the template's own
+    // value and keeps their output byte-identical; support pages override it.
+    .replace("<!-- legal:related-label -->", () => page.relatedLabel ?? "Related legal page");
 }
 
 export function legalPages(): Plugin {

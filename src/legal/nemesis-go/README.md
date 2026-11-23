@@ -32,3 +32,31 @@ Rules for these files:
   stays LTR, and the cross-repo divergence is intentional and documented.
 - English wins. If the English text changes, re-translate the locales and record
   a native/professional review here before describing any locale as reviewed.
+
+## Support page
+
+A lighter, non-legal support page is published alongside the legal pair:
+
+- https://inferenco.com/support/ (English)
+- https://inferenco.com/support/<lng>/ for each of the 13 locales
+
+Its sources live one level up from this directory: `src/legal/support.md` (EN)
+and `src/legal/support/<lng>.md` (13 locales). It is emitted by the same
+`src/legal/build.ts` plugin (appended to the legal `pages` array), so it shares
+the template, the slashless→directory 301 redirects, and the `ar` `dir="rtl"`
+handling. The related nav links to `/games-and-apps/` and `/` with a
+"Related pages" aria-label (legal pages keep "Related legal page").
+
+The page splits the contact by platform publisher: **Android — Singularity
+Shift Ltd.** (`singularityshift@inferenco.com`) and **iOS — Spielcrypto LLC.**
+(`spielcrypto@inferenco.com`). These are the same two addresses as the footer
+and the terms page.
+
+**Provenance: the 13 locale support pages are machine translations of the
+English source and UNREVIEWED by native-speaker reviewers.** Each carries a
+short visible note that it is a machine translation. Unlike the legal pages
+there is no "English prevails" clause — this is support guidance, not a legal
+text. The same rules apply: keep the English structure (same H1/H2 order),
+never translate brand/company names (Singularity Shift Ltd., Spielcrypto LLC.,
+Inferenco), the platform names Android/iOS, e-mail addresses or `mailto:`
+targets; `pt-BR`/`pt-PT` stay distinct in the prose and `zh` is Simplified.
