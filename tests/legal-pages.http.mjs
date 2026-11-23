@@ -199,3 +199,83 @@ test("unregistered legal locales return 404", async () => {
     assert.equal(response.status, 404, path);
   }
 });
+
+// Localised support page: a lighter, non-legal contact page emitted by the same
+// plugin. EN keeps the canonical /support/ path; each locale gets /support/<lng>/.
+const supportMailtos = [
+  'a[href="mailto:singularityshift@inferenco.com"]',
+  'a[href="mailto:spielcrypto@inferenco.com"]',
+];
+const supportSourceTitle = (lng) =>
+  /^# (.+)$/m.exec(
+    readFileSync(lng === "en" ? "src/legal/support.md" : `src/legal/support/${lng}.md`, "utf8"),
+  )[1];
+
+test("/support/ serves the English support page with both platform contacts", async () => {
+  for (const url of ["/support", "/support/"]) {
+    const response = await fetch(origin + url);
+    assert.equal(response.status, 200, url);
+    const dom = new JSDOM(await response.text());
+    try {
+      const { document } = dom.window;
+      const article = document.querySelector("main article");
+      assert.equal(document.title, "Support");
+      assert.equal(article.querySelector("h1").textContent, "Support");
+      for (const sel of supportMailtos) assert.ok(article.querySelector(sel), sel);
+      assert.ok(article.textContent.includes("Android"));
+      assert.ok(article.textContent.includes("iOS"));
+      assert.ok(article.textContent.includes("Singularity Shift Ltd."));
+      assert.ok(article.textContent.includes("Spielcrypto LLC."));
+      assert.equal(document.querySelector('link[rel="canonical"]').href, "https://inferenco.com/support/");
+      assert.deepEqual(
+        [...document.querySelectorAll(".legal-related a")].map((a) => a.getAttribute("href")),
+        ["/games-and-apps/", "/"],
+      );
+      // EN carries no machine-translation note.
+      assert.ok(!document.querySelector("main article blockquote"));
+      assert.equal(document.documentElement.getAttribute("dir"), null);
+    } finally {
+      dom.window.close();
+    }
+  }
+});
+
+for (const lng of ["de", "pt-BR", "pt-PT", "zh", "ar"]) {
+  test(`/support/${lng}/ serves the localised support page`, async () => {
+    const path = `/support/${lng}/`;
+    for (const url of [path.slice(0, -1), path]) {
+      const response = await fetch(origin + url);
+      assert.equal(response.status, 200, url);
+      const dom = new JSDOM(await response.text());
+      try {
+        const { document } = dom.window;
+        const article = document.querySelector("main article");
+        assert.equal(document.documentElement.getAttribute("lang"), lng, url);
+        assert.equal(document.title, supportSourceTitle(lng));
+        assert.equal(article.querySelector("h1").textContent, supportSourceTitle(lng));
+        for (const sel of supportMailtos) assert.ok(article.querySelector(sel), sel);
+        assert.ok(article.querySelector("blockquote"), `${url} missing translation note`);
+        assert.equal(document.querySelector('link[rel="canonical"]').href, `https://inferenco.com${path}`);
+        assert.deepEqual(
+          [...document.querySelectorAll(".legal-related a")].map((a) => a.getAttribute("href")),
+          ["/games-and-apps/", "/"],
+        );
+        // Arabic renders RTL; the other locales carry no dir attribute.
+        assert.equal(
+          document.documentElement.getAttribute("dir"),
+          lng === "ar" ? "rtl" : null,
+          url,
+        );
+      } finally {
+        dom.window.close();
+      }
+    }
+  });
+}
+
+test("unregistered support locales return 404", async () => {
+  for (const path of ["/support/xx/", "/support/pt/"]) {
+    const response = await fetch(origin + path);
+    assert.equal(response.status, 404, path);
+  }
+});
