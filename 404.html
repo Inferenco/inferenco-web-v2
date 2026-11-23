@@ -15,12 +15,15 @@
           document.documentElement.classList.remove('dark');
           document.documentElement.classList.add('light');
         }
+        // Pre-paint RTL for returning Arabic users; initI18n sets dir for
+        // first-visit/navigator detection before createRoot.
+        try { if (localStorage.getItem('inferenco.locale') === 'ar') document.documentElement.dir = 'rtl'; } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-DGH4oe1W.js"></script>
+    <script type="module" crossorigin src="/assets/index-BjDn8c3m.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/en-CjtO1BmO.js">
     <link rel="stylesheet" crossorigin href="/assets/index-J5PMBCyt.css">
-    <link rel="stylesheet" crossorigin href="/assets/src-BzXQFksS.css">
+    <link rel="stylesheet" crossorigin href="/assets/src-Jjk5wy9Y.css">
   </head>
   <body>
     <div id="root"></div>
