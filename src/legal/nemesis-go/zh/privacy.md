@@ -1,0 +1,42 @@
+# Nemesis Go 隐私政策
+
+> 本页面为英文原文的机器翻译。如与英文版本存在不一致，以英文版本为准。
+
+本政策自发布时生效，并在更新前持续有效。
+
+本政策适用于 Android 和 iOS 平台的 Nemesis Go 应用以及有关该应用的任何通信。Singularity Shift Ltd 是 Android 版本发布者，Spielcrypto LLC 是 iOS 版本发布者。每家公司对其在处理自身应用版本过程中所涉及的个人信息负责。
+
+## 游戏与您设备上的信息
+
+您可以在离线状态下、无需应用账号即可游玩 Nemesis Go。电脑对手以及着法建议背后的分析均在您的设备上运行。应用会在您的设备上保存您的对局存档、近期结果、偏好设置和教程进度，以便您继续对局并保留设置。应用还会保存用于控制广告展示间隔、检查本地对局模型以及记录上次检查时您的“移除广告”订阅是否生效的信息。我们不会通过应用接收您的着法或对局存档。
+
+## 广告与隐私选择
+
+启用广告时，Nemesis Go 使用 Google AdMob 投放广告，并使用 Google 的用户消息平台（User Messaging Platform）处理广告隐私选择。Google 及其广告合作伙伴可能处理如下信息：您的 IP 地址及由此推断的大致位置、可用时的设备或广告标识符、与广告和应用的交互情况以及诊断信息。他们使用这些信息投放和衡量广告、管理广告展示频率以及检测欺诈或滥用行为。所使用的信息以及您看到的广告可能因您所在地区、设备设置和隐私选择而异。 [Google 如何使用使用其服务的应用提供的信息](https://policies.google.com/technologies/partner-sites) · [Google 隐私政策](https://policies.google.com/privacy)
+
+在适用情况下，Google 会显示隐私提示，让您可以就广告作出选择。Android 在设备设置中提供广告控制项。在 iOS 上，您可以在**“设置”→“隐私与安全性”→“跟踪”**中管理是否允许 Nemesis Go 进行跟踪。您还可以通过 Google 的控制项管理 Google 账号的广告个性化。 [Google 广告管理中心](https://support.google.com/My-Ad-Center-Help/answer/12155451?co=GENIE.Platform&hl=en)
+
+## 购买
+
+如果您购买或恢复“移除广告”订阅，Android 上的 Google Play 或 iOS 上的 App Store 将处理该交易并处理您的付款信息。Nemesis Go 会接收商店提供的信息，例如订阅产品、交易凭证和订阅状态，以确认或恢复访问权限。付款详情保留在商店或其支付服务商处。 [Google 隐私政策](https://policies.google.com/privacy) · [Apple 隐私政策](https://www.apple.com/legal/privacy/)
+
+## 支持与使用的法律依据
+
+如果您通过电子邮件就 Nemesis Go 与我们联系，我们会使用您的邮箱地址、您的邮件内容以及您选择发送的任何信息来回复并跟踪该请求。我们的邮件服务商在提供服务的过程中处理这些通信。在法律要求的情况下，我们可能披露相关信息。
+
+在适用英国或欧盟数据保护法的情况下，我们依据您的同意开展需要同意的广告活动，依据与您签订的合同履行以提供已购买的访问权限，依据我们在回应支持请求和防止滥用方面的正当利益，以及在适用时的法律义务。Google 和 Apple 可能在其您所在国家之外处理数据。他们的隐私政策说明了其处理信息的地点以及针对跨境传输所采用的保障措施。 [Google 隐私政策](https://policies.google.com/privacy) · [Apple 隐私政策](https://www.apple.com/legal/privacy/)
+
+## 存储、保留与删除
+
+对局记录和设置存储在您设备上应用的私有存储空间中，在应用替换它们或该存储空间被清除之前一直保留。在 Android 上，您可以在设备设置中清除应用存储。在 iOS 上，选择**“删除 App”**以移除其本地数据。如果您的设备会进行备份，则可能按照您的备份设置保留副本。Google 和 Apple 根据其各自政策管理其广告和商店记录的保留。
+
+我们会在回复、处理相关后续事项或履行适用的记录保存义务所需的期限内保留支持邮件。您可以联系您所在平台的发布者，请求删除特定的支持往来记录。
+
+## 您的权利及联系方式
+
+根据您所在的地区，您可能有权访问、更正或删除我们持有的个人信息，以可携带的格式获取副本，限制或反对对其的使用，撤回同意，并向当地隐私监管机构投诉。如就本政策进行咨询或行使您的权利，请联系您所在平台的发布者。如果您认为我们在未取得法律要求许可的情况下获取了儿童的个人信息，也可以与我们联系。
+
+- **Android — Singularity Shift Ltd.** [singularityshift@inferenco.com](mailto:singularityshift@inferenco.com)
+- **iOS — Spielcrypto LLC.** [spielcrypto@inferenco.com](mailto:spielcrypto@inferenco.com)
+
+如果本政策发生变更，我们将在本页面发布更新后的版本。

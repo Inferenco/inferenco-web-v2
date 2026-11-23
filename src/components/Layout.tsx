@@ -1,22 +1,26 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import type { PageType, ProductDropdownItem } from "../types";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navLinks: { label: string; path: string; page: PageType }[] = [
-  { label: "Home", path: "/", page: "home" },
-  { label: "Docs", path: "/docs", page: "docs" },
-  { label: "Blogs", path: "/blogs", page: "blogs" },
+const navLinks: { labelKey: string; path: string; page: PageType }[] = [
+  { labelKey: "nav.home", path: "/", page: "home" },
+  { labelKey: "nav.media", path: "/utility-apps", page: "utility-apps" },
+  { labelKey: "nav.blogs", path: "/blogs", page: "blogs" },
 ];
 
 const productsDropdown: ProductDropdownItem[] = [
-  { label: "Infer Bot", path: "/infer", page: "infer" },
-  { label: "Infer Wallet", path: "/infer-wallet", page: "infer-wallet" },
-  { label: "Infer Desk", path: "/infer-desk", page: "infer-desk" },
-  { label: "Infer MCP", path: "/infer-mcp", page: "infer-mcp" },
-  { label: "Utility Apps", path: "/utility-apps", page: "utility-apps" },
-  { label: "Infer Ecosystem", path: "https://app.inferenco.com", external: true },
+  { labelKey: "products.inferBot", path: "/infer", page: "infer" },
+  { labelKey: "products.inferWallet", path: "/infer-wallet", page: "infer-wallet" },
+  { labelKey: "products.inferDesk", path: "/infer-desk", page: "infer-desk" },
+  { labelKey: "products.inferMcp", path: "/infer-mcp", page: "infer-mcp" },
+  { labelKey: "products.inferEcosystem", path: "https://app.inferenco.com", external: true },
+  { labelKey: "products.docs", path: "/docs", page: "docs" },
 ];
 
+// Provider names are brands: `label` stays verbatim and is interpolated into
+// the localized `aria.joinOn` sentence rather than being translated itself.
 const socialLinks = [
   { label: "Telegram", href: "https://t.me/inferenco", icon: "fab fa-telegram" },
   { label: "Mastodon", href: "https://mastodon.social/@inferenco", icon: "fab fa-mastodon" },
@@ -29,6 +33,7 @@ const socialLinks = [
 
 export default function Layout() {
   const location = useLocation();
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   // Read theme synchronously on first render to prevent blink
@@ -78,7 +83,7 @@ export default function Layout() {
             className={`nav-link ${isActive(link.path) ? "active" : ""}`}
             onClick={() => setMobileMenuOpen(false)}
           >
-            {link.label}
+            {t(link.labelKey)}
           </Link>
         ))}
         <div className="mobile-dropdown">
@@ -88,7 +93,7 @@ export default function Layout() {
             aria-expanded={productsDropdownOpen}
             aria-controls="mobile-products-dropdown"
           >
-            Products <i className="fas fa-chevron-down" />
+            {t("nav.onchain")} <i className="fas fa-chevron-down" />
           </button>
           {productsDropdownOpen && (
             <div className="mobile-dropdown-content" id="mobile-products-dropdown">
@@ -105,7 +110,7 @@ export default function Layout() {
                       setProductsDropdownOpen(false);
                     }}
                   >
-                    {product.label}
+                    {t(product.labelKey)}
                   </a>
                 ) : (
                   <Link
@@ -117,20 +122,21 @@ export default function Layout() {
                       setProductsDropdownOpen(false);
                     }}
                   >
-                    {product.label}
+                    {t(product.labelKey)}
                   </Link>
                 )
               ))}
             </div>
           )}
         </div>
+        <LanguageSwitcher variant="mobile" />
         <div className="social-links-mobile">
           {socialLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className="social-link"
-              aria-label={`Join Inferenco on ${link.label}`}
+              aria-label={t("aria.joinOn", { provider: link.label })}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -164,12 +170,12 @@ export default function Layout() {
                 to={link.path}
                 className={`nav-link ${isActive(link.path) ? "active" : ""}`}
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             ))}
             <div className="dropdown">
               <button className="dropdown-toggle">
-                Products <i className="fas fa-chevron-down" />
+                {t("nav.onchain")} <i className="fas fa-chevron-down" />
               </button>
               <div className="dropdown-content">
                 {productsDropdown.map((product) => (
@@ -181,7 +187,7 @@ export default function Layout() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {product.label}
+                      {t(product.labelKey)}
                     </a>
                   ) : (
                     <Link
@@ -189,7 +195,7 @@ export default function Layout() {
                       to={product.path}
                       className={`nav-link ${isActive(product.path) ? "active" : ""}`}
                     >
-                      {product.label}
+                      {t(product.labelKey)}
                     </Link>
                   )
                 ))}
@@ -221,18 +227,20 @@ export default function Layout() {
             </a>
           </div>
 
+          <LanguageSwitcher variant="desktop" />
+
           <button
             className="theme-toggle"
             onClick={toggleTheme}
-            aria-label="Toggle theme"
-            title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            aria-label={t("aria.toggleTheme")}
+            title={theme === "light" ? t("theme.toDark") : t("theme.toLight")}
           >
             <i className={theme === "light" ? "fas fa-moon" : "fas fa-sun"} />
           </button>
           <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={t("aria.toggleMenu")}
           >
             <i className={mobileMenuOpen ? "fas fa-times" : "fas fa-bars"} />
           </button>
@@ -258,46 +266,53 @@ export default function Layout() {
           <div className="footer-content">
             <div className="footer-brand">
               <img src="assets/logos/flame.png" alt="Inferenco" />
-              <p>Enterprise Software Development & IT Solutions</p>
+              <p>{t("footer.tagline")}</p>
             </div>
             <div className="footer-links">
-              <h4>Products</h4>
-              <Link to="/infer">Infer Bot</Link>
-              <Link to="/infer-wallet">Infer Wallet</Link>
-              <Link to="/infer-desk">Infer Desk</Link>
-              <Link to="/infer-mcp">Infer MCP</Link>
-              <Link to="/utility-apps">Utility Apps</Link>
-              <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">Infer Ecosystem</a>
+              <h4>{t("footer.mediaColumn")}</h4>
+              <Link to="/utility-apps">{t("footer.allApps")}</Link>
+              <Link to="/utility-apps#nemesis-go">{t("footer.nemesisGo")}</Link>
+              <Link to="/utility-apps#sound-flipper">{t("footer.soundFlipper")}</Link>
+              <Link to="/utility-apps#image-fit">{t("footer.imageFit")}</Link>
             </div>
             <div className="footer-links">
-              <h4>Resources</h4>
-              <Link to="/docs">Documentation</Link>
-              <Link to="/blogs">Blog</Link>
+              <h4>{t("footer.onchainColumn")}</h4>
+              <Link to="/infer">{t("footer.inferBot")}</Link>
+              <Link to="/infer-wallet">{t("footer.inferWallet")}</Link>
+              <Link to="/infer-desk">{t("footer.inferDesk")}</Link>
+              <Link to="/infer-mcp">{t("footer.inferMcp")}</Link>
+              <a href="https://app.inferenco.com" target="_blank" rel="noopener noreferrer">{t("footer.inferEcosystem")}</a>
+              <Link to="/docs">{t("footer.docs")}</Link>
             </div>
             <div className="footer-links">
-              <h4>Company</h4>
-              <a href="https://t.me/inferenco" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a href="https://mastodon.social/@inferenco" target="_blank" rel="noopener noreferrer">Mastodon</a>
-              <a href="https://bsky.app/profile/inferenco.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+              <h4>{t("footer.resourcesColumn")}</h4>
+              <Link to="/docs">{t("footer.documentation")}</Link>
+              <Link to="/blogs">{t("footer.blog")}</Link>
             </div>
             <div className="footer-links">
-              <h4>Contact</h4>
+              <h4>{t("footer.companyColumn")}</h4>
+              <a href="https://t.me/inferenco" target="_blank" rel="noopener noreferrer">{t("social.telegram")}</a>
+              <a href="https://mastodon.social/@inferenco" target="_blank" rel="noopener noreferrer">{t("social.mastodon")}</a>
+              <a href="https://bsky.app/profile/inferenco.bsky.social" target="_blank" rel="noopener noreferrer">{t("social.bluesky")}</a>
+            </div>
+            <div className="footer-links">
+              <h4>{t("footer.contactColumn")}</h4>
               <a href="mailto:spielcrypto@inferenco.com">spielcrypto@inferenco.com</a>
               <a href="mailto:singularityshift@inferenco.com">singularityshift@inferenco.com</a>
             </div>
             <div className="footer-links">
-              <h4>Our Companies</h4>
-              <a href="https://spielcrypto.com/" target="_blank" rel="noopener noreferrer">Spielcrypto Ltd</a>
-              <a href="https://sshift.xyz/" target="_blank" rel="noopener noreferrer">Singularity Shift Ltd</a>
+              <h4>{t("footer.ourCompaniesColumn")}</h4>
+              <a href="https://spielcrypto.com/" target="_blank" rel="noopener noreferrer">{t("footer.spielcrypto")}</a>
+              <a href="https://sshift.xyz/" target="_blank" rel="noopener noreferrer">{t("footer.singularityShift")}</a>
             </div>
             <div className="footer-links">
-              <h4>Nemesis Go</h4>
-              <a href="https://inferenco.com/nemesis-go/privacy/">Nemesis Go Privacy Policy</a>
-              <a href="https://inferenco.com/nemesis-go/terms/">Nemesis Go Terms of Use</a>
+              <h4>{t("footer.nemesisGoColumn")}</h4>
+              <a href="https://inferenco.com/nemesis-go/privacy/">{t("footer.nemesisPrivacy")}</a>
+              <a href="https://inferenco.com/nemesis-go/terms/">{t("footer.nemesisTerms")}</a>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 Inferenco. All rights reserved.</p>
+            <p>{t("footer.copyright")}</p>
           </div>
         </div>
       </footer>

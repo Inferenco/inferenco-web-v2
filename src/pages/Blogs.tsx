@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import type { BlogPost } from "../types";
 import { getAssetUrl } from "../utils/assetUrl";
+import i18n, { currentLocaleTag } from "../i18n";
 import "./Blogs.css";
 
 interface BlogApiResponse {
@@ -14,18 +16,28 @@ interface BlogApiResponse {
   };
 }
 
-interface BlogWithFormattedDate extends BlogPost {
-  formattedDate: string;
-}
-
 export default function Blogs() {
   const navigate = useNavigate();
-  const [blogs, setBlogs] = useState<BlogWithFormattedDate[]>([]);
+  const { t } = useTranslation("blog");
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [retryToken, setRetryToken] = useState(0);
+
+  // Dates are formatted at render time, in the **active locale's** BCP 47 tag,
+  // so switching language re-formats the list without a refetch. Both pages
+  // coalesce `published_at ?? created_at` because the list response omits
+  // `created_at` (see the Blog/Poster API contract).
+  const formatDate = (dateString: string | null | undefined): string => {
+    if (!dateString) return "";
+    return new Date(dateString).toLocaleDateString(currentLocaleTag(), {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   const observer = useRef<IntersectionObserver | null>(null);
   const lastBlogElementRef = useCallback(
@@ -57,23 +69,9 @@ export default function Blogs() {
       })
       .then((data) => {
         if (controller.signal.aborted) return;
-        const formattedBlogs = data.blogs.map((blog) => {
-          const dateSource = blog.published_at ?? blog.created_at;
-          return {
-            ...blog,
-            formattedDate: dateSource
-              ? new Date(dateSource).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })
-              : "",
-          };
-        });
-
         setBlogs((prevBlogs) => {
-          const newBlogs = formattedBlogs.filter(
-            (newBlog) => !prevBlogs.some((existingBlog) => existingBlog.id === newBlog.id)
+          const newBlogs = data.blogs.filter(
+            (blog) => !prevBlogs.some((existingBlog) => existingBlog.id === blog.id)
           );
           return [...prevBlogs, ...newBlogs];
         });
@@ -82,7 +80,7 @@ export default function Blogs() {
       })
       .catch((err) => {
         if (controller.signal.aborted) return;
-        setError(err instanceof Error ? err.message : "Failed to fetch blogs");
+        setError(err instanceof Error ? err.message : i18n.t("blog:index.fetchError"));
         console.error("Error fetching blogs:", err);
       })
       .finally(() => {
@@ -96,26 +94,24 @@ export default function Blogs() {
     <div className="blogs-page">
       <div className="container">
         <header className="page-header">
-          <h1>Inferenco Blogs</h1>
-          <p className="page-description">
-            Latest news, updates, and insights from the Inferenco team.
-          </p>
+          <h1>{t("index.title")}</h1>
+          <p className="page-description">{t("index.description")}</p>
         </header>
 
         {error && (
           <div className="error-message">
-            <p>Error loading blogs: {error}</p>
+            <p>{t("index.errorLoading", { error })}</p>
             <button onClick={() => {
               setError(null);
               setLoading(true);
               setRetryToken((token) => token + 1);
-            }}>Retry</button>
+            }}>{t("index.retry")}</button>
           </div>
         )}
 
         {blogs.length === 0 && !loading ? (
           <div className="no-blogs">
-            <p>No blogs have been published yet.</p>
+            <p>{t("index.empty")}</p>
           </div>
         ) : (
           <div className="blogs-grid">
@@ -154,18 +150,18 @@ export default function Blogs() {
                         {blog.title}
                       </h2>
                       <time dateTime={blog.published_at || blog.created_at}>
-                        {blog.formattedDate}
+                        {formatDate(blog.published_at ?? blog.created_at)}
                       </time>
                     </header>
 
                     <div className="blog-excerpt">
-                      <p>{blog.excerpt || 'No excerpt available'}</p>
+                      <p>{blog.excerpt || t("index.noExcerpt")}</p>
                     </div>
                   </div>
 
                   <footer className="blog-footer">
                     <button onClick={handleReadMore} className="read-more-button">
-                      Read more →
+                      {t("index.readMore")}
                     </button>
                   </footer>
                 </article>
@@ -177,13 +173,13 @@ export default function Blogs() {
         {loading && (
           <div className="loading-indicator">
             <div className="spinner"></div>
-            <p>Loading more blogs...</p>
+            <p>{t("index.loadingMore")}</p>
           </div>
         )}
 
         {!hasMore && blogs.length > 0 && (
           <div className="no-more-blogs">
-            <p>You've reached the end of all blogs.</p>
+            <p>{t("index.end")}</p>
           </div>
         )}
       </div>

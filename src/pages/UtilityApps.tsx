@@ -1,69 +1,78 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { mediaProducts } from "../data/mediaProducts";
 
-type ActiveApp = "resize" | "sound" | null;
+type ActiveApp = "nemesis" | "resize" | "sound" | null;
 
+// Product names, store names ("Google Play", "App Store") and file-format
+// tokens are brands and technical identifiers: they stay verbatim in every
+// locale. Everything a visitor reads as prose lives in the `media` namespace.
 const apps = {
+  nemesis: {
+    key: "nemesis",
+    name: mediaProducts.nemesis.name,
+    legal: mediaProducts.nemesis.legal,
+    links: [{ labelKey: "common.googlePlay", href: mediaProducts.nemesis.android }],
+  },
   resize: {
-    name: "Make My Image Fit",
-    url: "https://www.resizeandcompress.app",
-    long: "Make My Image Fit (resizeandcompress.app) is a free online image utility that compresses, resizes, and converts images without ever uploading them — all processing happens on your device in the browser. You can process up to 10 images at once (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC, or DNG), set a maximum file size in KB/MB and/or exact pixel dimensions, and choose the output format. Before you download, the tool checks each result against your requirements, and you can rotate, set backgrounds, or convert HEIC phone photos and DNG RAW files on-device. Results download individually or as a ZIP. It's completely free with no sign-up, and no analytics or ads load without consent.",
-    features: [
-      "100% on-device",
-      "Batch up to 10 images",
-      "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
-      "Max file-size limit",
-      "Resize by pixels",
-      "Rotation & backgrounds",
-      "ZIP download",
-      "No analytics without consent",
+    key: "resize",
+    name: mediaProducts.resize.name,
+    links: [
+      { labelKey: "common.visitWebsite", href: mediaProducts.resize.web },
+      { labelKey: "common.googlePlay", href: mediaProducts.resize.android },
     ],
-    note: "Completely free with no sign-up.",
   },
   sound: {
-    name: "Sound Flipper",
-    url: "https://www.soundflipper.com",
-    long: "Sound Flipper (soundflipper.com) is a free online audio converter for recordings, songs, and other sound files already saved on your device — everything is processed locally in your browser, so your audio stays private. Its inspector reads the actual audio inside and tells you exactly what it detects, refusing unsupported files with a clear explanation. You can convert up to ten files at once between MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis, and Opus, with sensible quality settings resolved automatically. It's ideal for fixing rejected uploads — e.g. turning a voice memo into MP3 — and comes with step-by-step conversion guides. Currently offered as a testable preview, free with no sign-up.",
-    features: [
-      "100% on-device",
-      "Batch up to 10 files",
-      "MP3/WAV/M4A/FLAC/ALAC/AIFF/Ogg/Opus",
-      "Content inspector",
-      "Automatic quality settings",
-      "Conversion guides",
-      "Preview status",
+    key: "sound",
+    name: mediaProducts.sound.name,
+    links: [
+      { labelKey: "common.visitWebsite", href: mediaProducts.sound.web },
+      { labelKey: "common.googlePlay", href: mediaProducts.sound.android },
+      { labelKey: "common.appStore", href: mediaProducts.sound.ios },
     ],
-    note: "Free preview — no sign-up required.",
   },
-};
+} as const;
 
 export default function UtilityApps() {
+  const { t } = useTranslation("media");
   const [activeApp, setActiveApp] = useState<ActiveApp>(null);
 
   const close = () => setActiveApp(null);
   const app = activeApp ? apps[activeApp] : null;
 
+  const tags = (product: string): string[] => t(`gallery.${product}.tags`, { returnObjects: true }) as string[];
+  const features = (product: string): string[] => t(`modal.${product}.features`, { returnObjects: true }) as string[];
+
   return (
     <div id="utility-apps-page" className="page-section">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
-          <h1>Utility Apps</h1>
-          <p>Free, privacy-first tools that run entirely in your browser.</p>
+          <h1>{t("hero.title")}</h1>
+          <p>{t("hero.tagline")}</p>
           <div className="download-buttons">
             <a
-              href="https://www.resizeandcompress.app"
+              href={mediaProducts.nemesis.android}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button"
             >
-              Make My Image Fit
+              {t("hero.ctaNemesis")}
             </a>
             <a
-              href="https://www.soundflipper.com"
+              href={mediaProducts.sound.web}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button"
             >
-              Sound Flipper
+              {t("hero.ctaSound")}
+            </a>
+            <a
+              href={mediaProducts.resize.web}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              {t("hero.ctaImage")}
             </a>
           </div>
         </div>
@@ -71,89 +80,141 @@ export default function UtilityApps() {
 
       <section id="utility-apps-gallery" className="section">
         <div className="container">
-          <h2 className="section-title">Our Utility Apps</h2>
-          <p className="section-subtitle">
-            Two free, privacy-first services — no uploads, no accounts, no installs.
-          </p>
+          <h2 className="section-title">{t("gallery.title")}</h2>
+          <p className="section-subtitle">{t("gallery.subtitle")}</p>
           <div className="features-grid">
-            {/* Make My Image Fit Card */}
-            <div className="feature-card portfolio-card">
+            {/* Nemesis Go Card */}
+            <div className="feature-card portfolio-card" id="nemesis-go">
               <img
-                src="/img/infer-ecosystem/utility-apps/resize-and-compress-image.png"
-                alt="Make My Image Fit screenshot"
+                src="/img/infer-ecosystem/utility-apps/nemesis-go-icon.webp"
+                alt={t("gallery.nemesis.alt")}
+                className="media-app-icon"
+                loading="lazy"
+                decoding="async"
+                width="256"
+                height="256"
+              />
+              <h4>{t("gallery.nemesis.name")}</h4>
+              <p>{t("gallery.nemesis.blurb")}</p>
+              <div className="portfolio-tags">
+                {tags("nemesis").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <a
+                href={mediaProducts.nemesis.android}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button"
+                style={{ marginTop: "1rem" }}
+              >
+                {t("common.googlePlay")}
+              </a>
+              <button
+                onClick={() => setActiveApp("nemesis")}
+                className="cta-button secondary"
+                style={{ marginTop: "0.75rem" }}
+              >
+                {t("common.learnMore")}
+              </button>
+            </div>
+
+            {/* Sound Flipper Card */}
+            <div className="feature-card portfolio-card" id="sound-flipper">
+              <img
+                src="/img/infer-ecosystem/utility-apps/sound-flipper.png"
+                alt={t("gallery.sound.alt")}
                 className="utility-app-screenshot"
                 loading="lazy"
                 decoding="async"
                 width="1200"
                 height="630"
               />
-              <h4>Make My Image Fit</h4>
-              <p>
-                A free, privacy-first image resizer and compressor that runs entirely in your
-                browser — no uploads, no account. Set a maximum file size or exact pixel
-                dimensions and it prepares up to 10 images to pass any upload form's
-                requirements.
-              </p>
+              <h4>{t("gallery.sound.name")}</h4>
+              <p>{t("gallery.sound.blurb")}</p>
               <div className="portfolio-tags">
-                <span className="tag">Image Utility</span>
-                <span className="tag">Privacy-First</span>
-                <span className="tag">Browser-Based</span>
+                {tags("sound").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
               <a
-                href="https://www.resizeandcompress.app"
+                href={mediaProducts.sound.web}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button"
                 style={{ marginTop: "1rem" }}
               >
-                Visit Website
+                {t("common.visitWebsite")}
+              </a>
+              <div className="download-buttons" style={{ marginTop: "0.75rem" }}>
+                <a
+                  href={mediaProducts.sound.android}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-button secondary"
+                >
+                  {t("common.googlePlay")}
+                </a>
+                <a
+                  href={mediaProducts.sound.ios}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-button secondary"
+                >
+                  {t("common.appStore")}
+                </a>
+              </div>
+              <button
+                onClick={() => setActiveApp("sound")}
+                className="cta-button secondary"
+                style={{ marginTop: "0.75rem" }}
+              >
+                {t("common.learnMore")}
+              </button>
+            </div>
+
+            {/* Make My Image Fit Card */}
+            <div className="feature-card portfolio-card" id="image-fit">
+              <img
+                src="/img/infer-ecosystem/utility-apps/resize-and-compress-image.png"
+                alt={t("gallery.image.alt")}
+                className="utility-app-screenshot"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="630"
+              />
+              <h4>{t("gallery.image.name")}</h4>
+              <p>{t("gallery.image.blurb")}</p>
+              <div className="portfolio-tags">
+                {tags("image").map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <a
+                href={mediaProducts.resize.web}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button"
+                style={{ marginTop: "1rem" }}
+              >
+                {t("common.visitWebsite")}
+              </a>
+              <a
+                href={mediaProducts.resize.android}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button secondary"
+                style={{ marginTop: "0.75rem" }}
+              >
+                {t("common.googlePlay")}
               </a>
               <button
                 onClick={() => setActiveApp("resize")}
                 className="cta-button secondary"
                 style={{ marginTop: "0.75rem" }}
               >
-                Learn More
-              </button>
-            </div>
-
-            {/* Sound Flipper Card */}
-            <div className="feature-card portfolio-card">
-              <img
-                src="/img/infer-ecosystem/utility-apps/sound-flipper.png"
-                alt="Sound Flipper screenshot"
-                className="utility-app-screenshot"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="630"
-              />
-              <h4>Sound Flipper</h4>
-              <p>
-                A free audio converter that works entirely in your browser — your recordings
-                and songs never get uploaded. Convert between MP3, WAV, M4A, FLAC, Ogg, Opus
-                and more, with no account or software installation required.
-              </p>
-              <div className="portfolio-tags">
-                <span className="tag">Audio Converter</span>
-                <span className="tag">Privacy-First</span>
-                <span className="tag">Browser-Based</span>
-              </div>
-              <a
-                href="https://www.soundflipper.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-button"
-                style={{ marginTop: "1rem" }}
-              >
-                Visit Website
-              </a>
-              <button
-                onClick={() => setActiveApp("sound")}
-                className="cta-button secondary"
-                style={{ marginTop: "0.75rem" }}
-              >
-                Learn More
+                {t("common.learnMore")}
               </button>
             </div>
           </div>
@@ -164,27 +225,36 @@ export default function UtilityApps() {
       {app && (
         <div className="modal-overlay" onClick={close}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={close} aria-label="Close">
+            <button className="modal-close" onClick={close} aria-label={t("common.close")}>
               <i className="fas fa-times"></i>
             </button>
             <h2>{app.name}</h2>
-            <p>{app.long}</p>
+            <p>{t(`modal.${app.key}.long`)}</p>
             <div className="portfolio-tags">
-              {app.features.map((feature) => (
+              {features(app.key).map((feature) => (
                 <span key={feature} className="tag">
                   {feature}
                 </span>
               ))}
             </div>
-            <a
-              href={app.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
-              Visit Website
-            </a>
-            <p className="modal-note">{app.note}</p>
+            {app.links.map((link) => (
+              <a
+                key={link.labelKey}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button"
+              >
+                {t(link.labelKey)}
+              </a>
+            ))}
+            {"legal" in app && app.legal && (
+              <div className="portfolio-tags" style={{ marginTop: "1rem" }}>
+                <a href={app.legal.privacy}>{t("modal.nemesis.privacy")}</a>
+                <a href={app.legal.terms}>{t("modal.nemesis.terms")}</a>
+              </div>
+            )}
+            <p className="modal-note">{t(`modal.${app.key}.note`)}</p>
           </div>
         </div>
       )}

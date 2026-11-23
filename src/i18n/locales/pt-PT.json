@@ -1,0 +1,413 @@
+{
+  "chrome": {
+    "nav": {
+      "home": "Início",
+      "media": "Media e Entretenimento",
+      "blogs": "Blogues",
+      "onchain": "Onchain",
+      "docs": "Documentação"
+    },
+    "products": {
+      "inferBot": "Infer Bot",
+      "inferWallet": "Infer Wallet",
+      "inferDesk": "Infer Desk",
+      "inferMcp": "Infer MCP",
+      "inferEcosystem": "Infer Ecosystem",
+      "docs": "Documentação"
+    },
+    "social": {
+      "telegram": "Telegram",
+      "mastodon": "Mastodon",
+      "fountain": "Fountain",
+      "farcaster": "Farcaster",
+      "soclly": "Soclly",
+      "bluesky": "Bluesky",
+      "lensforum": "Lensforum"
+    },
+    "aria": {
+      "joinOn": "Siga o Inferenco no {{provider}}",
+      "toggleTheme": "Alternar o tema",
+      "toggleMenu": "Abrir ou fechar o menu",
+      "switchLanguage": "Alterar o idioma",
+      "currentLanguage": "Idioma atual: {{language}}"
+    },
+    "theme": {
+      "toDark": "Mudar para o modo escuro",
+      "toLight": "Mudar para o modo claro"
+    },
+    "language": {
+      "label": "Idioma"
+    },
+    "footer": {
+      "tagline": "Jogos, media e aplicações do dia a dia — desenvolvidos internamente.",
+      "mediaColumn": "Media e Entretenimento",
+      "allApps": "Todas as aplicações",
+      "nemesisGo": "Nemesis Go",
+      "soundFlipper": "Sound Flipper",
+      "imageFit": "Make My Image Fit",
+      "onchainColumn": "Onchain",
+      "inferBot": "Infer Bot",
+      "inferWallet": "Infer Wallet",
+      "inferDesk": "Infer Desk",
+      "inferMcp": "Infer MCP",
+      "inferEcosystem": "Infer Ecosystem",
+      "docs": "Documentação",
+      "resourcesColumn": "Recursos",
+      "documentation": "Documentação",
+      "blog": "Blogue",
+      "companyColumn": "Empresa",
+      "contactColumn": "Contactos",
+      "ourCompaniesColumn": "As nossas empresas",
+      "spielcrypto": "Spielcrypto Ltd",
+      "singularityShift": "Singularity Shift Ltd",
+      "nemesisGoColumn": "Nemesis Go",
+      "nemesisPrivacy": "Política de Privacidade do Nemesis Go",
+      "nemesisTerms": "Termos de Utilização do Nemesis Go",
+      "copyright": "© 2025 Inferenco. Todos os direitos reservados."
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "text": "A página que procura não existe. Pode ter sido movida durante a transição da Nova para a Inferenco ou a ligação pode estar desatualizada.",
+      "goHome": "Ir para o início",
+      "browseDocs": "Consultar a documentação"
+    }
+  },
+  "home": {
+    "sideNav": {
+      "quickNav": "Navegação rápida",
+      "aria": "Ir para a secção {{section}}",
+      "contactAria": "Contactar-nos",
+      "sections": {
+        "products": "Produtos",
+        "about": "Sobre nós",
+        "capabilities": "Funcionalidades",
+        "howWeBuild": "Como desenvolvemos",
+        "approach": "Abordagem",
+        "contact": "Contactos"
+      }
+    },
+    "hero": {
+      "logoAlt": "Logótipo da Inferenco",
+      "title": "Jogos e aplicações do dia a dia, desenvolvidos internamente",
+      "tagline": "Desenhamos, desenvolvemos e publicamos os nossos próprios produtos — dos jogos móveis e utilitários de media aos portefólios onchain e ferramentas para programadores.",
+      "pillsAria": "Produtos da Inferenco",
+      "pillDesk": "Infer Desk",
+      "pillWallet": "Infer Wallet",
+      "pillMedia": "Media e Entretenimento",
+      "pillMcp": "Infer MCP",
+      "pillConnect": "Infer Connect",
+      "pillContact": "Contactos"
+    },
+    "portfolio": {
+      "title": "Os nossos <span>produtos</span>",
+      "subtitle": "Tudo o que desenvolvemos e publicamos — jogos, utilitários de media, portefólios e ferramentas para programadores",
+      "divider": "Produtos Onchain",
+      "learnMore": "Saber mais",
+      "readDocs": "Ler a documentação",
+      "visitDapp": "Abrir a dApp",
+      "cards": {
+        "nemesis": {
+          "name": "Nemesis Go",
+          "alt": "Ícone da aplicação Nemesis Go",
+          "blurb": "Um jogo de Go 9×9 para Android com um adversário de IA e análise de jogadas que correm localmente, sem ligação. Não precisa de conta e os jogos guardados e preferências ficam no dispositivo.",
+          "tags": [
+            "Jogo móvel",
+            "9×9 Go",
+            "IA sem ligação",
+            "iOS em breve"
+          ]
+        },
+        "media": {
+          "name": "Media e Entretenimento",
+          "alt": "Logótipo de Media e Entretenimento",
+          "blurb": "Os nossos jogos e aplicações do dia a dia — Nemesis Go para Android, Make My Image Fit para redimensionar e comprimir imagens e Sound Flipper para converter áudio. Os utilitários web correm inteiramente no navegador: sem envios, sem contas, sem instalações.",
+          "tags": [
+            "Jogo móvel",
+            "Utilitários web",
+            "Gratuito",
+            "No dispositivo",
+            "Privacidade em primeiro lugar"
+          ]
+        },
+        "desk": {
+          "name": "Infer Desk",
+          "alt": "Logótipo do Infer Desk",
+          "blurb": "Aplicação para computador para interações com a blockchain Cedra e gestão de fluxos de trabalho. Multiplataforma, segura e criada para utilizadores profissionais e empresas.",
+          "tags": [
+            "Aplicação de computador",
+            "Cedra",
+            "Multiplataforma",
+            "Empresarial"
+          ]
+        },
+        "wallet": {
+          "name": "Infer Wallet",
+          "alt": "Logótipo do Infer Wallet",
+          "blurb": "Portefólio de criptomoedas para dispositivos móveis criado sobre a blockchain Cedra. Gestão segura de ativos com trocas integradas, integrações DeFi e segurança de nível empresarial.",
+          "tags": [
+            "Aplicação móvel",
+            "Cedra",
+            "DeFi"
+          ]
+        },
+        "mcp": {
+          "name": "Infer MCP",
+          "alt": "Logótipo do Infer MCP",
+          "blurb": "O servidor Model Context Protocol que permite a agentes de programação com IA operar o portefólio Infer Desk — ligar, verificar o estado e submeter transferências de tokens validadas, com todas as ações sensíveis aprovadas no ecrã do portefólio.",
+          "tags": [
+            "MCP",
+            "Agentes de IA",
+            "Ferramenta para programadores"
+          ]
+        },
+        "connect": {
+          "name": "Infer Connect",
+          "alt": "Logótipo do Infer Connect",
+          "blurb": "O adaptador wallet-standard que liga as dApps da Cedra ao Infer Desk e ao Infer Wallet — ligação, assinatura de transações e assinatura de mensagens numa única integração em formato plugin.",
+          "tags": [
+            "Adaptador de portefólio",
+            "dApps",
+            "AIP-62"
+          ]
+        },
+        "ecosystem": {
+          "name": "Infer Ecosystem",
+          "alt": "Logótipo do Infer Ecosystem",
+          "blurb": "dApp baseada no navegador para a Cedra Network, com gestão de eventos, um centro de jogos com póquer e casino e ferramentas para a comunidade. Criada com React e contratos inteligentes Move para uma experiência Web3 sem descontinuidades.",
+          "tags": [
+            "dApp",
+            "Cedra",
+            "Jogos",
+            "Eventos",
+            "Web3"
+          ]
+        }
+      }
+    },
+    "about": {
+      "title": "Sobre a <span>Inferenco</span> – a equipa por trás dos produtos",
+      "p1": "A <strong>Inferenco</strong> é uma empresa de software nascida da colaboração entre a <strong>Singularity Shift Ltd</strong> e a <strong>Spielcrypto Ltd</strong>. Desenvolvemos produtos, não projetos por encomenda — tudo o que vê neste site é desenhado, desenvolvido e publicado por nós.",
+      "p2": "A nossa linha de produtos começa nos jogos e nas aplicações de media do dia a dia e estende-se aos portefólios onchain, dApps e ferramentas para programadores — sempre com revisões de segurança e versões assinadas.",
+      "p3": "Cada produto é mantido pela mesma equipa que o escreveu — com documentação, guias de instalação e um contacto direto com os programadores.",
+      "buildHeading": "O que desenvolvemos:",
+      "build": {
+        "gamesMedia": "Jogos móveis e aplicações de media",
+        "browserUtilities": "Utilitários gratuitos no navegador",
+        "wallets": "Portefólios para computador e móvel",
+        "onchainCedra": "Produtos onchain para a Cedra (portefólios, dApps e adaptador)",
+        "devTooling": "Ferramentas para programadores e integrações MCP",
+        "ai": "Assistentes com IA",
+        "security": "Revisões de segurança e versões assinadas"
+      }
+    },
+    "services": {
+      "title": "<span>Funcionalidades</span> dos produtos",
+      "subtitle": "O que os nossos produtos oferecem desde o primeiro momento",
+      "nemesis": {
+        "title": "Jogue Go contra uma IA no dispositivo",
+        "text": "O Nemesis Go é um jogo de Go 9×9 para Android em que o adversário e a análise de jogadas correm no seu dispositivo — sem conta e sem ligação."
+      },
+      "fixFiles": {
+        "title": "Corrija ficheiros sem enviar nada",
+        "text": "O Make My Image Fit e o Sound Flipper redimensionam, comprimem e convertem inteiramente no seu dispositivo — nada é enviado."
+      },
+      "desk": {
+        "title": "Gira os seus ativos com o Infer Desk",
+        "text": "Um portefólio para computador da Cedra: envie, receba, troque e gira tokens e NFT com segurança de nível empresarial."
+      },
+      "wallet": {
+        "title": "Leve o seu portefólio para todo o lado",
+        "text": "O Infer Wallet leva a Cedra ao telemóvel com proteção biométrica, trocas integradas e integrações DeFi."
+      },
+      "agents": {
+        "title": "Deixe o trabalho aos agentes de IA",
+        "text": "O Infer MCP liga agentes de programação com IA ao seu portefólio Infer Desk, com todas as ações sensíveis aprovadas no ecrã."
+      },
+      "dapps": {
+        "title": "Ligue dApps com um clique",
+        "text": "O Infer Connect dá às dApps da Cedra um adaptador de portefólio padrão para ligações, assinatura de transações e assinatura de mensagens."
+      },
+      "ecosystem": {
+        "title": "Jogue e ligue-se no Ecosystem",
+        "text": "A dApp Infer Ecosystem oferece gestão de eventos, um centro de jogos e ferramentas para a comunidade na Cedra Network."
+      },
+      "security": {
+        "title": "Segurança em primeiro lugar por omissão",
+        "text": "Versões auditadas, binários assinados e notarizados e processamento local em toda a linha de produtos."
+      },
+      "standards": {
+        "title": "Construído sobre padrões abertos",
+        "text": "AIP-62, MCP e contratos inteligentes Move — os nossos produtos onchain são interoperáveis em vez de o prenderem."
+      }
+    },
+    "methodology": {
+      "title": "A nossa <span>metodologia</span> – como desenvolvemos e publicamos",
+      "subtitle": "De uma ideia a uma versão assinada que pode verificar",
+      "steps": {
+        "scope": {
+          "title": "Delimitamos o âmbito",
+          "text": "Cada produto começa como uma ideia focada: uma tarefa, bem feita, sem excesso de funcionalidades."
+        },
+        "build": {
+          "title": "Desenvolvemos internamente",
+          "text": "A nossa própria equipa desenha, implementa e testa cada produto — sem subcontratações, sem entregas a terceiros."
+        },
+        "review": {
+          "title": "Submetemos a revisão de segurança",
+          "text": "As novas versões do portefólio e da ponte passam por auditorias e revisão interna antes de qualquer publicação."
+        },
+        "sign": {
+          "title": "Assinamos e publicamos",
+          "text": "As versões são assinadas, notarizadas quando aplicável e publicadas com assinaturas que pode verificar."
+        },
+        "support": {
+          "title": "Damos suporte ao que publicamos",
+          "text": "Documentação, guias de instalação e um contacto direto com a equipa sustentam cada produto."
+        }
+      }
+    },
+    "approach": {
+      "title": "A nossa <span>abordagem</span> – porque os nossos produtos são diferentes",
+      "intro": "Desenvolvemos software como queremos usá-lo: <strong>transparente</strong>, <strong>privado por conceção</strong> e <strong>verificável</strong>. A nossa abordagem assenta em:",
+      "values": {
+        "verifiable": "Software verificável — cada versão é assinada e documentada",
+        "privacy": "Privacidade por omissão — processamento local sempre que possível",
+        "quality": "Qualidade e fiabilidade em cada linha de código",
+        "innovation": "Inovação aliada a ferramentas práticas e utilizáveis",
+        "timely": "Versões atempadas sem comprometer a qualidade",
+        "interoperable": "Produtos interoperáveis que funcionam melhor em conjunto"
+      }
+    },
+    "cta": {
+      "title": "Dúvidas sobre os nossos produtos?",
+      "text": "Quer saber mais sobre um produto, reportar um problema ou conversar sobre um trabalho à medida? Fale com a equipa que desenvolve o software.",
+      "button": "Contactar-nos"
+    },
+    "modal": {
+      "title": "Contactar-nos",
+      "text": "Fale com a equipa por trás dos nossos produtos — dúvidas, problemas ou trabalhos à medida.",
+      "note": "Responderemos o mais depressa possível."
+    }
+  },
+  "media": {
+    "hero": {
+      "title": "Media e Entretenimento",
+      "tagline": "Jogos, utilitários de media e aplicações do dia a dia — desenvolvidos pela nossa própria equipa.",
+      "ctaNemesis": "Nemesis Go",
+      "ctaSound": "Sound Flipper",
+      "ctaImage": "Make My Image Fit"
+    },
+    "gallery": {
+      "title": "Jogos e aplicações do dia a dia",
+      "subtitle": "Um jogo de Go para telemóvel e dois utilitários web gratuitos com privacidade em primeiro lugar — não precisa de contas e nada sai do seu dispositivo sem que o peça.",
+      "nemesis": {
+        "name": "Nemesis Go",
+        "alt": "Ícone da aplicação Nemesis Go",
+        "blurb": "Um jogo de Go 9×9 para Android com um adversário de IA e análise de jogadas que correm localmente, sem ligação. Sem conta e sem ligação necessária — os jogos guardados e as preferências ficam no seu dispositivo.",
+        "tags": [
+          "Jogo móvel",
+          "9×9 Go",
+          "IA sem ligação",
+          "iOS em breve"
+        ]
+      },
+      "sound": {
+        "name": "Sound Flipper",
+        "alt": "Captura de ecrã do Sound Flipper",
+        "blurb": "Um conversor de áudio gratuito que funciona inteiramente no navegador — as suas gravações e músicas nunca são enviadas. Converta entre MP3, WAV, M4A, FLAC, Ogg, Opus e mais, sem conta nem instalação de software.",
+        "tags": [
+          "Conversor de áudio",
+          "Privacidade em primeiro lugar",
+          "No navegador"
+        ]
+      },
+      "image": {
+        "name": "Make My Image Fit",
+        "alt": "Captura de ecrã do Make My Image Fit",
+        "blurb": "Um redimensionador e compressor de imagens gratuito, com privacidade em primeiro lugar, que corre inteiramente no navegador — sem envios, sem conta. Defina um tamanho máximo de ficheiro ou dimensões exatas em píxeis e o utilitário prepara até 10 imagens para cumprir os requisitos de qualquer formulário de envio.",
+        "tags": [
+          "Utilitário de imagens",
+          "Privacidade em primeiro lugar",
+          "No navegador"
+        ]
+      }
+    },
+    "common": {
+      "learnMore": "Saber mais",
+      "visitWebsite": "Visitar o site",
+      "googlePlay": "Google Play",
+      "appStore": "App Store",
+      "close": "Fechar"
+    },
+    "modal": {
+      "nemesis": {
+        "long": "O Nemesis Go é um jogo de Go 9×9 para Android que corre inteiramente no seu dispositivo. O adversário controlado pelo computador e a análise por detrás das sugestões de jogada funcionam sem ligação, pelo que pode jogar em qualquer lado, sem conta nem rede. Os jogos guardados, os resultados recentes e as preferências ficam no seu dispositivo, podendo fechar a aplicação a meio de uma partida e retomar mais tarde o mesmo tabuleiro. O jogo é gratuito e sustentado por anúncios mostrados entre partidas; pode também escolher ver um anúncio quando quiser uma dica ou desfazer a última jogada. A subscrição mensal opcional Remover anúncios desliga os anúncios na aplicação e dá acesso direto às funções Dica e Desfazer.",
+        "features": [
+          "9×9 Go",
+          "IA local sem ligação",
+          "Análise de jogadas",
+          "Sem conta",
+          "Jogos guardados no dispositivo",
+          "Dica e Desfazer",
+          "Remoção de anúncios mensal opcional"
+        ],
+        "note": "Versão para iOS em breve.",
+        "privacy": "Política de Privacidade",
+        "terms": "Termos de Utilização"
+      },
+      "sound": {
+        "long": "O Sound Flipper (soundflipper.com) é um conversor de áudio online gratuito para gravações, músicas e outros ficheiros de áudio que já estão guardados no seu dispositivo — tudo é processado localmente no navegador, pelo que o seu áudio permanece privado. O inspetor lê o áudio efetivo do ficheiro e diz-lhe exatamente o que deteta, recusando ficheiros não suportados com uma explicação clara. Pode converter até dez ficheiros em simultâneo entre MP3, WAV, M4A/AAC, FLAC, ALAC, AIFF, Ogg Vorbis e Opus, com definições de qualidade razoáveis resolvidas automaticamente. É ideal para corrigir envios recusados — por exemplo, transformar uma nota de voz em MP3 — e vem com guias de conversão passo a passo. Está atualmente disponível como uma pré-visualização testável, gratuita e sem registo.",
+        "features": [
+          "100% no dispositivo",
+          "Até 10 ficheiros em simultâneo",
+          "MP3/WAV/M4A/FLAC/ALAC/AIFF/Ogg/Opus",
+          "Inspetor de conteúdo",
+          "Definições automáticas de qualidade",
+          "Guias de conversão",
+          "Estado de pré-visualização"
+        ],
+        "note": "Pré-visualização gratuita — sem registo."
+      },
+      "resize": {
+        "long": "O Make My Image Fit (resizeandcompress.app) é um utilitário de imagens online gratuito que comprime, redimensiona e converte imagens sem as enviar — todo o processamento acontece no seu dispositivo, no navegador. Pode processar até 10 imagens em simultâneo (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, HEIC ou DNG), definir um tamanho máximo de ficheiro em KB/MB e/ou dimensões exatas em píxeis e escolher o formato de saída. Antes de transferir, o utilitário verifica cada resultado face aos seus requisitos, e pode rodar a imagem, definir fundos ou converter fotografias HEIC do telemóvel e ficheiros RAW DNG localmente. Os resultados são transferidos individualmente ou em ZIP. É completamente gratuito e sem registo, e nenhuma análise de utilização ou anúncio é carregada sem o seu consentimento.",
+        "features": [
+          "100% no dispositivo",
+          "Até 10 imagens em simultâneo",
+          "JPG/PNG/WebP/GIF/BMP/TIFF/AVIF/HEIC/DNG",
+          "Limite de tamanho máximo",
+          "Redimensionar por píxeis",
+          "Rotação e fundos",
+          "Transferência em ZIP",
+          "Sem análise de utilização sem consentimento"
+        ],
+        "note": "Completamente gratuito, sem registo."
+      }
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Blogues da Inferenco",
+      "description": "As últimas notícias, atualizações e análises da equipa da Inferenco.",
+      "errorLoading": "Erro ao carregar os blogues: {{error}}",
+      "retry": "Tentar novamente",
+      "empty": "Ainda não foi publicado nenhum blogue.",
+      "noExcerpt": "Sem resumo disponível",
+      "readMore": "Ler mais →",
+      "loadingMore": "A carregar mais blogues...",
+      "end": "Chegou ao fim de todos os blogues.",
+      "fetchError": "Não foi possível obter os blogues"
+    },
+    "single": {
+      "loading": "A carregar a publicação...",
+      "error": "Erro ao carregar a publicação: {{error}}",
+      "notFound": "Publicação não encontrada.",
+      "backToBlogs": "Voltar aos blogues",
+      "backArrow": "← Voltar aos blogues",
+      "backAllArrow": "← Voltar a todos os blogues",
+      "published": "Publicado: {{date}}",
+      "gallery": "Galeria",
+      "blogImage": "Imagem do blogue",
+      "fetchError": "Não foi possível obter a publicação"
+    }
+  }
+}
