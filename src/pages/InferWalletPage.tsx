@@ -15,7 +15,7 @@ export default function InferWalletPage() {
   ];
 
   return (
-    <div id="infer-wallet-page" className="page-section">
+    <div id="infer-wallet-page" className="page-section" dir="ltr">
       <section className="hero infer-hero" role="banner">
         <div className="hero-content">
           <div className="infer-logo-container" style={{ marginBottom: "2rem" }}>

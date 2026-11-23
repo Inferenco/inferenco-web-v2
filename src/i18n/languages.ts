@@ -11,8 +11,10 @@
  * in-app picker renders. A site that sorted this list alphabetically or by
  * market size would diverge from the product.
  *
- * `zh` means **Simplified** Chinese. `ar` ships **LTR-retained** (Nemesis Go
- * decision D3) — this site must not set `dir="rtl"` on its behalf.
+ * `zh` means **Simplified** Chinese. `ar` renders **RTL on this site** — a
+ * deliberate site-only reversal of Nemesis Go decision D3 (the app itself
+ * stays LTR). The cross-repo divergence is intentional and documented; the
+ * English-only islands (/docs, /infer*) keep static `dir="ltr"` wrappers.
  */
 export const SUPPORTED_LANGUAGES = [
   "en",

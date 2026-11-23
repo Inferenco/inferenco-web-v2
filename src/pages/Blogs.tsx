@@ -144,7 +144,7 @@ export default function Blogs() {
                     </div>
                   )}
 
-                  <div className="blog-card-content">
+                  <div className="blog-card-content" dir="ltr">
                     <header className="blog-header">
                       <h2 onClick={handleReadMore} style={{ cursor: 'pointer' }}>
                         {blog.title}

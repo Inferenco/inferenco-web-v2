@@ -67,11 +67,14 @@ async function ensureCatalogue(language: SupportedLanguage): Promise<void> {
 }
 
 function applyDocumentLang(language: string): void {
-  const tag = isSupportedLanguage(language) ? LANGUAGE_TAGS[language] : "en";
-  // Brand-only <title> and an LTR-retained layout for `ar` (Nemesis Go
-  // decision D3): never set `dir="rtl"` here, and never touch the theme
-  // classes or `data-theme`.
+  const supported = isSupportedLanguage(language);
+  const tag = supported ? LANGUAGE_TAGS[language] : "en";
   document.documentElement.lang = tag;
+  // D3 reversal (site-only): Arabic renders RTL; every other locale LTR.
+  // English-only islands (/docs, /infer*) carry static dir="ltr" wrappers.
+  // The Nemesis Go app itself remains LTR — this divergence is intentional
+  // and documented. Never touch the theme classes or `data-theme`.
+  document.documentElement.dir = supported && language === "ar" ? "rtl" : "ltr";
 }
 
 /**

@@ -112,8 +112,10 @@ function renderPage(template: string, root: string, page: LegalPage) {
 
   return template
     // EN emits lang="en", which is the template's own value: a no-op that keeps
-    // the English output byte-identical.
-    .replace('<html lang="en"', () => `<html lang="${page.lang}"`)
+    // the English output byte-identical. Arabic (site-only D3 reversal) adds
+    // dir="rtl"; the match excludes the closing '>' so the template's
+    // ` class="dark">` suffix is preserved for every locale.
+    .replace('<html lang="en"', () => `<html lang="${page.lang}"${page.lang === "ar" ? ' dir="rtl"' : ''}`)
     .replace("<!-- legal:title -->", () => renderToStaticMarkup(title))
     .replace("<!-- legal:canonical -->", () =>
       renderToStaticMarkup(createElement("link", {

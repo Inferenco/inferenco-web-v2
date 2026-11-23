@@ -13,9 +13,12 @@ lockstep. See `src/i18n/languages.ts` for the endonyms and BCP 47 tags.
 
 `en, ar, de, es, fr, it, ja, kk, pt-BR, pt-PT, ru, tr, uk, zh`
 
-`zh` is Simplified Chinese. Arabic content is rendered inside the site's
-existing left-to-right layout (the app's decision D3): no `dir="rtl"` is ever
-set on the document.
+`zh` is Simplified Chinese. Arabic renders **right-to-left on this site** — a
+deliberate site-only reversal of the app's decision D3 (the Nemesis Go app
+itself stays LTR; the cross-repo divergence is intentional and documented in
+the PR). `applyDocumentLang` sets `dir="rtl"` for `ar` and `dir="ltr"` for every
+other locale; the English-only islands (/docs, /infer*) carry static `dir="ltr"`
+wrappers so their prose stays left-to-right inside the RTL chrome.
 
 ## Provenance — IMPORTANT
 

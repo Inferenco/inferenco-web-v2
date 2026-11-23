@@ -109,10 +109,14 @@ test("a switcher choice loads its lazy catalogue, translates and persists", asyn
   );
   assert.match(i18n.t("home:portfolio.title"), /<span>.*<\/span>/u);
 
-  // Arabic stays in the LTR layout: lang changes, dir never does.
+  // Arabic renders RTL on this site (site-only D3 reversal): lang and dir
+  // both change. Every other locale stays LTR.
   await mod.setLanguage("ar");
   assert.equal(documentStub.documentElement.lang, "ar");
-  assert.equal(documentStub.documentElement.dir, undefined);
+  assert.equal(documentStub.documentElement.dir, "rtl");
+  await mod.setLanguage("de");
+  assert.equal(documentStub.documentElement.lang, "de");
+  assert.equal(documentStub.documentElement.dir, "ltr");
 });
 
 test("pt-PT and pt-BR are distinct catalogues, not aliases", async () => {

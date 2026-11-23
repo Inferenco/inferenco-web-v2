@@ -165,7 +165,7 @@ export default function BlogSingle() {
           )}
 
           {/* Content */}
-          <div className="blog-single-content">
+          <div className="blog-single-content" dir="ltr">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
 
