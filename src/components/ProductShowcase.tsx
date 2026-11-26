@@ -40,10 +40,10 @@ export function ProductPlatforms({ product, links = false }: { product: ProductK
 
   return (
     <ul className={links ? "studio-actions" : "studio-platforms"} aria-label={t("showcase.platforms")}>
-      {available.map(({ href, label }, index) => (
+      {available.map(({ href, label }) => (
         <li key={label}>
           {links && href ? (
-            <a className={index === 0 ? "studio-button" : "studio-button studio-button--outline"} href={href}>
+            <a className="studio-button" href={href}>
               {label} <span aria-hidden="true">↗</span>
             </a>
           ) : <bdi>{label}</bdi>}

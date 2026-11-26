@@ -2,10 +2,31 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
+import type { AnchorHTMLAttributes } from "react";
+import type { Components, ExtraProps } from "react-markdown";
 import type { BlogPost } from "../types";
 import { getAssetUrl } from "../utils/assetUrl";
 import { currentLocaleTag } from "../i18n";
 import "./Blogs.css";
+
+// External markdown links open in a new tab; anchors, relative paths and
+// mailto links keep normal in-app behavior. Only href and children are
+// forwarded — the react-markdown `node` prop is never spread onto the DOM.
+// Markdown link `title` attributes are intentionally not forwarded.
+const markdownComponents: Components = {
+  a({ href, children }: AnchorHTMLAttributes<HTMLAnchorElement> & ExtraProps) {
+    const external = typeof href === "string" && /^https?:\/\//i.test(href);
+    return (
+      <a
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+      >
+        {children}
+      </a>
+    );
+  },
+};
 
 interface BlogSingleApiResponse {
   id: string;
@@ -171,7 +192,7 @@ export default function BlogSingle() {
 
           {/* Content */}
           <div className="blog-single-content" lang="en" dir="ltr">
-            <ReactMarkdown>{blog.content}</ReactMarkdown>
+            <ReactMarkdown components={markdownComponents}>{blog.content}</ReactMarkdown>
           </div>
 
           {/* Assets gallery (if there are additional images) */}

@@ -2,9 +2,9 @@
 //
 // Every URL here is a user-supplied, verified value — do not invent or
 // "tidy" one. `ios: "coming-soon"` and `ios: null` are deliberate,
-// asymmetric states: Nemesis Go has no App Store id yet (the game repo's
-// `eas.ios.json` still carries the `ascAppId` placeholder), and Make My
-// Image Fit has no iOS app at all, so neither may ever render an
+// asymmetric states: "coming-soon" marks a product with no App Store
+// listing yet (rendered as a note, never a link), and Make My Image Fit
+// has no iOS app at all (`null`), so neither state may ever render an
 // apps.apple.com link.
 export interface MediaProduct {
   readonly name: string;
@@ -19,7 +19,7 @@ export const mediaProducts = {
   nemesis: {
     name: "Nemesis Go",
     android: "https://play.google.com/store/apps/details?id=com.inferenco.nemesisgo",
-    ios: "coming-soon",
+    ios: "https://apps.apple.com/app/nemesis-go/id6832446508",
     web: null,
     legal: {
       privacy: "/nemesis-go/privacy/",

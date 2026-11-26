@@ -254,7 +254,6 @@
     --signal-size: 145% auto;
   }
   .studio-detail--sound .product-campaign-copy .studio-actions { inline-size: 100%; }
-  .studio-detail--sound .product-campaign-copy .studio-actions li:first-child { flex-basis: 100%; }
   .product-signal-light { inset-inline: calc(0px - var(--campaign-edge)); }
   .studio-detail--sound .product-campaign-art::after { inset-inline: calc(0px - var(--campaign-edge)); }
   .studio-detail--nemesis .product-campaign-art::before {
