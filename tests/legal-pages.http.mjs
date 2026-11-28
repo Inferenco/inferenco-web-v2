@@ -281,3 +281,32 @@ test("unregistered support locales return 404", async () => {
     assert.equal(response.status, 404, path);
   }
 });
+
+const websitePolicies = [
+  { path: "/privacy/", title: "Inferenco Website Privacy Policy", related: "/terms/", copy: "GitHub Pages hosts this site." },
+  { path: "/terms/", title: "Inferenco Website Terms of Use", related: "/privacy/", copy: "These terms apply to the public website" },
+];
+
+for (const { path, title, related, copy } of websitePolicies) {
+  test(`${path} serves the website policy and redirects the slashless URL`, async () => {
+    const redirect = await fetch(origin + path.slice(0, -1) + "?source=footer", { redirect: "manual" });
+    assert.equal(redirect.status, 301);
+    assert.equal(redirect.headers.get("location"), path + "?source=footer");
+
+    const response = await fetch(origin + path);
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get("content-type"), /^text\/html\b/);
+    const dom = new JSDOM(await response.text());
+    try {
+      const { document } = dom.window;
+      assert.equal(document.documentElement.lang, "en");
+      assert.equal(document.title, title);
+      assert.equal(document.querySelector("main h1").textContent, title);
+      assert.ok(document.querySelector("main article").textContent.includes(copy));
+      assert.equal(document.querySelector('link[rel="canonical"]').href, "https://inferenco.com" + path);
+      assert.equal(document.querySelector(".legal-related a").getAttribute("href"), related);
+    } finally {
+      dom.window.close();
+    }
+  });
+}

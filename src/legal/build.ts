@@ -121,7 +121,19 @@ const supportLocalized = Object.entries(localeTags).map(([lng, tag]): LegalPage 
   ],
 }));
 
+const websitePages = documents.map((kind): LegalPage => {
+  const other = kind === "privacy" ? "terms" : "privacy";
+  return {
+    path: `/${kind}/`,
+    source: `src/legal/website/${kind}.md`,
+    lang: "en",
+    relatedLabel: "Related pages",
+    related: [{ path: `/${other}/`, label: labels[other] }],
+  };
+});
+
 const pages: LegalPage[] = [
+  ...websitePages,
   ...apps.flatMap((app) =>
   documents.flatMap((kind) => {
     const other = kind === "privacy" ? "terms" : "privacy";

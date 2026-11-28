@@ -57,8 +57,6 @@ test("the footer links to the catalogue and its three detail pages ahead of Onch
   ]) {
     assert.ok(column.includes('to="' + target + '"'), "missing footer target " + target);
   }
-  assert.match(layout, /href=\{nemesisLegalUrl\("privacy"\)\}/);
-  assert.match(layout, /href=\{nemesisLegalUrl\("terms"\)\}/);
   assert.doesNotMatch(JSON.stringify(chrome), /Enterprise Software Development|IT Solutions/);
 });
 
@@ -74,4 +72,14 @@ test("a skip link and native language control are available from the shared head
   assert.match(layout, /href="#studio-main"[\s\S]*?<main id="studio-main"[^>]+tabIndex=\{-1\}/);
   assert.match(switcher, /<select[\s\S]*?aria-label=\{t\("aria.switchLanguage"\)\}/);
   assert.match(switcher, /SUPPORTED_LANGUAGES\.map\(\(code\) => [\s\S]*?<option[^>]+lang=\{code\}/);
+});
+
+
+test("the shared footer links to the website policies and Nemesis Go links to its own policies", () => {
+  assert.match(layout, /href="\/privacy\/"\s+hrefLang="en"[^>]*>\{t\("footer.websitePrivacy"\)\}/);
+  assert.match(layout, /href="\/terms\/"\s+hrefLang="en"[^>]*>\{t\("footer.websiteTerms"\)\}/);
+  assert.doesNotMatch(layout, /nemesisLegalUrl/);
+  const mediaProduct = readFileSync("src/pages/MediaProduct.tsx", "utf8");
+  assert.match(mediaProduct, /href=\{nemesisLegalUrl\("privacy"\)\}/);
+  assert.match(mediaProduct, /href=\{nemesisLegalUrl\("terms"\)\}/);
 });
