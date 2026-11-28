@@ -114,7 +114,7 @@ test("the sitemap covers published routes and the robots directive points to it"
     const urls = [...dom.window.document.querySelectorAll("loc")].map((loc) => loc.textContent);
     for (const path of [
       ...staticRoutes.keys(), "/blogs/a-first-article/", "/blogs/a-second-article/",
-      "/support/", "/support/ar/", "/nemesis-go/ar/privacy/",
+      "/support/", "/support/ar/", "/privacy/", "/terms/", "/nemesis-go/ar/privacy/",
     ]) {
       assert.ok(urls.includes(site + path), path);
     }

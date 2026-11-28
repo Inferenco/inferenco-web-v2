@@ -2,7 +2,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import type { RefObject } from "react";
 import { Link, NavLink, Outlet, useLocation, useNavigationType } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { nemesisLegalUrl, supportUrl } from "../i18n";
+import { supportUrl } from "../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { canonicalPath, notFoundMetadata, siteMetadata } from "../site/metadata";
 import "./chrome.css";
@@ -154,8 +154,8 @@ function StudioFooter() {
           <h2>{t("footer.resourcesColumn")}</h2>
           <Link to="/blogs/">{t("footer.blog")}</Link>
           <a href={supportUrl()}>{t("footer.support")}</a>
-          <a href={nemesisLegalUrl("privacy")}>{t("footer.nemesisPrivacy")}</a>
-          <a href={nemesisLegalUrl("terms")}>{t("footer.nemesisTerms")}</a>
+          <a href="/privacy/" hrefLang="en">{t("footer.websitePrivacy")}</a>
+          <a href="/terms/" hrefLang="en">{t("footer.websiteTerms")}</a>
         </div>
         <div className="studio-footer-links">
           <h2>{t("footer.contactColumn")}</h2>
